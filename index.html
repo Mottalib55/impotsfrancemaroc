@@ -204,7 +204,7 @@
                             <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
                                 <tr>
                                     <th class="px-4 py-3">Poste</th>
-                                    <th class="px-4 py-3 text-right">Montant</th>
+                                    <th class="px-4 py-3 text-right" colspan="2">Montant</th>
                                     <th class="px-4 py-3 text-right text-slate-400">%</th>
                                 </tr>
                             </thead>
@@ -274,7 +274,7 @@
                             <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
                                 <tr>
                                     <th class="px-4 py-3">Poste</th>
-                                    <th class="px-4 py-3 text-right">Montant</th>
+                                    <th class="px-4 py-3 text-right" colspan="2">Montant</th>
                                     <th class="px-4 py-3 text-right text-slate-400">%</th>
                                 </tr>
                             </thead>
@@ -426,13 +426,34 @@
             const incomePerPart = netImposable / parts;
             let taxPerPart = 0;
             let previousLimit = 0;
+            const bracketsDetail = [];
 
-            for (let bracket of TAX_CONFIG.fr.brackets) {
-                if (incomePerPart > previousLimit) {
-                    const taxableInBracket = Math.min(incomePerPart, bracket.limit) - previousLimit;
-                    taxPerPart += taxableInBracket * bracket.rate;
-                    previousLimit = bracket.limit;
+            for (let i = 0; i < TAX_CONFIG.fr.brackets.length; i++) {
+                const bracket = TAX_CONFIG.fr.brackets[i];
+                const prevLimit = i === 0 ? 0 : TAX_CONFIG.fr.brackets[i-1].limit;
+
+                if (incomePerPart > prevLimit) {
+                    const taxableInBracket = Math.min(incomePerPart, bracket.limit) - prevLimit;
+                    const taxInBracket = taxableInBracket * bracket.rate;
+                    taxPerPart += taxInBracket;
+
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: taxableInBracket,
+                        rate: bracket.rate,
+                        tax: taxInBracket
+                    });
+                } else {
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: 0,
+                        rate: bracket.rate,
+                        tax: 0
+                    });
                 }
+                previousLimit = bracket.limit;
             }
 
             const totalTax = taxPerPart * parts;
@@ -442,6 +463,11 @@
                 gross: annualGrossEur,
                 social: socialContrib,
                 tax: totalTax,
+                taxPerPart: taxPerPart,
+                parts: parts,
+                netImposable: netImposable,
+                incomePerPart: incomePerPart,
+                bracketsDetail: bracketsDetail,
                 net: netInPocket,
                 rate: (socialContrib + totalTax) / annualGrossEur
             };
@@ -464,15 +490,40 @@
             const netImposable = grossLessSocial - proDeduction;
 
             let tax = 0;
-            for (let bracket of TAX_CONFIG.ma.brackets) {
-                if (netImposable <= bracket.limit) {
-                    tax = (netImposable * bracket.rate) - bracket.deduct;
-                    break;
+            let taxPerPart = 0;
+            let previousLimit = 0;
+            const bracketsDetail = [];
+
+            // Calculate progressive tax by brackets
+            for (let i = 0; i < TAX_CONFIG.ma.brackets.length; i++) {
+                const bracket = TAX_CONFIG.ma.brackets[i];
+                const prevLimit = i === 0 ? 0 : TAX_CONFIG.ma.brackets[i-1].limit;
+
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    const taxInBracket = taxableInBracket * bracket.rate;
+                    taxPerPart += taxInBracket;
+
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: taxableInBracket,
+                        rate: bracket.rate,
+                        tax: taxInBracket
+                    });
+                } else {
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: 0,
+                        rate: bracket.rate,
+                        tax: 0
+                    });
                 }
-                if (bracket.limit === Infinity) {
-                    tax = (netImposable * bracket.rate) - bracket.deduct;
-                }
+                previousLimit = bracket.limit;
             }
+
+            tax = taxPerPart;
             if(tax < 0) tax = 0;
 
             // Abattement familial (toujours appliqué)
@@ -492,7 +543,9 @@
                 familyReduc: familyReduc,
                 dependants: dependants,
                 net: netInPocket,
-                rate: (socialContrib + tax) / annualGrossMad
+                rate: (socialContrib + tax) / annualGrossMad,
+                netImposable: netImposable,
+                bracketsDetail: bracketsDetail
             };
         }
 
@@ -520,15 +573,38 @@
             els.barMaSoc.style.width = (maData.social / maTotal * 100) + '%';
 
             const familyReducRow = maData.familyReduc > 0
-                ? `<tr class="text-emerald-600"><td class="px-4 py-2 pl-6 text-xs">Abattement familial (${maData.dependants} pers.)</td><td class="px-4 py-2 text-right text-xs">+${formatMoney(maData.familyReduc * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>`
+                ? `<tr class="text-emerald-600"><td class="px-4 py-2 pl-6 text-xs">Abattement familial (${maData.dependants} pers.)</td><td class="px-4 py-2 text-right text-xs" colspan="2">+${formatMoney(maData.familyReduc * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>`
                 : '';
 
+            // Build Morocco bracket detail rows
+            let maBracketsHtml = '';
+            maData.bracketsDetail.forEach((b, i) => {
+                if (b.amount > 0) {
+                    const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'MAD');
+                    maBracketsHtml += `<tr class="text-slate-400 text-[10px]">
+                        <td class="px-4 py-1">${formatMoney(b.from, 'MAD')} → ${toLabel}</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'MAD')}</td>
+                        <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.tax, 'MAD')}</td>
+                    </tr>`;
+                }
+            });
+
             els.maTable.innerHTML = `
-                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right">${formatMoney(maData.gross * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
-                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Social (CNSS/AMO)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(maData.social * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.social/maData.gross)}</td></tr>
-                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(maData.tax * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.tax/maData.gross)}</td></tr>
+                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.gross * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Social (CNSS/AMO)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(maData.social * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.social/maData.gross)}</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(maData.netImposable * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(maData.tax * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.tax/maData.gross)}</td></tr>
                 ${familyReducRow}
-                <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
+                <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
+                <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées</td></tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-400">
+                    <td class="px-4 py-1">Tranche</td>
+                    <td class="px-4 py-1 text-right">Montant</td>
+                    <td class="px-4 py-1 text-right">Taux</td>
+                    <td class="px-4 py-1 text-right">Impôt</td>
+                </tr>
+                ${maBracketsHtml}
             `;
 
             els.frNet.innerHTML = `${formatMoney(frData.net * maMultiplier, 'EUR')} <span class="text-sm font-normal text-slate-400">€</span>`;
@@ -540,11 +616,39 @@
             els.barFrTax.style.width = (frData.tax / frTotal * 100) + '%';
             els.barFrSoc.style.width = (frData.social / frTotal * 100) + '%';
 
+            // Build France bracket detail rows (per part)
+            let frBracketsHtml = '';
+            frData.bracketsDetail.forEach((b, i) => {
+                if (b.amount > 0) {
+                    const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'EUR');
+                    frBracketsHtml += `<tr class="text-slate-400 text-[10px]">
+                        <td class="px-4 py-1">${formatMoney(b.from, 'EUR')} → ${toLabel}</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'EUR')}</td>
+                        <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.tax, 'EUR')}</td>
+                    </tr>`;
+                }
+            });
+
             els.frTable.innerHTML = `
-                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
-                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Charges Sociales (Est.)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(frData.social * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.social/frData.gross)}</td></tr>
-                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
-                <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
+                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Charges Sociales (Est.)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.social * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.social/frData.gross)}</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(frData.netImposable * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
+                <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
+                <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées (par part : ${frData.parts})</td></tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-400">
+                    <td class="px-4 py-1">Tranche</td>
+                    <td class="px-4 py-1 text-right">Montant</td>
+                    <td class="px-4 py-1 text-right">Taux</td>
+                    <td class="px-4 py-1 text-right">Impôt</td>
+                </tr>
+                ${frBracketsHtml}
+                <tr class="text-slate-500 text-[10px] border-t border-slate-100">
+                    <td class="px-4 py-1 font-medium">Total (${frData.parts} part${frData.parts > 1 ? 's' : ''})</td>
+                    <td class="px-4 py-1 text-right" colspan="2"></td>
+                    <td class="px-4 py-1 text-right font-medium">${formatMoney(frData.tax, 'EUR')}</td>
+                </tr>
             `;
 
             const frNetInMad = frData.net * state.exchangeRate;

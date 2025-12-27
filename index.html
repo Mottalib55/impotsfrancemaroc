@@ -1,4 +1,6 @@
-<html lang="fr" class="antialiased bg-slate-50 text-slate-900"><head>
+<!DOCTYPE html>
+<html lang="fr" class="antialiased bg-slate-50 text-slate-900">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparateur Fiscal : France vs Maroc</title>
@@ -39,7 +41,7 @@
                 <p class="text-xs text-slate-500 font-medium tracking-tight">Maroc vs France • Simulateur de Pression Fiscale</p>
             </div>
         </div>
-        <div class="mtmd:mt-0 flex gap-4 text-xs font-medium text-slate-500">
+        <div class="mt-4 md:mt-0 flex gap-4 text-xs font-medium text-slate-500">
             <div class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 Maroc (MAD)
@@ -121,7 +123,7 @@
                                     <button id="status-married" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Marié(e)</button>
                                     <button id="status-divorced" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Divorcé(e)</button>
                                 </div>
-                         </div>
+                            </div>
 
                             <div>
                                 <span class="text-xs font-medium text-slate-600 mb-2 block">Enfants à charge</span>
@@ -130,7 +132,7 @@
                                         <span class="iconify" data-icon="lucide:minus" width="14"></span>
                                     </button>
                                     <div id="children-display" class="flex-1 text-center text-sm font-semibold text-slate-900 select-none">0</div>
-                                    <button id="child-plus" class="w-10 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-r-lg transition-colors borderl border-slate-100">
+                                    <button id="child-plus" class="w-10 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-r-lg transition-colors border-l border-slate-100">
                                         <span class="iconify" data-icon="lucide:plus" width="14"></span>
                                     </button>
                                 </div>
@@ -188,7 +190,7 @@
                         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
                             <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Taux d'Imposition</p>
                             <p class="text-2xl font-semibold text-emerald-600 tracking-tight" id="ma-rate">0%</p>
-                            <p class="text-[10px] text-slate-400 mt-1">Pres Totale</p>
+                            <p class="text-[10px] text-slate-400 mt-1">Pression Totale</p>
                         </div>
                     </div>
 
@@ -225,7 +227,7 @@
                             <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
                                 <tr>
                                     <th class="px-4 py-3">Poste</th>
-                                    <th class="px-4 py-3 xt-right">Montant</th>
+                                    <th class="px-4 py-3 text-right">Montant</th>
                                     <th class="px-4 py-3 text-right text-slate-400">%</th>
                                 </tr>
                             </thead>
@@ -256,7 +258,7 @@
                             <p class="text-[10px] text-slate-400 mt-1" id="fr-net-mad">≈ 0 MAD</p>
                         </div>
                         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-                            <p class="text-[11px] font-me uppercase text-slate-500 mb-1">Taux d'Imposition</p>
+                            <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Taux d'Imposition</p>
                             <p class="text-2xl font-semibold text-indigo-600 tracking-tight" id="fr-rate">0%</p>
                             <p class="text-[10px] text-slate-400 mt-1">Pression Totale</p>
                         </div>
@@ -279,7 +281,7 @@
                             </div>
                             <!-- Cotis -->
                             <div id="bar-fr-soc" class="h-full bg-indigo-100 transition-all-300 relative group/segment" style="width: 20%">
-                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 let-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Cotisations</div>
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Cotisations</div>
                             </div>
                         </div>
                         <div class="flex justify-between text-[10px] text-slate-400">
@@ -292,7 +294,7 @@
                     <!-- Breakdown Table -->
                     <div class="mt-2 border rounded-lg border-slate-200 overflow-hidden">
                         <table class="w-full text-sm text-left">
-                            <thead class="bg-slate-50 text-[10p] uppercase text-slate-500 font-semibold border-b border-slate-200">
+                            <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
                                 <tr>
                                     <th class="px-4 py-3">Poste</th>
                                     <th class="px-4 py-3 text-right">Montant</th>
@@ -328,7 +330,7 @@
         </div>
 
         <p class="text-center text-[10px] text-slate-400 mt-8 pb-4 max-w-2xl mx-auto leading-relaxed">
-            Avertissement Légal : Cet outil est fourni à titre indicatif uniqut. Les lois fiscales en France et au Maroc sont complexes et sujettes à modifications (Loi de Finances 2025). Les cotisations sociales sont des estimations moyennes. Les calculs excluent les niches fiscales complexes.
+            Avertissement Légal : Cet outil est fourni à titre indicatif uniquement. Les lois fiscales en France et au Maroc sont complexes et sujettes à modifications (Loi de Finances 2025). Les cotisations sociales sont des estimations moyennes. Les calculs excluent les niches fiscales complexes.
         </p>
 
     </main>
@@ -353,14 +355,14 @@
                     { limit: 40000, rate: 0, deduct: 0 },
                     { limit: 60000, rate: 0.10, deduct: 4000 },
                     { limit: 80000, rate: 0.20, deduct: 10000 },
-                   { limit: 100000, rate: 0.30, deduct: 18000 },
+                    { limit: 100000, rate: 0.30, deduct: 18000 },
                     { limit: 180000, rate: 0.34, deduct: 22000 },
                     { limit: Infinity, rate: 0.37, deduct: 27400 }
                 ],
                 cnss_rate: 0.0448,
                 cnss_ceiling_monthly: 6000,
                 amo_rate: 0.0226,
-                family_deduction: 500, // Per person
+                family_deduction: 500,
                 family_deduction_cap: 3000
             }
         };
@@ -368,13 +370,13 @@
         // --- STATE ---
         const state = {
             salaryInput: 0,
-            salaryCurrency: 'EUR', // 'EUR' or 'MAD'
+            salaryCurrency: 'EUR',
             exchangeRate: 10.8,
-            period: 'monthly', // 'monthly' or 'annual'
-            status: 'single', // 'single', 'married', 'divorced'
+            period: 'monthly',
+            status: 'single',
             children: 0,
-            isCadre: false, // FR specific
-            applyFamilyReduc: true // MA specific
+            isCadre: false,
+            applyFamilyReduc: true
         };
 
         // --- DOM ELEMENTS ---
@@ -389,14 +391,13 @@
             btnMarried: document.getElementById('status-married'),
             btnDivorced: document.getElementById('status-divorced'),
 
-            // Children UI
             btnChildMinus: document.getElementById('child-minus'),
             btnChildPlus: document.getElementById('child-plus'),
             displayChildren: document.getElementById('children-display'),
 
             toggleCadre: document.getElementById('toggle-cadre'),
             toggleFamily: document.getElementById('toggle-family-reduc'),
-            // Outputs MA
+
             maNet: document.getElementById('ma-net'),
             maNetEur: document.getElementById('ma-net-eur'),
             maRate: document.getElementById('ma-rate'),
@@ -404,7 +405,7 @@
             barMaNet: document.getElementById('bar-ma-net'),
             barMaTax: document.getElementById('bar-ma-tax'),
             barMaSoc: document.getElementById('bar-ma-soc'),
-            // Outputs FR
+
             frNet: document.getElementById('fr-net'),
             frNetMad: document.getElementById('fr-net-mad'),
             frRate: document.getElementById('fr-rate'),
@@ -412,7 +413,7 @@
             barFrNet: document.getElementById('bar-fr-net'),
             barFrTax: document.getElementById('bar-fr-tax'),
             barFrSoc: document.getElementById('bar-fr-soc'),
-            // Verdict
+
             verdictTitle: document.getElementById('verdict-title'),
             verdictText: document.getElementById('verdict-text'),
             verdictDiff: document.getElementById('verdict-diff'),
@@ -439,8 +440,6 @@
 
             const netImposable = (annualGrossEur - socialContrib) * 0.90;
 
-            // Parts determination
-            // Married: 2 parts. Single/Divorced: 1 part base.
             let parts = state.status === 'married' ? 2 : 1;
 
             if (state.children > 0) {
@@ -502,8 +501,6 @@
             if(tax < 0) tax = 0;
 
             if (state.applyFamilyReduc) {
-                // In MA, wife (married) and children count as dependants for 500 MAD deduction/year each
-                // Divorced usually counts as Single for the adult part (0 deduction for spouse)
                 const spouseCount = state.status === 'married' ? 1 : 0;
                 const dependants = spouseCount + state.children;
                 const reduc = Math.min(dependants * TAX_CONFIG.ma.family_deduction, TAX_CONFIG.ma.family_deduction_cap);
@@ -533,46 +530,40 @@
                 return;
             }
 
-            // --- Update Morocco UI ---
             const maMultiplier = state.period === 'monthly' ? 1/12 : 1;
 
             els.maNet.innerHTML = `${formatMoney(maData.net * maMultiplier, 'MAD')} <span class="text-sm font-normal text-slate-400">MAD</span>`;
             els.maNetEur.textContent = `≈ ${formatMoney((maData.net * maMultiplier) / state.exchangeRate, 'EUR')}`;
             els.maRate.textContent = formatPct(maData.rate);
 
-            // Chart MA
             const maTotal = maData.gross;
             els.barMaNet.style.width = (maData.net / maTotal * 100) + '%';
             els.barMaTax.style.width = (maData.tax / maTotal * 100) + '%';
             els.barMaSoc.style.width = (maData.social / maTotal * 100) + '%';
 
-            // Table MA
             els.maTable.innerHTML = `
                 <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right">${formatMoney(maData.gross * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Social (CNSS/AMO)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(maData.social * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.social/maData.gross)}</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(maData.tax * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.tax/maData.gross)}</td></tr>
-               <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
+                <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
             `;
 
-            // --- Update France UI ---
             els.frNet.innerHTML = `${formatMoney(frData.net * maMultiplier, 'EUR')} <span class="text-sm font-normal text-slate-400">€</span>`;
             els.frNetMad.textContent = `≈ ${formatMoney((frData.net * maMultiplier) * state.exchangeRate, 'MAD')}`;
             els.frRate.textContent = formatPct(frData.rate);
 
-            // Chart FR
             const frTotal = frData.gross;
             els.barFrNet.style.width = (frData.net / frTotal * 100) + '%';
             els.barFrTax.style.width = (frData.tax / frTotal * 100) + '%';
             els.barFrSoc.style.width = (frData.social / frTotal * 100) + '%';
 
-            // Table FR
-            els.frTable.innerHTML = `             <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
+            els.frTable.innerHTML = `
+                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Charges Sociales (Est.)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(frData.social * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.social/frData.gross)}</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
-                <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-righttext-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
+                <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
             `;
 
-            // --- Verdict ---
             const frNetInMad = frData.net * state.exchangeRate;
             const maNetInMad = maData.net;
             const diffAnnualMad = Math.abs(frNetInMad - maNetInMad);
@@ -596,7 +587,6 @@
 
         // --- EVENT LISTENERS ---
 
-        // Input Currency Sync
         els.inputMad.addEventListener('input', (e) => {
             if(!e.target.value) { state.salaryInput = 0; render(); return; }
             const val = parseFloat(e.target.value);
@@ -620,7 +610,6 @@
             render();
         });
 
-        // Period Toggle
         const setPeriod = (p) => {
             state.period = p;
             if(p === 'monthly') {
@@ -635,7 +624,6 @@
         els.btnMonthly.addEventListener('click', () => setPeriod('monthly'));
         els.btnAnnual.addEventListener('click', () => setPeriod('annual'));
 
-        // Status Toggle
         const setStatus = (status) => {
             state.status = status;
 
@@ -652,7 +640,6 @@
         els.btnMarried.addEventListener('click', () => setStatus('married'));
         els.btnDivorced.addEventListener('click', () => setStatus('divorced'));
 
-        // Children Stepper Logic
         const updateChildren = (val) => {
             if (val < 0) val = 0;
             if (val > 10) val = 10;
@@ -663,8 +650,6 @@
         els.btnChildMinus.addEventListener('click', () => updateChildren(state.children - 1));
         els.btnChildPlus.addEventListener('click', () => updateChildren(state.children + 1));
 
-
-        // Advanced Toggles
         els.toggleCadre.addEventListener('click', () => {
             state.isCadre = !state.isCadre;
             const dot = els.toggleCadre.querySelector('span');
@@ -697,8 +682,9 @@
 
         // Init
         els.inputMad.value = 40000;
-        els.inputMad.dispatchEvent(new Event('input')); // Trigger calc
+        els.inputMad.dispatchEvent(new Event('input'));
 
     </script>
 
-</body></html>
+</body>
+</html>

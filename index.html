@@ -598,7 +598,7 @@
 
             const maMultiplier = state.period === 'monthly' ? 1/12 : 1;
 
-            els.maNet.innerHTML = `${formatMoney(maData.net * maMultiplier, 'MAD')} <span class="text-sm font-normal text-slate-400">MAD</span>`;
+            els.maNet.innerHTML = `${formatNumber(maData.net * maMultiplier)} <span class="text-sm font-normal text-slate-400">MAD</span>`;
             els.maNetEur.textContent = `≈ ${formatMoney((maData.net * maMultiplier) / state.exchangeRate, 'EUR')}`;
             els.maRate.textContent = formatPct(maData.rate);
 
@@ -652,7 +652,7 @@
                 ${maBracketsHtml.replace(/class="text-slate-900 text-\[10px\]"/g, 'class="text-slate-900 text-[10px] ma-tranches-row hidden"')}
             `;
 
-            els.frNet.innerHTML = `${formatMoney(frData.net * maMultiplier, 'EUR')} <span class="text-sm font-normal text-slate-400">€</span>`;
+            els.frNet.innerHTML = `${formatNumber(frData.net * maMultiplier)} <span class="text-sm font-normal text-slate-400">€</span>`;
             els.frNetMad.textContent = `≈ ${formatMoney((frData.net * maMultiplier) * state.exchangeRate, 'MAD')}`;
             els.frRate.textContent = formatPct(frData.rate);
 

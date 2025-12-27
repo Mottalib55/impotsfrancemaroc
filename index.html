@@ -597,7 +597,7 @@
             maData.bracketsDetail.forEach((b, i) => {
                 if (b.amount > 0) {
                     const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'MAD');
-                    maBracketsHtml += `<tr class="text-slate-400 text-[10px]">
+                    maBracketsHtml += `<tr class="text-slate-900 text-[10px]">
                         <td class="px-4 py-1">${formatMoney(b.from, 'MAD')} → ${toLabel}</td>
                         <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'MAD')}</td>
                         <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
@@ -614,7 +614,7 @@
                 ${familyReducRow}
                 <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
                 <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées</td></tr>
-                <tr class="bg-slate-50 text-[10px] text-slate-400">
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium">
                     <td class="px-4 py-1">Tranche</td>
                     <td class="px-4 py-1 text-right">Montant</td>
                     <td class="px-4 py-1 text-right">Taux</td>
@@ -632,12 +632,16 @@
             els.barFrTax.style.width = (frData.tax / frTotal * 100) + '%';
             els.barFrSoc.style.width = (frData.social / frTotal * 100) + '%';
 
+            // Calculate abattement 10%
+            const netAvantAbattement = (frData.gross - frData.social) * maMultiplier;
+            const abattement10 = netAvantAbattement * 0.10;
+
             // Build France bracket detail rows (per part)
             let frBracketsHtml = '';
             frData.bracketsDetail.forEach((b, i) => {
                 if (b.amount > 0) {
                     const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'EUR');
-                    frBracketsHtml += `<tr class="text-slate-400 text-[10px]">
+                    frBracketsHtml += `<tr class="text-slate-900 text-[10px]">
                         <td class="px-4 py-1">${formatMoney(b.from, 'EUR')} → ${toLabel}</td>
                         <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'EUR')}</td>
                         <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
@@ -649,21 +653,22 @@
             els.frTable.innerHTML = `
                 <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Charges Sociales (Est.)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.social * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.social/frData.gross)}</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Abattement 10%</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(abattement10, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">10%</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(frData.netImposable * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
                 <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
                 <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées (par part : ${frData.parts})</td></tr>
-                <tr class="bg-slate-50 text-[10px] text-slate-400">
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium">
                     <td class="px-4 py-1">Tranche</td>
                     <td class="px-4 py-1 text-right">Montant</td>
                     <td class="px-4 py-1 text-right">Taux</td>
                     <td class="px-4 py-1 text-right">Impôt</td>
                 </tr>
                 ${frBracketsHtml}
-                <tr class="text-slate-500 text-[10px] border-t border-slate-100">
-                    <td class="px-4 py-1 font-medium">Total (${frData.parts} part${frData.parts > 1 ? 's' : ''})</td>
+                <tr class="text-slate-900 text-[10px] border-t border-slate-200 font-semibold">
+                    <td class="px-4 py-1">Total (${frData.parts} part${frData.parts > 1 ? 's' : ''})</td>
                     <td class="px-4 py-1 text-right" colspan="2"></td>
-                    <td class="px-4 py-1 text-right font-medium">${formatMoney(frData.tax, 'EUR')}</td>
+                    <td class="px-4 py-1 text-right">${formatMoney(frData.tax, 'EUR')}</td>
                 </tr>
             `;
 

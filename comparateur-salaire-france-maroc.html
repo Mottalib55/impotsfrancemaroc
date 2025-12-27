@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparateur Salaire France vs Maroc - Simulateur Fiscal | NetSalaire</title>
+    <meta name="description" content="Comparez votre salaire net entre la France et le Maroc. Simulateur fiscal complet avec IR, cotisations sociales, quotient familial. Calculez la difference de pression fiscale.">
+    <meta name="keywords" content="comparateur salaire france maroc, simulateur fiscal, impot france maroc, salaire net, IR, cotisations sociales, expatriation">
+    <link rel="canonical" href="https://netsalaire.com/comparateur-salaire-france-maroc.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Comparateur Salaire France vs Maroc - NetSalaire">
+    <meta property="og:description" content="Comparez votre salaire net entre la France et le Maroc. Simulateur fiscal complet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/comparateur-salaire-france-maroc.html">
+    <meta property="og:image" content="https://netsalaire.com/assets/images/og-comparateur.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comparateur Salaire France vs Maroc">
+    <meta name="twitter:description" content="Comparez votre salaire net entre la France et le Maroc.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0f172a;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0f172a;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .transition-all-300 { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Comparateur Salaire France vs Maroc",
+        "description": "Simulateur fiscal pour comparer le salaire net entre la France et le Maroc",
+        "url": "https://netsalaire.com/comparateur-salaire-france-maroc.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "NetSalaire",
+            "url": "https://netsalaire.com"
+        }
+    }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.svg" alt="NetSalaire" height="32">
+            </a>
+
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/comparateur-salaire-france-maroc.html" class="nav-link" style="background: var(--bg); color: var(--primary);">
+                        <span class="iconify" data-icon="lucide:scale" width="18"></span>
+                        Comparateur
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="iconify" data-icon="lucide:flag" width="18"></span>
+                        France
+                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                    </a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="iconify" data-icon="lucide:flag" width="18"></span>
+                        Maroc
+                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                    </a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/faq.html" class="nav-link">
+                        <span class="iconify" data-icon="lucide:help-circle" width="18"></span>
+                        FAQ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-6xl mx-auto space-y-6 py-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- Page Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Comparateur Fiscal France vs Maroc</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">Comparez votre salaire net et votre pression fiscale entre les deux pays. Simulateur mis a jour avec les baremes 2025.</p>
+        </header>
+
+        <!-- Input Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-slate-200 to-indigo-500"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Salary Inputs -->
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-xs font-semibold uppercase tracking-tight text-slate-500">Salaire Brut</label>
+                        <div class="flex bg-slate-100 rounded-lg p-0.5">
+                            <button id="period-monthly" class="px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300">Mensuel</button>
+                            <button id="period-annual" class="px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Annuel</button>
+                        </div>
+                    </div>
+
+                    <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Divider "OU" -->
+                        <div class="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-white rounded-full border border-slate-200 shadow-sm">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">ou</span>
+                        </div>
+                        <div class="sm:hidden w-full text-center -my-2 order-2">
+                            <span class="text-[10px] font-bold text-slate-300 uppercase bg-white px-2 relative z-10">ou</span>
+                        </div>
+
+                        <!-- France Input -->
+                        <div class="relative group order-1 sm:order-2">
+                            <label class="block text-xs font-medium text-slate-500 mb-1.5">France (EUR)</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">€</span>
+                                <input type="text" inputmode="numeric" id="input-eur" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all-300" placeholder="0">
+                            </div>
+                            <div class="flex items-center justify-end gap-2 mt-2">
+                                <span class="text-[10px] text-slate-400 font-medium">Statut Cadre</span>
+                                <button id="toggle-cadre" class="relative inline-flex h-4 w-7 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
+                                    <span class="translate-x-0.5 inline-block h-2.5 w-2.5 transform rounded-full bg-white transition-transform shadow-sm"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Morocco Input -->
+                        <div class="relative group order-3 sm:order-1">
+                            <label class="block text-xs font-medium text-slate-500 mb-1.5">Maroc (MAD)</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">Dh</span>
+                                <input type="text" inputmode="numeric" id="input-mad" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-[10px] text-slate-400 font-medium">Taux DH/EUR du jour :</span>
+                        <input type="number" id="exchange-rate" value="10.8" class="w-16 py-0.5 px-1 text-[10px] font-mono text-slate-500 bg-slate-50 border border-slate-200 rounded text-center focus:outline-none focus:border-slate-400">
+                        <span id="rate-status" class="text-[10px] text-emerald-500"></span>
+                    </div>
+                </div>
+
+                <!-- Family Situation -->
+                <div class="space-y-5 lg:border-l lg:border-slate-100 lg:pl-8">
+                    <label class="block text-xs font-semibold uppercase tracking-tight text-slate-500 mb-2">Situation Familiale</label>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block">Statut Marital</span>
+                            <div class="flex w-full bg-slate-50 border border-slate-200 rounded-lg p-1">
+                                <button id="status-single" class="flex-1 py-1.5 text-[11px] font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300">Celibataire</button>
+                                <button id="status-married" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Marie(e)</button>
+                                <button id="status-divorced" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Divorce(e)</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block">Enfants a charge</span>
+                            <div class="flex items-center w-full bg-white border border-slate-200 rounded-lg h-[38px]">
+                                <button id="child-minus" class="w-10 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-l-lg transition-colors border-r border-slate-100">
+                                    <span class="iconify" data-icon="lucide:minus" width="14"></span>
+                                </button>
+                                <div id="children-display" class="flex-1 text-center text-sm font-semibold text-slate-900 select-none">0</div>
+                                <button id="child-plus" class="w-10 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-r-lg transition-colors border-l border-slate-100">
+                                    <span class="iconify" data-icon="lucide:plus" width="14"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Results -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- MAROC COLUMN -->
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col order-2 md:order-1">
+                <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🇲🇦</span>
+                        <h2 class="text-base font-semibold text-slate-900">Maroc</h2>
+                    </div>
+                    <span class="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">IR Progressif</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col gap-6">
+                    <!-- KPIs -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
+                            <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Net "En Poche"</p>
+                            <p class="text-2xl font-semibold text-slate-900 tracking-tight" id="ma-net">0 <span class="text-sm font-normal text-slate-400">MAD</span></p>
+                            <p class="text-[10px] text-slate-400 mt-1" id="ma-net-eur">≈ 0 €</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
+                            <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Taux d'Imposition</p>
+                            <p class="text-2xl font-semibold text-emerald-600 tracking-tight" id="ma-rate">0%</p>
+                            <p class="text-[10px] text-slate-400 mt-1">Pression Totale</p>
+                        </div>
+                    </div>
+
+                    <!-- Stacked Bar Chart -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] font-medium text-slate-500 uppercase tracking-wide">
+                            <span>Distribution</span>
+                            <span>100% du Brut</span>
+                        </div>
+                        <div class="h-6 w-full bg-slate-100 rounded-md overflow-hidden flex shadow-inner relative group">
+                            <div id="bar-ma-net" class="h-full bg-emerald-500 transition-all-300 relative group/segment" style="width: 60%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Salaire Net</div>
+                            </div>
+                            <div id="bar-ma-tax" class="h-full bg-emerald-300 transition-all-300 relative group/segment" style="width: 20%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Impot (IR)</div>
+                            </div>
+                            <div id="bar-ma-soc" class="h-full bg-emerald-100 transition-all-300 relative group/segment" style="width: 20%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Cotisations</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-emerald-500"></div>Net</div>
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-emerald-300"></div>Impot</div>
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-emerald-100"></div>Social</div>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown Table -->
+                    <div class="mt-2 border rounded-lg border-slate-200 overflow-hidden">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3">Poste</th>
+                                    <th class="px-4 py-3 text-right" colspan="2">Montant</th>
+                                    <th class="px-4 py-3 text-right text-slate-400">%</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100" id="ma-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FRANCE COLUMN -->
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col order-1 md:order-2">
+                <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🇫🇷</span>
+                        <h2 class="text-base font-semibold text-slate-900">France</h2>
+                    </div>
+                    <span class="text-[10px] font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">Quotient Familial</span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col gap-6">
+                    <!-- KPIs -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
+                            <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Net "En Poche"</p>
+                            <p class="text-2xl font-semibold text-slate-900 tracking-tight" id="fr-net">0 <span class="text-sm font-normal text-slate-400">€</span></p>
+                            <p class="text-[10px] text-slate-400 mt-1" id="fr-net-mad">≈ 0 MAD</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
+                            <p class="text-[11px] font-medium uppercase text-slate-500 mb-1">Taux d'Imposition</p>
+                            <p class="text-2xl font-semibold text-indigo-600 tracking-tight" id="fr-rate">0%</p>
+                            <p class="text-[10px] text-slate-400 mt-1">Pression Totale</p>
+                        </div>
+                    </div>
+
+                    <!-- Stacked Bar Chart -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] font-medium text-slate-500 uppercase tracking-wide">
+                            <span>Distribution</span>
+                            <span>100% du Brut</span>
+                        </div>
+                        <div class="h-6 w-full bg-slate-100 rounded-md overflow-hidden flex shadow-inner relative">
+                            <div id="bar-fr-net" class="h-full bg-indigo-500 transition-all-300 relative group/segment" style="width: 60%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Salaire Net</div>
+                            </div>
+                            <div id="bar-fr-tax" class="h-full bg-indigo-300 transition-all-300 relative group/segment" style="width: 20%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Impot (IR)</div>
+                            </div>
+                            <div id="bar-fr-soc" class="h-full bg-indigo-100 transition-all-300 relative group/segment" style="width: 20%">
+                                <div class="opacity-0 group-hover/segment:opacity-100 absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded whitespace-nowrap z-10 pointer-events-none shadow-lg">Cotisations</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-indigo-500"></div>Net</div>
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-indigo-300"></div>Impot</div>
+                            <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-indigo-100"></div>Social</div>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown Table -->
+                    <div class="mt-2 border rounded-lg border-slate-200 overflow-hidden">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-50 text-[10px] uppercase text-slate-500 font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3">Poste</th>
+                                    <th class="px-4 py-3 text-right" colspan="2">Montant</th>
+                                    <th class="px-4 py-3 text-right text-slate-400">%</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100" id="fr-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Verdict Banner -->
+        <div class="bg-slate-900 text-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="iconify w-8 h-8 text-yellow-400" data-icon="lucide:trophy"></span>
+                <div>
+                    <h3 class="font-semibold text-lg tracking-tight" id="verdict-title">Analyse Prete</h3>
+                    <p class="text-sm text-slate-400" id="verdict-text">Saisissez votre salaire pour comparer.</p>
+                </div>
+            </div>
+            <div class="text-right flex flex-col items-end">
+                <p class="text-xs uppercase tracking-widest text-slate-500 font-medium mb-1">Difference Annuelle</p>
+                <div class="flex flex-col items-end">
+                    <p class="text-2xl font-bold font-mono tracking-tight text-white leading-none mb-1" id="verdict-diff">--</p>
+                    <p class="text-sm font-medium text-slate-400 font-mono tracking-tight" id="verdict-diff-eur"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reassurance -->
+        <section class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                    <div class="text-2xl mb-2">🔒</div>
+                    <h4 class="text-sm font-semibold text-slate-900">100% Securise</h4>
+                    <p class="text-xs text-slate-500">Aucune donnee stockee</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">📊</div>
+                    <h4 class="text-sm font-semibold text-slate-900">Baremes 2025</h4>
+                    <p class="text-xs text-slate-500">Loi de finances actuelle</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">⚡</div>
+                    <h4 class="text-sm font-semibold text-slate-900">Calcul Instantane</h4>
+                    <p class="text-xs text-slate-500">Resultats en temps reel</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">🌍</div>
+                    <h4 class="text-sm font-semibold text-slate-900">Taux Live</h4>
+                    <p class="text-xs text-slate-500">Taux de change du jour</p>
+                </div>
+            </div>
+        </section>
+
+        <p class="text-center text-[10px] text-slate-400 mt-8 pb-4 max-w-2xl mx-auto leading-relaxed">
+            Avertissement Legal : Cet outil est fourni a titre indicatif uniquement. Les lois fiscales en France et au Maroc sont complexes et sujettes a modifications (Loi de Finances 2025). Les cotisations sociales sont des estimations moyennes. Les calculs excluent les niches fiscales complexes.
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>NetSalaire</h4>
+                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                </div>
+                <div>
+                    <h4>France</h4>
+                    <ul>
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Maroc</h4>
+                    <ul>
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONSTANTS & CONFIG ---
+        const TAX_CONFIG = {
+            fr: {
+                brackets: [
+                    { limit: 11294, rate: 0 },
+                    { limit: 28797, rate: 0.11 },
+                    { limit: 82341, rate: 0.30 },
+                    { limit: 177106, rate: 0.41 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                cotis_rate_noncadre: 0.22,
+                cotis_rate_cadre: 0.25,
+                abattement: 0.10
+            },
+            ma: {
+                brackets: [
+                    { limit: 40000, rate: 0, deduct: 0 },
+                    { limit: 60000, rate: 0.10, deduct: 4000 },
+                    { limit: 80000, rate: 0.20, deduct: 10000 },
+                    { limit: 100000, rate: 0.30, deduct: 18000 },
+                    { limit: 180000, rate: 0.34, deduct: 22000 },
+                    { limit: Infinity, rate: 0.37, deduct: 27400 }
+                ],
+                cnss_rate: 0.0448,
+                cnss_ceiling_monthly: 6000,
+                amo_rate: 0.0226,
+                family_deduction: 500,
+                family_deduction_cap: 3000
+            }
+        };
+
+        // --- STATE ---
+        const state = {
+            salaryInput: 0,
+            salaryCurrency: 'EUR',
+            exchangeRate: 10.8,
+            period: 'monthly',
+            status: 'single',
+            children: 0,
+            isCadre: false
+        };
+
+        // --- DOM ELEMENTS ---
+        const els = {
+            inputMad: document.getElementById('input-mad'),
+            inputEur: document.getElementById('input-eur'),
+            inputRate: document.getElementById('exchange-rate'),
+            btnMonthly: document.getElementById('period-monthly'),
+            btnAnnual: document.getElementById('period-annual'),
+
+            btnSingle: document.getElementById('status-single'),
+            btnMarried: document.getElementById('status-married'),
+            btnDivorced: document.getElementById('status-divorced'),
+
+            btnChildMinus: document.getElementById('child-minus'),
+            btnChildPlus: document.getElementById('child-plus'),
+            displayChildren: document.getElementById('children-display'),
+
+            toggleCadre: document.getElementById('toggle-cadre'),
+
+            maNet: document.getElementById('ma-net'),
+            maNetEur: document.getElementById('ma-net-eur'),
+            maRate: document.getElementById('ma-rate'),
+            maTable: document.getElementById('ma-table-body'),
+            barMaNet: document.getElementById('bar-ma-net'),
+            barMaTax: document.getElementById('bar-ma-tax'),
+            barMaSoc: document.getElementById('bar-ma-soc'),
+
+            frNet: document.getElementById('fr-net'),
+            frNetMad: document.getElementById('fr-net-mad'),
+            frRate: document.getElementById('fr-rate'),
+            frTable: document.getElementById('fr-table-body'),
+            barFrNet: document.getElementById('bar-fr-net'),
+            barFrTax: document.getElementById('bar-fr-tax'),
+            barFrSoc: document.getElementById('bar-fr-soc'),
+
+            verdictTitle: document.getElementById('verdict-title'),
+            verdictText: document.getElementById('verdict-text'),
+            verdictDiff: document.getElementById('verdict-diff'),
+            verdictDiffEur: document.getElementById('verdict-diff-eur'),
+        };
+
+        // --- FORMATTERS ---
+        const formatNumber = (num) => {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
+        const formatMoney = (amount, currency) => {
+            const formatted = formatNumber(amount);
+            if (currency === 'MAD') return formatted + ' MAD';
+            if (currency === 'EUR') return formatted + ' €';
+            return formatted + ' ' + currency;
+        };
+        const formatPct = (val) => (val * 100).toFixed(1) + '%';
+
+        const formatInputValue = (value) => {
+            const num = value.toString().replace(/\s/g, '').replace(/[^\d]/g, '');
+            if (!num) return '';
+            return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
+        const parseInputValue = (value) => {
+            return parseFloat(value.replace(/\s/g, '')) || 0;
+        };
+
+        function toggleTranches(country) {
+            const rows = document.querySelectorAll(`.${country}-tranches-row`);
+            const arrow = document.getElementById(`${country}-tranches-arrow`);
+            const isHidden = rows[0]?.classList.contains('hidden');
+
+            rows.forEach(row => {
+                if (isHidden) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            if (arrow) {
+                arrow.textContent = isHidden ? '▼' : '▶';
+            }
+        }
+
+        // --- LOGIC ---
+
+        function calculateFrance() {
+            let annualGrossEur = state.salaryInput;
+            if (state.salaryCurrency === 'MAD') annualGrossEur /= state.exchangeRate;
+            if (state.period === 'monthly') annualGrossEur *= 12;
+
+            if (annualGrossEur === 0) return null;
+
+            const cotisRate = state.isCadre ? TAX_CONFIG.fr.cotis_rate_cadre : TAX_CONFIG.fr.cotis_rate_noncadre;
+            const socialContrib = annualGrossEur * cotisRate;
+
+            const netImposable = (annualGrossEur - socialContrib) * 0.90;
+
+            let parts = state.status === 'married' ? 2 : 1;
+
+            if (state.children > 0) {
+                if (state.children === 1) parts += 0.5;
+                else if (state.children === 2) parts += 1.0;
+                else parts += 1.0 + (state.children - 2);
+            }
+
+            const incomePerPart = netImposable / parts;
+            let taxPerPart = 0;
+            let previousLimit = 0;
+            const bracketsDetail = [];
+
+            for (let i = 0; i < TAX_CONFIG.fr.brackets.length; i++) {
+                const bracket = TAX_CONFIG.fr.brackets[i];
+                const prevLimit = i === 0 ? 0 : TAX_CONFIG.fr.brackets[i-1].limit;
+
+                if (incomePerPart > prevLimit) {
+                    const taxableInBracket = Math.min(incomePerPart, bracket.limit) - prevLimit;
+                    const taxInBracket = taxableInBracket * bracket.rate;
+                    taxPerPart += taxInBracket;
+
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: taxableInBracket,
+                        rate: bracket.rate,
+                        tax: taxInBracket
+                    });
+                } else {
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: 0,
+                        rate: bracket.rate,
+                        tax: 0
+                    });
+                }
+                previousLimit = bracket.limit;
+            }
+
+            const totalTax = taxPerPart * parts;
+            const netInPocket = annualGrossEur - socialContrib - totalTax;
+
+            return {
+                gross: annualGrossEur,
+                social: socialContrib,
+                tax: totalTax,
+                taxPerPart: taxPerPart,
+                parts: parts,
+                netImposable: netImposable,
+                incomePerPart: incomePerPart,
+                bracketsDetail: bracketsDetail,
+                net: netInPocket,
+                rate: (socialContrib + totalTax) / annualGrossEur
+            };
+        }
+
+        function calculateMorocco() {
+            let annualGrossMad = state.salaryInput;
+            if (state.salaryCurrency === 'EUR') annualGrossMad *= state.exchangeRate;
+            if (state.period === 'monthly') annualGrossMad *= 12;
+
+            if (annualGrossMad === 0) return null;
+
+            const cnssBase = Math.min(annualGrossMad, 72000);
+            const cnss = cnssBase * TAX_CONFIG.ma.cnss_rate;
+            const amo = annualGrossMad * TAX_CONFIG.ma.amo_rate;
+            const socialContrib = cnss + amo;
+
+            const grossLessSocial = annualGrossMad - socialContrib;
+            const proDeduction = Math.min(grossLessSocial * 0.20, 30000);
+            const netImposable = grossLessSocial - proDeduction;
+
+            let tax = 0;
+            let taxPerPart = 0;
+            let previousLimit = 0;
+            const bracketsDetail = [];
+
+            for (let i = 0; i < TAX_CONFIG.ma.brackets.length; i++) {
+                const bracket = TAX_CONFIG.ma.brackets[i];
+                const prevLimit = i === 0 ? 0 : TAX_CONFIG.ma.brackets[i-1].limit;
+
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    const taxInBracket = taxableInBracket * bracket.rate;
+                    taxPerPart += taxInBracket;
+
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: taxableInBracket,
+                        rate: bracket.rate,
+                        tax: taxInBracket
+                    });
+                } else {
+                    bracketsDetail.push({
+                        from: prevLimit,
+                        to: bracket.limit,
+                        amount: 0,
+                        rate: bracket.rate,
+                        tax: 0
+                    });
+                }
+                previousLimit = bracket.limit;
+            }
+
+            tax = taxPerPart;
+            if(tax < 0) tax = 0;
+
+            const spouseCount = state.status === 'married' ? 1 : 0;
+            const dependants = spouseCount + state.children;
+            const familyReduc = Math.min(dependants * TAX_CONFIG.ma.family_deduction, TAX_CONFIG.ma.family_deduction_cap);
+            const taxBeforeReduc = tax;
+            tax = Math.max(0, tax - familyReduc);
+
+            const netInPocket = annualGrossMad - socialContrib - tax;
+
+            return {
+                gross: annualGrossMad,
+                social: socialContrib,
+                tax: tax,
+                taxBeforeReduc: taxBeforeReduc,
+                familyReduc: familyReduc,
+                dependants: dependants,
+                net: netInPocket,
+                rate: (socialContrib + tax) / annualGrossMad,
+                netImposable: netImposable,
+                bracketsDetail: bracketsDetail
+            };
+        }
+
+        // --- UI UPDATER ---
+
+        function render() {
+            const frData = calculateFrance();
+            const maData = calculateMorocco();
+
+            if (!frData || !maData) {
+                els.verdictDiff.textContent = "--";
+                els.verdictDiffEur.textContent = "";
+                return;
+            }
+
+            const maMultiplier = state.period === 'monthly' ? 1/12 : 1;
+
+            els.maNet.innerHTML = `${formatNumber(maData.net * maMultiplier)} <span class="text-sm font-normal text-slate-400">MAD</span>`;
+            els.maNetEur.textContent = `≈ ${formatMoney((maData.net * maMultiplier) / state.exchangeRate, 'EUR')}`;
+            els.maRate.textContent = formatPct(maData.rate);
+
+            const maTotal = maData.gross;
+            els.barMaNet.style.width = (maData.net / maTotal * 100) + '%';
+            els.barMaTax.style.width = (maData.tax / maTotal * 100) + '%';
+            els.barMaSoc.style.width = (maData.social / maTotal * 100) + '%';
+
+            const familyReducRow = maData.familyReduc > 0
+                ? `<tr class="text-emerald-600"><td class="px-4 py-2 pl-6 text-xs">Abattement familial (${maData.dependants} pers.)</td><td class="px-4 py-2 text-right text-xs" colspan="2">+${formatMoney(maData.familyReduc * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>`
+                : '';
+
+            let maBracketsHtml = '';
+            maData.bracketsDetail.forEach((b, i) => {
+                if (b.amount > 0) {
+                    const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'MAD');
+                    maBracketsHtml += `<tr class="text-slate-900 text-[10px]">
+                        <td class="px-4 py-1">${formatMoney(b.from, 'MAD')} → ${toLabel}</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'MAD')}</td>
+                        <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.tax, 'MAD')}</td>
+                    </tr>`;
+                }
+            });
+
+            els.maTable.innerHTML = `
+                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.gross * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Social (CNSS/AMO)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(maData.social * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.social/maData.gross)}</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(maData.netImposable * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impot (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(maData.tax * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.tax/maData.gross)}</td></tr>
+                ${familyReducRow}
+                <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
+                <tr class="bg-emerald-50 cursor-pointer hover:bg-emerald-100 transition-colors border-t border-emerald-200" onclick="toggleTranches('ma')">
+                    <td colspan="4" class="px-4 py-2.5">
+                        <span class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                            <span class="flex items-center gap-2 text-[11px] font-semibold text-emerald-700">
+                                <span id="ma-tranches-arrow" class="text-emerald-500 transition-transform">▶</span>
+                                Tranches IR appliquees
+                            </span>
+                            <span class="text-[10px] text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full w-fit">Cliquez pour voir</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium ma-tranches-row hidden">
+                    <td class="px-4 py-1">Tranche</td>
+                    <td class="px-4 py-1 text-right">Montant</td>
+                    <td class="px-4 py-1 text-right">Taux</td>
+                    <td class="px-4 py-1 text-right">Impot</td>
+                </tr>
+                ${maBracketsHtml.replace(/class="text-slate-900 text-\[10px\]"/g, 'class="text-slate-900 text-[10px] ma-tranches-row hidden"')}
+            `;
+
+            els.frNet.innerHTML = `${formatNumber(frData.net * maMultiplier)} <span class="text-sm font-normal text-slate-400">€</span>`;
+            els.frNetMad.textContent = `≈ ${formatMoney((frData.net * maMultiplier) * state.exchangeRate, 'MAD')}`;
+            els.frRate.textContent = formatPct(frData.rate);
+
+            const frTotal = frData.gross;
+            els.barFrNet.style.width = (frData.net / frTotal * 100) + '%';
+            els.barFrTax.style.width = (frData.tax / frTotal * 100) + '%';
+            els.barFrSoc.style.width = (frData.social / frTotal * 100) + '%';
+
+            const netAvantAbattement = (frData.gross - frData.social) * maMultiplier;
+            const abattement10 = netAvantAbattement * 0.10;
+
+            let frBracketsHtml = '';
+            frData.bracketsDetail.forEach((b, i) => {
+                if (b.amount > 0) {
+                    const toLabel = b.to === Infinity ? '+' : formatMoney(b.to, 'EUR');
+                    frBracketsHtml += `<tr class="text-slate-900 text-[10px]">
+                        <td class="px-4 py-1">${formatMoney(b.from, 'EUR')} → ${toLabel}</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.amount, 'EUR')}</td>
+                        <td class="px-4 py-1 text-right">${(b.rate * 100).toFixed(0)}%</td>
+                        <td class="px-4 py-1 text-right">${formatMoney(b.tax, 'EUR')}</td>
+                    </tr>`;
+                }
+            });
+
+            els.frTable.innerHTML = `
+                <tr><td class="px-4 py-2 font-medium">Salaire Brut</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.gross * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-slate-400">100%</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Charges Sociales (Est.)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.social * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.social/frData.gross)}</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Abattement 10%</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(abattement10, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">10%</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(frData.netImposable * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
+                <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impot (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
+                <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
+                <tr class="bg-indigo-50 cursor-pointer hover:bg-indigo-100 transition-colors border-t border-indigo-200" onclick="toggleTranches('fr')">
+                    <td colspan="4" class="px-4 py-2.5">
+                        <span class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                            <span class="flex items-center gap-2 text-[11px] font-semibold text-indigo-700">
+                                <span id="fr-tranches-arrow" class="text-indigo-500 transition-transform">▶</span>
+                                Tranches IR appliquees (${frData.parts} part${frData.parts > 1 ? 's' : ''})
+                            </span>
+                            <span class="text-[10px] text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded-full w-fit">Cliquez pour voir</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium fr-tranches-row hidden">
+                    <td class="px-4 py-1">Tranche</td>
+                    <td class="px-4 py-1 text-right">Montant</td>
+                    <td class="px-4 py-1 text-right">Taux</td>
+                    <td class="px-4 py-1 text-right">Impot</td>
+                </tr>
+                ${frBracketsHtml.replace(/class="text-slate-900 text-\[10px\]"/g, 'class="text-slate-900 text-[10px] fr-tranches-row hidden"')}
+                <tr class="text-slate-900 text-[10px] border-t border-slate-200 font-semibold fr-tranches-row hidden">
+                    <td class="px-4 py-1">Total (${frData.parts} part${frData.parts > 1 ? 's' : ''})</td>
+                    <td class="px-4 py-1 text-right" colspan="2"></td>
+                    <td class="px-4 py-1 text-right">${formatMoney(frData.tax, 'EUR')}</td>
+                </tr>
+            `;
+
+            const frNetInMad = frData.net * state.exchangeRate;
+            const maNetInMad = maData.net;
+            const diffAnnualMad = Math.abs(frNetInMad - maNetInMad);
+            const diffAnnualEur = diffAnnualMad / state.exchangeRate;
+
+            const winner = frNetInMad > maNetInMad ? 'France' : 'Maroc';
+
+            els.verdictDiff.textContent = formatMoney(diffAnnualEur, 'EUR');
+            els.verdictDiffEur.textContent = formatMoney(diffAnnualMad, 'MAD');
+
+            const diffPct = Math.abs(frData.rate - maData.rate) * 100;
+
+            if(winner === 'Maroc') {
+                els.verdictTitle.innerHTML = `<span class="text-2xl mr-2">🇲🇦</span> Le Maroc l'emporte !`;
+                els.verdictTitle.className = "font-semibold text-xl tracking-tight text-emerald-400 flex items-center";
+                els.verdictText.innerHTML = `
+                    <div class="flex items-center gap-4 mt-2">
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/20 rounded-lg">
+                            <span>🇲🇦</span>
+                            <span class="font-bold text-emerald-400">${formatPct(maData.rate)}</span>
+                        </div>
+                        <span class="text-slate-500">vs</span>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 rounded-lg">
+                            <span>🇫🇷</span>
+                            <span class="text-slate-300">${formatPct(frData.rate)}</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 mt-2">Vous economisez <span class="text-emerald-400 font-semibold">${diffPct.toFixed(1)} points</span> de pression fiscale</p>
+                `;
+            } else {
+                els.verdictTitle.innerHTML = `<span class="text-2xl mr-2">🇫🇷</span> La France l'emporte !`;
+                els.verdictTitle.className = "font-semibold text-xl tracking-tight text-indigo-400 flex items-center";
+                els.verdictText.innerHTML = `
+                    <div class="flex items-center gap-4 mt-2">
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/20 rounded-lg">
+                            <span>🇫🇷</span>
+                            <span class="font-bold text-indigo-400">${formatPct(frData.rate)}</span>
+                        </div>
+                        <span class="text-slate-500">vs</span>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 rounded-lg">
+                            <span>🇲🇦</span>
+                            <span class="text-slate-300">${formatPct(maData.rate)}</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 mt-2">Vous economisez <span class="text-indigo-400 font-semibold">${diffPct.toFixed(1)} points</span> de pression fiscale</p>
+                `;
+            }
+        }
+
+        // --- EVENT LISTENERS ---
+
+        els.inputMad.addEventListener('input', (e) => {
+            const cursorPos = e.target.selectionStart;
+            const oldLen = e.target.value.length;
+
+            if(!e.target.value.replace(/\s/g, '')) {
+                state.salaryInput = 0;
+                e.target.value = '';
+                els.inputEur.value = '';
+                render();
+                return;
+            }
+
+            const val = parseInputValue(e.target.value);
+            state.salaryInput = val;
+            state.salaryCurrency = 'MAD';
+
+            e.target.value = formatInputValue(e.target.value);
+            els.inputEur.value = formatInputValue(Math.round(val / state.exchangeRate));
+
+            const newLen = e.target.value.length;
+            const newPos = cursorPos + (newLen - oldLen);
+            e.target.setSelectionRange(newPos, newPos);
+
+            render();
+        });
+
+        els.inputEur.addEventListener('input', (e) => {
+            const cursorPos = e.target.selectionStart;
+            const oldLen = e.target.value.length;
+
+            if(!e.target.value.replace(/\s/g, '')) {
+                state.salaryInput = 0;
+                e.target.value = '';
+                els.inputMad.value = '';
+                render();
+                return;
+            }
+
+            const val = parseInputValue(e.target.value);
+            state.salaryInput = val;
+            state.salaryCurrency = 'EUR';
+
+            e.target.value = formatInputValue(e.target.value);
+            els.inputMad.value = formatInputValue(Math.round(val * state.exchangeRate));
+
+            const newLen = e.target.value.length;
+            const newPos = cursorPos + (newLen - oldLen);
+            e.target.setSelectionRange(newPos, newPos);
+
+            render();
+        });
+
+        els.inputRate.addEventListener('change', (e) => {
+            state.exchangeRate = parseFloat(e.target.value) || 10.8;
+            render();
+        });
+
+        const setPeriod = (p) => {
+            state.period = p;
+            if(p === 'monthly') {
+                els.btnMonthly.className = "px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300";
+                els.btnAnnual.className = "px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+            } else {
+                els.btnAnnual.className = "px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300";
+                els.btnMonthly.className = "px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+            }
+            render();
+        };
+        els.btnMonthly.addEventListener('click', () => setPeriod('monthly'));
+        els.btnAnnual.addEventListener('click', () => setPeriod('annual'));
+
+        const setStatus = (status) => {
+            state.status = status;
+
+            const activeClass = "flex-1 py-1.5 text-[11px] font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300";
+            const inactiveClass = "flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+
+            els.btnSingle.className = status === 'single' ? activeClass : inactiveClass;
+            els.btnMarried.className = status === 'married' ? activeClass : inactiveClass;
+            els.btnDivorced.className = status === 'divorced' ? activeClass : inactiveClass;
+
+            render();
+        };
+        els.btnSingle.addEventListener('click', () => setStatus('single'));
+        els.btnMarried.addEventListener('click', () => setStatus('married'));
+        els.btnDivorced.addEventListener('click', () => setStatus('divorced'));
+
+        const updateChildren = (val) => {
+            if (val < 0) val = 0;
+            if (val > 10) val = 10;
+            state.children = val;
+            els.displayChildren.textContent = state.children;
+            render();
+        };
+        els.btnChildMinus.addEventListener('click', () => updateChildren(state.children - 1));
+        els.btnChildPlus.addEventListener('click', () => updateChildren(state.children + 1));
+
+        els.toggleCadre.addEventListener('click', () => {
+            state.isCadre = !state.isCadre;
+            const dot = els.toggleCadre.querySelector('span');
+            if(state.isCadre) {
+                els.toggleCadre.classList.replace('bg-slate-200', 'bg-indigo-500');
+                dot.classList.add('translate-x-3');
+                dot.classList.remove('translate-x-0.5');
+            } else {
+                els.toggleCadre.classList.replace('bg-indigo-500', 'bg-slate-200');
+                dot.classList.remove('translate-x-3');
+                dot.classList.add('translate-x-0.5');
+            }
+            render();
+        });
+
+        async function fetchExchangeRate() {
+            const rateStatus = document.getElementById('rate-status');
+            try {
+                const response = await fetch('https://api.frankfurter.app/latest?from=EUR&to=MAD');
+                const data = await response.json();
+                if (data.rates && data.rates.MAD) {
+                    const rate = data.rates.MAD;
+                    els.inputRate.value = rate.toFixed(2);
+                    state.exchangeRate = rate;
+                    rateStatus.textContent = '✓';
+                    rateStatus.className = 'text-[10px] text-emerald-500';
+                    render();
+                }
+            } catch (error) {
+                rateStatus.textContent = '(defaut)';
+                rateStatus.className = 'text-[10px] text-slate-400';
+            }
+        }
+
+        // Init
+        fetchExchangeRate();
+        setPeriod('annual');
+        els.inputEur.value = '100 000';
+        els.inputEur.dispatchEvent(new Event('input'));
+
+    </script>
+
+</body>
+</html>

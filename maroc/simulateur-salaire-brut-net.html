@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur Salaire Brut Net Maroc 2025 | NetSalaire</title>
+    <meta name="description" content="Calculez votre salaire net a partir du brut au Maroc. Simulateur gratuit avec CNSS, AMO, IR. Baremes 2025.">
+    <meta name="keywords" content="simulateur brut net maroc, salaire net maroc, CNSS, AMO, IR maroc">
+    <link rel="canonical" href="https://netsalaire.com/maroc/simulateur-salaire-brut-net.html">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/images/logo.svg" alt="NetSalaire" height="32"></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><span class="iconify" data-icon="lucide:flag" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="background: var(--bg); color: #059669;"><span class="iconify" data-icon="lucide:flag" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section">
+        <div class="max-w-3xl mx-auto">
+
+            <header class="text-center mb-8">
+                <span class="country-badge country-badge-ma mb-4 inline-flex">🇲🇦 Maroc</span>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Brut → Net</h1>
+                <p class="text-slate-500">Calculez votre salaire net au Maroc. Baremes 2025.</p>
+            </header>
+
+            <div class="card">
+                <div class="space-y-6">
+                    <!-- Input -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Salaire Brut Mensuel</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">Dh</span>
+                            <input type="text" inputmode="numeric" id="brut-input" class="w-full pl-12 pr-4 py-3 text-lg font-semibold border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500" placeholder="15 000" value="15 000">
+                        </div>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Situation</label>
+                            <select id="situation" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
+                                <option value="celibataire">Celibataire</option>
+                                <option value="marie">Marie(e)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Enfants</label>
+                            <select id="enfants" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="bg-emerald-50 rounded-xl p-6 mt-6">
+                        <div class="text-center">
+                            <p class="text-sm text-emerald-600 font-medium mb-1">Salaire Net</p>
+                            <p class="text-4xl font-bold text-emerald-900" id="net-result">12 450 MAD</p>
+                            <p class="text-sm text-emerald-600 mt-2" id="net-annuel">soit 149 400 MAD / an</p>
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="border rounded-lg border-slate-200 overflow-hidden mt-6">
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y divide-slate-100">
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">Salaire Brut</td>
+                                    <td class="px-4 py-3 text-right" id="detail-brut">15 000 MAD</td>
+                                </tr>
+                                <tr class="text-slate-500">
+                                    <td class="px-4 py-3 pl-6 text-xs">CNSS (4.48%)</td>
+                                    <td class="px-4 py-3 text-right text-xs" id="detail-cnss">-269 MAD</td>
+                                </tr>
+                                <tr class="text-slate-500">
+                                    <td class="px-4 py-3 pl-6 text-xs">AMO (2.26%)</td>
+                                    <td class="px-4 py-3 text-right text-xs" id="detail-amo">-339 MAD</td>
+                                </tr>
+                                <tr class="text-slate-500">
+                                    <td class="px-4 py-3 pl-6 text-xs">Frais professionnels (20%)</td>
+                                    <td class="px-4 py-3 text-right text-xs text-emerald-600" id="detail-fp">-2 878 MAD</td>
+                                </tr>
+                                <tr class="text-slate-500">
+                                    <td class="px-4 py-3 pl-6 text-xs">IR (Impot sur le Revenu)</td>
+                                    <td class="px-4 py-3 text-right text-xs" id="detail-ir">-1 942 MAD</td>
+                                </tr>
+                                <tr class="text-slate-500" id="row-abattement" style="display: none;">
+                                    <td class="px-4 py-3 pl-6 text-xs text-emerald-600">Abattement familial</td>
+                                    <td class="px-4 py-3 text-right text-xs text-emerald-600" id="detail-abattement">+500 MAD</td>
+                                </tr>
+                                <tr class="bg-emerald-50 font-semibold">
+                                    <td class="px-4 py-3">Salaire Net</td>
+                                    <td class="px-4 py-3 text-right text-emerald-700" id="detail-net">12 450 MAD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <section class="mt-8">
+                <h2 class="section-title">Cotisations au Maroc</h2>
+                <div class="card">
+                    <div class="text-sm text-slate-600 space-y-4">
+                        <p><strong>CNSS</strong> (Caisse Nationale de Securite Sociale) : 4.48% du brut, plafonne a 6 000 MAD/mois.</p>
+                        <p><strong>AMO</strong> (Assurance Maladie Obligatoire) : 2.26% du brut, sans plafond.</p>
+                        <p><strong>Frais professionnels</strong> : Deduction forfaitaire de 20% du brut apres cotisations (plafonnee a 30 000 MAD/an).</p>
+                        <p><strong>Abattement familial</strong> : 500 MAD/an par personne a charge (conjoint + enfants), plafonne a 3 000 MAD/an.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div><h4>NetSalaire</h4><p>Simulateurs fiscaux gratuits.</p></div>
+                <div><h4>France</h4><ul><li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Maroc</h4><ul><li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Infos</h4><ul><li><a href="/faq.html">FAQ</a></li><li><a href="/mentions-legales.html">Mentions Legales</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 NetSalaire.com</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const IRBrackets = [
+            { limit: 40000, rate: 0, deduct: 0 },
+            { limit: 60000, rate: 0.10, deduct: 4000 },
+            { limit: 80000, rate: 0.20, deduct: 10000 },
+            { limit: 100000, rate: 0.30, deduct: 18000 },
+            { limit: 180000, rate: 0.34, deduct: 22000 },
+            { limit: Infinity, rate: 0.37, deduct: 27400 }
+        ];
+
+        const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const parseNumber = (str) => parseFloat(str.replace(/\s/g, '')) || 0;
+
+        const brutInput = document.getElementById('brut-input');
+        const situationSelect = document.getElementById('situation');
+        const enfantsSelect = document.getElementById('enfants');
+
+        function calculate() {
+            const brutMensuel = parseNumber(brutInput.value);
+            const brutAnnuel = brutMensuel * 12;
+            const situation = situationSelect.value;
+            const enfants = parseInt(enfantsSelect.value);
+
+            // CNSS (plafond 6000 MAD/mois)
+            const cnssBase = Math.min(brutMensuel, 6000);
+            const cnssMensuel = cnssBase * 0.0448;
+            const cnssAnnuel = cnssMensuel * 12;
+
+            // AMO (pas de plafond)
+            const amoMensuel = brutMensuel * 0.0226;
+            const amoAnnuel = amoMensuel * 12;
+
+            // Frais professionnels (20% du net social, max 30 000 MAD/an)
+            const netSocialAnnuel = brutAnnuel - cnssAnnuel - amoAnnuel;
+            const fpAnnuel = Math.min(netSocialAnnuel * 0.20, 30000);
+            const fpMensuel = fpAnnuel / 12;
+
+            // Net imposable
+            const netImposableAnnuel = netSocialAnnuel - fpAnnuel;
+
+            // IR calcul
+            let irAnnuel = 0;
+            for (const bracket of IRBrackets) {
+                if (netImposableAnnuel <= bracket.limit) {
+                    irAnnuel = netImposableAnnuel * bracket.rate - bracket.deduct;
+                    break;
+                }
+            }
+            if (irAnnuel < 0) irAnnuel = 0;
+
+            // Abattement familial
+            const dependants = (situation === 'marie' ? 1 : 0) + enfants;
+            const abattementAnnuel = Math.min(dependants * 500, 3000);
+            irAnnuel = Math.max(0, irAnnuel - abattementAnnuel);
+            const irMensuel = irAnnuel / 12;
+
+            // Net
+            const netMensuel = brutMensuel - cnssMensuel - amoMensuel - irMensuel;
+            const netAnnuel = netMensuel * 12;
+
+            // Update UI
+            document.getElementById('net-result').textContent = formatNumber(netMensuel) + ' MAD';
+            document.getElementById('net-annuel').textContent = `soit ${formatNumber(netAnnuel)} MAD / an`;
+
+            document.getElementById('detail-brut').textContent = formatNumber(brutMensuel) + ' MAD';
+            document.getElementById('detail-cnss').textContent = '-' + formatNumber(cnssMensuel) + ' MAD';
+            document.getElementById('detail-amo').textContent = '-' + formatNumber(amoMensuel) + ' MAD';
+            document.getElementById('detail-fp').textContent = '-' + formatNumber(fpMensuel) + ' MAD';
+            document.getElementById('detail-ir').textContent = '-' + formatNumber(irMensuel) + ' MAD';
+            document.getElementById('detail-net').textContent = formatNumber(netMensuel) + ' MAD';
+
+            // Abattement row
+            const rowAbattement = document.getElementById('row-abattement');
+            if (abattementAnnuel > 0) {
+                rowAbattement.style.display = '';
+                document.getElementById('detail-abattement').textContent = '+' + formatNumber(abattementAnnuel / 12) + ' MAD';
+            } else {
+                rowAbattement.style.display = 'none';
+            }
+        }
+
+        brutInput.addEventListener('input', (e) => {
+            const val = e.target.value.replace(/\s/g, '').replace(/[^\d]/g, '');
+            e.target.value = val ? val.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+            calculate();
+        });
+
+        situationSelect.addEventListener('change', calculate);
+        enfantsSelect.addEventListener('change', calculate);
+
+        calculate();
+    </script>
+
+</body>
+</html>

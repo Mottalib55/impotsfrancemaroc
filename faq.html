@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Questions Frequentes | NetSalaire</title>
+    <meta name="description" content="Questions frequentes sur les simulateurs fiscaux NetSalaire. Tout savoir sur le calcul du salaire net, l'impot sur le revenu en France et au Maroc.">
+    <link rel="canonical" href="https://netsalaire.com/faq.html">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/images/logo.svg" alt="NetSalaire" height="32"></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><span class="iconify" data-icon="lucide:flag" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><span class="iconify" data-icon="lucide:flag" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section">
+        <div class="max-w-3xl mx-auto">
+
+            <header class="text-center mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Questions Frequentes</h1>
+                <p class="text-slate-500">Tout savoir sur nos simulateurs fiscaux</p>
+            </header>
+
+            <!-- General -->
+            <section class="mb-8">
+                <h2 class="section-title">Questions Generales</h2>
+
+                <details>
+                    <summary>Les calculs sont-ils fiables ?</summary>
+                    <p>Nos simulateurs utilisent les baremes officiels 2025 publies par les administrations fiscales francaise et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise. Les cotisations sociales sont calculees avec des taux moyens qui peuvent varier selon votre situation specifique.</p>
+                </details>
+
+                <details>
+                    <summary>Mes donnees sont-elles stockees ?</summary>
+                    <p>Non. Tous les calculs sont effectues localement dans votre navigateur. Aucune donnee personnelle n'est envoyee a nos serveurs ni stockee. Vous pouvez utiliser nos outils en toute confidentialite.</p>
+                </details>
+
+                <details>
+                    <summary>Les simulateurs sont-ils gratuits ?</summary>
+                    <p>Oui, tous nos simulateurs sont 100% gratuits, sans publicite et sans inscription requise. Vous pouvez les utiliser autant de fois que vous le souhaitez.</p>
+                </details>
+
+                <details>
+                    <summary>A quelle frequence les baremes sont-ils mis a jour ?</summary>
+                    <p>Nous mettons a jour les baremes chaque annee apres la publication des lois de finances. Les baremes actuels correspondent a l'annee fiscale 2025.</p>
+                </details>
+            </section>
+
+            <!-- France -->
+            <section class="mb-8">
+                <h2 class="section-title">🇫🇷 France</h2>
+
+                <details>
+                    <summary>Comment est calcule le salaire net en France ?</summary>
+                    <p>Le salaire net est obtenu en deduisant du brut les cotisations sociales salariales (environ 22% pour les non-cadres, 25% pour les cadres). Ces cotisations financent la securite sociale, la retraite, le chomage et la retraite complementaire.</p>
+                </details>
+
+                <details>
+                    <summary>Qu'est-ce que le quotient familial ?</summary>
+                    <p>Le quotient familial est un mecanisme qui divise le revenu imposable par le nombre de parts du foyer fiscal. Un celibataire a 1 part, un couple marie 2 parts, et les enfants ajoutent des demi-parts supplementaires. Cela reduit la progressivite de l'impot pour les familles.</p>
+                </details>
+
+                <details>
+                    <summary>Quelle est la difference entre cadre et non-cadre ?</summary>
+                    <p>Les cadres ont des cotisations sociales plus elevees (environ 25% vs 22%) principalement dues a des cotisations de retraite complementaire superieures. En contrepartie, ils beneficient d'une meilleure couverture retraite.</p>
+                </details>
+
+                <details>
+                    <summary>Qu'est-ce que l'abattement de 10% ?</summary>
+                    <p>L'abattement de 10% pour frais professionnels est automatiquement applique au revenu imposable. Il represente les frais engages pour exercer votre activite (transport, repas, etc.). Vous pouvez opter pour les frais reels si ceux-ci sont superieurs.</p>
+                </details>
+            </section>
+
+            <!-- Maroc -->
+            <section class="mb-8">
+                <h2 class="section-title">🇲🇦 Maroc</h2>
+
+                <details>
+                    <summary>Quelles sont les tranches d'IR au Maroc ?</summary>
+                    <p>L'IR marocain comporte 6 tranches progressives : 0% jusqu'a 40 000 DH, 10% de 40 001 a 60 000 DH, 20% de 60 001 a 80 000 DH, 30% de 80 001 a 100 000 DH, 34% de 100 001 a 180 000 DH, et 37% au-dela.</p>
+                </details>
+
+                <details>
+                    <summary>Qu'est-ce que la CNSS et l'AMO ?</summary>
+                    <p>La CNSS (Caisse Nationale de Securite Sociale) couvre les prestations familiales, maladie et retraite. Le taux salarial est de 4.48%, plafonne a 6 000 DH/mois. L'AMO (Assurance Maladie Obligatoire) couvre les frais de sante au taux de 2.26% sans plafond.</p>
+                </details>
+
+                <details>
+                    <summary>Comment fonctionne l'abattement familial au Maroc ?</summary>
+                    <p>L'abattement familial reduit l'IR de 500 DH par an et par personne a charge (conjoint et enfants), dans la limite de 3 000 DH par an (soit 6 personnes maximum).</p>
+                </details>
+
+                <details>
+                    <summary>Que sont les frais professionnels de 20% ?</summary>
+                    <p>Une deduction forfaitaire de 20% du revenu brut (apres cotisations sociales) est appliquee pour frais professionnels. Cette deduction est plafonnee a 30 000 DH par an.</p>
+                </details>
+            </section>
+
+            <!-- Comparateur -->
+            <section class="mb-8">
+                <h2 class="section-title">Comparateur France vs Maroc</h2>
+
+                <details>
+                    <summary>Comment fonctionne le comparateur ?</summary>
+                    <p>Le comparateur calcule simultanement votre salaire net et votre pression fiscale totale (cotisations + impot) dans les deux pays, pour un meme salaire brut. Il utilise le taux de change en temps reel pour convertir les montants.</p>
+                </details>
+
+                <details>
+                    <summary>D'ou vient le taux de change ?</summary>
+                    <p>Le taux de change EUR/MAD est recupere automatiquement depuis l'API Frankfurter, qui utilise les donnees de la Banque Centrale Europeenne. Vous pouvez aussi saisir un taux personnalise.</p>
+                </details>
+
+                <details>
+                    <summary>Le comparateur prend-il en compte le cout de la vie ?</summary>
+                    <p>Non, le comparateur se concentre uniquement sur la fiscalite. Le cout de la vie, le pouvoir d'achat et autres facteurs economiques ne sont pas pris en compte. Ces elements doivent etre consideres separement dans votre reflexion.</p>
+                </details>
+            </section>
+
+            <!-- CTA -->
+            <div class="card card-featured text-center">
+                <h2 class="text-xl font-bold mb-2">Une question ?</h2>
+                <p class="text-slate-500 mb-4">Vous n'avez pas trouve la reponse a votre question ? Contactez-nous.</p>
+                <a href="mailto:contact@netsalaire.com" class="btn btn-primary">Nous contacter</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div><h4>NetSalaire</h4><p>Simulateurs fiscaux gratuits.</p></div>
+                <div><h4>France</h4><ul><li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Maroc</h4><ul><li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Infos</h4><ul><li><a href="/faq.html">FAQ</a></li><li><a href="/mentions-legales.html">Mentions Legales</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 NetSalaire.com</p></div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur Impot sur le Revenu France 2025 | NetSalaire</title>
+    <meta name="description" content="Simulez votre impot sur le revenu en France. Calcul avec quotient familial, tranches progressives, decote. Baremes IR 2025.">
+    <meta name="keywords" content="simulateur impot revenu, IR france, quotient familial, tranches impot, calcul impot">
+    <link rel="canonical" href="https://netsalaire.com/france/simulateur-impot-revenu.html">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.svg" alt="NetSalaire" height="32">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="lucide:flag" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><span class="iconify" data-icon="lucide:flag" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section">
+        <div class="max-w-3xl mx-auto">
+
+            <header class="text-center mb-8">
+                <span class="country-badge country-badge-fr mb-4 inline-flex">🇫🇷 France</span>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Impot sur le Revenu</h1>
+                <p class="text-slate-500">Calculez votre IR avec le quotient familial. Baremes 2025.</p>
+            </header>
+
+            <div class="card">
+                <div class="space-y-6">
+                    <!-- Revenu Net Imposable -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Net Imposable Annuel</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
+                            <input type="text" inputmode="numeric" id="revenu-input" class="w-full pl-10 pr-4 py-3 text-lg font-semibold border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" placeholder="50 000" value="50 000">
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Revenu apres abattement de 10% pour frais professionnels</p>
+                    </div>
+
+                    <!-- Situation familiale -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Situation</label>
+                            <select id="situation" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                                <option value="celibataire">Celibataire</option>
+                                <option value="marie">Marie(e) / Pacse(e)</option>
+                                <option value="divorce">Divorce(e)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Enfants a charge</label>
+                            <select id="enfants" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="bg-indigo-50 rounded-xl p-6 mt-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <p class="text-sm text-indigo-600 font-medium mb-1">Impot Annuel</p>
+                                <p class="text-3xl font-bold text-indigo-900" id="impot-result">5 483 €</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm text-indigo-600 font-medium mb-1">Taux Effectif</p>
+                                <p class="text-3xl font-bold text-indigo-900" id="taux-result">10.97%</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4 pt-4 border-t border-indigo-200">
+                            <p class="text-sm text-indigo-600">Quotient familial : <span id="parts-result" class="font-semibold">1 part</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Tranches -->
+                    <div class="mt-6">
+                        <h3 class="text-sm font-semibold text-slate-700 mb-3">Detail par tranche</h3>
+                        <div class="border rounded-lg border-slate-200 overflow-hidden">
+                            <table class="w-full text-sm">
+                                <thead class="bg-slate-50 text-xs uppercase text-slate-500">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Tranche</th>
+                                        <th class="px-4 py-2 text-right">Taux</th>
+                                        <th class="px-4 py-2 text-right">Montant</th>
+                                        <th class="px-4 py-2 text-right">Impot</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100" id="tranches-table">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tranches IR -->
+            <section class="mt-8">
+                <h2 class="section-title">Baremes IR 2025</h2>
+                <div class="card">
+                    <table class="w-full text-sm">
+                        <thead class="text-xs uppercase text-slate-500">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Tranche de revenu</th>
+                                <th class="px-4 py-2 text-right">Taux</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr><td class="px-4 py-2">Jusqu'a 11 294 €</td><td class="px-4 py-2 text-right font-semibold text-green-600">0%</td></tr>
+                            <tr><td class="px-4 py-2">11 294 € a 28 797 €</td><td class="px-4 py-2 text-right font-semibold">11%</td></tr>
+                            <tr><td class="px-4 py-2">28 797 € a 82 341 €</td><td class="px-4 py-2 text-right font-semibold">30%</td></tr>
+                            <tr><td class="px-4 py-2">82 341 € a 177 106 €</td><td class="px-4 py-2 text-right font-semibold">41%</td></tr>
+                            <tr><td class="px-4 py-2">Plus de 177 106 €</td><td class="px-4 py-2 text-right font-semibold text-red-600">45%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div><h4>NetSalaire</h4><p>Simulateurs fiscaux gratuits.</p></div>
+                <div><h4>France</h4><ul><li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Maroc</h4><ul><li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li><li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li></ul></div>
+                <div><h4>Infos</h4><ul><li><a href="/faq.html">FAQ</a></li><li><a href="/mentions-legales.html">Mentions Legales</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 NetSalaire.com</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const brackets = [
+            { limit: 11294, rate: 0 },
+            { limit: 28797, rate: 0.11 },
+            { limit: 82341, rate: 0.30 },
+            { limit: 177106, rate: 0.41 },
+            { limit: Infinity, rate: 0.45 }
+        ];
+
+        const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const parseNumber = (str) => parseFloat(str.replace(/\s/g, '')) || 0;
+
+        const revenuInput = document.getElementById('revenu-input');
+        const situationSelect = document.getElementById('situation');
+        const enfantsSelect = document.getElementById('enfants');
+
+        function calculate() {
+            const revenu = parseNumber(revenuInput.value);
+            const situation = situationSelect.value;
+            const enfants = parseInt(enfantsSelect.value);
+
+            let parts = situation === 'marie' ? 2 : 1;
+            if (enfants === 1) parts += 0.5;
+            else if (enfants === 2) parts += 1;
+            else if (enfants >= 3) parts += 1 + (enfants - 2);
+
+            const revenuParPart = revenu / parts;
+            let impotParPart = 0;
+            const details = [];
+
+            for (let i = 0; i < brackets.length; i++) {
+                const prevLimit = i === 0 ? 0 : brackets[i-1].limit;
+                const bracket = brackets[i];
+
+                if (revenuParPart > prevLimit) {
+                    const taxable = Math.min(revenuParPart, bracket.limit) - prevLimit;
+                    const tax = taxable * bracket.rate;
+                    impotParPart += tax;
+
+                    if (taxable > 0) {
+                        details.push({
+                            from: prevLimit,
+                            to: bracket.limit,
+                            rate: bracket.rate,
+                            amount: taxable,
+                            tax: tax
+                        });
+                    }
+                }
+            }
+
+            const impotTotal = impotParPart * parts;
+            const tauxEffectif = revenu > 0 ? (impotTotal / revenu * 100) : 0;
+
+            document.getElementById('impot-result').textContent = formatNumber(impotTotal) + ' €';
+            document.getElementById('taux-result').textContent = tauxEffectif.toFixed(2) + '%';
+            document.getElementById('parts-result').textContent = parts + ' part' + (parts > 1 ? 's' : '');
+
+            const tbody = document.getElementById('tranches-table');
+            tbody.innerHTML = details.map(d => `
+                <tr>
+                    <td class="px-4 py-2">${formatNumber(d.from)} € → ${d.to === Infinity ? '+' : formatNumber(d.to) + ' €'}</td>
+                    <td class="px-4 py-2 text-right">${(d.rate * 100).toFixed(0)}%</td>
+                    <td class="px-4 py-2 text-right">${formatNumber(d.amount)} €</td>
+                    <td class="px-4 py-2 text-right font-semibold">${formatNumber(d.tax)} €</td>
+                </tr>
+            `).join('') + `
+                <tr class="bg-indigo-50 font-semibold">
+                    <td class="px-4 py-2" colspan="2">Total (x ${parts} parts)</td>
+                    <td class="px-4 py-2 text-right"></td>
+                    <td class="px-4 py-2 text-right text-indigo-700">${formatNumber(impotTotal)} €</td>
+                </tr>
+            `;
+        }
+
+        revenuInput.addEventListener('input', (e) => {
+            const val = e.target.value.replace(/\s/g, '').replace(/[^\d]/g, '');
+            e.target.value = val ? val.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+            calculate();
+        });
+
+        situationSelect.addEventListener('change', calculate);
+        enfantsSelect.addEventListener('change', calculate);
+
+        calculate();
+    </script>
+
+</body>
+</html>

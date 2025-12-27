@@ -97,7 +97,7 @@
                         </div>
                     </div>
 
-                   div class="flex items-center gap-2 mt-2">
+                    <div class="flex items-center gap-2 mt-2">
                         <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wide">Taux de change :</span>
                         <input type="number" id="exchange-rate" value="10.8" class="w-16 py-0.5 px-1 text-[10px] font-mono text-slate-500 bg-slate-50 border border-slate-200 rounded text-center focus:outline-none focus:border-slate-400">
                         <span class="text-[10px] text-slate-400">MAD / EUR</span>
@@ -147,7 +147,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
                                     <span class="text-xs text-slate-600">France : Statut Cadre</span>
-                                    <buttn id="toggle-cadre" class="relative inline-flex h-5 w-9 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
+                                    <button id="toggle-cadre" class="relative inline-flex h-5 w-9 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
                                         <span class="translate-x-1 inline-block h-3 w-3 transform rounded-full bg-white transition-transform shadow-sm"></span>
                                     </button>
                                 </div>
@@ -542,7 +542,7 @@
 
             // Chart MA
             const maTotal = maData.gross;
-            els.barMaNet.style.width = (maData.net / maTotal * 100) + ';
+            els.barMaNet.style.width = (maData.net / maTotal * 100) + '%';
             els.barMaTax.style.width = (maData.tax / maTotal * 100) + '%';
             els.barMaSoc.style.width = (maData.social / maTotal * 100) + '%';
 
@@ -586,7 +586,7 @@
             if(winner === 'Maroc') {
                 els.verdictTitle.textContent = "Le Maroc offre un meilleur net";
                 els.verdictTitle.className = "font-semibold text-lg tracking-tight text-emerald-400";
-                els.verdictText.innerHTML = `Pour le même coût brut, vous gardez plus au Maroc.<br>Taux d'imposition effectif : <b>France ${formatPct(frData.rate)}</b> vs <b>Maroc ${formatPct(maDatrate)}</b>`;
+                els.verdictText.innerHTML = `Pour le même coût brut, vous gardez plus au Maroc.<br>Taux d'imposition effectif : <b>France ${formatPct(frData.rate)}</b> vs <b>Maroc ${formatPct(maData.rate)}</b>`;
             } else {
                 els.verdictTitle.textContent = "La France offre un meilleur net";
                 els.verdictTitle.className = "font-semibold text-lg tracking-tight text-indigo-400";

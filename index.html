@@ -76,21 +76,12 @@
                         <div class="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-white rounded-full border border-slate-200 shadow-sm">
                             <span class="text-[10px] font-bold text-slate-400 uppercase">ou</span>
                         </div>
-                        <div class="sm:hidden w-full text-center -my-2">
+                        <div class="sm:hidden w-full text-center -my-2 order-2">
                             <span class="text-[10px] font-bold text-slate-300 uppercase bg-white px-2 relative z-10">ou</span>
                         </div>
 
-                        <!-- Morocco Input -->
-                        <div class="relative group">
-                            <label class="block text-xs font-medium text-slate-500 mb-1.5">Maroc (MAD)</label>
-                            <div class="relative">
-                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">Dh</span>
-                                <input type="text" inputmode="numeric" id="input-mad" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
-                            </div>
-                        </div>
-
                         <!-- France Input -->
-                        <div class="relative group">
+                        <div class="relative group order-1 sm:order-2">
                             <label class="block text-xs font-medium text-slate-500 mb-1.5">France (EUR)</label>
                             <div class="relative">
                                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">€</span>
@@ -101,6 +92,15 @@
                                 <button id="toggle-cadre" class="relative inline-flex h-4 w-7 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
                                     <span class="translate-x-0.5 inline-block h-2.5 w-2.5 transform rounded-full bg-white transition-transform shadow-sm"></span>
                                 </button>
+                            </div>
+                        </div>
+
+                        <!-- Morocco Input -->
+                        <div class="relative group order-3 sm:order-1">
+                            <label class="block text-xs font-medium text-slate-500 mb-1.5">Maroc (MAD)</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">Dh</span>
+                                <input type="text" inputmode="numeric" id="input-mad" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <!-- MAROC COLUMN -->
-            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col order-2 md:order-1">
                 <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                     <div class="flex items-center gap-3">
                         <span class="text-2xl">🇲🇦</span>
@@ -217,7 +217,7 @@
             </article>
 
             <!-- FRANCE COLUMN -->
-            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col order-1 md:order-2">
                 <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                     <div class="flex items-center gap-3">
                         <span class="text-2xl">🇫🇷</span>

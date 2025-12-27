@@ -417,6 +417,25 @@
             return parseFloat(value.replace(/\s/g, '')) || 0;
         };
 
+        // Toggle tranches visibility
+        function toggleTranches(country) {
+            const rows = document.querySelectorAll(`.${country}-tranches-row`);
+            const arrow = document.getElementById(`${country}-tranches-arrow`);
+            const isHidden = rows[0]?.classList.contains('hidden');
+
+            rows.forEach(row => {
+                if (isHidden) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            if (arrow) {
+                arrow.textContent = isHidden ? '▼' : '▶';
+            }
+        }
+
         // --- LOGIC ---
 
         function calculateFrance() {
@@ -613,14 +632,21 @@
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(maData.tax * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(maData.tax/maData.gross)}</td></tr>
                 ${familyReducRow}
                 <tr class="bg-emerald-50/50 font-semibold text-emerald-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(maData.net * maMultiplier, 'MAD')}</td><td class="px-4 py-2 text-right text-emerald-600">${formatPct(maData.net/maData.gross)}</td></tr>
-                <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées</td></tr>
-                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium">
+                <tr class="bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleTranches('ma')">
+                    <td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">
+                        <span class="flex items-center gap-2">
+                            <span id="ma-tranches-arrow" class="transition-transform">▶</span>
+                            Tranches IR appliquées
+                        </span>
+                    </td>
+                </tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium ma-tranches-row hidden">
                     <td class="px-4 py-1">Tranche</td>
                     <td class="px-4 py-1 text-right">Montant</td>
                     <td class="px-4 py-1 text-right">Taux</td>
                     <td class="px-4 py-1 text-right">Impôt</td>
                 </tr>
-                ${maBracketsHtml}
+                ${maBracketsHtml.replace(/class="text-slate-900 text-\[10px\]"/g, 'class="text-slate-900 text-[10px] ma-tranches-row hidden"')}
             `;
 
             els.frNet.innerHTML = `${formatMoney(frData.net * maMultiplier, 'EUR')} <span class="text-sm font-normal text-slate-400">€</span>`;
@@ -657,15 +683,22 @@
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Net imposable</td><td class="px-4 py-2 text-right text-xs" colspan="2">${formatMoney(frData.netImposable * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">-</td></tr>
                 <tr class="text-slate-500"><td class="px-4 py-2 pl-6 text-xs">Impôt (IR)</td><td class="px-4 py-2 text-right text-xs" colspan="2">-${formatMoney(frData.tax * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-xs">${formatPct(frData.tax/frData.gross)}</td></tr>
                 <tr class="bg-indigo-50/50 font-semibold text-indigo-900"><td class="px-4 py-2">Salaire Net</td><td class="px-4 py-2 text-right" colspan="2">${formatMoney(frData.net * maMultiplier, 'EUR')}</td><td class="px-4 py-2 text-right text-indigo-600">${formatPct(frData.net/frData.gross)}</td></tr>
-                <tr class="bg-slate-50"><td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">Tranches IR appliquées (par part : ${frData.parts})</td></tr>
-                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium">
+                <tr class="bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleTranches('fr')">
+                    <td colspan="4" class="px-4 py-2 text-[10px] font-semibold text-slate-500 uppercase">
+                        <span class="flex items-center gap-2">
+                            <span id="fr-tranches-arrow" class="transition-transform">▶</span>
+                            Tranches IR appliquées (par part : ${frData.parts})
+                        </span>
+                    </td>
+                </tr>
+                <tr class="bg-slate-50 text-[10px] text-slate-500 font-medium fr-tranches-row hidden">
                     <td class="px-4 py-1">Tranche</td>
                     <td class="px-4 py-1 text-right">Montant</td>
                     <td class="px-4 py-1 text-right">Taux</td>
                     <td class="px-4 py-1 text-right">Impôt</td>
                 </tr>
-                ${frBracketsHtml}
-                <tr class="text-slate-900 text-[10px] border-t border-slate-200 font-semibold">
+                ${frBracketsHtml.replace(/class="text-slate-900 text-\[10px\]"/g, 'class="text-slate-900 text-[10px] fr-tranches-row hidden"')}
+                <tr class="text-slate-900 text-[10px] border-t border-slate-200 font-semibold fr-tranches-row hidden">
                     <td class="px-4 py-1">Total (${frData.parts} part${frData.parts > 1 ? 's' : ''})</td>
                     <td class="px-4 py-1 text-right" colspan="2"></td>
                     <td class="px-4 py-1 text-right">${formatMoney(frData.tax, 'EUR')}</td>

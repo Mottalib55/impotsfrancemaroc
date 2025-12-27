@@ -571,8 +571,8 @@
 
             const winner = frNetInMad > maNetInMad ? 'France' : 'Maroc';
 
-            els.verdictDiff.textContent = formatMoney(diffAnnualMad, 'MAD');
-            els.verdictDiffEur.textContent = formatMoney(diffAnnualEur, 'EUR');
+            els.verdictDiff.textContent = formatMoney(diffAnnualEur, 'EUR');
+            els.verdictDiffEur.textContent = formatMoney(diffAnnualMad, 'MAD');
 
             if(winner === 'Maroc') {
                 els.verdictTitle.textContent = "Le Maroc offre un meilleur net";

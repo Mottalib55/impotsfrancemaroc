@@ -149,9 +149,9 @@
             <!-- MAROC COLUMN -->
             <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
                 <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                    <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 rounded bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-[10px]">MA</div>
-                        <h2 class="text-sm font-semibold text-slate-900">Maroc</h2>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🇲🇦</span>
+                        <h2 class="text-base font-semibold text-slate-900">Maroc</h2>
                     </div>
                     <span class="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">IR Progressif</span>
                 </div>
@@ -219,9 +219,9 @@
             <!-- FRANCE COLUMN -->
             <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
                 <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                    <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 rounded bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-[10px]">FR</div>
-                        <h2 class="text-sm font-semibold text-slate-900">France</h2>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🇫🇷</span>
+                        <h2 class="text-base font-semibold text-slate-900">France</h2>
                     </div>
                     <span class="text-[10px] font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">Quotient Familial</span>
                 </div>
@@ -832,8 +832,8 @@
 
         // Init
         fetchExchangeRate();
-        els.inputMad.value = '40 000';
-        els.inputMad.dispatchEvent(new Event('input'));
+        els.inputEur.value = '100 000';
+        els.inputEur.dispatchEvent(new Event('input'));
 
     </script>
 

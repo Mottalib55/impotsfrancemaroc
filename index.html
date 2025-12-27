@@ -85,7 +85,7 @@
                             <label class="block text-xs font-medium text-slate-500 mb-1.5">Maroc (MAD)</label>
                             <div class="relative">
                                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">Dh</span>
-                                <input type="number" id="input-mad" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
+                                <input type="text" inputmode="numeric" id="input-mad" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
                             </div>
                         </div>
 
@@ -94,7 +94,7 @@
                             <label class="block text-xs font-medium text-slate-500 mb-1.5">France (EUR)</label>
                             <div class="relative">
                                 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm">€</span>
-                                <input type="number" id="input-eur" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all-300" placeholder="0">
+                                <input type="text" inputmode="numeric" id="input-eur" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all-300" placeholder="0">
                             </div>
                             <div class="flex items-center justify-end gap-2 mt-2">
                                 <span class="text-[10px] text-slate-400 font-medium">Statut Cadre</span>
@@ -396,10 +396,26 @@
         };
 
         // --- FORMATTERS ---
+        const formatNumber = (num) => {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
         const formatMoney = (amount, currency) => {
-            return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: currency, maximumFractionDigits: 0 }).format(amount);
+            const formatted = formatNumber(amount);
+            if (currency === 'MAD') return formatted + ' MAD';
+            if (currency === 'EUR') return formatted + ' €';
+            return formatted + ' ' + currency;
         };
         const formatPct = (val) => (val * 100).toFixed(1) + '%';
+
+        // Format input value with spaces
+        const formatInputValue = (value) => {
+            const num = value.toString().replace(/\s/g, '').replace(/[^\d]/g, '');
+            if (!num) return '';
+            return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
+        const parseInputValue = (value) => {
+            return parseFloat(value.replace(/\s/g, '')) || 0;
+        };
 
         // --- LOGIC ---
 
@@ -675,20 +691,56 @@
         // --- EVENT LISTENERS ---
 
         els.inputMad.addEventListener('input', (e) => {
-            if(!e.target.value) { state.salaryInput = 0; render(); return; }
-            const val = parseFloat(e.target.value);
+            const cursorPos = e.target.selectionStart;
+            const oldLen = e.target.value.length;
+
+            if(!e.target.value.replace(/\s/g, '')) {
+                state.salaryInput = 0;
+                e.target.value = '';
+                els.inputEur.value = '';
+                render();
+                return;
+            }
+
+            const val = parseInputValue(e.target.value);
             state.salaryInput = val;
             state.salaryCurrency = 'MAD';
-            els.inputEur.value = (val / state.exchangeRate).toFixed(0);
+
+            e.target.value = formatInputValue(e.target.value);
+            els.inputEur.value = formatInputValue(Math.round(val / state.exchangeRate));
+
+            // Restore cursor position
+            const newLen = e.target.value.length;
+            const newPos = cursorPos + (newLen - oldLen);
+            e.target.setSelectionRange(newPos, newPos);
+
             render();
         });
 
         els.inputEur.addEventListener('input', (e) => {
-            if(!e.target.value) { state.salaryInput = 0; render(); return; }
-            const val = parseFloat(e.target.value);
+            const cursorPos = e.target.selectionStart;
+            const oldLen = e.target.value.length;
+
+            if(!e.target.value.replace(/\s/g, '')) {
+                state.salaryInput = 0;
+                e.target.value = '';
+                els.inputMad.value = '';
+                render();
+                return;
+            }
+
+            const val = parseInputValue(e.target.value);
             state.salaryInput = val;
             state.salaryCurrency = 'EUR';
-            els.inputMad.value = (val * state.exchangeRate).toFixed(0);
+
+            e.target.value = formatInputValue(e.target.value);
+            els.inputMad.value = formatInputValue(Math.round(val * state.exchangeRate));
+
+            // Restore cursor position
+            const newLen = e.target.value.length;
+            const newPos = cursorPos + (newLen - oldLen);
+            e.target.setSelectionRange(newPos, newPos);
+
             render();
         });
 
@@ -775,7 +827,7 @@
 
         // Init
         fetchExchangeRate();
-        els.inputMad.value = 40000;
+        els.inputMad.value = '40 000';
         els.inputMad.dispatchEvent(new Event('input'));
 
     </script>

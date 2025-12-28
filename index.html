@@ -85,10 +85,10 @@
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="#france" class="hover:text-slate-900 transition-colors">France</a>
                 <a href="#maroc" class="hover:text-slate-900 transition-colors">Maroc</a>
-                <a href="#comparateur" class="hover:text-slate-900 transition-colors">Comparateur</a>
+                <a href="#comparateur" class="hover:text-slate-900 transition-colors">Impots France vs Maroc</a>
                 <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
-            <a href="mailto:contact@netsalaire.com" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
+            <a href="#contact" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
                 Contact
                 <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
             </a>
@@ -116,13 +116,17 @@
                 Simulateurs fiscaux gratuits pour la France et le Maroc. Calculez salaires, impots et comparez la pression fiscale entre les deux pays.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#france" class="w-full sm:w-auto px-8 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-indigo-50 hover:border-indigo-300 hover:text-indigo-700 transition-all flex items-center justify-center gap-2">
+                    <iconify-icon icon="circle-flags:fr" width="20"></iconify-icon>
+                    France
+                </a>
+                <a href="#maroc" class="w-full sm:w-auto px-8 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700 transition-all flex items-center justify-center gap-2">
+                    <iconify-icon icon="circle-flags:ma" width="20"></iconify-icon>
+                    Maroc
+                </a>
                 <a href="/comparateur-salaire-france-maroc.html" class="w-full sm:w-auto px-8 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 hover:shadow-lg transition-all flex items-center justify-center gap-2 group">
                     <iconify-icon icon="lucide:scale" width="16"></iconify-icon>
                     Comparer France vs Maroc
-                </a>
-                <a href="#france" class="w-full sm:w-auto px-8 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center gap-2">
-                    Voir les simulateurs
-                    <iconify-icon icon="lucide:arrow-down" width="16"></iconify-icon>
                 </a>
             </div>
         </div>
@@ -392,6 +396,49 @@
                     <p class="text-xs text-slate-500">Sans pub ni inscription</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 border-t border-slate-200 bg-white">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-semibold text-slate-900 tracking-tight mb-4">Une question ?</h2>
+                <p class="text-slate-500">Contactez-nous, nous vous repondrons rapidement.</p>
+            </div>
+
+            <form action="https://formspree.io/f/contact@netsalaire.com" method="POST" class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label for="name" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Nom</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="Votre nom">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="email" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="votre@email.com">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="subject" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Sujet</label>
+                    <select id="subject" name="subject" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all cursor-pointer">
+                        <option value="question">Question generale</option>
+                        <option value="bug">Signaler un probleme</option>
+                        <option value="suggestion">Suggestion d'amelioration</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="message" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-slate-900 text-white font-medium py-3 rounded-lg hover:bg-slate-800 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                    Envoyer le message
+                    <iconify-icon icon="lucide:send" width="16"></iconify-icon>
+                </button>
+            </form>
         </div>
     </section>
 

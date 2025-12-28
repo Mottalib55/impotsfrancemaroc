@@ -346,11 +346,16 @@
                         </summary>
                         <div class="pt-4">
                             <label class="block text-sm font-medium text-slate-700 mb-2">Revenus fonciers nets</label>
-                            <div class="relative">
+                            <div class="relative mb-3">
                                 <input type="text" id="foncier" inputmode="numeric"
                                     class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
                                     placeholder="0" value="0">
                                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                            </div>
+                            <input type="range" id="foncier-slider" min="0" max="50000" step="500" value="0" class="w-full">
+                            <div class="flex justify-between text-xs text-slate-400 mt-2">
+                                <span>0 EUR</span>
+                                <span>50 000 EUR</span>
                             </div>
                         </div>
                     </details>
@@ -1002,6 +1007,8 @@
             updateSliderProgress($('income2-slider'));
 
             $('foncier').value = formatNumber(state.foncier);
+            $('foncier-slider').value = state.foncier;
+            updateSliderProgress($('foncier-slider'));
 
             // PER
             $('per-toggle').checked = state.perEnabled;
@@ -1085,10 +1092,18 @@
         // Foncier
         $('foncier').addEventListener('input', (e) => {
             state.foncier = parseNumber(e.target.value);
+            $('foncier-slider').value = state.foncier;
+            updateSliderProgress($('foncier-slider'));
             calculate();
         });
         $('foncier').addEventListener('blur', () => {
             $('foncier').value = formatNumber(state.foncier);
+        });
+        $('foncier-slider').addEventListener('input', (e) => {
+            state.foncier = parseInt(e.target.value);
+            $('foncier').value = formatNumber(state.foncier);
+            updateSliderProgress(e.target);
+            calculate();
         });
 
         // PER toggle

@@ -31,10 +31,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://netsalaire.com/maroc/simulateur-salaire-brut-net.html</loc>
-    <lastmod>2025-12-27</lastmod>
+    <loc>https://netsalaire.com/maroc/guide/</loc>
+    <lastmod>2025-12-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://netsalaire.com/maroc/simulateur-ir.html</loc>

@@ -83,8 +83,12 @@
                 <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#france" class="hover:text-slate-900 transition-colors">France</a>
-                <a href="#maroc" class="hover:text-slate-900 transition-colors">Maroc</a>
+                <a href="#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
+                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                </a>
+                <a href="#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
+                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                </a>
                 <a href="#comparateur" class="hover:text-slate-900 transition-colors">Impots France vs Maroc</a>
                 <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
@@ -171,9 +175,9 @@
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Impot sur le Revenu</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Simulateur Impot sur le Revenu</h3>
                     <p class="text-sm text-slate-500 mb-4 line-clamp-2">
-                        Estimation de l'IR avec application du bareme progressif, du quotient familial et des decotes en vigueur.
+                        Estimation avec bareme progressif, quotient familial et decotes en vigueur.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -214,15 +218,15 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Card: Maroc Brut/Net -->
-                <a href="/maroc/simulateur-salaire-brut-net.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
+                <!-- Card: Maroc Simulateur IR -->
+                <a href="/maroc/simulateur-ir.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                             <iconify-icon icon="lucide:calculator" width="24" stroke-width="1.5"></iconify-icon>
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Salaire Brut a Net</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Simulateur Impot sur le Revenu</h3>
                     <p class="text-sm text-slate-500 mb-4 line-clamp-2">
                         Calcul complet avec CNSS, AMO, frais professionnels et abattement familial. Baremes 2025.
                     </p>
@@ -231,17 +235,17 @@
                     </div>
                 </a>
 
-                <!-- Card: Maroc IR -->
-                <a href="/maroc/simulateur-ir.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
+                <!-- Card: Maroc Guide Fiscal -->
+                <a href="/maroc/guide/" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                            <iconify-icon icon="lucide:landmark" width="24" stroke-width="1.5"></iconify-icon>
+                            <iconify-icon icon="lucide:book-open" width="24" stroke-width="1.5"></iconify-icon>
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Impot sur le Revenu</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Guide Fiscal Maroc 2025</h3>
                     <p class="text-sm text-slate-500 mb-4 line-clamp-2">
-                        Calcul de l'IR avec les 6 tranches progressives et l'abattement familial. Baremes 2025.
+                        Tout comprendre sur la fiscalite marocaine : CNSS, AMO, tranches IR, abattements.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-emerald-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -520,15 +524,15 @@
                     <h4 class="font-semibold text-slate-900 mb-3 text-sm">France</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
                         <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors">Simulateur IR</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
                         <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-slate-900 mb-3 text-sm">Maroc</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
+                        <li><a href="/maroc/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>

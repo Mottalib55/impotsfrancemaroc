@@ -83,6 +83,15 @@
         input[type="range"].accent-violet::-webkit-slider-thumb {
             border-color: #8b5cf6;
         }
+        input[type="range"].accent-amber {
+            background: linear-gradient(to right, #f59e0b 0%, #f59e0b var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%);
+        }
+        input[type="range"].accent-amber::-webkit-slider-thumb {
+            border-color: #f59e0b;
+        }
+        input[type="range"].accent-amber::-moz-range-thumb {
+            border-color: #f59e0b;
+        }
 
         /* Toggle switch */
         .toggle-switch {
@@ -339,21 +348,29 @@
                     </div>
 
                     <!-- Revenus Fonciers (collapsible) -->
-                    <details class="group">
-                        <summary class="flex items-center justify-between py-3 cursor-pointer text-sm font-medium text-slate-600 hover:text-slate-900">
-                            <span>+ Ajouter des revenus fonciers</span>
-                            <span class="iconify group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="18"></span>
+                    <details class="group mt-4">
+                        <summary class="flex items-center justify-between p-4 bg-amber-50 border border-amber-200 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
+                                    <span class="iconify text-white" data-icon="lucide:home" width="20"></span>
+                                </div>
+                                <div>
+                                    <span class="font-medium text-amber-900">Revenus fonciers</span>
+                                    <p class="text-xs text-amber-700">Loyers perçus en 2024</p>
+                                </div>
+                            </div>
+                            <span class="iconify text-amber-600 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
                         </summary>
-                        <div class="pt-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenus fonciers nets</label>
+                        <div class="mt-3 p-4 bg-amber-50/50 border border-amber-100 rounded-xl">
+                            <label class="block text-sm font-medium text-amber-800 mb-2">Revenus fonciers nets annuels</label>
                             <div class="relative mb-3">
                                 <input type="text" id="foncier" inputmode="numeric"
-                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500"
+                                    class="w-full pl-4 pr-16 py-3 text-right text-lg font-semibold border border-amber-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
                                     placeholder="0" value="0">
-                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-amber-600 text-sm">EUR</span>
                             </div>
-                            <input type="range" id="foncier-slider" min="0" max="50000" step="500" value="0" class="w-full">
-                            <div class="flex justify-between text-xs text-slate-400 mt-2">
+                            <input type="range" id="foncier-slider" min="0" max="50000" step="500" value="0" class="w-full accent-amber">
+                            <div class="flex justify-between text-xs text-amber-600 mt-2">
                                 <span>0 EUR</span>
                                 <span>50 000 EUR</span>
                             </div>
@@ -362,11 +379,16 @@
                 </section>
 
                 <!-- PER -->
-                <section class="bg-white rounded-2xl border border-slate-200 p-6">
+                <section class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <h2 class="font-semibold text-lg text-slate-900">Plan Epargne Retraite</h2>
-                            <p class="text-sm text-slate-500">Deductible du revenu imposable</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                                <span class="iconify text-white" data-icon="lucide:piggy-bank" width="24"></span>
+                            </div>
+                            <div>
+                                <h2 class="font-semibold text-lg text-emerald-900">Plan Epargne Retraite</h2>
+                                <p class="text-sm text-emerald-600">Deductible du revenu imposable</p>
+                            </div>
                         </div>
                         <label class="toggle-switch emerald">
                             <input type="checkbox" id="per-toggle">
@@ -374,46 +396,51 @@
                         </label>
                     </div>
 
-                    <div id="per-content" class="hidden space-y-4 pt-4 border-t border-slate-100">
+                    <div id="per-content" class="hidden space-y-4 pt-4 border-t border-emerald-200">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Versements PER en 2024</label>
+                            <label class="block text-sm font-medium text-emerald-800 mb-2">Versements PER en 2024</label>
                             <div class="relative mb-3">
                                 <input type="text" id="per-amount" inputmode="numeric"
-                                    class="w-full pl-4 pr-16 py-3 text-right text-xl font-semibold border border-emerald-200 rounded-xl bg-emerald-50/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                                    class="w-full pl-4 pr-16 py-3 text-right text-xl font-semibold border border-emerald-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                                     placeholder="5 000" value="0">
                                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-600 text-sm">EUR</span>
                             </div>
                             <input type="range" id="per-slider" min="0" max="30000" step="500" value="0" class="w-full accent-emerald">
-                            <div class="flex justify-between text-xs text-slate-400 mt-2">
+                            <div class="flex justify-between text-xs text-emerald-600 mt-2">
                                 <span>0 EUR</span>
                                 <span>30 000 EUR</span>
                             </div>
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <input type="checkbox" id="plafond-unknown" class="w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
-                            <label for="plafond-unknown" class="text-sm text-slate-600">Je ne connais pas mon plafond de deduction</label>
+                            <input type="checkbox" id="plafond-unknown" class="w-4 h-4 rounded border-emerald-300 text-emerald-600 focus:ring-emerald-500">
+                            <label for="plafond-unknown" class="text-sm text-emerald-700">Je ne connais pas mon plafond de deduction</label>
                         </div>
 
                         <div id="plafond-section">
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Plafond de deduction disponible</label>
+                            <label class="block text-sm font-medium text-emerald-800 mb-2">Plafond de deduction disponible</label>
                             <div class="relative">
                                 <input type="text" id="per-plafond" inputmode="numeric"
-                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-emerald-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                                     placeholder="10 000" value="">
-                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-600 text-sm">EUR</span>
                             </div>
-                            <p class="text-xs text-slate-400 mt-1">Visible sur votre avis d'imposition</p>
+                            <p class="text-xs text-emerald-600 mt-1">Visible sur votre avis d'imposition</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Dons -->
-                <section class="bg-white rounded-2xl border border-slate-200 p-6">
+                <section class="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl border border-violet-200 p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <h2 class="font-semibold text-lg text-slate-900">Dons et reductions</h2>
-                            <p class="text-sm text-slate-500">Reduction d'impot 66% ou 75%</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20">
+                                <span class="iconify text-white" data-icon="lucide:heart-handshake" width="24"></span>
+                            </div>
+                            <div>
+                                <h2 class="font-semibold text-lg text-violet-900">Dons et reductions</h2>
+                                <p class="text-sm text-violet-600">Reduction d'impot 66% ou 75%</p>
+                            </div>
                         </div>
                         <label class="toggle-switch violet">
                             <input type="checkbox" id="dons-toggle">
@@ -421,29 +448,37 @@
                         </label>
                     </div>
 
-                    <div id="dons-content" class="hidden space-y-5 pt-4 border-t border-slate-100">
+                    <div id="dons-content" class="hidden space-y-5 pt-4 border-t border-violet-200">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Dons aux associations (66%)</label>
-                            <p class="text-xs text-slate-400 mb-2">Associations d'interet general</p>
+                            <label class="block text-sm font-medium text-violet-800 mb-1">Dons aux associations (66%)</label>
+                            <p class="text-xs text-violet-600 mb-2">Associations d'interet general</p>
                             <div class="relative mb-3">
                                 <input type="text" id="dons66" inputmode="numeric"
-                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-violet-200 rounded-xl bg-violet-50/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-violet-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
                                     placeholder="0" value="0">
                                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-violet-600 text-sm">EUR</span>
                             </div>
                             <input type="range" id="dons66-slider" min="0" max="10000" step="100" value="0" class="w-full accent-violet">
+                            <div class="flex justify-between text-xs text-violet-600 mt-2">
+                                <span>0 EUR</span>
+                                <span>10 000 EUR</span>
+                            </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Dons aide aux personnes (75%)</label>
-                            <p class="text-xs text-slate-400 mb-2">Plafond 1 000 EUR a 75%, le reste a 66%</p>
+                            <label class="block text-sm font-medium text-violet-800 mb-1">Dons aide aux personnes (75%)</label>
+                            <p class="text-xs text-violet-600 mb-2">Plafond 1 000 EUR a 75%, le reste a 66%</p>
                             <div class="relative mb-3">
                                 <input type="text" id="dons75" inputmode="numeric"
-                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-violet-200 rounded-xl bg-violet-50/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                                    class="w-full pl-4 pr-16 py-3 text-right font-semibold border border-violet-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
                                     placeholder="0" value="0">
                                 <span class="absolute right-3 top-1/2 -translate-y-1/2 text-violet-600 text-sm">EUR</span>
                             </div>
                             <input type="range" id="dons75-slider" min="0" max="2000" step="50" value="0" class="w-full accent-violet">
+                            <div class="flex justify-between text-xs text-violet-600 mt-2">
+                                <span>0 EUR</span>
+                                <span>2 000 EUR</span>
+                            </div>
                         </div>
                     </div>
                 </section>

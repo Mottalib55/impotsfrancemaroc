@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,29 +14,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://netsalaire.com/">
     <meta property="og:image" content="https://netsalaire.com/assets/images/og-home.png">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta property="og:locale" content="fr_FR">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NetSalaire - Simulateurs Fiscaux France et Maroc">
     <meta name="twitter:description" content="Calculez votre salaire net et comparez la pression fiscale entre la France et le Maroc.">
     <meta name="twitter:image" content="https://netsalaire.com/assets/images/og-home.png">
-    <meta name="twitter:site" content="@netsalaire">
 
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="NetSalaire">
-    <meta name="geo.region" content="FR">
-    <meta name="geo.region" content="MA">
     <link rel="alternate" hreflang="fr" href="https://netsalaire.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -53,321 +46,400 @@
         }
     }
     </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                              linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
 </head>
-<body style="font-family: 'Inter', system-ui, sans-serif;">
+<body class="bg-slate-50 text-slate-600 antialiased selection:bg-indigo-100 selection:text-indigo-700">
 
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">
-                <img src="/assets/images/logo.svg" alt="NetSalaire" height="32">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
             </a>
-
-            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                <span class="iconify" data-icon="lucide:menu" width="24"></span>
-            </button>
-
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="/comparateur-salaire-france-maroc.html" class="nav-link">
-                        <span class="iconify" data-icon="lucide:scale" width="18"></span>
-                        Comparateur
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <span class="iconify" data-icon="lucide:flag" width="18"></span>
-                        France
-                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
-                    </a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <span class="iconify" data-icon="lucide:flag" width="18"></span>
-                        Maroc
-                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
-                    </a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/faq.html" class="nav-link">
-                        <span class="iconify" data-icon="lucide:help-circle" width="18"></span>
-                        FAQ
-                    </a>
-                </li>
-            </ul>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#france" class="hover:text-slate-900 transition-colors">France</a>
+                <a href="#maroc" class="hover:text-slate-900 transition-colors">Maroc</a>
+                <a href="#comparateur" class="hover:text-slate-900 transition-colors">Comparateur</a>
+                <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            <a href="mailto:contact@netsalaire.com" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
+                Contact
+                <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="flex justify-center gap-3 mb-6">
-            <span class="country-badge country-badge-fr">🇫🇷 France</span>
-            <span class="country-badge country-badge-ma">🇲🇦 Maroc</span>
-        </div>
-        <h1>Calculez votre Salaire Net en 2 clics</h1>
-        <p>Simulateurs fiscaux gratuits et precis pour la France et le Maroc. Comparez, simulez, optimisez votre situation fiscale.</p>
+    <section class="relative pt-32 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-60 pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-50/80 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <!-- Country Selector -->
-        <div class="selector-container">
-            <div class="country-buttons">
-                <button class="country-btn active" onclick="selectCountry('fr')">🇫🇷 France</button>
-                <button class="country-btn" onclick="selectCountry('ma')">🇲🇦 Maroc</button>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-medium text-slate-500 mb-8 shadow-sm">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Baremes fiscaux 2025
             </div>
-
-            <div id="selector-fr" class="selector-content">
-                <div class="grid gap-3">
-                    <a href="/france/simulateur-salaire-brut-net.html" class="btn btn-primary w-full">
-                        <span class="iconify" data-icon="lucide:calculator" width="18"></span>
-                        Simulateur Brut → Net
-                    </a>
-                    <a href="/france/simulateur-impot-revenu.html" class="btn btn-secondary w-full">
-                        <span class="iconify" data-icon="lucide:file-text" width="18"></span>
-                        Simulateur Impot sur le Revenu
-                    </a>
-                    <a href="/france/guide/" class="btn btn-secondary w-full">
-                        <span class="iconify" data-icon="lucide:book-open" width="18"></span>
-                        Guide Fiscal Complet
-                    </a>
-                </div>
-            </div>
-
-            <div id="selector-ma" class="selector-content" style="display: none;">
-                <div class="grid gap-3">
-                    <a href="/maroc/simulateur-salaire-brut-net.html" class="btn btn-primary w-full" style="background: #059669;">
-                        <span class="iconify" data-icon="lucide:calculator" width="18"></span>
-                        Simulateur Brut → Net
-                    </a>
-                    <a href="/maroc/simulateur-ir.html" class="btn btn-secondary w-full">
-                        <span class="iconify" data-icon="lucide:file-text" width="18"></span>
-                        Simulateur IR Maroc
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="/comparateur-salaire-france-maroc.html" class="btn btn-accent">
-                    <span class="iconify" data-icon="lucide:scale" width="18"></span>
+            <h1 class="text-5xl md:text-7xl font-semibold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+                Calculez votre <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-600 to-slate-900">salaire net en 2 clics.</span>
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Simulateurs fiscaux gratuits pour la France et le Maroc. Calculez salaires, impots et comparez la pression fiscale entre les deux pays.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/comparateur-salaire-france-maroc.html" class="w-full sm:w-auto px-8 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 hover:shadow-lg transition-all flex items-center justify-center gap-2 group">
+                    <iconify-icon icon="lucide:scale" width="16"></iconify-icon>
                     Comparer France vs Maroc
                 </a>
+                <a href="#france" class="w-full sm:w-auto px-8 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center gap-2">
+                    Voir les simulateurs
+                    <iconify-icon icon="lucide:arrow-down" width="16"></iconify-icon>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Tool -->
-    <section class="section">
-        <div class="card card-featured" style="text-align: center; padding: 2rem;">
-            <div class="flex justify-center mb-4">
-                <div style="background: var(--primary); padding: 1rem; border-radius: 1rem;">
-                    <span class="iconify" data-icon="lucide:scale" width="32" style="color: white;"></span>
+    <!-- Zone FRANCE -->
+    <section id="france" class="py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center gap-4 mb-8 border-b border-slate-200 pb-6">
+                <div class="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-3xl">
+                    <iconify-icon icon="circle-flags:fr"></iconify-icon>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">France</h2>
+                    <p class="text-slate-500 text-sm">Outils dedies a la legislation francaise</p>
                 </div>
             </div>
-            <h2 class="text-xl font-bold mb-2">Comparateur Fiscal France vs Maroc</h2>
-            <p class="text-slate-500 mb-4">Notre outil le plus populaire. Comparez votre salaire net et votre pression fiscale entre les deux pays en temps reel.</p>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <div class="flex items-center gap-2 text-sm text-slate-600">
-                    <span class="iconify text-green-500" data-icon="lucide:check" width="16"></span>
-                    Taux de change live
-                </div>
-                <div class="flex items-center gap-2 text-sm text-slate-600">
-                    <span class="iconify text-green-500" data-icon="lucide:check" width="16"></span>
-                    Quotient familial
-                </div>
-                <div class="flex items-center gap-2 text-sm text-slate-600">
-                    <span class="iconify text-green-500" data-icon="lucide:check" width="16"></span>
-                    Baremes 2025
-                </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card: France Brut/Net -->
+                <a href="/france/simulateur-salaire-brut-net.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-indigo-200 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:calculator" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Salaire Brut a Net</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                        Calcul precis du salaire net avant et apres impot. Prise en charge des statuts cadre et non-cadre.
+                    </p>
+                    <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    </div>
+                </a>
+
+                <!-- Card: France Impots -->
+                <a href="/france/simulateur-impot-revenu.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-indigo-200 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:landmark" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Impot sur le Revenu</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                        Estimation de l'IR avec application du bareme progressif, du quotient familial et des decotes en vigueur.
+                    </p>
+                    <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    </div>
+                </a>
+
+                <!-- Card: Guide Fiscal -->
+                <a href="/france/guide/" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-indigo-200 transition-all duration-300 md:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:book-open" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Guide Fiscal France 2025</h3>
+                    <p class="text-sm text-slate-500 mb-4">
+                        Tout comprendre sur la fiscalite francaise : cotisations sociales, quotient familial, tranches IR, optimisation fiscale.
+                    </p>
+                    <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    </div>
+                </a>
             </div>
-            <a href="/comparateur-salaire-france-maroc.html" class="btn btn-primary mt-6">
-                Essayer le Comparateur
-                <span class="iconify" data-icon="lucide:arrow-right" width="18"></span>
-            </a>
         </div>
     </section>
 
-    <!-- Simulators Grid -->
-    <section class="section">
-        <h2 class="section-title text-center">Nos Simulateurs</h2>
-
-        <div class="grid grid-3">
-            <!-- France Brut Net -->
-            <div class="card">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-2xl">🇫🇷</span>
-                    <div>
-                        <h3 class="font-semibold">Brut → Net France</h3>
-                        <p class="text-xs text-slate-500">Salarie du prive</p>
-                    </div>
+    <!-- Zone MAROC -->
+    <section id="maroc" class="py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center gap-4 mb-8 border-b border-slate-200 pb-6">
+                <div class="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-3xl">
+                    <iconify-icon icon="circle-flags:ma"></iconify-icon>
                 </div>
-                <ul class="features-list">
-                    <li>Cotisations sociales detaillees</li>
-                    <li>Statut cadre / non-cadre</li>
-                    <li>Prelevement a la source</li>
-                </ul>
-                <a href="/france/simulateur-salaire-brut-net.html" class="btn btn-primary w-full mt-4">
-                    Calculer
-                </a>
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Maroc</h2>
+                    <p class="text-slate-500 text-sm">Fiscalite et prelevement a la source</p>
+                </div>
             </div>
 
-            <!-- France IR -->
-            <div class="card">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-2xl">🇫🇷</span>
-                    <div>
-                        <h3 class="font-semibold">Impot sur le Revenu</h3>
-                        <p class="text-xs text-slate-500">Simulation IR 2025</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card: Maroc Brut/Net -->
+                <a href="/maroc/simulateur-salaire-brut-net.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:calculator" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                </div>
-                <ul class="features-list">
-                    <li>Quotient familial</li>
-                    <li>Tranches progressives</li>
-                    <li>Decote et reductions</li>
-                </ul>
-                <a href="/france/simulateur-impot-revenu.html" class="btn btn-primary w-full mt-4">
-                    Simuler
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Salaire Brut a Net</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                        Calcul complet avec CNSS, AMO, frais professionnels et abattement familial. Baremes 2025.
+                    </p>
+                    <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="w-0 h-full bg-emerald-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    </div>
+                </a>
+
+                <!-- Card: Maroc IR -->
+                <a href="/maroc/simulateur-ir.html" class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:shadow-slate-200/50 hover:border-emerald-200 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:landmark" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Impot sur le Revenu</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                        Calcul de l'IR avec les 6 tranches progressives et l'abattement familial. Baremes 2025.
+                    </p>
+                    <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="w-0 h-full bg-emerald-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    </div>
                 </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Maroc Brut Net -->
-            <div class="card">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-2xl">🇲🇦</span>
-                    <div>
-                        <h3 class="font-semibold">Brut → Net Maroc</h3>
-                        <p class="text-xs text-slate-500">Salarie marocain</p>
+    <!-- Zone COMPARATEUR -->
+    <section id="comparateur" class="py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+             <div class="flex items-center gap-4 mb-8 border-b border-slate-200 pb-6">
+                <div class="w-12 h-12 rounded-full bg-slate-900 shadow-sm flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:scale" width="20"></iconify-icon>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Comparateur International</h2>
+                    <p class="text-slate-500 text-sm">Analyse croisee des regimes fiscaux</p>
+                </div>
+            </div>
+
+            <!-- Comparator Card -->
+            <div class="group relative bg-slate-900 rounded-2xl p-1 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div class="relative bg-slate-950 rounded-xl p-8 h-full">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
+                                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon>
+                                </span>
+                                <iconify-icon icon="lucide:arrow-right-left" class="text-slate-600" width="16"></iconify-icon>
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
+                                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon>
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Comparateur France vs Maroc</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Comparez votre pouvoir d'achat reel. Visualisez les differences de charges sociales, d'impots sur le revenu et de salaire net disponible entre la France et le Maroc pour un meme salaire brut.
+                            </p>
+                            <a href="/comparateur-salaire-france-maroc.html" class="inline-flex items-center gap-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 px-5 py-2.5 rounded-lg transition-all shadow-lg shadow-indigo-900/20">
+                                Lancer la comparaison
+                                <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                            </a>
+                        </div>
+                        <div class="hidden md:block relative h-full min-h-[160px] bg-slate-900/50 rounded-lg border border-slate-800/50 p-6">
+                            <!-- Visual Chart Representation -->
+                            <div class="flex items-end justify-center gap-6 h-full pb-4">
+                                <div class="w-16 bg-slate-800 rounded-t-lg relative group-hover:h-[80%] h-[60%] transition-all duration-700 delay-100">
+                                    <div class="absolute bottom-0 w-full bg-indigo-500/80 h-[40%] rounded-b-sm"></div>
+                                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-medium">FR</div>
+                                </div>
+                                <div class="w-16 bg-slate-800 rounded-t-lg relative group-hover:h-[85%] h-[70%] transition-all duration-700">
+                                    <div class="absolute bottom-0 w-full bg-emerald-500/80 h-[25%] rounded-b-sm"></div>
+                                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-medium">MA</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <ul class="features-list">
-                    <li>CNSS et AMO inclus</li>
-                    <li>Frais professionnels 20%</li>
-                    <li>Abattement familial</li>
-                </ul>
-                <a href="/maroc/simulateur-salaire-brut-net.html" class="btn btn-secondary w-full mt-4" style="background: #ECFDF5; color: #059669; border-color: #059669;">
-                    Calculer
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-6 border-t border-slate-200 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-semibold text-slate-900 tracking-tight mb-12 text-center">Questions Frequentes</h2>
+
+            <div class="space-y-4">
+                <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+                        <span class="font-medium text-slate-800">Comment fonctionne le comparateur pays ?</span>
+                        <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                        Le comparateur calcule simultanement votre salaire net et votre pression fiscale totale dans les deux pays, pour un meme salaire brut. Il utilise le taux de change en temps reel pour convertir les montants.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+                        <span class="font-medium text-slate-800">Les calculs sont-ils fiables ?</span>
+                        <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                        Nos simulateurs utilisent les baremes officiels 2025 publies par les administrations fiscales francaise et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+                        <span class="font-medium text-slate-800">Puis-je simuler un statut cadre en France ?</span>
+                        <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                        Tout a fait. Le calculateur "Salaire Brut a Net" pour la France dispose d'une option pour basculer entre statut Cadre et Non-Cadre, ajustant ainsi les cotisations de retraite complementaire.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+                        <span class="font-medium text-slate-800">Mes donnees sont-elles stockees ?</span>
+                        <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                        Non. Tous les calculs sont effectues localement dans votre navigateur. Aucune donnee personnelle n'est envoyee a nos serveurs ni stockee. Vous pouvez utiliser nos outils en toute confidentialite.
+                    </div>
+                </details>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="/faq.html" class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                    Voir toutes les questions
+                    <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Reassurance Section -->
-    <section class="section" style="background: white; border-radius: 1rem; border: 1px solid var(--border);">
-        <div class="reassurance-grid">
-            <div class="reassurance-item">
-                <div class="icon">🔒</div>
-                <h4>100% Securise</h4>
-                <p>Aucune donnee personnelle stockee. Calculs effectues localement.</p>
+    <section class="py-16 px-6 border-t border-slate-200 bg-slate-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
+                        🔒
+                    </div>
+                    <h4 class="font-semibold text-slate-900 mb-1">100% Securise</h4>
+                    <p class="text-xs text-slate-500">Aucune donnee stockee</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
+                        📊
+                    </div>
+                    <h4 class="font-semibold text-slate-900 mb-1">Baremes Officiels</h4>
+                    <p class="text-xs text-slate-500">Mis a jour 2025</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
+                        ⚡
+                    </div>
+                    <h4 class="font-semibold text-slate-900 mb-1">Instantane</h4>
+                    <p class="text-xs text-slate-500">Calculs en temps reel</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
+                        🆓
+                    </div>
+                    <h4 class="font-semibold text-slate-900 mb-1">Gratuit</h4>
+                    <p class="text-xs text-slate-500">Sans pub ni inscription</p>
+                </div>
             </div>
-            <div class="reassurance-item">
-                <div class="icon">📊</div>
-                <h4>Baremes Officiels</h4>
-                <p>Mis a jour selon les lois de finances 2025.</p>
-            </div>
-            <div class="reassurance-item">
-                <div class="icon">⚡</div>
-                <h4>Resultats Instantanes</h4>
-                <p>Calculs en temps reel, sans attente.</p>
-            </div>
-            <div class="reassurance-item">
-                <div class="icon">🆓</div>
-                <h4>Gratuit et Sans Pub</h4>
-                <p>Acces illimite, sans inscription requise.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Preview -->
-    <section class="section">
-        <h2 class="section-title">Questions Frequentes</h2>
-
-        <details>
-            <summary>Comment est calcule le salaire net en France ?</summary>
-            <p>Le salaire net est obtenu en deduisant du brut les cotisations sociales (environ 22-25% selon le statut), puis l'impot sur le revenu preleve a la source.</p>
-        </details>
-
-        <details>
-            <summary>Quelles sont les tranches d'IR au Maroc ?</summary>
-            <p>L'IR marocain comporte 6 tranches : 0% jusqu'a 40 000 DH, puis 10%, 20%, 30%, 34% et 37% pour les revenus superieurs a 180 000 DH annuels.</p>
-        </details>
-
-        <details>
-            <summary>Les calculs sont-ils fiables ?</summary>
-            <p>Nos simulateurs utilisent les baremes officiels 2025. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise.</p>
-        </details>
-
-        <div class="text-center mt-6">
-            <a href="/faq.html" class="btn btn-secondary">
-                Voir toutes les questions
-                <span class="iconify" data-icon="lucide:arrow-right" width="18"></span>
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-grid">
+    <footer class="py-12 px-6 border-t border-slate-200 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <h4>NetSalaire</h4>
-                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">N.</div>
+                        <span class="font-semibold text-slate-900">NetSalaire</span>
+                    </div>
+                    <p class="text-sm text-slate-500">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4>France</h4>
-                    <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">France</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Maroc</h4>
-                    <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Maroc</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors">Simulateur IR</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Informations</h4>
-                    <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Informations</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" class="hover:text-slate-900 transition-colors">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" class="hover:text-slate-900 transition-colors">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <div class="flex gap-4">
+                    <a href="mailto:contact@netsalaire.com" class="text-slate-400 hover:text-slate-900 transition-colors">
+                        <iconify-icon icon="lucide:mail" width="20" stroke-width="1.5"></iconify-icon>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script>
-        function selectCountry(country) {
-            const frBtn = document.querySelector('.country-btn:first-child');
-            const maBtn = document.querySelector('.country-btn:last-child');
-            const frContent = document.getElementById('selector-fr');
-            const maContent = document.getElementById('selector-ma');
-
-            if (country === 'fr') {
-                frBtn.classList.add('active');
-                maBtn.classList.remove('active');
-                frContent.style.display = 'block';
-                maContent.style.display = 'none';
-            } else {
-                maBtn.classList.add('active');
-                frBtn.classList.remove('active');
-                maContent.style.display = 'block';
-                frContent.style.display = 'none';
-            }
-        }
-    </script>
 
 </body>
 </html>

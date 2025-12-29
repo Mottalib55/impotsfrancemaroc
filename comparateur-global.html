@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparateur Fiscal International - France, Maroc, Dubai, Suisse, Luxembourg | NetSalaire</title>
+    <meta name="description" content="Comparez votre salaire net entre la France, le Maroc, Dubai, Geneve et Luxembourg. Simulateur fiscal international avec IR et cotisations sociales.">
+    <meta name="keywords" content="comparateur salaire international, simulateur fiscal, impot france maroc dubai suisse luxembourg, expatriation, salaire net">
+    <link rel="canonical" href="https://netsalaire.com/comparateur-global.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Comparateur Fiscal International - NetSalaire">
+    <meta property="og:description" content="Comparez votre salaire net entre 5 pays: France, Maroc, Dubai, Geneve, Luxembourg.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/comparateur-global.html">
+    <meta property="og:image" content="https://netsalaire.com/assets/images/og-comparateur-global.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comparateur Fiscal International">
+    <meta name="twitter:description" content="Comparez votre salaire net entre 5 pays.">
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NetSalaire">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .transition-all-300 { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .country-checkbox:checked + .country-label {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+        }
+        .country-checkbox:checked + .country-label .country-check {
+            opacity: 1;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Comparateur Fiscal International",
+        "description": "Simulateur fiscal pour comparer le salaire net entre France, Maroc, Dubai, Geneve et Luxembourg",
+        "url": "https://netsalaire.com/comparateur-global.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.svg" alt="NetSalaire" height="32">
+            </a>
+
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/comparateur-salaire-france-maroc.html" class="nav-link">
+                        <span class="iconify" data-icon="lucide:scale" width="18"></span>
+                        France vs Maroc
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/comparateur-global.html" class="nav-link" style="background: var(--bg); color: var(--primary);">
+                        <span class="iconify" data-icon="lucide:globe" width="18"></span>
+                        Comparateur Global
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="iconify" data-icon="circle-flags:fr" width="18"></span>
+                        France
+                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                    </a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur Impot</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="iconify" data-icon="circle-flags:ma" width="18"></span>
+                        Maroc
+                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                    </a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur Impot</a></li>
+                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/faq.html" class="nav-link">
+                        <span class="iconify" data-icon="lucide:help-circle" width="18"></span>
+                        FAQ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-7xl mx-auto space-y-6 py-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- Page Header -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 mb-4">
+                <span class="iconify text-emerald-600" data-icon="lucide:globe" width="16"></span>
+                <span class="text-sm font-medium text-emerald-700">5 pays - Baremes 2025</span>
+            </div>
+            <h1 class="text-2xl md:text-4xl font-bold text-slate-900 mb-3">Comparateur Fiscal International</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">Selectionnez les pays a comparer et decouvrez ou votre salaire net sera le plus avantageux.</p>
+        </header>
+
+        <!-- Country Selector -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="iconify text-slate-400" data-icon="lucide:map-pin" width="18"></span>
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Selectionnez les pays a comparer (2 minimum)</h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                <!-- France -->
+                <div class="relative">
+                    <input type="checkbox" id="country-fr" class="country-checkbox sr-only" checked data-country="fr">
+                    <label for="country-fr" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇫🇷</span>
+                        <span class="text-sm font-semibold text-slate-700">France</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IR 0-45%</span>
+                    </label>
+                </div>
+
+                <!-- Maroc -->
+                <div class="relative">
+                    <input type="checkbox" id="country-ma" class="country-checkbox sr-only" checked data-country="ma">
+                    <label for="country-ma" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇲🇦</span>
+                        <span class="text-sm font-semibold text-slate-700">Maroc</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IR 0-37%</span>
+                    </label>
+                </div>
+
+                <!-- Dubai -->
+                <div class="relative">
+                    <input type="checkbox" id="country-ae" class="country-checkbox sr-only" data-country="ae">
+                    <label for="country-ae" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇦🇪</span>
+                        <span class="text-sm font-semibold text-slate-700">Dubai</span>
+                        <span class="text-[10px] text-emerald-500 font-bold">0% IMPOT</span>
+                    </label>
+                </div>
+
+                <!-- Suisse (Geneve) -->
+                <div class="relative">
+                    <input type="checkbox" id="country-ch" class="country-checkbox sr-only" data-country="ch">
+                    <label for="country-ch" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇨🇭</span>
+                        <span class="text-sm font-semibold text-slate-700">Geneve</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IR 0-48%</span>
+                    </label>
+                </div>
+
+                <!-- Luxembourg -->
+                <div class="relative">
+                    <input type="checkbox" id="country-lu" class="country-checkbox sr-only" data-country="lu">
+                    <label for="country-lu" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇱🇺</span>
+                        <span class="text-sm font-semibold text-slate-700">Luxembourg</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IR 0-42%</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-amber-400 to-indigo-500"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Salary Input -->
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-xs font-semibold uppercase tracking-tight text-slate-500">Salaire Brut Annuel</label>
+                        <div class="flex bg-slate-100 rounded-lg p-0.5">
+                            <button id="period-annual" class="px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300">Annuel</button>
+                            <button id="period-monthly" class="px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Mensuel</button>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-lg">€</span>
+                        <input type="text" inputmode="numeric" id="input-salary" value="100 000" class="w-full pl-12 pr-6 py-4 text-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all-300" placeholder="0">
+                    </div>
+
+                    <p class="text-xs text-slate-400">Le salaire est converti dans chaque devise locale pour les calculs.</p>
+                </div>
+
+                <!-- Family Situation -->
+                <div class="space-y-5 lg:border-l lg:border-slate-100 lg:pl-8">
+                    <label class="block text-xs font-semibold uppercase tracking-tight text-slate-500 mb-2">Situation Familiale</label>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block">Statut Marital</span>
+                            <div class="flex w-full bg-slate-50 border border-slate-200 rounded-lg p-1">
+                                <button id="status-single" class="flex-1 py-2 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300">Celibataire</button>
+                                <button id="status-married" class="flex-1 py-2 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Marie(e)</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block">Enfants a charge</span>
+                            <div class="flex items-center w-full bg-white border border-slate-200 rounded-lg h-[42px]">
+                                <button id="child-minus" class="w-12 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-l-lg transition-colors border-r border-slate-100">
+                                    <span class="iconify" data-icon="lucide:minus" width="16"></span>
+                                </button>
+                                <div id="children-display" class="flex-1 text-center text-lg font-bold text-slate-900 select-none">0</div>
+                                <button id="child-plus" class="w-12 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-r-lg transition-colors border-l border-slate-100">
+                                    <span class="iconify" data-icon="lucide:plus" width="16"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Grid -->
+        <div id="results-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Country cards will be generated by JS -->
+        </div>
+
+        <!-- Verdict Banner -->
+        <div id="verdict-banner" class="bg-slate-900 text-white rounded-xl shadow-lg p-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <span class="iconify w-10 h-10 text-yellow-400" data-icon="lucide:trophy"></span>
+                    <div>
+                        <h3 class="font-bold text-xl tracking-tight" id="verdict-title">Classement</h3>
+                        <p class="text-sm text-slate-400" id="verdict-text">Selectionnez au moins 2 pays pour comparer.</p>
+                    </div>
+                </div>
+                <div id="ranking-list" class="flex flex-wrap gap-3 justify-center md:justify-end">
+                    <!-- Ranking badges will be generated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Reassurance -->
+        <section class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                    <div class="text-2xl mb-2">🌍</div>
+                    <h4 class="text-sm font-semibold text-slate-900">5 Pays</h4>
+                    <p class="text-xs text-slate-500">Comparaison internationale</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">📊</div>
+                    <h4 class="text-sm font-semibold text-slate-900">Baremes 2025</h4>
+                    <p class="text-xs text-slate-500">Donnees a jour</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">⚡</div>
+                    <h4 class="text-sm font-semibold text-slate-900">Temps Reel</h4>
+                    <p class="text-xs text-slate-500">Calcul instantane</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">🔒</div>
+                    <h4 class="text-sm font-semibold text-slate-900">100% Prive</h4>
+                    <p class="text-xs text-slate-500">Aucune donnee stockee</p>
+                </div>
+            </div>
+        </section>
+
+        <p class="text-center text-[10px] text-slate-400 mt-8 pb-4 max-w-3xl mx-auto leading-relaxed">
+            Avertissement Legal : Cet outil est fourni a titre indicatif uniquement. Les lois fiscales varient selon les pays et sont sujettes a modifications.
+            Les cotisations sociales sont des estimations moyennes. Dubai: 0% IR pour residents fiscaux. Geneve: taux cantonal + communal estimes.
+            Luxembourg: bareme 2025 classe 1. France et Maroc: baremes 2025 officiels.
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>NetSalaire</h4>
+                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                </div>
+                <div>
+                    <h4>France</h4>
+                    <ul>
+                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Maroc</h4>
+                    <ul>
+                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // COUNTRY CONFIGURATIONS
+        // ==========================================
+        const COUNTRIES = {
+            fr: {
+                name: 'France',
+                flag: '🇫🇷',
+                currency: 'EUR',
+                currencySymbol: '€',
+                color: 'indigo',
+                exchangeRate: 1,
+                taxSystem: 'Quotient Familial',
+                brackets: [
+                    { limit: 11294, rate: 0 },
+                    { limit: 28797, rate: 0.11 },
+                    { limit: 82341, rate: 0.30 },
+                    { limit: 177106, rate: 0.41 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                socialRate: 0.23,
+                abattement: 0.10
+            },
+            ma: {
+                name: 'Maroc',
+                flag: '🇲🇦',
+                currency: 'MAD',
+                currencySymbol: 'Dh',
+                color: 'emerald',
+                exchangeRate: 10.8,
+                taxSystem: 'IR Progressif',
+                brackets: [
+                    { limit: 40000, rate: 0 },
+                    { limit: 60000, rate: 0.10 },
+                    { limit: 80000, rate: 0.20 },
+                    { limit: 100000, rate: 0.30 },
+                    { limit: 180000, rate: 0.34 },
+                    { limit: Infinity, rate: 0.37 }
+                ],
+                socialRate: 0.0674,
+                familyDeduction: 500,
+                familyDeductionCap: 3000
+            },
+            ae: {
+                name: 'Dubai',
+                flag: '🇦🇪',
+                currency: 'AED',
+                currencySymbol: 'AED',
+                color: 'amber',
+                exchangeRate: 4.0,
+                taxSystem: '0% Impot',
+                brackets: [],
+                socialRate: 0,
+                taxRate: 0
+            },
+            ch: {
+                name: 'Geneve',
+                flag: '🇨🇭',
+                currency: 'CHF',
+                currencySymbol: 'CHF',
+                color: 'red',
+                exchangeRate: 0.93,
+                taxSystem: 'Federal + Cantonal',
+                // Simplified Geneva brackets (combined federal + cantonal + communal)
+                brackets: [
+                    { limit: 17500, rate: 0 },
+                    { limit: 32000, rate: 0.08 },
+                    { limit: 42000, rate: 0.11 },
+                    { limit: 56000, rate: 0.14 },
+                    { limit: 75000, rate: 0.18 },
+                    { limit: 110000, rate: 0.23 },
+                    { limit: 150000, rate: 0.28 },
+                    { limit: 200000, rate: 0.32 },
+                    { limit: 300000, rate: 0.36 },
+                    { limit: Infinity, rate: 0.40 }
+                ],
+                socialRate: 0.064 // AVS/AI/APG
+            },
+            lu: {
+                name: 'Luxembourg',
+                flag: '🇱🇺',
+                currency: 'EUR',
+                currencySymbol: '€',
+                color: 'sky',
+                exchangeRate: 1,
+                taxSystem: 'IR Progressif',
+                brackets: [
+                    { limit: 13230, rate: 0 },
+                    { limit: 15270, rate: 0.08 },
+                    { limit: 17310, rate: 0.09 },
+                    { limit: 19350, rate: 0.10 },
+                    { limit: 21390, rate: 0.11 },
+                    { limit: 23430, rate: 0.12 },
+                    { limit: 25470, rate: 0.14 },
+                    { limit: 27510, rate: 0.16 },
+                    { limit: 29550, rate: 0.18 },
+                    { limit: 31590, rate: 0.20 },
+                    { limit: 33630, rate: 0.22 },
+                    { limit: 35670, rate: 0.24 },
+                    { limit: 37710, rate: 0.26 },
+                    { limit: 39750, rate: 0.28 },
+                    { limit: 41790, rate: 0.30 },
+                    { limit: 43830, rate: 0.32 },
+                    { limit: 45870, rate: 0.34 },
+                    { limit: 47910, rate: 0.36 },
+                    { limit: 49950, rate: 0.38 },
+                    { limit: 100000, rate: 0.39 },
+                    { limit: 150000, rate: 0.40 },
+                    { limit: 234870, rate: 0.41 },
+                    { limit: Infinity, rate: 0.42 }
+                ],
+                socialRate: 0.1299
+            }
+        };
+
+        // Color mappings for Tailwind
+        const COLOR_CLASSES = {
+            indigo: { bg: 'bg-indigo-500', bgLight: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' },
+            emerald: { bg: 'bg-emerald-500', bgLight: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
+            amber: { bg: 'bg-amber-500', bgLight: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200' },
+            red: { bg: 'bg-red-500', bgLight: 'bg-red-50', text: 'text-red-600', border: 'border-red-200' },
+            sky: { bg: 'bg-sky-500', bgLight: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200' }
+        };
+
+        // ==========================================
+        // STATE
+        // ==========================================
+        const state = {
+            salary: 100000,
+            period: 'annual',
+            status: 'single',
+            children: 0,
+            selectedCountries: ['fr', 'ma']
+        };
+
+        // ==========================================
+        // DOM ELEMENTS
+        // ==========================================
+        const els = {
+            inputSalary: document.getElementById('input-salary'),
+            btnAnnual: document.getElementById('period-annual'),
+            btnMonthly: document.getElementById('period-monthly'),
+            btnSingle: document.getElementById('status-single'),
+            btnMarried: document.getElementById('status-married'),
+            btnChildMinus: document.getElementById('child-minus'),
+            btnChildPlus: document.getElementById('child-plus'),
+            displayChildren: document.getElementById('children-display'),
+            resultsContainer: document.getElementById('results-container'),
+            verdictTitle: document.getElementById('verdict-title'),
+            verdictText: document.getElementById('verdict-text'),
+            rankingList: document.getElementById('ranking-list')
+        };
+
+        // ==========================================
+        // FORMATTERS
+        // ==========================================
+        const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const formatMoney = (amount, currency) => `${formatNumber(amount)} ${currency}`;
+        const formatPct = (val) => (val * 100).toFixed(1) + '%';
+
+        const formatInputValue = (value) => {
+            const num = value.toString().replace(/\s/g, '').replace(/[^\d]/g, '');
+            if (!num) return '';
+            return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
+        const parseInputValue = (value) => parseFloat(value.replace(/\s/g, '')) || 0;
+
+        // ==========================================
+        // TAX CALCULATIONS
+        // ==========================================
+
+        function calculateTax(countryCode, annualGrossEur) {
+            const country = COUNTRIES[countryCode];
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            if (countryCode === 'ae') {
+                // Dubai: 0% tax
+                return {
+                    country: countryCode,
+                    gross: localGross,
+                    grossEur: annualGrossEur,
+                    social: 0,
+                    tax: 0,
+                    net: localGross,
+                    netEur: annualGrossEur,
+                    rate: 0
+                };
+            }
+
+            if (countryCode === 'fr') {
+                return calculateFrance(annualGrossEur);
+            }
+
+            if (countryCode === 'ma') {
+                return calculateMorocco(annualGrossEur);
+            }
+
+            if (countryCode === 'ch') {
+                return calculateGeneva(annualGrossEur);
+            }
+
+            if (countryCode === 'lu') {
+                return calculateLuxembourg(annualGrossEur);
+            }
+
+            return null;
+        }
+
+        function calculateFrance(annualGrossEur) {
+            const country = COUNTRIES.fr;
+            const socialContrib = annualGrossEur * country.socialRate;
+            const netImposable = (annualGrossEur - socialContrib) * (1 - country.abattement);
+
+            let parts = state.status === 'married' ? 2 : 1;
+            if (state.children === 1) parts += 0.5;
+            else if (state.children === 2) parts += 1.0;
+            else if (state.children > 2) parts += 1.0 + (state.children - 2);
+
+            const incomePerPart = netImposable / parts;
+            let taxPerPart = 0;
+
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (incomePerPart > prevLimit) {
+                    const taxableInBracket = Math.min(incomePerPart, bracket.limit) - prevLimit;
+                    taxPerPart += taxableInBracket * bracket.rate;
+                }
+            }
+
+            const totalTax = taxPerPart * parts;
+            const net = annualGrossEur - socialContrib - totalTax;
+
+            return {
+                country: 'fr',
+                gross: annualGrossEur,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: totalTax,
+                net: net,
+                netEur: net,
+                rate: (socialContrib + totalTax) / annualGrossEur,
+                parts: parts
+            };
+        }
+
+        function calculateMorocco(annualGrossEur) {
+            const country = COUNTRIES.ma;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            const socialContrib = localGross * country.socialRate;
+            const grossLessSocial = localGross - socialContrib;
+            const proDeduction = Math.min(grossLessSocial * 0.20, 30000);
+            const netImposable = grossLessSocial - proDeduction;
+
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Family deduction
+            const spouseCount = state.status === 'married' ? 1 : 0;
+            const dependants = spouseCount + state.children;
+            const familyReduc = Math.min(dependants * country.familyDeduction, country.familyDeductionCap);
+            tax = Math.max(0, tax - familyReduc);
+
+            const net = localGross - socialContrib - tax;
+
+            return {
+                country: 'ma',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: tax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (socialContrib + tax) / localGross
+            };
+        }
+
+        function calculateGeneva(annualGrossEur) {
+            const country = COUNTRIES.ch;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            const socialContrib = localGross * country.socialRate;
+            const netImposable = localGross - socialContrib;
+
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Marriage benefit (simplified)
+            if (state.status === 'married') {
+                tax *= 0.85;
+            }
+
+            const net = localGross - socialContrib - tax;
+
+            return {
+                country: 'ch',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: tax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (socialContrib + tax) / localGross
+            };
+        }
+
+        function calculateLuxembourg(annualGrossEur) {
+            const country = COUNTRIES.lu;
+
+            const socialContrib = annualGrossEur * country.socialRate;
+            const netImposable = annualGrossEur - socialContrib;
+
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Class 2 benefit for married
+            if (state.status === 'married') {
+                tax *= 0.70;
+            }
+
+            const net = annualGrossEur - socialContrib - tax;
+
+            return {
+                country: 'lu',
+                gross: annualGrossEur,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: tax,
+                net: net,
+                netEur: net,
+                rate: (socialContrib + tax) / annualGrossEur
+            };
+        }
+
+        // ==========================================
+        // UI RENDERING
+        // ==========================================
+
+        function createCountryCard(data) {
+            const country = COUNTRIES[data.country];
+            const colors = COLOR_CLASSES[country.color];
+            const multiplier = state.period === 'monthly' ? 1/12 : 1;
+
+            const netDisplay = formatNumber(data.net * multiplier);
+            const netEurDisplay = data.country !== 'fr' && data.country !== 'lu'
+                ? `≈ ${formatMoney(data.netEur * multiplier, '€')}`
+                : '';
+
+            const socialPct = data.gross > 0 ? (data.social / data.gross * 100) : 0;
+            const taxPct = data.gross > 0 ? (data.tax / data.gross * 100) : 0;
+            const netPct = data.gross > 0 ? (data.net / data.gross * 100) : 0;
+
+            return `
+                <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+                    <div class="px-5 py-4 border-b border-slate-100 flex justify-between items-center ${colors.bgLight}">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">${country.flag}</span>
+                            <h2 class="text-base font-semibold text-slate-900">${country.name}</h2>
+                        </div>
+                        <span class="text-[10px] font-medium ${colors.text} ${colors.bgLight} px-2 py-0.5 rounded-full border ${colors.border}">${country.taxSystem}</span>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col gap-5">
+                        <!-- KPIs -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <p class="text-[10px] font-medium uppercase text-slate-500 mb-1">Net "En Poche"</p>
+                                <p class="text-xl font-bold text-slate-900 tracking-tight">${netDisplay} <span class="text-xs font-normal text-slate-400">${country.currencySymbol}</span></p>
+                                ${netEurDisplay ? `<p class="text-[10px] text-slate-400 mt-0.5">${netEurDisplay}</p>` : ''}
+                            </div>
+                            <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <p class="text-[10px] font-medium uppercase text-slate-500 mb-1">Pression Fiscale</p>
+                                <p class="text-xl font-bold ${colors.text} tracking-tight">${formatPct(data.rate)}</p>
+                            </div>
+                        </div>
+
+                        <!-- Stacked Bar -->
+                        <div class="space-y-2">
+                            <div class="h-5 w-full bg-slate-100 rounded-md overflow-hidden flex shadow-inner">
+                                <div class="${colors.bg} h-full transition-all-300" style="width: ${netPct}%"></div>
+                                <div class="${colors.bg} opacity-50 h-full transition-all-300" style="width: ${taxPct}%"></div>
+                                <div class="${colors.bg} opacity-25 h-full transition-all-300" style="width: ${socialPct}%"></div>
+                            </div>
+                            <div class="flex justify-between text-[9px] text-slate-400">
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full ${colors.bg}"></div>Net ${netPct.toFixed(0)}%</div>
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full ${colors.bg} opacity-50"></div>IR ${taxPct.toFixed(0)}%</div>
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full ${colors.bg} opacity-25"></div>Social ${socialPct.toFixed(0)}%</div>
+                            </div>
+                        </div>
+
+                        <!-- Breakdown -->
+                        <div class="mt-auto pt-3 border-t border-slate-100 space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Brut</span>
+                                <span class="font-medium text-slate-900">${formatMoney(data.gross * multiplier, country.currencySymbol)}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Cotisations sociales</span>
+                                <span class="font-medium text-red-500">-${formatMoney(data.social * multiplier, country.currencySymbol)}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Impot (IR)</span>
+                                <span class="font-medium text-red-500">-${formatMoney(data.tax * multiplier, country.currencySymbol)}</span>
+                            </div>
+                            <div class="flex justify-between pt-2 border-t border-slate-100">
+                                <span class="font-semibold text-slate-900">Net</span>
+                                <span class="font-bold ${colors.text}">${formatMoney(data.net * multiplier, country.currencySymbol)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function render() {
+            const annualGross = state.period === 'monthly' ? state.salary * 12 : state.salary;
+
+            if (state.selectedCountries.length < 2) {
+                els.resultsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-400">
+                        <span class="iconify mx-auto mb-3" data-icon="lucide:alert-circle" width="40"></span>
+                        <p>Selectionnez au moins 2 pays pour comparer.</p>
+                    </div>
+                `;
+                els.verdictTitle.textContent = 'Selectionnez au moins 2 pays';
+                els.verdictText.textContent = '';
+                els.rankingList.innerHTML = '';
+                return;
+            }
+
+            // Calculate for each selected country
+            const results = state.selectedCountries.map(code => calculateTax(code, annualGross)).filter(r => r !== null);
+
+            // Sort by net EUR (highest first)
+            results.sort((a, b) => b.netEur - a.netEur);
+
+            // Render cards
+            els.resultsContainer.innerHTML = results.map(data => createCountryCard(data)).join('');
+
+            // Update grid columns based on count
+            const count = results.length;
+            if (count <= 2) {
+                els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
+            } else if (count === 3) {
+                els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-3 gap-6';
+            } else {
+                els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+            }
+
+            // Render verdict
+            const winner = results[0];
+            const winnerCountry = COUNTRIES[winner.country];
+            const colors = COLOR_CLASSES[winnerCountry.color];
+
+            els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerCountry.name} en tete !`;
+
+            const diffWithLast = winner.netEur - results[results.length - 1].netEur;
+            els.verdictText.innerHTML = `+${formatMoney(diffWithLast, '€')}/an vs dernier • Taux effectif: ${formatPct(winner.rate)}`;
+
+            // Ranking badges
+            els.rankingList.innerHTML = results.map((r, i) => {
+                const c = COUNTRIES[r.country];
+                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
+                return `
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-yellow-500/20' : 'bg-slate-700'}">
+                        <span class="text-lg">${medal}</span>
+                        <span class="text-lg">${c.flag}</span>
+                        <span class="text-sm font-medium ${i === 0 ? 'text-yellow-300' : 'text-slate-300'}">${formatMoney(r.netEur, '€')}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ==========================================
+        // EVENT LISTENERS
+        // ==========================================
+
+        // Country checkboxes
+        document.querySelectorAll('.country-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                state.selectedCountries = Array.from(document.querySelectorAll('.country-checkbox:checked'))
+                    .map(cb => cb.dataset.country);
+                render();
+            });
+        });
+
+        // Salary input
+        els.inputSalary.addEventListener('input', (e) => {
+            const cursorPos = e.target.selectionStart;
+            const oldLen = e.target.value.length;
+
+            if (!e.target.value.replace(/\s/g, '')) {
+                state.salary = 0;
+                e.target.value = '';
+                render();
+                return;
+            }
+
+            const val = parseInputValue(e.target.value);
+            state.salary = val;
+            e.target.value = formatInputValue(e.target.value);
+
+            const newLen = e.target.value.length;
+            const newPos = cursorPos + (newLen - oldLen);
+            e.target.setSelectionRange(newPos, newPos);
+
+            render();
+        });
+
+        // Period toggle
+        const setPeriod = (p) => {
+            state.period = p;
+            if (p === 'annual') {
+                els.btnAnnual.className = "px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300";
+                els.btnMonthly.className = "px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+            } else {
+                els.btnMonthly.className = "px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300";
+                els.btnAnnual.className = "px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+            }
+            render();
+        };
+        els.btnAnnual.addEventListener('click', () => setPeriod('annual'));
+        els.btnMonthly.addEventListener('click', () => setPeriod('monthly'));
+
+        // Status toggle
+        const setStatus = (status) => {
+            state.status = status;
+            const activeClass = "flex-1 py-2 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300";
+            const inactiveClass = "flex-1 py-2 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300";
+            els.btnSingle.className = status === 'single' ? activeClass : inactiveClass;
+            els.btnMarried.className = status === 'married' ? activeClass : inactiveClass;
+            render();
+        };
+        els.btnSingle.addEventListener('click', () => setStatus('single'));
+        els.btnMarried.addEventListener('click', () => setStatus('married'));
+
+        // Children
+        const updateChildren = (val) => {
+            state.children = Math.max(0, Math.min(10, val));
+            els.displayChildren.textContent = state.children;
+            render();
+        };
+        els.btnChildMinus.addEventListener('click', () => updateChildren(state.children - 1));
+        els.btnChildPlus.addEventListener('click', () => updateChildren(state.children + 1));
+
+        // Initialize
+        render();
+
+    </script>
+
+</body>
+</html>

@@ -132,17 +132,17 @@
                         <!-- Dual Inputs: Mensuel / Annuel -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-2 group relative">
-                                <label for="monthly" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Salaire brut mensuel</label>
+                                <label for="monthly" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Salaire brut <strong class="text-zinc-700">mensuel</strong></label>
                                 <div class="relative">
-                                    <input type="number" id="monthly" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
+                                    <input type="text" inputmode="numeric" id="monthly" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
                                     <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-zinc-400 pointer-events-none">MAD</span>
                                 </div>
                             </div>
 
                             <div class="space-y-2 group relative">
-                                <label for="annual" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Salaire brut annuel</label>
+                                <label for="annual" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Salaire brut <strong class="text-zinc-700">annuel</strong></label>
                                 <div class="relative">
-                                    <input type="number" id="annual" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
+                                    <input type="text" inputmode="numeric" id="annual" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
                                     <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-zinc-400 pointer-events-none">MAD</span>
                                 </div>
                             </div>
@@ -218,6 +218,7 @@
                             <div class="text-right">
                                 <p class="text-xs text-zinc-500 mb-1">Taux Effectif</p>
                                 <p id="res-rate" class="text-lg font-semibold text-emerald-400">0%</p>
+                                <p id="res-rate-amount" class="text-xs text-zinc-500 mt-1">0 MAD preleves</p>
                             </div>
                         </div>
                     </div>
@@ -276,10 +277,11 @@
         </div>
 
         <!-- ACCORDION: SEE MORE -->
-        <div class="mt-8 border-t border-zinc-200 pt-4">
-            <button id="toggle-details" class="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-zinc-500 hover:text-emerald-600 transition-colors group">
+        <div class="mt-8 pt-6">
+            <button id="toggle-details" class="w-full flex items-center justify-center gap-2 py-4 px-6 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                <i data-lucide="calculator" class="w-4 h-4"></i>
                 <span>Voir le detail du calcul</span>
-                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" id="chevron-icon"></i>
+                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300" id="chevron-icon"></i>
             </button>
 
             <div id="details-panel" class="max-h-0 overflow-hidden opacity-0 transition-height duration-500 ease-in-out">
@@ -424,6 +426,7 @@
         const elResMonthly = document.getElementById('res-monthly');
         const elResAnnual = document.getElementById('res-annual');
         const elResRate = document.getElementById('res-rate');
+        const elResRateAmount = document.getElementById('res-rate-amount');
         const elResDeductions = document.getElementById('res-deductions');
         const elLegendNet = document.getElementById('legend-net');
         const elLegendNetAmt = document.getElementById('legend-net-amount');
@@ -444,6 +447,16 @@
         // Formatters
         const moneyFmt = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
         const pctFmt = new Intl.NumberFormat('fr-MA', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+        // Format number with spaces (1000000 -> 1 000 000)
+        const formatWithSpaces = (num) => {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        };
+
+        // Parse number from formatted string
+        const parseFormattedNumber = (str) => {
+            return parseFloat(str.replace(/\s/g, '')) || 0;
+        };
 
         // Logic
         function calculate() {
@@ -517,10 +530,11 @@
 
         function updateUI(data) {
             // Main Cards
-            elResMonthly.textContent = moneyFmt.format(data.netMonthly);
-            elResAnnual.textContent = moneyFmt.format(data.netAnnual) + ' MAD';
+            elResMonthly.textContent = formatWithSpaces(data.netMonthly);
+            elResAnnual.textContent = formatWithSpaces(data.netAnnual) + ' MAD';
             elResRate.textContent = pctFmt.format(data.effectiveRate);
-            elResDeductions.textContent = moneyFmt.format(data.totalDeductions) + ' MAD';
+            elResRateAmount.textContent = formatWithSpaces(data.totalDeductions) + ' MAD preleves';
+            elResDeductions.textContent = formatWithSpaces(data.totalDeductions) + ' MAD';
 
             // Chart
             const dashArray = `${data.netPercent}, 100`;
@@ -529,18 +543,18 @@
 
             // Legend with Amounts
             elLegendNet.textContent = Math.round(data.netPercent) + '%';
-            elLegendNetAmt.textContent = moneyFmt.format(data.netAnnual) + ' MAD';
+            elLegendNetAmt.textContent = formatWithSpaces(data.netAnnual) + ' MAD';
 
             elLegendTax.textContent = Math.round(100 - data.netPercent) + '%';
-            elLegendTaxAmt.textContent = moneyFmt.format(data.totalDeductions) + ' MAD';
+            elLegendTaxAmt.textContent = formatWithSpaces(data.totalDeductions) + ' MAD';
 
             // Details List
-            elDetailGross.textContent = moneyFmt.format(state.annualGross) + ' MAD';
-            elDetailSocial.textContent = '- ' + moneyFmt.format(data.socialContrib) + ' MAD';
-            elDetailTaxable.textContent = moneyFmt.format(data.taxableIncome) + ' MAD';
-            elDetailIrGross.textContent = moneyFmt.format(data.irGross) + ' MAD';
-            elDetailFamily.textContent = '- ' + moneyFmt.format(data.familyDeduction) + ' MAD';
-            elDetailIrNet.textContent = moneyFmt.format(data.irNet) + ' MAD';
+            elDetailGross.textContent = formatWithSpaces(state.annualGross) + ' MAD';
+            elDetailSocial.textContent = '- ' + formatWithSpaces(data.socialContrib) + ' MAD';
+            elDetailTaxable.textContent = formatWithSpaces(data.taxableIncome) + ' MAD';
+            elDetailIrGross.textContent = formatWithSpaces(data.irGross) + ' MAD';
+            elDetailFamily.textContent = '- ' + formatWithSpaces(data.familyDeduction) + ' MAD';
+            elDetailIrNet.textContent = formatWithSpaces(data.irNet) + ' MAD';
 
             // Table
             elTrancheBody.innerHTML = '';
@@ -555,17 +569,17 @@
                     row.innerHTML = `
                         <td class="px-6 py-3 font-medium text-zinc-900 whitespace-nowrap">${t.range}</td>
                         <td class="px-6 py-3 text-zinc-500">${(t.rate * 100).toFixed(0)}%</td>
-                        <td class="px-6 py-3 text-right text-zinc-500 font-mono text-xs">${moneyFmt.format(t.amount)}</td>
-                        <td class="px-6 py-3 text-right text-zinc-900 font-mono text-xs font-semibold">${moneyFmt.format(t.tax)}</td>
+                        <td class="px-6 py-3 text-right text-zinc-500 font-mono text-xs">${formatWithSpaces(t.amount)}</td>
+                        <td class="px-6 py-3 text-right text-zinc-900 font-mono text-xs font-semibold">${formatWithSpaces(t.tax)} MAD</td>
                     `;
                     elTrancheBody.appendChild(row);
                 });
 
                 const totalRow = document.createElement('tr');
-                totalRow.className = "bg-zinc-50 font-semibold border-t border-zinc-200";
+                totalRow.className = "bg-emerald-50 font-semibold border-t-2 border-emerald-200";
                 totalRow.innerHTML = `
-                    <td class="px-6 py-3 text-zinc-900" colspan="3">Total IR Brut</td>
-                    <td class="px-6 py-3 text-right text-emerald-600 font-mono text-xs">${moneyFmt.format(data.irGross)}</td>
+                    <td class="px-6 py-3 text-emerald-900" colspan="3">Total IR Brut</td>
+                    <td class="px-6 py-3 text-right text-emerald-700 font-mono text-sm">${formatWithSpaces(data.irGross)} MAD</td>
                 `;
                 elTrancheBody.appendChild(totalRow);
             }
@@ -573,20 +587,32 @@
 
         // --- Event Listeners ---
 
-        // Inputs
+        // Inputs with formatting
         elMonthly.addEventListener('input', (e) => {
-            const val = parseFloat(e.target.value) || 0;
+            // Remove non-numeric characters except spaces
+            let rawValue = e.target.value.replace(/[^\d]/g, '');
+            const val = parseFloat(rawValue) || 0;
+
+            // Update display with spaces
+            e.target.value = val > 0 ? formatWithSpaces(val) : '';
+
             state.monthlyGross = val;
             state.annualGross = val * 12;
-            elAnnual.value = state.annualGross === 0 ? '' : state.annualGross;
+            elAnnual.value = state.annualGross > 0 ? formatWithSpaces(state.annualGross) : '';
             calculate();
         });
 
         elAnnual.addEventListener('input', (e) => {
-            const val = parseFloat(e.target.value) || 0;
+            // Remove non-numeric characters except spaces
+            let rawValue = e.target.value.replace(/[^\d]/g, '');
+            const val = parseFloat(rawValue) || 0;
+
+            // Update display with spaces
+            e.target.value = val > 0 ? formatWithSpaces(val) : '';
+
             state.annualGross = val;
             state.monthlyGross = val / 12;
-            elMonthly.value = state.monthlyGross === 0 ? '' : state.monthlyGross.toFixed(2);
+            elMonthly.value = state.monthlyGross > 0 ? formatWithSpaces(Math.round(state.monthlyGross)) : '';
             calculate();
         });
 

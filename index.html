@@ -89,7 +89,10 @@
                 <a href="#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
                     <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
                 </a>
-                <a href="/comparateur-salaire-france-maroc.html" class="hover:text-slate-900 transition-colors">Impots France vs Maroc</a>
+                <a href="/comparateur-salaire-france-maroc.html" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/comparateur-global.html" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Comparateur Global
+                </a>
                 <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
             <a href="#contact" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
@@ -263,50 +266,60 @@
                     <iconify-icon icon="lucide:scale" width="20"></iconify-icon>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Comparateur International</h2>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Comparateurs Internationaux</h2>
                     <p class="text-slate-500 text-sm">Analyse croisee des regimes fiscaux</p>
                 </div>
             </div>
 
-            <!-- Comparator Card -->
-            <div class="group relative bg-slate-900 rounded-2xl p-1 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                <div class="relative bg-slate-950 rounded-xl p-8 h-full">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
-                                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon>
-                                </span>
-                                <iconify-icon icon="lucide:arrow-right-left" class="text-slate-600" width="16"></iconify-icon>
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
-                                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon>
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Comparateur France vs Maroc</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                                Comparez votre pouvoir d'achat reel. Visualisez les differences de charges sociales, d'impots sur le revenu et de salaire net disponible entre la France et le Maroc pour un meme salaire brut.
-                            </p>
-                            <a href="/comparateur-salaire-france-maroc.html" class="inline-flex items-center gap-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 px-5 py-2.5 rounded-lg transition-all shadow-lg shadow-indigo-900/20">
-                                Lancer la comparaison
-                                <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
-                            </a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Comparator Card: France vs Maroc -->
+                <a href="/comparateur-salaire-france-maroc.html" class="group relative bg-slate-900 rounded-2xl p-1 overflow-hidden block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    <div class="relative bg-slate-950 rounded-xl p-6 h-full">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
+                                <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon>
+                            </span>
+                            <iconify-icon icon="lucide:arrow-right-left" class="text-slate-600" width="16"></iconify-icon>
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700">
+                                <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon>
+                            </span>
                         </div>
-                        <div class="hidden md:block relative h-full min-h-[160px] bg-slate-900/50 rounded-lg border border-slate-800/50 p-6">
-                            <!-- Visual Chart Representation -->
-                            <div class="flex items-end justify-center gap-6 h-full pb-4">
-                                <div class="w-16 bg-slate-800 rounded-t-lg relative group-hover:h-[80%] h-[60%] transition-all duration-700 delay-100">
-                                    <div class="absolute bottom-0 w-full bg-indigo-500/80 h-[40%] rounded-b-sm"></div>
-                                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-medium">FR</div>
-                                </div>
-                                <div class="w-16 bg-slate-800 rounded-t-lg relative group-hover:h-[85%] h-[70%] transition-all duration-700">
-                                    <div class="absolute bottom-0 w-full bg-emerald-500/80 h-[25%] rounded-b-sm"></div>
-                                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-medium">MA</div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">France vs Maroc</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Comparaison detaillee entre la France et le Maroc. Cotisations, IR, quotient familial.
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-sm font-medium text-indigo-400 group-hover:text-indigo-300 transition-colors">
+                            Comparer
+                            <iconify-icon icon="lucide:arrow-right" width="14" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </span>
                     </div>
-                </div>
+                </a>
+
+                <!-- Comparator Card: Global -->
+                <a href="/comparateur-global.html" class="group relative bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 rounded-2xl p-1 overflow-hidden block">
+                    <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div class="relative bg-slate-950 rounded-xl p-6 h-full">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇫🇷</span>
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇲🇦</span>
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇦🇪</span>
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇨🇭</span>
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇱🇺</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-lg font-semibold text-white">Comparateur Global</h3>
+                            <span class="text-[10px] font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full">NEW</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Comparez 5 pays : France, Maroc, Dubai, Geneve et Luxembourg. Trouvez le meilleur net !
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-sm font-medium text-amber-400 group-hover:text-amber-300 transition-colors">
+                            Lancer le comparateur
+                            <iconify-icon icon="lucide:arrow-right" width="14" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

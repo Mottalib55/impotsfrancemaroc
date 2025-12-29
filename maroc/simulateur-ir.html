@@ -676,7 +676,12 @@
             }
         });
 
-        // Initialize
+        // Initialize with default value
+        const defaultMonthly = 15000;
+        state.monthlyGross = defaultMonthly;
+        state.annualGross = defaultMonthly * 12;
+        elMonthly.value = formatWithSpaces(defaultMonthly);
+        elAnnual.value = formatWithSpaces(state.annualGross);
         updateStatusUI();
         calculate();
     </script>

@@ -73,8 +73,8 @@ const translations = {
     'home.compare_btn_short': { fr: 'Comparer', en: 'Compare' },
     'home.global_title': { fr: 'Comparateur Global', en: 'Global Comparator' },
     'home.global_desc': {
-        fr: 'Comparez 5 pays : France, Maroc, Dubaï, Genève et Luxembourg. Trouvez le meilleur net !',
-        en: 'Compare 5 countries: France, Morocco, Dubai, Geneva and Luxembourg. Find the best net!'
+        fr: 'Comparez 7 pays : France, Maroc, Dubaï, UK, Arabie Saoudite, Genève et Luxembourg. Trouvez le meilleur net !',
+        en: 'Compare 7 countries: France, Morocco, Dubai, UK, Saudi Arabia, Geneva and Luxembourg. Find the best net!'
     },
     'home.launch_comparator': { fr: 'Lancer le comparateur', en: 'Launch comparator' },
     'home.new': { fr: 'NOUVEAU', en: 'NEW' },
@@ -403,9 +403,11 @@ const translations = {
     'country.dubai': { fr: 'Dubaï', en: 'Dubai' },
     'country.geneve': { fr: 'Genève', en: 'Geneva' },
     'country.luxembourg': { fr: 'Luxembourg', en: 'Luxembourg' },
+    'country.uk': { fr: 'Royaume-Uni', en: 'United Kingdom' },
+    'country.ksa': { fr: 'Arabie Saoudite', en: 'Saudi Arabia' },
 
     // Global Comparator Page
-    'comp_global.badge': { fr: '5 pays - Barèmes 2025', en: '5 countries - 2025 Rates' },
+    'comp_global.badge': { fr: '7 pays - Barèmes 2025', en: '7 countries - 2025 Rates' },
     'comp_global.title': { fr: 'Comparateur Fiscal International', en: 'International Tax Comparator' },
     'comp_global.subtitle': { fr: 'Sélectionnez les pays à comparer et découvrez où votre salaire net sera le plus avantageux.', en: 'Select countries to compare and discover where your net salary will be most advantageous.' },
     'comp_global.select_countries': { fr: 'Sélectionnez les pays à comparer (2 minimum)', en: 'Select countries to compare (minimum 2)' },
@@ -433,6 +435,7 @@ const translations = {
     'comp_global.select_min_2': { fr: 'Sélectionnez au moins 2 pays pour comparer.', en: 'Select at least 2 countries to compare.' },
     'comp_global.select_min_2_title': { fr: 'Sélectionnez au moins 2 pays', en: 'Select at least 2 countries' },
     'comp_global.countries_5': { fr: '5 Pays', en: '5 Countries' },
+    'comp_global.countries_7': { fr: '7 Pays', en: '7 Countries' },
     'comp_global.intl_comparison': { fr: 'Comparaison internationale', en: 'International comparison' },
     'comp_global.rates_2025': { fr: 'Barèmes 2025', en: '2025 Rates' },
     'comp_global.updated_data': { fr: 'Données à jour', en: 'Up-to-date data' },
@@ -441,8 +444,8 @@ const translations = {
     'comp_global.private': { fr: '100% Privé', en: '100% Private' },
     'comp_global.no_data_stored': { fr: 'Aucune donnée stockée', en: 'No data stored' },
     'comp_global.disclaimer': {
-        fr: 'Avertissement Légal : Cet outil est fourni à titre indicatif uniquement. Les lois fiscales varient selon les pays et sont sujettes à modifications. Les cotisations sociales sont des estimations moyennes. Dubai: 0% IR pour résidents fiscaux. Genève: taux cantonal + communal estimés. Luxembourg: barème 2025 classe 1. France et Maroc: barèmes 2025 officiels.',
-        en: 'Legal Disclaimer: This tool is provided for informational purposes only. Tax laws vary by country and are subject to change. Social contributions are average estimates. Dubai: 0% income tax for tax residents. Geneva: estimated cantonal + municipal rates. Luxembourg: 2025 class 1 rates. France and Morocco: official 2025 rates.'
+        fr: 'Avertissement Légal : Cet outil est fourni à titre indicatif uniquement. Les lois fiscales varient selon les pays et sont sujettes à modifications. Les cotisations sociales sont des estimations moyennes. Dubai et Arabie Saoudite: 0% IR pour résidents fiscaux. UK: PAYE + National Insurance 2024/25. Genève: taux cantonal + communal estimés. Luxembourg: barème 2025 classe 1. France et Maroc: barèmes 2025 officiels.',
+        en: 'Legal Disclaimer: This tool is provided for informational purposes only. Tax laws vary by country and are subject to change. Social contributions are average estimates. Dubai and Saudi Arabia: 0% income tax for tax residents. UK: PAYE + National Insurance 2024/25. Geneva: estimated cantonal + municipal rates. Luxembourg: 2025 class 1 rates. France and Morocco: official 2025 rates.'
     },
 
     // ==========================================

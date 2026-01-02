@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparateur Fiscal International - France, Maroc, Dubai, Suisse, Luxembourg | NetSalaire</title>
-    <meta name="description" content="Comparez votre salaire net entre la France, le Maroc, Dubai, Geneve et Luxembourg. Simulateur fiscal international avec IR et cotisations sociales.">
-    <meta name="keywords" content="comparateur salaire international, simulateur fiscal, impot france maroc dubai suisse luxembourg, expatriation, salaire net">
+    <title>Comparateur Fiscal International - France, Maroc, Dubai, UK, Arabie Saoudite, Suisse, Luxembourg | NetSalaire</title>
+    <meta name="description" content="Comparez votre salaire net entre la France, le Maroc, Dubai, UK, Arabie Saoudite, Geneve et Luxembourg. Simulateur fiscal international avec IR et cotisations sociales.">
+    <meta name="keywords" content="comparateur salaire international, simulateur fiscal, impot france maroc dubai uk arabie saoudite suisse luxembourg, expatriation, salaire net">
     <link rel="canonical" href="https://netsalaire.com/comparateur-global.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Comparateur Fiscal International - NetSalaire">
-    <meta property="og:description" content="Comparez votre salaire net entre 5 pays: France, Maroc, Dubai, Geneve, Luxembourg.">
+    <meta property="og:description" content="Comparez votre salaire net entre 7 pays: France, Maroc, Dubai, UK, Arabie Saoudite, Geneve, Luxembourg.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://netsalaire.com/comparateur-global.html">
     <meta property="og:image" content="https://netsalaire.com/assets/images/og-comparateur-global.png">
@@ -18,7 +18,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Comparateur Fiscal International">
-    <meta name="twitter:description" content="Comparez votre salaire net entre 5 pays.">
+    <meta name="twitter:description" content="Comparez votre salaire net entre 7 pays.">
 
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow">
@@ -61,7 +61,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Comparateur Fiscal International",
-        "description": "Simulateur fiscal pour comparer le salaire net entre France, Maroc, Dubai, Geneve et Luxembourg",
+        "description": "Simulateur fiscal pour comparer le salaire net entre France, Maroc, Dubai, UK, Arabie Saoudite, Geneve et Luxembourg",
         "url": "https://netsalaire.com/comparateur-global.html",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
@@ -167,7 +167,7 @@
                 <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500" data-i18n="comp_global.select_countries">Selectionnez les pays a comparer (2 minimum)</h2>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
                 <!-- France -->
                 <div class="relative">
                     <input type="checkbox" id="country-fr" class="country-checkbox sr-only" checked data-country="fr">
@@ -230,6 +230,32 @@
                         <span class="text-3xl">🇱🇺</span>
                         <span class="text-sm font-semibold text-slate-700" data-i18n="country.luxembourg">Luxembourg</span>
                         <span class="text-[10px] text-slate-400 font-medium"><span data-i18n="comp_global.ir_rate">IR</span> 0-42%</span>
+                    </label>
+                </div>
+
+                <!-- UK -->
+                <div class="relative">
+                    <input type="checkbox" id="country-uk" class="country-checkbox sr-only" data-country="uk">
+                    <label for="country-uk" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇬🇧</span>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="country.uk">Royaume-Uni</span>
+                        <span class="text-[10px] text-slate-400 font-medium"><span data-i18n="comp_global.ir_rate">IR</span> 0-45%</span>
+                    </label>
+                </div>
+
+                <!-- KSA (Saudi Arabia) -->
+                <div class="relative">
+                    <input type="checkbox" id="country-sa" class="country-checkbox sr-only" data-country="sa">
+                    <label for="country-sa" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇸🇦</span>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="country.ksa">Arabie Saoudite</span>
+                        <span class="text-[10px] text-emerald-500 font-bold" data-i18n="comp_global.no_tax">0% IMPOT</span>
                     </label>
                 </div>
             </div>
@@ -314,7 +340,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                     <div class="text-2xl mb-2">🌍</div>
-                    <h4 class="text-sm font-semibold text-slate-900" data-i18n="comp_global.countries_5">5 Pays</h4>
+                    <h4 class="text-sm font-semibold text-slate-900" data-i18n="comp_global.countries_7">7 Pays</h4>
                     <p class="text-xs text-slate-500" data-i18n="comp_global.intl_comparison">Comparaison internationale</p>
                 </div>
                 <div>
@@ -337,8 +363,8 @@
 
         <p class="text-center text-[10px] text-slate-400 mt-8 pb-4 max-w-3xl mx-auto leading-relaxed" data-i18n="comp_global.disclaimer">
             Avertissement Legal : Cet outil est fourni a titre indicatif uniquement. Les lois fiscales varient selon les pays et sont sujettes a modifications.
-            Les cotisations sociales sont des estimations moyennes. Dubai: 0% IR pour residents fiscaux. Geneve: taux cantonal + communal estimes.
-            Luxembourg: bareme 2025 classe 1. France et Maroc: baremes 2025 officiels.
+            Les cotisations sociales sont des estimations moyennes. Dubai et Arabie Saoudite: 0% IR pour residents fiscaux. UK: PAYE + National Insurance 2024/25.
+            Geneve: taux cantonal + communal estimes. Luxembourg: bareme 2025 classe 1. France et Maroc: baremes 2025 officiels.
         </p>
 
     </main>
@@ -496,6 +522,39 @@
                     { limit: Infinity, rate: 0.42 }
                 ],
                 socialRate: 0.1299
+            },
+            uk: {
+                name: 'UK',
+                flag: '🇬🇧',
+                currency: 'GBP',
+                currencySymbol: '£',
+                color: 'blue',
+                exchangeRate: 0.85,
+                taxSystem: 'PAYE + NI',
+                // UK Income Tax 2024/25
+                brackets: [
+                    { limit: 12570, rate: 0 },        // Personal Allowance
+                    { limit: 50270, rate: 0.20 },    // Basic rate
+                    { limit: 125140, rate: 0.40 },   // Higher rate
+                    { limit: Infinity, rate: 0.45 }  // Additional rate
+                ],
+                // National Insurance Class 1 (employee)
+                niThreshold: 12570,
+                niUpperLimit: 50270,
+                niRate: 0.08,      // 8% between threshold and upper limit (2024/25)
+                niUpperRate: 0.02  // 2% above upper limit
+            },
+            sa: {
+                name: 'Arabie Saoudite',
+                flag: '🇸🇦',
+                currency: 'SAR',
+                currencySymbol: 'SAR',
+                color: 'green',
+                exchangeRate: 4.1,
+                taxSystem: '0% Impôt',
+                brackets: [],
+                socialRate: 0,  // No income tax for individuals
+                taxRate: 0
             }
         };
 
@@ -505,7 +564,9 @@
             emerald: { bg: 'bg-emerald-500', bgLight: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
             amber: { bg: 'bg-amber-500', bgLight: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200' },
             red: { bg: 'bg-red-500', bgLight: 'bg-red-50', text: 'text-red-600', border: 'border-red-200' },
-            sky: { bg: 'bg-sky-500', bgLight: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200' }
+            sky: { bg: 'bg-sky-500', bgLight: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200' },
+            blue: { bg: 'bg-blue-500', bgLight: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
+            green: { bg: 'bg-green-500', bgLight: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' }
         };
 
         // ==========================================
@@ -559,8 +620,8 @@
             const country = COUNTRIES[countryCode];
             const localGross = annualGrossEur * country.exchangeRate;
 
-            if (countryCode === 'ae') {
-                // Dubai: 0% tax
+            if (countryCode === 'ae' || countryCode === 'sa') {
+                // Dubai & Saudi Arabia: 0% tax
                 return {
                     country: countryCode,
                     gross: localGross,
@@ -589,7 +650,57 @@
                 return calculateLuxembourg(annualGrossEur);
             }
 
+            if (countryCode === 'uk') {
+                return calculateUK(annualGrossEur);
+            }
+
             return null;
+        }
+
+        function calculateUK(annualGrossEur) {
+            const country = COUNTRIES.uk;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            // Calculate National Insurance
+            let ni = 0;
+            if (localGross > country.niThreshold) {
+                if (localGross <= country.niUpperLimit) {
+                    ni = (localGross - country.niThreshold) * country.niRate;
+                } else {
+                    ni = (country.niUpperLimit - country.niThreshold) * country.niRate;
+                    ni += (localGross - country.niUpperLimit) * country.niUpperRate;
+                }
+            }
+
+            // Calculate Income Tax
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (localGross > prevLimit) {
+                    const taxableInBracket = Math.min(localGross, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Personal allowance reduction for high earners (>£100k)
+            if (localGross > 100000) {
+                const reduction = Math.min(12570, (localGross - 100000) / 2);
+                tax += reduction * 0.40; // Lost allowance taxed at 40%
+            }
+
+            const net = localGross - ni - tax;
+
+            return {
+                country: 'uk',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: ni,
+                tax: tax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (ni + tax) / localGross
+            };
         }
 
         function calculateFrance(annualGrossEur) {
@@ -759,7 +870,16 @@
             const netPct = data.gross > 0 ? (data.net / data.gross * 100) : 0;
 
             // Get translated country name
-            const countryName = i18n.t(`country.${data.country === 'ae' ? 'dubai' : data.country === 'ch' ? 'geneve' : data.country === 'lu' ? 'luxembourg' : data.country === 'ma' ? 'maroc' : 'france'}`);
+            const countryKeyMap = {
+                'fr': 'france',
+                'ma': 'maroc',
+                'ae': 'dubai',
+                'ch': 'geneve',
+                'lu': 'luxembourg',
+                'uk': 'uk',
+                'sa': 'ksa'
+            };
+            const countryName = i18n.t(`country.${countryKeyMap[data.country]}`);
 
             return `
                 <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
@@ -862,7 +982,16 @@
             const winner = results[0];
             const winnerCountry = COUNTRIES[winner.country];
             const colors = COLOR_CLASSES[winnerCountry.color];
-            const winnerName = i18n.t(`country.${winner.country === 'ae' ? 'dubai' : winner.country === 'ch' ? 'geneve' : winner.country === 'lu' ? 'luxembourg' : winner.country === 'ma' ? 'maroc' : 'france'}`);
+            const countryKeyMap = {
+                'fr': 'france',
+                'ma': 'maroc',
+                'ae': 'dubai',
+                'ch': 'geneve',
+                'lu': 'luxembourg',
+                'uk': 'uk',
+                'sa': 'ksa'
+            };
+            const winnerName = i18n.t(`country.${countryKeyMap[winner.country]}`);
 
             els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerName} ${i18n.t('comp_global.wins')}`;
 

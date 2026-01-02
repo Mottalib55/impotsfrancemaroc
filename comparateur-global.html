@@ -164,7 +164,7 @@
         <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
             <div class="flex items-center gap-2 mb-4">
                 <span class="iconify text-slate-400" data-icon="lucide:map-pin" width="18"></span>
-                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500" data-i18n="comp_global.select_countries">Selectionnez les pays a comparer (2 minimum)</h2>
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500" data-i18n="comp_global.select_countries">Selectionnez les pays a comparer (4 maximum)</h2>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -1207,14 +1207,14 @@
         function render() {
             const annualGross = state.period === 'monthly' ? state.salary * 12 : state.salary;
 
-            if (state.selectedCountries.length < 2) {
+            if (state.selectedCountries.length < 1) {
                 els.resultsContainer.innerHTML = `
                     <div class="col-span-full text-center py-12 text-slate-400">
                         <span class="iconify mx-auto mb-3" data-icon="lucide:alert-circle" width="40"></span>
-                        <p>${i18n.t('comp_global.select_min_2')}</p>
+                        <p>${i18n.t('comp_global.select_min_1')}</p>
                     </div>
                 `;
-                els.verdictTitle.textContent = i18n.t('comp_global.select_min_2_title');
+                els.verdictTitle.textContent = i18n.t('comp_global.select_min_1_title');
                 els.verdictText.textContent = '';
                 els.rankingList.innerHTML = '';
                 return;
@@ -1229,14 +1229,16 @@
             // Render cards
             els.resultsContainer.innerHTML = results.map(data => createCountryCard(data)).join('');
 
-            // Update grid columns based on count
+            // Update grid columns based on count (max 4)
             const count = results.length;
-            if (count <= 2) {
+            if (count === 1) {
+                els.resultsContainer.className = 'grid grid-cols-1 max-w-md mx-auto gap-6';
+            } else if (count === 2) {
                 els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
             } else if (count === 3) {
                 els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-3 gap-6';
             } else {
-                els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+                els.resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6';
             }
 
             // Render verdict
@@ -1257,34 +1259,54 @@
             };
             const winnerName = i18n.t(`country.${countryKeyMap2[winner.country]}`);
 
-            els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerName} ${i18n.t('comp_global.wins')}`;
-
-            const diffWithLast = winner.netEur - results[results.length - 1].netEur;
-            els.verdictText.innerHTML = `+${formatMoney(diffWithLast, '€')}/an ${i18n.t('comp_global.vs_last')} • ${i18n.t('comp_global.effective_rate')}: ${formatPct(winner.rate)}`;
-
-            // Ranking badges
-            els.rankingList.innerHTML = results.map((r, i) => {
-                const c = COUNTRIES[r.country];
-                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
-                return `
-                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-yellow-500/20' : 'bg-slate-700'}">
-                        <span class="text-lg">${medal}</span>
-                        <span class="text-lg">${c.flag}</span>
-                        <span class="text-sm font-medium ${i === 0 ? 'text-yellow-300' : 'text-slate-300'}">${formatMoney(r.netEur, '€')}</span>
+            // Handle single country vs multiple countries
+            if (results.length === 1) {
+                els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerName}`;
+                els.verdictText.innerHTML = `${i18n.t('comp_global.effective_rate')}: ${formatPct(winner.rate)} • Net: ${formatMoney(winner.netEur, '€')}/an`;
+                els.rankingList.innerHTML = `
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-yellow-500/20">
+                        <span class="text-lg">${winnerCountry.flag}</span>
+                        <span class="text-sm font-medium text-yellow-300">${formatMoney(winner.netEur, '€')}</span>
                     </div>
                 `;
-            }).join('');
+            } else {
+                els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerName} ${i18n.t('comp_global.wins')}`;
+
+                const diffWithLast = winner.netEur - results[results.length - 1].netEur;
+                els.verdictText.innerHTML = `+${formatMoney(diffWithLast, '€')}/an ${i18n.t('comp_global.vs_last')} • ${i18n.t('comp_global.effective_rate')}: ${formatPct(winner.rate)}`;
+
+                // Ranking badges
+                els.rankingList.innerHTML = results.map((r, i) => {
+                    const c = COUNTRIES[r.country];
+                    const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
+                    return `
+                        <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-yellow-500/20' : 'bg-slate-700'}">
+                            <span class="text-lg">${medal}</span>
+                            <span class="text-lg">${c.flag}</span>
+                            <span class="text-sm font-medium ${i === 0 ? 'text-yellow-300' : 'text-slate-300'}">${formatMoney(r.netEur, '€')}</span>
+                        </div>
+                    `;
+                }).join('');
+            }
         }
 
         // ==========================================
         // EVENT LISTENERS
         // ==========================================
 
-        // Country checkboxes
+        // Country checkboxes (max 4 selection)
+        const MAX_COUNTRIES = 4;
         document.querySelectorAll('.country-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                state.selectedCountries = Array.from(document.querySelectorAll('.country-checkbox:checked'))
-                    .map(cb => cb.dataset.country);
+            checkbox.addEventListener('change', (e) => {
+                const checkedBoxes = document.querySelectorAll('.country-checkbox:checked');
+
+                // If trying to select more than 4, prevent it
+                if (checkedBoxes.length > MAX_COUNTRIES) {
+                    e.target.checked = false;
+                    return;
+                }
+
+                state.selectedCountries = Array.from(checkedBoxes).map(cb => cb.dataset.country);
                 render();
             });
         });

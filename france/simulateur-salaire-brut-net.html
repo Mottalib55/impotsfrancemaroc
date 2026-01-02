@@ -57,24 +57,27 @@
                 <span class="iconify" data-icon="lucide:menu" width="24"></span>
             </button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
+                <li class="nav-item"><a href="/comparateur-global.html" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
+                <li class="nav-item"><a href="/#france" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span></a></li>
+                <li class="nav-item"><a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span></a></li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
             </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </button>
+                <div class="lang-dropdown">
+                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -84,8 +87,8 @@
             <!-- Header -->
             <header class="text-center mb-8">
                 <span class="country-badge country-badge-fr mb-4 inline-flex">🇫🇷 France</span>
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Brut → Net</h1>
-                <p class="text-slate-500">Calculez votre salaire net a partir du brut. Baremes 2025.</p>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="sim.fr.title">Simulateur Brut → Net</h1>
+                <p class="text-slate-500" data-i18n="sim.fr.subtitle">Calculez votre salaire net à partir du brut. Barèmes 2025.</p>
             </header>
 
             <!-- Calculator -->
@@ -93,7 +96,7 @@
                 <div class="space-y-6">
                     <!-- Input -->
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Salaire Brut Mensuel</label>
+                        <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.gross_monthly">Salaire Brut Mensuel</label>
                         <div class="relative">
                             <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
                             <input type="text" inputmode="numeric" id="brut-input" class="w-full pl-10 pr-4 py-3 text-lg font-semibold border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" placeholder="3 000" value="3 000">
@@ -103,17 +106,17 @@
                     <!-- Options -->
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Statut</label>
+                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.status">Statut</label>
                             <select id="statut" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                                <option value="noncadre">Non-Cadre</option>
-                                <option value="cadre">Cadre</option>
+                                <option value="noncadre" data-i18n="sim.non_cadre">Non-Cadre</option>
+                                <option value="cadre" data-i18n="sim.cadre">Cadre</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Periode</label>
+                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.period">Période</label>
                             <select id="periode" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                                <option value="mensuel">Mensuel</option>
-                                <option value="annuel">Annuel</option>
+                                <option value="mensuel" data-i18n="sim.monthly">Mensuel</option>
+                                <option value="annuel" data-i18n="sim.annual">Annuel</option>
                             </select>
                         </div>
                     </div>
@@ -121,9 +124,9 @@
                     <!-- Results -->
                     <div class="bg-indigo-50 rounded-xl p-6 mt-6">
                         <div class="text-center">
-                            <p class="text-sm text-indigo-600 font-medium mb-1">Salaire Net</p>
+                            <p class="text-sm text-indigo-600 font-medium mb-1" data-i18n="sim.net_salary">Salaire Net</p>
                             <p class="text-4xl font-bold text-indigo-900" id="net-result">2 340 €</p>
-                            <p class="text-sm text-indigo-600 mt-2" id="net-annuel">soit 28 080 € / an</p>
+                            <p class="text-sm text-indigo-600 mt-2" id="net-annuel"><span data-i18n="sim.or">soit</span> 28 080 € <span data-i18n="sim.per_year">/ an</span></p>
                         </div>
                     </div>
 
@@ -132,52 +135,52 @@
                         <table class="w-full text-sm">
                             <tbody class="divide-y divide-slate-100" id="details-table">
                                 <tr>
-                                    <td class="px-4 py-3 font-medium">Salaire Brut</td>
+                                    <td class="px-4 py-3 font-medium" data-i18n="sim.gross_salary">Salaire Brut</td>
                                     <td class="px-4 py-3 text-right" id="detail-brut">3 000 €</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs">Cotisations salariales</td>
+                                    <td class="px-4 py-3 pl-6 text-xs" data-i18n="sim.social_contrib">Cotisations salariales</td>
                                     <td class="px-4 py-3 text-right text-xs" id="detail-cotis">-660 €</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs">Securite sociale</td>
+                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.social_security">Sécurité sociale</td>
                                     <td class="px-4 py-3 text-right text-xs" id="detail-secu">-420 €</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs">Retraite complementaire</td>
+                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.retirement">Retraite complémentaire</td>
                                     <td class="px-4 py-3 text-right text-xs" id="detail-retraite">-180 €</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs">Chomage</td>
+                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.unemployment">Chômage</td>
                                     <td class="px-4 py-3 text-right text-xs" id="detail-chomage">-60 €</td>
                                 </tr>
                                 <tr class="bg-indigo-50 font-semibold">
-                                    <td class="px-4 py-3">Salaire Net avant IR</td>
+                                    <td class="px-4 py-3" data-i18n="sim.net_before_tax">Salaire Net avant IR</td>
                                     <td class="px-4 py-3 text-right text-indigo-700" id="detail-net-avant-ir">2 340 €</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <p class="text-xs text-slate-400 text-center mt-4">
-                        Les cotisations sont estimees a environ 22% pour non-cadre et 25% pour cadre. Ces chiffres sont des approximations.
+                    <p class="text-xs text-slate-400 text-center mt-4" data-i18n="sim.disclaimer">
+                        Les cotisations sont estimées à environ 22% pour non-cadre et 25% pour cadre. Ces chiffres sont des approximations.
                     </p>
                 </div>
             </div>
 
             <!-- Info Section -->
             <section class="mt-8">
-                <h2 class="section-title">Comment ca marche ?</h2>
+                <h2 class="section-title" data-i18n="sim.how_it_works">Comment ça marche ?</h2>
                 <div class="card">
                     <div class="prose prose-slate max-w-none text-sm text-slate-600">
-                        <p>Le salaire net est calcule en deduisant les cotisations sociales du salaire brut :</p>
+                        <p data-i18n="sim.fr.how_text">Le salaire net est calculé en déduisant les cotisations sociales du salaire brut :</p>
                         <ul class="features-list mt-4">
-                            <li><strong>Securite sociale</strong> : maladie, vieillesse, famille</li>
-                            <li><strong>Retraite complementaire</strong> : AGIRC-ARRCO</li>
-                            <li><strong>Assurance chomage</strong> : contribution salariale</li>
-                            <li><strong>CSG/CRDS</strong> : contributions sociales</li>
+                            <li><strong data-i18n="sim.fr.how_secu">Sécurité sociale</strong> : maladie, vieillesse, famille</li>
+                            <li><strong data-i18n="sim.fr.how_retirement">Retraite complémentaire</strong> : AGIRC-ARRCO</li>
+                            <li><strong data-i18n="sim.fr.how_unemployment">Assurance chômage</strong> : contribution salariale</li>
+                            <li><strong data-i18n="sim.fr.how_csg">CSG/CRDS</strong> : contributions sociales</li>
                         </ul>
-                        <p class="mt-4">Le taux global varie entre 22% (non-cadre) et 25% (cadre) du salaire brut.</p>
+                        <p class="mt-4" data-i18n="sim.fr.how_rate">Le taux global varie entre 22% (non-cadre) et 25% (cadre) du salaire brut.</p>
                     </div>
                 </div>
             </section>
@@ -191,33 +194,33 @@
             <div class="footer-grid">
                 <div>
                     <h4>NetSalaire</h4>
-                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
+                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4>France</h4>
+                    <h4 data-i18n="nav.france">France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Maroc</h4>
+                    <h4 data-i18n="nav.maroc">Maroc</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info">Informations</h4>
                     <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
+                        <li><a href="/faq.html" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" data-i18n="footer.legal">Mentions Légales</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p>&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits réservés</span></p>
             </div>
         </div>
     </footer>
@@ -249,9 +252,14 @@
             const mult = periode === 'annuel' ? 12 : 1;
 
             document.getElementById('net-result').textContent = formatNumber(net * mult) + ' €';
-            document.getElementById('net-annuel').textContent = periode === 'mensuel'
-                ? `soit ${formatNumber(net * 12)} € / an`
-                : `soit ${formatNumber(net)} € / mois`;
+
+            const soitText = window.i18n ? i18n.t('sim.or') : 'soit';
+            const perYearText = window.i18n ? i18n.t('sim.per_year') : '/ an';
+            const perMonthText = window.i18n ? i18n.t('sim.per_month') : '/ mois';
+
+            document.getElementById('net-annuel').innerHTML = periode === 'mensuel'
+                ? `${soitText} ${formatNumber(net * 12)} € ${perYearText}`
+                : `${soitText} ${formatNumber(net)} € ${perMonthText}`;
 
             document.getElementById('detail-brut').textContent = formatNumber(brut * mult) + ' €';
             document.getElementById('detail-cotis').textContent = '-' + formatNumber(cotisations * mult) + ' €';
@@ -272,6 +280,9 @@
 
         calculate();
     </script>
+
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
 
 </body>
 </html>

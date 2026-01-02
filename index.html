@@ -84,23 +84,33 @@
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> <span data-i18n="nav.france">France</span>
                 </a>
                 <a href="#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> <span data-i18n="nav.maroc">Maroc</span>
                 </a>
-                <a href="/comparateur-salaire-france-maroc.html" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/comparateur-salaire-france-maroc.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.france_vs_maroc">France vs Maroc</a>
                 <a href="/comparateur-global.html" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Comparateur Global
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> <span data-i18n="nav.global_comparator">Comparateur Global</span>
                 </a>
-                <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
+                <a href="/faq.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.faq">FAQ</a>
             </div>
             <div class="flex items-center gap-3">
                 <!-- Language Switcher -->
-                <button onclick="i18n.toggle()" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Switch language">
-                    <span id="current-lang-flag">🇫🇷</span>
-                    <iconify-icon icon="lucide:globe" width="14"></iconify-icon>
-                </button>
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-home').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Switch language">
+                        <span class="lang-flag">🇫🇷</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-home" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <button onclick="i18n.setLang('fr'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Français
+                        </button>
+                        <button onclick="i18n.setLang('en'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </button>
+                    </div>
+                </div>
                 <a href="#contact" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
                     <span data-i18n="nav.contact">Contact</span>
                     <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
@@ -185,9 +195,9 @@
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Simulateur Impot sur le Revenu</h3>
-                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
-                        Estimation avec bareme progressif, quotient familial et decotes en vigueur.
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" data-i18n="home.ir_title_fr">Simulateur Impôt sur le Revenu</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2" data-i18n="home.ir_desc_fr">
+                        Estimation avec barème progressif, quotient familial et décotes en vigueur.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -202,9 +212,9 @@
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Guide Fiscal France 2025</h3>
-                    <p class="text-sm text-slate-500 mb-4">
-                        Tout comprendre sur la fiscalite francaise : cotisations sociales, quotient familial, tranches IR, optimisation fiscale.
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" data-i18n="home.guide_title_fr">Guide Fiscal France 2025</h3>
+                    <p class="text-sm text-slate-500 mb-4" data-i18n="home.guide_desc_fr">
+                        Tout comprendre sur la fiscalité française : cotisations sociales, quotient familial, tranches IR, optimisation fiscale.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-indigo-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -236,9 +246,9 @@
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Simulateur Impot sur le Revenu</h3>
-                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
-                        Calcul complet avec CNSS, AMO, frais professionnels et abattement familial. Baremes 2025.
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" data-i18n="home.ir_title_ma">Simulateur Impôt sur le Revenu</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2" data-i18n="home.ir_desc_ma">
+                        Calcul complet avec CNSS, AMO, frais professionnels et abattement familial. Barèmes 2025.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-emerald-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -253,9 +263,9 @@
                         </div>
                         <iconify-icon icon="lucide:arrow-up-right" class="text-slate-300 group-hover:text-slate-600 transition-colors" width="20"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900 mb-2">Guide Fiscal Maroc 2025</h3>
-                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">
-                        Tout comprendre sur la fiscalite marocaine : CNSS, AMO, tranches IR, abattements.
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" data-i18n="home.guide_title_ma">Guide Fiscal Maroc 2025</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2" data-i18n="home.guide_desc_ma">
+                        Tout comprendre sur la fiscalité marocaine : CNSS, AMO, tranches IR, abattements.
                     </p>
                     <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
                         <div class="w-0 h-full bg-emerald-500 group-hover:w-full transition-all duration-700 ease-out"></div>
@@ -273,8 +283,8 @@
                     <iconify-icon icon="lucide:scale" width="20"></iconify-icon>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Comparateurs Internationaux</h2>
-                    <p class="text-slate-500 text-sm">Analyse croisee des regimes fiscaux</p>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight" data-i18n="home.comparators_title">Comparateurs Internationaux</h2>
+                    <p class="text-slate-500 text-sm" data-i18n="home.comparators_subtitle">Analyse croisée des régimes fiscaux</p>
                 </div>
             </div>
 
@@ -292,12 +302,12 @@
                                 <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon>
                             </span>
                         </div>
-                        <h3 class="text-lg font-semibold text-white mb-2">France vs Maroc</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Comparaison detaillee entre la France et le Maroc. Cotisations, IR, quotient familial.
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="home.compare_fr_ma">France vs Maroc</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4" data-i18n="home.compare_fr_ma_desc">
+                            Comparaison détaillée entre la France et le Maroc. Cotisations, IR, quotient familial.
                         </p>
                         <span class="inline-flex items-center gap-2 text-sm font-medium text-indigo-400 group-hover:text-indigo-300 transition-colors">
-                            Comparer
+                            <span data-i18n="home.compare_btn_short">Comparer</span>
                             <iconify-icon icon="lucide:arrow-right" width="14" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
                         </span>
                     </div>
@@ -315,14 +325,14 @@
                             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-lg">🇱🇺</span>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-lg font-semibold text-white">Comparateur Global</h3>
-                            <span class="text-[10px] font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full">NEW</span>
+                            <h3 class="text-lg font-semibold text-white" data-i18n="home.global_title">Comparateur Global</h3>
+                            <span class="text-[10px] font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full" data-i18n="home.new">NEW</span>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Comparez 5 pays : France, Maroc, Dubai, Geneve et Luxembourg. Trouvez le meilleur net !
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4" data-i18n="home.global_desc">
+                            Comparez 5 pays : France, Maroc, Dubaï, Genève et Luxembourg. Trouvez le meilleur net !
                         </p>
                         <span class="inline-flex items-center gap-2 text-sm font-medium text-amber-400 group-hover:text-amber-300 transition-colors">
-                            Lancer le comparateur
+                            <span data-i18n="home.launch_comparator">Lancer le comparateur</span>
                             <iconify-icon icon="lucide:arrow-right" width="14" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
                         </span>
                     </div>
@@ -339,40 +349,40 @@
             <div class="space-y-4">
                 <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
                     <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
-                        <span class="font-medium text-slate-800">Comment fonctionne le comparateur pays ?</span>
+                        <span class="font-medium text-slate-800" data-i18n="faq.q1">Comment fonctionne le comparateur pays ?</span>
                         <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
                     </summary>
-                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1" data-i18n="faq.a1">
                         Le comparateur calcule simultanement votre salaire net et votre pression fiscale totale dans les deux pays, pour un meme salaire brut. Il utilise le taux de change en temps reel pour convertir les montants.
                     </div>
                 </details>
 
                 <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
                     <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
-                        <span class="font-medium text-slate-800">Les calculs sont-ils fiables ?</span>
+                        <span class="font-medium text-slate-800" data-i18n="faq.q2">Les calculs sont-ils fiables ?</span>
                         <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
                     </summary>
-                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1" data-i18n="faq.a2">
                         Nos simulateurs utilisent les baremes officiels 2025 publies par les administrations fiscales francaise et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise.
                     </div>
                 </details>
 
                 <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
                     <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
-                        <span class="font-medium text-slate-800">Puis-je simuler un statut cadre en France ?</span>
+                        <span class="font-medium text-slate-800" data-i18n="faq.q3">Puis-je simuler un statut cadre en France ?</span>
                         <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
                     </summary>
-                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1" data-i18n="faq.a3">
                         Tout a fait. Le calculateur "Salaire Brut a Net" pour la France dispose d'une option pour basculer entre statut Cadre et Non-Cadre, ajustant ainsi les cotisations de retraite complementaire.
                     </div>
                 </details>
 
                 <details class="group bg-slate-50 border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 open:bg-white open:shadow-sm">
                     <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
-                        <span class="font-medium text-slate-800">Mes donnees sont-elles stockees ?</span>
+                        <span class="font-medium text-slate-800" data-i18n="faq.q4">Mes donnees sont-elles stockees ?</span>
                         <iconify-icon icon="lucide:plus" class="text-slate-400 transition-transform duration-300 group-open:rotate-45" width="20"></iconify-icon>
                     </summary>
-                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                    <div class="px-5 pb-5 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4 mt-1" data-i18n="faq.a4">
                         Non. Tous les calculs sont effectues localement dans votre navigateur. Aucune donnee personnelle n'est envoyee a nos serveurs ni stockee. Vous pouvez utiliser nos outils en toute confidentialite.
                     </div>
                 </details>
@@ -380,7 +390,7 @@
 
             <div class="text-center mt-8">
                 <a href="/faq.html" class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
-                    Voir toutes les questions
+                    <span data-i18n="faq.see_all">Voir toutes les questions</span>
                     <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
                 </a>
             </div>
@@ -395,29 +405,29 @@
                     <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
                         🔒
                     </div>
-                    <h4 class="font-semibold text-slate-900 mb-1">100% Securise</h4>
-                    <p class="text-xs text-slate-500">Aucune donnee stockee</p>
+                    <h4 class="font-semibold text-slate-900 mb-1" data-i18n="reassurance.secure">100% Sécurisé</h4>
+                    <p class="text-xs text-slate-500" data-i18n="reassurance.secure_desc">Aucune donnée stockée</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
                         📊
                     </div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Baremes Officiels</h4>
-                    <p class="text-xs text-slate-500">Mis a jour 2025</p>
+                    <h4 class="font-semibold text-slate-900 mb-1" data-i18n="reassurance.official">Barèmes Officiels</h4>
+                    <p class="text-xs text-slate-500" data-i18n="reassurance.official_desc">Mis à jour 2025</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
                         ⚡
                     </div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Instantane</h4>
-                    <p class="text-xs text-slate-500">Calculs en temps reel</p>
+                    <h4 class="font-semibold text-slate-900 mb-1" data-i18n="reassurance.instant">Instantané</h4>
+                    <p class="text-xs text-slate-500" data-i18n="reassurance.instant_desc">Calculs en temps réel</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-2xl">
                         🆓
                     </div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Gratuit</h4>
-                    <p class="text-xs text-slate-500">Sans pub ni inscription</p>
+                    <h4 class="font-semibold text-slate-900 mb-1" data-i18n="reassurance.free">Gratuit</h4>
+                    <p class="text-xs text-slate-500" data-i18n="reassurance.free_desc">Sans pub ni inscription</p>
                 </div>
             </div>
         </div>
@@ -427,39 +437,39 @@
     <section id="contact" class="py-24 px-6 border-t border-slate-200 bg-white">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-semibold text-slate-900 tracking-tight mb-4">Une question ?</h2>
-                <p class="text-slate-500">Contactez-nous, nous vous repondrons rapidement.</p>
+                <h2 class="text-3xl font-semibold text-slate-900 tracking-tight mb-4" data-i18n="contact.title">Une question ?</h2>
+                <p class="text-slate-500" data-i18n="contact.subtitle">Contactez-nous, nous vous répondrons rapidement.</p>
             </div>
 
             <form id="contact-form" class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label for="name" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Nom</label>
-                        <input type="text" id="name" name="name" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="Votre nom">
+                        <label for="name" class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-i18n="contact.name">Nom</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="Votre nom" data-i18n-placeholder="contact.name_placeholder">
                     </div>
                     <div class="space-y-2">
-                        <label for="email" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Email</label>
+                        <label for="email" class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-i18n="contact.email">Email</label>
                         <input type="email" id="email" name="email" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="votre@email.com">
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <label for="subject" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Sujet</label>
+                    <label for="subject" class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-i18n="contact.subject">Sujet</label>
                     <select id="subject" name="subject" class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all cursor-pointer">
-                        <option value="question">Question generale</option>
-                        <option value="bug">Signaler un probleme</option>
-                        <option value="suggestion">Suggestion d'amelioration</option>
-                        <option value="autre">Autre</option>
+                        <option value="question" data-i18n="contact.subject_question">Question generale</option>
+                        <option value="bug" data-i18n="contact.subject_bug">Signaler un probleme</option>
+                        <option value="suggestion" data-i18n="contact.subject_suggestion">Suggestion d'amelioration</option>
+                        <option value="autre" data-i18n="contact.subject_other">Autre</option>
                     </select>
                 </div>
 
                 <div class="space-y-2">
-                    <label for="message" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Message</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                    <label for="message" class="text-xs font-semibold text-slate-500 uppercase tracking-wider" data-i18n="contact.message">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Comment pouvons-nous vous aider ?" data-i18n-placeholder="contact.message_placeholder"></textarea>
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full bg-slate-900 text-white font-medium py-3 rounded-lg hover:bg-slate-800 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                    <span id="btn-text">Envoyer le message</span>
+                    <span id="btn-text" data-i18n="contact.send">Envoyer le message</span>
                     <iconify-icon id="btn-icon" icon="lucide:send" width="16"></iconify-icon>
                 </button>
             </form>
@@ -469,9 +479,9 @@
                 <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
                     <iconify-icon icon="lucide:check" class="text-emerald-600" width="32"></iconify-icon>
                 </div>
-                <h3 class="text-xl font-semibold text-emerald-900 mb-2">Message envoye !</h3>
-                <p class="text-emerald-700">Merci de nous avoir contacte. Nous vous repondrons rapidement.</p>
-                <button onclick="resetForm()" class="mt-6 px-6 py-2 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition-all">
+                <h3 class="text-xl font-semibold text-emerald-900 mb-2" data-i18n="contact.success_title">Message envoye !</h3>
+                <p class="text-emerald-700" data-i18n="contact.success_text">Merci de nous avoir contacte. Nous vous repondrons rapidement.</p>
+                <button onclick="resetForm()" class="mt-6 px-6 py-2 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition-all" data-i18n="contact.send_another">
                     Envoyer un autre message
                 </button>
             </div>
@@ -489,7 +499,7 @@
             e.preventDefault();
 
             // Loading state
-            btnText.textContent = 'Envoi en cours...';
+            btnText.textContent = typeof i18n !== 'undefined' ? i18n.t('contact.sending') : 'Envoi en cours...';
             btnIcon.setAttribute('icon', 'lucide:loader-2');
             btnIcon.classList.add('animate-spin');
             submitBtn.disabled = true;
@@ -510,8 +520,8 @@
                     throw new Error('Erreur');
                 }
             } catch (error) {
-                alert('Une erreur est survenue. Veuillez reessayer.');
-                btnText.textContent = 'Envoyer le message';
+                alert(typeof i18n !== 'undefined' && i18n.currentLang === 'en' ? 'An error occurred. Please try again.' : 'Une erreur est survenue. Veuillez reessayer.');
+                btnText.textContent = typeof i18n !== 'undefined' ? i18n.t('contact.send') : 'Envoyer le message';
                 btnIcon.setAttribute('icon', 'lucide:send');
                 btnIcon.classList.remove('animate-spin');
                 submitBtn.disabled = false;
@@ -522,11 +532,58 @@
             form.reset();
             form.classList.remove('hidden');
             successMessage.classList.add('hidden');
-            btnText.textContent = 'Envoyer le message';
+            btnText.textContent = typeof i18n !== 'undefined' ? i18n.t('contact.send') : 'Envoyer le message';
             btnIcon.setAttribute('icon', 'lucide:send');
             btnIcon.classList.remove('animate-spin');
             submitBtn.disabled = false;
         }
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('lang-dropdown-home');
+            const switcher = dropdown?.previousElementSibling;
+            if (dropdown && !dropdown.contains(e.target) && !switcher?.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Update page meta based on language
+        function updatePageMeta() {
+            if (typeof i18n === 'undefined') return;
+            const lang = i18n.currentLang;
+            document.documentElement.lang = lang;
+
+            // Update title
+            document.title = lang === 'en'
+                ? 'NetSalaire - France & Morocco Tax Simulators | Calculate your Net Salary'
+                : 'NetSalaire - Simulateurs Fiscaux France et Maroc | Calculez votre Salaire Net';
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.content = lang === 'en'
+                    ? 'Free tax simulators for France and Morocco. Calculate your net salary, compare tax burden, simulate your income tax.'
+                    : 'Simulateurs fiscaux gratuits pour la France et le Maroc. Calculez votre salaire net, comparez la pression fiscale, simulez votre impot sur le revenu.';
+            }
+
+            // Update og:locale
+            const ogLocale = document.querySelector('meta[property="og:locale"]');
+            if (ogLocale) {
+                ogLocale.content = lang === 'en' ? 'en_US' : 'fr_FR';
+            }
+        }
+
+        // Hook into i18n language change
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof i18n !== 'undefined') {
+                const originalSetLang = i18n.setLang.bind(i18n);
+                i18n.setLang = function(lang) {
+                    originalSetLang(lang);
+                    updatePageMeta();
+                };
+                updatePageMeta();
+            }
+        });
     </script>
 
     <!-- Footer -->
@@ -538,34 +595,34 @@
                         <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">N.</div>
                         <span class="font-semibold text-slate-900">NetSalaire</span>
                     </div>
-                    <p class="text-sm text-slate-500">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
+                    <p class="text-sm text-slate-500" data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">France</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="nav.france">France</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.tax_simulator">Simulateur Impot</a></li>
+                        <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Maroc</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="nav.maroc">Maroc</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.tax_simulator">Simulateur Impot</a></li>
+                        <li><a href="/maroc/guide/" class="hover:text-slate-900 transition-colors" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Informations</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="footer.info">Informations</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a></li>
-                        <li><a href="/mentions-legales.html" class="hover:text-slate-900 transition-colors">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html" class="hover:text-slate-900 transition-colors">Confidentialite</a></li>
+                        <li><a href="/faq.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" class="hover:text-slate-900 transition-colors" data-i18n="footer.legal">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" class="hover:text-slate-900 transition-colors" data-i18n="footer.privacy">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits reserves</span></p>
                 <div class="flex gap-4">
                     <a href="mailto:contact@netsalaire.com" class="text-slate-400 hover:text-slate-900 transition-colors">
                         <iconify-icon icon="lucide:mail" width="20" stroke-width="1.5"></iconify-icon>
@@ -577,6 +634,13 @@
 
     <!-- i18n Script -->
     <script src="/assets/js/i18n.js"></script>
+    <script>
+        // Re-apply translations after i18n loads
+        if (typeof i18n !== 'undefined') {
+            i18n.applyTranslations();
+            updatePageMeta();
+        }
+    </script>
 
 </body>
 </html>

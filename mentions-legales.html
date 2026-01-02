@@ -24,24 +24,27 @@
                 <span class="iconify" data-icon="lucide:menu" width="24"></span>
             </button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
+                <li class="nav-item"><a href="/comparateur-global.html" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
+                <li class="nav-item"><a href="/#france" class="nav-link"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span></a></li>
+                <li class="nav-item"><a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span></a></li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
             </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </button>
+                <div class="lang-dropdown">
+                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -49,22 +52,22 @@
         <div class="max-w-3xl mx-auto">
 
             <header class="text-center mb-8">
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Mentions Legales</h1>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="legal.title">Mentions Legales</h1>
             </header>
 
             <div class="card prose prose-slate max-w-none">
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Editeur du site</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.editor">Editeur du site</h2>
+                    <p class="text-slate-600" data-i18n="legal.editor_text">
                         Le site NetSalaire.com est edite par un particulier.<br>
                         Contact : <a href="mailto:contact@netsalaire.com" class="text-indigo-600">contact@netsalaire.com</a>
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Hebergement</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.hosting">Hebergement</h2>
+                    <p class="text-slate-600" data-i18n="legal.hosting_text">
                         Le site est heberge par GitHub Pages.<br>
                         GitHub, Inc.<br>
                         88 Colin P Kelly Jr St<br>
@@ -74,42 +77,42 @@
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Propriete intellectuelle</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.ip">Propriete intellectuelle</h2>
+                    <p class="text-slate-600" data-i18n="legal.ip_text">
                         L'ensemble du contenu de ce site (textes, graphismes, code source, etc.) est protege par le droit d'auteur. Toute reproduction ou representation, totale ou partielle, de ce site ou de son contenu est interdite sans autorisation prealable.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Responsabilite</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.responsibility">Responsabilite</h2>
+                    <p class="text-slate-600" data-i18n="legal.responsibility_text">
                         Les informations et calculs fournis sur ce site le sont a titre indicatif uniquement. Ils ne constituent en aucun cas un conseil fiscal, juridique ou financier. L'editeur ne saurait etre tenu responsable de toute erreur, omission ou interpretation des informations publiees.
                     </p>
-                    <p class="text-slate-600 mt-4">
+                    <p class="text-slate-600 mt-4" data-i18n="legal.responsibility_text2">
                         Les simulateurs utilisent des baremes officiels mais les cotisations sociales et impots reels peuvent varier selon votre situation personnelle. Pour toute question fiscale, consultez un professionnel qualifie.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Donnees personnelles</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.data">Donnees personnelles</h2>
+                    <p class="text-slate-600" data-i18n="legal.data_text">
                         Ce site ne collecte aucune donnee personnelle. Tous les calculs sont effectues localement dans votre navigateur. Aucune information n'est transmise a nos serveurs.
                     </p>
-                    <p class="text-slate-600 mt-4">
+                    <p class="text-slate-600 mt-4" data-i18n="legal.data_text2">
                         Pour plus d'informations, consultez notre <a href="/politique-confidentialite.html" class="text-indigo-600">politique de confidentialite</a>.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-xl font-bold mb-4">Cookies</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.cookies">Cookies</h2>
+                    <p class="text-slate-600" data-i18n="legal.cookies_text">
                         Ce site n'utilise pas de cookies de suivi ni de cookies publicitaires. Seuls des cookies techniques strictement necessaires au fonctionnement du site peuvent etre utilises.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold mb-4">Droit applicable</h2>
-                    <p class="text-slate-600">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="legal.law">Droit applicable</h2>
+                    <p class="text-slate-600" data-i18n="legal.law_text">
                         Les presentes mentions legales sont soumises au droit francais. Tout litige relatif a l'utilisation du site sera soumis a la competence exclusive des tribunaux francais.
                     </p>
                 </section>
@@ -124,37 +127,39 @@
             <div class="footer-grid">
                 <div>
                     <h4>NetSalaire</h4>
-                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
                 </div>
                 <div>
-                    <h4>France</h4>
+                    <h4 data-i18n="nav.france">France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Maroc</h4>
+                    <h4 data-i18n="nav.maroc">Maroc</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info">Informations</h4>
                     <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                        <li><a href="/faq.html" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" data-i18n="footer.legal">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p data-i18n="footer.rights">&copy; 2025 NetSalaire.com - Tous droits reserves</p>
             </div>
         </div>
     </footer>
 
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
 </body>
 </html>

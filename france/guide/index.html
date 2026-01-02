@@ -68,24 +68,27 @@
                 <span class="iconify" data-icon="lucide:menu" width="24"></span>
             </button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> Comparateur</a></li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="16"></span></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
+                <li class="nav-item"><a href="/comparateur-global.html" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
+                <li class="nav-item"><a href="/#france" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span></a></li>
+                <li class="nav-item"><a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span></a></li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
             </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </button>
+                <div class="lang-dropdown">
+                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -94,19 +97,19 @@
 
             <header class="text-center mb-8">
                 <span class="country-badge country-badge-fr mb-4 inline-flex">🇫🇷 France</span>
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Guide Fiscal France 2025</h1>
-                <p class="text-slate-500">Tout comprendre sur la fiscalite francaise</p>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="guide.fr.title">Guide Fiscal France 2025</h1>
+                <p class="text-slate-500" data-i18n="guide.fr.subtitle">Tout comprendre sur la fiscalite francaise</p>
             </header>
 
             <!-- Table of contents -->
             <div class="card mb-8">
-                <h2 class="font-semibold text-lg mb-4">Sommaire</h2>
+                <h2 class="font-semibold text-lg mb-4" data-i18n="guide.toc">Sommaire</h2>
                 <ul class="space-y-2">
-                    <li><a href="#cotisations" class="text-indigo-600 hover:underline">1. Les cotisations sociales</a></li>
-                    <li><a href="#impot-revenu" class="text-indigo-600 hover:underline">2. L'impot sur le revenu</a></li>
-                    <li><a href="#quotient-familial" class="text-indigo-600 hover:underline">3. Le quotient familial</a></li>
-                    <li><a href="#prelevement-source" class="text-indigo-600 hover:underline">4. Le prelevement a la source</a></li>
-                    <li><a href="#optimisation" class="text-indigo-600 hover:underline">5. Optimisation fiscale</a></li>
+                    <li><a href="#cotisations" class="text-indigo-600 hover:underline" data-i18n="guide.fr.toc1">1. Les cotisations sociales</a></li>
+                    <li><a href="#impot-revenu" class="text-indigo-600 hover:underline" data-i18n="guide.fr.toc2">2. L'impot sur le revenu</a></li>
+                    <li><a href="#quotient-familial" class="text-indigo-600 hover:underline" data-i18n="guide.fr.toc3">3. Le quotient familial</a></li>
+                    <li><a href="#prelevement-source" class="text-indigo-600 hover:underline" data-i18n="guide.fr.toc4">4. Le prelevement a la source</a></li>
+                    <li><a href="#optimisation" class="text-indigo-600 hover:underline" data-i18n="guide.fr.toc5">5. Optimisation fiscale</a></li>
                 </ul>
             </div>
 
@@ -114,34 +117,34 @@
             <article class="prose prose-slate max-w-none">
 
                 <section id="cotisations" class="card mb-6">
-                    <h2 class="text-xl font-bold mb-4">1. Les cotisations sociales</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="guide.fr.sec1_title">1. Les cotisations sociales</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.fr.sec1_p1">
                         Les cotisations sociales sont prelevees sur le salaire brut pour financer la protection sociale :
                         securite sociale, retraite, chomage.
                     </p>
                     <div class="bg-slate-50 rounded-lg p-4 mb-4">
-                        <h3 class="font-semibold mb-2">Taux moyens de cotisations salariales</h3>
+                        <h3 class="font-semibold mb-2" data-i18n="guide.fr.sec1_rates_title">Taux moyens de cotisations salariales</h3>
                         <ul class="features-list">
-                            <li><strong>Non-cadre</strong> : environ 22% du brut</li>
-                            <li><strong>Cadre</strong> : environ 25% du brut</li>
+                            <li><strong data-i18n="sim.non_cadre">Non-cadre</strong> : <span data-i18n="guide.fr.sec1_noncadre">environ 22% du brut</span></li>
+                            <li><strong data-i18n="sim.cadre">Cadre</strong> : <span data-i18n="guide.fr.sec1_cadre">environ 25% du brut</span></li>
                         </ul>
                     </div>
-                    <p class="text-slate-600">
+                    <p class="text-slate-600" data-i18n="guide.fr.sec1_p2">
                         Ces cotisations financent la maladie, la vieillesse, la famille, le chomage et la retraite complementaire.
                     </p>
                 </section>
 
                 <section id="impot-revenu" class="card mb-6">
-                    <h2 class="text-xl font-bold mb-4">2. L'impot sur le revenu</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="guide.fr.sec2_title">2. L'impot sur le revenu</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.fr.sec2_p1">
                         L'IR est un impot progressif par tranches. Plus vos revenus augmentent, plus le taux marginal est eleve.
                     </p>
                     <div class="border rounded-lg overflow-hidden mb-4">
                         <table class="w-full text-sm">
                             <thead class="bg-slate-50">
                                 <tr>
-                                    <th class="px-4 py-2 text-left">Tranche</th>
-                                    <th class="px-4 py-2 text-right">Taux</th>
+                                    <th class="px-4 py-2 text-left" data-i18n="guide.bracket">Tranche</th>
+                                    <th class="px-4 py-2 text-right" data-i18n="guide.rate">Taux</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y">
@@ -149,56 +152,56 @@
                                 <tr><td class="px-4 py-2">11 294 € - 28 797 €</td><td class="px-4 py-2 text-right font-semibold">11%</td></tr>
                                 <tr><td class="px-4 py-2">28 797 € - 82 341 €</td><td class="px-4 py-2 text-right font-semibold">30%</td></tr>
                                 <tr><td class="px-4 py-2">82 341 € - 177 106 €</td><td class="px-4 py-2 text-right font-semibold">41%</td></tr>
-                                <tr><td class="px-4 py-2">Plus de 177 106 €</td><td class="px-4 py-2 text-right text-red-600 font-semibold">45%</td></tr>
+                                <tr><td class="px-4 py-2"><span data-i18n="guide.over">Plus de</span> 177 106 €</td><td class="px-4 py-2 text-right text-red-600 font-semibold">45%</td></tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs text-slate-400">Baremes 2025 (revenus 2024)</p>
+                    <p class="text-xs text-slate-400" data-i18n="guide.fr.sec2_note">Baremes 2025 (revenus 2024)</p>
                 </section>
 
                 <section id="quotient-familial" class="card mb-6">
-                    <h2 class="text-xl font-bold mb-4">3. Le quotient familial</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="guide.fr.sec3_title">3. Le quotient familial</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.fr.sec3_p1">
                         Le quotient familial permet de diviser le revenu imposable par le nombre de parts du foyer,
                         reduisant ainsi la progressivite de l'impot.
                     </p>
                     <div class="bg-indigo-50 rounded-lg p-4 mb-4">
-                        <h3 class="font-semibold text-indigo-900 mb-2">Calcul des parts</h3>
+                        <h3 class="font-semibold text-indigo-900 mb-2" data-i18n="guide.fr.sec3_parts_title">Calcul des parts</h3>
                         <ul class="text-sm text-indigo-800 space-y-1">
-                            <li>Celibataire : 1 part</li>
-                            <li>Couple marie/pacse : 2 parts</li>
-                            <li>1er et 2e enfant : +0.5 part chacun</li>
-                            <li>3e enfant et suivants : +1 part chacun</li>
+                            <li data-i18n="guide.fr.sec3_single">Celibataire : 1 part</li>
+                            <li data-i18n="guide.fr.sec3_couple">Couple marie/pacse : 2 parts</li>
+                            <li data-i18n="guide.fr.sec3_child12">1er et 2e enfant : +0.5 part chacun</li>
+                            <li data-i18n="guide.fr.sec3_child3">3e enfant et suivants : +1 part chacun</li>
                         </ul>
                     </div>
-                    <p class="text-slate-600">
+                    <p class="text-slate-600" data-i18n="guide.fr.sec3_p2">
                         L'avantage maximal du quotient familial est plafonne a 1 759 € par demi-part supplementaire.
                     </p>
                 </section>
 
                 <section id="prelevement-source" class="card mb-6">
-                    <h2 class="text-xl font-bold mb-4">4. Le prelevement a la source</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="guide.fr.sec4_title">4. Le prelevement a la source</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.fr.sec4_p1">
                         Depuis 2019, l'impot sur le revenu est preleve directement sur le salaire chaque mois.
                     </p>
                     <ul class="features-list mb-4">
-                        <li>Le taux est calcule par l'administration fiscale</li>
-                        <li>Il peut etre personnalise ou individualise pour les couples</li>
-                        <li>Une regularisation a lieu l'annee suivante</li>
+                        <li data-i18n="guide.fr.sec4_li1">Le taux est calcule par l'administration fiscale</li>
+                        <li data-i18n="guide.fr.sec4_li2">Il peut etre personnalise ou individualise pour les couples</li>
+                        <li data-i18n="guide.fr.sec4_li3">Une regularisation a lieu l'annee suivante</li>
                     </ul>
                 </section>
 
                 <section id="optimisation" class="card mb-6">
-                    <h2 class="text-xl font-bold mb-4">5. Optimisation fiscale legale</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold mb-4" data-i18n="guide.fr.sec5_title">5. Optimisation fiscale legale</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.fr.sec5_p1">
                         Plusieurs dispositifs permettent de reduire legalement son imposition :
                     </p>
                     <ul class="features-list">
-                        <li>Frais reels (si superieurs a l'abattement de 10%)</li>
-                        <li>Epargne retraite (PER, PERP)</li>
-                        <li>Dons aux associations</li>
-                        <li>Emploi a domicile</li>
-                        <li>Investissement immobilier (Pinel, Denormandie)</li>
+                        <li data-i18n="guide.fr.sec5_li1">Frais reels (si superieurs a l'abattement de 10%)</li>
+                        <li data-i18n="guide.fr.sec5_li2">Epargne retraite (PER, PERP)</li>
+                        <li data-i18n="guide.fr.sec5_li3">Dons aux associations</li>
+                        <li data-i18n="guide.fr.sec5_li4">Emploi a domicile</li>
+                        <li data-i18n="guide.fr.sec5_li5">Investissement immobilier (Pinel, Denormandie)</li>
                     </ul>
                 </section>
 
@@ -206,11 +209,11 @@
 
             <!-- CTA -->
             <div class="card card-featured text-center mt-8">
-                <h2 class="text-xl font-bold mb-2">Simulez votre situation</h2>
-                <p class="text-slate-500 mb-4">Utilisez nos simulateurs gratuits pour calculer votre imposition.</p>
+                <h2 class="text-xl font-bold mb-2" data-i18n="guide.cta_title">Simulez votre situation</h2>
+                <p class="text-slate-500 mb-4" data-i18n="guide.cta_subtitle">Utilisez nos simulateurs gratuits pour calculer votre imposition.</p>
                 <div class="flex justify-center gap-4 flex-wrap">
-                    <a href="/france/simulateur-salaire-brut-net.html" class="btn btn-primary">Brut → Net</a>
-                    <a href="/france/simulateur-impot-revenu.html" class="btn btn-secondary">Simulateur IR</a>
+                    <a href="/france/simulateur-salaire-brut-net.html" class="btn btn-primary" data-i18n="nav.brut_to_net">Brut → Net</a>
+                    <a href="/france/simulateur-impot-revenu.html" class="btn btn-secondary" data-i18n="nav.tax_simulator">Simulateur IR</a>
                 </div>
             </div>
 
@@ -222,37 +225,40 @@
             <div class="footer-grid">
                 <div>
                     <h4>NetSalaire</h4>
-                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4>France</h4>
+                    <h4 data-i18n="nav.france">France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Maroc</h4>
+                    <h4 data-i18n="nav.maroc">Maroc</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info">Informations</h4>
                     <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                        <li><a href="/faq.html" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" data-i18n="footer.legal">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p>&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits reserves</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
 
 </body>
 </html>

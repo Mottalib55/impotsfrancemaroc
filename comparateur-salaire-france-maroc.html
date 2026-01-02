@@ -96,39 +96,50 @@
                 <li class="nav-item">
                     <a href="/comparateur-salaire-france-maroc.html" class="nav-link" style="background: var(--bg); color: var(--primary);">
                         <span class="iconify" data-icon="lucide:scale" width="18"></span>
-                        Comparateur
+                        <span data-i18n="nav.france_vs_maroc">France vs Maroc</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/comparateur-global.html" class="nav-link">
+                        <span class="iconify" data-icon="lucide:globe" width="18"></span>
+                        <span data-i18n="nav.global_comparator">Comparateur Global</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#france" class="nav-link">
                         <span class="iconify" data-icon="circle-flags:fr" width="18"></span>
-                        France
-                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                        <span data-i18n="nav.france">France</span>
                     </a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/#maroc" class="nav-link">
                         <span class="iconify" data-icon="circle-flags:ma" width="18"></span>
-                        Maroc
-                        <span class="iconify" data-icon="lucide:chevron-down" width="16"></span>
+                        <span data-i18n="nav.maroc">Maroc</span>
                     </a>
-                    <ul class="nav-dropdown">
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="/faq.html" class="nav-link">
                         <span class="iconify" data-icon="lucide:help-circle" width="18"></span>
-                        FAQ
+                        <span data-i18n="nav.faq">FAQ</span>
                     </a>
                 </li>
             </ul>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </button>
+                <div class="lang-dropdown">
+                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -137,8 +148,8 @@
 
         <!-- Page Header -->
         <header class="text-center mb-8">
-            <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Comparateur Fiscal France vs Maroc</h1>
-            <p class="text-slate-500 max-w-2xl mx-auto">Comparez votre salaire net et votre pression fiscale entre les deux pays. Simulateur mis a jour avec les baremes 2025.</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="comp.fr_ma_title">Comparateur Fiscal France vs Maroc</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="comp.subtitle">Comparez votre salaire net et votre pression fiscale entre les deux pays. Simulateur mis a jour avec les baremes 2025.</p>
         </header>
 
         <!-- Input Section -->
@@ -149,10 +160,10 @@
                 <!-- Salary Inputs -->
                 <div class="space-y-5">
                     <div class="flex items-center justify-between mb-2">
-                        <label class="text-xs font-semibold uppercase tracking-tight text-slate-500">Salaire Brut</label>
+                        <label class="text-xs font-semibold uppercase tracking-tight text-slate-500" data-i18n="comp.gross_salary">Salaire Brut</label>
                         <div class="flex bg-slate-100 rounded-lg p-0.5">
-                            <button id="period-monthly" class="px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300">Mensuel</button>
-                            <button id="period-annual" class="px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Annuel</button>
+                            <button id="period-monthly" class="px-3 py-1 text-xs font-medium rounded-md bg-white shadow-sm text-slate-900 transition-all-300" data-i18n="comp_global.monthly">Mensuel</button>
+                            <button id="period-annual" class="px-3 py-1 text-xs font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300" data-i18n="comp_global.annual">Annuel</button>
                         </div>
                     </div>
 
@@ -173,7 +184,7 @@
                                 <input type="text" inputmode="numeric" id="input-eur" class="w-full pl-10 pr-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all-300" placeholder="0">
                             </div>
                             <div class="flex items-center justify-end gap-2 mt-2">
-                                <span class="text-[10px] text-slate-400 font-medium">Statut Cadre</span>
+                                <span class="text-[10px] text-slate-400 font-medium" data-i18n="comp.cadre_status">Statut Cadre</span>
                                 <button id="toggle-cadre" class="relative inline-flex h-4 w-7 items-center rounded-full bg-slate-200 transition-colors focus:outline-none">
                                     <span class="translate-x-0.5 inline-block h-2.5 w-2.5 transform rounded-full bg-white transition-transform shadow-sm"></span>
                                 </button>
@@ -191,7 +202,7 @@
                     </div>
 
                     <div class="flex items-center gap-2 mt-2">
-                        <span class="text-[10px] text-slate-400 font-medium">Taux DH/EUR du jour :</span>
+                        <span class="text-[10px] text-slate-400 font-medium" data-i18n="comp.exchange_rate">Taux DH/EUR du jour :</span>
                         <input type="number" id="exchange-rate" value="10.8" class="w-16 py-0.5 px-1 text-[10px] font-mono text-slate-500 bg-slate-50 border border-slate-200 rounded text-center focus:outline-none focus:border-slate-400">
                         <span id="rate-status" class="text-[10px] text-emerald-500"></span>
                     </div>
@@ -199,20 +210,20 @@
 
                 <!-- Family Situation -->
                 <div class="space-y-5 lg:border-l lg:border-slate-100 lg:pl-8">
-                    <label class="block text-xs font-semibold uppercase tracking-tight text-slate-500 mb-2">Situation Familiale</label>
+                    <label class="block text-xs font-semibold uppercase tracking-tight text-slate-500 mb-2" data-i18n="comp_global.family_status">Situation Familiale</label>
 
                     <div class="space-y-4">
                         <div>
-                            <span class="text-xs font-medium text-slate-600 mb-2 block">Statut Marital</span>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block" data-i18n="comp_global.marital_status">Statut Marital</span>
                             <div class="flex w-full bg-slate-50 border border-slate-200 rounded-lg p-1">
-                                <button id="status-single" class="flex-1 py-1.5 text-[11px] font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300">Celibataire</button>
-                                <button id="status-married" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Marie(e)</button>
-                                <button id="status-divorced" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300">Divorce(e)</button>
+                                <button id="status-single" class="flex-1 py-1.5 text-[11px] font-medium rounded-md bg-white shadow-sm text-slate-900 border border-slate-100 transition-all-300" data-i18n="comp_global.single">Celibataire</button>
+                                <button id="status-married" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300" data-i18n="comp_global.married">Marie(e)</button>
+                                <button id="status-divorced" class="flex-1 py-1.5 text-[11px] font-medium rounded-md text-slate-500 hover:text-slate-900 transition-all-300" data-i18n="comp.divorced">Divorce(e)</button>
                             </div>
                         </div>
 
                         <div>
-                            <span class="text-xs font-medium text-slate-600 mb-2 block">Enfants a charge</span>
+                            <span class="text-xs font-medium text-slate-600 mb-2 block" data-i18n="comp_global.children">Enfants a charge</span>
                             <div class="flex items-center w-full bg-white border border-slate-200 rounded-lg h-[38px]">
                                 <button id="child-minus" class="w-10 h-full flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 rounded-l-lg transition-colors border-r border-slate-100">
                                     <span class="iconify" data-icon="lucide:minus" width="14"></span>
@@ -421,37 +432,40 @@
             <div class="footer-grid">
                 <div>
                     <h4>NetSalaire</h4>
-                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4>France</h4>
+                    <h4 data-i18n="nav.france">France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html">Simulateur IR</a></li>
-                        <li><a href="/france/guide/">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Maroc</h4>
+                    <h4 data-i18n="nav.maroc">Maroc</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net.html">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir.html">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-salaire-brut-net.html" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info">Informations</h4>
                     <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/mentions-legales.html">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html">Confidentialite</a></li>
+                        <li><a href="/faq.html" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" data-i18n="footer.legal">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p>&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits reserves</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
 
     <script>
         // --- CONSTANTS & CONFIG ---

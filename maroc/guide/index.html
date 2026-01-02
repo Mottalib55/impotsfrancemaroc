@@ -55,33 +55,40 @@
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2 group">
-                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-emerald-600 transition-colors duration-300">
-                    N.
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/images/logo.svg" alt="NetSalaire" height="32"></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc.html" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
+                <li class="nav-item"><a href="/comparateur-global.html" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
+                <li class="nav-item"><a href="/#france" class="nav-link"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span></a></li>
+                <li class="nav-item"><a href="/#maroc" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span></a></li>
+                <li class="nav-item"><a href="/faq.html" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
+            </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </button>
+                <div class="lang-dropdown">
+                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </button>
                 </div>
-                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="/#france" class="hover:text-slate-900 transition-colors flex items-center gap-2">
-                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
-                </a>
-                <a href="/#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-2 text-emerald-600">
-                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
-                </a>
-                <a href="/#comparateur" class="hover:text-slate-900 transition-colors">Impots France vs Maroc</a>
-                <a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
-            <a href="/#contact" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
-                Contact
-            </a>
         </div>
     </nav>
 
@@ -90,22 +97,22 @@
 
             <header class="text-center mb-12">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-600 mb-6">
-                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon>
-                    Maroc
+                    <span class="iconify" data-icon="circle-flags:ma" width="16"></span>
+                    <span data-i18n="nav.maroc">Maroc</span>
                 </div>
-                <h1 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">Guide Fiscal Maroc 2025</h1>
-                <p class="text-slate-500 max-w-2xl mx-auto">Tout comprendre sur la fiscalite marocaine : cotisations sociales, impot sur le revenu, abattements et deductions.</p>
+                <h1 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4" data-i18n="guide.ma.title">Guide Fiscal Maroc 2025</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="guide.ma.subtitle">Tout comprendre sur la fiscalite marocaine : cotisations sociales, impot sur le revenu, abattements et deductions.</p>
             </header>
 
             <!-- Table of contents -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 mb-10">
-                <h2 class="font-semibold text-lg mb-4">Sommaire</h2>
+                <h2 class="font-semibold text-lg mb-4" data-i18n="guide.toc">Sommaire</h2>
                 <ul class="space-y-2">
-                    <li><a href="#cotisations" class="text-emerald-600 hover:underline">1. Les cotisations sociales (CNSS & AMO)</a></li>
-                    <li><a href="#impot-revenu" class="text-emerald-600 hover:underline">2. L'impot sur le revenu (IR)</a></li>
-                    <li><a href="#frais-pro" class="text-emerald-600 hover:underline">3. Les frais professionnels</a></li>
-                    <li><a href="#abattement" class="text-emerald-600 hover:underline">4. L'abattement familial</a></li>
-                    <li><a href="#calcul" class="text-emerald-600 hover:underline">5. Exemple de calcul complet</a></li>
+                    <li><a href="#cotisations" class="text-emerald-600 hover:underline" data-i18n="guide.ma.toc1">1. Les cotisations sociales (CNSS & AMO)</a></li>
+                    <li><a href="#impot-revenu" class="text-emerald-600 hover:underline" data-i18n="guide.ma.toc2">2. L'impot sur le revenu (IR)</a></li>
+                    <li><a href="#frais-pro" class="text-emerald-600 hover:underline" data-i18n="guide.ma.toc3">3. Les frais professionnels</a></li>
+                    <li><a href="#abattement" class="text-emerald-600 hover:underline" data-i18n="guide.ma.toc4">4. L'abattement familial</a></li>
+                    <li><a href="#calcul" class="text-emerald-600 hover:underline" data-i18n="guide.ma.toc5">5. Exemple de calcul complet</a></li>
                 </ul>
             </div>
 
@@ -113,40 +120,40 @@
             <article class="space-y-8">
 
                 <section id="cotisations" class="bg-white border border-slate-200 rounded-xl p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">1. Les cotisations sociales</h2>
-                    <p class="text-slate-600 mb-6">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4" data-i18n="guide.ma.sec1_title">1. Les cotisations sociales</h2>
+                    <p class="text-slate-600 mb-6" data-i18n="guide.ma.sec1_p1">
                         Au Maroc, les salaries cotisent a deux organismes principaux pour financer leur protection sociale.
                     </p>
 
                     <div class="grid md:grid-cols-2 gap-4 mb-6">
                         <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-100">
                             <h3 class="font-semibold text-emerald-900 mb-2">CNSS</h3>
-                            <p class="text-sm text-emerald-800 mb-2">Caisse Nationale de Securite Sociale</p>
+                            <p class="text-sm text-emerald-800 mb-2" data-i18n="guide.ma.cnss_desc">Caisse Nationale de Securite Sociale</p>
                             <ul class="text-sm text-emerald-700 space-y-1">
-                                <li>• Taux salarial : <strong>4.48%</strong></li>
-                                <li>• Plafond : <strong>6 000 MAD/mois</strong></li>
-                                <li>• Cotisation max : 268.80 MAD/mois</li>
+                                <li>• <span data-i18n="guide.ma.employee_rate">Taux salarial</span> : <strong>4.48%</strong></li>
+                                <li>• <span data-i18n="guide.ma.ceiling">Plafond</span> : <strong>6 000 MAD/<span data-i18n="sim.monthly_short">mois</span></strong></li>
+                                <li>• <span data-i18n="guide.ma.max_contrib">Cotisation max</span> : 268.80 MAD/<span data-i18n="sim.monthly_short">mois</span></li>
                             </ul>
                         </div>
                         <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
                             <h3 class="font-semibold text-blue-900 mb-2">AMO</h3>
-                            <p class="text-sm text-blue-800 mb-2">Assurance Maladie Obligatoire</p>
+                            <p class="text-sm text-blue-800 mb-2" data-i18n="guide.ma.amo_desc">Assurance Maladie Obligatoire</p>
                             <ul class="text-sm text-blue-700 space-y-1">
-                                <li>• Taux salarial : <strong>2.26%</strong></li>
-                                <li>• Plafond : <strong>Aucun</strong></li>
-                                <li>• Applique sur tout le salaire</li>
+                                <li>• <span data-i18n="guide.ma.employee_rate">Taux salarial</span> : <strong>2.26%</strong></li>
+                                <li>• <span data-i18n="guide.ma.ceiling">Plafond</span> : <strong data-i18n="guide.ma.no_ceiling">Aucun</strong></li>
+                                <li data-i18n="guide.ma.amo_applies">• Applique sur tout le salaire</li>
                             </ul>
                         </div>
                     </div>
 
-                    <p class="text-slate-600 text-sm">
+                    <p class="text-slate-600 text-sm" data-i18n="guide.ma.sec1_p2">
                         Ces cotisations financent les prestations familiales, la retraite, les indemnites journalieres de maladie et l'assurance maladie.
                     </p>
                 </section>
 
                 <section id="impot-revenu" class="bg-white border border-slate-200 rounded-xl p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">2. L'impot sur le revenu (IR)</h2>
-                    <p class="text-slate-600 mb-6">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4" data-i18n="guide.ma.sec2_title">2. L'impot sur le revenu (IR)</h2>
+                    <p class="text-slate-600 mb-6" data-i18n="guide.ma.sec2_p1">
                         L'IR marocain est un impot progressif preleve a la source sur les salaires. Il comporte 6 tranches.
                     </p>
 
@@ -154,8 +161,8 @@
                         <table class="w-full text-sm">
                             <thead class="bg-slate-50">
                                 <tr>
-                                    <th class="px-4 py-3 text-left font-semibold text-slate-700">Tranche de revenu annuel</th>
-                                    <th class="px-4 py-3 text-right font-semibold text-slate-700">Taux</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-slate-700" data-i18n="guide.ma.annual_bracket">Tranche de revenu annuel</th>
+                                    <th class="px-4 py-3 text-right font-semibold text-slate-700" data-i18n="guide.rate">Taux</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
@@ -164,62 +171,62 @@
                                 <tr><td class="px-4 py-3">60 001 - 80 000 MAD</td><td class="px-4 py-3 text-right font-semibold">20%</td></tr>
                                 <tr><td class="px-4 py-3">80 001 - 100 000 MAD</td><td class="px-4 py-3 text-right font-semibold">30%</td></tr>
                                 <tr><td class="px-4 py-3">100 001 - 180 000 MAD</td><td class="px-4 py-3 text-right font-semibold">34%</td></tr>
-                                <tr><td class="px-4 py-3">Plus de 180 000 MAD</td><td class="px-4 py-3 text-right text-red-600 font-semibold">37%</td></tr>
+                                <tr><td class="px-4 py-3"><span data-i18n="guide.over">Plus de</span> 180 000 MAD</td><td class="px-4 py-3 text-right text-red-600 font-semibold">37%</td></tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <p class="text-xs text-slate-400">Baremes 2025 - Source : Direction Generale des Impots du Maroc</p>
+                    <p class="text-xs text-slate-400" data-i18n="guide.ma.sec2_note">Baremes 2025 - Source : Direction Generale des Impots du Maroc</p>
                 </section>
 
                 <section id="frais-pro" class="bg-white border border-slate-200 rounded-xl p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">3. Les frais professionnels</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4" data-i18n="guide.ma.sec3_title">3. Les frais professionnels</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.ma.sec3_p1">
                         Une deduction forfaitaire de <strong>20%</strong> est appliquee sur le revenu brut imposable (apres cotisations sociales) pour tenir compte des frais professionnels.
                     </p>
 
                     <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
                         <div class="flex items-start gap-3">
-                            <iconify-icon icon="lucide:alert-circle" class="text-amber-600 mt-0.5" width="20"></iconify-icon>
+                            <span class="iconify text-amber-600 mt-0.5" data-icon="lucide:alert-circle" width="20"></span>
                             <div>
-                                <h4 class="font-semibold text-amber-900">Plafond important</h4>
-                                <p class="text-sm text-amber-800">La deduction pour frais professionnels est plafonnee a <strong>30 000 MAD par an</strong> (soit 2 500 MAD par mois).</p>
+                                <h4 class="font-semibold text-amber-900" data-i18n="guide.ma.sec3_warning_title">Plafond important</h4>
+                                <p class="text-sm text-amber-800" data-i18n="guide.ma.sec3_warning">La deduction pour frais professionnels est plafonnee a <strong>30 000 MAD par an</strong> (soit 2 500 MAD par mois).</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section id="abattement" class="bg-white border border-slate-200 rounded-xl p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">4. L'abattement familial</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4" data-i18n="guide.ma.sec4_title">4. L'abattement familial</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.ma.sec4_p1">
                         L'abattement familial permet de reduire l'IR en fonction des personnes a charge.
                     </p>
 
                     <div class="bg-slate-50 rounded-lg p-4 mb-4">
                         <ul class="space-y-2 text-slate-700">
                             <li class="flex items-center gap-2">
-                                <iconify-icon icon="lucide:user" class="text-slate-400" width="16"></iconify-icon>
-                                <strong>500 MAD/an</strong> par personne a charge
+                                <span class="iconify text-slate-400" data-icon="lucide:user" width="16"></span>
+                                <strong>500 MAD/<span data-i18n="sim.annual_short">an</span></strong> <span data-i18n="guide.ma.per_dependent">par personne a charge</span>
                             </li>
                             <li class="flex items-center gap-2">
-                                <iconify-icon icon="lucide:users" class="text-slate-400" width="16"></iconify-icon>
-                                Personnes a charge : conjoint + enfants
+                                <span class="iconify text-slate-400" data-icon="lucide:users" width="16"></span>
+                                <span data-i18n="guide.ma.dependents">Personnes a charge : conjoint + enfants</span>
                             </li>
                             <li class="flex items-center gap-2">
-                                <iconify-icon icon="lucide:alert-triangle" class="text-amber-500" width="16"></iconify-icon>
-                                Plafond : <strong>3 000 MAD/an</strong> (6 personnes max)
+                                <span class="iconify text-amber-500" data-icon="lucide:alert-triangle" width="16"></span>
+                                <span data-i18n="guide.ma.ceiling">Plafond</span> : <strong>3 000 MAD/<span data-i18n="sim.annual_short">an</span></strong> (<span data-i18n="guide.ma.max_6">6 personnes max</span>)
                             </li>
                         </ul>
                     </div>
 
-                    <p class="text-slate-600 text-sm">
+                    <p class="text-slate-600 text-sm" data-i18n="guide.ma.sec4_p2">
                         Cet abattement est deduit directement du montant de l'IR calcule, pas du revenu imposable.
                     </p>
                 </section>
 
                 <section id="calcul" class="bg-white border border-slate-200 rounded-xl p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">5. Exemple de calcul complet</h2>
-                    <p class="text-slate-600 mb-4">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4" data-i18n="guide.ma.sec5_title">5. Exemple de calcul complet</h2>
+                    <p class="text-slate-600 mb-4" data-i18n="guide.ma.sec5_p1">
                         Prenons l'exemple d'un salarie marie avec 2 enfants, gagnant <strong>15 000 MAD/mois</strong>.
                     </p>
 
@@ -227,11 +234,11 @@
                         <table class="w-full text-sm">
                             <tbody class="divide-y divide-slate-100">
                                 <tr>
-                                    <td class="px-4 py-3 font-medium">Salaire brut mensuel</td>
+                                    <td class="px-4 py-3 font-medium" data-i18n="guide.ma.gross_monthly">Salaire brut mensuel</td>
                                     <td class="px-4 py-3 text-right">15 000 MAD</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs">CNSS (4.48% plafonne)</td>
+                                    <td class="px-4 py-3 pl-6 text-xs" data-i18n="guide.ma.cnss_capped">CNSS (4.48% plafonne)</td>
                                     <td class="px-4 py-3 text-right text-xs">- 269 MAD</td>
                                 </tr>
                                 <tr class="text-slate-500">
@@ -239,27 +246,27 @@
                                     <td class="px-4 py-3 text-right text-xs">- 339 MAD</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-3 font-medium">Net social</td>
+                                    <td class="px-4 py-3 font-medium" data-i18n="guide.ma.net_social">Net social</td>
                                     <td class="px-4 py-3 text-right">14 392 MAD</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs">Frais pro (20%, max 2500)</td>
+                                    <td class="px-4 py-3 pl-6 text-xs" data-i18n="guide.ma.pro_fees">Frais pro (20%, max 2500)</td>
                                     <td class="px-4 py-3 text-right text-xs text-emerald-600">- 2 500 MAD</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-3 font-medium">Net imposable mensuel</td>
+                                    <td class="px-4 py-3 font-medium" data-i18n="guide.ma.taxable_monthly">Net imposable mensuel</td>
                                     <td class="px-4 py-3 text-right">11 892 MAD</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs">IR brut (bareme)</td>
+                                    <td class="px-4 py-3 pl-6 text-xs" data-i18n="guide.ma.ir_gross">IR brut (bareme)</td>
                                     <td class="px-4 py-3 text-right text-xs">- 2 147 MAD</td>
                                 </tr>
                                 <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs text-emerald-600">Abattement familial (3 pers.)</td>
+                                    <td class="px-4 py-3 pl-6 text-xs text-emerald-600" data-i18n="guide.ma.family_allowance">Abattement familial (3 pers.)</td>
                                     <td class="px-4 py-3 text-right text-xs text-emerald-600">+ 125 MAD</td>
                                 </tr>
                                 <tr class="bg-emerald-50 font-semibold">
-                                    <td class="px-4 py-3">Salaire net</td>
+                                    <td class="px-4 py-3" data-i18n="sim.net_salary">Salaire net</td>
                                     <td class="px-4 py-3 text-right text-emerald-700">12 370 MAD</td>
                                 </tr>
                             </tbody>
@@ -271,11 +278,11 @@
 
             <!-- CTA -->
             <div class="mt-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl p-8 text-center text-white">
-                <h2 class="text-2xl font-semibold mb-3">Simulez votre situation</h2>
-                <p class="text-emerald-100 mb-6">Utilisez notre simulateur gratuit pour calculer votre impot sur le revenu.</p>
+                <h2 class="text-2xl font-semibold mb-3" data-i18n="guide.cta_title">Simulez votre situation</h2>
+                <p class="text-emerald-100 mb-6" data-i18n="guide.cta_subtitle">Utilisez notre simulateur gratuit pour calculer votre impot sur le revenu.</p>
                 <a href="/maroc/simulateur-ir.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 font-medium rounded-lg hover:bg-emerald-50 transition-all">
-                    <iconify-icon icon="lucide:calculator" width="18"></iconify-icon>
-                    Simulateur Impot sur le Revenu
+                    <span class="iconify" data-icon="lucide:calculator" width="18"></span>
+                    <span data-i18n="nav.tax_simulator">Simulateur Impot sur le Revenu</span>
                 </a>
             </div>
 
@@ -291,37 +298,40 @@
                         <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">N.</div>
                         <span class="font-semibold text-slate-900">NetSalaire</span>
                     </div>
-                    <p class="text-sm text-slate-500">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
+                    <p class="text-sm text-slate-500" data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">France</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="nav.france">France</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
-                        <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.tax_simulator">Simulateur Impot</a></li>
+                        <li><a href="/france/guide/" class="hover:text-slate-900 transition-colors" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Maroc</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="nav.maroc">Maroc</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors">Simulateur Impot</a></li>
-                        <li><a href="/maroc/guide/" class="hover:text-slate-900 transition-colors">Guide Fiscal</a></li>
+                        <li><a href="/maroc/simulateur-ir.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.tax_simulator">Simulateur Impot</a></li>
+                        <li><a href="/maroc/guide/" class="hover:text-slate-900 transition-colors" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-slate-900 mb-3 text-sm">Informations</h4>
+                    <h4 class="font-semibold text-slate-900 mb-3 text-sm" data-i18n="footer.info">Informations</h4>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="/faq.html" class="hover:text-slate-900 transition-colors">FAQ</a></li>
-                        <li><a href="/mentions-legales.html" class="hover:text-slate-900 transition-colors">Mentions Legales</a></li>
-                        <li><a href="/politique-confidentialite.html" class="hover:text-slate-900 transition-colors">Confidentialite</a></li>
+                        <li><a href="/faq.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales.html" class="hover:text-slate-900 transition-colors" data-i18n="footer.legal">Mentions Legales</a></li>
+                        <li><a href="/politique-confidentialite.html" class="hover:text-slate-900 transition-colors" data-i18n="footer.privacy">Confidentialite</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits reserves</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
 
 </body>
 </html>

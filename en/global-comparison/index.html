@@ -78,7 +78,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "International Tax Comparator",
-        "description": "Tax simulator to compare net salary across 10 countries: France, Morocco, Dubai, UK, Singapore, New York, Shanghai, Geneva, Luxembourg and Saudi Arabia. 2025 rates.",
+        "description": "Tax simulator to compare net salary across 12 countries: France, Morocco, Dubai, UK, Singapore, New York, Shanghai, Geneva, Luxembourg, Saudi Arabia, Japan and Spain. 2025 rates.",
         "url": "https://netsalaire.com/en/global-comparison/",
         "inLanguage": "en",
         "applicationCategory": "FinanceApplication",
@@ -173,7 +173,7 @@
         <header class="text-center mb-8">
             <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 mb-4">
                 <span class="iconify text-emerald-600" data-icon="lucide:globe" width="16"></span>
-                <span class="text-sm font-medium text-emerald-700">10 countries - 2025 Rates</span>
+                <span class="text-sm font-medium text-emerald-700">12 countries - 2025 Rates</span>
             </div>
             <h1 class="text-2xl md:text-4xl font-bold text-slate-900 mb-3">International Tax Comparator</h1>
             <p class="text-slate-500 max-w-2xl mx-auto">Select countries to compare and discover where your net salary will be most advantageous.</p>
@@ -316,6 +316,32 @@
                         <span class="text-[10px] text-slate-400 font-medium">IT 3-45%</span>
                     </label>
                 </div>
+
+                <!-- Japan -->
+                <div class="relative">
+                    <input type="checkbox" id="country-jp" class="country-checkbox sr-only" data-country="jp">
+                    <label for="country-jp" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇯🇵</span>
+                        <span class="text-sm font-semibold text-slate-700">Japan</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IT 5-55%</span>
+                    </label>
+                </div>
+
+                <!-- Spain -->
+                <div class="relative">
+                    <input type="checkbox" id="country-es" class="country-checkbox sr-only" data-country="es">
+                    <label for="country-es" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇪🇸</span>
+                        <span class="text-sm font-semibold text-slate-700">Spain</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IT 19-47%</span>
+                    </label>
+                </div>
             </div>
         </section>
 
@@ -398,7 +424,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                     <div class="text-2xl mb-2">🌍</div>
-                    <h4 class="text-sm font-semibold text-slate-900">10 Countries</h4>
+                    <h4 class="text-sm font-semibold text-slate-900">12 Countries</h4>
                     <p class="text-xs text-slate-500">International comparison</p>
                 </div>
                 <div>
@@ -422,7 +448,7 @@
         <p class="text-center text-[10px] text-slate-400 mt-8 pb-4 max-w-3xl mx-auto leading-relaxed">
             Legal Disclaimer: This tool is provided for informational purposes only. Tax laws vary by country and are subject to change.
             Dubai and Saudi Arabia: 0% income tax. Singapore: IT + CPF. New York: Federal + State + City tax. Shanghai: IT + Social Insurance.
-            UK: PAYE + NI. Geneva: cantonal + communal. Luxembourg: 2025 rates class 1. France and Morocco: official 2025 rates.
+            UK: PAYE + NI. Geneva: cantonal + communal. Luxembourg: 2025 rates class 1. Japan: IT + local tax + social insurance. Spain: IRPF + social security. France and Morocco: official 2025 rates.
         </p>
 
         <!-- SEO Content Section -->
@@ -435,7 +461,7 @@
                     <strong>Tax burden</strong> represents the total percentage of your gross salary that is deducted in the form of social contributions and taxes. It varies considerably from country to country: from 0% in tax havens like Dubai or Saudi Arabia, to over 50% in some European countries for high earners.
                 </p>
                 <p class="text-slate-600 mb-4">
-                    Our international tax comparator allows you to instantly visualize your <strong>net salary</strong> in 10 different countries, taking into account the specificities of each tax system: progressive income tax, social contributions, local taxes (like in New York), or mandatory contributions (CPF in Singapore, CNSS in Morocco).
+                    Our international tax comparator allows you to instantly visualize your <strong>net salary</strong> in 12 different countries, taking into account the specificities of each tax system: progressive income tax, social contributions, local taxes (like in New York or Japan), or mandatory contributions (CPF in Singapore, CNSS in Morocco).
                 </p>
 
                 <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Why Compare Tax Systems?</h3>
@@ -457,6 +483,8 @@
                     <li><strong>Shanghai</strong>: Progressive IT (3-45%) + social insurance (~10.5%)</li>
                     <li><strong>Geneva</strong>: Progressive IT + cantonal and communal taxes</li>
                     <li><strong>Luxembourg</strong>: Progressive IT (0-42%) + social contributions (~13%)</li>
+                    <li><strong>Japan</strong>: Progressive IT (5-45%) + local tax (~10%) + social insurance (~15%)</li>
+                    <li><strong>Spain</strong>: Progressive IRPF (19-47%) + social security (~6.35%)</li>
                 </ul>
             </div>
         </section>
@@ -600,6 +628,8 @@
                     <p>🇨🇳 <a href="http://www.chinatax.gov.cn" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">chinatax.gov.cn</a> - State Taxation Administration</p>
                     <p>🇱🇺 <a href="https://impotsdirects.public.lu" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">impotsdirects.public.lu</a> - Administration des contributions directes</p>
                     <p>🇨🇭 <a href="https://www.ge.ch/impots" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">ge.ch/impots</a> - Administration fiscale cantonale de Geneve</p>
+                    <p>🇯🇵 <a href="https://www.nta.go.jp" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">nta.go.jp</a> - National Tax Agency of Japan</p>
+                    <p>🇪🇸 <a href="https://sede.agenciatributaria.gob.es" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">agenciatributaria.gob.es</a> - Agencia Tributaria (Spain)</p>
                 </div>
             </div>
         </section>
@@ -886,6 +916,53 @@
                 standardDeduction: 60000,
                 // Social insurance ~10.5% employee
                 socialRate: 0.105
+            },
+            jp: {
+                name: 'Japan',
+                flag: '🇯🇵',
+                currency: 'JPY',
+                currencySymbol: '¥',
+                color: 'pink',
+                exchangeRate: 160,
+                taxSystem: 'IT + Local',
+                // Japan National Income Tax 2024
+                brackets: [
+                    { limit: 1950000, rate: 0.05 },
+                    { limit: 3300000, rate: 0.10 },
+                    { limit: 6950000, rate: 0.20 },
+                    { limit: 9000000, rate: 0.23 },
+                    { limit: 18000000, rate: 0.33 },
+                    { limit: 40000000, rate: 0.40 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                // Local tax (prefectural + municipal) ~10%
+                localTaxRate: 0.10,
+                // Social insurance (health + pension + employment) ~15%
+                socialRate: 0.15,
+                // Basic exemption
+                basicExemption: 480000
+            },
+            es: {
+                name: 'Spain',
+                flag: '🇪🇸',
+                currency: 'EUR',
+                currencySymbol: '€',
+                color: 'yellow',
+                exchangeRate: 1,
+                taxSystem: 'IRPF Progressive',
+                // Spain IRPF 2024 (general scale)
+                brackets: [
+                    { limit: 12450, rate: 0.19 },
+                    { limit: 20200, rate: 0.24 },
+                    { limit: 35200, rate: 0.30 },
+                    { limit: 60000, rate: 0.37 },
+                    { limit: 300000, rate: 0.45 },
+                    { limit: Infinity, rate: 0.47 }
+                ],
+                // Social security employee ~6.35%
+                socialRate: 0.0635,
+                // Social security contribution cap
+                socialCap: 56844
             }
         };
 
@@ -900,7 +977,9 @@
             green: { bg: 'bg-green-500', bgLight: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
             rose: { bg: 'bg-rose-500', bgLight: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200' },
             violet: { bg: 'bg-violet-500', bgLight: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200' },
-            orange: { bg: 'bg-orange-500', bgLight: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' }
+            orange: { bg: 'bg-orange-500', bgLight: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' },
+            pink: { bg: 'bg-pink-500', bgLight: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' },
+            yellow: { bg: 'bg-yellow-500', bgLight: 'bg-yellow-50', text: 'text-yellow-600', border: 'border-yellow-200' }
         };
 
         // ==========================================
@@ -998,6 +1077,14 @@
 
             if (countryCode === 'cn') {
                 return calculateShanghai(annualGrossEur);
+            }
+
+            if (countryCode === 'jp') {
+                return calculateJapan(annualGrossEur);
+            }
+
+            if (countryCode === 'es') {
+                return calculateSpain(annualGrossEur);
             }
 
             return null;
@@ -1115,6 +1202,81 @@
                 tax: tax,
                 net: net,
                 netEur: net / country.exchangeRate,
+                rate: (social + tax) / localGross
+            };
+        }
+
+        function calculateJapan(annualGrossEur) {
+            const country = COUNTRIES.jp;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            // Social insurance (~15%)
+            const social = localGross * country.socialRate;
+
+            // Taxable income after basic exemption
+            const taxableIncome = Math.max(0, localGross - country.basicExemption);
+
+            // National income tax (progressive)
+            let nationalTax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (taxableIncome > prevLimit) {
+                    const taxableInBracket = Math.min(taxableIncome, bracket.limit) - prevLimit;
+                    nationalTax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Local tax (prefectural + municipal ~10%)
+            const localTax = taxableIncome * country.localTaxRate;
+
+            const totalTax = nationalTax + localTax;
+            const net = localGross - social - totalTax;
+
+            return {
+                country: 'jp',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: social,
+                tax: totalTax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (social + totalTax) / localGross
+            };
+        }
+
+        function calculateSpain(annualGrossEur) {
+            const country = COUNTRIES.es;
+            const localGross = annualGrossEur;
+
+            // Social security (capped)
+            const socialBase = Math.min(localGross, country.socialCap);
+            const social = socialBase * country.socialRate;
+
+            // Taxable income
+            const taxableIncome = localGross;
+
+            // IRPF (progressive)
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (taxableIncome > prevLimit) {
+                    const taxableInBracket = Math.min(taxableIncome, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            const net = localGross - social - tax;
+
+            return {
+                country: 'es',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: social,
+                tax: tax,
+                net: net,
+                netEur: net,
                 rate: (social + tax) / localGross
             };
         }

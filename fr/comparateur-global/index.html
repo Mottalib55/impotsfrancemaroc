@@ -15,7 +15,7 @@
 
     <!-- SEO Primary -->
     <title>Comparateur global — Salaire net & impôts par pays (2025) | NetSalaire</title>
-    <meta name="description" content="Compare ton net en poche (2025) par pays : France, Maroc, Dubai, UK, Singapour, Genève… Détails impôts & charges.">
+    <meta name="description" content="Compare ton net en poche (2025) par pays : France, Maroc, Dubai, UK, Singapour, Genève, Japon, Espagne… Détails impôts & charges.">
     <meta name="keywords" content="comparateur salaire international, simulateur fiscal, impot france maroc dubai uk singapour, expatriation, salaire net, comparaison fiscale">
 
     <!-- Canonical & Hreflang -->
@@ -78,7 +78,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Comparateur Fiscal International",
-        "description": "Simulateur fiscal pour comparer le salaire net entre 10 pays: France, Maroc, Dubai, UK, Singapour, New York, Shanghai, Genève, Luxembourg et Arabie Saoudite. Barèmes 2025.",
+        "description": "Simulateur fiscal pour comparer le salaire net entre 12 pays: France, Maroc, Dubai, UK, Singapour, New York, Shanghai, Genève, Luxembourg, Arabie Saoudite, Japon et Espagne. Barèmes 2025.",
         "url": "https://netsalaire.com/fr/comparateur-global/",
         "inLanguage": "fr",
         "applicationCategory": "FinanceApplication",
@@ -173,7 +173,7 @@
         <header class="text-center mb-8">
             <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 mb-4">
                 <span class="iconify text-emerald-600" data-icon="lucide:globe" width="16"></span>
-                <span class="text-sm font-medium text-emerald-700" data-i18n="comp_global.badge">5 pays - Baremes 2025</span>
+                <span class="text-sm font-medium text-emerald-700" data-i18n="comp_global.badge">12 pays - Barèmes 2025</span>
             </div>
             <h1 class="text-2xl md:text-4xl font-bold text-slate-900 mb-3" data-i18n="comp_global.title">Comparateur Fiscal International</h1>
             <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="comp_global.subtitle">Selectionnez les pays a comparer et decouvrez ou votre salaire net sera le plus avantageux.</p>
@@ -316,6 +316,32 @@
                         <span class="text-[10px] text-slate-400 font-medium"><span data-i18n="comp_global.ir_rate">IR</span> 3-45%</span>
                     </label>
                 </div>
+
+                <!-- Japon -->
+                <div class="relative">
+                    <input type="checkbox" id="country-jp" class="country-checkbox sr-only" data-country="jp">
+                    <label for="country-jp" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇯🇵</span>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="country.japan">Japon</span>
+                        <span class="text-[10px] text-slate-400 font-medium"><span data-i18n="comp_global.ir_rate">IR</span> 5-45%</span>
+                    </label>
+                </div>
+
+                <!-- Espagne -->
+                <div class="relative">
+                    <input type="checkbox" id="country-es" class="country-checkbox sr-only" data-country="es">
+                    <label for="country-es" class="country-label flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-2 right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="12"></span>
+                        </div>
+                        <span class="text-3xl">🇪🇸</span>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="country.spain">Espagne</span>
+                        <span class="text-[10px] text-slate-400 font-medium"><span data-i18n="comp_global.ir_rate">IR</span> 19-47%</span>
+                    </label>
+                </div>
             </div>
         </section>
 
@@ -398,7 +424,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                     <div class="text-2xl mb-2">🌍</div>
-                    <h4 class="text-sm font-semibold text-slate-900" data-i18n="comp_global.countries_10">10 Pays</h4>
+                    <h4 class="text-sm font-semibold text-slate-900" data-i18n="comp_global.countries_10">12 Pays</h4>
                     <p class="text-xs text-slate-500" data-i18n="comp_global.intl_comparison">Comparaison internationale</p>
                 </div>
                 <div>
@@ -435,7 +461,7 @@
                     La <strong>pression fiscale</strong> represente le pourcentage total de votre salaire brut qui est preleve sous forme de cotisations sociales et d'impots. Elle varie considerablement d'un pays a l'autre : de 0% dans les paradis fiscaux comme Dubai ou l'Arabie Saoudite, jusqu'a plus de 50% dans certains pays europeens pour les hauts revenus.
                 </p>
                 <p class="text-slate-600 mb-4">
-                    Notre comparateur fiscal international vous permet de visualiser instantanement votre <strong>salaire net</strong> dans 10 pays differents, en tenant compte des specificites de chaque systeme fiscal : impot sur le revenu progressif, cotisations sociales, taxes locales (comme a New York), ou encore les contributions obligatoires (CPF a Singapour, CNSS au Maroc).
+                    Notre comparateur fiscal international vous permet de visualiser instantanément votre <strong>salaire net</strong> dans 12 pays différents, en tenant compte des spécificités de chaque système fiscal : impôt sur le revenu progressif, cotisations sociales, taxes locales (comme à New York), ou encore les contributions obligatoires (CPF à Singapour, CNSS au Maroc).
                 </p>
 
                 <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Pourquoi comparer les fiscalites ?</h3>
@@ -457,6 +483,8 @@
                     <li><strong>Shanghai</strong> : IR progressif (3-45%) + assurances sociales (~10.5%)</li>
                     <li><strong>Geneve</strong> : IR progressif + impots cantonaux et communaux</li>
                     <li><strong>Luxembourg</strong> : IR progressif (0-42%) + cotisations sociales (~13%)</li>
+                    <li><strong>Japon</strong> : IR national (5-45%) + impôt local (~10%) + assurances sociales (~15%)</li>
+                    <li><strong>Espagne</strong> : IRPF progressif (19-47%) + Sécurité sociale (~6.35%)</li>
                 </ul>
             </div>
         </section>
@@ -880,6 +908,53 @@
                 standardDeduction: 60000,
                 // Social insurance ~10.5% employee
                 socialRate: 0.105
+            },
+            jp: {
+                name: 'Japon',
+                flag: '🇯🇵',
+                currency: 'JPY',
+                currencySymbol: '¥',
+                color: 'pink',
+                exchangeRate: 160,
+                taxSystem: 'IR + Local',
+                // Japan National Income Tax 2024
+                brackets: [
+                    { limit: 1950000, rate: 0.05 },
+                    { limit: 3300000, rate: 0.10 },
+                    { limit: 6950000, rate: 0.20 },
+                    { limit: 9000000, rate: 0.23 },
+                    { limit: 18000000, rate: 0.33 },
+                    { limit: 40000000, rate: 0.40 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                // Local inhabitant tax ~10%
+                localTaxRate: 0.10,
+                // Social insurance (health, pension, employment) ~15%
+                socialRate: 0.15,
+                // Basic exemption
+                basicExemption: 480000
+            },
+            es: {
+                name: 'Espagne',
+                flag: '🇪🇸',
+                currency: 'EUR',
+                currencySymbol: '€',
+                color: 'yellow',
+                exchangeRate: 1,
+                taxSystem: 'IRPF Progressif',
+                // Spain IRPF 2024 (General + Autonomic combined)
+                brackets: [
+                    { limit: 12450, rate: 0.19 },
+                    { limit: 20200, rate: 0.24 },
+                    { limit: 35200, rate: 0.30 },
+                    { limit: 60000, rate: 0.37 },
+                    { limit: 300000, rate: 0.45 },
+                    { limit: Infinity, rate: 0.47 }
+                ],
+                // Social Security employee contribution ~6.35%
+                socialRate: 0.0635,
+                // Monthly cap for social security base
+                socialCap: 56844 // Annual cap (4737 * 12)
             }
         };
 
@@ -894,7 +969,9 @@
             green: { bg: 'bg-green-500', bgLight: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
             rose: { bg: 'bg-rose-500', bgLight: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200' },
             violet: { bg: 'bg-violet-500', bgLight: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200' },
-            orange: { bg: 'bg-orange-500', bgLight: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' }
+            orange: { bg: 'bg-orange-500', bgLight: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' },
+            pink: { bg: 'bg-pink-500', bgLight: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' },
+            yellow: { bg: 'bg-yellow-500', bgLight: 'bg-yellow-50', text: 'text-yellow-600', border: 'border-yellow-200' }
         };
 
         // ==========================================
@@ -992,6 +1069,14 @@
 
             if (countryCode === 'cn') {
                 return calculateShanghai(annualGrossEur);
+            }
+
+            if (countryCode === 'jp') {
+                return calculateJapan(annualGrossEur);
+            }
+
+            if (countryCode === 'es') {
+                return calculateSpain(annualGrossEur);
             }
 
             return null;
@@ -1109,6 +1194,81 @@
                 tax: tax,
                 net: net,
                 netEur: net / country.exchangeRate,
+                rate: (social + tax) / localGross
+            };
+        }
+
+        function calculateJapan(annualGrossEur) {
+            const country = COUNTRIES.jp;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            // Social insurance (~15%)
+            const social = localGross * country.socialRate;
+
+            // Taxable income (after basic exemption)
+            const taxableIncome = Math.max(0, localGross - social - country.basicExemption);
+
+            // National Income Tax
+            let nationalTax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (taxableIncome > prevLimit) {
+                    const taxableInBracket = Math.min(taxableIncome, bracket.limit) - prevLimit;
+                    nationalTax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            // Local inhabitant tax (~10%)
+            const localTax = taxableIncome * country.localTaxRate;
+
+            const totalTax = nationalTax + localTax;
+            const net = localGross - social - totalTax;
+
+            return {
+                country: 'jp',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: social,
+                tax: totalTax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (social + totalTax) / localGross
+            };
+        }
+
+        function calculateSpain(annualGrossEur) {
+            const country = COUNTRIES.es;
+            const localGross = annualGrossEur; // EUR
+
+            // Social Security (capped)
+            const socialBase = Math.min(localGross, country.socialCap);
+            const social = socialBase * country.socialRate;
+
+            // Taxable income
+            const taxableIncome = localGross - social;
+
+            // IRPF Tax
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (taxableIncome > prevLimit) {
+                    const taxableInBracket = Math.min(taxableIncome, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            const net = localGross - social - tax;
+
+            return {
+                country: 'es',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: social,
+                tax: tax,
+                net: net,
+                netEur: net,
                 rate: (social + tax) / localGross
             };
         }

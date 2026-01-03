@@ -57,6 +57,47 @@
         "operatingSystem": "Web"
     }
     </script>
+
+    <style>
+        .input-salary {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            text-align: right;
+            transition: all 0.2s;
+        }
+        .input-salary:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        .input-salary-net:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        .salary-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                position: sticky;
+                top: 100px;
+            }
+        }
+    </style>
 </head>
 <body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
 
@@ -71,380 +112,307 @@
             </button>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/#france" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span> <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <a href="/#france" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
                     <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-impot-revenu/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> <span data-i18n="nav.tax_simulator">Simulateur Impôt</span></a></li>
-                        <li><a href="/france/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> <span data-i18n="nav.brut_to_net">Brut vers Net</span></a></li>
-                        <li><a href="/france/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> <span data-i18n="nav.fiscal_guide">Guide Fiscal</span></a></li>
+                        <li><a href="/france/simulateur-impot-revenu/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Simulateur Impot</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Brut vers Net</a></li>
+                        <li><a href="/france/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Guide Fiscal</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span> <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> Maroc <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
                     <ul class="nav-dropdown nav-dropdown-ma">
-                        <li><a href="/maroc/simulateur-ir/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> <span data-i18n="nav.tax_simulator">Simulateur Impôt</span></a></li>
-                        <li><a href="/maroc/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> <span data-i18n="nav.brut_to_net">Brut vers Net</span></a></li>
-                        <li><a href="/maroc/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> <span data-i18n="nav.fiscal_guide">Guide Fiscal</span></a></li>
+                        <li><a href="/maroc/simulateur-ir/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Simulateur Impot</a></li>
+                        <li><a href="/maroc/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Guide Fiscal</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/comparateur-salaire-france-maroc/" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
-                <li class="nav-item"><a href="/comparateur-global/" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
-                <li class="nav-item"><a href="/faq/" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc/" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> France vs Maroc</a></li>
+                <li class="nav-item"><a href="/comparateur-global/" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> Comparateur Global</a></li>
+                <li class="nav-item"><a href="/faq/" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
             </ul>
             <!-- Language Switcher -->
             <div class="lang-switcher-container">
-                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                <a href="/en/france/gross-to-net/" class="lang-switcher" title="English version">
                     <span class="lang-flag">🇫🇷</span>
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
-                </button>
+                </a>
                 <div class="lang-dropdown">
-                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
-                        <span>🇫🇷</span> Français
-                    </button>
-                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                    <a href="/france/simulateur-salaire-brut-net/" class="lang-option active">
+                        <span>🇫🇷</span> Francais
+                    </a>
+                    <a href="/en/france/gross-to-net/" class="lang-option">
                         <span>🇬🇧</span> English
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="section">
-        <div class="max-w-3xl mx-auto">
+    <main class="pt-24 pb-12 px-4">
+        <div class="max-w-6xl mx-auto">
 
             <!-- Header -->
             <header class="text-center mb-8">
-                <span class="country-badge country-badge-fr mb-4 inline-flex">🇫🇷 France</span>
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="sim.fr.title">Simulateur Brut → Net</h1>
-                <p class="text-slate-500" data-i18n="sim.fr.subtitle">Calculez votre salaire net à partir du brut. Barèmes 2025.</p>
+                <span class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                    🇫🇷 France · Baremes 2025
+                </span>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Salaire Brut ↔ Net</h1>
+                <p class="text-slate-500 text-sm">Conversion bidirectionnelle instantanee</p>
             </header>
 
-            <!-- Calculator -->
-            <div class="card">
-                <div class="space-y-6">
-                    <!-- Input -->
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.gross_monthly">Salaire Brut Mensuel</label>
-                        <div class="relative">
-                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
-                            <input type="text" inputmode="numeric" id="brut-input" class="w-full pl-10 pr-4 py-3 text-lg font-semibold border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" placeholder="3 000" value="3 000">
-                        </div>
-                    </div>
+            <!-- Main Calculator Section -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
-                    <!-- Options -->
-                    <div class="grid grid-cols-2 gap-4">
+                    <!-- Left Column: Inputs -->
+                    <div class="lg:col-span-3 space-y-5">
+
+                        <!-- Salaire Brut Row -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.status">Statut</label>
-                            <select id="statut" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                                <option value="noncadre" data-i18n="sim.non_cadre">Non-Cadre</option>
-                                <option value="cadre" data-i18n="sim.cadre">Cadre</option>
-                            </select>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                                <span class="font-semibold text-slate-800">Salaire Brut</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div>
+                                    <label class="salary-label">Annuel</label>
+                                    <input type="text" inputmode="numeric" id="brut-annuel" class="input-salary" placeholder="36 000" value="36 000">
+                                </div>
+                                <div>
+                                    <label class="salary-label">Mensuel</label>
+                                    <input type="text" inputmode="numeric" id="brut-mensuel" class="input-salary" placeholder="3 000" value="3 000">
+                                </div>
+                                <div>
+                                    <label class="salary-label">Horaire</label>
+                                    <input type="text" inputmode="numeric" id="brut-horaire" class="input-salary" placeholder="19.74" value="19,74">
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Salaire Net Row -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="sim.period">Période</label>
-                            <select id="periode" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                                <option value="mensuel" data-i18n="sim.monthly">Mensuel</option>
-                                <option value="annuel" data-i18n="sim.annual">Annuel</option>
-                            </select>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                <span class="font-semibold text-slate-800">Salaire Net</span>
+                                <span class="text-xs text-slate-400">(avant IR)</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div>
+                                    <label class="salary-label">Annuel</label>
+                                    <input type="text" inputmode="numeric" id="net-annuel" class="input-salary input-salary-net" placeholder="28 080">
+                                </div>
+                                <div>
+                                    <label class="salary-label">Mensuel</label>
+                                    <input type="text" inputmode="numeric" id="net-mensuel" class="input-salary input-salary-net" placeholder="2 340">
+                                </div>
+                                <div>
+                                    <label class="salary-label">Horaire</label>
+                                    <input type="text" inputmode="numeric" id="net-horaire" class="input-salary input-salary-net" placeholder="15.39">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Options (smaller, more discreet) -->
+                        <div class="bg-slate-50 rounded-xl p-3 mt-2">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Statut professionnel</label>
+                                    <select id="statut" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                                        <option value="noncadre">Non-Cadre (22%)</option>
+                                        <option value="cadre">Cadre (25%)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Heures par semaine</label>
+                                    <input type="number" id="heures" value="35" min="1" max="60" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Chart -->
+                    <div class="lg:col-span-2 flex items-start justify-center">
+                        <div class="chart-container">
+                            <canvas id="chart" width="280" height="280"></canvas>
+                            <div class="text-center mt-4">
+                                <div class="text-2xl font-bold text-slate-900" id="taux-net">78%</div>
+                                <div class="text-xs text-slate-500">du brut conserve</div>
+                            </div>
+                            <!-- Legend -->
+                            <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs">
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                    <span class="text-slate-600">Net (<span id="legend-net">78%</span>)</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-indigo-400"></div>
+                                    <span class="text-slate-600">Cotisations (<span id="legend-cotis">22%</span>)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Results -->
-                    <div class="bg-indigo-50 rounded-xl p-6 mt-6">
-                        <div class="text-center">
-                            <p class="text-sm text-indigo-600 font-medium mb-1" data-i18n="sim.net_salary">Salaire Net</p>
-                            <p class="text-4xl font-bold text-indigo-900" id="net-result">2 340 €</p>
-                            <p class="text-sm text-indigo-600 mt-2" id="net-annuel"><span data-i18n="sim.or">soit</span> 28 080 € <span data-i18n="sim.per_year">/ an</span></p>
+                </div>
+            </div>
+
+            <!-- Details Breakdown -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
+                <h2 class="font-semibold text-slate-800 mb-4">Detail des cotisations</h2>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">Securite sociale</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-400 rounded-full" id="bar-secu" style="width: 64%"></div>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-secu">-420 €</span>
                         </div>
                     </div>
-
-                    <!-- Details -->
-                    <div class="border rounded-lg border-slate-200 overflow-hidden mt-6">
-                        <table class="w-full text-sm">
-                            <tbody class="divide-y divide-slate-100" id="details-table">
-                                <tr>
-                                    <td class="px-4 py-3 font-medium" data-i18n="sim.gross_salary">Salaire Brut</td>
-                                    <td class="px-4 py-3 text-right" id="detail-brut">3 000 €</td>
-                                </tr>
-                                <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-6 text-xs" data-i18n="sim.social_contrib">Cotisations salariales</td>
-                                    <td class="px-4 py-3 text-right text-xs" id="detail-cotis">-660 €</td>
-                                </tr>
-                                <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.social_security">Sécurité sociale</td>
-                                    <td class="px-4 py-3 text-right text-xs" id="detail-secu">-420 €</td>
-                                </tr>
-                                <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.retirement">Retraite complémentaire</td>
-                                    <td class="px-4 py-3 text-right text-xs" id="detail-retraite">-180 €</td>
-                                </tr>
-                                <tr class="text-slate-500">
-                                    <td class="px-4 py-3 pl-8 text-xs" data-i18n="sim.unemployment">Chômage</td>
-                                    <td class="px-4 py-3 text-right text-xs" id="detail-chomage">-60 €</td>
-                                </tr>
-                                <tr class="bg-indigo-50 font-semibold">
-                                    <td class="px-4 py-3" data-i18n="sim.net_before_tax">Salaire Net avant IR</td>
-                                    <td class="px-4 py-3 text-right text-indigo-700" id="detail-net-avant-ir">2 340 €</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">Retraite complementaire</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-400 rounded-full" id="bar-retraite" style="width: 27%"></div>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-retraite">-180 €</span>
+                        </div>
                     </div>
-
-                    <p class="text-xs text-slate-400 text-center mt-4" data-i18n="sim.disclaimer">
-                        Les cotisations sont estimées à environ 22% pour non-cadre et 25% pour cadre. Ces chiffres sont des approximations.
-                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-600">Chomage</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-amber-400 rounded-full" id="bar-chomage" style="width: 9%"></div>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-chomage">-60 €</span>
+                        </div>
+                    </div>
+                    <div class="border-t pt-3 mt-3 flex items-center justify-between">
+                        <span class="font-semibold text-slate-800">Total cotisations</span>
+                        <span class="font-bold text-red-600" id="detail-cotis">-660 €</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Info Section -->
-            <section class="mt-8">
-                <h2 class="section-title" data-i18n="sim.how_it_works">Comment ça marche ?</h2>
-                <div class="card">
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Comment ca marche ?</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6">
                     <div class="prose prose-slate max-w-none text-sm text-slate-600">
-                        <p data-i18n="sim.fr.how_text">Le salaire net est calculé en déduisant les cotisations sociales du salaire brut :</p>
-                        <ul class="features-list mt-4">
-                            <li><strong data-i18n="sim.fr.how_secu">Sécurité sociale</strong> : maladie, vieillesse, famille</li>
-                            <li><strong data-i18n="sim.fr.how_retirement">Retraite complémentaire</strong> : AGIRC-ARRCO</li>
-                            <li><strong data-i18n="sim.fr.how_unemployment">Assurance chômage</strong> : contribution salariale</li>
-                            <li><strong data-i18n="sim.fr.how_csg">CSG/CRDS</strong> : contributions sociales</li>
+                        <p>Le salaire net est calcule en deduisant les cotisations sociales du salaire brut :</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><strong>Securite sociale</strong> : maladie, vieillesse, famille (~14%)</li>
+                            <li><strong>Retraite complementaire</strong> : AGIRC-ARRCO (6-8%)</li>
+                            <li><strong>Assurance chomage</strong> : contribution salariale (~2%)</li>
+                            <li><strong>CSG/CRDS</strong> : contributions sociales (9,7% sur 98,25% du brut)</li>
                         </ul>
-                        <p class="mt-4" data-i18n="sim.fr.how_rate">Le taux global varie entre 22% (non-cadre) et 25% (cadre) du salaire brut.</p>
+                        <p class="mt-4">Le taux global varie entre <strong>22%</strong> (non-cadre) et <strong>25%</strong> (cadre) du salaire brut.</p>
                     </div>
                 </div>
             </section>
 
             <!-- SEO Content Section -->
-            <section class="mt-8">
-                <h2 class="section-title">Comprendre le calcul du salaire brut vers net en France</h2>
-                <div class="card">
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Comprendre le calcul du salaire brut vers net en France</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6">
                     <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                        <p>Le passage du <strong>salaire brut au salaire net</strong> est une étape essentielle pour comprendre sa rémunération réelle en France. En 2025, les cotisations sociales salariales représentent entre <strong>22% et 25%</strong> du salaire brut selon votre statut (cadre ou non-cadre).</p>
+                        <p>Le passage du <strong>salaire brut au salaire net</strong> est une etape essentielle pour comprendre sa remuneration reelle en France. En 2025, les cotisations sociales salariales representent entre <strong>22% et 25%</strong> du salaire brut selon votre statut (cadre ou non-cadre).</p>
 
-                        <h3 class="text-base font-semibold text-slate-800 mt-6">Qu'est-ce que le salaire brut ?</h3>
-                        <p>Le <strong>salaire brut</strong> correspond à la rémunération totale avant déduction des cotisations sociales. C'est le montant qui figure généralement dans votre contrat de travail et sur la partie haute de votre bulletin de paie. Il comprend le salaire de base, les primes, les heures supplémentaires et tous les avantages en nature.</p>
-
-                        <h3 class="text-base font-semibold text-slate-800 mt-6">Les cotisations sociales salariales en détail</h3>
-                        <p>En France, le système de protection sociale est financé par des cotisations prélevées sur le salaire. Voici la répartition approximative :</p>
-                        <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong>Sécurité sociale (environ 14%)</strong> : assurance maladie, maternité, invalidité, décès, vieillesse de base et allocations familiales</li>
-                            <li><strong>Retraite complémentaire AGIRC-ARRCO (6% à 8%)</strong> : constitution de droits à la retraite complémentaire obligatoire</li>
-                            <li><strong>Assurance chômage (environ 2%)</strong> : financement de l'assurance chômage (Pôle Emploi)</li>
-                            <li><strong>CSG-CRDS (9,7%)</strong> : contribution sociale généralisée et remboursement de la dette sociale, calculées sur 98,25% du salaire brut</li>
-                        </ul>
-
-                        <h3 class="text-base font-semibold text-slate-800 mt-6">Différence entre cadre et non-cadre</h3>
-                        <p>Le statut cadre entraîne des cotisations légèrement supérieures, principalement en raison de :</p>
+                        <h3 class="text-base font-semibold text-slate-800 mt-6">Difference entre cadre et non-cadre</h3>
+                        <p>Le statut cadre entraine des cotisations legerement superieures, principalement en raison de :</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Une cotisation retraite complémentaire plus élevée (tranches AGIRC-ARRCO)</li>
-                            <li>Une cotisation APEC (Association Pour l'Emploi des Cadres)</li>
-                            <li>Des garanties prévoyance supplémentaires obligatoires</li>
+                            <li>Une cotisation retraite complementaire plus elevee</li>
+                            <li>Une cotisation APEC obligatoire</li>
+                            <li>Des garanties prevoyance supplementaires</li>
                         </ul>
-                        <p class="mt-2">Résultat : un cadre conserve environ <strong>75%</strong> de son salaire brut en net, contre <strong>78%</strong> pour un non-cadre.</p>
-
-                        <h3 class="text-base font-semibold text-slate-800 mt-6">Le prélèvement à la source (PAS)</h3>
-                        <p>Depuis janvier 2019, l'<strong>impôt sur le revenu est prélevé directement sur le salaire</strong>. Le montant affiché sur votre fiche de paie comme "net à payer" est donc votre salaire après cotisations sociales ET après impôt. Notre simulateur calcule le <strong>net avant impôt</strong>, le prélèvement à la source dépendant de votre situation personnelle (quotient familial, autres revenus, etc.).</p>
+                        <p class="mt-2">Resultat : un cadre conserve environ <strong>75%</strong> de son salaire brut en net, contre <strong>78%</strong> pour un non-cadre.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Examples Section -->
-            <section class="mt-8">
-                <h2 class="section-title">3 exemples concrets de calcul brut → net</h2>
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Exemples concrets</h2>
                 <div class="grid md:grid-cols-3 gap-4">
-                    <div class="card">
-                        <div class="text-center mb-4">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Exemple 1</span>
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                        <div class="text-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded-full">SMIC 2025</span>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-center mb-3">SMIC 2025</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-slate-500">Brut mensuel</span>
                                 <span class="font-medium">1 802 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Statut</span>
-                                <span class="font-medium">Non-cadre</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations (22%)</span>
+                                <span class="text-slate-500">Cotisations</span>
                                 <span class="font-medium text-red-600">-396 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
                                 <span class="font-semibold">Net mensuel</span>
-                                <span class="font-bold text-indigo-600">1 406 €</span>
-                            </div>
-                            <div class="flex justify-between text-xs text-slate-400">
-                                <span>Net annuel</span>
-                                <span>16 872 €</span>
+                                <span class="font-bold text-emerald-600">1 406 €</span>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-500 mt-3">Salarié au SMIC, le salaire minimum légal en France pour 2025.</p>
                     </div>
 
-                    <div class="card">
-                        <div class="text-center mb-4">
-                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Exemple 2</span>
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                        <div class="text-center mb-3">
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-0.5 rounded-full">Cadre junior</span>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-center mb-3">Cadre junior</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-slate-500">Brut mensuel</span>
                                 <span class="font-medium">3 500 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Statut</span>
-                                <span class="font-medium">Cadre</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations (25%)</span>
+                                <span class="text-slate-500">Cotisations</span>
                                 <span class="font-medium text-red-600">-875 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
                                 <span class="font-semibold">Net mensuel</span>
-                                <span class="font-bold text-indigo-600">2 625 €</span>
-                            </div>
-                            <div class="flex justify-between text-xs text-slate-400">
-                                <span>Net annuel</span>
-                                <span>31 500 €</span>
+                                <span class="font-bold text-emerald-600">2 625 €</span>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-500 mt-3">Jeune diplômé en début de carrière dans une entreprise parisienne.</p>
                     </div>
 
-                    <div class="card">
-                        <div class="text-center mb-4">
-                            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Exemple 3</span>
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                        <div class="text-center mb-3">
+                            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-0.5 rounded-full">Cadre confirme</span>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-center mb-3">Cadre confirmé</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-slate-500">Brut mensuel</span>
                                 <span class="font-medium">6 000 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Statut</span>
-                                <span class="font-medium">Cadre</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations (25%)</span>
+                                <span class="text-slate-500">Cotisations</span>
                                 <span class="font-medium text-red-600">-1 500 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
                                 <span class="font-semibold">Net mensuel</span>
-                                <span class="font-bold text-indigo-600">4 500 €</span>
-                            </div>
-                            <div class="flex justify-between text-xs text-slate-400">
-                                <span>Net annuel</span>
-                                <span>54 000 €</span>
+                                <span class="font-bold text-emerald-600">4 500 €</span>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-500 mt-3">Manager ou expert avec 10+ années d'expérience.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section class="mt-8">
-                <h2 class="section-title">Questions fréquentes sur le calcul brut-net</h2>
-                <div class="card">
-                    <div class="space-y-4">
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Quelle est la différence entre salaire brut et salaire net ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Le <strong>salaire brut</strong> est le montant total de votre rémunération avant toute déduction. Le <strong>salaire net</strong> est ce que vous percevez réellement après déduction des cotisations sociales salariales. En France, le net représente environ 75% à 78% du brut selon votre statut.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Pourquoi les cadres ont-ils plus de cotisations ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Les cadres cotisent davantage pour plusieurs raisons : une cotisation retraite complémentaire AGIRC-ARRCO plus élevée sur les tranches supérieures, une cotisation APEC obligatoire, et des garanties prévoyance décès plus importantes. Ces cotisations supplémentaires génèrent des droits plus élevés à la retraite.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Qu'est-ce que la CSG et la CRDS ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">La <strong>CSG (Contribution Sociale Généralisée)</strong> finance la protection sociale (9,2%). La <strong>CRDS (Contribution au Remboursement de la Dette Sociale)</strong> rembourse la dette de la Sécurité sociale (0,5%). Elles sont calculées sur 98,25% du salaire brut et sont partiellement déductibles de l'impôt sur le revenu.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Le prélèvement à la source est-il inclus dans le calcul ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Non, notre simulateur calcule le <strong>salaire net avant impôt sur le revenu</strong>. Le prélèvement à la source (PAS) dépend de votre taux personnalisé, calculé par l'administration fiscale en fonction de vos revenus globaux et de votre situation familiale. Il est prélevé en plus des cotisations sociales.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Comment les heures supplémentaires sont-elles traitées ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Les heures supplémentaires bénéficient d'une <strong>exonération de cotisations salariales</strong> (sauf CSG-CRDS) et d'une <strong>exonération d'impôt sur le revenu</strong> dans la limite de 7 500 € par an. Le taux de majoration est de 25% pour les 8 premières heures et 50% au-delà.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Quel est le SMIC net en 2025 ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">En 2025, le SMIC brut est d'environ <strong>1 802 € par mois</strong> (11,88 €/heure). Après déduction des cotisations sociales (~22%), le SMIC net est d'environ <strong>1 406 € par mois</strong>, soit environ 16 872 € net par an.</p>
-                        </details>
-
-                        <details class="group border-b border-slate-100 pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Les primes sont-elles soumises aux mêmes cotisations ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Oui, la plupart des primes (13ème mois, prime de vacances, bonus) sont soumises aux mêmes cotisations que le salaire de base. Exceptions notables : la prime de partage de la valeur (ex-prime Macron) est exonérée de cotisations et d'impôt dans certaines limites, et l'intéressement/participation bénéficie d'un régime favorable.</p>
-                        </details>
-
-                        <details class="group pb-4">
-                            <summary class="flex justify-between items-center cursor-pointer list-none">
-                                <span class="font-medium text-slate-800">Comment vérifier que mon bulletin de paie est correct ?</span>
-                                <span class="iconify text-slate-400 group-open:rotate-180 transition-transform" data-icon="lucide:chevron-down" width="20"></span>
-                            </summary>
-                            <p class="mt-3 text-sm text-slate-600">Utilisez notre simulateur pour estimer votre net théorique. Un écart de 1-2% est normal en raison des spécificités de votre entreprise (mutuelle, prévoyance, tickets restaurant...). Pour une vérification détaillée, consultez le site de l'<strong>URSSAF</strong> ou faites appel à un expert-comptable. Tout écart significatif doit être signalé à votre service RH.</p>
-                        </details>
                     </div>
                 </div>
             </section>
 
             <!-- Sources Section -->
-            <section class="mt-8 mb-8">
-                <h2 class="section-title">Sources officielles</h2>
-                <div class="card">
-                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Sources officielles</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4">
+                    <div class="grid md:grid-cols-2 gap-3 text-sm">
                         <a href="https://www.urssaf.fr/accueil/taux-baremes.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="18"></span>
+                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="16"></span>
                             <div>
                                 <div class="font-medium text-slate-800">URSSAF</div>
-                                <div class="text-xs text-slate-500">Taux et barèmes des cotisations</div>
+                                <div class="text-xs text-slate-500">Taux et baremes</div>
                             </div>
                         </a>
                         <a href="https://www.service-public.fr/particuliers/vosdroits/F2302" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="18"></span>
+                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="16"></span>
                             <div>
                                 <div class="font-medium text-slate-800">Service-Public.fr</div>
-                                <div class="text-xs text-slate-500">Cotisations salariales - particuliers</div>
-                            </div>
-                        </a>
-                        <a href="https://www.agirc-arrco.fr/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="18"></span>
-                            <div>
-                                <div class="font-medium text-slate-800">AGIRC-ARRCO</div>
-                                <div class="text-xs text-slate-500">Retraite complémentaire des salariés</div>
-                            </div>
-                        </a>
-                        <a href="https://www.impots.gouv.fr/particulier/prelevement-la-source" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="iconify text-blue-600" data-icon="lucide:external-link" width="18"></span>
-                            <div>
-                                <div class="font-medium text-slate-800">impots.gouv.fr</div>
-                                <div class="text-xs text-slate-500">Prélèvement à la source</div>
+                                <div class="text-xs text-slate-500">Cotisations salariales</div>
                             </div>
                         </a>
                     </div>
@@ -460,95 +428,318 @@
             <div class="footer-grid">
                 <div>
                     <h4>NetSalaire</h4>
-                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
+                    <p>Simulateurs fiscaux gratuits pour la France et le Maroc.</p>
                 </div>
                 <div>
-                    <h4 data-i18n="nav.france">France</h4>
+                    <h4>France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net/" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu/" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
-                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net/">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu/">Simulateur IR</a></li>
+                        <li><a href="/france/guide/">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 data-i18n="nav.maroc">Maroc</h4>
+                    <h4>Maroc</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-ir/" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
-                        <li><a href="/maroc/simulateur-ir/" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/maroc/simulateur-ir/">Simulateur IR</a></li>
+                        <li><a href="/maroc/guide/">Guide Fiscal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 data-i18n="footer.info">Informations</h4>
+                    <h4>Informations</h4>
                     <ul>
-                        <li><a href="/faq/" data-i18n="nav.faq">FAQ</a></li>
-                        <li><a href="/mentions-legales/" data-i18n="footer.legal">Mentions Légales</a></li>
+                        <li><a href="/faq/">FAQ</a></li>
+                        <li><a href="/mentions-legales/">Mentions Legales</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits réservés</span></p>
+                <p>&copy; 2025 NetSalaire.com - Tous droits reserves</p>
             </div>
         </div>
     </footer>
 
     <script>
-        const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-        const parseNumber = (str) => parseFloat(str.replace(/\s/g, '')) || 0;
+        // === CONFIGURATION ===
+        const COTIS_RATES = { cadre: 0.25, noncadre: 0.22 };
+        const WEEKS_PER_YEAR = 52;
+        const MONTHS_PER_YEAR = 12;
 
-        const brutInput = document.getElementById('brut-input');
+        // === DOM ELEMENTS ===
+        const brutAnnuel = document.getElementById('brut-annuel');
+        const brutMensuel = document.getElementById('brut-mensuel');
+        const brutHoraire = document.getElementById('brut-horaire');
+        const netAnnuel = document.getElementById('net-annuel');
+        const netMensuel = document.getElementById('net-mensuel');
+        const netHoraire = document.getElementById('net-horaire');
         const statutSelect = document.getElementById('statut');
-        const periodeSelect = document.getElementById('periode');
+        const heuresInput = document.getElementById('heures');
 
-        function calculate() {
-            let brut = parseNumber(brutInput.value);
-            const statut = statutSelect.value;
-            const periode = periodeSelect.value;
+        // === UTILITIES ===
+        const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const formatDecimal = (num) => num.toFixed(2).replace('.', ',');
+        const parseNumber = (str) => parseFloat(str.replace(/\s/g, '').replace(',', '.')) || 0;
 
-            if (periode === 'annuel') brut = brut / 12;
+        // === STATE ===
+        let isUpdating = false;
 
-            const cotisRate = statut === 'cadre' ? 0.25 : 0.22;
-            const cotisations = brut * cotisRate;
-            const net = brut - cotisations;
-
-            // Repartition approximative des cotisations
-            const secu = brut * 0.14;
-            const retraite = brut * (statut === 'cadre' ? 0.08 : 0.06);
-            const chomage = brut * 0.02;
-
-            const mult = periode === 'annuel' ? 12 : 1;
-
-            document.getElementById('net-result').textContent = formatNumber(net * mult) + ' €';
-
-            const soitText = window.i18n ? i18n.t('sim.or') : 'soit';
-            const perYearText = window.i18n ? i18n.t('sim.per_year') : '/ an';
-            const perMonthText = window.i18n ? i18n.t('sim.per_month') : '/ mois';
-
-            document.getElementById('net-annuel').innerHTML = periode === 'mensuel'
-                ? `${soitText} ${formatNumber(net * 12)} € ${perYearText}`
-                : `${soitText} ${formatNumber(net)} € ${perMonthText}`;
-
-            document.getElementById('detail-brut').textContent = formatNumber(brut * mult) + ' €';
-            document.getElementById('detail-cotis').textContent = '-' + formatNumber(cotisations * mult) + ' €';
-            document.getElementById('detail-secu').textContent = '-' + formatNumber(secu * mult) + ' €';
-            document.getElementById('detail-retraite').textContent = '-' + formatNumber(retraite * mult) + ' €';
-            document.getElementById('detail-chomage').textContent = '-' + formatNumber(chomage * mult) + ' €';
-            document.getElementById('detail-net-avant-ir').textContent = formatNumber(net * mult) + ' €';
+        // === CALCULATIONS ===
+        function getCotisRate() {
+            return COTIS_RATES[statutSelect.value];
         }
 
-        brutInput.addEventListener('input', (e) => {
-            const val = e.target.value.replace(/\s/g, '').replace(/[^\d]/g, '');
-            e.target.value = val ? val.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
-            calculate();
+        function getHoursPerYear() {
+            return parseNumber(heuresInput.value) * WEEKS_PER_YEAR;
+        }
+
+        function brutToNet(brut) {
+            return brut * (1 - getCotisRate());
+        }
+
+        function netToBrut(net) {
+            return net / (1 - getCotisRate());
+        }
+
+        // === UPDATE FUNCTIONS ===
+        function updateFromBrutAnnuel() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const brutAn = parseNumber(brutAnnuel.value);
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+
+            const netAn = brutToNet(brutAn);
+            const netMois = netAn / MONTHS_PER_YEAR;
+            const netH = netAn / getHoursPerYear();
+
+            brutMensuel.value = formatNumber(brutMois);
+            brutHoraire.value = formatDecimal(brutH);
+            netAnnuel.value = formatNumber(netAn);
+            netMensuel.value = formatNumber(netMois);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        function updateFromBrutMensuel() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const brutMois = parseNumber(brutMensuel.value);
+            const brutAn = brutMois * MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+
+            const netAn = brutToNet(brutAn);
+            const netMois = netAn / MONTHS_PER_YEAR;
+            const netH = netAn / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutHoraire.value = formatDecimal(brutH);
+            netAnnuel.value = formatNumber(netAn);
+            netMensuel.value = formatNumber(netMois);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        function updateFromBrutHoraire() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const brutH = parseNumber(brutHoraire.value);
+            const brutAn = brutH * getHoursPerYear();
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+
+            const netAn = brutToNet(brutAn);
+            const netMois = netAn / MONTHS_PER_YEAR;
+            const netH = netAn / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutMensuel.value = formatNumber(brutMois);
+            netAnnuel.value = formatNumber(netAn);
+            netMensuel.value = formatNumber(netMois);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        function updateFromNetAnnuel() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const netAn = parseNumber(netAnnuel.value);
+            const brutAn = netToBrut(netAn);
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+
+            const netMois = netAn / MONTHS_PER_YEAR;
+            const netH = netAn / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutMensuel.value = formatNumber(brutMois);
+            brutHoraire.value = formatDecimal(brutH);
+            netMensuel.value = formatNumber(netMois);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        function updateFromNetMensuel() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const netMois = parseNumber(netMensuel.value);
+            const netAn = netMois * MONTHS_PER_YEAR;
+            const brutAn = netToBrut(netAn);
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+            const netH = netAn / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutMensuel.value = formatNumber(brutMois);
+            brutHoraire.value = formatDecimal(brutH);
+            netAnnuel.value = formatNumber(netAn);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        function updateFromNetHoraire() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const netH = parseNumber(netHoraire.value);
+            const netAn = netH * getHoursPerYear();
+            const netMois = netAn / MONTHS_PER_YEAR;
+            const brutAn = netToBrut(netAn);
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutMensuel.value = formatNumber(brutMois);
+            brutHoraire.value = formatDecimal(brutH);
+            netAnnuel.value = formatNumber(netAn);
+            netMensuel.value = formatNumber(netMois);
+
+            updateUI(brutMois);
+            isUpdating = false;
+        }
+
+        // === UI UPDATE ===
+        function updateUI(brutMois) {
+            const cotisRate = getCotisRate();
+            const netRate = 1 - cotisRate;
+
+            // Details
+            const secu = brutMois * 0.14;
+            const retraite = brutMois * (statutSelect.value === 'cadre' ? 0.08 : 0.06);
+            const chomage = brutMois * 0.02;
+            const totalCotis = brutMois * cotisRate;
+
+            document.getElementById('detail-secu').textContent = '-' + formatNumber(secu) + ' €';
+            document.getElementById('detail-retraite').textContent = '-' + formatNumber(retraite) + ' €';
+            document.getElementById('detail-chomage').textContent = '-' + formatNumber(chomage) + ' €';
+            document.getElementById('detail-cotis').textContent = '-' + formatNumber(totalCotis) + ' €';
+
+            // Progress bars (relative to total cotis)
+            document.getElementById('bar-secu').style.width = (secu / totalCotis * 100) + '%';
+            document.getElementById('bar-retraite').style.width = (retraite / totalCotis * 100) + '%';
+            document.getElementById('bar-chomage').style.width = (chomage / totalCotis * 100) + '%';
+
+            // Chart & legend
+            document.getElementById('taux-net').textContent = Math.round(netRate * 100) + '%';
+            document.getElementById('legend-net').textContent = Math.round(netRate * 100) + '%';
+            document.getElementById('legend-cotis').textContent = Math.round(cotisRate * 100) + '%';
+
+            drawChart(netRate, cotisRate);
+        }
+
+        // === CHART ===
+        function drawChart(netRate, cotisRate) {
+            const canvas = document.getElementById('chart');
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            const center = size / 2;
+            const radius = size / 2 - 20;
+            const innerRadius = radius * 0.6;
+
+            ctx.clearRect(0, 0, size, size);
+
+            // Net portion (green)
+            ctx.beginPath();
+            ctx.moveTo(center, center);
+            ctx.arc(center, center, radius, -Math.PI / 2, -Math.PI / 2 + netRate * Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = '#10b981';
+            ctx.fill();
+
+            // Cotisations portion (indigo)
+            ctx.beginPath();
+            ctx.moveTo(center, center);
+            ctx.arc(center, center, radius, -Math.PI / 2 + netRate * Math.PI * 2, -Math.PI / 2 + Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = '#818cf8';
+            ctx.fill();
+
+            // Inner circle (donut hole)
+            ctx.beginPath();
+            ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+        }
+
+        // === EVENT LISTENERS ===
+        brutAnnuel.addEventListener('input', (e) => {
+            e.target.value = formatInputNumber(e.target.value);
+            updateFromBrutAnnuel();
         });
 
-        statutSelect.addEventListener('change', calculate);
-        periodeSelect.addEventListener('change', calculate);
+        brutMensuel.addEventListener('input', (e) => {
+            e.target.value = formatInputNumber(e.target.value);
+            updateFromBrutMensuel();
+        });
 
-        calculate();
+        brutHoraire.addEventListener('input', (e) => {
+            e.target.value = formatInputDecimal(e.target.value);
+            updateFromBrutHoraire();
+        });
+
+        netAnnuel.addEventListener('input', (e) => {
+            e.target.value = formatInputNumber(e.target.value);
+            updateFromNetAnnuel();
+        });
+
+        netMensuel.addEventListener('input', (e) => {
+            e.target.value = formatInputNumber(e.target.value);
+            updateFromNetMensuel();
+        });
+
+        netHoraire.addEventListener('input', (e) => {
+            e.target.value = formatInputDecimal(e.target.value);
+            updateFromNetHoraire();
+        });
+
+        statutSelect.addEventListener('change', updateFromBrutMensuel);
+        heuresInput.addEventListener('change', updateFromBrutMensuel);
+
+        function formatInputNumber(val) {
+            const clean = val.replace(/\s/g, '').replace(/[^\d]/g, '');
+            return clean ? clean.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+        }
+
+        function formatInputDecimal(val) {
+            return val.replace(/[^\d,\.]/g, '').replace('.', ',');
+        }
+
+        // === INIT ===
+        updateFromBrutMensuel();
     </script>
-
-    <!-- i18n Script -->
-    <script src="/assets/js/i18n.js"></script>
 
 </body>
 </html>

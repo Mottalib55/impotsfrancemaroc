@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z328SB8DZ8');
+    </script>
+
+    <title>Morocco Income Tax Simulator 2025 | NetSalaire</title>
+    <meta name="description" content="Simulate your income tax in Morocco. IR calculation with progressive brackets, social contributions and family allowances. 2025 rates.">
+    <meta name="keywords" content="morocco tax simulator, income tax morocco, IR brackets morocco, tax calculation morocco, IR rates 2025">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://netsalaire.com/en/morocco/tax-simulator/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/tax-simulator/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/maroc/simulateur-ir.html">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/maroc/simulateur-ir.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Morocco Income Tax Simulator 2025">
+    <meta property="og:description" content="Simulate your income tax in Morocco. Progressive brackets, social contributions, family allowances. 2025 rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/en/morocco/tax-simulator/">
+    <meta property="og:image" content="https://netsalaire.com/assets/images/og-maroc-ir.png">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Morocco Income Tax Simulator 2025">
+    <meta name="twitter:description" content="Calculate your income tax in Morocco. Brackets and allowances.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NetSalaire">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Morocco Income Tax Simulator 2025",
+        "description": "Simulate your income tax in Morocco with progressive brackets",
+        "url": "https://netsalaire.com/en/morocco/tax-simulator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "MAD"
+        }
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #FAFAFA; color: #18181B; }
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -moz-appearance: textfield; }
+        .transition-height { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E4E4E7; border-radius: 3px; }
+        .donut-ring { transition: stroke-dasharray 1s ease-out; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-500/10 selection:text-emerald-700">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/images/logo.svg" alt="NetSalaire" height="32"></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/#france" class="nav-link"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> France <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/en/france/gross-to-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Gross to Net</a></li>
+                        <li><a href="/en/france/tax-guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/#maroc" class="nav-link" style="background: var(--bg); color: #059669;"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> Morocco <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <ul class="nav-dropdown nav-dropdown-ma">
+                        <li><a href="/en/morocco/tax-simulator/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Tax Simulator</a></li>
+                        <li><a href="/en/morocco/tax-guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/en/france-morocco-comparison/" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> France vs Morocco</a></li>
+                <li class="nav-item"><a href="/en/global-comparison/" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> Global Comparison</a></li>
+                <li class="nav-item"><a href="/en/faq/" class="nav-link"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> FAQ</a></li>
+            </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <a href="/maroc/simulateur-ir.html" class="lang-switcher" title="Passer en francais">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </a>
+                <div class="lang-dropdown">
+                    <a href="/maroc/simulateur-ir.html" class="lang-option">
+                        <span>🇫🇷</span> Francais
+                    </a>
+                    <a href="/en/morocco/tax-simulator/" class="lang-option active">
+                        <span>🇬🇧</span> English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="pt-12 pb-6 md:pt-20 md:pb-10 text-center px-4">
+            <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 mb-6">
+                <i data-lucide="sparkles" class="h-4 w-4 text-emerald-600"></i>
+                <span class="text-sm font-medium text-emerald-700">2025 Rates - 100% Free - Instant Results</span>
+            </div>
+            <h1 class="mx-auto max-w-4xl text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                <span class="text-emerald-600">Tax Simulator</span> Morocco 2025
+            </h1>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-500">
+                Free and instant tax simulation. Calculate your income tax in Morocco with <strong class="text-slate-700">CNSS</strong>, <strong class="text-slate-700">AMO</strong> and family allowances.
+            </p>
+        </section>
+
+        <!-- Simulator Container -->
+        <div id="simulateur" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 items-start">
+
+            <!-- INPUTS SECTION -->
+            <section class="order-1 lg:col-span-7 space-y-6">
+                <div class="bg-white rounded-2xl border border-zinc-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+                    <div class="p-6 border-b border-zinc-100">
+                        <h2 class="text-base font-semibold tracking-tight text-zinc-900 flex items-center gap-2">
+                            <i data-lucide="banknote" class="w-4 h-4 text-zinc-400"></i>
+                            Your Income
+                        </h2>
+                    </div>
+
+                    <div class="p-6 space-y-6">
+                        <!-- Dual Inputs -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label for="monthly" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Gross <strong class="text-zinc-700">Monthly</strong> Salary</label>
+                                <div class="relative">
+                                    <input type="text" inputmode="numeric" id="monthly" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-zinc-400">MAD</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="annual" class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Gross <strong class="text-zinc-700">Annual</strong> Salary</label>
+                                <div class="relative">
+                                    <input type="text" inputmode="numeric" id="annual" placeholder="0" class="w-full pl-4 pr-14 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-900 font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-zinc-300">
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-zinc-400">MAD</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Family Status Buttons -->
+                        <div class="space-y-3 pt-2">
+                            <label class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Family Status</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                <button type="button" class="status-btn px-3 py-2.5 rounded-lg border text-sm font-medium transition-all focus:outline-none flex flex-col items-center justify-center gap-1 hover:bg-zinc-50" data-value="single" id="btn-single">
+                                    <span class="leading-none">Single</span>
+                                </button>
+                                <button type="button" class="status-btn px-3 py-2.5 rounded-lg border text-sm font-medium transition-all focus:outline-none flex flex-col items-center justify-center gap-1 hover:bg-zinc-50" data-value="married" id="btn-married">
+                                    <span class="leading-none">Married</span>
+                                </button>
+                                <button type="button" class="status-btn px-3 py-2.5 rounded-lg border text-sm font-medium transition-all focus:outline-none flex flex-col items-center justify-center gap-1 hover:bg-zinc-50" data-value="divorced" id="btn-divorced">
+                                    <span class="leading-none">Divorced/Widowed</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Children -->
+                        <div class="space-y-2 pt-2">
+                            <label class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Number of Children</label>
+                            <div class="flex items-center border border-zinc-200 rounded-lg bg-zinc-50 p-1">
+                                <button id="dec-kids" class="w-10 h-8 flex items-center justify-center bg-white border border-zinc-200 rounded text-zinc-600 hover:bg-zinc-50 transition-colors shadow-sm">
+                                    <i data-lucide="minus" class="w-3 h-3"></i>
+                                </button>
+                                <input type="number" id="kids" value="0" min="0" max="10" readonly class="flex-1 bg-transparent text-center font-semibold text-zinc-900 focus:outline-none">
+                                <button id="inc-kids" class="w-10 h-8 flex items-center justify-center bg-white border border-zinc-200 rounded text-zinc-600 hover:bg-zinc-50 transition-colors shadow-sm">
+                                    <i data-lucide="plus" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                            <p class="text-[10px] text-zinc-400">Dependent children (under 21 or disabled)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Box -->
+                <div class="bg-emerald-50 border border-emerald-100 rounded-lg p-4 flex items-start gap-3">
+                    <i data-lucide="info" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"></i>
+                    <p class="text-xs text-emerald-900 leading-relaxed">
+                        This simulator applies the progressive IR scale and automatically deducts 360 MAD/year for spouse and 500 MAD/year per child (max 3000 MAD).
+                    </p>
+                </div>
+            </section>
+
+            <!-- RESULTS SECTION -->
+            <section class="order-2 lg:col-span-5 space-y-6">
+                <div class="bg-zinc-900 rounded-2xl shadow-xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+
+                    <div class="p-6 relative z-10">
+                        <h2 class="text-sm font-medium text-zinc-400 mb-6 flex items-center gap-2">
+                            <i data-lucide="wallet" class="w-4 h-4"></i>
+                            Net Estimate
+                        </h2>
+
+                        <div class="space-y-1 mb-8">
+                            <p class="text-xs text-zinc-400 uppercase tracking-wider">Estimated Monthly Net</p>
+                            <div class="flex items-baseline gap-2">
+                                <span id="res-monthly" class="text-4xl sm:text-5xl font-bold text-white tracking-tight">0</span>
+                                <span class="text-base text-zinc-500 font-medium">MAD</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between py-4 border-t border-zinc-800">
+                            <div>
+                                <p class="text-xs text-zinc-500 mb-1">Annual Net</p>
+                                <p id="res-annual" class="text-lg font-semibold text-zinc-200">0 MAD</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-zinc-500 mb-1">Effective Rate</p>
+                                <p id="res-rate" class="text-lg font-semibold text-emerald-400">0%</p>
+                                <p id="res-rate-amount" class="text-xs text-zinc-500 mt-1">0 MAD deducted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donut & Breakdown -->
+                <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6">
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        <div class="relative w-32 h-32 shrink-0">
+                            <svg viewBox="0 0 36 36" class="w-full h-full transform -rotate-90">
+                                <path class="text-zinc-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+                                <path id="donut-segment" class="text-emerald-600 donut-ring" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                <span id="chart-percent" class="text-sm font-bold text-zinc-900">0%</span>
+                                <span class="text-[9px] text-zinc-400 font-medium uppercase">Net</span>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 w-full space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
+                                    <span class="text-sm text-zinc-600 font-medium">Take-Home Pay</span>
+                                </div>
+                                <div class="text-right">
+                                    <div id="legend-net" class="font-bold text-zinc-900 text-sm">0%</div>
+                                    <div id="legend-net-amount" class="text-xs text-zinc-500 font-medium mt-0.5">0 MAD</div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-start">
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <span class="w-2 h-2 rounded-full bg-zinc-300 shrink-0"></span>
+                                    <span class="text-sm text-zinc-600 font-medium">Deductions</span>
+                                </div>
+                                <div class="text-right">
+                                    <div id="legend-tax" class="font-bold text-zinc-900 text-sm">0%</div>
+                                    <div id="legend-tax-amount" class="text-xs text-zinc-500 font-medium mt-0.5">0 MAD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-zinc-100 flex justify-between items-center">
+                         <span class="text-xs font-medium text-zinc-400 uppercase tracking-wide">Total Deducted</span>
+                         <span id="res-deductions" class="text-sm font-semibold text-zinc-900">0 MAD</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Details Section -->
+        <div class="mt-8 pt-6">
+            <button id="toggle-details" class="w-full flex items-center justify-center gap-2 py-4 px-6 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                <i data-lucide="calculator" class="w-4 h-4"></i>
+                <span>View Calculation Details</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300" id="chevron-icon"></i>
+            </button>
+
+            <div id="details-panel" class="max-h-0 overflow-hidden opacity-0 transition-height duration-500 ease-in-out">
+                <div class="pt-6 pb-2 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <div class="bg-white border border-zinc-200 rounded-xl p-6 shadow-sm">
+                       <h3 class="text-sm font-semibold text-zinc-900 mb-4">Breakdown (Annual)</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-500">Gross Salary</span>
+                                <span id="detail-gross" class="font-medium text-zinc-900">0 MAD</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-500 flex items-center gap-1">Social Contributions <span class="text-[10px] bg-zinc-100 px-1 rounded text-zinc-400">Est. 6.74%</span></span>
+                                <span id="detail-social" class="font-medium text-red-500">- 0 MAD</span>
+                            </div>
+                            <div class="h-px bg-zinc-100"></div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-500">Taxable Income</span>
+                                <span id="detail-taxable" class="font-medium text-zinc-900">0 MAD</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-500">Gross IR (before reduction)</span>
+                                <span id="detail-ir-gross" class="font-medium text-zinc-900">0 MAD</span>
+                            </div>
+                             <div class="flex justify-between text-sm">
+                                <span class="text-zinc-500">Family Allowance</span>
+                                <span id="detail-family" class="font-medium text-green-600">- 0 MAD</span>
+                            </div>
+                             <div class="h-px bg-zinc-100"></div>
+                            <div class="flex justify-between text-sm font-semibold">
+                                <span class="text-zinc-900">Final Income Tax (IR)</span>
+                                <span id="detail-ir-net" class="text-red-600">- 0 MAD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
+                        <div class="bg-zinc-50 px-6 py-3 border-b border-zinc-200">
+                             <h3 class="text-sm font-semibold text-zinc-900">Calculation by Brackets (Progressive)</h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="text-xs text-zinc-500 uppercase bg-white border-b border-zinc-100">
+                                    <tr>
+                                        <th class="px-6 py-3 font-medium">Bracket</th>
+                                        <th class="px-6 py-3 font-medium">Rate</th>
+                                        <th class="px-6 py-3 font-medium text-right">Amount</th>
+                                        <th class="px-6 py-3 font-medium text-right">Tax</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tranche-body" class="divide-y divide-zinc-100">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>NetSalaire</h4>
+                    <p>Free tax simulators for France and Morocco.</p>
+                </div>
+                <div>
+                    <h4>France</h4>
+                    <ul>
+                        <li><a href="/en/france/gross-to-net/">Gross to Net</a></li>
+                        <li><a href="/en/france/tax-guide/">Tax Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Morocco</h4>
+                    <ul>
+                        <li><a href="/en/morocco/tax-simulator/">Tax Simulator</a></li>
+                        <li><a href="/en/morocco/tax-guide/">Tax Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="/en/faq/">FAQ</a></li>
+                        <li><a href="/en/legal-notice/">Legal Notice</a></li>
+                        <li><a href="/en/privacy-policy/">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NetSalaire.com - All rights reserved</p>
+                <p class="text-xs text-slate-400 mt-2">* This tool is provided for informational purposes only. Social contributions are estimated at a standard average rate (6.74%). IR brackets 2025.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const SOCIAL_CONTRIB_RATE = 0.0674;
+        const DEDUCTION_KID = 500;
+        const DEDUCTION_SPOUSE = 360;
+        const MAX_FAMILY_DEDUCTION = 3000;
+
+        const TRANCHES = [
+            { max: 40000, rate: 0 },
+            { max: 60000, rate: 0.10 },
+            { max: 80000, rate: 0.20 },
+            { max: 100000, rate: 0.30 },
+            { max: 180000, rate: 0.34 },
+            { max: Infinity, rate: 0.37 }
+        ];
+
+        const state = { monthlyGross: 0, annualGross: 0, status: 'single', kids: 0 };
+
+        const elMonthly = document.getElementById('monthly');
+        const elAnnual = document.getElementById('annual');
+        const elKids = document.getElementById('kids');
+        const btnDecKids = document.getElementById('dec-kids');
+        const btnIncKids = document.getElementById('inc-kids');
+        const btnsStatus = document.querySelectorAll('.status-btn');
+
+        const elResMonthly = document.getElementById('res-monthly');
+        const elResAnnual = document.getElementById('res-annual');
+        const elResRate = document.getElementById('res-rate');
+        const elResRateAmount = document.getElementById('res-rate-amount');
+        const elResDeductions = document.getElementById('res-deductions');
+        const elLegendNet = document.getElementById('legend-net');
+        const elLegendNetAmt = document.getElementById('legend-net-amount');
+        const elLegendTax = document.getElementById('legend-tax');
+        const elLegendTaxAmt = document.getElementById('legend-tax-amount');
+        const elDonutSegment = document.getElementById('donut-segment');
+        const elChartPercent = document.getElementById('chart-percent');
+
+        const elDetailGross = document.getElementById('detail-gross');
+        const elDetailSocial = document.getElementById('detail-social');
+        const elDetailTaxable = document.getElementById('detail-taxable');
+        const elDetailIrGross = document.getElementById('detail-ir-gross');
+        const elDetailFamily = document.getElementById('detail-family');
+        const elDetailIrNet = document.getElementById('detail-ir-net');
+        const elTrancheBody = document.getElementById('tranche-body');
+
+        const moneyFmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+        const pctFmt = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 1 });
+
+        const formatWithSpaces = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const parseFormattedNumber = (str) => parseFloat(str.replace(/\s/g, '')) || 0;
+
+        function calculate() {
+            const socialContrib = state.annualGross * SOCIAL_CONTRIB_RATE;
+            let taxableIncome = Math.max(0, state.annualGross - socialContrib);
+
+            let irGross = 0;
+            let previousMax = 0;
+            const trancheDetails = [];
+
+            for (const tranche of TRANCHES) {
+                if (taxableIncome > previousMax) {
+                    const taxableAmountInTranche = Math.min(taxableIncome, tranche.max) - previousMax;
+                    const taxAmount = taxableAmountInTranche * tranche.rate;
+                    irGross += taxAmount;
+                    trancheDetails.push({
+                        range: `${moneyFmt.format(previousMax + 1)} - ${tranche.max === Infinity ? 'Over' : moneyFmt.format(tranche.max)}`,
+                        amount: taxableAmountInTranche,
+                        rate: tranche.rate,
+                        tax: taxAmount
+                    });
+                    previousMax = tranche.max;
+                } else { break; }
+            }
+
+            let familyDeduction = (state.kids * DEDUCTION_KID);
+            if (state.status === 'married') familyDeduction += DEDUCTION_SPOUSE;
+            if (familyDeduction > MAX_FAMILY_DEDUCTION) familyDeduction = MAX_FAMILY_DEDUCTION;
+
+            let irNet = Math.max(0, irGross - familyDeduction);
+            const totalDeductions = socialContrib + irNet;
+            const netAnnual = state.annualGross - totalDeductions;
+            const netMonthly = netAnnual / 12;
+            const effectiveRate = state.annualGross > 0 ? (totalDeductions / state.annualGross) : 0;
+            const netPercent = state.annualGross > 0 ? (netAnnual / state.annualGross) * 100 : 0;
+
+            updateUI({ netMonthly, netAnnual, totalDeductions, effectiveRate, netPercent, socialContrib, taxableIncome, irGross, familyDeduction, irNet, trancheDetails });
+        }
+
+        function updateUI(data) {
+            elResMonthly.textContent = formatWithSpaces(data.netMonthly);
+            elResAnnual.textContent = formatWithSpaces(data.netAnnual) + ' MAD';
+            elResRate.textContent = pctFmt.format(data.effectiveRate);
+            elResRateAmount.textContent = formatWithSpaces(data.totalDeductions) + ' MAD deducted';
+            elResDeductions.textContent = formatWithSpaces(data.totalDeductions) + ' MAD';
+
+            const dashArray = `${data.netPercent}, 100`;
+            elDonutSegment.setAttribute('stroke-dasharray', dashArray);
+            elChartPercent.textContent = Math.round(data.netPercent) + '%';
+
+            elLegendNet.textContent = Math.round(data.netPercent) + '%';
+            elLegendNetAmt.textContent = formatWithSpaces(data.netAnnual) + ' MAD';
+            elLegendTax.textContent = Math.round(100 - data.netPercent) + '%';
+            elLegendTaxAmt.textContent = formatWithSpaces(data.totalDeductions) + ' MAD';
+
+            elDetailGross.textContent = formatWithSpaces(state.annualGross) + ' MAD';
+            elDetailSocial.textContent = '- ' + formatWithSpaces(data.socialContrib) + ' MAD';
+            elDetailTaxable.textContent = formatWithSpaces(data.taxableIncome) + ' MAD';
+            elDetailIrGross.textContent = formatWithSpaces(data.irGross) + ' MAD';
+            elDetailFamily.textContent = '- ' + formatWithSpaces(data.familyDeduction) + ' MAD';
+            elDetailIrNet.textContent = formatWithSpaces(data.irNet) + ' MAD';
+
+            elTrancheBody.innerHTML = '';
+            if (data.trancheDetails.length === 0 && state.annualGross > 0) {
+                 const row = document.createElement('tr');
+                 row.innerHTML = `<td class="px-6 py-3 text-zinc-500" colspan="4">Non-taxable income (0% bracket)</td>`;
+                 elTrancheBody.appendChild(row);
+            } else {
+                data.trancheDetails.forEach(t => {
+                    const row = document.createElement('tr');
+                    row.className = "bg-white hover:bg-zinc-50 transition-colors";
+                    row.innerHTML = `
+                        <td class="px-6 py-3 font-medium text-zinc-900 whitespace-nowrap">${t.range}</td>
+                        <td class="px-6 py-3 text-zinc-500">${(t.rate * 100).toFixed(0)}%</td>
+                        <td class="px-6 py-3 text-right text-zinc-500 font-mono text-xs">${formatWithSpaces(t.amount)}</td>
+                        <td class="px-6 py-3 text-right text-zinc-900 font-mono text-xs font-semibold">${formatWithSpaces(t.tax)} MAD</td>
+                    `;
+                    elTrancheBody.appendChild(row);
+                });
+
+                const totalRow = document.createElement('tr');
+                totalRow.className = "bg-emerald-50 font-semibold border-t-2 border-emerald-200";
+                totalRow.innerHTML = `
+                    <td class="px-6 py-3 text-emerald-900" colspan="3">Total Gross IR</td>
+                    <td class="px-6 py-3 text-right text-emerald-700 font-mono text-sm">${formatWithSpaces(data.irGross)} MAD</td>
+                `;
+                elTrancheBody.appendChild(totalRow);
+            }
+        }
+
+        elMonthly.addEventListener('input', (e) => {
+            let rawValue = e.target.value.replace(/[^\d]/g, '');
+            const val = parseFloat(rawValue) || 0;
+            e.target.value = val > 0 ? formatWithSpaces(val) : '';
+            state.monthlyGross = val;
+            state.annualGross = val * 12;
+            elAnnual.value = state.annualGross > 0 ? formatWithSpaces(state.annualGross) : '';
+            calculate();
+        });
+
+        elAnnual.addEventListener('input', (e) => {
+            let rawValue = e.target.value.replace(/[^\d]/g, '');
+            const val = parseFloat(rawValue) || 0;
+            e.target.value = val > 0 ? formatWithSpaces(val) : '';
+            state.annualGross = val;
+            state.monthlyGross = val / 12;
+            elMonthly.value = state.monthlyGross > 0 ? formatWithSpaces(Math.round(state.monthlyGross)) : '';
+            calculate();
+        });
+
+        function updateStatusUI() {
+            btnsStatus.forEach(btn => {
+                if(btn.dataset.value === state.status) {
+                    btn.className = "status-btn px-3 py-2.5 rounded-lg border text-sm font-medium transition-all focus:outline-none flex flex-col items-center justify-center gap-1 bg-emerald-50 border-emerald-200 text-emerald-700 shadow-sm";
+                } else {
+                    btn.className = "status-btn px-3 py-2.5 rounded-lg border border-zinc-200 text-sm font-medium text-zinc-600 bg-white transition-all focus:outline-none flex flex-col items-center justify-center gap-1 hover:bg-zinc-50 hover:text-zinc-900";
+                }
+            });
+        }
+
+        btnsStatus.forEach(btn => {
+            btn.addEventListener('click', () => {
+                state.status = btn.dataset.value;
+                updateStatusUI();
+                calculate();
+            });
+        });
+
+        function updateKids(val) {
+            let newVal = Math.max(0, Math.min(10, val));
+            state.kids = newVal;
+            elKids.value = newVal;
+            calculate();
+        }
+
+        btnDecKids.addEventListener('click', () => updateKids(state.kids - 1));
+        btnIncKids.addEventListener('click', () => updateKids(state.kids + 1));
+
+        const btnToggle = document.getElementById('toggle-details');
+        const panel = document.getElementById('details-panel');
+        const chevron = document.getElementById('chevron-icon');
+        let isOpen = false;
+
+        btnToggle.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if(isOpen) {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.opacity = "1";
+                chevron.style.transform = "rotate(180deg)";
+            } else {
+                panel.style.maxHeight = "0";
+                panel.style.opacity = "0";
+                chevron.style.transform = "rotate(0deg)";
+            }
+        });
+
+        // Init
+        const defaultMonthly = 15000;
+        state.monthlyGross = defaultMonthly;
+        state.annualGross = defaultMonthly * 12;
+        elMonthly.value = formatWithSpaces(defaultMonthly);
+        elAnnual.value = formatWithSpaces(state.annualGross);
+        updateStatusUI();
+        calculate();
+    </script>
+
+</body>
+</html>

@@ -16,6 +16,9 @@
     <title>Politique de Confidentialite | NetSalaire</title>
     <meta name="description" content="Politique de confidentialite du site NetSalaire.com - Protection de vos donnees personnelles.">
     <link rel="canonical" href="https://netsalaire.com/politique-confidentialite.html">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/politique-confidentialite.html">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/privacy-policy/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/politique-confidentialite.html">
     <meta name="robots" content="noindex, follow">
 
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -56,17 +59,17 @@
             </ul>
             <!-- Language Switcher -->
             <div class="lang-switcher-container">
-                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Switch language">
+                <a href="/en/privacy-policy/" class="lang-switcher" title="Switch to English">
                     <span class="lang-flag">🇫🇷</span>
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
-                </button>
+                </a>
                 <div class="lang-dropdown">
-                    <button onclick="i18n.setLang('fr'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="fr">
-                        <span>🇫🇷</span> Français
-                    </button>
-                    <button onclick="i18n.setLang('en'); document.querySelector('.lang-dropdown').classList.remove('show');" class="lang-option" data-lang="en">
+                    <a href="/politique-confidentialite.html" class="lang-option active">
+                        <span>🇫🇷</span> Francais
+                    </a>
+                    <a href="/en/privacy-policy/" class="lang-option">
                         <span>🇬🇧</span> English
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

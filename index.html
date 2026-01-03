@@ -13,6 +13,9 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
     <title>Simulateur Salaire Net France & Maroc • Calcul Impôts & Brut à Net</title>
     <meta name="description" content="Simulateurs fiscaux gratuits pour la France et le Maroc. Calculez votre salaire net, comparez la pression fiscale, simulez votre impot sur le revenu.">
     <meta name="keywords" content="simulateur salaire net, calculateur impot, brut net france, brut net maroc, comparateur fiscal, IR france, IR maroc">
@@ -155,10 +158,10 @@
                         <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
                     </button>
                     <div id="lang-dropdown-home" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
-                        <button onclick="i18n.setLang('fr'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                        <button onclick="langRouter.switchLanguage('fr'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
                             <span>🇫🇷</span> Français
                         </button>
-                        <button onclick="i18n.setLang('en'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                        <button onclick="langRouter.switchLanguage('en'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
                             <span>🇬🇧</span> English
                         </button>
                     </div>

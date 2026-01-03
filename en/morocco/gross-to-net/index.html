@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>Morocco Gross to Net Salary Calculator 2025 | NetSalaire</title>
     <meta name="description" content="Calculate your net salary from gross in Morocco. Free simulator with CNSS, AMO, IR. 2025 official brackets.">
     <meta name="keywords" content="gross to net morocco, net salary morocco, CNSS, AMO, IR morocco, salary calculator morocco">
@@ -107,10 +113,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/maroc/simulateur-salaire-brut-net/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/morocco/gross-to-net/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

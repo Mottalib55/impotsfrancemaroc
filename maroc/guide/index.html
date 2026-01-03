@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>Guide Fiscal Maroc 2025 - Tout savoir sur les impots | NetSalaire</title>
     <meta name="description" content="Guide complet sur la fiscalite marocaine : impot sur le revenu, CNSS, AMO, tranches IR, abattements. Tout comprendre en 2025.">
     <meta name="keywords" content="guide fiscal maroc, impot revenu maroc 2025, CNSS, AMO, tranches IR maroc, fiscalite marocaine">
@@ -108,10 +114,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/maroc/guide/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option active">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/morocco/tax-guide/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

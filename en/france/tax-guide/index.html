@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>France Tax Guide 2025 - Complete Guide | NetSalaire</title>
     <meta name="description" content="Complete guide to French taxation: income tax, social contributions, family quotient, brackets. Understand everything in 2025.">
     <meta name="keywords" content="france tax guide, income tax france 2025, social contributions, IR brackets france, family quotient">
@@ -76,10 +82,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/france/guide/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/france/tax-guide/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

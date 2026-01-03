@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>Morocco Income Tax Simulator 2025 | NetSalaire</title>
     <meta name="description" content="Simulate your income tax in Morocco. IR calculation with progressive brackets, social contributions and family allowances. 2025 rates.">
     <meta name="keywords" content="morocco tax simulator, income tax morocco, IR brackets morocco, tax calculation morocco, IR rates 2025">
@@ -111,10 +117,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/maroc/simulateur-ir/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/morocco/tax-simulator/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

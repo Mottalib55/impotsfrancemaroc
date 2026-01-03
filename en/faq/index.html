@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>FAQ - Frequently Asked Questions | NetSalaire</title>
     <meta name="description" content="Frequently asked questions about NetSalaire tax simulators. Everything you need to know about net salary calculation, income tax in France and Morocco.">
     <meta name="keywords" content="FAQ net salary, tax questions, family quotient, CNSS Morocco, IR France, salary calculator">
@@ -142,10 +148,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/faq/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/faq/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

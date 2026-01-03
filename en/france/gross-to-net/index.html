@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>France Gross to Net Salary Calculator 2025 | NetSalaire</title>
     <meta name="description" content="Calculate your net salary from gross in France. Free simulator with social contributions, executive/non-executive status. 2025 rates.">
     <meta name="keywords" content="gross to net france, salary calculator france, net salary france, social contributions france">
@@ -139,10 +145,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/france/simulateur-salaire-brut-net/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/france/gross-to-net/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

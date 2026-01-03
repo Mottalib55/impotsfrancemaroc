@@ -13,6 +13,12 @@
         gtag('config', 'G-Z328SB8DZ8');
     </script>
 
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
     <title>France vs Morocco Salary Comparison - Tax Simulator | NetSalaire</title>
     <meta name="description" content="Compare your net salary between France and Morocco. Complete tax simulator with income tax, social contributions, family quotient. Calculate the tax burden difference.">
     <meta name="keywords" content="france morocco salary comparison, tax simulator, france morocco tax, net salary, IR, social contributions, expatriation">
@@ -159,10 +165,10 @@
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                 </a>
                 <div class="lang-dropdown">
-                    <a href="/comparateur-salaire-france-maroc/" class="lang-option">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="/en/france-morocco-comparison/" class="lang-option active">
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

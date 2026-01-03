@@ -253,12 +253,73 @@
                 </details>
             </section>
 
-            <!-- CTA -->
-            <div class="card card-featured text-center">
-                <h2 class="text-xl font-bold mb-2" data-i18n="faq.cta_title">Une question ?</h2>
-                <p class="text-slate-500 mb-4" data-i18n="faq.cta_text">Vous n'avez pas trouvé la réponse à votre question ? Contactez-nous.</p>
-                <a href="mailto:contact@netsalaire.com" class="btn btn-primary" data-i18n="faq.cta_button">Nous contacter</a>
+            <!-- Formulaire de contact -->
+            <div class="card card-featured" id="contact-form">
+                <h2 class="text-xl font-bold mb-2 text-center" data-i18n="faq.cta_title">Besoin d'une estimation personnalisee ?</h2>
+                <p class="text-slate-500 mb-6 text-center" data-i18n="faq.cta_text">Vous avez une situation particuliere ? Laissez-nous vos coordonnees, on vous rappelle dans la journee.</p>
+
+                <form id="contactForm" class="space-y-4 max-w-md mx-auto">
+                    <div>
+                        <label for="contact-name" class="block text-sm font-medium text-slate-700 mb-1">Nom</label>
+                        <input type="text" id="contact-name" name="name" required
+                               class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                               placeholder="Votre nom">
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1">Telephone</label>
+                        <input type="tel" id="contact-phone" name="phone" required
+                               class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                               placeholder="+33 6 12 34 56 78">
+                    </div>
+                    <div>
+                        <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1">Votre situation</label>
+                        <textarea id="contact-message" name="message" rows="3" required
+                                  class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                  placeholder="Decrivez brievement votre situation fiscale..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">
+                        <span class="iconify" data-icon="lucide:phone" width="18"></span>
+                        Demander un rappel
+                    </button>
+                </form>
+
+                <p class="text-sm text-slate-400 text-center mt-4">
+                    <span class="iconify inline" data-icon="lucide:clock" width="14"></span>
+                    On vous rappelle dans la journee (jours ouvrables)
+                </p>
+
+                <div id="contactSuccess" class="hidden text-center py-4">
+                    <div class="text-emerald-600 mb-2">
+                        <span class="iconify" data-icon="lucide:check-circle" width="48"></span>
+                    </div>
+                    <p class="font-semibold text-slate-900">Demande envoyee !</p>
+                    <p class="text-slate-500">Nous vous rappelons dans la journee.</p>
+                </div>
             </div>
+
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(this);
+                    const data = {
+                        name: formData.get('name'),
+                        phone: formData.get('phone'),
+                        message: formData.get('message'),
+                        timestamp: new Date().toISOString(),
+                        page: window.location.href
+                    };
+
+                    // Store in localStorage for now (can be replaced with actual backend)
+                    const contacts = JSON.parse(localStorage.getItem('netsalaire_contacts') || '[]');
+                    contacts.push(data);
+                    localStorage.setItem('netsalaire_contacts', JSON.stringify(contacts));
+
+                    // Show success message
+                    document.getElementById('contactForm').classList.add('hidden');
+                    document.getElementById('contactSuccess').classList.remove('hidden');
+                });
+            </script>
 
         </div>
     </main>

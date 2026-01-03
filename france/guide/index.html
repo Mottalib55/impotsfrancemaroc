@@ -289,24 +289,36 @@
             </div>
 
             <script>
-                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                document.getElementById('contactForm').addEventListener('submit', async function(e) {
                     e.preventDefault();
 
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" width="18"></span> Envoi...';
+                    submitBtn.disabled = true;
+
                     const formData = new FormData(this);
-                    const data = {
-                        name: formData.get('name'),
-                        phone: formData.get('phone'),
-                        message: formData.get('message'),
-                        timestamp: new Date().toISOString(),
-                        page: window.location.href
-                    };
+                    formData.append('_subject', 'Demande de rappel - Guide France - NetSalaire');
+                    formData.append('page', window.location.href);
 
-                    const contacts = JSON.parse(localStorage.getItem('netsalaire_contacts') || '[]');
-                    contacts.push(data);
-                    localStorage.setItem('netsalaire_contacts', JSON.stringify(contacts));
+                    try {
+                        const response = await fetch('https://formspree.io/f/meeqroya', {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
 
-                    document.getElementById('contactForm').classList.add('hidden');
-                    document.getElementById('contactSuccess').classList.remove('hidden');
+                        if (response.ok) {
+                            document.getElementById('contactForm').classList.add('hidden');
+                            document.getElementById('contactSuccess').classList.remove('hidden');
+                        } else {
+                            throw new Error('Erreur');
+                        }
+                    } catch (error) {
+                        alert('Une erreur est survenue. Veuillez reessayer.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
                 });
             </script>
 

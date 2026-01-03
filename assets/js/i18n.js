@@ -29,7 +29,7 @@ const translations = {
         fr: 'Simulateurs fiscaux gratuits pour la France et le Maroc. Calculez salaires, impôts et comparez la pression fiscale entre les deux pays.',
         en: 'Free tax simulators for France and Morocco. Calculate salaries, taxes and compare the tax burden between both countries.'
     },
-    'home.compare_btn': { fr: 'Comparer France vs Maroc', en: 'Compare France vs Morocco' },
+    'home.compare_btn': { fr: 'Comparateur International', en: 'International Comparator' },
 
     // HOMEPAGE - France Section
     'home.france_tools': { fr: 'Outils dédiés à la législation française', en: 'Tools dedicated to French legislation' },

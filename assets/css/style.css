@@ -110,6 +110,30 @@ body {
     color: var(--primary);
 }
 
+.nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-dropdown .iconify {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.nav-dropdown-ma .iconify {
+    color: #059669;
+}
+
+.nav-link .iconify[data-icon="lucide:chevron-down"] {
+    transition: transform 0.2s;
+    margin-left: 0.25rem;
+}
+
+.nav-item:hover .nav-link .iconify[data-icon="lucide:chevron-down"] {
+    transform: rotate(180deg);
+}
+
 /* Mobile menu button */
 .nav-toggle {
     display: none;

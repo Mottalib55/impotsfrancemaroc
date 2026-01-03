@@ -93,12 +93,52 @@
                 <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                    <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> <span data-i18n="nav.france">France</span>
-                </a>
-                <a href="#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                    <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> <span data-i18n="nav.maroc">Maroc</span>
-                </a>
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> <span data-i18n="nav.france">France</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/france/simulateur-salaire-brut-net.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                <span data-i18n="nav.brut_to_net">Brut vers Net</span>
+                            </a>
+                            <a href="/france/simulateur-impot-revenu.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                <span data-i18n="nav.tax_simulator">Simulateur Impôt</span>
+                            </a>
+                            <a href="/france/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                <span data-i18n="nav.fiscal_guide">Guide Fiscal</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maroc Dropdown -->
+                <div class="relative group">
+                    <a href="#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> <span data-i18n="nav.maroc">Maroc</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/maroc/simulateur-salaire-brut-net.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                <span data-i18n="nav.brut_to_net">Brut vers Net</span>
+                            </a>
+                            <a href="/maroc/simulateur-ir.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                <span data-i18n="nav.tax_simulator">Simulateur Impôt</span>
+                            </a>
+                            <a href="/maroc/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                <span data-i18n="nav.fiscal_guide">Guide Fiscal</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a href="/comparateur-salaire-france-maroc.html" class="hover:text-slate-900 transition-colors" data-i18n="nav.france_vs_maroc">France vs Maroc</a>
                 <a href="/comparateur-global.html" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
                     <iconify-icon icon="lucide:globe" width="16"></iconify-icon> <span data-i18n="nav.global_comparator">Comparateur Global</span>

@@ -259,26 +259,39 @@
                         </div>
 
                         <!-- Options -->
-                        <div class="bg-slate-50 rounded-xl p-3 mt-2">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Situation familiale</label>
-                                    <select id="situation" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
-                                        <option value="celibataire">Célibataire</option>
-                                        <option value="marie">Marié(e)</option>
-                                    </select>
+                        <div class="bg-slate-50 rounded-xl p-4 mt-2">
+                            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                                <!-- Situation familiale -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Situation familiale</label>
+                                    <div class="flex bg-white rounded-lg p-1 border border-slate-200">
+                                        <button type="button" id="btn-celibataire" onclick="setSituation('celibataire')" class="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-emerald-500 text-white shadow-sm">
+                                            <iconify-icon icon="lucide:user" width="16"></iconify-icon>
+                                            <span>Célibataire</span>
+                                        </button>
+                                        <button type="button" id="btn-marie" onclick="setSituation('marie')" class="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">
+                                            <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                            <span>Marié(e)</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="situation" value="celibataire">
                                 </div>
-                                <div>
-                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Enfants à charge</label>
-                                    <select id="enfants" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6+</option>
-                                    </select>
+                                <!-- Enfants à charge -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Enfants à charge</label>
+                                    <div class="flex items-center justify-between bg-white rounded-lg px-3 py-1.5 border border-slate-200">
+                                        <button type="button" onclick="changeEnfants(-1)" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">
+                                            <iconify-icon icon="lucide:minus" width="20"></iconify-icon>
+                                        </button>
+                                        <div class="flex items-center gap-2">
+                                            <iconify-icon icon="lucide:baby" width="18" class="text-emerald-500"></iconify-icon>
+                                            <span id="enfants-display" class="text-lg font-semibold text-slate-800 min-w-[24px] text-center">0</span>
+                                        </div>
+                                        <button type="button" onclick="changeEnfants(1)" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">
+                                            <iconify-icon icon="lucide:plus" width="20"></iconify-icon>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="enfants" value="0">
                                 </div>
                             </div>
                         </div>
@@ -628,6 +641,30 @@
         const situationSelect = document.getElementById('situation');
         const enfantsSelect = document.getElementById('enfants');
 
+        // === SITUATION & ENFANTS CONTROLS ===
+        function setSituation(value) {
+            situationSelect.value = value;
+            const btnCelibataire = document.getElementById('btn-celibataire');
+            const btnMarie = document.getElementById('btn-marie');
+
+            if (value === 'celibataire') {
+                btnCelibataire.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-emerald-500 text-white shadow-sm';
+                btnMarie.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50';
+            } else {
+                btnMarie.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-emerald-500 text-white shadow-sm';
+                btnCelibataire.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50';
+            }
+            updateFromBrutMensuel();
+        }
+
+        function changeEnfants(delta) {
+            let current = parseInt(enfantsSelect.value) || 0;
+            current = Math.max(0, Math.min(6, current + delta));
+            enfantsSelect.value = current;
+            document.getElementById('enfants-display').textContent = current === 6 ? '6+' : current;
+            updateFromBrutMensuel();
+        }
+
         // === UTILITIES ===
         const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
         const formatDecimal = (num) => num.toFixed(2).replace('.', ',');
@@ -975,8 +1012,7 @@
             updateFromNetHoraire();
         });
 
-        situationSelect.addEventListener('change', updateFromBrutMensuel);
-        enfantsSelect.addEventListener('change', updateFromBrutMensuel);
+        // Situation et enfants gérés par setSituation() et changeEnfants()
 
         function formatInputNumber(val) {
             const clean = val.replace(/\s/g, '').replace(/[^\d]/g, '');

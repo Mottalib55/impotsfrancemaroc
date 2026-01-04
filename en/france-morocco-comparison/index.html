@@ -105,7 +105,7 @@
     <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-inner">
-            <a href="/" class="nav-logo">
+            <a href="/en/" class="nav-logo">
                 <img src="/assets/images/logo.svg" alt="NetSalaire" height="32">
             </a>
 
@@ -115,27 +115,27 @@
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/#france" class="nav-link">
+                    <a href="/en/#france" class="nav-link">
                         <span class="iconify" data-icon="circle-flags:fr" width="18"></span>
                         France
                         <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                     </a>
                     <ul class="nav-dropdown">
-                        <li><a href="/france/simulateur-impot-revenu/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Tax Simulator</a></li>
-                        <li><a href="/france/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Gross to Net</a></li>
-                        <li><a href="/france/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
+                        <li><a href="/en/france/income-tax/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Tax Simulator</a></li>
+                        <li><a href="/en/france/gross-to-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Gross to Net</a></li>
+                        <li><a href="/en/france/tax-guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/#maroc" class="nav-link">
+                    <a href="/en/#morocco" class="nav-link">
                         <span class="iconify" data-icon="circle-flags:ma" width="18"></span>
                         Morocco
                         <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
                     </a>
                     <ul class="nav-dropdown nav-dropdown-ma">
-                        <li><a href="/maroc/simulateur-ir/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Tax Simulator</a></li>
-                        <li><a href="/maroc/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Gross to Net</a></li>
-                        <li><a href="/maroc/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
+                        <li><a href="/en/morocco/tax-simulator/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> Tax Simulator</a></li>
+                        <li><a href="/en/morocco/gross-to-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> Gross to Net</a></li>
+                        <li><a href="/en/morocco/tax-guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> Tax Guide</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -160,15 +160,15 @@
 
             <!-- Language Switcher -->
             <div class="lang-switcher-container">
-                <a href="/comparateur-salaire-france-maroc/" class="lang-switcher" title="Passer en francais">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Change language">
                     <span class="lang-flag">🇬🇧</span>
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
-                </a>
+                </button>
                 <div class="lang-dropdown">
-                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
+                    <a href="/fr/comparateur-salaire-france-maroc/" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
+                    <a href="/en/france-morocco-comparison/" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>
@@ -650,24 +650,24 @@
                 <div>
                     <h4>France</h4>
                     <ul>
-                        <li><a href="/france/simulateur-salaire-brut-net/">Gross to Net</a></li>
-                        <li><a href="/france/simulateur-impot-revenu/">Tax Simulator</a></li>
-                        <li><a href="/france/guide/">Tax Guide</a></li>
+                        <li><a href="/en/france/gross-to-net/">Gross to Net</a></li>
+                        <li><a href="/en/france/income-tax/">Tax Simulator</a></li>
+                        <li><a href="/en/france/tax-guide/">Tax Guide</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Morocco</h4>
                     <ul>
-                        <li><a href="/maroc/simulateur-salaire-brut-net/">Gross to Net</a></li>
-                        <li><a href="/maroc/simulateur-ir/">Tax Simulator</a></li>
+                        <li><a href="/en/morocco/gross-to-net/">Gross to Net</a></li>
+                        <li><a href="/en/morocco/tax-simulator/">Tax Simulator</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Information</h4>
                     <ul>
                         <li><a href="/en/faq/">FAQ</a></li>
-                        <li><a href="/mentions-legales/">Legal Notice</a></li>
-                        <li><a href="/politique-confidentialite/">Privacy</a></li>
+                        <li><a href="/en/legal-notice/">Legal Notice</a></li>
+                        <li><a href="/en/privacy-policy/">Privacy</a></li>
                     </ul>
                 </div>
             </div>

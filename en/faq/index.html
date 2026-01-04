@@ -143,15 +143,15 @@
             </ul>
             <!-- Language Switcher -->
             <div class="lang-switcher-container">
-                <a href="/faq/" class="lang-switcher" title="Passer en francais">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Change language">
                     <span class="lang-flag">🇬🇧</span>
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
-                </a>
+                </button>
                 <div class="lang-dropdown">
-                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
+                    <a href="/fr/faq/" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
+                    <a href="/en/faq/" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

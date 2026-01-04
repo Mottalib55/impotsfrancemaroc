@@ -140,15 +140,15 @@
             </ul>
             <!-- Language Switcher -->
             <div class="lang-switcher-container">
-                <a href="/france/simulateur-salaire-brut-net/" class="lang-switcher" title="French version">
+                <button onclick="document.querySelector('.lang-dropdown').classList.toggle('show')" class="lang-switcher" title="Change language">
                     <span class="lang-flag">🇬🇧</span>
                     <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
-                </a>
+                </button>
                 <div class="lang-dropdown">
-                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option">
+                    <a href="/fr/france/simulateur-salaire-brut-net/" class="lang-option">
                         <span>🇫🇷</span> Francais
                     </a>
-                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option active">
+                    <a href="/en/france/gross-to-net/" class="lang-option active">
                         <span>🇬🇧</span> English
                     </a>
                 </div>

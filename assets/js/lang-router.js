@@ -1,6 +1,6 @@
 /**
  * NetSalaire - Language Router
- * Handles automatic language detection, preference storage, and URL routing
+ * Handles language switching between /fr/ and /en/ versions
  */
 
 (function() {
@@ -12,28 +12,29 @@
     // URL mappings: French URL -> English URL
     const URL_MAPPINGS = {
         // Homepage
-        '/': '/en/',
-        '/index.html': '/en/',
+        '/fr/': '/en/',
 
         // France section
-        '/france/simulateur-salaire-brut-net/': '/en/france/gross-to-net/',
-        '/france/simulateur-impot-revenu/': '/en/france/income-tax/',
-        '/france/guide/': '/en/france/guide/',
+        '/fr/france/simulateur-salaire-brut-net/': '/en/france/gross-to-net/',
+        '/fr/france/simulateur-impot-revenu/': '/en/france/income-tax/',
+        '/fr/france/guide/': '/en/france/tax-guide/',
 
         // Morocco section
-        '/maroc/simulateur-salaire-brut-net/': '/en/morocco/gross-to-net/',
-        '/maroc/simulateur-ir/': '/en/morocco/income-tax/',
-        '/maroc/guide/': '/en/morocco/guide/',
+        '/fr/maroc/simulateur-salaire-brut-net/': '/en/morocco/gross-to-net/',
+        '/fr/maroc/simulateur-ir/': '/en/morocco/tax-simulator/',
+        '/fr/maroc/guide/': '/en/morocco/tax-guide/',
 
         // Comparators
-        '/comparateur-salaire-france-maroc/': '/en/france-morocco-comparator/',
+        '/fr/comparateur-salaire-france-maroc/': '/en/france-morocco-comparison/',
         '/fr/comparateur-global/': '/en/global-comparison/',
-        '/comparateur-global/': '/en/global-comparison/',
+
+        // Tax simulators
+        '/fr/simulateur-impot-revenu/': '/en/income-tax-simulator/',
 
         // Info pages
-        '/faq/': '/en/faq/',
-        '/mentions-legales/': '/en/legal-notice/',
-        '/politique-confidentialite/': '/en/privacy-policy/'
+        '/fr/faq/': '/en/faq/',
+        '/fr/mentions-legales/': '/en/legal-notice/',
+        '/fr/politique-confidentialite/': '/en/privacy-policy/'
     };
 
     // Create reverse mappings (English -> French)
@@ -83,7 +84,10 @@
         if (path.startsWith('/en/')) {
             return 'en';
         }
-        return 'fr';
+        if (path.startsWith('/fr/')) {
+            return 'fr';
+        }
+        return null; // Root pages (redirects)
     }
 
     /**
@@ -118,43 +122,6 @@
     }
 
     /**
-     * Initialize language router
-     */
-    function init() {
-        const storedLang = getStoredLang();
-        const currentPageLang = getCurrentPageLang();
-
-        // If user has a stored preference
-        if (storedLang && SUPPORTED_LANGS.includes(storedLang)) {
-            // Check if we need to redirect
-            if (storedLang !== currentPageLang) {
-                const equivalentUrl = getEquivalentUrl(storedLang);
-                if (equivalentUrl) {
-                    window.location.replace(equivalentUrl);
-                    return;
-                }
-            }
-        } else {
-            // No stored preference - detect from browser
-            const browserLang = detectBrowserLang();
-            storeLang(browserLang);
-
-            // Redirect if needed
-            if (browserLang !== currentPageLang) {
-                const equivalentUrl = getEquivalentUrl(browserLang);
-                if (equivalentUrl) {
-                    window.location.replace(equivalentUrl);
-                    return;
-                }
-            }
-        }
-
-        // Update stored language to match current page
-        // (in case user manually navigated to a different language version)
-        storeLang(currentPageLang);
-    }
-
-    /**
      * Switch language manually (called by language switcher)
      */
     function switchLanguage(targetLang) {
@@ -168,6 +135,9 @@
         const equivalentUrl = getEquivalentUrl(targetLang);
         if (equivalentUrl) {
             window.location.href = equivalentUrl;
+        } else {
+            // Fallback to homepage of target language
+            window.location.href = targetLang === 'en' ? '/en/' : '/fr/';
         }
     }
 
@@ -178,15 +148,25 @@
         return getStoredLang() || detectBrowserLang();
     }
 
+    /**
+     * Update stored language based on current page
+     */
+    function updateStoredLangFromPage() {
+        const pageLang = getCurrentPageLang();
+        if (pageLang) {
+            storeLang(pageLang);
+        }
+    }
+
+    // Update stored language when on a /fr/ or /en/ page
+    updateStoredLangFromPage();
+
     // Export to global scope
     window.langRouter = {
-        init: init,
         switchLanguage: switchLanguage,
         getPreferredLang: getPreferredLang,
         getCurrentPageLang: getCurrentPageLang,
+        getEquivalentUrl: getEquivalentUrl,
         storeLang: storeLang
     };
-
-    // Auto-initialize
-    init();
 })();

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z328SB8DZ8');
+        // Track 404 error
+        gtag('event', 'page_not_found', {
+            'page_path': window.location.pathname,
+            'page_referrer': document.referrer
+        });
+    </script>
+
+    <title>Page non trouvee - 404 | NetSalaire</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas ou a ete deplacee.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                              linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+    </style>
+
+    <script>
+        // Language detection
+        const isEnglish = window.location.pathname.startsWith('/en/') ||
+                          (localStorage.getItem('netsalaire_lang') === 'en');
+
+        const texts = {
+            fr: {
+                title: 'Page introuvable',
+                subtitle: 'Oups ! La page que vous recherchez semble avoir disparu.',
+                description: 'Elle a peut-etre ete deplacee, supprimee, ou n\'a jamais existe.',
+                home: 'Retour a l\'accueil',
+                orTry: 'Ou essayez nos simulateurs',
+                france: 'Simulateur France',
+                maroc: 'Simulateur Maroc',
+                compare: 'Comparateur Global',
+                faq: 'FAQ'
+            },
+            en: {
+                title: 'Page not found',
+                subtitle: 'Oops! The page you\'re looking for seems to have vanished.',
+                description: 'It may have been moved, deleted, or never existed.',
+                home: 'Back to homepage',
+                orTry: 'Or try our simulators',
+                france: 'France Simulator',
+                maroc: 'Morocco Simulator',
+                compare: 'Global Comparator',
+                faq: 'FAQ'
+            }
+        };
+
+        const lang = isEnglish ? 'en' : 'fr';
+        const t = texts[lang];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.documentElement.lang = lang;
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('description').textContent = t.description;
+            document.getElementById('home-btn').textContent = t.home;
+            document.getElementById('or-try').textContent = t.orTry;
+            document.getElementById('france-link').textContent = t.france;
+            document.getElementById('maroc-link').textContent = t.maroc;
+            document.getElementById('compare-link').textContent = t.compare;
+            document.getElementById('faq-link').textContent = t.faq;
+
+            // Update links based on language
+            if (isEnglish) {
+                document.getElementById('home-link').href = '/en/';
+                document.getElementById('france-href').href = '/en/france/gross-to-net/';
+                document.getElementById('maroc-href').href = '/en/morocco/gross-to-net/';
+                document.getElementById('compare-href').href = '/en/global-comparison/';
+                document.getElementById('faq-href').href = '/en/faq/';
+                document.title = 'Page not found - 404 | NetSalaire';
+            }
+        });
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-600 antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center px-6 pt-16">
+        <div class="absolute inset-0 bg-grid opacity-60 pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-50/80 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-2xl mx-auto text-center relative z-10">
+            <!-- 404 Illustration -->
+            <div class="mb-8 floating">
+                <div class="relative inline-block">
+                    <div class="text-[180px] md:text-[220px] font-bold text-slate-200 leading-none select-none">
+                        404
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                            <iconify-icon icon="lucide:search-x" width="48" class="text-white md:hidden"></iconify-icon>
+                            <iconify-icon icon="lucide:search-x" width="64" class="text-white hidden md:block"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <h1 id="title" class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4">
+                Page introuvable
+            </h1>
+            <p id="subtitle" class="text-lg text-slate-600 mb-2">
+                Oups ! La page que vous recherchez semble avoir disparu.
+            </p>
+            <p id="description" class="text-slate-500 mb-8">
+                Elle a peut-etre ete deplacee, supprimee, ou n'a jamais existe.
+            </p>
+
+            <!-- CTA Button -->
+            <a id="home-link" href="/" class="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 mb-10">
+                <iconify-icon icon="lucide:home" width="20"></iconify-icon>
+                <span id="home-btn">Retour a l'accueil</span>
+            </a>
+
+            <!-- Alternative Links -->
+            <div class="pt-8 border-t border-slate-200">
+                <p id="or-try" class="text-sm text-slate-500 mb-6">Ou essayez nos simulateurs</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a id="france-href" href="/fr/france/simulateur-salaire-brut-net/" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all">
+                        <iconify-icon icon="circle-flags:fr" width="32"></iconify-icon>
+                        <span id="france-link" class="text-sm font-medium text-slate-700 group-hover:text-indigo-600">Simulateur France</span>
+                    </a>
+                    <a id="maroc-href" href="/fr/maroc/simulateur-salaire-brut-net/" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all">
+                        <iconify-icon icon="circle-flags:ma" width="32"></iconify-icon>
+                        <span id="maroc-link" class="text-sm font-medium text-slate-700 group-hover:text-emerald-600">Simulateur Maroc</span>
+                    </a>
+                    <a id="compare-href" href="/fr/comparateur-global/" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all">
+                        <iconify-icon icon="lucide:globe" width="32" class="text-slate-400 group-hover:text-purple-500"></iconify-icon>
+                        <span id="compare-link" class="text-sm font-medium text-slate-700 group-hover:text-purple-600">Comparateur Global</span>
+                    </a>
+                    <a id="faq-href" href="/fr/faq/" class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-md transition-all">
+                        <iconify-icon icon="lucide:help-circle" width="32" class="text-slate-400 group-hover:text-amber-500"></iconify-icon>
+                        <span id="faq-link" class="text-sm font-medium text-slate-700 group-hover:text-amber-600">FAQ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-sm text-slate-400 relative z-10">
+        <p>&copy; 2025 NetSalaire. Tous droits reserves.</p>
+    </footer>
+
+</body>
+</html>

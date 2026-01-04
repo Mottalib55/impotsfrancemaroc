@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z328SB8DZ8');
+    </script>
+
+    <!-- Language Router (must be early for redirect) -->
+    <script src="/assets/js/lang-router.js"></script>
+
+    <script>
+    </script>
+
+    <title>FAQ - Questions Fréquentes | NetSalaire</title>
+    <meta name="description" content="Questions fréquentes sur les simulateurs fiscaux NetSalaire. Tout savoir sur le calcul du salaire net, l'impôt sur le revenu en France et au Maroc.">
+    <meta name="keywords" content="FAQ salaire net, questions impot, quotient familial, CNSS Maroc, IR France, calcul salaire">
+    <link rel="canonical" href="https://netsalaire.com/faq/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/faq/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/faq/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/faq/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ - Questions Fréquentes sur les Simulateurs Fiscaux">
+    <meta property="og:description" content="Tout savoir sur le calcul du salaire net et l'impôt sur le revenu en France et au Maroc.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/faq/">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FAQ NetSalaire - Questions Fréquentes">
+    <meta name="twitter:description" content="Tout savoir sur le calcul du salaire net et l'impôt.">
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NetSalaire">
+
+    <!-- Schema.org FAQPage - Important pour Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Les calculs sont-ils fiables ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nos simulateurs utilisent les baremes officiels 2025 publies par les administrations fiscales francaise et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Mes donnees sont-elles stockees ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Non. Tous les calculs sont effectues localement dans votre navigateur. Aucune donnee personnelle n'est envoyee a nos serveurs ni stockee."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment est calcule le salaire net en France ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le salaire net est obtenu en deduisant du brut les cotisations sociales salariales (environ 22% pour les non-cadres, 25% pour les cadres). Ces cotisations financent la securite sociale, la retraite, le chomage et la retraite complementaire."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que le quotient familial ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le quotient familial est un mecanisme qui divise le revenu imposable par le nombre de parts du foyer fiscal. Un celibataire a 1 part, un couple marie 2 parts, et les enfants ajoutent des demi-parts supplementaires."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quelles sont les tranches d'IR au Maroc ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "L'IR marocain comporte 6 tranches progressives : 0% jusqu'a 40 000 DH, 10% de 40 001 a 60 000 DH, 20% de 60 001 a 80 000 DH, 30% de 80 001 a 100 000 DH, 34% de 100 001 a 180 000 DH, et 37% au-dela."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que la CNSS et l'AMO ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La CNSS (Caisse Nationale de Securite Sociale) couvre les prestations familiales, maladie et retraite. Le taux salarial est de 4.48%, plafonne a 6 000 DH/mois. L'AMO (Assurance Maladie Obligatoire) couvre les frais de sante au taux de 2.26% sans plafond."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/assets/images/logo.svg" alt="NetSalaire" height="32"></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <span class="iconify" data-icon="lucide:menu" width="24"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/#france" class="nav-link"><span class="iconify" data-icon="circle-flags:fr" width="18"></span> <span data-i18n="nav.france">France</span> <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="/france/simulateur-impot-revenu/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> <span data-i18n="nav.tax_simulator">Simulateur Impôt</span></a></li>
+                        <li><a href="/france/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> <span data-i18n="nav.brut_to_net">Brut vers Net</span></a></li>
+                        <li><a href="/france/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> <span data-i18n="nav.fiscal_guide">Guide Fiscal</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/#maroc" class="nav-link"><span class="iconify" data-icon="circle-flags:ma" width="18"></span> <span data-i18n="nav.maroc">Maroc</span> <span class="iconify" data-icon="lucide:chevron-down" width="14"></span></a>
+                    <ul class="nav-dropdown nav-dropdown-ma">
+                        <li><a href="/maroc/simulateur-ir/"><span class="iconify" data-icon="lucide:landmark" width="16"></span> <span data-i18n="nav.tax_simulator">Simulateur Impôt</span></a></li>
+                        <li><a href="/maroc/simulateur-salaire-brut-net/"><span class="iconify" data-icon="lucide:calculator" width="16"></span> <span data-i18n="nav.brut_to_net">Brut vers Net</span></a></li>
+                        <li><a href="/maroc/guide/"><span class="iconify" data-icon="lucide:book-open" width="16"></span> <span data-i18n="nav.fiscal_guide">Guide Fiscal</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/comparateur-salaire-france-maroc/" class="nav-link"><span class="iconify" data-icon="lucide:scale" width="18"></span> <span data-i18n="nav.france_vs_maroc">France vs Maroc</span></a></li>
+                <li class="nav-item"><a href="/comparateur-global/" class="nav-link"><span class="iconify" data-icon="lucide:globe" width="18"></span> <span data-i18n="nav.global_comparator">Comparateur Global</span></a></li>
+                <li class="nav-item"><a href="/faq/" class="nav-link" style="background: var(--bg); color: var(--primary);"><span class="iconify" data-icon="lucide:help-circle" width="18"></span> <span data-i18n="nav.faq">FAQ</span></a></li>
+            </ul>
+            <!-- Language Switcher -->
+            <div class="lang-switcher-container">
+                <a href="/en/faq/" class="lang-switcher" title="Switch to English">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="iconify" data-icon="lucide:chevron-down" width="14"></span>
+                </a>
+                <div class="lang-dropdown">
+                    <a href="#" onclick="langRouter.switchLanguage('fr'); return false;" class="lang-option active">
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a href="#" onclick="langRouter.switchLanguage('en'); return false;" class="lang-option">
+                        <span>🇬🇧</span> English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <div class="max-w-3xl mx-auto">
+
+            <header class="text-center mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2" data-i18n="faq.page_title">Questions Fréquentes</h1>
+                <p class="text-slate-500" data-i18n="faq.page_subtitle">Tout savoir sur nos simulateurs fiscaux</p>
+            </header>
+
+            <!-- General -->
+            <section class="mb-8">
+                <h2 class="section-title" data-i18n="faq.general_title">Questions Générales</h2>
+
+                <details>
+                    <summary data-i18n="faq.reliable_title">Les calculs sont-ils fiables ?</summary>
+                    <p data-i18n="faq.reliable_text">Nos simulateurs utilisent les barèmes officiels 2025 publiés par les administrations fiscales française et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalisé. Les cotisations sociales sont calculées avec des taux moyens qui peuvent varier selon votre situation spécifique.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.data_title">Mes données sont-elles stockées ?</summary>
+                    <p data-i18n="faq.data_text">Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée personnelle n'est envoyée à nos serveurs ni stockée. Vous pouvez utiliser nos outils en toute confidentialité.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.free_title">Les simulateurs sont-ils gratuits ?</summary>
+                    <p data-i18n="faq.free_text">Oui, tous nos simulateurs sont 100% gratuits, sans publicité et sans inscription requise. Vous pouvez les utiliser autant de fois que vous le souhaitez.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.update_title">À quelle fréquence les barèmes sont-ils mis à jour ?</summary>
+                    <p data-i18n="faq.update_text">Nous mettons à jour les barèmes chaque année après la publication des lois de finances. Les barèmes actuels correspondent à l'année fiscale 2025.</p>
+                </details>
+            </section>
+
+            <!-- France -->
+            <section class="mb-8">
+                <h2 class="section-title" data-i18n="faq.france_title">🇫🇷 France</h2>
+
+                <details>
+                    <summary data-i18n="faq.france_net_title">Comment est calculé le salaire net en France ?</summary>
+                    <p data-i18n="faq.france_net_text">Le salaire net est obtenu en déduisant du brut les cotisations sociales salariales (environ 22% pour les non-cadres, 25% pour les cadres). Ces cotisations financent la sécurité sociale, la retraite, le chômage et la retraite complémentaire.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.france_quotient_title">Qu'est-ce que le quotient familial ?</summary>
+                    <p data-i18n="faq.france_quotient_text">Le quotient familial est un mécanisme qui divise le revenu imposable par le nombre de parts du foyer fiscal. Un célibataire a 1 part, un couple marié 2 parts, et les enfants ajoutent des demi-parts supplémentaires. Cela réduit la progressivité de l'impôt pour les familles.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.france_cadre_title">Quelle est la différence entre cadre et non-cadre ?</summary>
+                    <p data-i18n="faq.france_cadre_text">Les cadres ont des cotisations sociales plus élevées (environ 25% vs 22%) principalement dues à des cotisations de retraite complémentaire supérieures. En contrepartie, ils bénéficient d'une meilleure couverture retraite.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.france_abatement_title">Qu'est-ce que l'abattement de 10% ?</summary>
+                    <p data-i18n="faq.france_abatement_text">L'abattement de 10% pour frais professionnels est automatiquement appliqué au revenu imposable. Il représente les frais engagés pour exercer votre activité (transport, repas, etc.). Vous pouvez opter pour les frais réels si ceux-ci sont supérieurs.</p>
+                </details>
+            </section>
+
+            <!-- Maroc -->
+            <section class="mb-8">
+                <h2 class="section-title" data-i18n="faq.maroc_title">🇲🇦 Maroc</h2>
+
+                <details>
+                    <summary data-i18n="faq.maroc_tranches_title">Quelles sont les tranches d'IR au Maroc ?</summary>
+                    <p data-i18n="faq.maroc_tranches_text">L'IR marocain comporte 6 tranches progressives : 0% jusqu'à 40 000 DH, 10% de 40 001 à 60 000 DH, 20% de 60 001 à 80 000 DH, 30% de 80 001 à 100 000 DH, 34% de 100 001 à 180 000 DH, et 37% au-delà.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.maroc_cnss_title">Qu'est-ce que la CNSS et l'AMO ?</summary>
+                    <p data-i18n="faq.maroc_cnss_text">La CNSS (Caisse Nationale de Sécurité Sociale) couvre les prestations familiales, maladie et retraite. Le taux salarial est de 4.48%, plafonné à 6 000 DH/mois. L'AMO (Assurance Maladie Obligatoire) couvre les frais de santé au taux de 2.26% sans plafond.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.maroc_family_title">Comment fonctionne l'abattement familial au Maroc ?</summary>
+                    <p data-i18n="faq.maroc_family_text">L'abattement familial réduit l'IR de 500 DH par an et par personne à charge (conjoint et enfants), dans la limite de 3 000 DH par an (soit 6 personnes maximum).</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.maroc_pro_title">Que sont les frais professionnels de 20% ?</summary>
+                    <p data-i18n="faq.maroc_pro_text">Une déduction forfaitaire de 20% du revenu brut (après cotisations sociales) est appliquée pour frais professionnels. Cette déduction est plafonnée à 30 000 DH par an.</p>
+                </details>
+            </section>
+
+            <!-- Comparateur -->
+            <section class="mb-8">
+                <h2 class="section-title" data-i18n="faq.comp_title">Comparateur France vs Maroc</h2>
+
+                <details>
+                    <summary data-i18n="faq.comp_how_title">Comment fonctionne le comparateur ?</summary>
+                    <p data-i18n="faq.comp_how_text">Le comparateur calcule simultanément votre salaire net et votre pression fiscale totale (cotisations + impôt) dans les deux pays, pour un même salaire brut. Il utilise le taux de change en temps réel pour convertir les montants.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.comp_rate_title">D'où vient le taux de change ?</summary>
+                    <p data-i18n="faq.comp_rate_text">Le taux de change EUR/MAD est récupéré automatiquement depuis l'API Frankfurter, qui utilise les données de la Banque Centrale Européenne. Vous pouvez aussi saisir un taux personnalisé.</p>
+                </details>
+
+                <details>
+                    <summary data-i18n="faq.comp_cost_title">Le comparateur prend-il en compte le coût de la vie ?</summary>
+                    <p data-i18n="faq.comp_cost_text">Non, le comparateur se concentre uniquement sur la fiscalité. Le coût de la vie, le pouvoir d'achat et autres facteurs économiques ne sont pas pris en compte. Ces éléments doivent être considérés séparément dans votre réflexion.</p>
+                </details>
+            </section>
+
+            <!-- Formulaire de contact -->
+            <div class="card card-featured" id="contact-form">
+                <h2 class="text-xl font-bold mb-2 text-center" data-i18n="faq.cta_title">Besoin d'une estimation personnalisée ?</h2>
+                <p class="text-slate-500 mb-6 text-center" data-i18n="faq.cta_text">Vous avez une situation particulière ? Laissez-nous vos coordonnées, on vous rappelle dans la journée.</p>
+
+                <form id="contactForm" class="space-y-4 max-w-md mx-auto">
+                    <div>
+                        <label for="contact-name" class="block text-sm font-medium text-slate-700 mb-1">Nom</label>
+                        <input type="text" id="contact-name" name="name" required
+                               class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                               placeholder="Votre nom">
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1">Téléphone</label>
+                        <input type="tel" id="contact-phone" name="phone" required
+                               class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                               placeholder="+33 6 12 34 56 78">
+                    </div>
+                    <div>
+                        <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1">Votre situation</label>
+                        <textarea id="contact-message" name="message" rows="3" required
+                                  class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                  placeholder="Décrivez brièvement votre situation fiscale..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">
+                        <span class="iconify" data-icon="lucide:phone" width="18"></span>
+                        Demander un rappel
+                    </button>
+                </form>
+
+                <p class="text-sm text-slate-400 text-center mt-4">
+                    <span class="iconify inline" data-icon="lucide:clock" width="14"></span>
+                    On vous rappelle dans la journée (jours ouvrables)
+                </p>
+
+                <div id="contactSuccess" class="hidden text-center py-4">
+                    <div class="text-emerald-600 mb-2">
+                        <span class="iconify" data-icon="lucide:check-circle" width="48"></span>
+                    </div>
+                    <p class="font-semibold text-slate-900">Demande envoyée !</p>
+                    <p class="text-slate-500">Nous vous rappelons dans la journée.</p>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" width="18"></span> Envoi...';
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(this);
+                    formData.append('_subject', 'Demande de rappel - NetSalaire');
+                    formData.append('page', window.location.href);
+
+                    try {
+                        const response = await fetch('https://formspree.io/f/meeqroya', {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            document.getElementById('contactForm').classList.add('hidden');
+                            document.getElementById('contactSuccess').classList.remove('hidden');
+                        } else {
+                            throw new Error('Erreur');
+                        }
+                    } catch (error) {
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            </script>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>NetSalaire</h4>
+                    <p data-i18n="footer.description">Simulateurs fiscaux gratuits pour la France et le Maroc. Comparez, simulez, optimisez.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="nav.france">France</h4>
+                    <ul>
+                        <li><a href="/france/simulateur-salaire-brut-net/" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/france/simulateur-impot-revenu/" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                        <li><a href="/france/guide/" data-i18n="nav.fiscal_guide">Guide Fiscal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="nav.maroc">Maroc</h4>
+                    <ul>
+                        <li><a href="/maroc/simulateur-ir/" data-i18n="nav.brut_to_net">Brut vers Net</a></li>
+                        <li><a href="/maroc/simulateur-ir/" data-i18n="nav.tax_simulator">Simulateur IR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.info">Informations</h4>
+                    <ul>
+                        <li><a href="/faq/" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="/mentions-legales/" data-i18n="footer.legal">Mentions Légales</a></li>
+                        <li><a href="/politique-confidentialite/" data-i18n="footer.privacy">Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NetSalaire.com - <span data-i18n="footer.rights">Tous droits réservés</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Script -->
+    <script src="/assets/js/i18n.js"></script>
+
+</body>
+</html>

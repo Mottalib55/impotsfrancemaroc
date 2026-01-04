@@ -299,19 +299,43 @@
                             </div>
                         </div>
 
-                        <!-- Options (smaller, more discreet) -->
-                        <div class="bg-slate-50 rounded-xl p-3 mt-2">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Professional status</label>
-                                    <select id="statut" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                                        <option value="noncadre">Non-Executive (22%)</option>
-                                        <option value="cadre">Executive (25%)</option>
-                                    </select>
+                        <!-- Options -->
+                        <div class="bg-slate-50 rounded-xl p-4 mt-2">
+                            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                                <!-- Professional status -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Professional status</label>
+                                    <div class="flex bg-white rounded-lg p-1 border border-slate-200">
+                                        <button type="button" id="btn-noncadre" onclick="setStatut('noncadre')" class="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-indigo-500 text-white shadow-sm">
+                                            <iconify-icon icon="lucide:hard-hat" width="16"></iconify-icon>
+                                            <span>Non-Exec</span>
+                                            <span class="text-indigo-200 text-xs">22%</span>
+                                        </button>
+                                        <button type="button" id="btn-cadre" onclick="setStatut('cadre')" class="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">
+                                            <iconify-icon icon="lucide:briefcase" width="16"></iconify-icon>
+                                            <span>Executive</span>
+                                            <span class="text-slate-400 text-xs">25%</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="statut" value="noncadre">
                                 </div>
-                                <div>
-                                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Hours per week</label>
-                                    <input type="number" id="heures" value="35" min="1" max="60" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                                <!-- Hours per week -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Hours per week</label>
+                                    <div class="flex items-center justify-between bg-white rounded-lg px-3 py-1.5 border border-slate-200">
+                                        <button type="button" onclick="changeHeures(-1)" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
+                                            <iconify-icon icon="lucide:minus" width="20"></iconify-icon>
+                                        </button>
+                                        <div class="flex items-center gap-2">
+                                            <iconify-icon icon="lucide:clock" width="18" class="text-indigo-500"></iconify-icon>
+                                            <span id="heures-display" class="text-lg font-semibold text-slate-800 min-w-[32px] text-center">35</span>
+                                            <span class="text-xs text-slate-400">h</span>
+                                        </div>
+                                        <button type="button" onclick="changeHeures(1)" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
+                                            <iconify-icon icon="lucide:plus" width="20"></iconify-icon>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="heures" value="35">
                                 </div>
                             </div>
                         </div>
@@ -565,6 +589,34 @@
         const statutSelect = document.getElementById('statut');
         const heuresInput = document.getElementById('heures');
 
+        // === STATUS & HOURS CONTROLS ===
+        function setStatut(value) {
+            statutSelect.value = value;
+            const btnNoncadre = document.getElementById('btn-noncadre');
+            const btnCadre = document.getElementById('btn-cadre');
+
+            if (value === 'noncadre') {
+                btnNoncadre.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-indigo-500 text-white shadow-sm';
+                btnNoncadre.querySelector('span:last-child').className = 'text-indigo-200 text-xs';
+                btnCadre.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50';
+                btnCadre.querySelector('span:last-child').className = 'text-slate-400 text-xs';
+            } else {
+                btnCadre.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 bg-indigo-500 text-white shadow-sm';
+                btnCadre.querySelector('span:last-child').className = 'text-indigo-200 text-xs';
+                btnNoncadre.className = 'flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50';
+                btnNoncadre.querySelector('span:last-child').className = 'text-slate-400 text-xs';
+            }
+            updateFromBrutMensuel();
+        }
+
+        function changeHeures(delta) {
+            let current = parseInt(heuresInput.value) || 35;
+            current = Math.max(1, Math.min(60, current + delta));
+            heuresInput.value = current;
+            document.getElementById('heures-display').textContent = current;
+            updateFromBrutMensuel();
+        }
+
         // === UTILITIES ===
         const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         const formatDecimal = (num) => num.toFixed(2);
@@ -815,8 +867,7 @@
             updateFromNetHoraire();
         });
 
-        statutSelect.addEventListener('change', updateFromBrutMensuel);
-        heuresInput.addEventListener('change', updateFromBrutMensuel);
+        // Status and hours managed by setStatut() and changeHeures()
 
         function formatInputNumber(val) {
             const clean = val.replace(/,/g, '').replace(/\s/g, '').replace(/[^\d]/g, '');

@@ -28,7 +28,7 @@
         '/fr/comparateur-salaire-france-maroc/': '/en/france-morocco-comparison/',
         '/fr/comparateur-global/': '/en/global-comparison/',
 
-        // Tax simulators
+        // Tax simulators (alternative paths)
         '/fr/simulateur-impot-revenu/': '/en/income-tax-simulator/',
 
         // Info pages

@@ -100,6 +100,7 @@
                 </div>
                 <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
             </a>
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <!-- France Dropdown -->
                 <div class="relative group">
@@ -161,18 +162,73 @@
                         <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
                     </button>
                     <div id="lang-dropdown-home" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
-                        <button onclick="langRouter.switchLanguage('fr'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                        <a href="/fr/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
                             <span>🇫🇷</span> Francais
-                        </button>
-                        <button onclick="langRouter.switchLanguage('en'); document.getElementById('lang-dropdown-home').classList.add('hidden');" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors bg-slate-50">
+                        </a>
+                        <a href="/en/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
                             <span>🇬🇧</span> English
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <a href="#contact" class="hidden md:flex items-center gap-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 px-4 py-2 rounded-full transition-all">
                     Contact
                     <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
                 </a>
+                <!-- Mobile Menu Button -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-4">
+                <!-- France Section -->
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
+                    </div>
+                    <div class="pl-6 space-y-2">
+                        <a href="/en/income-tax-simulator/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600">
+                            <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Tax Simulator
+                        </a>
+                        <a href="/en/france/gross-to-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600">
+                            <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Gross to Net
+                        </a>
+                        <a href="/en/france/tax-guide/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600">
+                            <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Tax Guide
+                        </a>
+                    </div>
+                </div>
+                <!-- Morocco Section -->
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Morocco
+                    </div>
+                    <div class="pl-6 space-y-2">
+                        <a href="/en/morocco/tax-simulator/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600">
+                            <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Tax Simulator
+                        </a>
+                        <a href="/en/morocco/gross-to-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600">
+                            <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Gross to Net
+                        </a>
+                        <a href="/en/morocco/tax-guide/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600">
+                            <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Tax Guide
+                        </a>
+                    </div>
+                </div>
+                <!-- Other Links -->
+                <div class="pt-2 border-t border-slate-100 space-y-2">
+                    <a href="/en/france-morocco-comparison/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                        <iconify-icon icon="lucide:scale" width="16"></iconify-icon> France vs Morocco
+                    </a>
+                    <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Global Comparison
+                    </a>
+                    <a href="/en/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                        <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                    </a>
+                </div>
             </div>
         </div>
     </nav>

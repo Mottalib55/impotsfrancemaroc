@@ -104,22 +104,22 @@
 
   <!-- ========== MAROC - SIMULATEUR IR ========== -->
   <url>
-    <loc>https://netsalaire.com/fr/maroc/simulateur-ir/</loc>
+    <loc>https://netsalaire.com/fr/maroc/simulateur-impot-revenu/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-ir/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/tax-simulator/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-ir/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/income-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
   </url>
   <url>
-    <loc>https://netsalaire.com/en/morocco/tax-simulator/</loc>
+    <loc>https://netsalaire.com/en/morocco/income-tax/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-ir/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/tax-simulator/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-ir/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/income-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
   </url>
 
   <!-- ========== MAROC - GUIDE FISCAL ========== -->
@@ -189,16 +189,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-tax-simulator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-income-tax/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
   </url>
   <url>
-    <loc>https://netsalaire.com/en/income-tax-simulator/</loc>
+    <loc>https://netsalaire.com/en/income-income-tax/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-tax-simulator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-income-tax/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
   </url>
 

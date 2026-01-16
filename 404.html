@@ -121,6 +121,7 @@
 
             // Update links based on language
             if (isEnglish) {
+                document.getElementById('logo-link').href = '/en/';
                 document.getElementById('home-link').href = '/en/';
                 document.getElementById('france-href').href = '/en/france/gross-to-net/';
                 document.getElementById('maroc-href').href = '/en/morocco/gross-to-net/';
@@ -136,7 +137,7 @@
     <!-- Navbar -->
     <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2 group">
+            <a id="logo-link" href="/fr/" class="flex items-center gap-2 group">
                 <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
                     N.
                 </div>
@@ -178,7 +179,7 @@
             </p>
 
             <!-- CTA Button -->
-            <a id="home-link" href="/" class="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 mb-10">
+            <a id="home-link" href="/fr/" class="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 mb-10">
                 <iconify-icon icon="lucide:home" width="20"></iconify-icon>
                 <span id="home-btn">Retour a l'accueil</span>
             </a>

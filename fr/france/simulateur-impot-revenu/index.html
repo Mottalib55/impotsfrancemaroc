@@ -619,6 +619,76 @@
                     </div>
                 </div>
 
+                <!-- Card: Frais de garde (Crèche) -->
+                <div id="creche-card" class="hidden order-5b lg:col-span-7 rounded-2xl border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-white p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-pink-100 rounded-lg text-pink-600">
+                                <i data-lucide="baby" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-slate-900">Frais de garde (Crèche)</h2>
+                                <p class="text-xs text-slate-500">Crédit d'impôt de 50% (max 1 750 EUR/enfant)</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-1 text-xs font-medium text-pink-700">
+                            Crédit d'impôt
+                        </span>
+                    </div>
+
+                    <!-- Toggle Crèche -->
+                    <div class="flex items-center justify-between mb-5">
+                        <label class="text-sm font-medium text-slate-700">As-tu des frais de garde pour tes enfants ?</label>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="has-creche" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-pink-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm"></div>
+                        </label>
+                    </div>
+
+                    <!-- Crèche Details -->
+                    <div id="creche-details" class="hidden space-y-4 animate-in">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center gap-2">
+                                    <label class="text-sm font-medium text-slate-700">Frais de garde annuels (total)</label>
+                                    <span class="tooltip cursor-help" data-tip="Crèche, assistante maternelle, garde à domicile...">
+                                        <i data-lucide="help-circle" class="h-4 w-4 text-slate-400"></i>
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <input type="number" id="creche-amount" value="0" min="0" class="block w-36 text-right rounded-lg border-0 py-2 pl-3 pr-12 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-pink-500 text-sm font-semibold transition-all">
+                                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">EUR</span>
+                                </div>
+                            </div>
+                            <input type="range" id="creche-slider" min="0" max="20000" step="100" value="0" class="w-full h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-slate-400">0 EUR</span>
+                                <span class="text-xs text-slate-400">20 000 EUR</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs text-slate-500 bg-slate-50 rounded-lg p-3">
+                            <p><strong>Info :</strong> Le crédit d'impôt est de 50% des frais engagés, plafonné à 3 500 EUR par enfant de moins de 6 ans (soit 1 750 EUR de crédit max par enfant).</p>
+                        </div>
+
+                        <!-- Crèche Summary -->
+                        <div class="rounded-xl bg-white border border-pink-200 p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-slate-600">Frais déclarés</span>
+                                <span class="text-sm font-bold text-slate-900" id="creche-total-display">0 EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-sm text-slate-600">Plafond applicable (<span id="creche-children-count">0</span> enfant(s))</span>
+                                <span class="text-sm font-medium text-slate-500" id="creche-plafond-display">0 EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
+                                <span class="text-sm text-slate-600">Crédit d'impôt (50%)</span>
+                                <span class="text-sm font-bold text-pink-600" id="creche-credit-display">0 EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Actions -->
                 <div class="order-6 lg:col-span-7 flex items-center justify-between pt-2">
                     <button id="btn-reset" type="button" class="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1.5 transition-colors">
@@ -697,6 +767,22 @@
                                     Vos dons de <span id="dons-total-result">0 EUR</span> reduisent directement votre impot.
                                 </p>
                             </div>
+
+                            <!-- Crèche Savings -->
+                            <div id="creche-savings-card" class="hidden rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 text-white p-5 shadow-lg animate-in">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm text-pink-100 mb-1">Crédit frais de garde</p>
+                                        <p class="text-3xl font-bold" id="result-creche-savings">0 EUR</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full bg-white/20 flex items-center justify-center">
+                                        <i data-lucide="baby" class="h-7 w-7"></i>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-pink-100 mt-3">
+                                    Crédit d'impôt de 50% sur vos frais de garde.
+                                </p>
+                            </div>
                         </div>
 
                         <!-- Net Result Card -->
@@ -766,6 +852,10 @@
                                     <div id="detail-dons-row" class="hidden flex justify-between py-1.5 border-b border-slate-100">
                                         <span>Reduction dons</span>
                                         <span class="font-medium text-violet-600" id="detail-dons">- 0 EUR</span>
+                                    </div>
+                                    <div id="detail-creche-row" class="hidden flex justify-between py-1.5 border-b border-slate-100">
+                                        <span>Crédit frais de garde</span>
+                                        <span class="font-medium text-pink-600" id="detail-creche">- 0 EUR</span>
                                     </div>
                                     <div class="flex justify-between py-1.5 border-b border-slate-100">
                                         <span>Nombre de parts</span>
@@ -1157,7 +1247,9 @@
             perPlafondUnknown: false,
             hasDons: false,
             dons66: 0,
-            dons75: 0
+            dons75: 0,
+            hasCreche: false,
+            crecheAmount: 0
         };
 
         const $ = (sel) => document.querySelector(sel);
@@ -1252,7 +1344,18 @@
                 donsReduction = Math.min(donsReduction, maxDonsReduction);
             }
 
-            const finalTax = Math.max(0, result.tax - donsReduction);
+            // Crédit d'impôt frais de garde (crèche)
+            let crecheCredit = 0;
+            let crechePlafond = 0;
+            if (state.hasCreche && state.children > 0 && state.crecheAmount > 0) {
+                // Plafond de 3500€ par enfant
+                crechePlafond = state.children * 3500;
+                const fraisRetenus = Math.min(state.crecheAmount, crechePlafond);
+                // Crédit de 50%
+                crecheCredit = Math.floor(fraisRetenus * 0.50);
+            }
+
+            const finalTax = Math.max(0, result.tax - donsReduction - crecheCredit);
             const netAfterTax = grossIncome - finalTax;
             const monthly = netAfterTax / 12;
             const avgRate = grossIncome > 0 ? (finalTax / grossIncome) * 100 : 0;
@@ -1261,7 +1364,8 @@
             updateUI({
                 parts, grossIncome, totalAbattement, perDeduction, incomeAfterAbattement, taxableIncome,
                 tax: finalTax, taxBeforeDons: result.tax, marginalRate: result.marginalRate, qf: result.qf,
-                tranchesApplied: result.tranchesApplied, netAfterTax, monthly, avgRate, taxPercent, perSavings, donsTotal, donsReduction
+                tranchesApplied: result.tranchesApplied, netAfterTax, monthly, avgRate, taxPercent, perSavings, donsTotal, donsReduction,
+                crecheCredit, crechePlafond
             });
             updateURL();
         }
@@ -1306,6 +1410,22 @@
                 $('#dons-reduction-display').textContent = formatMoney(data.donsReduction);
             }
 
+            // Crèche UI update
+            if (state.hasCreche && state.children > 0) {
+                $('#creche-total-display').textContent = formatMoney(state.crecheAmount);
+                $('#creche-children-count').textContent = state.children;
+                $('#creche-plafond-display').textContent = formatMoney(data.crechePlafond);
+                $('#creche-credit-display').textContent = formatMoney(data.crecheCredit);
+            }
+
+            // Crèche savings card
+            if (state.hasCreche && data.crecheCredit > 0) {
+                $('#creche-savings-card').classList.remove('hidden');
+                $('#result-creche-savings').textContent = formatMoney(data.crecheCredit);
+            } else {
+                $('#creche-savings-card').classList.add('hidden');
+            }
+
             $('#chart-percent').textContent = (100 - data.taxPercent).toFixed(0) + '%';
             $('#chart-donut').style.background = `conic-gradient(#0ea5e9 0% ${data.taxPercent}%, #f1f5f9 ${data.taxPercent}% 100%)`;
             $('#result-net-annual').textContent = formatMoney(data.netAfterTax);
@@ -1329,6 +1449,13 @@
                 $('#detail-dons').textContent = '- ' + formatMoney(data.donsReduction);
             } else {
                 $('#detail-dons-row').classList.add('hidden');
+            }
+
+            if (state.hasCreche && data.crecheCredit > 0) {
+                $('#detail-creche-row').classList.remove('hidden');
+                $('#detail-creche').textContent = '- ' + formatMoney(data.crecheCredit);
+            } else {
+                $('#detail-creche-row').classList.add('hidden');
             }
 
             $('#detail-parts').textContent = data.parts;
@@ -1378,6 +1505,9 @@
                 if (state.dons66 > 0) params.set('dons66', state.dons66);
                 if (state.dons75 > 0) params.set('dons75', state.dons75);
             }
+            if (state.hasCreche && state.crecheAmount > 0) {
+                params.set('creche', state.crecheAmount);
+            }
             history.replaceState(null, '', window.location.pathname + '?' + params.toString());
         }
 
@@ -1391,6 +1521,7 @@
             if (params.has('foncier')) { state.incomeFoncier = parseInt(params.get('foncier')) || 0; $('#income-foncier').value = state.incomeFoncier; }
             if (params.has('per')) { state.hasPer = true; state.perAmount = parseInt(params.get('per')) || 0; $('#has-per').checked = true; $('#per-amount').value = state.perAmount; $('#per-slider').value = Math.min(state.perAmount, 30000); $('#per-details').classList.remove('hidden'); if (params.has('plafond')) { state.perPlafond = parseInt(params.get('plafond')) || 0; $('#per-plafond').value = state.perPlafond; } }
             if (params.has('dons66') || params.has('dons75')) { state.hasDons = true; $('#has-dons').checked = true; $('#dons-details').classList.remove('hidden'); if (params.has('dons66')) { state.dons66 = parseInt(params.get('dons66')) || 0; $('#dons-66').value = state.dons66; $('#dons-66-slider').value = Math.min(state.dons66, 10000); } if (params.has('dons75')) { state.dons75 = parseInt(params.get('dons75')) || 0; $('#dons-75').value = state.dons75; $('#dons-75-slider').value = Math.min(state.dons75, 2000); } }
+            if (params.has('creche')) { state.hasCreche = true; state.crecheAmount = parseInt(params.get('creche')) || 0; $('#has-creche').checked = true; $('#creche-amount').value = state.crecheAmount; $('#creche-slider').value = Math.min(state.crecheAmount, 20000); $('#creche-details').classList.remove('hidden'); }
             updateVisibility();
         }
 
@@ -1401,12 +1532,15 @@
             if (state.hasPer) { $('#per-details').classList.remove('hidden'); } else { $('#per-details').classList.add('hidden'); }
             if (state.perPlafondUnknown) { $('#per-plafond-container').classList.add('hidden'); } else { $('#per-plafond-container').classList.remove('hidden'); }
             if (state.hasDons) { $('#dons-details').classList.remove('hidden'); } else { $('#dons-details').classList.add('hidden'); }
+            // Crèche card visibility - only show if there are children
+            if (state.children > 0) { $('#creche-card').classList.remove('hidden'); } else { $('#creche-card').classList.add('hidden'); state.hasCreche = false; if ($('#has-creche')) $('#has-creche').checked = false; }
+            if (state.hasCreche) { $('#creche-details').classList.remove('hidden'); } else { $('#creche-details').classList.add('hidden'); }
         }
 
         function setupEventListeners() {
             $$('input[name="status"]').forEach(r => r.addEventListener('change', (e) => { state.status = e.target.value; updateVisibility(); calculate(); }));
-            $('#btn-child-plus').addEventListener('click', () => { if (state.children < 10) { state.children++; $('#child-count').textContent = state.children; calculate(); } });
-            $('#btn-child-minus').addEventListener('click', () => { if (state.children > 0) { state.children--; $('#child-count').textContent = state.children; calculate(); } });
+            $('#btn-child-plus').addEventListener('click', () => { if (state.children < 10) { state.children++; $('#child-count').textContent = state.children; updateVisibility(); calculate(); } });
+            $('#btn-child-minus').addEventListener('click', () => { if (state.children > 0) { state.children--; $('#child-count').textContent = state.children; updateVisibility(); calculate(); } });
             $('#parent-isole').addEventListener('change', (e) => { state.parentIsole = e.target.checked; calculate(); });
 
             const syncSlider = (input, slider, key, max = 200000) => {
@@ -1425,6 +1559,9 @@
             $('#per-plafond').addEventListener('input', (e) => { state.perPlafond = parseInt(e.target.value) || 0; calculate(); });
             $('#per-plafond-unknown').addEventListener('change', (e) => { state.perPlafondUnknown = e.target.checked; updateVisibility(); calculate(); });
             $('#has-dons').addEventListener('change', (e) => { state.hasDons = e.target.checked; updateVisibility(); calculate(); });
+            // Crèche event listeners
+            $('#has-creche').addEventListener('change', (e) => { state.hasCreche = e.target.checked; updateVisibility(); calculate(); });
+            syncSlider($('#creche-amount'), $('#creche-slider'), 'crecheAmount', 20000);
             $('#btn-reset').addEventListener('click', () => { window.location.href = window.location.pathname; });
             $('#mobile-results-btn').addEventListener('click', () => { document.querySelector('.lg\\:col-span-5').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
         }

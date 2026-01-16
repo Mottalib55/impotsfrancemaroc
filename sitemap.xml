@@ -182,26 +182,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/comparateur-global/"/>
   </url>
 
-  <!-- ========== SIMULATEUR IMPOT REVENU (GENERAL) ========== -->
-  <url>
-    <loc>https://netsalaire.com/fr/simulateur-impot-revenu/</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-income-tax/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-  </url>
-  <url>
-    <loc>https://netsalaire.com/en/income-income-tax/</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/income-income-tax/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/simulateur-impot-revenu/"/>
-  </url>
-
   <!-- ========== FAQ ========== -->
   <url>
     <loc>https://netsalaire.com/fr/faq/</loc>

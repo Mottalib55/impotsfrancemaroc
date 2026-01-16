@@ -102,6 +102,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/"/>
   </url>
 
+  <!-- ========== MAROC - SIMULATEUR IR ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/maroc/simulateur-impot-revenu/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/income-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+  </url>
+  <url>
+    <loc>https://netsalaire.com/en/morocco/income-tax/</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/morocco/income-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"/>
+  </url>
+
   <!-- ========== MAROC - GUIDE FISCAL ========== -->
   <url>
     <loc>https://netsalaire.com/fr/maroc/guide/</loc>

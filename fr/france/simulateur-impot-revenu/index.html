@@ -458,8 +458,78 @@
                     </details>
                 </div>
 
+                <!-- Card: Frais de garde (Crèche) -->
+                <div id="creche-card" class="order-4 lg:col-span-7 rounded-2xl border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-white p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-pink-100 rounded-lg text-pink-600">
+                                <i data-lucide="baby" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-slate-900">Frais de garde (Crèche)</h2>
+                                <p class="text-xs text-slate-500">Crédit d'impôt de 50% (max 1 750 EUR/enfant)</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-1 text-xs font-medium text-pink-700">
+                            Crédit d'impôt
+                        </span>
+                    </div>
+
+                    <!-- Toggle Crèche -->
+                    <div class="flex items-center justify-between mb-5">
+                        <label class="text-sm font-medium text-slate-700">As-tu des frais de garde pour tes enfants ?</label>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="has-creche" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-pink-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm"></div>
+                        </label>
+                    </div>
+
+                    <!-- Crèche Details -->
+                    <div id="creche-details" class="hidden space-y-4 animate-in">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center gap-2">
+                                    <label class="text-sm font-medium text-slate-700">Frais de garde annuels (total)</label>
+                                    <span class="tooltip cursor-help" data-tip="Crèche, assistante maternelle, garde à domicile...">
+                                        <i data-lucide="help-circle" class="h-4 w-4 text-slate-400"></i>
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <input type="number" id="creche-amount" value="0" min="0" class="block w-36 text-right rounded-lg border-0 py-2 pl-3 pr-12 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-pink-500 text-sm font-semibold transition-all">
+                                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">EUR</span>
+                                </div>
+                            </div>
+                            <input type="range" id="creche-slider" min="0" max="20000" step="100" value="0" class="w-full h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-slate-400">0 EUR</span>
+                                <span class="text-xs text-slate-400">20 000 EUR</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs text-slate-500 bg-slate-50 rounded-lg p-3">
+                            <p><strong>Info :</strong> Le crédit d'impôt est de 50% des frais engagés, plafonné à 3 500 EUR par enfant de moins de 6 ans (soit 1 750 EUR de crédit max par enfant).</p>
+                        </div>
+
+                        <!-- Crèche Summary -->
+                        <div class="rounded-xl bg-white border border-pink-200 p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-slate-600">Frais déclarés</span>
+                                <span class="text-sm font-bold text-slate-900" id="creche-total-display">0 EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-sm text-slate-600">Plafond applicable (<span id="creche-children-count">0</span> enfant(s))</span>
+                                <span class="text-sm font-medium text-slate-500" id="creche-plafond-display">0 EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
+                                <span class="text-sm text-slate-600">Crédit d'impôt (50%)</span>
+                                <span class="text-sm font-bold text-pink-600" id="creche-credit-display">0 EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Card: PER -->
-                <div class="order-4 lg:col-span-7 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+                <div class="order-5 lg:col-span-7 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-3">
                             <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600">
@@ -543,7 +613,7 @@
                 </div>
 
                 <!-- Card: Dons -->
-                <div class="order-5 lg:col-span-7 rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 to-white p-6 shadow-sm">
+                <div class="order-6 lg:col-span-7 rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 to-white p-6 shadow-sm">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-3">
                             <div class="p-2 bg-violet-100 rounded-lg text-violet-600">
@@ -618,79 +688,8 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Card: Frais de garde (Crèche) -->
-                <div id="creche-card" class="hidden order-5b lg:col-span-7 rounded-2xl border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-white p-6 shadow-sm">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center gap-3">
-                            <div class="p-2 bg-pink-100 rounded-lg text-pink-600">
-                                <i data-lucide="baby" class="h-5 w-5"></i>
-                            </div>
-                            <div>
-                                <h2 class="text-lg font-semibold text-slate-900">Frais de garde (Crèche)</h2>
-                                <p class="text-xs text-slate-500">Crédit d'impôt de 50% (max 1 750 EUR/enfant)</p>
-                            </div>
-                        </div>
-                        <span class="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-1 text-xs font-medium text-pink-700">
-                            Crédit d'impôt
-                        </span>
-                    </div>
-
-                    <!-- Toggle Crèche -->
-                    <div class="flex items-center justify-between mb-5">
-                        <label class="text-sm font-medium text-slate-700">As-tu des frais de garde pour tes enfants ?</label>
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" id="has-creche" class="sr-only peer">
-                            <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-pink-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm"></div>
-                        </label>
-                    </div>
-
-                    <!-- Crèche Details -->
-                    <div id="creche-details" class="hidden space-y-4 animate-in">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <div class="flex items-center gap-2">
-                                    <label class="text-sm font-medium text-slate-700">Frais de garde annuels (total)</label>
-                                    <span class="tooltip cursor-help" data-tip="Crèche, assistante maternelle, garde à domicile...">
-                                        <i data-lucide="help-circle" class="h-4 w-4 text-slate-400"></i>
-                                    </span>
-                                </div>
-                                <div class="relative">
-                                    <input type="number" id="creche-amount" value="0" min="0" class="block w-36 text-right rounded-lg border-0 py-2 pl-3 pr-12 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-pink-500 text-sm font-semibold transition-all">
-                                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">EUR</span>
-                                </div>
-                            </div>
-                            <input type="range" id="creche-slider" min="0" max="20000" step="100" value="0" class="w-full h-2 rounded-lg cursor-pointer">
-                            <div class="flex justify-between mt-1">
-                                <span class="text-xs text-slate-400">0 EUR</span>
-                                <span class="text-xs text-slate-400">20 000 EUR</span>
-                            </div>
-                        </div>
-
-                        <div class="text-xs text-slate-500 bg-slate-50 rounded-lg p-3">
-                            <p><strong>Info :</strong> Le crédit d'impôt est de 50% des frais engagés, plafonné à 3 500 EUR par enfant de moins de 6 ans (soit 1 750 EUR de crédit max par enfant).</p>
-                        </div>
-
-                        <!-- Crèche Summary -->
-                        <div class="rounded-xl bg-white border border-pink-200 p-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-slate-600">Frais déclarés</span>
-                                <span class="text-sm font-bold text-slate-900" id="creche-total-display">0 EUR</span>
-                            </div>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="text-sm text-slate-600">Plafond applicable (<span id="creche-children-count">0</span> enfant(s))</span>
-                                <span class="text-sm font-medium text-slate-500" id="creche-plafond-display">0 EUR</span>
-                            </div>
-                            <div class="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
-                                <span class="text-sm text-slate-600">Crédit d'impôt (50%)</span>
-                                <span class="text-sm font-bold text-pink-600" id="creche-credit-display">0 EUR</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Actions -->
-                <div class="order-6 lg:col-span-7 flex items-center justify-between pt-2">
+                <div class="order-7 lg:col-span-7 flex items-center justify-between pt-2">
                     <button id="btn-reset" type="button" class="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1.5 transition-colors">
                         <i data-lucide="rotate-ccw" class="h-4 w-4"></i> Reinitialiser
                     </button>
@@ -1532,8 +1531,7 @@
             if (state.hasPer) { $('#per-details').classList.remove('hidden'); } else { $('#per-details').classList.add('hidden'); }
             if (state.perPlafondUnknown) { $('#per-plafond-container').classList.add('hidden'); } else { $('#per-plafond-container').classList.remove('hidden'); }
             if (state.hasDons) { $('#dons-details').classList.remove('hidden'); } else { $('#dons-details').classList.add('hidden'); }
-            // Crèche card visibility - only show if there are children
-            if (state.children > 0) { $('#creche-card').classList.remove('hidden'); } else { $('#creche-card').classList.add('hidden'); state.hasCreche = false; if ($('#has-creche')) $('#has-creche').checked = false; }
+            // Crèche details visibility
             if (state.hasCreche) { $('#creche-details').classList.remove('hidden'); } else { $('#creche-details').classList.add('hidden'); }
         }
 

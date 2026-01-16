@@ -363,7 +363,7 @@ const translations = {
     // COMPARATOR
     // ==========================================
     'comp.title': { fr: 'Comparateur Fiscal', en: 'Tax Comparator' },
-    'comp.fr_ma_title': { fr: 'Comparateur Fiscal France vs Maroc', en: 'France vs Morocco Tax Comparator' },
+    'comp.fr_ma_title': { fr: 'Comparateur Fiscal France vs Maroc pour MRE', en: 'France vs Morocco Tax Comparator for MRE' },
     'comp.subtitle': {
         fr: 'Comparez votre salaire net et votre pression fiscale entre les deux pays. Simulateur mis à jour avec les barèmes 2025.',
         en: 'Compare your net salary and tax burden between both countries. Simulator updated with 2025 rates.'

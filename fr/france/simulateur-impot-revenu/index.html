@@ -486,6 +486,25 @@
 
                     <!-- Crèche Details -->
                     <div id="creche-details" class="hidden space-y-4 animate-in">
+                        <!-- Nombre d'enfants de moins de 6 ans -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <label class="text-sm font-medium text-slate-700">Enfants de moins de 6 ans</label>
+                                <span class="tooltip cursor-help" data-tip="Seuls les enfants de moins de 6 ans ouvrent droit au crédit">
+                                    <i data-lucide="help-circle" class="h-4 w-4 text-slate-400"></i>
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-1">
+                                <button id="btn-creche-child-minus" type="button" class="h-8 w-8 rounded-md bg-white text-slate-500 shadow-sm hover:text-pink-600 hover:bg-slate-50 flex items-center justify-center transition-all active:scale-95">
+                                    <i data-lucide="minus" class="h-4 w-4"></i>
+                                </button>
+                                <span id="creche-child-count" class="w-6 text-center text-lg font-bold text-slate-900">0</span>
+                                <button id="btn-creche-child-plus" type="button" class="h-8 w-8 rounded-md bg-white text-slate-500 shadow-sm hover:text-pink-600 hover:bg-slate-50 flex items-center justify-center transition-all active:scale-95">
+                                    <i data-lucide="plus" class="h-4 w-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <div class="flex items-center gap-2">
@@ -1248,7 +1267,8 @@
             dons66: 0,
             dons75: 0,
             hasCreche: false,
-            crecheAmount: 0
+            crecheAmount: 0,
+            crecheChildren: 0
         };
 
         const $ = (sel) => document.querySelector(sel);
@@ -1346,9 +1366,9 @@
             // Crédit d'impôt frais de garde (crèche)
             let crecheCredit = 0;
             let crechePlafond = 0;
-            if (state.hasCreche && state.children > 0 && state.crecheAmount > 0) {
-                // Plafond de 3500€ par enfant
-                crechePlafond = state.children * 3500;
+            if (state.hasCreche && state.crecheChildren > 0 && state.crecheAmount > 0) {
+                // Plafond de 3500€ par enfant de moins de 6 ans
+                crechePlafond = state.crecheChildren * 3500;
                 const fraisRetenus = Math.min(state.crecheAmount, crechePlafond);
                 // Crédit de 50%
                 crecheCredit = Math.floor(fraisRetenus * 0.50);
@@ -1410,9 +1430,9 @@
             }
 
             // Crèche UI update
-            if (state.hasCreche && state.children > 0) {
+            if (state.hasCreche) {
                 $('#creche-total-display').textContent = formatMoney(state.crecheAmount);
-                $('#creche-children-count').textContent = state.children;
+                $('#creche-children-count').textContent = state.crecheChildren;
                 $('#creche-plafond-display').textContent = formatMoney(data.crechePlafond);
                 $('#creche-credit-display').textContent = formatMoney(data.crecheCredit);
             }
@@ -1506,6 +1526,7 @@
             }
             if (state.hasCreche && state.crecheAmount > 0) {
                 params.set('creche', state.crecheAmount);
+                params.set('crecheEnfants', state.crecheChildren);
             }
             history.replaceState(null, '', window.location.pathname + '?' + params.toString());
         }
@@ -1520,7 +1541,7 @@
             if (params.has('foncier')) { state.incomeFoncier = parseInt(params.get('foncier')) || 0; $('#income-foncier').value = state.incomeFoncier; }
             if (params.has('per')) { state.hasPer = true; state.perAmount = parseInt(params.get('per')) || 0; $('#has-per').checked = true; $('#per-amount').value = state.perAmount; $('#per-slider').value = Math.min(state.perAmount, 30000); $('#per-details').classList.remove('hidden'); if (params.has('plafond')) { state.perPlafond = parseInt(params.get('plafond')) || 0; $('#per-plafond').value = state.perPlafond; } }
             if (params.has('dons66') || params.has('dons75')) { state.hasDons = true; $('#has-dons').checked = true; $('#dons-details').classList.remove('hidden'); if (params.has('dons66')) { state.dons66 = parseInt(params.get('dons66')) || 0; $('#dons-66').value = state.dons66; $('#dons-66-slider').value = Math.min(state.dons66, 10000); } if (params.has('dons75')) { state.dons75 = parseInt(params.get('dons75')) || 0; $('#dons-75').value = state.dons75; $('#dons-75-slider').value = Math.min(state.dons75, 2000); } }
-            if (params.has('creche')) { state.hasCreche = true; state.crecheAmount = parseInt(params.get('creche')) || 0; $('#has-creche').checked = true; $('#creche-amount').value = state.crecheAmount; $('#creche-slider').value = Math.min(state.crecheAmount, 20000); $('#creche-details').classList.remove('hidden'); }
+            if (params.has('creche')) { state.hasCreche = true; state.crecheAmount = parseInt(params.get('creche')) || 0; state.crecheChildren = parseInt(params.get('crecheEnfants')) || 0; $('#has-creche').checked = true; $('#creche-amount').value = state.crecheAmount; $('#creche-slider').value = Math.min(state.crecheAmount, 20000); $('#creche-child-count').textContent = state.crecheChildren; $('#creche-details').classList.remove('hidden'); }
             updateVisibility();
         }
 
@@ -1538,7 +1559,19 @@
         function setupEventListeners() {
             $$('input[name="status"]').forEach(r => r.addEventListener('change', (e) => { state.status = e.target.value; updateVisibility(); calculate(); }));
             $('#btn-child-plus').addEventListener('click', () => { if (state.children < 10) { state.children++; $('#child-count').textContent = state.children; updateVisibility(); calculate(); } });
-            $('#btn-child-minus').addEventListener('click', () => { if (state.children > 0) { state.children--; $('#child-count').textContent = state.children; updateVisibility(); calculate(); } });
+            $('#btn-child-minus').addEventListener('click', () => {
+                if (state.children > 0) {
+                    state.children--;
+                    $('#child-count').textContent = state.children;
+                    // Ajuster les enfants crèche si nécessaire
+                    if (state.crecheChildren > state.children) {
+                        state.crecheChildren = state.children;
+                        $('#creche-child-count').textContent = state.crecheChildren;
+                    }
+                    updateVisibility();
+                    calculate();
+                }
+            });
             $('#parent-isole').addEventListener('change', (e) => { state.parentIsole = e.target.checked; calculate(); });
 
             const syncSlider = (input, slider, key, max = 200000) => {
@@ -1560,6 +1593,20 @@
             // Crèche event listeners
             $('#has-creche').addEventListener('change', (e) => { state.hasCreche = e.target.checked; updateVisibility(); calculate(); });
             syncSlider($('#creche-amount'), $('#creche-slider'), 'crecheAmount', 20000);
+            $('#btn-creche-child-plus').addEventListener('click', () => {
+                if (state.crecheChildren < state.children) {
+                    state.crecheChildren++;
+                    $('#creche-child-count').textContent = state.crecheChildren;
+                    calculate();
+                }
+            });
+            $('#btn-creche-child-minus').addEventListener('click', () => {
+                if (state.crecheChildren > 0) {
+                    state.crecheChildren--;
+                    $('#creche-child-count').textContent = state.crecheChildren;
+                    calculate();
+                }
+            });
             $('#btn-reset').addEventListener('click', () => { window.location.href = window.location.pathname; });
             $('#mobile-results-btn').addEventListener('click', () => { document.querySelector('.lg\\:col-span-5').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
         }

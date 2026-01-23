@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build files (optional - keep if you want to version CSS)
+# assets/css/tailwind.min.css
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

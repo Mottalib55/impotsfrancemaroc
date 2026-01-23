@@ -66,7 +66,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
     <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -272,7 +272,8 @@
 
                         <!-- Options -->
                         <div class="bg-slate-50 rounded-xl p-4 mt-2">
-                            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                            <!-- Première ligne : Statut + Heures -->
+                            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
                                 <!-- Statut professionnel -->
                                 <div class="flex-1">
                                     <label class="block text-xs font-medium text-slate-500 mb-2">Statut professionnel</label>
@@ -307,6 +308,43 @@
                                         </button>
                                     </div>
                                     <input type="hidden" id="heures" value="35">
+                                </div>
+                            </div>
+                            <!-- Deuxième ligne : Temps partiel + Nombre de mois -->
+                            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 border-t border-slate-200">
+                                <!-- Temps partiel -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Temps de travail</label>
+                                    <div class="bg-white rounded-lg px-4 py-3 border border-slate-200">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pie-chart" width="16" class="text-indigo-500"></iconify-icon>
+                                                <span class="text-sm text-slate-600">Temps partiel</span>
+                                            </div>
+                                            <span id="temps-partiel-display" class="text-lg font-semibold text-indigo-600">100%</span>
+                                        </div>
+                                        <input type="range" id="temps-partiel" min="10" max="100" value="100" step="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-500" oninput="updateTempsPartiel(this.value)">
+                                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                            <span>10%</span>
+                                            <span>50%</span>
+                                            <span>100%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Nombre de mois -->
+                                <div class="flex-1">
+                                    <label class="block text-xs font-medium text-slate-500 mb-2">Nombre de mois</label>
+                                    <div class="bg-white rounded-lg p-1 border border-slate-200">
+                                        <div class="grid grid-cols-5 gap-1">
+                                            <button type="button" onclick="setNombreMois(12)" id="btn-mois-12" class="py-2 text-sm font-medium rounded-md transition-all duration-200 bg-indigo-500 text-white shadow-sm">12</button>
+                                            <button type="button" onclick="setNombreMois(13)" id="btn-mois-13" class="py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">13</button>
+                                            <button type="button" onclick="setNombreMois(14)" id="btn-mois-14" class="py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">14</button>
+                                            <button type="button" onclick="setNombreMois(15)" id="btn-mois-15" class="py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">15</button>
+                                            <button type="button" onclick="setNombreMois(16)" id="btn-mois-16" class="py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50">16</button>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-1.5 text-center">Prime = salaire annuel / nb mois</p>
+                                    <input type="hidden" id="nombre-mois" value="12">
                                 </div>
                             </div>
                         </div>
@@ -547,7 +585,6 @@
         // === CONFIGURATION ===
         const COTIS_RATES = { cadre: 0.25, noncadre: 0.22 };
         const WEEKS_PER_YEAR = 52;
-        const MONTHS_PER_YEAR = 12;
 
         // === DOM ELEMENTS ===
         const brutAnnuel = document.getElementById('brut-annuel');
@@ -558,6 +595,8 @@
         const netHoraire = document.getElementById('net-horaire');
         const statutSelect = document.getElementById('statut');
         const heuresInput = document.getElementById('heures');
+        const tempsPartielInput = document.getElementById('temps-partiel');
+        const nombreMoisInput = document.getElementById('nombre-mois');
 
         // === STATUT & HEURES CONTROLS ===
         function setStatut(value) {
@@ -587,6 +626,26 @@
             updateFromBrutMensuel();
         }
 
+        function updateTempsPartiel(value) {
+            tempsPartielInput.value = value;
+            document.getElementById('temps-partiel-display').textContent = value + '%';
+            updateFromBrutMensuel();
+        }
+
+        function setNombreMois(value) {
+            nombreMoisInput.value = value;
+            // Update button styles
+            for (let i = 12; i <= 16; i++) {
+                const btn = document.getElementById('btn-mois-' + i);
+                if (i === value) {
+                    btn.className = 'py-2 text-sm font-medium rounded-md transition-all duration-200 bg-indigo-500 text-white shadow-sm';
+                } else {
+                    btn.className = 'py-2 text-sm font-medium rounded-md transition-all duration-200 text-slate-600 hover:bg-slate-50';
+                }
+            }
+            updateFromBrutMensuel();
+        }
+
         // === UTILITIES ===
         const formatNumber = (num) => Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
         const formatDecimal = (num) => num.toFixed(2).replace('.', ',');
@@ -600,8 +659,16 @@
             return COTIS_RATES[statutSelect.value];
         }
 
+        function getTempsPartiel() {
+            return parseFloat(tempsPartielInput.value) / 100;
+        }
+
+        function getNombreMois() {
+            return parseInt(nombreMoisInput.value) || 12;
+        }
+
         function getHoursPerYear() {
-            return parseNumber(heuresInput.value) * WEEKS_PER_YEAR;
+            return parseNumber(heuresInput.value) * WEEKS_PER_YEAR * getTempsPartiel();
         }
 
         function brutToNet(brut) {
@@ -617,12 +684,13 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const brutAn = parseNumber(brutAnnuel.value);
-            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutMois = brutAn / nbMois;
             const brutH = brutAn / getHoursPerYear();
 
             const netAn = brutToNet(brutAn);
-            const netMois = netAn / MONTHS_PER_YEAR;
+            const netMois = netAn / nbMois;
             const netH = netAn / getHoursPerYear();
 
             brutMensuel.value = formatNumber(brutMois);
@@ -631,7 +699,7 @@
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
@@ -639,12 +707,13 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const brutMois = parseNumber(brutMensuel.value);
-            const brutAn = brutMois * MONTHS_PER_YEAR;
+            const brutAn = brutMois * nbMois;
             const brutH = brutAn / getHoursPerYear();
 
             const netAn = brutToNet(brutAn);
-            const netMois = netAn / MONTHS_PER_YEAR;
+            const netMois = netAn / nbMois;
             const netH = netAn / getHoursPerYear();
 
             brutAnnuel.value = formatNumber(brutAn);
@@ -653,7 +722,7 @@
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
@@ -661,12 +730,13 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const brutH = parseNumber(brutHoraire.value);
             const brutAn = brutH * getHoursPerYear();
-            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutMois = brutAn / nbMois;
 
             const netAn = brutToNet(brutAn);
-            const netMois = netAn / MONTHS_PER_YEAR;
+            const netMois = netAn / nbMois;
             const netH = netAn / getHoursPerYear();
 
             brutAnnuel.value = formatNumber(brutAn);
@@ -675,7 +745,7 @@
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
@@ -683,12 +753,13 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const netAn = parseNumber(netAnnuel.value);
             const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutMois = brutAn / nbMois;
             const brutH = brutAn / getHoursPerYear();
 
-            const netMois = netAn / MONTHS_PER_YEAR;
+            const netMois = netAn / nbMois;
             const netH = netAn / getHoursPerYear();
 
             brutAnnuel.value = formatNumber(brutAn);
@@ -697,7 +768,7 @@
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
@@ -705,10 +776,11 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const netMois = parseNumber(netMensuel.value);
-            const netAn = netMois * MONTHS_PER_YEAR;
+            const netAn = netMois * nbMois;
             const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutMois = brutAn / nbMois;
             const brutH = brutAn / getHoursPerYear();
             const netH = netAn / getHoursPerYear();
 
@@ -718,7 +790,7 @@
             netAnnuel.value = formatNumber(netAn);
             netHoraire.value = formatDecimal(netH);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
@@ -726,11 +798,12 @@
             if (isUpdating) return;
             isUpdating = true;
 
+            const nbMois = getNombreMois();
             const netH = parseNumber(netHoraire.value);
             const netAn = netH * getHoursPerYear();
-            const netMois = netAn / MONTHS_PER_YEAR;
+            const netMois = netAn / nbMois;
             const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutMois = brutAn / nbMois;
             const brutH = brutAn / getHoursPerYear();
 
             brutAnnuel.value = formatNumber(brutAn);
@@ -739,14 +812,15 @@
             netAnnuel.value = formatNumber(netAn);
             netMensuel.value = formatNumber(netMois);
 
-            updateUI(brutMois);
+            updateUI(brutMois, nbMois);
             isUpdating = false;
         }
 
         // === UI UPDATE ===
-        function updateUI(brutMois) {
+        function updateUI(brutMois, nbMois) {
             const cotisRate = getCotisRate();
             const netRate = 1 - cotisRate;
+            const tempsPartiel = getTempsPartiel();
 
             // Details
             const secu = brutMois * 0.14;
@@ -850,6 +924,9 @@
 
         // === INIT ===
         updateFromBrutMensuel();
+
+        // Initialize temps partiel display
+        document.getElementById('temps-partiel-display').textContent = tempsPartielInput.value + '%';
     </script>
 
 </body>

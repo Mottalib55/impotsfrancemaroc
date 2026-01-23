@@ -1,0 +1,26 @@
+{
+  "name": "impotsfrancemaroc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mottalib55/impotsfrancemaroc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mottalib55/impotsfrancemaroc/issues"
+  },
+  "homepage": "https://github.com/Mottalib55/impotsfrancemaroc#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

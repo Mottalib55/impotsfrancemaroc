@@ -82,6 +82,9 @@
             border-radius: 0.5rem;
             transition: all 0.2s;
         }
+        .input-field.input-text-label {
+            padding-right: 5rem;
+        }
         .input-field:focus {
             outline: none;
             border-color: #6366f1;
@@ -201,12 +204,12 @@
                     <label class="block text-sm font-medium text-slate-700 mb-2">Anciennete dans l'entreprise</label>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="relative">
-                            <input type="text" id="annees" class="input-field text-right pr-16" placeholder="5" value="5" oninput="calculate()">
-                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">annees</span>
+                            <input type="text" id="annees" class="input-field input-text-label text-right" placeholder="5" value="5" oninput="calculate()">
+                            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">années</span>
                         </div>
                         <div class="relative">
-                            <input type="text" id="mois" class="input-field text-right pr-14" placeholder="6" value="6" oninput="calculate()">
-                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">mois</span>
+                            <input type="text" id="mois" class="input-field input-text-label text-right" placeholder="6" value="6" oninput="calculate()">
+                            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">mois</span>
                         </div>
                     </div>
                 </div>

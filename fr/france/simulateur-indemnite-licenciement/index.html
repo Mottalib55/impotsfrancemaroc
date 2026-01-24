@@ -271,6 +271,25 @@
                             <p class="text-lg font-semibold text-slate-700" id="anciennete-display">5 ans 6 mois</p>
                         </div>
                     </div>
+
+                    <!-- Detail calcul simple -->
+                    <div class="mt-6 pt-4 border-t border-emerald-200">
+                        <p class="text-xs font-medium text-slate-500 uppercase tracking-wide mb-3">Detail du calcul</p>
+                        <div class="bg-white/50 rounded-lg p-4 font-mono text-sm space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600" id="calc-part1-label">5,5 ans x 1/4 mois x 3 000 €</span>
+                                <span class="text-slate-800" id="calc-part1">=  4 125 €</span>
+                            </div>
+                            <div class="flex justify-between" id="calc-part2-row">
+                                <span class="text-slate-600" id="calc-part2-label">0 ans x 1/3 mois x 3 000 €</span>
+                                <span class="text-slate-800" id="calc-part2">=  0 €</span>
+                            </div>
+                            <div class="flex justify-between pt-2 border-t border-emerald-200 font-semibold">
+                                <span class="text-slate-700">Total</span>
+                                <span class="text-emerald-600" id="calc-total">=  4 125 €</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- No indemnity warning -->
@@ -281,33 +300,6 @@
                             <p class="font-semibold text-red-700">Pas d'indemnite de licenciement</p>
                             <p class="text-sm text-red-600" id="no-indemnity-reason">En cas de faute grave ou lourde, le salarie n'a pas droit a l'indemnite de licenciement.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Detail calcul -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
-                <h2 class="font-semibold text-slate-800 mb-4">Detail du calcul</h2>
-                <div class="space-y-4 text-sm">
-                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                        <span class="text-slate-600">Salaire de reference mensuel</span>
-                        <span class="font-medium text-slate-800" id="detail-salaire">3 000 €</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                        <span class="text-slate-600">Anciennete (en annees)</span>
-                        <span class="font-medium text-slate-800" id="detail-anciennete">5,5 ans</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                        <span class="text-slate-600">Part jusqu'a 10 ans (1/4 mois par an)</span>
-                        <span class="font-medium text-slate-800" id="detail-part1">4 125 €</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                        <span class="text-slate-600">Part au-dela de 10 ans (1/3 mois par an)</span>
-                        <span class="font-medium text-slate-800" id="detail-part2">0 €</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-slate-600 font-medium">Total indemnite legale</span>
-                        <span class="font-bold text-emerald-600" id="detail-total">4 125 €</span>
                     </div>
                 </div>
             </div>
@@ -493,11 +485,18 @@
             document.getElementById('en-mois').textContent = formatDecimal(enMois) + ' mois';
             document.getElementById('anciennete-display').textContent = annees + ' ans ' + mois + ' mois';
 
-            document.getElementById('detail-salaire').textContent = formatNumber(salaireBrut) + ' €';
-            document.getElementById('detail-anciennete').textContent = formatDecimal(ancienneteTotale) + ' ans';
-            document.getElementById('detail-part1').textContent = formatNumber(part1) + ' €';
-            document.getElementById('detail-part2').textContent = formatNumber(part2) + ' €';
-            document.getElementById('detail-total').textContent = formatNumber(indemnite) + ' €';
+            // Detail calcul simple
+            document.getElementById('calc-part1-label').textContent = formatDecimal(anneesJusqua10) + ' ans x 1/4 mois x ' + formatNumber(salaireBrut) + ' €';
+            document.getElementById('calc-part1').textContent = '= ' + formatNumber(part1) + ' €';
+
+            if (anneesAuDela10 > 0) {
+                document.getElementById('calc-part2-row').style.display = 'flex';
+                document.getElementById('calc-part2-label').textContent = formatDecimal(anneesAuDela10) + ' ans x 1/3 mois x ' + formatNumber(salaireBrut) + ' €';
+                document.getElementById('calc-part2').textContent = '= ' + formatNumber(part2) + ' €';
+            } else {
+                document.getElementById('calc-part2-row').style.display = 'none';
+            }
+            document.getElementById('calc-total').textContent = '= ' + formatNumber(indemnite) + ' €';
 
             // Format inputs
             document.getElementById('salaire-brut').value = formatNumber(salaireBrut);

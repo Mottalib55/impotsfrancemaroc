@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - NetSalaire</title>
+
+    <!-- IMPORTANT: No indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .card { transition: all 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">N.</div>
+                <div>
+                    <h1 class="text-white font-semibold">NetSalaire Admin</h1>
+                    <p class="text-slate-400 text-xs">Dashboard prive</p>
+                </div>
+            </div>
+            <a href="/" class="text-slate-400 hover:text-white text-sm flex items-center gap-2">
+                <iconify-icon icon="lucide:external-link" width="16"></iconify-icon>
+                Voir le site
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                <p class="text-slate-400 text-sm">Pages FR</p>
+                <p class="text-2xl font-bold text-white">15+</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                <p class="text-slate-400 text-sm">Pages EN</p>
+                <p class="text-2xl font-bold text-white">12+</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                <p class="text-slate-400 text-sm">Simulateurs</p>
+                <p class="text-2xl font-bold text-emerald-400">10</p>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                <p class="text-slate-400 text-sm">Pays</p>
+                <p class="text-2xl font-bold text-amber-400">2</p>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:link" width="20" class="text-indigo-400"></iconify-icon>
+            Liens Rapides
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <a href="https://analytics.google.com/" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-indigo-500">
+                <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <iconify-icon icon="logos:google-analytics" width="24"></iconify-icon>
+                </div>
+                <p class="text-white font-medium">Google Analytics</p>
+                <p class="text-slate-400 text-xs">Statistiques du site</p>
+            </a>
+            <a href="https://search.google.com/search-console" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-indigo-500">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <iconify-icon icon="logos:google-icon" width="24"></iconify-icon>
+                </div>
+                <p class="text-white font-medium">Search Console</p>
+                <p class="text-slate-400 text-xs">SEO & Indexation</p>
+            </a>
+            <a href="https://github.com/Mottalib55/impotsfrancemaroc" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-indigo-500">
+                <div class="w-10 h-10 bg-slate-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <iconify-icon icon="mdi:github" width="24" class="text-white"></iconify-icon>
+                </div>
+                <p class="text-white font-medium">GitHub Repo</p>
+                <p class="text-slate-400 text-xs">Code source</p>
+            </a>
+            <a href="https://pagespeed.web.dev/" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-indigo-500">
+                <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <iconify-icon icon="lucide:zap" width="24" class="text-green-400"></iconify-icon>
+                </div>
+                <p class="text-white font-medium">PageSpeed</p>
+                <p class="text-slate-400 text-xs">Performance</p>
+            </a>
+        </div>
+
+        <!-- Site Structure -->
+        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:folder-tree" width="20" class="text-indigo-400"></iconify-icon>
+            Structure du Site
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            <!-- France FR -->
+            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+                <div class="bg-indigo-600/20 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                    <iconify-icon icon="circle-flags:fr" width="20"></iconify-icon>
+                    <span class="text-white font-medium">France (FR)</span>
+                </div>
+                <div class="p-4 space-y-2">
+                    <a href="/fr/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Accueil</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Brut vers Net</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Impot sur le Revenu</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-chomage-are/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Chomage ARE</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Indemnite Licenciement</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-rupture-conventionnelle/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Rupture Conventionnelle</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-apl/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>APL</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Frais Kilometriques</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/france/guide/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Guide Fiscal</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+            <!-- France EN -->
+            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+                <div class="bg-blue-600/20 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                    <iconify-icon icon="circle-flags:gb" width="20"></iconify-icon>
+                    <span class="text-white font-medium">France (EN)</span>
+                </div>
+                <div class="p-4 space-y-2">
+                    <a href="/en/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Home</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/gross-to-net/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Gross to Net</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/income-tax/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Income Tax</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/unemployment-calculator/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Unemployment Calculator</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/severance-calculator/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Severance Calculator</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/mutual-termination-calculator/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Mutual Termination</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/housing-benefit-calculator/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Housing Benefit (APL)</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/mileage-calculator/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Mileage Calculator</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/en/france/tax-guide/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Tax Guide</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Maroc FR -->
+            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+                <div class="bg-emerald-600/20 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                    <iconify-icon icon="circle-flags:ma" width="20"></iconify-icon>
+                    <span class="text-white font-medium">Maroc (FR)</span>
+                </div>
+                <div class="p-4 space-y-2">
+                    <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Brut vers Net</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/maroc/simulateur-ir/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Simulateur IR</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/maroc/guide/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Guide Fiscal</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Other Pages -->
+            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+                <div class="bg-purple-600/20 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                    <iconify-icon icon="lucide:file-text" width="20" class="text-purple-400"></iconify-icon>
+                    <span class="text-white font-medium">Autres Pages</span>
+                </div>
+                <div class="p-4 space-y-2">
+                    <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Comparateur France/Maroc</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/comparateur-global/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Comparateur Global</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/faq/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>FAQ</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/fr/mentions-legales/" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Mentions Legales</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/sitemap.xml" target="_blank" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Sitemap XML</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                    <a href="/robots.txt" target="_blank" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 text-slate-300 hover:text-white">
+                        <span>Robots.txt</span>
+                        <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Tools -->
+        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:search" width="20" class="text-indigo-400"></iconify-icon>
+            Outils SEO
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <a href="https://www.google.com/search?q=site:netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
+                <iconify-icon icon="logos:google-icon" width="28" class="mb-2"></iconify-icon>
+                <p class="text-white text-sm">Pages indexees</p>
+            </a>
+            <a href="https://search.google.com/test/rich-results?url=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
+                <iconify-icon icon="lucide:star" width="28" class="text-amber-400 mb-2"></iconify-icon>
+                <p class="text-white text-sm">Rich Results Test</p>
+            </a>
+            <a href="https://search.google.com/test/mobile-friendly?url=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
+                <iconify-icon icon="lucide:smartphone" width="28" class="text-blue-400 mb-2"></iconify-icon>
+                <p class="text-white text-sm">Mobile Test</p>
+            </a>
+            <a href="https://validator.w3.org/nu/?doc=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
+                <iconify-icon icon="lucide:code" width="28" class="text-purple-400 mb-2"></iconify-icon>
+                <p class="text-white text-sm">HTML Validator</p>
+            </a>
+        </div>
+
+        <!-- Notes Section -->
+        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:sticky-note" width="20" class="text-indigo-400"></iconify-icon>
+            Notes & Todo
+        </h2>
+        <div class="bg-slate-800 rounded-xl border border-slate-700 p-4 mb-8">
+            <textarea id="notes" class="w-full h-40 bg-slate-900 border border-slate-700 rounded-lg p-4 text-slate-300 text-sm resize-none focus:outline-none focus:border-indigo-500" placeholder="Ecris tes notes ici... (sauvegarde automatique en local)"></textarea>
+            <p class="text-slate-500 text-xs mt-2">Les notes sont sauvegardees dans le localStorage de ton navigateur.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 px-6 py-4 text-center">
+        <p class="text-slate-500 text-sm">NetSalaire Admin - Page privee non indexee</p>
+    </footer>
+
+    <script>
+        // Load saved notes
+        const notesTextarea = document.getElementById('notes');
+        const savedNotes = localStorage.getItem('netsalaire_admin_notes');
+        if (savedNotes) {
+            notesTextarea.value = savedNotes;
+        }
+
+        // Auto-save notes
+        notesTextarea.addEventListener('input', function() {
+            localStorage.setItem('netsalaire_admin_notes', this.value);
+        });
+    </script>
+</body>
+</html>

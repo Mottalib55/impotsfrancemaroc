@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Chomage ARE 2025 | Calcul Allocation Pole Emploi</title>
+    <meta name="description" content="Calculez votre allocation chomage ARE 2025. Estimation instantanee de vos indemnites Pole Emploi selon votre salaire et votre situation.">
+    <meta name="keywords" content="simulateur chomage, allocation ARE, pole emploi, indemnite chomage, calcul chomage 2025">
+    <link rel="canonical" href="https://netsalaire.com/fr/france/simulateur-chomage-are/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/simulateur-chomage-are/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/simulateur-chomage-are/">
+
+    <meta property="og:title" content="Simulateur Chomage ARE 2025 - Calcul Allocation">
+    <meta property="og:description" content="Estimez votre allocation chomage ARE selon votre salaire. Gratuit et instantane.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/fr/france/simulateur-chomage-are/">
+    <meta property="og:image" content="https://netsalaire.com/assets/images/og-france-ir.png">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta property="og:locale" content="fr_FR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simulateur Chomage ARE 2025">
+    <meta name="twitter:description" content="Calculez votre allocation chomage ARE selon votre salaire.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NetSalaire">
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Chomage ARE 2025",
+        "description": "Calculez votre allocation chomage ARE",
+        "url": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+
+    <style>
+        .input-field {
+            width: 100%;
+            padding: 0.625rem 0.875rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+    </style>
+</head>
+<body style="font-family: 'Inter', system-ui, sans-serif;" class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="hover:text-slate-900 transition-colors">Brut/Net</a>
+                <a href="/fr/france/simulateur-impot-revenu/" class="hover:text-slate-900 transition-colors">Impot</a>
+                <a href="/fr/france/guide/" class="hover:text-slate-900 transition-colors">Guide</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-3">
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="block text-sm text-slate-600">Brut/Net</a>
+                <a href="/fr/france/simulateur-impot-revenu/" class="block text-sm text-slate-600">Impot</a>
+                <a href="/fr/france/guide/" class="block text-sm text-slate-600">Guide Fiscal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header -->
+            <header class="text-center mb-8">
+                <span class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                    <iconify-icon icon="lucide:briefcase" width="14"></iconify-icon> France Travail 2025
+                </span>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Allocation Chomage (ARE)</h1>
+                <p class="text-slate-500 text-sm">Estimez vos indemnites France Travail (ex Pole Emploi)</p>
+            </header>
+
+            <!-- Calculator -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+
+                <!-- Salaire brut mensuel -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Salaire brut mensuel moyen</label>
+                    <div class="relative">
+                        <input type="text" id="salaire-brut" class="input-field text-right pr-8" placeholder="3 000" value="3 000" oninput="calculate()">
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">€</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Moyenne des 24 derniers mois (ou 36 mois pour les 53 ans+)</p>
+                </div>
+
+                <!-- Duree travail -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Duree de travail (mois)</label>
+                    <div class="relative">
+                        <input type="text" id="duree-travail" class="input-field text-right pr-12" placeholder="24" value="24" oninput="calculate()">
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">mois</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Nombre de mois travailles sur les 24 derniers mois (minimum 6 mois)</p>
+                </div>
+
+                <!-- Age -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-3">Votre age</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button" onclick="setAge('moins53')" id="btn-moins53" class="py-3 text-sm font-medium rounded-lg border-2 border-indigo-500 bg-indigo-50 text-indigo-700 transition-all">Moins de 53 ans</button>
+                        <button type="button" onclick="setAge('53-54')" id="btn-53-54" class="py-3 text-sm font-medium rounded-lg border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-all">53-54 ans</button>
+                        <button type="button" onclick="setAge('55plus')" id="btn-55plus" class="py-3 text-sm font-medium rounded-lg border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-all">55 ans et plus</button>
+                    </div>
+                    <input type="hidden" id="age" value="moins53">
+                </div>
+
+                <!-- Temps de travail -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-3">Temps de travail</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" onclick="setTemps('plein')" id="btn-plein" class="py-3 text-sm font-medium rounded-lg border-2 border-indigo-500 bg-indigo-50 text-indigo-700 transition-all">Temps plein</button>
+                        <button type="button" onclick="setTemps('partiel')" id="btn-partiel" class="py-3 text-sm font-medium rounded-lg border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-all">Temps partiel</button>
+                    </div>
+                    <input type="hidden" id="temps" value="plein">
+                </div>
+
+                <!-- Results -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <p class="text-sm text-blue-600 mb-1">Allocation journaliere</p>
+                            <p class="text-3xl font-bold text-blue-700" id="are-jour">45,50 €</p>
+                            <p class="text-xs text-slate-500 mt-1">brut / jour</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-blue-600 mb-1">Allocation mensuelle</p>
+                            <p class="text-3xl font-bold text-blue-700" id="are-mois">1 365 €</p>
+                            <p class="text-xs text-slate-500 mt-1">brut / mois (30 jours)</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-blue-200 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-xs text-slate-500">Taux remplacement</p>
+                            <p class="text-lg font-semibold text-slate-700" id="taux">57%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500">Duree indemnisation</p>
+                            <p class="text-lg font-semibold text-slate-700" id="duree-indem">12 mois</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500">Total estime</p>
+                            <p class="text-lg font-semibold text-emerald-600" id="total">16 380 €</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning -->
+                <div class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                    <div class="flex gap-3">
+                        <iconify-icon icon="lucide:alert-triangle" width="20" class="text-amber-500 flex-shrink-0 mt-0.5"></iconify-icon>
+                        <p class="text-sm text-amber-700">Cette estimation est indicative. Le calcul reel par France Travail prend en compte de nombreux parametres supplementaires (primes, conges, etc.).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+                <h2 class="font-semibold text-slate-800 mb-4">Detail du calcul</h2>
+                <div class="space-y-4 text-sm">
+                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                        <span class="text-slate-600">Salaire Journalier de Reference (SJR)</span>
+                        <span class="font-medium text-slate-800" id="sjr">98,63 €</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                        <span class="text-slate-600">Methode 1 : 57% du SJR</span>
+                        <span class="font-medium text-slate-800" id="methode1">56,22 €</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                        <span class="text-slate-600">Methode 2 : 40,4% SJR + 12,95 €</span>
+                        <span class="font-medium text-slate-800" id="methode2">52,80 €</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-slate-600 font-medium">ARE retenue (la plus avantageuse)</span>
+                        <span class="font-bold text-blue-600" id="are-retenue">56,22 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+                <h2 class="font-semibold text-slate-800 mb-4">Comment est calculee l'ARE ?</h2>
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-3">
+                    <h3 class="text-base font-semibold text-slate-800">1. Calcul du SJR</h3>
+                    <p>Le Salaire Journalier de Reference = Salaires bruts de la periode / Nombre de jours travailles</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-4">2. Calcul de l'ARE journaliere</h3>
+                    <p>L'ARE est le montant le plus eleve entre :</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>57%</strong> du SJR</li>
+                        <li><strong>40,4%</strong> du SJR + <strong>12,95 €</strong></li>
+                    </ul>
+                    <p class="mt-2">L'ARE ne peut pas etre inferieure a <strong>31,59 €/jour</strong> (temps plein) ni superieure a <strong>75% du SJR</strong>.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-4">3. Duree d'indemnisation</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Moins de 53 ans</strong> : 1 jour indemnise pour 1 jour travaille (max 18 mois)</li>
+                        <li><strong>53-54 ans</strong> : max 22,5 mois</li>
+                        <li><strong>55 ans et plus</strong> : max 27 mois</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Conditions -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+                <h2 class="font-semibold text-slate-800 mb-4">Conditions pour beneficier de l'ARE</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex gap-3">
+                        <iconify-icon icon="lucide:check-circle" width="20" class="text-emerald-500 flex-shrink-0 mt-0.5"></iconify-icon>
+                        <p class="text-sm text-slate-600">Avoir travaille au moins <strong>6 mois</strong> (130 jours) sur les 24 derniers mois</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <iconify-icon icon="lucide:check-circle" width="20" class="text-emerald-500 flex-shrink-0 mt-0.5"></iconify-icon>
+                        <p class="text-sm text-slate-600">Etre inscrit comme demandeur d'emploi</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <iconify-icon icon="lucide:check-circle" width="20" class="text-emerald-500 flex-shrink-0 mt-0.5"></iconify-icon>
+                        <p class="text-sm text-slate-600">Ne pas avoir atteint l'age de la retraite</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <iconify-icon icon="lucide:check-circle" width="20" class="text-emerald-500 flex-shrink-0 mt-0.5"></iconify-icon>
+                        <p class="text-sm text-slate-600">Etre physiquement apte a travailler</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sources -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h2 class="font-semibold text-slate-800 mb-4">Sources officielles</h2>
+                <div class="grid md:grid-cols-2 gap-3">
+                    <a href="https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allegat/a-]llocations-et-டaides/allocations-chomage.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="18" class="text-indigo-500"></iconify-icon>
+                        <div>
+                            <div class="font-medium text-slate-800">France Travail</div>
+                            <div class="text-xs text-slate-500">Allocations chomage</div>
+                        </div>
+                    </a>
+                    <a href="https://www.unedic.org/indemnisation/fiches-thematiques/allocation-daide-au-retour-lemploi-are" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="18" class="text-indigo-500"></iconify-icon>
+                        <div>
+                            <div class="font-medium text-slate-800">Unedic</div>
+                            <div class="text-xs text-slate-500">Regles d'indemnisation</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-slate-200 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">N.</div>
+                    <span class="font-semibold text-slate-900">NetSalaire</span>
+                </div>
+                <p class="text-sm text-slate-500">&copy; 2025 NetSalaire.com - Tous droits reserves</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const ARE_MIN = 31.59;
+        const PARTIE_FIXE = 12.95;
+        const TAUX_1 = 0.57;
+        const TAUX_2 = 0.404;
+        const PLAFOND_TAUX = 0.75;
+
+        let age = 'moins53';
+        let temps = 'plein';
+
+        function setAge(value) {
+            age = value;
+            document.getElementById('age').value = value;
+
+            ['moins53', '53-54', '55plus'].forEach(a => {
+                const btn = document.getElementById('btn-' + a);
+                if (a === value) {
+                    btn.className = 'py-3 text-sm font-medium rounded-lg border-2 border-indigo-500 bg-indigo-50 text-indigo-700 transition-all';
+                } else {
+                    btn.className = 'py-3 text-sm font-medium rounded-lg border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-all';
+                }
+            });
+            calculate();
+        }
+
+        function setTemps(value) {
+            temps = value;
+            document.getElementById('temps').value = value;
+
+            ['plein', 'partiel'].forEach(t => {
+                const btn = document.getElementById('btn-' + t);
+                if (t === value) {
+                    btn.className = 'py-3 text-sm font-medium rounded-lg border-2 border-indigo-500 bg-indigo-50 text-indigo-700 transition-all';
+                } else {
+                    btn.className = 'py-3 text-sm font-medium rounded-lg border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-all';
+                }
+            });
+            calculate();
+        }
+
+        function parseNumber(str) {
+            return parseFloat(str.replace(/\s/g, '').replace(',', '.')) || 0;
+        }
+
+        function formatNumber(num) {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function formatDecimal(num) {
+            return num.toFixed(2).replace('.', ',');
+        }
+
+        function calculate() {
+            const salaireBrut = parseNumber(document.getElementById('salaire-brut').value);
+            const dureeTravail = Math.max(6, parseNumber(document.getElementById('duree-travail').value));
+
+            // SJR = Salaire mensuel * 12 / 365 (approximation simplifiee)
+            const salaireAnnuel = salaireBrut * 12;
+            const sjr = salaireAnnuel / 365;
+
+            // Methodes de calcul
+            const methode1 = sjr * TAUX_1;
+            const methode2 = (sjr * TAUX_2) + PARTIE_FIXE;
+
+            // ARE = max des deux methodes, avec minimum et plafond
+            let are = Math.max(methode1, methode2);
+            const plafond = sjr * PLAFOND_TAUX;
+
+            // Appliquer minimum (sauf temps partiel)
+            if (temps === 'plein') {
+                are = Math.max(are, ARE_MIN);
+            }
+
+            // Appliquer plafond
+            are = Math.min(are, plafond);
+
+            // Duree d'indemnisation
+            let dureeMax;
+            if (age === 'moins53') {
+                dureeMax = 18;
+            } else if (age === '53-54') {
+                dureeMax = 22.5;
+            } else {
+                dureeMax = 27;
+            }
+
+            // Duree effective = min(duree travail, duree max)
+            const dureeEffective = Math.min(dureeTravail, dureeMax);
+
+            // Calculs finaux
+            const areMois = are * 30;
+            const total = are * 30 * dureeEffective;
+            const tauxRemplacement = salaireBrut > 0 ? (areMois / salaireBrut) * 100 : 0;
+
+            // Affichage
+            document.getElementById('sjr').textContent = formatDecimal(sjr) + ' €';
+            document.getElementById('methode1').textContent = formatDecimal(methode1) + ' €';
+            document.getElementById('methode2').textContent = formatDecimal(methode2) + ' €';
+            document.getElementById('are-retenue').textContent = formatDecimal(are) + ' €';
+
+            document.getElementById('are-jour').textContent = formatDecimal(are) + ' €';
+            document.getElementById('are-mois').textContent = formatNumber(areMois) + ' €';
+            document.getElementById('taux').textContent = Math.round(tauxRemplacement) + '%';
+            document.getElementById('duree-indem').textContent = dureeEffective + ' mois';
+            document.getElementById('total').textContent = formatNumber(total) + ' €';
+
+            // Format inputs
+            document.getElementById('salaire-brut').value = formatNumber(salaireBrut);
+            document.getElementById('duree-travail').value = formatNumber(dureeTravail);
+        }
+
+        // Init
+        calculate();
+    </script>
+
+</body>
+</html>

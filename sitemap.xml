@@ -82,6 +82,46 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/guide/"/>
   </url>
 
+  <!-- ========== FRANCE - SIMULATEUR CHOMAGE ARE ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/france/simulateur-chomage-are/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========== FRANCE - SIMULATEUR INDEMNITE LICENCIEMENT ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========== FRANCE - SIMULATEUR RUPTURE CONVENTIONNELLE ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========== FRANCE - SIMULATEUR APL ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/france/simulateur-apl/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========== FRANCE - SIMULATEUR INDEMNITE KILOMETRIQUE ========== -->
+  <url>
+    <loc>https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ========== MAROC - SIMULATEUR BRUT/NET ========== -->
   <url>
     <loc>https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/</loc>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur APL 2025 - Calculez votre Aide au Logement | NetSalaire</title>
+    <meta name="description" content="Calculez votre APL (Aide Personnalisée au Logement) 2025. Estimez vos droits selon votre zone, loyer, situation familiale et revenus.">
+    <meta name="keywords" content="APL, aide au logement, CAF, allocation logement, simulateur APL, calcul APL 2025">
+    <link rel="canonical" href="https://netsalaire.com/fr/france/simulateur-apl/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/simulateur-apl/">
+    <meta property="og:title" content="Simulateur APL 2025 - Aide Personnalisée au Logement">
+    <meta property="og:description" content="Calculez gratuitement votre APL selon votre situation. Estimation rapide et fiable.">
+    <meta property="og:url" content="https://netsalaire.com/fr/france/simulateur-apl/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="NetSalaire">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simulateur APL 2025">
+    <meta name="twitter:description" content="Calculez votre Aide Personnalisée au Logement gratuitement.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur APL 2025",
+        "description": "Calculez votre Aide Personnalisée au Logement selon votre situation",
+        "url": "https://netsalaire.com/fr/france/simulateur-apl/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "NetSalaire",
+            "url": "https://netsalaire.com"
+        }
+    }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/fr/" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">N</span>
+                    </div>
+                    <span class="font-bold text-xl text-slate-800">Net<span class="text-indigo-600">Salaire</span></span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="/fr/france/simulateur-salaire-brut-net/" class="text-slate-600 hover:text-indigo-600 text-sm font-medium transition-colors">Brut/Net</a>
+                    <a href="/fr/france/simulateur-impot-revenu/" class="text-slate-600 hover:text-indigo-600 text-sm font-medium transition-colors">Impôts</a>
+                    <a href="/fr/" class="text-slate-600 hover:text-indigo-600 text-sm font-medium transition-colors">Accueil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-1 mb-4">
+                <span class="text-sm font-medium">Barème 2025</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Simulateur APL 2025</h1>
+            <p class="text-lg text-emerald-100 max-w-2xl mx-auto">
+                Estimez votre Aide Personnalisée au Logement selon votre zone géographique,
+                votre loyer et votre situation familiale.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 -mt-8">
+        <!-- Calculator Card -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <form id="apl-form" class="space-y-6">
+                <!-- Zone géographique -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">Zone géographique</label>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <label class="relative">
+                            <input type="radio" name="zone" value="1" class="peer sr-only" checked>
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                                <div class="font-semibold text-slate-800">Zone 1</div>
+                                <div class="text-xs text-slate-500">Paris et petite couronne</div>
+                            </div>
+                        </label>
+                        <label class="relative">
+                            <input type="radio" name="zone" value="2" class="peer sr-only">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                                <div class="font-semibold text-slate-800">Zone 2</div>
+                                <div class="text-xs text-slate-500">Grandes agglomérations</div>
+                            </div>
+                        </label>
+                        <label class="relative">
+                            <input type="radio" name="zone" value="3" class="peer sr-only">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                                <div class="font-semibold text-slate-800">Zone 3</div>
+                                <div class="text-xs text-slate-500">Reste de la France</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Situation familiale -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">Situation familiale</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="relative">
+                            <input type="radio" name="situation" value="seul" class="peer sr-only" checked>
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300 text-center">
+                                <div class="text-2xl mb-1">👤</div>
+                                <div class="font-semibold text-slate-800">Seul(e)</div>
+                            </div>
+                        </label>
+                        <label class="relative">
+                            <input type="radio" name="situation" value="couple" class="peer sr-only">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300 text-center">
+                                <div class="text-2xl mb-1">👫</div>
+                                <div class="font-semibold text-slate-800">En couple</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Nombre d'enfants -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">Nombre de personnes à charge</label>
+                    <div class="grid grid-cols-5 gap-2">
+                        <button type="button" onclick="setEnfants(0)" id="btn-enfants-0" class="py-3 px-4 rounded-lg font-semibold transition-all bg-emerald-500 text-white">0</button>
+                        <button type="button" onclick="setEnfants(1)" id="btn-enfants-1" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">1</button>
+                        <button type="button" onclick="setEnfants(2)" id="btn-enfants-2" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">2</button>
+                        <button type="button" onclick="setEnfants(3)" id="btn-enfants-3" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">3</button>
+                        <button type="button" onclick="setEnfants(4)" id="btn-enfants-4" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">4+</button>
+                    </div>
+                    <input type="hidden" id="enfants" value="0">
+                </div>
+
+                <!-- Loyer mensuel -->
+                <div>
+                    <label for="loyer" class="block text-sm font-semibold text-slate-700 mb-2">Loyer mensuel (hors charges)</label>
+                    <div class="relative">
+                        <input type="number" id="loyer" value="700" min="0" max="5000" step="10"
+                               class="w-full px-4 py-3 pr-12 border-2 border-slate-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all text-lg font-semibold"
+                               oninput="calculerAPL()">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
+                    </div>
+                </div>
+
+                <!-- Revenus annuels -->
+                <div>
+                    <label for="revenus" class="block text-sm font-semibold text-slate-700 mb-2">Revenus annuels nets (N-2)</label>
+                    <div class="relative">
+                        <input type="number" id="revenus" value="15000" min="0" max="200000" step="100"
+                               class="w-full px-4 py-3 pr-12 border-2 border-slate-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all text-lg font-semibold"
+                               oninput="calculerAPL()">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1">Revenus de l'année N-2 (pour 2025, vos revenus 2023)</p>
+                </div>
+            </form>
+
+            <!-- Résultats -->
+            <div id="resultats" class="mt-8 p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100">
+                <div class="text-center">
+                    <p class="text-sm text-emerald-600 font-medium mb-2">Estimation de votre APL mensuelle</p>
+                    <p id="montant-apl" class="text-5xl font-bold text-emerald-600 mb-2">0 €</p>
+                    <p id="apl-annuel" class="text-slate-600">soit <span class="font-semibold">0 €</span> par an</p>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-emerald-200">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white/60 rounded-lg p-3">
+                            <p class="text-slate-500">Loyer plafonné</p>
+                            <p id="loyer-plafond" class="font-semibold text-slate-800">0 €</p>
+                        </div>
+                        <div class="bg-white/60 rounded-lg p-3">
+                            <p class="text-slate-500">Participation personnelle</p>
+                            <p id="participation" class="font-semibold text-slate-800">0 €</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avertissement -->
+            <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <div class="flex items-start space-x-3">
+                    <span class="text-amber-500 text-xl">⚠️</span>
+                    <div class="text-sm text-amber-800">
+                        <p class="font-semibold mb-1">Estimation indicative</p>
+                        <p>Ce calcul est une estimation simplifiée. Le montant réel de votre APL peut varier selon de nombreux critères.
+                        Pour une simulation officielle, consultez le <a href="https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation" target="_blank" rel="noopener" class="underline font-medium">simulateur de la CAF</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-emerald-600">📍</span>
+                    </span>
+                    Les zones géographiques
+                </h2>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <span class="font-bold text-emerald-600 mr-2">Zone 1:</span>
+                        <span>Paris et communes limitrophes (Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-emerald-600 mr-2">Zone 2:</span>
+                        <span>Île-de-France hors zone 1, grandes agglomérations (+100 000 hab.), Corse, DOM</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-emerald-600 mr-2">Zone 3:</span>
+                        <span>Reste de la France métropolitaine</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-emerald-600">📋</span>
+                    </span>
+                    Conditions d'éligibilité
+                </h2>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center">
+                        <span class="text-emerald-500 mr-2">✓</span>
+                        Être locataire d'un logement conventionné
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-emerald-500 mr-2">✓</span>
+                        Résider en France de façon stable
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-emerald-500 mr-2">✓</span>
+                        Avoir des ressources sous un certain plafond
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-emerald-500 mr-2">✓</span>
+                        Le logement doit être la résidence principale
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-emerald-500 mr-2">✓</span>
+                        Ne pas être hébergé par un ascendant/descendant
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Plafonds de loyer -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold text-slate-800 mb-6">Plafonds de loyer 2025 (location)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-50">
+                            <th class="text-left p-3 font-semibold text-slate-600">Composition</th>
+                            <th class="text-right p-3 font-semibold text-slate-600">Zone 1</th>
+                            <th class="text-right p-3 font-semibold text-slate-600">Zone 2</th>
+                            <th class="text-right p-3 font-semibold text-slate-600">Zone 3</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="p-3 text-slate-700">Personne seule</td>
+                            <td class="p-3 text-right font-semibold">319,87 €</td>
+                            <td class="p-3 text-right font-semibold">278,28 €</td>
+                            <td class="p-3 text-right font-semibold">260,82 €</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-slate-700">Couple sans enfant</td>
+                            <td class="p-3 text-right font-semibold">385,83 €</td>
+                            <td class="p-3 text-right font-semibold">340,62 €</td>
+                            <td class="p-3 text-right font-semibold">314,44 €</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-slate-700">+1 personne à charge</td>
+                            <td class="p-3 text-right font-semibold">436,85 €</td>
+                            <td class="p-3 text-right font-semibold">384,18 €</td>
+                            <td class="p-3 text-right font-semibold">352,92 €</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-slate-700">+2 personnes à charge</td>
+                            <td class="p-3 text-right font-semibold">502,98 €</td>
+                            <td class="p-3 text-right font-semibold">440,84 €</td>
+                            <td class="p-3 text-right font-semibold">404,04 €</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-slate-700">Par pers. supplémentaire</td>
+                            <td class="p-3 text-right font-semibold">+57,86 €</td>
+                            <td class="p-3 text-right font-semibold">+51,19 €</td>
+                            <td class="p-3 text-right font-semibold">+46,58 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold text-slate-800 mb-6">Questions fréquentes sur l'APL</h2>
+            <div class="space-y-4">
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
+                        <span class="font-medium text-slate-700">Quelle différence entre APL et AL ?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-4 text-sm text-slate-600">
+                        L'APL (Aide Personnalisée au Logement) s'applique aux logements conventionnés.
+                        L'AL (Allocation Logement) comprend l'ALF (familiale) et l'ALS (sociale) pour les logements non conventionnés.
+                        Les montants et conditions sont similaires.
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
+                        <span class="font-medium text-slate-700">Quand faire sa demande d'APL ?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-4 text-sm text-slate-600">
+                        Dès l'entrée dans le logement. L'APL n'est pas rétroactive.
+                        La demande se fait en ligne sur caf.fr. Comptez environ 2 mois pour le premier versement.
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
+                        <span class="font-medium text-slate-700">Les étudiants ont-ils droit à l'APL ?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-4 text-sm text-slate-600">
+                        Oui, les étudiants peuvent bénéficier de l'APL s'ils louent un logement conventionné.
+                        Ils ne doivent plus être rattachés au foyer fiscal de leurs parents pour le calcul.
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
+                        <span class="font-medium text-slate-700">L'APL est-elle versée directement au propriétaire ?</span>
+                        <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="p-4 text-sm text-slate-600">
+                        Dans la plupart des cas, oui. L'APL est versée en tiers payant au bailleur qui la déduit du loyer.
+                        Dans certains cas, elle peut être versée directement au locataire.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Autres simulateurs -->
+        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
+            <h2 class="text-xl font-bold mb-4">Autres simulateurs France</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                    <div class="text-2xl mb-1">💰</div>
+                    <div class="text-sm font-medium">Brut → Net</div>
+                </a>
+                <a href="/fr/france/simulateur-impot-revenu/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                    <div class="text-2xl mb-1">📊</div>
+                    <div class="text-sm font-medium">Impôt Revenu</div>
+                </a>
+                <a href="/fr/france/simulateur-chomage-are/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                    <div class="text-2xl mb-1">📉</div>
+                    <div class="text-sm font-medium">Chômage ARE</div>
+                </a>
+                <a href="/fr/france/simulateur-indemnite-licenciement/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                    <div class="text-2xl mb-1">📋</div>
+                    <div class="text-sm font-medium">Licenciement</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">N</span>
+                    </div>
+                    <span class="font-bold text-xl text-white">Net<span class="text-indigo-400">Salaire</span></span>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions légales</a>
+                    <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialité</a>
+                    <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-slate-700 text-center text-sm text-slate-400">
+                <p>© 2025 NetSalaire - Simulateur APL. Calculs à titre indicatif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Plafonds de loyer 2025 (location)
+        const PLAFONDS_LOYER = {
+            // [zone][nombre de personnes dans le foyer]
+            1: { 1: 319.87, 2: 385.83, 3: 436.85, 4: 502.98, supplement: 57.86 },
+            2: { 1: 278.28, 2: 340.62, 3: 384.18, 4: 440.84, supplement: 51.19 },
+            3: { 1: 260.82, 2: 314.44, 3: 352.92, 4: 404.04, supplement: 46.58 }
+        };
+
+        // Forfait charges 2025
+        const FORFAIT_CHARGES = {
+            1: 56.36,  // 1 personne
+            2: 112.72, // 2 personnes
+            supplement: 25.28 // par personne supplémentaire
+        };
+
+        // Participation minimale
+        const PARTICIPATION_MINIMALE = 37.77;
+
+        let enfants = 0;
+
+        function setEnfants(n) {
+            enfants = n;
+            // Update button styles
+            for (let i = 0; i <= 4; i++) {
+                const btn = document.getElementById(`btn-enfants-${i}`);
+                if (i === n) {
+                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-emerald-500 text-white';
+                } else {
+                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+                }
+            }
+            document.getElementById('enfants').value = n;
+            calculerAPL();
+        }
+
+        function calculerAPL() {
+            const zone = parseInt(document.querySelector('input[name="zone"]:checked').value);
+            const situation = document.querySelector('input[name="situation"]:checked').value;
+            const loyer = parseFloat(document.getElementById('loyer').value) || 0;
+            const revenus = parseFloat(document.getElementById('revenus').value) || 0;
+
+            // Nombre de personnes dans le foyer
+            const nbPersonnes = (situation === 'couple' ? 2 : 1) + enfants;
+
+            // Calcul du plafond de loyer
+            const plafonds = PLAFONDS_LOYER[zone];
+            let plafondLoyer;
+            if (nbPersonnes <= 4) {
+                plafondLoyer = plafonds[nbPersonnes];
+            } else {
+                plafondLoyer = plafonds[4] + (nbPersonnes - 4) * plafonds.supplement;
+            }
+
+            // Loyer pris en compte (plafonné)
+            const loyerPrisEnCompte = Math.min(loyer, plafondLoyer);
+
+            // Forfait charges
+            let charges;
+            if (nbPersonnes === 1) {
+                charges = FORFAIT_CHARGES[1];
+            } else if (nbPersonnes === 2) {
+                charges = FORFAIT_CHARGES[2];
+            } else {
+                charges = FORFAIT_CHARGES[2] + (nbPersonnes - 2) * FORFAIT_CHARGES.supplement;
+            }
+
+            // Loyer + charges
+            const loyerCharges = loyerPrisEnCompte + charges;
+
+            // Calcul simplifié de la participation personnelle
+            // Formule simplifiée basée sur les revenus et la composition familiale
+            const revenusMensuels = revenus / 12;
+            const seuilExoneration = nbPersonnes * 3000; // Seuil approximatif
+
+            let participation;
+            if (revenus <= seuilExoneration) {
+                participation = PARTICIPATION_MINIMALE;
+            } else {
+                // Taux de participation progressif
+                const depassement = revenus - seuilExoneration;
+                const tauxParticipation = Math.min(0.85, 0.30 + (depassement / 50000) * 0.55);
+                participation = PARTICIPATION_MINIMALE + (revenusMensuels * tauxParticipation * 0.3);
+            }
+
+            // APL = Loyer + Charges - Participation personnelle
+            let apl = loyerCharges - participation;
+
+            // APL minimum versable : 15€
+            if (apl < 15) apl = 0;
+            if (apl > loyerCharges - PARTICIPATION_MINIMALE) apl = loyerCharges - PARTICIPATION_MINIMALE;
+            if (apl < 0) apl = 0;
+
+            // Plafond selon les revenus (simplification)
+            const plafondRevenus = getPlafondRevenus(nbPersonnes);
+            if (revenus > plafondRevenus) {
+                apl = 0;
+            }
+
+            // Mise à jour de l'affichage
+            document.getElementById('montant-apl').textContent = Math.round(apl) + ' €';
+            document.getElementById('apl-annuel').innerHTML = 'soit <span class="font-semibold">' + formatNumber(Math.round(apl * 12)) + ' €</span> par an';
+            document.getElementById('loyer-plafond').textContent = formatNumber(plafondLoyer) + ' €';
+            document.getElementById('participation').textContent = formatNumber(Math.round(participation)) + ' €';
+        }
+
+        function getPlafondRevenus(nbPersonnes) {
+            // Plafonds approximatifs de revenus pour avoir droit à l'APL
+            const plafonds = {
+                1: 23000,
+                2: 34000,
+                3: 42000,
+                4: 50000,
+                5: 58000,
+                6: 66000
+            };
+            return plafonds[Math.min(nbPersonnes, 6)] || 66000 + (nbPersonnes - 6) * 8000;
+        }
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat('fr-FR').format(num);
+        }
+
+        // Add event listeners
+        document.querySelectorAll('input[name="zone"]').forEach(input => {
+            input.addEventListener('change', calculerAPL);
+        });
+        document.querySelectorAll('input[name="situation"]').forEach(input => {
+            input.addEventListener('change', calculerAPL);
+        });
+
+        // Calcul initial
+        calculerAPL();
+    </script>
+</body>
+</html>

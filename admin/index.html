@@ -274,6 +274,215 @@
             </a>
         </div>
 
+        <!-- SEO Snippets Section -->
+        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:file-search" width="20" class="text-indigo-400"></iconify-icon>
+            SEO Snippets (Titles & Descriptions)
+        </h2>
+        <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden mb-8">
+            <!-- Filter Tabs -->
+            <div class="flex border-b border-slate-700">
+                <button onclick="filterSnippets('all')" class="snippet-tab active px-4 py-3 text-sm font-medium text-white bg-indigo-600/20 border-b-2 border-indigo-500" data-filter="all">Tous (34)</button>
+                <button onclick="filterSnippets('fr')" class="snippet-tab px-4 py-3 text-sm font-medium text-slate-400 hover:text-white" data-filter="fr">Français (17)</button>
+                <button onclick="filterSnippets('en')" class="snippet-tab px-4 py-3 text-sm font-medium text-slate-400 hover:text-white" data-filter="en">English (17)</button>
+            </div>
+
+            <!-- Snippets Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-700/50 text-slate-300">
+                        <tr>
+                            <th class="text-left px-4 py-3 font-medium">Page</th>
+                            <th class="text-left px-4 py-3 font-medium">Title <span class="text-slate-500">(50-60)</span></th>
+                            <th class="text-left px-4 py-3 font-medium">Meta Description <span class="text-slate-500">(140-160)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="snippetsTable" class="divide-y divide-slate-700">
+                        <!-- FR Pages -->
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/" class="text-indigo-400 hover:underline">/fr/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(54)</span>Simulateur Salaire Net 2025 – France & Maroc | Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(140)</span>Découvre ce qu'il te reste vraiment en poche. Calcul instantané brut → net, impôts et comparatif fiscal entre France et Maroc. 100% gratuit.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-salaire-brut-net/" class="text-indigo-400 hover:underline">/fr/.../brut-net/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(56)</span>Salaire Brut Net France 2025 → Calcul Instantané Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(126)</span>Cadre ou non-cadre ? Découvre ton vrai salaire net après cotisations en 2 clics. Résultat détaillé, gratuit, sans inscription.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-impot-revenu/" class="text-indigo-400 hover:underline">/fr/.../impot/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(58)</span>Simulateur Impôt sur le Revenu France 2025 | Calcul Précis</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(142)</span>Combien tu vas vraiment payer ? Calcule ton IR en 30 sec. Barème officiel, quotient familial, décote et PER inclus.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-chomage-are/" class="text-indigo-400 hover:underline">/fr/.../chomage/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(58)</span>Simulateur Chomage ARE 2025 - Calcul Gratuit et Instantane</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(148)</span>Licencie ou en fin de contrat ? Calculez votre ARE en 30 secondes. Simulateur gratuit avec les taux France Travail 2025.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-indemnite-licenciement/" class="text-indigo-400 hover:underline">/fr/.../licenciement/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(55)</span>Calcul Indemnite Licenciement 2025 - Simulateur Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(144)</span>Vous etes licencie ? Calculez votre indemnite legale en 2 clics. Simulateur gratuit 2025 base sur salaire et anciennete.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-rupture-conventionnelle/" class="text-indigo-400 hover:underline">/fr/.../rupture/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(56)</span>Simulateur Rupture Conventionnelle 2025 - Calcul Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(157)</span>Vous negociez votre depart ? Calculez votre indemnite de rupture conventionnelle instantanement. Minimum legal + conseils.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-apl/" class="text-indigo-400 hover:underline">/fr/.../apl/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(53)</span>Simulateur APL 2025 - Calcul Aide au Logement Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(156)</span>Vous etes locataire ? Verifiez votre eligibilite APL en 30 secondes. Simulateur gratuit 2025 avec baremes CAF officiels.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/simulateur-indemnite-kilometrique/" class="text-indigo-400 hover:underline">/fr/.../ik/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(55)</span>Calcul Frais Kilometriques 2025 - Simulateur Gratuit IK</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(156)</span>Vous utilisez votre vehicule pour le travail ? Calculez votre deduction fiscale instantanement. Bareme officiel 2025.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/france/guide/" class="text-indigo-400 hover:underline">/fr/.../guide/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(55)</span>Guide Fiscal France 2025 – Tout Comprendre en 5 Minutes</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(137)</span>Cotisations, tranches d'impôt, quotient familial... La fiscalité française expliquée simplement.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/maroc/simulateur-salaire-brut-net/" class="text-indigo-400 hover:underline">/fr/maroc/brut-net/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(58)</span>Salaire Brut Net Maroc 2025 → Simulateur CNSS & IR Gratuit</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(116)</span>CNSS, AMO, IR... Combien il te reste vraiment ? Calcule ton salaire net au Maroc en 2 clics.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/maroc/simulateur-impot-revenu/" class="text-indigo-400 hover:underline">/fr/maroc/ir/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(53)</span>Simulateur Impôt sur le Revenu Maroc 2025 | Calcul IR</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(133)</span>Calcule ton IR marocain en quelques secondes. Tranches 2025, abattements familiaux, frais pro inclus.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/maroc/guide/" class="text-indigo-400 hover:underline">/fr/maroc/guide/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(59)</span>Guide Fiscal Maroc 2025 – CNSS, IR et Salaire Net Expliqués</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(111)</span>CNSS, AMO, tranches IR... Comprends enfin la fiscalité marocaine. Guide clair et complet.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/comparateur-salaire-france-maroc/" class="text-indigo-400 hover:underline">/fr/comparateur-fm/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(56)</span>France vs Maroc : Où Gagnes-tu Plus ? | Comparateur 2025</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(124)</span>MRE : compare ton salaire net, tes impôts et cotisations entre la France et le Maroc.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/comparateur-global/" class="text-indigo-400 hover:underline">/fr/comparateur/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-amber-400 text-xs mr-1">(61)</span>Comparateur Salaire Net : 10+ Pays | France, Dubaï, Suisse...</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(130)</span>France, Maroc, Dubaï, Suisse, Luxembourg... Où ton salaire vaut-il vraiment le plus ?</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/faq/" class="text-indigo-400 hover:underline">/fr/faq/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(51)</span>FAQ Salaire Brut Net & Impôts – Toutes les Réponses</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(129)</span>Brut vs net ? Cadre vs non-cadre ? Différence France/Maroc ? Toutes les réponses claires.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/mentions-legales/" class="text-indigo-400 hover:underline">/fr/mentions/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-slate-500 text-xs mr-1">(33)</span>Mentions Légales – NetSalaire.com</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-slate-500 mr-1">(67)</span>Mentions légales et informations juridiques du site NetSalaire.com.</td>
+                        </tr>
+                        <tr class="snippet-row fr hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/fr/politique-confidentialite/" class="text-indigo-400 hover:underline">/fr/privacy/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-slate-500 text-xs mr-1">(45)</span>Politique de Confidentialité – NetSalaire.com</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(110)</span>Comment NetSalaire.com protège tes données. On ne stocke rien, tout est calculé dans ton navigateur.</td>
+                        </tr>
+
+                        <!-- EN Pages -->
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/" class="text-blue-400 hover:underline">/en/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(52)</span>Net Salary Calculator 2025 – France & Morocco | Free</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(130)</span>Find out what you really take home. Instant gross → net calculation, taxes and France vs Morocco comparison.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/gross-to-net/" class="text-blue-400 hover:underline">/en/.../brut-net/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(57)</span>Gross to Net Salary France 2025 → Free Instant Calculator</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(116)</span>Convert your French gross salary to net in seconds. Includes social charges, income tax and employer cost breakdown.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/income-tax/" class="text-blue-400 hover:underline">/en/.../income-tax/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(51)</span>France Income Tax Calculator 2025 | Accurate & Free</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(129)</span>Estimate your French income tax instantly. Based on official 2025 brackets. Single, married, with dependents.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/unemployment-calculator/" class="text-blue-400 hover:underline">/en/.../unemployment/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(55)</span>Unemployment Calculator France 2025 - Free ARE Estimate</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(154)</span>Calculate your French unemployment benefits (ARE) instantly. Free tool with 2025 France Travail rates.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/severance-calculator/" class="text-blue-400 hover:underline">/en/.../severance/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(53)</span>Severance Pay Calculator France 2025 - Free & Instant</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(150)</span>Getting fired in France? Calculate your legal severance pay in 2 clicks. Free 2025 calculator.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/mutual-termination-calculator/" class="text-blue-400 hover:underline">/en/.../rupture/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(58)</span>Rupture Conventionnelle Calculator France 2025 - Free Tool</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(154)</span>Negotiating your departure? Calculate your rupture conventionnelle compensation instantly.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/housing-benefit-calculator/" class="text-blue-400 hover:underline">/en/.../apl/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(58)</span>APL Calculator France 2025 - Free Housing Benefit Estimate</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(153)</span>Renting in France? Check if you qualify for APL housing aid in 30 seconds. Free 2025 calculator.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/mileage-calculator/" class="text-blue-400 hover:underline">/en/.../mileage/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(56)</span>Mileage Calculator France 2025 - Free Tax Deduction Tool</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(151)</span>Drive for work? Calculate your French mileage deduction instantly. Free 2025 tool with official rates.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france/tax-guide/" class="text-blue-400 hover:underline">/en/.../guide/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-slate-500 text-xs mr-1">(47)</span>French Tax System 2025 – Explained in 5 Minutes</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(117)</span>Understand French social charges, income tax brackets and net salary calculation. Clear guide for expats.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/morocco/gross-to-net/" class="text-blue-400 hover:underline">/en/morocco/brut-net/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(55)</span>Gross to Net Salary Morocco 2025 → CNSS & IR Calculator</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(102)</span>Calculate your Moroccan net salary in seconds. CNSS contributions, IR tax and AMO included.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/morocco/income-tax/" class="text-blue-400 hover:underline">/en/morocco/ir/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(50)</span>Morocco Income Tax Simulator 2025 | IR Calculation</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(102)</span>Estimate your Moroccan IR (Impôt sur le Revenu) instantly. Updated 2025 brackets.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/morocco/tax-guide/" class="text-blue-400 hover:underline">/en/morocco/guide/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(54)</span>Moroccan Tax System 2025 – CNSS, IR & Net Salary Guide</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(109)</span>Everything about taxes in Morocco: CNSS, AMO, IR brackets and how to calculate your net salary.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/france-morocco-comparison/" class="text-blue-400 hover:underline">/en/comparateur-fm/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(60)</span>France vs Morocco: Where Do You Earn More? | 2025 Comparator</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(111)</span>Compare your net salary, taxes and purchasing power between France and Morocco.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/global-comparison/" class="text-blue-400 hover:underline">/en/comparateur/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-amber-400 text-xs mr-1">(68)</span>Net Salary Comparator: 10+ Countries | France, Dubai, Switzerland...</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(115)</span>Compare net salaries across France, Morocco, Switzerland, UAE, Belgium and more.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/faq/" class="text-blue-400 hover:underline">/en/faq/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-emerald-400 text-xs mr-1">(54)</span>FAQ Gross to Net & Taxes – All Your Questions Answered</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(110)</span>How is net salary calculated? What taxes apply? Find clear answers to all your questions.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/legal-notice/" class="text-blue-400 hover:underline">/en/legal/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-slate-500 text-xs mr-1">(29)</span>Legal Notice – NetSalaire.com</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-slate-500 mr-1">(76)</span>Legal information about NetSalaire.com. Publisher, hosting and terms of use.</td>
+                        </tr>
+                        <tr class="snippet-row en hover:bg-slate-700/30">
+                            <td class="px-4 py-3"><a href="/en/privacy-policy/" class="text-blue-400 hover:underline">/en/privacy/</a></td>
+                            <td class="px-4 py-3 text-slate-300"><span class="text-slate-500 text-xs mr-1">(31)</span>Privacy Policy – NetSalaire.com</td>
+                            <td class="px-4 py-3 text-slate-400 text-xs"><span class="text-emerald-400 mr-1">(107)</span>How NetSalaire.com protects your data. We store nothing, everything is calculated in your browser.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Legend -->
+            <div class="px-4 py-3 bg-slate-700/30 border-t border-slate-700 flex gap-6 text-xs">
+                <span><span class="text-emerald-400">●</span> Optimal (50-60 / 140-160)</span>
+                <span><span class="text-amber-400">●</span> Légèrement long</span>
+                <span><span class="text-slate-500">●</span> Trop court</span>
+            </div>
+        </div>
+
         <!-- Notes Section -->
         <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
             <iconify-icon icon="lucide:sticky-note" width="20" class="text-indigo-400"></iconify-icon>
@@ -303,6 +512,31 @@
         notesTextarea.addEventListener('input', function() {
             localStorage.setItem('netsalaire_admin_notes', this.value);
         });
+
+        // Filter snippets
+        function filterSnippets(filter) {
+            const rows = document.querySelectorAll('.snippet-row');
+            const tabs = document.querySelectorAll('.snippet-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active', 'bg-indigo-600/20', 'border-b-2', 'border-indigo-500', 'text-white');
+                tab.classList.add('text-slate-400');
+            });
+
+            const activeTab = document.querySelector(`[data-filter="${filter}"]`);
+            activeTab.classList.add('active', 'bg-indigo-600/20', 'border-b-2', 'border-indigo-500', 'text-white');
+            activeTab.classList.remove('text-slate-400');
+
+            rows.forEach(row => {
+                if (filter === 'all') {
+                    row.style.display = '';
+                } else if (row.classList.contains(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>

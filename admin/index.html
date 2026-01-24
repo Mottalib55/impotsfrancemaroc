@@ -37,18 +37,34 @@
     </div>
 
     <script>
+        const AUTH_DURATION = 24 * 60 * 60 * 1000; // 24 heures en ms
+
         function checkAccess() {
             const code = document.getElementById('accessCode').value;
             if (code === 'Sofia') {
                 document.getElementById('lockScreen').style.display = 'none';
-                sessionStorage.setItem('admin_access', 'granted');
+                // Sauvegarder avec expiration de 24h
+                const expiry = Date.now() + AUTH_DURATION;
+                localStorage.setItem('admin_auth', JSON.stringify({ granted: true, expiry: expiry }));
             } else {
                 document.getElementById('errorMsg').classList.remove('hidden');
                 document.getElementById('accessCode').value = '';
             }
         }
-        // Check if already authenticated in this session
-        if (sessionStorage.getItem('admin_access') === 'granted') {
+
+        // Verifier si deja authentifie (valide 24h)
+        function isAuthenticated() {
+            const auth = localStorage.getItem('admin_auth');
+            if (!auth) return false;
+            try {
+                const { granted, expiry } = JSON.parse(auth);
+                if (granted && expiry > Date.now()) return true;
+                localStorage.removeItem('admin_auth'); // Expire, on supprime
+            } catch (e) {}
+            return false;
+        }
+
+        if (isAuthenticated()) {
             document.getElementById('lockScreen').style.display = 'none';
         }
     </script>

@@ -504,101 +504,36 @@
         let seoChanges = JSON.parse(localStorage.getItem('seoChanges') || '{}');
         let currentScoreFilter = null;
 
-        // Calculate SEO score for a page
-        function calculateSEOScore(title, desc, keywords) {
+        // Calculate SEO score for a page (based on title & description length only)
+        function calculateSEOScore(title, desc) {
             let score = 0;
             let checks = [];
 
-            // Title checks (max 35 points)
+            // Title length check (50 points max)
             const titleLen = title.length;
             if (titleLen >= 50 && titleLen <= 60) {
-                score += 15;
-                checks.push({ text: 'Longueur title optimale (50-60)', status: 'good' });
+                score += 50;
+                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'good' });
             } else if (titleLen >= 40 && titleLen <= 70) {
-                score += 8;
-                checks.push({ text: `Longueur title acceptable (${titleLen} chars)`, status: 'warning' });
+                score += 25;
+                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'warning' });
             } else {
-                checks.push({ text: `Longueur title ${titleLen < 40 ? 'trop courte' : 'trop longue'} (${titleLen} chars)`, status: 'error' });
+                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'error' });
             }
 
-            if (/\d{4}/.test(title)) {
-                score += 10;
-                checks.push({ text: 'Annee presente dans le title', status: 'good' });
-            } else {
-                checks.push({ text: 'Ajouter l\'annee (ex: 2025) dans le title', status: 'warning' });
-            }
-
-            if (/[|–\-:]/.test(title)) {
-                score += 5;
-                checks.push({ text: 'Separateur present dans le title', status: 'good' });
-            }
-
-            const titleKeywords = keywords.filter(k => title.toLowerCase().includes(k.toLowerCase()));
-            if (titleKeywords.length >= 2) {
-                score += 5;
-                checks.push({ text: `${titleKeywords.length} mots-cles dans le title`, status: 'good' });
-            } else if (titleKeywords.length === 1) {
-                score += 2;
-                checks.push({ text: 'Ajouter plus de mots-cles dans le title', status: 'warning' });
-            } else {
-                checks.push({ text: 'Aucun mot-cle dans le title', status: 'error' });
-            }
-
-            // Description checks (max 35 points)
+            // Description length check (50 points max)
             const descLen = desc.length;
             if (descLen >= 140 && descLen <= 160) {
-                score += 15;
-                checks.push({ text: 'Longueur description optimale (140-160)', status: 'good' });
+                score += 50;
+                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'good' });
             } else if (descLen >= 120 && descLen <= 180) {
-                score += 8;
-                checks.push({ text: `Longueur description acceptable (${descLen} chars)`, status: 'warning' });
+                score += 25;
+                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'warning' });
             } else {
-                checks.push({ text: `Longueur description ${descLen < 120 ? 'trop courte' : 'trop longue'} (${descLen} chars)`, status: 'error' });
+                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'error' });
             }
 
-            const descKeywords = keywords.filter(k => desc.toLowerCase().includes(k.toLowerCase()));
-            if (descKeywords.length >= 3) {
-                score += 10;
-                checks.push({ text: `${descKeywords.length} mots-cles dans la description`, status: 'good' });
-            } else if (descKeywords.length >= 1) {
-                score += 5;
-                checks.push({ text: 'Ajouter plus de mots-cles dans la description', status: 'warning' });
-            } else {
-                checks.push({ text: 'Aucun mot-cle dans la description', status: 'error' });
-            }
-
-            // CTA / Action words
-            const ctaWords = ['calcul', 'simulat', 'gratuit', 'free', 'instant', 'découvr', 'compare', 'estim', 'find', 'get', 'check'];
-            if (ctaWords.some(w => desc.toLowerCase().includes(w))) {
-                score += 10;
-                checks.push({ text: 'Call-to-action present', status: 'good' });
-            } else {
-                checks.push({ text: 'Ajouter un call-to-action (ex: Calculez, Decouvrez...)', status: 'warning' });
-            }
-
-            // Unique value proposition
-            const uniqueWords = ['unique', 'officiel', 'precis', 'fiable', 'accurate', 'official', '100%', 'vraiment'];
-            if (uniqueWords.some(w => desc.toLowerCase().includes(w))) {
-                score += 5;
-                checks.push({ text: 'Proposition de valeur presente', status: 'good' });
-            }
-
-            // Emotional/power words
-            const powerWords = ['secret', 'surprise', 'vraiment', 'really', 'actually', 'best', 'top', 'meilleur'];
-            if (powerWords.some(w => (title + desc).toLowerCase().includes(w))) {
-                score += 5;
-                checks.push({ text: 'Mots puissants utilises', status: 'good' });
-            }
-
-            // Numbers in description
-            if (/\d+/.test(desc)) {
-                score += 5;
-                checks.push({ text: 'Chiffres presents dans la description', status: 'good' });
-            } else {
-                checks.push({ text: 'Ajouter des chiffres (ex: "en 30 secondes", "100%")', status: 'warning' });
-            }
-
-            return { score: Math.min(score, 100), checks };
+            return { score, checks };
         }
 
         // Get score color and status
@@ -625,7 +560,7 @@
             seoData.forEach(item => {
                 const savedTitle = seoChanges[item.path]?.title || item.title;
                 const savedDesc = seoChanges[item.path]?.desc || item.desc;
-                const { score } = calculateSEOScore(savedTitle, savedDesc, item.keywords || []);
+                const { score } = calculateSEOScore(savedTitle, savedDesc);
                 totalScore += score;
 
                 const { status } = getScoreColor(score);
@@ -649,7 +584,7 @@
                 const savedTitle = seoChanges[item.path]?.title || item.title;
                 const savedDesc = seoChanges[item.path]?.desc || item.desc;
                 const hasChanges = seoChanges[item.path] !== undefined;
-                const { score, checks } = calculateSEOScore(savedTitle, savedDesc, item.keywords || []);
+                const { score, checks } = calculateSEOScore(savedTitle, savedDesc);
                 const { color, status, label } = getScoreColor(score);
 
                 const card = document.createElement('div');
@@ -735,22 +670,6 @@
                                 <iconify-icon icon="lucide:save" width="12"></iconify-icon>
                                 Enregistrer Description
                             </button>
-                        </div>
-                    </div>
-
-                    <!-- Keywords -->
-                    <div class="mb-4">
-                        <label class="text-slate-400 text-xs flex items-center gap-1 mb-2">
-                            <iconify-icon icon="lucide:tag" width="12"></iconify-icon>
-                            Mots-cles cibles
-                        </label>
-                        <div class="flex flex-wrap gap-2">
-                            ${(item.keywords || []).map(kw => {
-                                const inTitle = savedTitle.toLowerCase().includes(kw.toLowerCase());
-                                const inDesc = savedDesc.toLowerCase().includes(kw.toLowerCase());
-                                const status = inTitle && inDesc ? 'emerald' : (inTitle || inDesc) ? 'amber' : 'red';
-                                return `<span class="px-2 py-1 text-xs rounded-lg bg-${status}-500/20 text-${status}-400 border border-${status}-500/30">${kw}</span>`;
-                            }).join('')}
                         </div>
                     </div>
 

@@ -504,33 +504,74 @@
         let seoChanges = JSON.parse(localStorage.getItem('seoChanges') || '{}');
         let currentScoreFilter = null;
 
-        // Calculate SEO score for a page (based on title & description length only)
-        function calculateSEOScore(title, desc) {
+        // Find duplicates across all pages
+        function findDuplicates() {
+            const titles = {};
+            const descs = {};
+
+            seoData.forEach(item => {
+                const title = (seoChanges[item.path]?.title || item.title).toLowerCase().trim();
+                const desc = (seoChanges[item.path]?.desc || item.desc).toLowerCase().trim();
+
+                if (!titles[title]) titles[title] = [];
+                titles[title].push(item.path);
+
+                if (!descs[desc]) descs[desc] = [];
+                descs[desc].push(item.path);
+            });
+
+            return { titles, descs };
+        }
+
+        // Calculate SEO score for a page
+        function calculateSEOScore(title, desc, path, duplicates) {
             let score = 0;
             let checks = [];
 
-            // Title length check (50 points max)
+            // Title length check (40 points max)
             const titleLen = title.length;
             if (titleLen >= 50 && titleLen <= 60) {
-                score += 50;
+                score += 40;
                 checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'good' });
             } else if (titleLen >= 40 && titleLen <= 70) {
-                score += 25;
+                score += 20;
                 checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'warning' });
             } else {
                 checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'error' });
             }
 
-            // Description length check (50 points max)
+            // Title uniqueness check (10 points)
+            const titleKey = title.toLowerCase().trim();
+            const titleDupes = duplicates.titles[titleKey] || [];
+            if (titleDupes.length <= 1) {
+                score += 10;
+                checks.push({ text: 'Title unique', status: 'good' });
+            } else {
+                const otherPages = titleDupes.filter(p => p !== path);
+                checks.push({ text: `Title duplique avec: ${otherPages.join(', ')}`, status: 'error' });
+            }
+
+            // Description length check (40 points max)
             const descLen = desc.length;
             if (descLen >= 140 && descLen <= 160) {
-                score += 50;
+                score += 40;
                 checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'good' });
             } else if (descLen >= 120 && descLen <= 180) {
-                score += 25;
+                score += 20;
                 checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'warning' });
             } else {
                 checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'error' });
+            }
+
+            // Description uniqueness check (10 points)
+            const descKey = desc.toLowerCase().trim();
+            const descDupes = duplicates.descs[descKey] || [];
+            if (descDupes.length <= 1) {
+                score += 10;
+                checks.push({ text: 'Description unique', status: 'good' });
+            } else {
+                const otherPages = descDupes.filter(p => p !== path);
+                checks.push({ text: `Description dupliquee avec: ${otherPages.join(', ')}`, status: 'error' });
             }
 
             return { score, checks };
@@ -557,10 +598,12 @@
             let pagesWarning = 0;
             let pagesError = 0;
 
+            const duplicates = findDuplicates();
+
             seoData.forEach(item => {
                 const savedTitle = seoChanges[item.path]?.title || item.title;
                 const savedDesc = seoChanges[item.path]?.desc || item.desc;
-                const { score } = calculateSEOScore(savedTitle, savedDesc);
+                const { score } = calculateSEOScore(savedTitle, savedDesc, item.path, duplicates);
                 totalScore += score;
 
                 const { status } = getScoreColor(score);
@@ -580,11 +623,13 @@
             const container = document.getElementById('seoContainer');
             container.innerHTML = '';
 
+            const duplicates = findDuplicates();
+
             seoData.forEach((item, index) => {
                 const savedTitle = seoChanges[item.path]?.title || item.title;
                 const savedDesc = seoChanges[item.path]?.desc || item.desc;
                 const hasChanges = seoChanges[item.path] !== undefined;
-                const { score, checks } = calculateSEOScore(savedTitle, savedDesc);
+                const { score, checks } = calculateSEOScore(savedTitle, savedDesc, item.path, duplicates);
                 const { color, status, label } = getScoreColor(score);
 
                 const card = document.createElement('div');

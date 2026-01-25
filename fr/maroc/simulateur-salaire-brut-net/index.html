@@ -250,14 +250,17 @@
                                 <div>
                                     <label class="salary-label">Annuel (Dh)</label>
                                     <input type="text" inputmode="numeric" id="brut-annuel" class="input-salary" placeholder="180 000" value="180 000">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="brut-annuel-eur">≈ 16 667 €</div>
                                 </div>
                                 <div>
                                     <label class="salary-label">Mensuel (Dh)</label>
                                     <input type="text" inputmode="numeric" id="brut-mensuel" class="input-salary" placeholder="15 000" value="15 000">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="brut-mensuel-eur">≈ 1 389 €</div>
                                 </div>
                                 <div>
                                     <label class="salary-label">Horaire (Dh)</label>
                                     <input type="text" inputmode="numeric" id="brut-horaire" class="input-salary" placeholder="86,54" value="86,54">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="brut-horaire-eur">≈ 8,01 €</div>
                                 </div>
                             </div>
                         </div>
@@ -273,14 +276,17 @@
                                 <div>
                                     <label class="salary-label">Annuel (Dh)</label>
                                     <input type="text" inputmode="numeric" id="net-annuel" class="input-salary input-salary-net" placeholder="145 000">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="net-annuel-eur">≈ 13 426 €</div>
                                 </div>
                                 <div>
                                     <label class="salary-label">Mensuel (Dh)</label>
                                     <input type="text" inputmode="numeric" id="net-mensuel" class="input-salary input-salary-net" placeholder="12 083">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="net-mensuel-eur">≈ 1 119 €</div>
                                 </div>
                                 <div>
                                     <label class="salary-label">Horaire (Dh)</label>
                                     <input type="text" inputmode="numeric" id="net-horaire" class="input-salary input-salary-net" placeholder="69,71">
+                                    <div class="text-xs text-slate-400 text-right mt-1" id="net-horaire-eur">≈ 6,45 €</div>
                                 </div>
                             </div>
                         </div>
@@ -648,6 +654,7 @@
         const WEEKS_PER_YEAR = 52;
         const MONTHS_PER_YEAR = 12;
         const HOURS_PER_WEEK = 44; // Morocco standard
+        const MAD_TO_EUR = 0.0926; // 1 MAD ≈ 0.0926 EUR (taux approximatif)
 
         const IR_BRACKETS = [
             { limit: 40000, rate: 0, deduct: 0 },
@@ -917,6 +924,23 @@
         }
 
         // === UI UPDATE ===
+        function updateEuroDisplays(result) {
+            const brutAn = result.brut;
+            const brutMois = brutAn / 12;
+            const brutH = brutAn / getHoursPerYear();
+            const netAn = result.net;
+            const netMois = netAn / 12;
+            const netH = netAn / getHoursPerYear();
+
+            // Convert to EUR and display
+            document.getElementById('brut-annuel-eur').textContent = '≈ ' + formatNumber(brutAn * MAD_TO_EUR) + ' €';
+            document.getElementById('brut-mensuel-eur').textContent = '≈ ' + formatNumber(brutMois * MAD_TO_EUR) + ' €';
+            document.getElementById('brut-horaire-eur').textContent = '≈ ' + formatDecimal(brutH * MAD_TO_EUR) + ' €';
+            document.getElementById('net-annuel-eur').textContent = '≈ ' + formatNumber(netAn * MAD_TO_EUR) + ' €';
+            document.getElementById('net-mensuel-eur').textContent = '≈ ' + formatNumber(netMois * MAD_TO_EUR) + ' €';
+            document.getElementById('net-horaire-eur').textContent = '≈ ' + formatDecimal(netH * MAD_TO_EUR) + ' €';
+        }
+
         function updateUI(result) {
             const brutMois = result.brut / 12;
             const cnssMois = result.cnss / 12;
@@ -925,6 +949,9 @@
             const fpMois = result.fp / 12;
             const abatMois = result.abattement / 12;
             const totalMois = cnssMois + amoMois + irMois;
+
+            // Update Euro displays
+            updateEuroDisplays(result);
 
             // Details
             document.getElementById('detail-cnss').textContent = '-' + formatNumber(cnssMois) + ' Dh';

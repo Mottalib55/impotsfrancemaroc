@@ -688,10 +688,6 @@
                             <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
                                 <div class="h-full ${savedTitle.length >= 50 && savedTitle.length <= 60 ? 'bg-emerald-500' : savedTitle.length > 60 ? 'bg-amber-500' : 'bg-red-500'}" id="titleBar-${index}" style="width: ${Math.min(savedTitle.length / 60 * 100, 100)}%"></div>
                             </div>
-                            <button onclick="saveSEOField('${item.path}', 'title', ${index})" class="mt-2 w-full px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg flex items-center justify-center gap-1">
-                                <iconify-icon icon="lucide:save" width="12"></iconify-icon>
-                                Enregistrer Title
-                            </button>
                         </div>
                         <div>
                             <label class="text-slate-400 text-xs flex items-center justify-between mb-2">
@@ -711,12 +707,12 @@
                             <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
                                 <div class="h-full ${savedDesc.length >= 140 && savedDesc.length <= 160 ? 'bg-emerald-500' : savedDesc.length > 160 ? 'bg-amber-500' : 'bg-red-500'}" id="descBar-${index}" style="width: ${Math.min(savedDesc.length / 160 * 100, 100)}%"></div>
                             </div>
-                            <button onclick="saveSEOField('${item.path}', 'desc', ${index})" class="mt-2 w-full px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg flex items-center justify-center gap-1">
-                                <iconify-icon icon="lucide:save" width="12"></iconify-icon>
-                                Enregistrer Description
-                            </button>
                         </div>
                     </div>
+                    <button onclick="saveSEOBoth('${item.path}', ${index})" id="saveBtn-${index}" class="w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
+                        <iconify-icon icon="lucide:save" width="16"></iconify-icon>
+                        Enregistrer
+                    </button>
 
                     <!-- SEO Checklist -->
                     <details class="group">
@@ -783,30 +779,41 @@
             }
         }
 
-        // Save SEO field (called by button)
-        function saveSEOField(path, field, index) {
-            const inputId = field === 'title' ? `titleInput-${index}` : `descInput-${index}`;
-            const input = document.getElementById(inputId);
-            const value = input.value;
-            const original = input.dataset.original;
+        // Save both title and description (called by button)
+        function saveSEOBoth(path, index) {
+            const titleInput = document.getElementById(`titleInput-${index}`);
+            const descInput = document.getElementById(`descInput-${index}`);
+            const titleValue = titleInput.value;
+            const descValue = descInput.value;
+            const titleOriginal = titleInput.dataset.original;
+            const descOriginal = descInput.dataset.original;
 
-            // Track changes
-            if (value !== original) {
+            // Track title changes
+            if (titleValue !== titleOriginal) {
                 if (!seoChanges[path]) seoChanges[path] = {};
-                seoChanges[path][field] = value;
+                seoChanges[path].title = titleValue;
             } else if (seoChanges[path]) {
-                delete seoChanges[path][field];
-                if (Object.keys(seoChanges[path]).length === 0) {
-                    delete seoChanges[path];
-                }
+                delete seoChanges[path].title;
+            }
+
+            // Track desc changes
+            if (descValue !== descOriginal) {
+                if (!seoChanges[path]) seoChanges[path] = {};
+                seoChanges[path].desc = descValue;
+            } else if (seoChanges[path]) {
+                delete seoChanges[path].desc;
+            }
+
+            // Clean up empty objects
+            if (seoChanges[path] && Object.keys(seoChanges[path]).length === 0) {
+                delete seoChanges[path];
             }
 
             localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
 
             // Show confirmation
-            const btn = input.parentElement.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<iconify-icon icon="lucide:check" width="12"></iconify-icon> Enregistre !';
+            const btn = document.getElementById(`saveBtn-${index}`);
+            btn.innerHTML = '<iconify-icon icon="lucide:check" width="16"></iconify-icon> Enregistre !';
             btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
             btn.classList.add('bg-emerald-600');
 

@@ -730,6 +730,12 @@
                                 <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
                             </a>
                         </div>
+                        <!-- FR SERP Preview -->
+                        <div class="bg-white rounded-lg p-3 mb-3">
+                            <div class="text-xs text-green-700 mb-0.5">netsalaire.com${frPath}</div>
+                            <div class="text-blue-800 text-base hover:underline cursor-pointer mb-0.5 font-medium" style="font-family: arial, sans-serif;">${frTitle.length > 60 ? frTitle.substring(0, 57) + '...' : frTitle}</div>
+                            <div class="text-xs text-gray-600" style="font-family: arial, sans-serif;">${frDesc.length > 160 ? frDesc.substring(0, 157) + '...' : frDesc}</div>
+                        </div>
                         <div class="space-y-3">
                             <div>
                                 <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
@@ -771,6 +777,12 @@
                                 ${enPath}
                                 <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
                             </a>
+                        </div>
+                        <!-- EN SERP Preview -->
+                        <div class="bg-white rounded-lg p-3 mb-3">
+                            <div class="text-xs text-green-700 mb-0.5">netsalaire.com${enPath}</div>
+                            <div class="text-blue-800 text-base hover:underline cursor-pointer mb-0.5 font-medium" style="font-family: arial, sans-serif;">${enTitle.length > 60 ? enTitle.substring(0, 57) + '...' : enTitle}</div>
+                            <div class="text-xs text-gray-600" style="font-family: arial, sans-serif;">${enDesc.length > 160 ? enDesc.substring(0, 157) + '...' : enDesc}</div>
                         </div>
                         <div class="space-y-3">
                             <div>

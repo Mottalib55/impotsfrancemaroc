@@ -70,10 +70,17 @@
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
         .result-card { backdrop-filter: blur(12px); }
         .text-gradient { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .btn-day, .btn-hour { transition: all 0.2s ease; }
-        .btn-day.active, .btn-hour.active { transform: scale(1.05); }
-        .btn-zone { transition: all 0.2s ease; }
-        .btn-zone.active { border-color: var(--primary); background: rgba(59, 130, 246, 0.05); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); }
+        .btn-day, .btn-hour { transition: all 0.2s ease; cursor: pointer; }
+        .btn-day.active, .btn-hour.active {
+            transform: scale(1.05);
+            background: linear-gradient(to bottom, #3b82f6, #2563eb) !important;
+            color: white !important;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3) !important;
+        }
+        .btn-zone { transition: all 0.2s ease; cursor: pointer; }
+        .btn-zone.active { border-color: var(--primary) !important; background: rgba(59, 130, 246, 0.05) !important; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); }
+        .btn-zone.active svg { color: #3b82f6 !important; }
+        .btn-zone.active span { color: #2563eb !important; }
         .animate-fade-in { animation: fadeIn 0.4s ease-out; }
         .animate-slide-up { animation: slideUp 0.5s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -334,9 +341,9 @@
                                     <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                                     <span class="text-sm font-semibold text-slate-600">IDF</span>
                                 </button>
-                                <button onclick="setZone(false)" id="zone-province" class="btn-zone active flex-1 h-11 px-3 rounded-xl border-2 border-blue-500 flex items-center justify-center gap-2 bg-blue-50/50">
-                                    <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                                    <span class="text-sm font-semibold text-blue-600">Autres</span>
+                                <button onclick="setZone(false)" id="zone-province" class="btn-zone active flex-1 h-11 px-3 rounded-xl border-2 border-slate-200 flex items-center justify-center gap-2 bg-white">
+                                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                                    <span class="text-sm font-semibold text-slate-600">Autres</span>
                                 </button>
                             </div>
                             <p class="text-xs text-slate-400 text-center">Tarifs plus élevés en IDF</p>
@@ -353,7 +360,7 @@
                                 <button onclick="setHeures(7)" data-h="7" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">7h</button>
                                 <button onclick="setHeures(8)" data-h="8" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">8h</button>
                                 <button onclick="setHeures(9)" data-h="9" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">9h</button>
-                                <button onclick="setHeures(10)" data-h="10" class="btn-hour active flex-1 h-11 rounded-xl font-bold text-sm bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30">10h</button>
+                                <button onclick="setHeures(10)" data-h="10" class="btn-hour active flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">10h</button>
                             </div>
                             <p class="text-xs text-slate-400 text-center">Publique & Assmat • Micro: 10h fixe</p>
                         </div>
@@ -369,7 +376,7 @@
                                 <button onclick="setJours(2)" data-j="2" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">2j</button>
                                 <button onclick="setJours(3)" data-j="3" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">3j</button>
                                 <button onclick="setJours(4)" data-j="4" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">4j</button>
-                                <button onclick="setJours(5)" data-j="5" class="btn-day active flex-1 h-11 rounded-xl font-bold text-sm bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/30">5j</button>
+                                <button onclick="setJours(5)" data-j="5" class="btn-day active flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">5j</button>
                             </div>
                             <p class="text-xs text-slate-400 text-center">= <span id="jours-mois">20</span> jours/mois</p>
                         </div>
@@ -732,38 +739,14 @@
         function setZone(isIDF) {
             state.estIDF = isIDF;
             document.getElementById('zone-idf').classList.toggle('active', isIDF);
-            document.getElementById('zone-idf').classList.toggle('border-blue-500', isIDF);
-            document.getElementById('zone-idf').classList.toggle('bg-blue-50/50', isIDF);
-            document.getElementById('zone-idf').classList.toggle('border-slate-200', !isIDF);
-            document.getElementById('zone-idf').querySelector('svg').classList.toggle('text-blue-500', isIDF);
-            document.getElementById('zone-idf').querySelector('svg').classList.toggle('text-slate-400', !isIDF);
-            document.getElementById('zone-idf').querySelector('span').classList.toggle('text-blue-600', isIDF);
-            document.getElementById('zone-idf').querySelector('span').classList.toggle('text-slate-600', !isIDF);
-
             document.getElementById('zone-province').classList.toggle('active', !isIDF);
-            document.getElementById('zone-province').classList.toggle('border-blue-500', !isIDF);
-            document.getElementById('zone-province').classList.toggle('bg-blue-50/50', !isIDF);
-            document.getElementById('zone-province').classList.toggle('border-slate-200', isIDF);
-            document.getElementById('zone-province').querySelector('svg').classList.toggle('text-blue-500', !isIDF);
-            document.getElementById('zone-province').querySelector('svg').classList.toggle('text-slate-400', isIDF);
-            document.getElementById('zone-province').querySelector('span').classList.toggle('text-blue-600', !isIDF);
-            document.getElementById('zone-province').querySelector('span').classList.toggle('text-slate-600', isIDF);
             calculer();
         }
 
         function setHeures(h) {
             state.heuresJour = h;
             document.querySelectorAll('.btn-hour').forEach(btn => {
-                const active = parseInt(btn.dataset.h) === h;
-                btn.classList.toggle('active', active);
-                btn.classList.toggle('bg-gradient-to-b', active);
-                btn.classList.toggle('from-blue-500', active);
-                btn.classList.toggle('to-blue-600', active);
-                btn.classList.toggle('text-white', active);
-                btn.classList.toggle('shadow-md', active);
-                btn.classList.toggle('shadow-blue-500/30', active);
-                btn.classList.toggle('bg-slate-100', !active);
-                btn.classList.toggle('text-slate-600', !active);
+                btn.classList.toggle('active', parseInt(btn.dataset.h) === h);
             });
             calculer();
         }
@@ -771,16 +754,7 @@
         function setJours(j) {
             state.joursSemaine = j;
             document.querySelectorAll('.btn-day').forEach(btn => {
-                const active = parseInt(btn.dataset.j) === j;
-                btn.classList.toggle('active', active);
-                btn.classList.toggle('bg-gradient-to-b', active);
-                btn.classList.toggle('from-blue-500', active);
-                btn.classList.toggle('to-blue-600', active);
-                btn.classList.toggle('text-white', active);
-                btn.classList.toggle('shadow-md', active);
-                btn.classList.toggle('shadow-blue-500/30', active);
-                btn.classList.toggle('bg-slate-100', !active);
-                btn.classList.toggle('text-slate-600', !active);
+                btn.classList.toggle('active', parseInt(btn.dataset.j) === j);
             });
             calculer();
         }

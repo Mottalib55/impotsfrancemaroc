@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Prix Crèche 2026 - Calcul Coût Garde Enfant Gratuit</title>
+    <meta name="description" content="Calculez le coût de la crèche pour votre enfant. Crèche publique, privée ou micro-crèche. Estimation du tarif selon vos revenus, aides CAF incluses.">
+    <meta name="keywords" content="simulateur creche, calcul prix creche, cout garde enfant, tarif creche 2026, aide CAF creche, micro creche prix">
+    <link rel="canonical" href="https://netsalaire.com/fr/france/simulateur-creche/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/simulateur-creche/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/france/daycare-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/simulateur-creche/">
+
+    <meta property="og:title" content="Simulateur Prix Crèche 2026 - Calcul Gratuit">
+    <meta property="og:description" content="Combien coûte la crèche ? Calculez le tarif exact selon vos revenus. Crèche publique, privée, micro-crèche.">
+    <meta property="og:url" content="https://netsalaire.com/fr/france/simulateur-creche/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simulateur Prix Crèche 2026 - Gratuit">
+    <meta name="twitter:description" content="Calculez le coût de la crèche selon vos revenus. Aides CAF incluses.">
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Prix Crèche 2026",
+        "description": "Calculez le coût de la crèche pour votre enfant selon vos revenus et le type d'établissement.",
+        "url": "https://netsalaire.com/fr/france/simulateur-creche/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "NetSalaire",
+            "url": "https://netsalaire.com"
+        }
+    }
+    </script>
+
+    <style>
+        .type-card { transition: all 0.2s ease; }
+        .type-card:hover { transform: translateY(-2px); }
+        .type-card.selected { ring: 2px; ring-color: #3b82f6; background-color: #eff6ff; }
+        input[type="range"] { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 4px; background: #e2e8f0; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #3b82f6; cursor: pointer; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-blue-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="hover:text-slate-900 transition-colors">Brut → Net</a>
+                <a href="/fr/france/simulateur-impot-revenu/" class="hover:text-slate-900 transition-colors">Impôt Revenu</a>
+                <a href="/fr/france/simulateur-apl/" class="hover:text-slate-900 transition-colors">APL</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-24 pb-12 bg-gradient-to-r from-pink-500 to-rose-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-1 mb-4">
+                <span class="text-sm font-medium">Barèmes 2026</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Simulateur Prix Crèche 2026</h1>
+            <p class="text-lg text-pink-100 max-w-2xl mx-auto">
+                Calculez le coût de la garde de votre enfant selon vos revenus et le type d'établissement.
+                Crèche publique, privée ou micro-crèche.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 -mt-6">
+        <!-- Calculator Card -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+
+            <!-- Type de crèche -->
+            <div class="mb-8">
+                <label class="block text-sm font-semibold text-slate-700 mb-4">Type de garde</label>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button onclick="selectType('public')" id="type-public" class="type-card selected p-4 border-2 border-blue-500 bg-blue-50 rounded-xl text-center cursor-pointer">
+                        <div class="text-2xl mb-2">🏛️</div>
+                        <div class="font-semibold text-slate-800 text-sm">Crèche publique</div>
+                        <div class="text-xs text-slate-500 mt-1">Municipale / PSU</div>
+                    </button>
+                    <button onclick="selectType('private')" id="type-private" class="type-card p-4 border-2 border-slate-200 rounded-xl text-center cursor-pointer hover:border-slate-300">
+                        <div class="text-2xl mb-2">🏢</div>
+                        <div class="font-semibold text-slate-800 text-sm">Crèche privée</div>
+                        <div class="text-xs text-slate-500 mt-1">Convention PSU</div>
+                    </button>
+                    <button onclick="selectType('micro')" id="type-micro" class="type-card p-4 border-2 border-slate-200 rounded-xl text-center cursor-pointer hover:border-slate-300">
+                        <div class="text-2xl mb-2">🏠</div>
+                        <div class="font-semibold text-slate-800 text-sm">Micro-crèche</div>
+                        <div class="text-xs text-slate-500 mt-1">PAJE / CMG</div>
+                    </button>
+                    <button onclick="selectType('assistante')" id="type-assistante" class="type-card p-4 border-2 border-slate-200 rounded-xl text-center cursor-pointer hover:border-slate-300">
+                        <div class="text-2xl mb-2">👩‍👧</div>
+                        <div class="font-semibold text-slate-800 text-sm">Ass. maternelle</div>
+                        <div class="text-xs text-slate-500 mt-1">PAJE / CMG</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Revenus du foyer -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                    Revenus annuels nets du foyer (avant impôt)
+                    <span class="font-normal text-slate-500">— Ligne "Revenu fiscal de référence" de l'avis d'impôt N-2</span>
+                </label>
+                <div class="relative">
+                    <input type="text" id="revenus" inputmode="numeric" value="45 000"
+                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-lg font-semibold focus:border-blue-500 focus:ring-0 transition-colors"
+                        oninput="formatNumber(this); calculate()">
+                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€/an</span>
+                </div>
+                <input type="range" id="revenus-slider" min="10000" max="150000" value="45000" step="1000"
+                    class="w-full mt-3" oninput="updateFromSlider(this, 'revenus')">
+                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                    <span>10 000 €</span>
+                    <span>150 000 €</span>
+                </div>
+            </div>
+
+            <!-- Nombre d'enfants -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Nombre d'enfants à charge</label>
+                    <select id="nb-enfants" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-lg focus:border-blue-500 focus:ring-0" onchange="calculate()">
+                        <option value="1">1 enfant</option>
+                        <option value="2" selected>2 enfants</option>
+                        <option value="3">3 enfants</option>
+                        <option value="4">4 enfants</option>
+                        <option value="5">5 enfants ou plus</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Âge de l'enfant en crèche</label>
+                    <select id="age-enfant" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-lg focus:border-blue-500 focus:ring-0" onchange="calculate()">
+                        <option value="0">Moins de 1 an</option>
+                        <option value="1" selected>1 an</option>
+                        <option value="2">2 ans</option>
+                        <option value="3">3 ans (périscolaire)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Heures de garde -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Heures de garde par semaine</label>
+                <div class="flex items-center gap-4">
+                    <input type="range" id="heures" min="10" max="50" value="40" step="1"
+                        class="flex-1" oninput="updateHeures(); calculate()">
+                    <div class="w-24 text-center">
+                        <span id="heures-display" class="text-2xl font-bold text-slate-800">40</span>
+                        <span class="text-slate-500 text-sm">h/sem</span>
+                    </div>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                    <span>10h (temps partiel)</span>
+                    <span>50h (temps plein+)</span>
+                </div>
+            </div>
+
+            <!-- Options micro-crèche -->
+            <div id="options-micro" class="hidden mb-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                <label class="block text-sm font-semibold text-amber-800 mb-2">Tarif horaire de la micro-crèche</label>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="tarif-micro" value="10,00"
+                        class="w-32 px-4 py-2 border-2 border-amber-300 rounded-lg text-lg font-semibold text-center focus:border-amber-500 focus:ring-0"
+                        oninput="calculate()">
+                    <span class="text-amber-700">€/heure</span>
+                    <span class="text-sm text-amber-600">(moyenne : 8-12 €/h)</span>
+                </div>
+            </div>
+
+            <!-- Options assistante maternelle -->
+            <div id="options-assistante" class="hidden mb-6 p-4 bg-purple-50 rounded-xl border border-purple-200">
+                <label class="block text-sm font-semibold text-purple-800 mb-2">Salaire horaire net de l'assistante maternelle</label>
+                <div class="flex items-center gap-4">
+                    <input type="text" id="tarif-assistante" value="4,00"
+                        class="w-32 px-4 py-2 border-2 border-purple-300 rounded-lg text-lg font-semibold text-center focus:border-purple-500 focus:ring-0"
+                        oninput="calculate()">
+                    <span class="text-purple-700">€/heure net</span>
+                    <span class="text-sm text-purple-600">(minimum : 3,27 €/h en 2026)</span>
+                </div>
+                <div class="mt-3">
+                    <label class="block text-sm font-medium text-purple-700 mb-1">Indemnité d'entretien journalière</label>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="indemnite-entretien" value="3,50"
+                            class="w-32 px-4 py-2 border-2 border-purple-300 rounded-lg font-semibold text-center focus:border-purple-500 focus:ring-0"
+                            oninput="calculate()">
+                        <span class="text-purple-700">€/jour</span>
+                        <span class="text-sm text-purple-600">(minimum : 3,39 €/jour)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Résultats -->
+        <div id="resultats" class="bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl shadow-xl p-6 md:p-8 text-white mb-8">
+            <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <span>📊</span> Estimation du coût
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white/20 rounded-xl p-4 text-center">
+                    <p class="text-pink-100 text-sm mb-1">Coût horaire</p>
+                    <p id="cout-horaire" class="text-3xl font-bold">2,50 €</p>
+                </div>
+                <div class="bg-white/20 rounded-xl p-4 text-center">
+                    <p class="text-pink-100 text-sm mb-1">Coût mensuel brut</p>
+                    <p id="cout-mensuel-brut" class="text-3xl font-bold">433 €</p>
+                </div>
+                <div class="bg-white/30 rounded-xl p-4 text-center border-2 border-white/50">
+                    <p class="text-white text-sm mb-1 font-medium">Coût mensuel net</p>
+                    <p id="cout-mensuel-net" class="text-4xl font-bold">350 €</p>
+                    <p class="text-pink-100 text-xs mt-1">après aides & crédit d'impôt</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-pink-100">Heures par mois</span>
+                        <span id="heures-mois" class="font-semibold">173 h</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-pink-100">Coût annuel estimé</span>
+                        <span id="cout-annuel" class="font-semibold">4 200 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Détail des aides -->
+            <div class="border-t border-white/20 pt-4">
+                <h3 class="font-semibold mb-3 flex items-center gap-2">
+                    <span>🎁</span> Détail des aides
+                </h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-pink-100">Aide CAF (CMG)</span>
+                        <span id="aide-cmg" class="font-medium">-0 €/mois</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-pink-100">Crédit d'impôt (50%)</span>
+                        <span id="credit-impot" class="font-medium">-83 €/mois</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-pink-100">Plafond crédit d'impôt</span>
+                        <span class="font-medium">3 500 €/an max</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer + lien CAF -->
+            <div class="mt-6 pt-6 border-t border-white/20 text-center">
+                <p class="text-sm text-pink-100 mb-4">
+                    Le coût indiqué est une estimation. Le tarif exact dépend de l'établissement choisi.
+                    Pour les aides CAF, faites une simulation officielle.
+                </p>
+                <a href="https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation"
+                   target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-white text-pink-600 font-medium px-6 py-3 rounded-lg hover:bg-pink-50 transition-colors">
+                    <span>Simuler mes aides sur caf.fr</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Explications -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+            <h2 class="text-xl font-bold text-slate-800 mb-6">Comment est calculé le prix de la crèche ?</h2>
+
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-blue-600 font-bold">1</span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-800">Crèche publique ou privée conventionnée (PSU)</h3>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Le tarif est calculé selon un <strong>taux d'effort</strong> appliqué à vos revenus :<br>
+                            • 1 enfant : 0,0619% des revenus mensuels par heure<br>
+                            • 2 enfants : 0,0516%<br>
+                            • 3 enfants : 0,0413%<br>
+                            • 4+ enfants : 0,0310%<br>
+                            <em class="text-slate-500">Plancher : 0,15€/h — Plafond : selon revenus max CAF</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-amber-600 font-bold">2</span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-800">Micro-crèche (PAJE)</h3>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Tarif libre fixé par la structure (8-12€/h en moyenne). Vous bénéficiez du <strong>CMG</strong> (Complément de libre choix du Mode de Garde) selon vos revenus et l'âge de l'enfant.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-purple-600 font-bold">3</span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-800">Assistante maternelle</h3>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Vous payez un salaire (min 3,27€/h net) + indemnités d'entretien. La CAF verse le <strong>CMG</strong> qui prend en charge une partie du salaire et 100% des cotisations sociales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-green-600 font-bold">4</span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-800">Crédit d'impôt</h3>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Vous récupérez <strong>50% des frais de garde</strong> (après déduction des aides) en crédit d'impôt, dans la limite de <strong>3 500€/an</strong> par enfant (soit 1 750€ de crédit max).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparatif -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+            <h2 class="text-xl font-bold text-slate-800 mb-6">Comparatif des modes de garde</h2>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="text-left py-3 px-2 font-semibold text-slate-700">Mode de garde</th>
+                            <th class="text-center py-3 px-2 font-semibold text-slate-700">Coût moyen</th>
+                            <th class="text-center py-3 px-2 font-semibold text-slate-700">Aides</th>
+                            <th class="text-center py-3 px-2 font-semibold text-slate-700">Avantages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 px-2 font-medium">🏛️ Crèche publique</td>
+                            <td class="py-3 px-2 text-center text-green-600 font-semibold">0,50-3€/h</td>
+                            <td class="py-3 px-2 text-center">Tarif social + Crédit impôt</td>
+                            <td class="py-3 px-2 text-center text-slate-600">Moins cher, collectif</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 px-2 font-medium">🏢 Crèche privée</td>
+                            <td class="py-3 px-2 text-center text-amber-600 font-semibold">1-4€/h</td>
+                            <td class="py-3 px-2 text-center">Tarif CAF + Crédit impôt</td>
+                            <td class="py-3 px-2 text-center text-slate-600">Plus de places</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 px-2 font-medium">🏠 Micro-crèche</td>
+                            <td class="py-3 px-2 text-center text-orange-600 font-semibold">8-12€/h</td>
+                            <td class="py-3 px-2 text-center">CMG + Crédit impôt</td>
+                            <td class="py-3 px-2 text-center text-slate-600">Petit groupe, flexible</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-medium">👩‍👧 Ass. maternelle</td>
+                            <td class="py-3 px-2 text-center text-purple-600 font-semibold">3,50-5€/h</td>
+                            <td class="py-3 px-2 text-center">CMG + Crédit impôt</td>
+                            <td class="py-3 px-2 text-center text-slate-600">Personnalisé, horaires</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Autres simulateurs -->
+        <div class="bg-slate-100 rounded-2xl p-6">
+            <h3 class="font-semibold text-slate-800 mb-4">Voir aussi</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="/fr/france/simulateur-apl/" class="bg-white rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <span class="text-2xl">🏠</span>
+                    <p class="font-medium text-slate-800 mt-2">Simulateur APL</p>
+                    <p class="text-sm text-slate-500">Aide au logement</p>
+                </a>
+                <a href="/fr/france/simulateur-impot-revenu/" class="bg-white rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <span class="text-2xl">📋</span>
+                    <p class="font-medium text-slate-800 mt-2">Simulateur Impôt</p>
+                    <p class="text-sm text-slate-500">Calcul IR + crédit d'impôt</p>
+                </a>
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="bg-white rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <span class="text-2xl">💰</span>
+                    <p class="font-medium text-slate-800 mt-2">Brut → Net</p>
+                    <p class="text-sm text-slate-500">Salaire net après charges</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-semibold">N.</div>
+                    <span class="font-semibold text-white">NetSalaire</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions légales</a>
+                    <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialité</a>
+                    <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center text-sm">
+                <p>© 2026 NetSalaire. Simulateurs fiscaux gratuits.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        // Configuration
+        let selectedType = 'public';
+
+        // Taux d'effort PSU (Prestation de Service Unique) 2026
+        const TAUX_EFFORT = {
+            1: 0.000619,  // 0,0619% pour 1 enfant
+            2: 0.000516,  // 0,0516% pour 2 enfants
+            3: 0.000413,  // 0,0413% pour 3 enfants
+            4: 0.000310,  // 0,0310% pour 4 enfants
+            5: 0.000310   // 0,0310% pour 5+ enfants
+        };
+
+        // Planchers et plafonds PSU
+        const PLANCHER_HORAIRE = 0.15; // €/h minimum
+        const REVENUS_PLANCHER = 7908; // Revenus annuels plancher
+        const REVENUS_PLAFOND = 76000; // Revenus annuels plafond (approximatif)
+
+        // CMG (Complément de libre choix du Mode de Garde) 2026
+        // Montants mensuels max selon revenus et âge enfant
+        const CMG_MICRO_CRECHE = {
+            // [age < 3 ans, age >= 3 ans]
+            tranche1: [970.50, 485.25],   // Revenus < 22 183€
+            tranche2: [835.45, 417.73],   // Revenus 22 183€ - 49 295€
+            tranche3: [700.40, 350.20]    // Revenus > 49 295€
+        };
+
+        const CMG_ASSISTANTE = {
+            tranche1: [556.01, 278.01],
+            tranche2: [478.51, 239.26],
+            tranche3: [401.00, 200.50]
+        };
+
+        const SEUIL_CMG_1 = 22183;
+        const SEUIL_CMG_2 = 49295;
+
+        // Crédit d'impôt
+        const TAUX_CREDIT_IMPOT = 0.50;
+        const PLAFOND_CREDIT_IMPOT = 3500; // par enfant par an
+
+        // Sélection du type de garde
+        function selectType(type) {
+            selectedType = type;
+
+            // Reset all buttons
+            document.querySelectorAll('.type-card').forEach(btn => {
+                btn.classList.remove('selected', 'border-blue-500', 'bg-blue-50');
+                btn.classList.add('border-slate-200');
+            });
+
+            // Select current
+            const selected = document.getElementById('type-' + type);
+            selected.classList.add('selected', 'border-blue-500', 'bg-blue-50');
+            selected.classList.remove('border-slate-200');
+
+            // Show/hide options
+            document.getElementById('options-micro').classList.toggle('hidden', type !== 'micro');
+            document.getElementById('options-assistante').classList.toggle('hidden', type !== 'assistante');
+
+            calculate();
+        }
+
+        // Formatage des nombres
+        function formatNumber(input) {
+            let value = input.value.replace(/[^\d]/g, '');
+            if (value) {
+                input.value = parseInt(value).toLocaleString('fr-FR');
+            }
+        }
+
+        function parseNumber(str) {
+            return parseInt(str.replace(/[^\d]/g, '')) || 0;
+        }
+
+        function parseDecimal(str) {
+            return parseFloat(str.replace(',', '.')) || 0;
+        }
+
+        // Mise à jour depuis slider
+        function updateFromSlider(slider, inputId) {
+            const input = document.getElementById(inputId);
+            input.value = parseInt(slider.value).toLocaleString('fr-FR');
+            calculate();
+        }
+
+        function updateHeures() {
+            const heures = document.getElementById('heures').value;
+            document.getElementById('heures-display').textContent = heures;
+        }
+
+        // Calcul principal
+        function calculate() {
+            const revenus = parseNumber(document.getElementById('revenus').value);
+            const nbEnfants = parseInt(document.getElementById('nb-enfants').value);
+            const ageEnfant = parseInt(document.getElementById('age-enfant').value);
+            const heuresSemaine = parseInt(document.getElementById('heures').value);
+
+            // Heures mensuelles (moyenne 4,33 semaines/mois)
+            const heuresMois = Math.round(heuresSemaine * 4.33);
+            const joursParSemaine = Math.ceil(heuresSemaine / 10); // Estimation jours
+            const joursMois = Math.round(joursParSemaine * 4.33);
+
+            let coutHoraire = 0;
+            let coutMensuelBrut = 0;
+            let aideCMG = 0;
+
+            // Revenus mensuels
+            const revenusMensuels = revenus / 12;
+
+            if (selectedType === 'public' || selectedType === 'private') {
+                // Calcul PSU
+                const tauxEffort = TAUX_EFFORT[Math.min(nbEnfants, 5)];
+                const revenusCalcul = Math.max(REVENUS_PLANCHER, Math.min(revenus, REVENUS_PLAFOND));
+
+                coutHoraire = (revenusCalcul / 12) * tauxEffort;
+                coutHoraire = Math.max(PLANCHER_HORAIRE, coutHoraire);
+
+                // Majoration crèche privée (+10% en moyenne)
+                if (selectedType === 'private') {
+                    coutHoraire *= 1.1;
+                }
+
+                coutMensuelBrut = coutHoraire * heuresMois;
+                aideCMG = 0; // Pas de CMG pour PSU
+
+            } else if (selectedType === 'micro') {
+                // Micro-crèche
+                coutHoraire = parseDecimal(document.getElementById('tarif-micro').value);
+                coutMensuelBrut = coutHoraire * heuresMois;
+
+                // Calcul CMG
+                const ageMoins3 = ageEnfant < 3 ? 0 : 1;
+                let cmgMax;
+                if (revenus < SEUIL_CMG_1) {
+                    cmgMax = CMG_MICRO_CRECHE.tranche1[ageMoins3];
+                } else if (revenus < SEUIL_CMG_2) {
+                    cmgMax = CMG_MICRO_CRECHE.tranche2[ageMoins3];
+                } else {
+                    cmgMax = CMG_MICRO_CRECHE.tranche3[ageMoins3];
+                }
+
+                // CMG = 85% des frais dans la limite du plafond
+                aideCMG = Math.min(coutMensuelBrut * 0.85, cmgMax);
+
+            } else if (selectedType === 'assistante') {
+                // Assistante maternelle
+                const tarifHoraire = parseDecimal(document.getElementById('tarif-assistante').value);
+                const indemniteEntretien = parseDecimal(document.getElementById('indemnite-entretien').value);
+
+                const salaireMensuel = tarifHoraire * heuresMois;
+                const indemniteMensuelle = indemniteEntretien * joursMois;
+
+                coutHoraire = tarifHoraire + (indemniteEntretien / 10); // Approximation
+                coutMensuelBrut = salaireMensuel + indemniteMensuelle;
+
+                // Calcul CMG
+                const ageMoins3 = ageEnfant < 3 ? 0 : 1;
+                let cmgMax;
+                if (revenus < SEUIL_CMG_1) {
+                    cmgMax = CMG_ASSISTANTE.tranche1[ageMoins3];
+                } else if (revenus < SEUIL_CMG_2) {
+                    cmgMax = CMG_ASSISTANTE.tranche2[ageMoins3];
+                } else {
+                    cmgMax = CMG_ASSISTANTE.tranche3[ageMoins3];
+                }
+
+                aideCMG = Math.min(salaireMensuel * 0.85, cmgMax);
+            }
+
+            // Coût après CMG
+            const coutApresCMG = coutMensuelBrut - aideCMG;
+
+            // Crédit d'impôt (50% des frais restants, plafond 3500€/an)
+            const fraisAnnuels = coutApresCMG * 12;
+            const creditImpotAnnuel = Math.min(fraisAnnuels * TAUX_CREDIT_IMPOT, PLAFOND_CREDIT_IMPOT);
+            const creditImpotMensuel = creditImpotAnnuel / 12;
+
+            // Coût net final
+            const coutMensuelNet = coutApresCMG - creditImpotMensuel;
+            const coutAnnuel = coutMensuelNet * 12;
+
+            // Mise à jour de l'affichage
+            document.getElementById('cout-horaire').textContent = coutHoraire.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('cout-mensuel-brut').textContent = Math.round(coutMensuelBrut).toLocaleString('fr-FR') + ' €';
+            document.getElementById('cout-mensuel-net').textContent = Math.round(coutMensuelNet).toLocaleString('fr-FR') + ' €';
+            document.getElementById('heures-mois').textContent = heuresMois + ' h';
+            document.getElementById('cout-annuel').textContent = Math.round(coutAnnuel).toLocaleString('fr-FR') + ' €';
+            document.getElementById('aide-cmg').textContent = '-' + Math.round(aideCMG).toLocaleString('fr-FR') + ' €/mois';
+            document.getElementById('credit-impot').textContent = '-' + Math.round(creditImpotMensuel).toLocaleString('fr-FR') + ' €/mois';
+
+            // Sync slider
+            document.getElementById('revenus-slider').value = revenus;
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            calculate();
+        });
+    </script>
+</body>
+</html>

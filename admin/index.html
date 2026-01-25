@@ -702,11 +702,16 @@
                                    data-field="title"
                                    data-original="${item.title.replace(/"/g, '&quot;')}"
                                    data-index="${index}"
+                                   id="titleInput-${index}"
                                    class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500"
-                                   oninput="updateSEO(this)">
+                                   oninput="updateCounter(this)">
                             <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full ${savedTitle.length >= 50 && savedTitle.length <= 60 ? 'bg-emerald-500' : savedTitle.length > 60 ? 'bg-amber-500' : 'bg-red-500'}" style="width: ${Math.min(savedTitle.length / 60 * 100, 100)}%"></div>
+                                <div class="h-full ${savedTitle.length >= 50 && savedTitle.length <= 60 ? 'bg-emerald-500' : savedTitle.length > 60 ? 'bg-amber-500' : 'bg-red-500'}" id="titleBar-${index}" style="width: ${Math.min(savedTitle.length / 60 * 100, 100)}%"></div>
                             </div>
+                            <button onclick="saveSEOField('${item.path}', 'title', ${index})" class="mt-2 w-full px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg flex items-center justify-center gap-1">
+                                <iconify-icon icon="lucide:save" width="12"></iconify-icon>
+                                Enregistrer Title
+                            </button>
                         </div>
                         <div>
                             <label class="text-slate-400 text-xs flex items-center justify-between mb-2">
@@ -720,11 +725,16 @@
                                       data-field="desc"
                                       data-original="${item.desc.replace(/"/g, '&quot;')}"
                                       data-index="${index}"
+                                      id="descInput-${index}"
                                       class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-20"
-                                      oninput="updateSEO(this)">${savedDesc}</textarea>
+                                      oninput="updateCounter(this)">${savedDesc}</textarea>
                             <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full ${savedDesc.length >= 140 && savedDesc.length <= 160 ? 'bg-emerald-500' : savedDesc.length > 160 ? 'bg-amber-500' : 'bg-red-500'}" style="width: ${Math.min(savedDesc.length / 160 * 100, 100)}%"></div>
+                                <div class="h-full ${savedDesc.length >= 140 && savedDesc.length <= 160 ? 'bg-emerald-500' : savedDesc.length > 160 ? 'bg-amber-500' : 'bg-red-500'}" id="descBar-${index}" style="width: ${Math.min(savedDesc.length / 160 * 100, 100)}%"></div>
                             </div>
+                            <button onclick="saveSEOField('${item.path}', 'desc', ${index})" class="mt-2 w-full px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg flex items-center justify-center gap-1">
+                                <iconify-icon icon="lucide:save" width="12"></iconify-icon>
+                                Enregistrer Description
+                            </button>
                         </div>
                     </div>
 
@@ -783,21 +793,38 @@
             updateOverviewStats();
         }
 
-        // Update SEO value
-        function updateSEO(input) {
-            const path = input.dataset.path;
+        // Update counter only (no save)
+        function updateCounter(input) {
             const field = input.dataset.field;
-            const original = input.dataset.original;
             const index = input.dataset.index;
             const value = input.value;
 
             // Update counter
             const counterId = field === 'title' ? `titleCount-${index}` : `descCount-${index}`;
+            const barId = field === 'title' ? `titleBar-${index}` : `descBar-${index}`;
             const min = field === 'title' ? 50 : 140;
             const max = field === 'title' ? 60 : 160;
+
             const counter = document.getElementById(counterId);
             counter.textContent = `${value.length}/${max}`;
             counter.className = getCountColor(value.length, min, max);
+
+            // Update progress bar
+            const bar = document.getElementById(barId);
+            if (bar) {
+                const isOptimal = value.length >= min && value.length <= max;
+                const isTooLong = value.length > max;
+                bar.className = `h-full ${isOptimal ? 'bg-emerald-500' : isTooLong ? 'bg-amber-500' : 'bg-red-500'}`;
+                bar.style.width = `${Math.min(value.length / max * 100, 100)}%`;
+            }
+        }
+
+        // Save SEO field (called by button)
+        function saveSEOField(path, field, index) {
+            const inputId = field === 'title' ? `titleInput-${index}` : `descInput-${index}`;
+            const input = document.getElementById(inputId);
+            const value = input.value;
+            const original = input.dataset.original;
 
             // Track changes
             if (value !== original) {
@@ -812,17 +839,26 @@
 
             localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
 
-            // Re-render to update scores and previews
-            renderSEOCards();
+            // Show confirmation
+            const btn = input.parentElement.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<iconify-icon icon="lucide:check" width="12"></iconify-icon> Enregistre !';
+            btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+            btn.classList.add('bg-emerald-600');
 
-            // Re-apply filters if active
-            const activeFilter = document.querySelector('.seo-filter.bg-indigo-600');
-            if (activeFilter && activeFilter.dataset.filter !== 'all') {
-                filterSEO(activeFilter.dataset.filter);
-            }
-            if (currentScoreFilter) {
-                filterByScore(currentScoreFilter);
-            }
+            setTimeout(() => {
+                // Re-render to update scores and previews
+                renderSEOCards();
+
+                // Re-apply filters if active
+                const activeFilter = document.querySelector('.seo-filter.bg-indigo-600');
+                if (activeFilter && activeFilter.dataset.filter !== 'all') {
+                    filterSEO(activeFilter.dataset.filter);
+                }
+                if (currentScoreFilter) {
+                    filterByScore(currentScoreFilter);
+                }
+            }, 500);
         }
 
         // Reset single page

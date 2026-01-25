@@ -142,15 +142,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/simulateur-apl/"/>
   </url>
 
-  <!-- ========== FRANCE - SIMULATEUR CRECHE ========== -->
+  <!-- ========== FRANCE - CRECHE TARIFS ========== -->
   <url>
-    <loc>https://netsalaire.com/fr/france/simulateur-creche/</loc>
+    <loc>https://netsalaire.com/fr/france/creche-tarifs/</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/simulateur-creche/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/creche-tarifs/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/france/daycare-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/simulateur-creche/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/france/creche-tarifs/"/>
   </url>
 
   <!-- ========== FRANCE - SIMULATEUR INDEMNITE KILOMETRIQUE ========== -->

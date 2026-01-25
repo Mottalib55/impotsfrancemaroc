@@ -374,10 +374,7 @@
             <!-- Toolbar -->
             <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 px-4 py-3 bg-slate-700/30">
                 <div class="flex gap-2">
-                    <button onclick="filterSEO('all')" class="seo-filter active px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-600 text-white" data-filter="all">Tous</button>
-                    <button onclick="filterSEO('fr')" class="seo-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-filter="fr">FR</button>
-                    <button onclick="filterSEO('en')" class="seo-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-filter="en">EN</button>
-                    <span class="border-l border-slate-600 mx-2"></span>
+                    <button onclick="filterByScore('all')" class="seo-score-filter active px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-600 text-white" data-score="all">Tous</button>
                     <button onclick="filterByScore('good')" class="seo-score-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-score="good">
                         <span class="text-emerald-400">●</span> OK
                     </button>
@@ -463,42 +460,100 @@
         });
 
         // SEO Data - All pages with current values
-        const seoData = [
-            { path: "/fr/", lang: "fr", title: "Simulateur Impôts et Salaire Brut ⇒ Net 2026 | Gratuit et Rapide", desc: "Calculez vos impôts et salaire brut en net gratuitement en 2 clics. Simulation détaillée horaire, mensuelle ou annuelle selon votre statut. Barèmes 2026.", keywords: ["simulateur", "impots", "salaire brut net", "2026", "gratuit", "rapide"] },
-            { path: "/fr/france/simulateur-salaire-brut-net/", lang: "fr", title: "Salaire Brut Net France 2025 → Calcul Instantané Gratuit", desc: "Cadre ou non-cadre ? Découvre ton vrai salaire net après cotisations en 2 clics. Résultat détaillé, gratuit, sans inscription.", keywords: ["salaire brut net", "france", "cadre", "non-cadre", "cotisations", "2025"] },
-            { path: "/fr/france/simulateur-impot-revenu/", lang: "fr", title: "Simulateur Impôt sur le Revenu France 2025 | Calcul Précis", desc: "Combien tu vas vraiment payer ? Calcule ton IR en 30 sec. Barème officiel, quotient familial, décote et PER inclus.", keywords: ["impot revenu", "IR", "france", "bareme", "quotient familial", "2025"] },
-            { path: "/fr/france/simulateur-chomage-are/", lang: "fr", title: "Simulateur Chomage ARE 2025 - Calcul Gratuit et Instantane", desc: "Licencie ou en fin de contrat ? Calculez votre ARE en 30 secondes. Simulateur gratuit avec les taux France Travail 2025. Montant journalier + duree.", keywords: ["chomage", "ARE", "allocation", "france travail", "2025"] },
-            { path: "/fr/france/simulateur-indemnite-licenciement/", lang: "fr", title: "Calcul Indemnite Licenciement 2025 - Simulateur Gratuit", desc: "Vous etes licencie ? Calculez votre indemnite legale en 2 clics. Simulateur gratuit 2025 base sur salaire et anciennete. Connaissez vos droits !", keywords: ["indemnite licenciement", "calcul", "simulateur", "2025"] },
-            { path: "/fr/france/simulateur-rupture-conventionnelle/", lang: "fr", title: "Simulateur Rupture Conventionnelle 2025 - Calcul Gratuit", desc: "Vous negociez votre depart ? Calculez votre indemnite de rupture conventionnelle instantanement. Minimum legal + conseils de negociation. Outil gratuit 2025.", keywords: ["rupture conventionnelle", "indemnite", "calcul", "2025"] },
-            { path: "/fr/france/simulateur-apl/", lang: "fr", title: "Simulateur APL 2025 - Calcul Aide au Logement Gratuit", desc: "Vous etes locataire ? Verifiez votre eligibilite APL en 30 secondes. Simulateur gratuit 2025 avec baremes CAF officiels. Ne passez pas a cote de vos aides !", keywords: ["APL", "aide logement", "CAF", "simulateur", "2025"] },
-            { path: "/fr/france/simulateur-indemnite-kilometrique/", lang: "fr", title: "Calcul Frais Kilometriques 2025 - Simulateur Gratuit IK", desc: "Vous utilisez votre vehicule pour le travail ? Calculez votre deduction fiscale instantanement. Bareme officiel 2025 + bonus 20% vehicule electrique inclus.", keywords: ["frais kilometriques", "IK", "bareme", "deduction", "2025"] },
-            { path: "/fr/france/guide/", lang: "fr", title: "Guide Fiscal France 2025 – Tout Comprendre en 5 Minutes", desc: "Cotisations, tranches d'impôt, quotient familial... La fiscalité française expliquée simplement. Le guide que tu aurais aimé avoir avant.", keywords: ["guide fiscal", "france", "cotisations", "impot", "2025"] },
-            { path: "/fr/maroc/simulateur-salaire-brut-net/", lang: "fr", title: "Salaire Brut Net Maroc 2025 → Simulateur CNSS & IR Gratuit", desc: "CNSS, AMO, IR... Combien il te reste vraiment ? Calcule ton salaire net au Maroc en 2 clics. Barèmes 2025 officiels.", keywords: ["salaire brut net", "maroc", "CNSS", "IR", "AMO", "2025"] },
-            { path: "/fr/maroc/simulateur-ir/", lang: "fr", title: "Simulateur Impôt sur le Revenu Maroc 2025 | Calcul IR", desc: "Calcule ton IR marocain en quelques secondes. Tranches 2025, abattements familiaux, frais pro inclus. Résultat instantané et gratuit.", keywords: ["impot revenu", "IR", "maroc", "tranches", "2025"] },
-            { path: "/fr/maroc/guide/", lang: "fr", title: "Guide Fiscal Maroc 2025 – CNSS, IR et Salaire Net Expliqués", desc: "CNSS, AMO, tranches IR... Comprends enfin la fiscalité marocaine. Guide clair et complet, mis à jour pour 2025.", keywords: ["guide fiscal", "maroc", "CNSS", "IR", "2025"] },
-            { path: "/fr/comparateur-salaire-france-maroc/", lang: "fr", title: "France vs Maroc : Où Gagnes-tu Plus ? | Comparateur 2025", desc: "MRE : compare ton salaire net, tes impôts et cotisations entre la France et le Maroc. La réponse va peut-être te surprendre.", keywords: ["comparateur", "france", "maroc", "salaire", "MRE", "2025"] },
-            { path: "/fr/comparateur-global/", lang: "fr", title: "Comparateur Salaire Net : 10+ Pays | France, Dubaï, Suisse...", desc: "France, Maroc, Dubaï, Suisse, Luxembourg... Où ton salaire vaut-il vraiment le plus ? Compare et trouve le meilleur pays pour toi.", keywords: ["comparateur", "salaire net", "international", "dubai", "suisse"] },
-            { path: "/fr/faq/", lang: "fr", title: "FAQ Salaire Brut Net & Impôts – Toutes les Réponses", desc: "Brut vs net ? Cadre vs non-cadre ? Différence France/Maroc ? Toutes les réponses claires aux questions que tout le monde se pose.", keywords: ["FAQ", "brut net", "impots", "questions"] },
-            { path: "/fr/mentions-legales/", lang: "fr", title: "Mentions Légales – NetSalaire.com", desc: "Mentions légales et informations juridiques du site NetSalaire.com.", keywords: ["mentions legales"] },
-            { path: "/fr/politique-confidentialite/", lang: "fr", title: "Politique de Confidentialité – NetSalaire.com", desc: "Comment NetSalaire.com protège tes données. Spoiler : on ne stocke rien, tout est calculé dans ton navigateur.", keywords: ["confidentialite", "donnees", "RGPD"] },
-            { path: "/en/", lang: "en", title: "Tax & Gross ⇒ Net Salary Calculator 2026 | Free & Fast", desc: "Calculate your taxes and gross to net salary for free in 2 clicks. Detailed simulation with hourly, monthly or annual breakdown. 2026 tax rates.", keywords: ["tax", "gross to net", "salary calculator", "2026", "free", "fast"] },
-            { path: "/en/france/gross-to-net/", lang: "en", title: "Gross to Net Salary France 2025 → Free Instant Calculator", desc: "Convert your French gross salary to net in seconds. Includes social charges, income tax and employer cost breakdown.", keywords: ["gross to net", "france", "salary", "calculator", "2025"] },
-            { path: "/en/france/income-tax/", lang: "en", title: "France Income Tax Calculator 2025 | Accurate & Free", desc: "Estimate your French income tax instantly. Based on official 2025 brackets. Single, married, with dependents – all cases covered.", keywords: ["income tax", "france", "calculator", "2025"] },
-            { path: "/en/france/unemployment-calculator/", lang: "en", title: "Unemployment Calculator France 2025 - Free ARE Estimate", desc: "Calculate your French unemployment benefits (ARE) instantly. Free tool with 2025 France Travail rates. Know your daily allowance & duration in 30 seconds.", keywords: ["unemployment", "ARE", "france", "calculator", "2025"] },
-            { path: "/en/france/severance-calculator/", lang: "en", title: "Severance Pay Calculator France 2025 - Free & Instant", desc: "Getting fired in France? Calculate your legal severance pay in 2 clicks. Free 2025 calculator based on salary & seniority. Know your rights instantly.", keywords: ["severance", "calculator", "france", "2025"] },
-            { path: "/en/france/mutual-termination-calculator/", lang: "en", title: "Rupture Conventionnelle Calculator France 2025 - Free Tool", desc: "Negotiating your departure? Calculate your rupture conventionnelle compensation instantly. Free 2025 tool with legal minimum, timeline & negotiation tips.", keywords: ["rupture conventionnelle", "calculator", "france", "2025"] },
-            { path: "/en/france/housing-benefit-calculator/", lang: "en", title: "APL Calculator France 2025 - Free Housing Benefit Estimate", desc: "Renting in France? Check if you qualify for APL housing aid in 30 seconds. Free 2025 calculator based on zone, rent & income. Don't miss out on benefits!", keywords: ["APL", "housing benefit", "france", "calculator", "2025"] },
-            { path: "/en/france/mileage-calculator/", lang: "en", title: "Mileage Calculator France 2025 - Free Tax Deduction Tool", desc: "Drive for work? Calculate your French mileage deduction instantly. Free 2025 tool with official rates. Car, motorcycle, e-bike. +20% EV bonus included.", keywords: ["mileage", "calculator", "france", "deduction", "2025"] },
-            { path: "/en/france/tax-guide/", lang: "en", title: "French Tax System 2025 – Explained in 5 Minutes", desc: "Understand French social charges, income tax brackets and net salary calculation. Clear guide for employees & expats.", keywords: ["tax guide", "france", "social charges", "2025"] },
-            { path: "/en/morocco/gross-to-net/", lang: "en", title: "Gross to Net Salary Morocco 2025 → CNSS & IR Calculator", desc: "Calculate your Moroccan net salary in seconds. CNSS contributions, IR tax and AMO included. 100% free.", keywords: ["gross to net", "morocco", "CNSS", "calculator", "2025"] },
-            { path: "/en/morocco/tax-simulator/", lang: "en", title: "Morocco Income Tax Simulator 2025 | IR Calculation", desc: "Estimate your Moroccan IR (Impôt sur le Revenu) instantly. Updated 2025 brackets, deductions included.", keywords: ["income tax", "morocco", "IR", "calculator", "2025"] },
-            { path: "/en/morocco/tax-guide/", lang: "en", title: "Moroccan Tax System 2025 – CNSS, IR & Net Salary Guide", desc: "Everything about taxes in Morocco: CNSS, AMO, IR brackets and how to calculate your net salary. Simple guide.", keywords: ["tax guide", "morocco", "CNSS", "IR", "2025"] },
-            { path: "/en/france-morocco-comparison/", lang: "en", title: "France vs Morocco: Where Do You Earn More? | 2025 Comparator", desc: "Compare your net salary, taxes and purchasing power between France and Morocco. Make informed career decisions.", keywords: ["comparison", "france", "morocco", "salary", "2025"] },
-            { path: "/en/global-comparison/", lang: "en", title: "Net Salary Comparator: 10+ Countries | France, Dubai, Switzerland...", desc: "Compare net salaries across France, Morocco, Switzerland, UAE, Belgium and more. See where your money goes further.", keywords: ["comparator", "salary", "international", "dubai", "switzerland"] },
-            { path: "/en/faq/", lang: "en", title: "FAQ Gross to Net & Taxes – All Your Questions Answered", desc: "How is net salary calculated? What taxes apply? Find clear answers to all your gross-to-net and tax questions.", keywords: ["FAQ", "gross to net", "taxes", "questions"] },
-            { path: "/en/legal-notice/", lang: "en", title: "Legal Notice – NetSalaire.com", desc: "Legal information about NetSalaire.com. Publisher, hosting and terms of use.", keywords: ["legal notice"] },
-            { path: "/en/privacy-policy/", lang: "en", title: "Privacy Policy – NetSalaire.com", desc: "How NetSalaire.com protects your data. Spoiler: we store nothing, everything is calculated in your browser.", keywords: ["privacy", "data", "GDPR"] }
+        // Paired FR/EN pages
+        const seoPairs = [
+            {
+                name: "Accueil / Home",
+                fr: { path: "/fr/", title: "Simulateur Impôts et Salaire Brut ⇒ Net 2026 | Gratuit et Rapide", desc: "Calculez vos impôts et salaire brut en net gratuitement en 2 clics. Simulation détaillée horaire, mensuelle ou annuelle selon votre statut. Barèmes 2026." },
+                en: { path: "/en/", title: "Tax & Gross ⇒ Net Salary Calculator 2026 | Free & Fast", desc: "Calculate your taxes and gross to net salary for free in 2 clicks. Detailed simulation with hourly, monthly or annual breakdown. 2026 tax rates." }
+            },
+            {
+                name: "Brut Net France",
+                fr: { path: "/fr/france/simulateur-salaire-brut-net/", title: "Salaire Brut Net France 2025 → Calcul Instantané Gratuit", desc: "Cadre ou non-cadre ? Découvre ton vrai salaire net après cotisations en 2 clics. Résultat détaillé, gratuit, sans inscription." },
+                en: { path: "/en/france/gross-to-net/", title: "Gross to Net Salary France 2025 → Free Instant Calculator", desc: "Convert your French gross salary to net in seconds. Includes social charges, income tax and employer cost breakdown." }
+            },
+            {
+                name: "Impot Revenu France",
+                fr: { path: "/fr/france/simulateur-impot-revenu/", title: "Simulateur Impôt sur le Revenu France 2025 | Calcul Précis", desc: "Combien tu vas vraiment payer ? Calcule ton IR en 30 sec. Barème officiel, quotient familial, décote et PER inclus." },
+                en: { path: "/en/france/income-tax/", title: "France Income Tax Calculator 2025 | Accurate & Free", desc: "Estimate your French income tax instantly. Based on official 2025 brackets. Single, married, with dependents – all cases covered." }
+            },
+            {
+                name: "Chomage ARE",
+                fr: { path: "/fr/france/simulateur-chomage-are/", title: "Simulateur Chomage ARE 2025 - Calcul Gratuit et Instantane", desc: "Licencie ou en fin de contrat ? Calculez votre ARE en 30 secondes. Simulateur gratuit avec les taux France Travail 2025. Montant journalier + duree." },
+                en: { path: "/en/france/unemployment-calculator/", title: "Unemployment Calculator France 2025 - Free ARE Estimate", desc: "Calculate your French unemployment benefits (ARE) instantly. Free tool with 2025 France Travail rates. Know your daily allowance & duration in 30 seconds." }
+            },
+            {
+                name: "Indemnite Licenciement",
+                fr: { path: "/fr/france/simulateur-indemnite-licenciement/", title: "Calcul Indemnite Licenciement 2025 - Simulateur Gratuit", desc: "Vous etes licencie ? Calculez votre indemnite legale en 2 clics. Simulateur gratuit 2025 base sur salaire et anciennete. Connaissez vos droits !" },
+                en: { path: "/en/france/severance-calculator/", title: "Severance Pay Calculator France 2025 - Free & Instant", desc: "Getting fired in France? Calculate your legal severance pay in 2 clicks. Free 2025 calculator based on salary & seniority. Know your rights instantly." }
+            },
+            {
+                name: "Rupture Conventionnelle",
+                fr: { path: "/fr/france/simulateur-rupture-conventionnelle/", title: "Simulateur Rupture Conventionnelle 2025 - Calcul Gratuit", desc: "Vous negociez votre depart ? Calculez votre indemnite de rupture conventionnelle instantanement. Minimum legal + conseils de negociation. Outil gratuit 2025." },
+                en: { path: "/en/france/mutual-termination-calculator/", title: "Rupture Conventionnelle Calculator France 2025 - Free Tool", desc: "Negotiating your departure? Calculate your rupture conventionnelle compensation instantly. Free 2025 tool with legal minimum, timeline & negotiation tips." }
+            },
+            {
+                name: "APL",
+                fr: { path: "/fr/france/simulateur-apl/", title: "Simulateur APL 2025 - Calcul Aide au Logement Gratuit", desc: "Vous etes locataire ? Verifiez votre eligibilite APL en 30 secondes. Simulateur gratuit 2025 avec baremes CAF officiels. Ne passez pas a cote de vos aides !" },
+                en: { path: "/en/france/housing-benefit-calculator/", title: "APL Calculator France 2025 - Free Housing Benefit Estimate", desc: "Renting in France? Check if you qualify for APL housing aid in 30 seconds. Free 2025 calculator based on zone, rent & income. Don't miss out on benefits!" }
+            },
+            {
+                name: "Frais Kilometriques",
+                fr: { path: "/fr/france/simulateur-indemnite-kilometrique/", title: "Calcul Frais Kilometriques 2025 - Simulateur Gratuit IK", desc: "Vous utilisez votre vehicule pour le travail ? Calculez votre deduction fiscale instantanement. Bareme officiel 2025 + bonus 20% vehicule electrique inclus." },
+                en: { path: "/en/france/mileage-calculator/", title: "Mileage Calculator France 2025 - Free Tax Deduction Tool", desc: "Drive for work? Calculate your French mileage deduction instantly. Free 2025 tool with official rates. Car, motorcycle, e-bike. +20% EV bonus included." }
+            },
+            {
+                name: "Guide France",
+                fr: { path: "/fr/france/guide/", title: "Guide Fiscal France 2025 – Tout Comprendre en 5 Minutes", desc: "Cotisations, tranches d'impôt, quotient familial... La fiscalité française expliquée simplement. Le guide que tu aurais aimé avoir avant." },
+                en: { path: "/en/france/tax-guide/", title: "French Tax System 2025 – Explained in 5 Minutes", desc: "Understand French social charges, income tax brackets and net salary calculation. Clear guide for employees & expats." }
+            },
+            {
+                name: "Brut Net Maroc",
+                fr: { path: "/fr/maroc/simulateur-salaire-brut-net/", title: "Salaire Brut Net Maroc 2025 → Simulateur CNSS & IR Gratuit", desc: "CNSS, AMO, IR... Combien il te reste vraiment ? Calcule ton salaire net au Maroc en 2 clics. Barèmes 2025 officiels." },
+                en: { path: "/en/morocco/gross-to-net/", title: "Gross to Net Salary Morocco 2025 → CNSS & IR Calculator", desc: "Calculate your Moroccan net salary in seconds. CNSS contributions, IR tax and AMO included. 100% free." }
+            },
+            {
+                name: "IR Maroc",
+                fr: { path: "/fr/maroc/simulateur-ir/", title: "Simulateur Impôt sur le Revenu Maroc 2025 | Calcul IR", desc: "Calcule ton IR marocain en quelques secondes. Tranches 2025, abattements familiaux, frais pro inclus. Résultat instantané et gratuit." },
+                en: { path: "/en/morocco/tax-simulator/", title: "Morocco Income Tax Simulator 2025 | IR Calculation", desc: "Estimate your Moroccan IR (Impôt sur le Revenu) instantly. Updated 2025 brackets, deductions included." }
+            },
+            {
+                name: "Guide Maroc",
+                fr: { path: "/fr/maroc/guide/", title: "Guide Fiscal Maroc 2025 – CNSS, IR et Salaire Net Expliqués", desc: "CNSS, AMO, tranches IR... Comprends enfin la fiscalité marocaine. Guide clair et complet, mis à jour pour 2025." },
+                en: { path: "/en/morocco/tax-guide/", title: "Moroccan Tax System 2025 – CNSS, IR & Net Salary Guide", desc: "Everything about taxes in Morocco: CNSS, AMO, IR brackets and how to calculate your net salary. Simple guide." }
+            },
+            {
+                name: "Comparateur France/Maroc",
+                fr: { path: "/fr/comparateur-salaire-france-maroc/", title: "France vs Maroc : Où Gagnes-tu Plus ? | Comparateur 2025", desc: "MRE : compare ton salaire net, tes impôts et cotisations entre la France et le Maroc. La réponse va peut-être te surprendre." },
+                en: { path: "/en/france-morocco-comparison/", title: "France vs Morocco: Where Do You Earn More? | 2025 Comparator", desc: "Compare your net salary, taxes and purchasing power between France and Morocco. Make informed career decisions." }
+            },
+            {
+                name: "Comparateur Global",
+                fr: { path: "/fr/comparateur-global/", title: "Comparateur Salaire Net : 10+ Pays | France, Dubaï, Suisse...", desc: "France, Maroc, Dubaï, Suisse, Luxembourg... Où ton salaire vaut-il vraiment le plus ? Compare et trouve le meilleur pays pour toi." },
+                en: { path: "/en/global-comparison/", title: "Net Salary Comparator: 10+ Countries | France, Dubai, Switzerland...", desc: "Compare net salaries across France, Morocco, Switzerland, UAE, Belgium and more. See where your money goes further." }
+            },
+            {
+                name: "FAQ",
+                fr: { path: "/fr/faq/", title: "FAQ Salaire Brut Net & Impôts – Toutes les Réponses", desc: "Brut vs net ? Cadre vs non-cadre ? Différence France/Maroc ? Toutes les réponses claires aux questions que tout le monde se pose." },
+                en: { path: "/en/faq/", title: "FAQ Gross to Net & Taxes – All Your Questions Answered", desc: "How is net salary calculated? What taxes apply? Find clear answers to all your gross-to-net and tax questions." }
+            },
+            {
+                name: "Mentions Legales",
+                fr: { path: "/fr/mentions-legales/", title: "Mentions Légales – NetSalaire.com", desc: "Mentions légales et informations juridiques du site NetSalaire.com." },
+                en: { path: "/en/legal-notice/", title: "Legal Notice – NetSalaire.com", desc: "Legal information about NetSalaire.com. Publisher, hosting and terms of use." }
+            },
+            {
+                name: "Confidentialite",
+                fr: { path: "/fr/politique-confidentialite/", title: "Politique de Confidentialité – NetSalaire.com", desc: "Comment NetSalaire.com protège tes données. Spoiler : on ne stocke rien, tout est calculé dans ton navigateur." },
+                en: { path: "/en/privacy-policy/", title: "Privacy Policy – NetSalaire.com", desc: "How NetSalaire.com protects your data. Spoiler: we store nothing, everything is calculated in your browser." }
+            }
         ];
+
+        // Flatten for duplicate detection
+        const seoData = seoPairs.flatMap(pair => [
+            { path: pair.fr.path, lang: "fr", title: pair.fr.title, desc: pair.fr.desc },
+            { path: pair.en.path, lang: "en", title: pair.en.title, desc: pair.en.desc }
+        ]);
 
         // Track changes
         let seoChanges = JSON.parse(localStorage.getItem('seoChanges') || '{}');
@@ -618,120 +673,142 @@
             document.getElementById('pagesError').textContent = pagesError;
         }
 
-        // Render SEO cards
+        // Render SEO cards (FR + EN paired)
         function renderSEOCards() {
             const container = document.getElementById('seoContainer');
             container.innerHTML = '';
 
             const duplicates = findDuplicates();
 
-            seoData.forEach((item, index) => {
-                const savedTitle = seoChanges[item.path]?.title || item.title;
-                const savedDesc = seoChanges[item.path]?.desc || item.desc;
-                const hasChanges = seoChanges[item.path] !== undefined;
-                const { score, checks } = calculateSEOScore(savedTitle, savedDesc, item.path, duplicates);
-                const { color, status, label } = getScoreColor(score);
+            seoPairs.forEach((pair, pairIndex) => {
+                const frPath = pair.fr.path;
+                const enPath = pair.en.path;
+
+                const frTitle = seoChanges[frPath]?.title || pair.fr.title;
+                const frDesc = seoChanges[frPath]?.desc || pair.fr.desc;
+                const enTitle = seoChanges[enPath]?.title || pair.en.title;
+                const enDesc = seoChanges[enPath]?.desc || pair.en.desc;
+
+                const frHasChanges = seoChanges[frPath] !== undefined;
+                const enHasChanges = seoChanges[enPath] !== undefined;
+                const hasChanges = frHasChanges || enHasChanges;
+
+                const frScore = calculateSEOScore(frTitle, frDesc, frPath, duplicates);
+                const enScore = calculateSEOScore(enTitle, enDesc, enPath, duplicates);
+                const avgScore = Math.round((frScore.score + enScore.score) / 2);
+                const { color, status, label } = getScoreColor(avgScore);
 
                 const card = document.createElement('div');
-                card.className = `seo-card ${item.lang} ${status} bg-slate-700/30 rounded-xl p-5 border-2 ${hasChanges ? 'border-amber-500/50' : `border-${color}-500/30`}`;
+                card.className = `seo-card fr en ${status} bg-slate-700/30 rounded-xl p-5 border-2 ${hasChanges ? 'border-amber-500/50' : `border-${color}-500/30`}`;
                 card.dataset.score = status;
 
-                // Generate SERP preview
-                const serpTitle = savedTitle.length > 60 ? savedTitle.substring(0, 57) + '...' : savedTitle;
-                const serpDesc = savedDesc.length > 160 ? savedDesc.substring(0, 157) + '...' : savedDesc;
-                const serpUrl = 'netsalaire.com' + item.path;
-
                 card.innerHTML = `
-                    <!-- Header with Score -->
-                    <div class="flex items-center justify-between mb-4">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-600">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-${color}-500/20 flex items-center justify-center">
-                                <span class="text-${color}-400 font-bold text-lg">${score}</span>
+                                <span class="text-${color}-400 font-bold text-lg">${avgScore}</span>
                             </div>
                             <div>
-                                <a href="${item.path}" target="_blank" class="text-white hover:text-indigo-400 font-medium flex items-center gap-1">
-                                    ${item.path}
-                                    <iconify-icon icon="lucide:external-link" width="14" class="text-slate-500"></iconify-icon>
-                                </a>
-                                <span class="text-xs text-${color}-400">${label}</span>
+                                <span class="text-white font-semibold">${pair.name}</span>
+                                <div class="text-xs text-${color}-400">${label}</div>
                             </div>
                         </div>
-                        <span class="text-xs px-2 py-1 rounded-lg ${item.lang === 'fr' ? 'bg-indigo-600/30 text-indigo-300' : 'bg-blue-600/30 text-blue-300'}">${item.lang.toUpperCase()}</span>
+                        <div class="flex gap-2">
+                            <span class="text-xs px-2 py-1 rounded-lg bg-indigo-600/30 text-indigo-300">FR: ${frScore.score}</span>
+                            <span class="text-xs px-2 py-1 rounded-lg bg-blue-600/30 text-blue-300">EN: ${enScore.score}</span>
+                        </div>
                     </div>
 
-                    <!-- SERP Preview -->
-                    <div class="bg-white rounded-lg p-4 mb-4">
-                        <div class="text-xs text-green-700 mb-1">${serpUrl}</div>
-                        <div class="text-blue-800 text-lg hover:underline cursor-pointer mb-1 font-medium" style="font-family: arial, sans-serif;">${serpTitle}</div>
-                        <div class="text-sm text-gray-600" style="font-family: arial, sans-serif;">${serpDesc}</div>
+                    <!-- FR Section -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <iconify-icon icon="circle-flags:fr" width="20"></iconify-icon>
+                            <span class="text-white font-medium">Francais</span>
+                            <a href="${frPath}" target="_blank" class="text-slate-400 hover:text-indigo-400 text-xs ml-auto flex items-center gap-1">
+                                ${frPath}
+                                <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
+                            </a>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
+                                    <span>Title</span>
+                                    <span class="${getCountColor(frTitle.length, 50, 60)}" id="titleCount-fr-${pairIndex}">${frTitle.length}/60</span>
+                                </label>
+                                <input type="text"
+                                       value="${frTitle.replace(/"/g, '&quot;')}"
+                                       data-path="${frPath}"
+                                       data-field="title"
+                                       data-original="${pair.fr.title.replace(/"/g, '&quot;')}"
+                                       data-index="fr-${pairIndex}"
+                                       id="titleInput-fr-${pairIndex}"
+                                       class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500"
+                                       oninput="updateCounter(this)">
+                            </div>
+                            <div>
+                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
+                                    <span>Description</span>
+                                    <span class="${getCountColor(frDesc.length, 140, 160)}" id="descCount-fr-${pairIndex}">${frDesc.length}/160</span>
+                                </label>
+                                <textarea data-path="${frPath}"
+                                          data-field="desc"
+                                          data-original="${pair.fr.desc.replace(/"/g, '&quot;')}"
+                                          data-index="fr-${pairIndex}"
+                                          id="descInput-fr-${pairIndex}"
+                                          class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-16"
+                                          oninput="updateCounter(this)">${frDesc}</textarea>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Editor -->
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="text-slate-400 text-xs flex items-center justify-between mb-2">
-                                <span class="flex items-center gap-1">
-                                    <iconify-icon icon="lucide:type" width="12"></iconify-icon>
-                                    Title
-                                </span>
-                                <span class="${getCountColor(savedTitle.length, 50, 60)}" id="titleCount-${index}">${savedTitle.length}/60</span>
-                            </label>
-                            <input type="text"
-                                   value="${savedTitle.replace(/"/g, '&quot;')}"
-                                   data-path="${item.path}"
-                                   data-field="title"
-                                   data-original="${item.title.replace(/"/g, '&quot;')}"
-                                   data-index="${index}"
-                                   id="titleInput-${index}"
-                                   class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500"
-                                   oninput="updateCounter(this)">
-                            <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full ${savedTitle.length >= 50 && savedTitle.length <= 60 ? 'bg-emerald-500' : savedTitle.length > 60 ? 'bg-amber-500' : 'bg-red-500'}" id="titleBar-${index}" style="width: ${Math.min(savedTitle.length / 60 * 100, 100)}%"></div>
-                            </div>
+                    <!-- EN Section -->
+                    <div class="mb-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <iconify-icon icon="circle-flags:gb" width="20"></iconify-icon>
+                            <span class="text-white font-medium">English</span>
+                            <a href="${enPath}" target="_blank" class="text-slate-400 hover:text-indigo-400 text-xs ml-auto flex items-center gap-1">
+                                ${enPath}
+                                <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
+                            </a>
                         </div>
-                        <div>
-                            <label class="text-slate-400 text-xs flex items-center justify-between mb-2">
-                                <span class="flex items-center gap-1">
-                                    <iconify-icon icon="lucide:text" width="12"></iconify-icon>
-                                    Meta Description
-                                </span>
-                                <span class="${getCountColor(savedDesc.length, 140, 160)}" id="descCount-${index}">${savedDesc.length}/160</span>
-                            </label>
-                            <textarea data-path="${item.path}"
-                                      data-field="desc"
-                                      data-original="${item.desc.replace(/"/g, '&quot;')}"
-                                      data-index="${index}"
-                                      id="descInput-${index}"
-                                      class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-20"
-                                      oninput="updateCounter(this)">${savedDesc}</textarea>
-                            <div class="mt-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full ${savedDesc.length >= 140 && savedDesc.length <= 160 ? 'bg-emerald-500' : savedDesc.length > 160 ? 'bg-amber-500' : 'bg-red-500'}" id="descBar-${index}" style="width: ${Math.min(savedDesc.length / 160 * 100, 100)}%"></div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
+                                    <span>Title</span>
+                                    <span class="${getCountColor(enTitle.length, 50, 60)}" id="titleCount-en-${pairIndex}">${enTitle.length}/60</span>
+                                </label>
+                                <input type="text"
+                                       value="${enTitle.replace(/"/g, '&quot;')}"
+                                       data-path="${enPath}"
+                                       data-field="title"
+                                       data-original="${pair.en.title.replace(/"/g, '&quot;')}"
+                                       data-index="en-${pairIndex}"
+                                       id="titleInput-en-${pairIndex}"
+                                       class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500"
+                                       oninput="updateCounter(this)">
+                            </div>
+                            <div>
+                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
+                                    <span>Description</span>
+                                    <span class="${getCountColor(enDesc.length, 140, 160)}" id="descCount-en-${pairIndex}">${enDesc.length}/160</span>
+                                </label>
+                                <textarea data-path="${enPath}"
+                                          data-field="desc"
+                                          data-original="${pair.en.desc.replace(/"/g, '&quot;')}"
+                                          data-index="en-${pairIndex}"
+                                          id="descInput-en-${pairIndex}"
+                                          class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-16"
+                                          oninput="updateCounter(this)">${enDesc}</textarea>
                             </div>
                         </div>
                     </div>
-                    <button onclick="saveSEOBoth('${item.path}', ${index})" id="saveBtn-${index}" class="w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
+
+                    <!-- Save Button -->
+                    <button onclick="saveSEOPair(${pairIndex})" id="saveBtn-${pairIndex}" class="w-full px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
                         <iconify-icon icon="lucide:save" width="16"></iconify-icon>
-                        Enregistrer
+                        Enregistrer FR + EN
                     </button>
-
-                    <!-- SEO Checklist -->
-                    <details class="group">
-                        <summary class="flex items-center gap-2 cursor-pointer text-slate-400 text-sm hover:text-white">
-                            <iconify-icon icon="lucide:list-checks" width="16"></iconify-icon>
-                            Checklist SEO (${checks.filter(c => c.status === 'good').length}/${checks.length} criteres)
-                            <iconify-icon icon="lucide:chevron-down" width="16" class="ml-auto group-open:rotate-180 transition-transform"></iconify-icon>
-                        </summary>
-                        <div class="mt-3 space-y-2 pl-2 border-l-2 border-slate-600">
-                            ${checks.map(check => `
-                                <div class="flex items-start gap-2 text-xs">
-                                    <iconify-icon icon="${check.status === 'good' ? 'lucide:check-circle' : check.status === 'warning' ? 'lucide:alert-circle' : 'lucide:x-circle'}"
-                                                  width="14"
-                                                  class="mt-0.5 ${check.status === 'good' ? 'text-emerald-400' : check.status === 'warning' ? 'text-amber-400' : 'text-red-400'}"></iconify-icon>
-                                    <span class="${check.status === 'good' ? 'text-slate-400' : 'text-slate-300'}">${check.text}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </details>
 
                     ${hasChanges ? `
                         <div class="mt-4 pt-4 border-t border-slate-600 flex justify-between items-center">
@@ -739,7 +816,7 @@
                                 <iconify-icon icon="lucide:edit-3" width="12"></iconify-icon>
                                 Modifie (non sauvegarde)
                             </span>
-                            <button onclick="resetSEO('${item.path}')" class="text-xs text-slate-400 hover:text-red-400 flex items-center gap-1">
+                            <button onclick="resetSEOPair(${pairIndex})" class="text-xs text-slate-400 hover:text-red-400 flex items-center gap-1">
                                 <iconify-icon icon="lucide:undo" width="12"></iconify-icon>
                                 Reset
                             </button>
@@ -779,16 +856,40 @@
             }
         }
 
-        // Save both title and description (called by button)
-        function saveSEOBoth(path, index) {
-            const titleInput = document.getElementById(`titleInput-${index}`);
-            const descInput = document.getElementById(`descInput-${index}`);
+        // Save FR + EN pair (called by button)
+        function saveSEOPair(pairIndex) {
+            const pair = seoPairs[pairIndex];
+
+            // Save FR
+            const frTitleInput = document.getElementById(`titleInput-fr-${pairIndex}`);
+            const frDescInput = document.getElementById(`descInput-fr-${pairIndex}`);
+            saveSinglePage(pair.fr.path, frTitleInput, frDescInput);
+
+            // Save EN
+            const enTitleInput = document.getElementById(`titleInput-en-${pairIndex}`);
+            const enDescInput = document.getElementById(`descInput-en-${pairIndex}`);
+            saveSinglePage(pair.en.path, enTitleInput, enDescInput);
+
+            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
+
+            // Show confirmation
+            const btn = document.getElementById(`saveBtn-${pairIndex}`);
+            btn.innerHTML = '<iconify-icon icon="lucide:check" width="16"></iconify-icon> Enregistre !';
+            btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+            btn.classList.add('bg-emerald-600');
+
+            setTimeout(() => {
+                renderSEOCards();
+            }, 500);
+        }
+
+        // Helper to save single page
+        function saveSinglePage(path, titleInput, descInput) {
             const titleValue = titleInput.value;
             const descValue = descInput.value;
             const titleOriginal = titleInput.dataset.original;
             const descOriginal = descInput.dataset.original;
 
-            // Track title changes
             if (titleValue !== titleOriginal) {
                 if (!seoChanges[path]) seoChanges[path] = {};
                 seoChanges[path].title = titleValue;
@@ -796,7 +897,6 @@
                 delete seoChanges[path].title;
             }
 
-            // Track desc changes
             if (descValue !== descOriginal) {
                 if (!seoChanges[path]) seoChanges[path] = {};
                 seoChanges[path].desc = descValue;
@@ -804,37 +904,16 @@
                 delete seoChanges[path].desc;
             }
 
-            // Clean up empty objects
             if (seoChanges[path] && Object.keys(seoChanges[path]).length === 0) {
                 delete seoChanges[path];
             }
-
-            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
-
-            // Show confirmation
-            const btn = document.getElementById(`saveBtn-${index}`);
-            btn.innerHTML = '<iconify-icon icon="lucide:check" width="16"></iconify-icon> Enregistre !';
-            btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
-            btn.classList.add('bg-emerald-600');
-
-            setTimeout(() => {
-                // Re-render to update scores and previews
-                renderSEOCards();
-
-                // Re-apply filters if active
-                const activeFilter = document.querySelector('.seo-filter.bg-indigo-600');
-                if (activeFilter && activeFilter.dataset.filter !== 'all') {
-                    filterSEO(activeFilter.dataset.filter);
-                }
-                if (currentScoreFilter) {
-                    filterByScore(currentScoreFilter);
-                }
-            }, 500);
         }
 
-        // Reset single page
-        function resetSEO(path) {
-            delete seoChanges[path];
+        // Reset pair
+        function resetSEOPair(pairIndex) {
+            const pair = seoPairs[pairIndex];
+            delete seoChanges[pair.fr.path];
+            delete seoChanges[pair.en.path];
             localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
             renderSEOCards();
         }
@@ -852,33 +931,9 @@
         }
 
         // Filter SEO cards by language
-        function filterSEO(filter) {
-            document.querySelectorAll('.seo-filter').forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white');
-                btn.classList.add('bg-slate-600', 'text-slate-300');
-            });
-            document.querySelector(`[data-filter="${filter}"]`).classList.remove('bg-slate-600', 'text-slate-300');
-            document.querySelector(`[data-filter="${filter}"]`).classList.add('bg-indigo-600', 'text-white');
-
-            // Reset score filter
-            currentScoreFilter = null;
-            document.querySelectorAll('.seo-score-filter').forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white');
-                btn.classList.add('bg-slate-600', 'text-slate-300');
-            });
-
-            document.querySelectorAll('.seo-card').forEach(card => {
-                if (filter === 'all' || card.classList.contains(filter)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
         // Filter by score
         function filterByScore(scoreStatus) {
-            currentScoreFilter = scoreStatus;
+            currentScoreFilter = scoreStatus === 'all' ? null : scoreStatus;
 
             document.querySelectorAll('.seo-score-filter').forEach(btn => {
                 btn.classList.remove('bg-indigo-600', 'text-white');
@@ -887,16 +942,8 @@
             document.querySelector(`[data-score="${scoreStatus}"]`).classList.remove('bg-slate-600', 'text-slate-300');
             document.querySelector(`[data-score="${scoreStatus}"]`).classList.add('bg-indigo-600', 'text-white');
 
-            // Reset language filter
-            document.querySelectorAll('.seo-filter').forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white');
-                btn.classList.add('bg-slate-600', 'text-slate-300');
-            });
-            document.querySelector('[data-filter="all"]').classList.remove('bg-slate-600', 'text-slate-300');
-            document.querySelector('[data-filter="all"]').classList.add('bg-indigo-600', 'text-white');
-
             document.querySelectorAll('.seo-card').forEach(card => {
-                if (card.dataset.score === scoreStatus) {
+                if (scoreStatus === 'all' || card.dataset.score === scoreStatus) {
                     card.style.display = '';
                 } else {
                     card.style.display = 'none';

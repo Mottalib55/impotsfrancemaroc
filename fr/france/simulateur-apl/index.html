@@ -156,60 +156,47 @@
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3">Zone géographique</label>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <label class="relative">
-                            <input type="radio" name="zone" value="1" class="peer sr-only" checked>
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
-                                <div class="font-semibold text-slate-800">Zone 1</div>
-                                <div class="text-xs text-slate-500">Paris et petite couronne</div>
-                            </div>
-                        </label>
-                        <label class="relative">
-                            <input type="radio" name="zone" value="2" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
-                                <div class="font-semibold text-slate-800">Zone 2</div>
-                                <div class="text-xs text-slate-500">Grandes agglomérations</div>
-                            </div>
-                        </label>
-                        <label class="relative">
-                            <input type="radio" name="zone" value="3" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
-                                <div class="font-semibold text-slate-800">Zone 3</div>
-                                <div class="text-xs text-slate-500">Reste de la France</div>
-                            </div>
-                        </label>
+                        <button type="button" onclick="setZone(1)" id="btn-zone-1" class="p-4 border-2 rounded-xl cursor-pointer transition-all text-left" style="border-color: #6366f1; background-color: #eef2ff;">
+                            <div class="font-semibold text-slate-800">Zone 1</div>
+                            <div class="text-xs text-slate-500">Paris et petite couronne</div>
+                        </button>
+                        <button type="button" onclick="setZone(2)" id="btn-zone-2" class="p-4 border-2 rounded-xl cursor-pointer transition-all text-left" style="border-color: #e2e8f0; background-color: #ffffff;">
+                            <div class="font-semibold text-slate-800">Zone 2</div>
+                            <div class="text-xs text-slate-500">Grandes agglomérations</div>
+                        </button>
+                        <button type="button" onclick="setZone(3)" id="btn-zone-3" class="p-4 border-2 rounded-xl cursor-pointer transition-all text-left" style="border-color: #e2e8f0; background-color: #ffffff;">
+                            <div class="font-semibold text-slate-800">Zone 3</div>
+                            <div class="text-xs text-slate-500">Reste de la France</div>
+                        </button>
                     </div>
+                    <input type="hidden" id="zone" value="1">
                 </div>
 
                 <!-- Situation familiale -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3">Situation familiale</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <label class="relative">
-                            <input type="radio" name="situation" value="seul" class="peer sr-only" checked>
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300 text-center">
-                                <div class="text-2xl mb-1">👤</div>
-                                <div class="font-semibold text-slate-800">Seul(e)</div>
-                            </div>
-                        </label>
-                        <label class="relative">
-                            <input type="radio" name="situation" value="couple" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300 text-center">
-                                <div class="text-2xl mb-1">👫</div>
-                                <div class="font-semibold text-slate-800">En couple</div>
-                            </div>
-                        </label>
+                        <button type="button" onclick="setSituation('seul')" id="btn-situation-seul" class="p-4 border-2 rounded-xl cursor-pointer transition-all text-center" style="border-color: #6366f1; background-color: #eef2ff;">
+                            <div class="text-2xl mb-1">👤</div>
+                            <div class="font-semibold text-slate-800">Seul(e)</div>
+                        </button>
+                        <button type="button" onclick="setSituation('couple')" id="btn-situation-couple" class="p-4 border-2 rounded-xl cursor-pointer transition-all text-center" style="border-color: #e2e8f0; background-color: #ffffff;">
+                            <div class="text-2xl mb-1">👫</div>
+                            <div class="font-semibold text-slate-800">En couple</div>
+                        </button>
                     </div>
+                    <input type="hidden" id="situation" value="seul">
                 </div>
 
                 <!-- Nombre d'enfants -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3">Nombre de personnes à charge</label>
                     <div class="grid grid-cols-5 gap-2">
-                        <button type="button" onclick="setEnfants(0)" id="btn-enfants-0" class="py-3 px-4 rounded-lg font-semibold transition-all bg-indigo-500 text-white">0</button>
-                        <button type="button" onclick="setEnfants(1)" id="btn-enfants-1" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">1</button>
-                        <button type="button" onclick="setEnfants(2)" id="btn-enfants-2" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">2</button>
-                        <button type="button" onclick="setEnfants(3)" id="btn-enfants-3" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">3</button>
-                        <button type="button" onclick="setEnfants(4)" id="btn-enfants-4" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">4+</button>
+                        <button type="button" onclick="setEnfants(0)" id="btn-enfants-0" class="py-3 px-4 rounded-lg font-semibold transition-all" style="background-color: #6366f1; color: #ffffff;">0</button>
+                        <button type="button" onclick="setEnfants(1)" id="btn-enfants-1" class="py-3 px-4 rounded-lg font-semibold transition-all" style="background-color: #f1f5f9; color: #475569;">1</button>
+                        <button type="button" onclick="setEnfants(2)" id="btn-enfants-2" class="py-3 px-4 rounded-lg font-semibold transition-all" style="background-color: #f1f5f9; color: #475569;">2</button>
+                        <button type="button" onclick="setEnfants(3)" id="btn-enfants-3" class="py-3 px-4 rounded-lg font-semibold transition-all" style="background-color: #f1f5f9; color: #475569;">3</button>
+                        <button type="button" onclick="setEnfants(4)" id="btn-enfants-4" class="py-3 px-4 rounded-lg font-semibold transition-all" style="background-color: #f1f5f9; color: #475569;">4+</button>
                     </div>
                     <input type="hidden" id="enfants" value="0">
                 </div>
@@ -509,6 +496,42 @@
         const PARTICIPATION_MINIMALE = 37.77;
 
         let enfants = 0;
+        let currentZone = 1;
+        let currentSituation = 'seul';
+
+        function setZone(z) {
+            currentZone = z;
+            document.getElementById('zone').value = z;
+            // Update button styles
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`btn-zone-${i}`);
+                if (i === z) {
+                    btn.style.borderColor = '#6366f1';
+                    btn.style.backgroundColor = '#eef2ff';
+                } else {
+                    btn.style.borderColor = '#e2e8f0';
+                    btn.style.backgroundColor = '#ffffff';
+                }
+            }
+            calculerAPL();
+        }
+
+        function setSituation(s) {
+            currentSituation = s;
+            document.getElementById('situation').value = s;
+            // Update button styles
+            ['seul', 'couple'].forEach(sit => {
+                const btn = document.getElementById(`btn-situation-${sit}`);
+                if (sit === s) {
+                    btn.style.borderColor = '#6366f1';
+                    btn.style.backgroundColor = '#eef2ff';
+                } else {
+                    btn.style.borderColor = '#e2e8f0';
+                    btn.style.backgroundColor = '#ffffff';
+                }
+            });
+            calculerAPL();
+        }
 
         function setEnfants(n) {
             enfants = n;
@@ -516,9 +539,13 @@
             for (let i = 0; i <= 4; i++) {
                 const btn = document.getElementById(`btn-enfants-${i}`);
                 if (i === n) {
-                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-indigo-500 text-white';
+                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all';
+                    btn.style.backgroundColor = '#6366f1';
+                    btn.style.color = '#ffffff';
                 } else {
-                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all';
+                    btn.style.backgroundColor = '#f1f5f9';
+                    btn.style.color = '#475569';
                 }
             }
             document.getElementById('enfants').value = n;
@@ -526,8 +553,8 @@
         }
 
         function calculerAPL() {
-            const zone = parseInt(document.querySelector('input[name="zone"]:checked').value);
-            const situation = document.querySelector('input[name="situation"]:checked').value;
+            const zone = currentZone;
+            const situation = currentSituation;
             const loyer = parseFloat(document.getElementById('loyer').value) || 0;
             const revenus = parseFloat(document.getElementById('revenus').value) || 0;
 
@@ -612,16 +639,10 @@
             return new Intl.NumberFormat('fr-FR').format(num);
         }
 
-        // Add event listeners
-        document.querySelectorAll('input[name="zone"]').forEach(input => {
-            input.addEventListener('change', calculerAPL);
-        });
-        document.querySelectorAll('input[name="situation"]').forEach(input => {
-            input.addEventListener('change', calculerAPL);
-        });
-
         // Calcul initial
         calculerAPL();
+        // Init bouton enfants style
+        setEnfants(0);
     </script>
 </body>
 </html>

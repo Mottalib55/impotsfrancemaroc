@@ -133,13 +133,13 @@
 
     <!-- Header -->
     <header class="pt-16">
-        <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-12">
+        <div class="py-12" style="background: linear-gradient(to right, #4f46e5, #2563eb);">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-1.5 mb-4">
-                    <span class="text-sm font-medium">Barème 2025</span>
+                <div class="inline-flex items-center rounded-full px-4 py-1.5 mb-4" style="background: rgba(255,255,255,0.2);">
+                    <span class="text-sm font-medium" style="color: #ffffff;">Barème 2025</span>
                 </div>
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">Simulateur APL 2025</h1>
-                <p class="text-lg text-indigo-100 max-w-2xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: #ffffff;">Simulateur APL 2025</h1>
+                <p class="text-lg max-w-2xl mx-auto" style="color: #c7d2fe;">
                     Estimez votre Aide Personnalisée au Logement selon votre zone géographique,
                     votre loyer et votre situation familiale.
                 </p>
@@ -239,28 +239,28 @@
             </form>
 
             <!-- Résultats -->
-            <div id="resultats" class="mt-8 p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl border border-indigo-100">
+            <div id="resultats" class="mt-8 p-6 bg-white rounded-xl border-2 border-slate-200 shadow-sm">
                 <div class="text-center">
-                    <p class="text-sm text-indigo-600 font-medium mb-2">Estimation de votre APL mensuelle</p>
-                    <p id="montant-apl" class="text-5xl font-bold text-indigo-600 mb-2">0 €</p>
+                    <p class="text-sm text-slate-600 font-medium mb-2">Estimation de votre APL mensuelle</p>
+                    <p id="montant-apl" class="text-5xl font-bold text-slate-900 mb-2">0 €</p>
                     <p id="apl-annuel" class="text-slate-600">soit <span class="font-semibold">0 €</span> par an</p>
                 </div>
 
-                <div class="mt-6 pt-6 border-t border-indigo-200">
+                <div class="mt-6 pt-6 border-t border-slate-200">
                     <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div class="bg-white/60 rounded-lg p-3">
-                            <p class="text-slate-500">Loyer plafonné</p>
-                            <p id="loyer-plafond" class="font-semibold text-slate-800">0 €</p>
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="text-slate-600">Loyer plafonné</p>
+                            <p id="loyer-plafond" class="font-semibold text-slate-900">0 €</p>
                         </div>
-                        <div class="bg-white/60 rounded-lg p-3">
-                            <p class="text-slate-500">Participation personnelle</p>
-                            <p id="participation" class="font-semibold text-slate-800">0 €</p>
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="text-slate-600">Participation personnelle</p>
+                            <p id="participation" class="font-semibold text-slate-900">0 €</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Disclaimer + lien CAF -->
-                <div class="mt-6 pt-6 border-t border-indigo-200 text-center">
+                <div class="mt-6 pt-6 border-t border-slate-200 text-center">
                     <p class="text-sm text-slate-600 mb-4">
                         Le montant de l'aide au logement indiqué par ce simulateur est une estimation.
                         Seule la demande d'aide au logement vous permettra de connaître le montant exact.
@@ -444,22 +444,22 @@
         </div>
 
         <!-- Autres simulateurs -->
-        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
+        <div class="bg-slate-800 rounded-xl p-6 text-white">
             <h2 class="text-xl font-bold mb-4">Autres simulateurs France</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <a href="/fr/france/simulateur-salaire-brut-net/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                <a href="/fr/france/simulateur-salaire-brut-net/" class="bg-slate-700 hover:bg-slate-600 rounded-lg p-3 text-center transition-colors">
                     <div class="text-2xl mb-1">💰</div>
                     <div class="text-sm font-medium">Brut → Net</div>
                 </a>
-                <a href="/fr/france/simulateur-impot-revenu/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                <a href="/fr/france/simulateur-impot-revenu/" class="bg-slate-700 hover:bg-slate-600 rounded-lg p-3 text-center transition-colors">
                     <div class="text-2xl mb-1">📊</div>
                     <div class="text-sm font-medium">Impôt Revenu</div>
                 </a>
-                <a href="/fr/france/simulateur-chomage-are/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                <a href="/fr/france/simulateur-chomage-are/" class="bg-slate-700 hover:bg-slate-600 rounded-lg p-3 text-center transition-colors">
                     <div class="text-2xl mb-1">📉</div>
                     <div class="text-sm font-medium">Chômage ARE</div>
                 </a>
-                <a href="/fr/france/simulateur-indemnite-licenciement/" class="bg-white/20 hover:bg-white/30 rounded-lg p-3 text-center transition-colors">
+                <a href="/fr/france/simulateur-indemnite-licenciement/" class="bg-slate-700 hover:bg-slate-600 rounded-lg p-3 text-center transition-colors">
                     <div class="text-2xl mb-1">📋</div>
                     <div class="text-sm font-medium">Licenciement</div>
                 </a>

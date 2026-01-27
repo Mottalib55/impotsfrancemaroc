@@ -132,16 +132,18 @@
     </nav>
 
     <!-- Header -->
-    <header class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-12">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-1 mb-4">
-                <span class="text-sm font-medium">Barème 2025</span>
+    <header class="pt-16">
+        <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-12">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center bg-white/20 rounded-full px-4 py-1.5 mb-4">
+                    <span class="text-sm font-medium">Barème 2025</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Simulateur APL 2025</h1>
+                <p class="text-lg text-indigo-100 max-w-2xl mx-auto">
+                    Estimez votre Aide Personnalisée au Logement selon votre zone géographique,
+                    votre loyer et votre situation familiale.
+                </p>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">Simulateur APL 2025</h1>
-            <p class="text-lg text-emerald-100 max-w-2xl mx-auto">
-                Estimez votre Aide Personnalisée au Logement selon votre zone géographique,
-                votre loyer et votre situation familiale.
-            </p>
         </div>
     </header>
 
@@ -156,21 +158,21 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <label class="relative">
                             <input type="radio" name="zone" value="1" class="peer sr-only" checked>
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
                                 <div class="font-semibold text-slate-800">Zone 1</div>
                                 <div class="text-xs text-slate-500">Paris et petite couronne</div>
                             </div>
                         </label>
                         <label class="relative">
                             <input type="radio" name="zone" value="2" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
                                 <div class="font-semibold text-slate-800">Zone 2</div>
                                 <div class="text-xs text-slate-500">Grandes agglomérations</div>
                             </div>
                         </label>
                         <label class="relative">
                             <input type="radio" name="zone" value="3" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300">
                                 <div class="font-semibold text-slate-800">Zone 3</div>
                                 <div class="text-xs text-slate-500">Reste de la France</div>
                             </div>
@@ -184,14 +186,14 @@
                     <div class="grid grid-cols-2 gap-3">
                         <label class="relative">
                             <input type="radio" name="situation" value="seul" class="peer sr-only" checked>
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300 text-center">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300 text-center">
                                 <div class="text-2xl mb-1">👤</div>
                                 <div class="font-semibold text-slate-800">Seul(e)</div>
                             </div>
                         </label>
                         <label class="relative">
                             <input type="radio" name="situation" value="couple" class="peer sr-only">
-                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-50 hover:border-emerald-300 text-center">
+                            <div class="p-4 border-2 border-slate-200 rounded-xl cursor-pointer transition-all peer-checked:border-indigo-500 peer-checked:bg-indigo-50 hover:border-indigo-300 text-center">
                                 <div class="text-2xl mb-1">👫</div>
                                 <div class="font-semibold text-slate-800">En couple</div>
                             </div>
@@ -203,7 +205,7 @@
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3">Nombre de personnes à charge</label>
                     <div class="grid grid-cols-5 gap-2">
-                        <button type="button" onclick="setEnfants(0)" id="btn-enfants-0" class="py-3 px-4 rounded-lg font-semibold transition-all bg-emerald-500 text-white">0</button>
+                        <button type="button" onclick="setEnfants(0)" id="btn-enfants-0" class="py-3 px-4 rounded-lg font-semibold transition-all bg-indigo-500 text-white">0</button>
                         <button type="button" onclick="setEnfants(1)" id="btn-enfants-1" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">1</button>
                         <button type="button" onclick="setEnfants(2)" id="btn-enfants-2" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">2</button>
                         <button type="button" onclick="setEnfants(3)" id="btn-enfants-3" class="py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">3</button>
@@ -217,7 +219,7 @@
                     <label for="loyer" class="block text-sm font-semibold text-slate-700 mb-2">Loyer mensuel (hors charges)</label>
                     <div class="relative">
                         <input type="number" id="loyer" value="700" min="0" max="5000" step="10"
-                               class="w-full px-4 py-3 pr-14 border-2 border-slate-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all text-lg font-semibold"
+                               class="w-full px-4 py-3 pr-14 border-2 border-slate-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all text-lg font-semibold"
                                oninput="calculerAPL()">
                         <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
                     </div>
@@ -228,7 +230,7 @@
                     <label for="revenus" class="block text-sm font-semibold text-slate-700 mb-2">Revenus annuels nets (N-2)</label>
                     <div class="relative">
                         <input type="number" id="revenus" value="15000" min="0" max="200000" step="100"
-                               class="w-full px-4 py-3 pr-14 border-2 border-slate-200 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all text-lg font-semibold"
+                               class="w-full px-4 py-3 pr-14 border-2 border-slate-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all text-lg font-semibold"
                                oninput="calculerAPL()">
                         <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">€</span>
                     </div>
@@ -237,14 +239,14 @@
             </form>
 
             <!-- Résultats -->
-            <div id="resultats" class="mt-8 p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100">
+            <div id="resultats" class="mt-8 p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl border border-indigo-100">
                 <div class="text-center">
-                    <p class="text-sm text-emerald-600 font-medium mb-2">Estimation de votre APL mensuelle</p>
-                    <p id="montant-apl" class="text-5xl font-bold text-emerald-600 mb-2">0 €</p>
+                    <p class="text-sm text-indigo-600 font-medium mb-2">Estimation de votre APL mensuelle</p>
+                    <p id="montant-apl" class="text-5xl font-bold text-indigo-600 mb-2">0 €</p>
                     <p id="apl-annuel" class="text-slate-600">soit <span class="font-semibold">0 €</span> par an</p>
                 </div>
 
-                <div class="mt-6 pt-6 border-t border-emerald-200">
+                <div class="mt-6 pt-6 border-t border-indigo-200">
                     <div class="grid grid-cols-2 gap-4 text-sm">
                         <div class="bg-white/60 rounded-lg p-3">
                             <p class="text-slate-500">Loyer plafonné</p>
@@ -258,14 +260,14 @@
                 </div>
 
                 <!-- Disclaimer + lien CAF -->
-                <div class="mt-6 pt-6 border-t border-emerald-200 text-center">
+                <div class="mt-6 pt-6 border-t border-indigo-200 text-center">
                     <p class="text-sm text-slate-600 mb-4">
                         Le montant de l'aide au logement indiqué par ce simulateur est une estimation.
                         Seule la demande d'aide au logement vous permettra de connaître le montant exact.
                     </p>
                     <a href="https://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation"
                        target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                       class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition-colors">
                         <span>Faire ma demande sur caf.fr</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -291,22 +293,22 @@
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-white rounded-xl shadow-lg p-6">
                 <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
-                    <span class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
-                        <span class="text-emerald-600">📍</span>
+                    <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-indigo-600">📍</span>
                     </span>
                     Les zones géographiques
                 </h2>
                 <ul class="space-y-3 text-sm text-slate-600">
                     <li class="flex items-start">
-                        <span class="font-bold text-emerald-600 mr-2">Zone 1:</span>
+                        <span class="font-bold text-indigo-600 mr-2">Zone 1:</span>
                         <span>Paris et communes limitrophes (Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne)</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="font-bold text-emerald-600 mr-2">Zone 2:</span>
+                        <span class="font-bold text-indigo-600 mr-2">Zone 2:</span>
                         <span>Île-de-France hors zone 1, grandes agglomérations (+100 000 hab.), Corse, DOM</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="font-bold text-emerald-600 mr-2">Zone 3:</span>
+                        <span class="font-bold text-indigo-600 mr-2">Zone 3:</span>
                         <span>Reste de la France métropolitaine</span>
                     </li>
                 </ul>
@@ -314,30 +316,30 @@
 
             <div class="bg-white rounded-xl shadow-lg p-6">
                 <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
-                    <span class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
-                        <span class="text-emerald-600">📋</span>
+                    <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-indigo-600">📋</span>
                     </span>
                     Conditions d'éligibilité
                 </h2>
                 <ul class="space-y-2 text-sm text-slate-600">
                     <li class="flex items-center">
-                        <span class="text-emerald-500 mr-2">✓</span>
+                        <span class="text-indigo-500 mr-2">✓</span>
                         Être locataire d'un logement conventionné
                     </li>
                     <li class="flex items-center">
-                        <span class="text-emerald-500 mr-2">✓</span>
+                        <span class="text-indigo-500 mr-2">✓</span>
                         Résider en France de façon stable
                     </li>
                     <li class="flex items-center">
-                        <span class="text-emerald-500 mr-2">✓</span>
+                        <span class="text-indigo-500 mr-2">✓</span>
                         Avoir des ressources sous un certain plafond
                     </li>
                     <li class="flex items-center">
-                        <span class="text-emerald-500 mr-2">✓</span>
+                        <span class="text-indigo-500 mr-2">✓</span>
                         Le logement doit être la résidence principale
                     </li>
                     <li class="flex items-center">
-                        <span class="text-emerald-500 mr-2">✓</span>
+                        <span class="text-indigo-500 mr-2">✓</span>
                         Ne pas être hébergé par un ascendant/descendant
                     </li>
                 </ul>
@@ -514,7 +516,7 @@
             for (let i = 0; i <= 4; i++) {
                 const btn = document.getElementById(`btn-enfants-${i}`);
                 if (i === n) {
-                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-emerald-500 text-white';
+                    btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-indigo-500 text-white';
                 } else {
                     btn.className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
                 }

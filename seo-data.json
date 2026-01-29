@@ -1,0 +1,2150 @@
+{
+  "/404.html": {
+    "title": "Page non trouvee - 404",
+    "description": "La page que vous recherchez n'existe pas ou a ete deplacee.",
+    "keywords": null,
+    "canonical": null,
+    "robots": "noindex, follow"
+  },
+  "/admin": {
+    "title": "Admin Dashboard - NetSalaire",
+    "description": null,
+    "keywords": null,
+    "canonical": null,
+    "robots": "noindex, nofollow"
+  },
+  "/en/china/income-tax": {
+    "title": "China (Shanghai) Income Tax Calculator 2026",
+    "description": "Calculate your income tax in China (Shanghai). Progressive Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/china/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/chine/simulateur-impot/",
+      "en": "https://netsalaire.com/en/china/income-tax/",
+      "x-default": "https://netsalaire.com/en/china/income-tax/"
+    },
+    "openGraph": {
+      "title": "China (Shanghai) Income Tax Calculator 2026",
+      "description": "Calculate your income tax in China (Shanghai). Progressive Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "China (Shanghai) Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/china/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      }
+    }
+  },
+  "/en/dubai/income-tax": {
+    "title": "Dubai (UAE) Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Dubai (UAE). 0% Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/dubai/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/dubai/simulateur-impot/",
+      "en": "https://netsalaire.com/en/dubai/income-tax/",
+      "x-default": "https://netsalaire.com/en/dubai/income-tax/"
+    },
+    "openGraph": {
+      "title": "Dubai (UAE) Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Dubai (UAE). 0% Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Dubai (UAE) Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/dubai/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    }
+  },
+  "/en/faq": {
+    "title": "FAQ Gross to Net Salary & Taxes– All Your Questions Answered",
+    "description": "Gross vs net? What taxes apply? Executive vs non-executive? France/Morocco differences? Tax deductions? Clear answers to all the questions everyone asks.",
+    "keywords": "FAQ net salary, tax questions, family quotient, CNSS Morocco, IR France, salary calculator",
+    "canonical": "https://netsalaire.com/en/faq/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/faq/",
+      "fr": "https://netsalaire.com/fr/faq/",
+      "x-default": "https://netsalaire.com/fr/faq/"
+    },
+    "openGraph": {
+      "title": "FAQ - Frequently Asked Questions about Tax Simulators",
+      "description": "Everything you need to know about net salary calculation and income tax in France and Morocco.",
+      "url": "https://netsalaire.com/en/faq/",
+      "image": "https://netsalaire.com/assets/images/og-home.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary",
+      "title": "FAQ NetSalaire - Frequently Asked Questions",
+      "description": "Everything you need to know about net salary calculation and income tax."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the calculations reliable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our simulators use the official 2026 tax brackets published by French and Moroccan tax authorities. However, they provide estimates and do not replace personalized tax advice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All calculations are performed locally in your browser. No personal data is sent to our servers or stored."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is net salary calculated in France?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Net salary is obtained by deducting employee social contributions from gross salary (about 22% for non-executives, 25% for executives). These contributions fund social security, retirement, unemployment, and supplementary retirement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the family quotient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The family quotient is a mechanism that divides taxable income by the number of shares in the household. A single person has 1 share, a married couple 2 shares, and children add additional half-shares."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the IR brackets in Morocco?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moroccan IR has 6 progressive brackets: 0% up to 40,000 MAD, 10% from 40,001 to 60,000 MAD, 20% from 60,001 to 80,000 MAD, 30% from 80,001 to 100,000 MAD, 34% from 100,001 to 180,000 MAD, and 37% beyond."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are CNSS and AMO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CNSS (National Social Security Fund) covers family benefits, health, and retirement. The employee rate is 4.48%, capped at 6,000 MAD/month. AMO (Mandatory Health Insurance) covers healthcare costs at 2.26% without cap."
+          }
+        }
+      ]
+    }
+  },
+  "/en/france-morocco-comparison": {
+    "title": "France vs Morocc You Earn More? | Comparator 2026",
+    "description": "Expat: compare your net salary and taxes between France and Morocco. Personalized results based on your family situation. Free and instant simulator.",
+    "keywords": "MRE, Moroccans living abroad, france morocco salary comparison, MRE tax simulator, france morocco tax, net salary, moroccan expats, return to morocco",
+    "canonical": "https://netsalaire.com/en/france-morocco-comparison/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france-morocco-comparison/",
+      "fr": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/",
+      "x-default": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/"
+    },
+    "openGraph": {
+      "title": "France vs Morocco Salary Comparison for MRE 2026 | NetSalaire",
+      "description": "MRE: France or Morocco, where do you really earn more? Free tax simulator for Moroccans Living Abroad.",
+      "url": "https://netsalaire.com/en/france-morocco-comparison/",
+      "image": "https://netsalaire.com/assets/images/og-comparateur.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "France vs Morocco Salary Comparison for MRE 2026",
+      "description": "MRE: France or Morocco, where do you really earn more? Free tax simulator."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "France vs Morocco Salary Comparison for MRE",
+      "description": "Free tax simulator for MRE (Moroccans Living Abroad): compare your net salary between France and Morocco",
+      "url": "https://netsalaire.com/en/france-morocco-comparison/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/en/france/daycare-calculator": {
+    "title": "Daycare Cost Calculator 2026 - Compare Daycare, Micro-Daycare, Childminder",
+    "description": "Calculate and compare the real cost of childcare after CAF benefits and tax credits. Public daycare, micro-daycare or registered childminder in France.",
+    "keywords": "daycare calculator, daycare cost, childcare cost, daycare price 2026, CAF benefits, micro daycare, childminder, CMG France",
+    "canonical": "https://netsalaire.com/en/france/daycare-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/daycare-calculator/",
+      "fr": "https://netsalaire.com/fr/france/creche-tarifs/",
+      "x-default": "https://netsalaire.com/en/france/daycare-calculator/"
+    },
+    "openGraph": {
+      "title": "Daycare Cost Calculator 2026 - Free Comparison Tool",
+      "description": "Compare the real cost of public daycare, micro-daycare and childminder after CAF benefits in France.",
+      "url": "https://netsalaire.com/en/france/daycare-calculator/",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Daycare Cost Calculator 2026",
+      "description": "Compare the cost of public daycare, micro-daycare and childminder after CAF benefits and tax credits in France.",
+      "url": "https://netsalaire.com/en/france/daycare-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/en/france/gross-to-net": {
+    "title": "Gross to Net Salary France 2026 → Free Instant Calculator",
+    "description": "Calculate your gross to net salary for free. Detailed simulation with hourly, monthly or annual breakdown based on your status. 2026 tax rates included.",
+    "keywords": "gross to net france, salary calculator france, net salary france, social contributions france",
+    "canonical": "https://netsalaire.com/en/france/gross-to-net/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/gross-to-net/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/"
+    },
+    "openGraph": {
+      "title": "France Gross to Net Salary Calculator 2026",
+      "description": "Calculate your net salary in France. Social contributions, executive status. 100% free.",
+      "url": "https://netsalaire.com/en/france/gross-to-net/",
+      "image": "https://netsalaire.com/assets/images/og-france-brut-net.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "France Gross to Net Salary Calculator 2026",
+      "description": "Calculate your net salary from gross in France. Social contributions included."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "France Gross to Net Calculator",
+      "description": "Calculate your net salary from gross in France",
+      "url": "https://netsalaire.com/en/france/gross-to-net/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web"
+    }
+  },
+  "/en/france/housing-benefit-calculator": {
+    "title": "APL Housing Benefit Calculator France 2026 - Free Simulation",
+    "description": "Check your eligibility for French housing assistance (APL). Free simulator with official CAF rates 2026. Available to anyone renting a property in France.",
+    "keywords": "APL calculator france, housing benefit calculator 2026, CAF housing allowance, aide au logement france, APL eligibility checker",
+    "canonical": "https://netsalaire.com/en/france/housing-benefit-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/housing-benefit-calculator/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-apl/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-apl/"
+    },
+    "openGraph": {
+      "title": "Free APL Calculator France 2026 - Am I Eligible?",
+      "description": "Renting in France? Check your APL eligibility instantly. Free tool with official 2026 CAF rates.",
+      "url": "https://netsalaire.com/en/france/housing-benefit-calculator/",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Free APL Calculator France 2026 - Check Eligibility",
+      "description": "Renting in France? Don't miss your housing benefits! Free calculator with 2026 CAF rates."
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free APL Housing Benefit Calculator France 2026",
+      "description": "Check your APL eligibility and estimate your French housing benefit instantly. Based on official 2026 CAF rates.",
+      "url": "https://netsalaire.com/en/france/housing-benefit-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "2340",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/en/france/income-tax": {
+    "title": "Income Tax Calculator France 2026 | Fast & Accurate",
+    "description": "Calculate your income tax and possible deductions: retirement savings (PER), childcare, donations, home services, tuition fees. Free & instant simulation.",
+    "keywords": "income tax simulator, france tax 2026, tax calculator france, tax brackets, family quotient, PER retirement",
+    "canonical": "https://netsalaire.com/en/france/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-impot-revenu/",
+      "en": "https://netsalaire.com/en/france/income-tax/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-impot-revenu/"
+    },
+    "openGraph": {
+      "title": "France Income Tax Simulator 2026 — Calculate Your Tax | NetSalaire",
+      "description": "Calculate your French income tax 2026 for free. Family quotient, tax brackets, PER retirement savings.",
+      "url": "https://netsalaire.com/en/france/income-tax/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "France Income Tax Simulator 2026 — Calculate Your Tax",
+      "description": "Calculate your French income tax 2026. Family quotient, tax brackets, PER simulation."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "France Income Tax Simulator 2026",
+      "description": "Calculate your French income tax with family quotient, tax brackets and PER retirement savings simulation. Official 2026 rates.",
+      "url": "https://netsalaire.com/en/france/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/en/france/mileage-calculator": {
+    "title": "Mileage Allowance Calculator France 2026 - Pro Simulator",
+    "description": "Use your car for work? Calculate your tax deduction instantly. Official 2026 rates + 20% electric vehicle (EV) bonus included. Car, motorcycle, e-bike.",
+    "keywords": "mileage calculator france 2026, bareme kilometrique, french mileage deduction, frais reels calculator, kilometric allowance tax france",
+    "canonical": "https://netsalaire.com/en/france/mileage-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/mileage-calculator/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/"
+    },
+    "openGraph": {
+      "title": "Free Mileage Calculator France 2026 - Tax Deduction",
+      "description": "Drive for work? Calculate your tax deduction instantly. Official 2026 French rates + 20% EV bonus.",
+      "url": "https://netsalaire.com/en/france/mileage-calculator/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Free Mileage Calculator France 2026 - Tax Savings",
+      "description": "Commute by car? Calculate your tax deduction instantly. Official 2026 rates + 20% EV bonus included."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Mileage Calculator France 2026",
+      "description": "Calculate your French mileage tax deduction instantly with official 2026 rates. Car, motorcycle, bicycle. +20% electric vehicle bonus.",
+      "url": "https://netsalaire.com/en/france/mileage-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1580",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/en/france/mutual-termination-calculator": {
+    "title": "Mutual Termination Calculator France 2026 - Quick & Free",
+    "description": "Negotiating your departure? Calculate your severance package instantly. Legal minimum and negotiation tips included. Free and quick tool with 2026 rates.",
+    "keywords": "rupture conventionnelle calculator, mutual termination france 2026, negotiated departure compensation, severance france calculator, rupture amiable",
+    "canonical": "https://netsalaire.com/en/france/mutual-termination-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/mutual-termination-calculator/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/",
+      "x-default": "https://netsalaire.com/en/france/mutual-termination-calculator/"
+    },
+    "openGraph": {
+      "title": "Free Rupture Conventionnelle Calculator France 2026",
+      "description": "Leaving your job? Know your legal minimum + negotiation tips. Free tool with 2026 rates.",
+      "url": "https://netsalaire.com/en/france/mutual-termination-calculator/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Rupture Conventionnelle Calculator 2026 - Free",
+      "description": "Negotiating your departure? Know your legal minimum & get negotiation tips. Free instant calculator."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Rupture Conventionnelle Calculator France 2026",
+      "description": "Calculate your mutual termination compensation in France with legal minimum, timeline and negotiation tips",
+      "url": "https://netsalaire.com/en/france/mutual-termination-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1120",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/en/france/severance-calculator": {
+    "title": "Severance Pay Calculator France 2026 - Free Simulator",
+    "description": "Estimate your severance pay amount based on salary and seniority. Free 2026 calculator based on salary & seniority. Know your rights before negotiating!",
+    "keywords": "severance pay calculator france, dismissal compensation france 2026, legal severance calculator, redundancy pay france, licenciement indemnity",
+    "canonical": "https://netsalaire.com/en/france/severance-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/severance-calculator/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/",
+      "x-default": "https://netsalaire.com/en/france/severance-calculator/"
+    },
+    "openGraph": {
+      "title": "Free Severance Pay Calculator France 2026 - Know Your Rights",
+      "description": "Getting fired? Calculate your legal minimum severance instantly. Free tool with official 2026 French rates.",
+      "url": "https://netsalaire.com/en/france/severance-calculator/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Free Severance Calculator France 2026 - Your Rights",
+      "description": "Getting fired? Know your legal minimum in 30 seconds. Free calculator with official French rates."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Severance Pay Calculator France 2026",
+      "description": "Calculate your French legal severance pay instantly based on salary and seniority. Official 2026 rates.",
+      "url": "https://netsalaire.com/en/france/severance-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "890",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/en/france/tax-guide": {
+    "title": "French Tax Guide 2026 – Understand Everything in 5 Minutes",
+    "description": "Understand French social charges, income tax brackets and net salary calculation. Taxation explained simply. The complete guide you wish you had before.",
+    "keywords": "france tax guide, income tax france 2026, social contributions, IR brackets france, family quotient",
+    "canonical": "https://netsalaire.com/en/france/tax-guide/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/tax-guide/",
+      "fr": "https://netsalaire.com/fr/france/guide/",
+      "x-default": "https://netsalaire.com/fr/france/guide/"
+    },
+    "openGraph": {
+      "title": "France Tax Guide 2026 - Understand Taxes",
+      "description": "Complete guide to French taxation: IR, contributions, family quotient.",
+      "url": "https://netsalaire.com/en/france/tax-guide/",
+      "image": "https://netsalaire.com/assets/images/og-guide-france.png",
+      "type": "article"
+    },
+    "robots": "index, follow"
+  },
+  "/en/france/unemployment-calculator": {
+    "title": "Unemployment Benefits Calculator ARE 2026 - Free & Instant",
+    "description": "Calculate your unemployment allowance and entitlements from France Travail (ARE). Free simulator with 2026 rates and scales. Daily amount + duration.",
+    "keywords": "unemployment calculator france, ARE calculator, France Travail 2026, unemployment benefits france, jobseeker allowance calculator",
+    "canonical": "https://netsalaire.com/en/france/unemployment-calculator/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/france/unemployment-calculator/",
+      "fr": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+      "x-default": "https://netsalaire.com/en/france/unemployment-calculator/"
+    },
+    "openGraph": {
+      "title": "Free Unemployment Calculator France 2026 - Know Your ARE",
+      "description": "Lost your job in France? Calculate your ARE benefits instantly. Free tool with official 2026 rates.",
+      "url": "https://netsalaire.com/en/france/unemployment-calculator/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Free Unemployment Calculator France 2026",
+      "description": "Know your ARE benefits in 30 seconds. Free calculator with official 2026 France Travail rates."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Unemployment Calculator France 2026",
+      "description": "Calculate your French unemployment benefits (ARE) instantly with official 2026 France Travail rates",
+      "url": "https://netsalaire.com/en/france/unemployment-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/en/global-comparison": {
+    "title": "Global Salary Comparator | France, Dubai, UK, Switzerland...",
+    "description": "France, Morocco, Dubai, Switzerland, Luxembourg... Where is your salary really worth the most? Compare and find the best country for your family situation.",
+    "keywords": "international salary comparator, tax simulator, taxes france morocco dubai uk singapore, expatriation, net salary, tax comparison",
+    "canonical": "https://netsalaire.com/en/global-comparison/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/comparateur-global/",
+      "en": "https://netsalaire.com/en/global-comparison/",
+      "x-default": "https://netsalaire.com/fr/comparateur-global/"
+    },
+    "openGraph": {
+      "title": "Global comparison — Net salary & taxes by country (2026) | NetSalaire",
+      "description": "Compare take-home pay (2026) by country: France, Morocco, Dubai, UK, Singapore, Geneva… Tax & contributions breakdown.",
+      "url": "https://netsalaire.com/en/global-comparison/",
+      "image": "https://netsalaire.com/assets/images/og-comparateur-global.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Global comparison — Net salary & taxes by country (2026)",
+      "description": "Compare take-home pay (2026) by country: France, Morocco, Dubai, UK, Singapore, Geneva…"
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "International Tax Comparator",
+      "description": "Tax simulator to compare net salary across 14 countries: France, Morocco, Dubai, UK, Singapore, New York, Shanghai, Geneva, Luxembourg, Saudi Arabia, Japan, Spain, India and Pakistan. 2026 rates.",
+      "url": "https://netsalaire.com/en/global-comparison/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/en": {
+    "title": "Tax & Gross ⇒ Net Salary Calculator 2026 | Free & Fast",
+    "description": "Calculate your taxes and gross to net salary for free in 2 clicks. Detailed simulation with hourly, monthly or annual breakdown. 2026 tax rates.",
+    "keywords": "net salary simulator, tax calculator, gross to net france, gross to net morocco, tax comparison, income tax france, income tax morocco",
+    "canonical": "https://netsalaire.com/en/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/",
+      "fr": "https://netsalaire.com/fr/",
+      "x-default": "https://netsalaire.com/fr/"
+    },
+    "openGraph": {
+      "title": "Tax & Gross ⇒ Net Salary Calculator 2026",
+      "description": "Calculate your taxes and gross to net salary for free in 2 clicks. Detailed simulation based on your status.",
+      "url": "https://netsalaire.com/en/",
+      "image": "https://netsalaire.com/assets/images/og-home.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Tax & Gross ⇒ Net Salary Calculator 2026",
+      "description": "Calculate your taxes and gross to net salary for free in 2 clicks. 2026 tax rates."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NetSalaire",
+      "url": "https://netsalaire.com",
+      "logo": "https://netsalaire.com/assets/images/logo-512.png",
+      "sameAs": []
+    }
+  },
+  "/en/india/income-tax": {
+    "title": "India Income Tax Calculator 2026",
+    "description": "Calculate your income tax in India. New Tax Regime 2024-25. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/india/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/inde/simulateur-impot/",
+      "en": "https://netsalaire.com/en/india/income-tax/",
+      "x-default": "https://netsalaire.com/en/india/income-tax/"
+    },
+    "openGraph": {
+      "title": "India Income Tax Calculator 2026",
+      "description": "Calculate your income tax in India. New Tax Regime 2024-25. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "India Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/india/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+  },
+  "/en/japan/income-tax": {
+    "title": "Japan Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Japan. National + Local Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/japan/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/japon/simulateur-impot/",
+      "en": "https://netsalaire.com/en/japan/income-tax/",
+      "x-default": "https://netsalaire.com/en/japan/income-tax/"
+    },
+    "openGraph": {
+      "title": "Japan Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Japan. National + Local Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Japan Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/japan/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      }
+    }
+  },
+  "/en/legal-notice": {
+    "title": "Legal Notice – NetSalaire.com - Simulator website",
+    "description": "Legal information, publisher, hosting provider and privacy policy for NetSalaire.com. Free tax simulators for France, Morocco and worldwide.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/legal-notice/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/legal-notice/",
+      "fr": "https://netsalaire.com/fr/mentions-legales/",
+      "x-default": "https://netsalaire.com/fr/mentions-legales/"
+    },
+    "robots": "noindex, follow"
+  },
+  "/en/luxembourg/income-tax": {
+    "title": "Luxembourg Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Luxembourg. Progressive Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/luxembourg/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/luxembourg/simulateur-impot/",
+      "en": "https://netsalaire.com/en/luxembourg/income-tax/",
+      "x-default": "https://netsalaire.com/en/luxembourg/income-tax/"
+    },
+    "openGraph": {
+      "title": "Luxembourg Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Luxembourg. Progressive Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Luxembourg Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/luxembourg/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/en/morocco/gross-to-net": {
+    "title": "Gross to Net Salary Calculator Morocco → CNSS & IR Simulator",
+    "description": "Calculate your Moroccan net salary instantly. CNSS, AMO, IR with 2026 progressive tax brackets. Family allowance included. Results in dirhams & euros.",
+    "keywords": "gross to net morocco, net salary morocco, CNSS, AMO, IR morocco, salary calculator morocco, social contributions morocco",
+    "canonical": "https://netsalaire.com/en/morocco/gross-to-net/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/morocco/gross-to-net/",
+      "fr": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/",
+      "x-default": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/"
+    },
+    "openGraph": {
+      "title": "Morocco Gross to Net Salary Calculator 2026 - Free",
+      "description": "Calculate your net salary in Morocco. CNSS, AMO, IR included. Free calculator.",
+      "url": "https://netsalaire.com/en/morocco/gross-to-net/",
+      "image": "https://netsalaire.com/assets/images/og-maroc-brut-net.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Morocco Gross to Net Salary Calculator 2026",
+      "description": "Calculate your net salary in Morocco. CNSS, AMO, IR included."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Morocco Gross to Net Calculator",
+      "description": "Calculate your net salary from gross in Morocco with CNSS, AMO and IR. Free calculator.",
+      "url": "https://netsalaire.com/en/morocco/gross-to-net/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MAD"
+      }
+    }
+  },
+  "/en/morocco/income-tax": {
+    "title": "Income Tax Calculator Morocco 2026 | Fast & Accurate",
+    "description": "Calculate your Moroccan income tax and possible deductions. 2026 tax brackets, family allowances, professional expenses included. Free instant results.",
+    "keywords": "morocco tax simulator, income tax morocco, IR brackets morocco, tax calculation morocco, moroccan tax rates 2026",
+    "canonical": "https://netsalaire.com/en/morocco/income-tax/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/morocco/income-tax/",
+      "fr": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/",
+      "x-default": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"
+    },
+    "openGraph": {
+      "title": "Morocco Income Tax Simulator 2026",
+      "description": "Calculate your income tax in Morocco. IR brackets, family allowances. Free calculator.",
+      "url": "https://netsalaire.com/en/morocco/income-tax/",
+      "image": "https://netsalaire.com/assets/images/og-maroc-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Morocco Income Tax Simulator 2026",
+      "description": "Calculate your income tax in Morocco. Brackets and allowances."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Morocco Income Tax Simulator 2026",
+      "description": "Calculate your income tax in Morocco with progressive brackets. Free calculator.",
+      "url": "https://netsalaire.com/en/morocco/income-tax/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MAD"
+      }
+    }
+  },
+  "/en/morocco/tax-guide": {
+    "title": "Morocco Tax Guide 2026 – CNSS, IR & Net Salary Explained",
+    "description": "CNSS, AMO, income tax brackets... Moroccan taxation explained simply. The complete and easy guide you wish you had before working in Morocco.",
+    "keywords": "morocco tax guide, income tax morocco 2026, CNSS, AMO, IR brackets morocco, moroccan taxation",
+    "canonical": "https://netsalaire.com/en/morocco/tax-guide/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/morocco/tax-guide/",
+      "fr": "https://netsalaire.com/fr/maroc/guide/",
+      "x-default": "https://netsalaire.com/fr/maroc/guide/"
+    },
+    "openGraph": {
+      "title": "Morocco Tax Guide 2026 - Understand Taxes",
+      "description": "Complete guide to Moroccan taxation. IR, CNSS, AMO. Everything about taxes in Morocco.",
+      "url": "https://netsalaire.com/en/morocco/tax-guide/",
+      "image": "https://netsalaire.com/assets/images/og-guide-maroc.png",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Morocco Tax Guide 2026",
+      "description": "Understand Moroccan taxation. IR, CNSS, AMO."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Morocco Tax Guide 2026 - Complete Guide",
+      "description": "Complete guide to Moroccan taxation. Income tax, CNSS, AMO, IR brackets.",
+      "author": {
+        "@type": "Organization",
+        "name": "NetSalaire"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://netsalaire.com/en/morocco/tax-guide/"
+      }
+    }
+  },
+  "/en/pakistan/income-tax": {
+    "title": "Pakistan Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Pakistan. Progressive Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/pakistan/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/pakistan/simulateur-impot/",
+      "en": "https://netsalaire.com/en/pakistan/income-tax/",
+      "x-default": "https://netsalaire.com/en/pakistan/income-tax/"
+    },
+    "openGraph": {
+      "title": "Pakistan Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Pakistan. Progressive Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pakistan Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/pakistan/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PKR"
+      }
+    }
+  },
+  "/en/privacy-policy": {
+    "title": "Privacy Policy – NetSalaire.com - Simulator website",
+    "description": "How NetSalaire.com protects your data. NetSalaire.com protects your personal data. No data stored, all calculations are performed locally in your browser.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/privacy-policy/",
+    "hreflang": {
+      "en": "https://netsalaire.com/en/privacy-policy/",
+      "fr": "https://netsalaire.com/fr/politique-confidentialite/",
+      "x-default": "https://netsalaire.com/fr/politique-confidentialite/"
+    },
+    "robots": "noindex, follow"
+  },
+  "/en/saudi-arabia/income-tax": {
+    "title": "Saudi Arabia Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Saudi Arabia. 0% Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/saudi-arabia/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/arabie-saoudite/simulateur-impot/",
+      "en": "https://netsalaire.com/en/saudi-arabia/income-tax/",
+      "x-default": "https://netsalaire.com/en/saudi-arabia/income-tax/"
+    },
+    "openGraph": {
+      "title": "Saudi Arabia Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Saudi Arabia. 0% Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Saudi Arabia Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/saudi-arabia/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SAR"
+      }
+    }
+  },
+  "/en/singapore/income-tax": {
+    "title": "Singapore Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Singapore. Progressive Income Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/singapore/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/singapour/simulateur-impot/",
+      "en": "https://netsalaire.com/en/singapore/income-tax/",
+      "x-default": "https://netsalaire.com/en/singapore/income-tax/"
+    },
+    "openGraph": {
+      "title": "Singapore Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Singapore. Progressive Income Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Singapore Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/singapore/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SGD"
+      }
+    }
+  },
+  "/en/spain/income-tax": {
+    "title": "Spain Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Spain. IRPF Progressive Tax. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/spain/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/espagne/simulateur-impot/",
+      "en": "https://netsalaire.com/en/spain/income-tax/",
+      "x-default": "https://netsalaire.com/en/spain/income-tax/"
+    },
+    "openGraph": {
+      "title": "Spain Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Spain. IRPF Progressive Tax. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Spain Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/spain/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/en/switzerland/income-tax": {
+    "title": "Switzerland (Geneva) Income Tax Calculator 2026",
+    "description": "Calculate your income tax in Switzerland (Geneva). Federal + Cantonal + Communal. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/switzerland/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/suisse/simulateur-impot/",
+      "en": "https://netsalaire.com/en/switzerland/income-tax/",
+      "x-default": "https://netsalaire.com/en/switzerland/income-tax/"
+    },
+    "openGraph": {
+      "title": "Switzerland (Geneva) Income Tax Calculator 2026",
+      "description": "Calculate your income tax in Switzerland (Geneva). Federal + Cantonal + Communal. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Switzerland (Geneva) Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/switzerland/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CHF"
+      }
+    }
+  },
+  "/en/uk/income-tax": {
+    "title": "United Kingdom Income Tax Calculator 2026",
+    "description": "Calculate your income tax in United Kingdom. PAYE + National Insurance. Free instant simulation.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/en/uk/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/royaume-uni/simulateur-impot/",
+      "en": "https://netsalaire.com/en/uk/income-tax/",
+      "x-default": "https://netsalaire.com/en/uk/income-tax/"
+    },
+    "openGraph": {
+      "title": "United Kingdom Income Tax Calculator 2026",
+      "description": "Calculate your income tax in United Kingdom. PAYE + National Insurance. Free instant simulation.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "United Kingdom Income Tax Calculator 2026",
+      "url": "https://netsalaire.com/en/uk/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP"
+      }
+    }
+  },
+  "/en/usa/income-tax": {
+    "title": "USA Income Tax Calculator 2026New York Federal + State Tax",
+    "description": "Calculate your US income tax for New York: Federal tax, NY State tax, NYC tax, Social Security and Medicare. Free instant simulation with 2026 rates.",
+    "keywords": "usa tax calculator, new york income tax, federal tax calculator, state tax ny, fica calculator",
+    "canonical": "https://netsalaire.com/en/usa/income-tax/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/usa/simulateur-impot/",
+      "en": "https://netsalaire.com/en/usa/income-tax/",
+      "x-default": "https://netsalaire.com/en/usa/income-tax/"
+    },
+    "openGraph": {
+      "title": "USA Income Tax Calculator 2026Federal + State Tax",
+      "description": "Calculate your US income tax: Federal, State, City taxes + Social Security/Medicare contributions.",
+      "url": "https://netsalaire.com/en/usa/income-tax/",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "USA Income Tax Calculator 2026",
+      "description": "Calculate your US income tax with Federal, NY State and NYC rates. Official 2026 tax brackets.",
+      "url": "https://netsalaire.com/en/usa/income-tax/",
+      "inLanguage": "en",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/fr/arabie-saoudite/simulateur-impot": {
+    "title": "Simulateur Impot Arabie Saoudite 2026",
+    "description": "Calculez vos impots en Arabie Saoudite. 0% Impot sur le Revenu. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/arabie-saoudite/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/arabie-saoudite/simulateur-impot/",
+      "en": "https://netsalaire.com/en/saudi-arabia/income-tax/",
+      "x-default": "https://netsalaire.com/en/saudi-arabia/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Arabie Saoudite 2026",
+      "description": "Calculez vos impots en Arabie Saoudite. 0% Impot sur le Revenu. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Arabie Saoudite 2026",
+      "url": "https://netsalaire.com/fr/arabie-saoudite/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SAR"
+      }
+    }
+  },
+  "/fr/chine/simulateur-impot": {
+    "title": "Simulateur Impot Chine (Shanghai) 2026",
+    "description": "Calculez vos impots en Chine (Shanghai). Impot Progressif. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/chine/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/chine/simulateur-impot/",
+      "en": "https://netsalaire.com/en/china/income-tax/",
+      "x-default": "https://netsalaire.com/en/china/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Chine (Shanghai) 2026",
+      "description": "Calculez vos impots en Chine (Shanghai). Impot Progressif. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Chine (Shanghai) 2026",
+      "url": "https://netsalaire.com/fr/chine/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      }
+    }
+  },
+  "/fr/comparateur-global": {
+    "title": "Comparateur Salaire Monde | France, Dubaï, Maroc, Suisse...",
+    "description": "France, Maroc, Dubaï, Suisse, Luxembourg... Où ton salaire vaut-il vraiment le plus ? Compare et trouve le meilleur pays pour toi selon ta situation familiale.",
+    "keywords": "comparateur salaire international, simulateur fiscal, impot france maroc dubai uk singapour, expatriation, salaire net, comparaison fiscale",
+    "canonical": "https://netsalaire.com/fr/comparateur-global/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/comparateur-global/",
+      "en": "https://netsalaire.com/en/global-comparison/",
+      "x-default": "https://netsalaire.com/fr/comparateur-global/"
+    },
+    "openGraph": {
+      "title": "Comparateur global — Salaire net & impôts par pays (2026) | NetSalaire",
+      "description": "Compare ton net en poche (2026) par pays : France, Maroc, Dubai, UK, Singapour, Genève… Détails impôts & charges.",
+      "url": "https://netsalaire.com/fr/comparateur-global/",
+      "image": "https://netsalaire.com/assets/images/og-comparateur-global.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Comparateur global — Salaire net & impôts par pays (2026)",
+      "description": "Compare ton net en poche (2026) par pays : France, Maroc, Dubai, UK, Singapour, Genève…"
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Comparateur Fiscal International",
+      "description": "Simulateur fiscal pour comparer le salaire net entre 14 pays: France, Maroc, Dubai, UK, Singapour, New York, Shanghai, Genève, Luxembourg, Arabie Saoudite, Japon, Espagne, Inde et Pakistan. Barèmes 2026.",
+      "url": "https://netsalaire.com/fr/comparateur-global/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/fr/comparateur-salaire-france-maroc": {
+    "title": "France vs Maroc : MRE Où Gagnes-tu Plus ? | Comparateur 2026",
+    "description": "MRE : compare ton salaire net et tes impôts entre la France et le Maroc. Résultat personnalisé selon ta situation familiale. Simulateur gratuit et instantané.",
+    "keywords": "MRE, marocains résidant à l'étranger, comparateur salaire france maroc, simulateur fiscal MRE, impot france maroc, salaire net, expatriation maroc, retour au maroc",
+    "canonical": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/",
+      "en": "https://netsalaire.com/en/france-morocco-comparison/",
+      "x-default": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/"
+    },
+    "openGraph": {
+      "title": "Comparateur Salaire France vs Maroc pour MRE 2026 | NetSalaire",
+      "description": "MRE : France ou Maroc, où gagnes-tu vraiment le plus ? Simulateur fiscal gratuit pour Marocains Résidant à l'Étranger.",
+      "url": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/",
+      "image": "https://netsalaire.com/assets/images/og-comparateur.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Comparateur Salaire France vs Maroc pour MRE 2026",
+      "description": "MRE : France ou Maroc, où gagnes-tu vraiment le plus ? Simulateur fiscal gratuit."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Comparateur Salaire France vs Maroc pour MRE",
+      "description": "Simulateur fiscal gratuit pour MRE (Marocains Résidant à l'Étranger) : compare ton salaire net entre la France et le Maroc",
+      "url": "https://netsalaire.com/fr/comparateur-salaire-france-maroc/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/fr/dubai/simulateur-impot": {
+    "title": "Simulateur Impot Dubai (EAU) 2026",
+    "description": "Calculez vos impots en Dubai (EAU). 0% Impot sur le Revenu. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/dubai/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/dubai/simulateur-impot/",
+      "en": "https://netsalaire.com/en/dubai/income-tax/",
+      "x-default": "https://netsalaire.com/en/dubai/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Dubai (EAU) 2026",
+      "description": "Calculez vos impots en Dubai (EAU). 0% Impot sur le Revenu. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Dubai (EAU) 2026",
+      "url": "https://netsalaire.com/fr/dubai/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    }
+  },
+  "/fr/espagne/simulateur-impot": {
+    "title": "Simulateur Impot Espagne 2026",
+    "description": "Calculez vos impots en Espagne. IRPF Impot Progressif. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/espagne/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/espagne/simulateur-impot/",
+      "en": "https://netsalaire.com/en/spain/income-tax/",
+      "x-default": "https://netsalaire.com/en/spain/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Espagne 2026",
+      "description": "Calculez vos impots en Espagne. IRPF Impot Progressif. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Espagne 2026",
+      "url": "https://netsalaire.com/fr/espagne/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/fr/faq": {
+    "title": "FAQ Salaire Brut en Net & Impôts – Toutes les Réponses",
+    "description": "Brut vs net ? Cadre vs non-cadre ? Différence France/Maroc ? Défiscalisation impots ? Toutes les réponses claires aux questions que tout lepose.",
+    "keywords": "FAQ salaire net, questions impot, quotient familial, CNSS Maroc, IR France, calcul salaire",
+    "canonical": "https://netsalaire.com/fr/faq/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/faq/",
+      "en": "https://netsalaire.com/en/faq/",
+      "x-default": "https://netsalaire.com/fr/faq/"
+    },
+    "openGraph": {
+      "title": "FAQ - Questions Fréquentes sur les Simulateurs Fiscaux",
+      "description": "Tout savoir sur le calcul du salaire net et l'impôt sur le revenu en France et au Maroc.",
+      "url": "https://netsalaire.com/fr/faq/",
+      "image": "https://netsalaire.com/assets/images/og-home.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary",
+      "title": "FAQ NetSalaire - Questions Fréquentes",
+      "description": "Tout savoir sur le calcul du salaire net et l'impôt."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les calculs sont-ils fiables ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos simulateurs utilisent les baremes officiels 2026 publies par les administrations fiscales francaise et marocaine. Cependant, ils fournissent une estimation et ne remplacent pas un conseil fiscal personnalise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mes donnees sont-elles stockees ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Tous les calculs sont effectues localement dans votre navigateur. Aucune donnee personnelle n'est envoyee a nos serveurs ni stockee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment est calcule le salaire net en France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le salaire net est obtenu en deduisant du brut les cotisations sociales salariales (environ 22% pour les non-cadres, 25% pour les cadres). Ces cotisations financent la securite sociale, la retraite, le chomage et la retraite complementaire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le quotient familial ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le quotient familial est un mecanisme qui divise le revenu imposable par le nombre de parts du foyer fiscal. Un celibataire a 1 part, un couple marie 2 parts, et les enfants ajoutent des demi-parts supplementaires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont les tranches d'IR au Maroc ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'IR marocain comporte 6 tranches progressives : 0% jusqu'a 40 000 DH, 10% de 40 001 a 60 000 DH, 20% de 60 001 a 80 000 DH, 30% de 80 001 a 100 000 DH, 34% de 100 001 a 180 000 DH, et 37% au-dela."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que la CNSS et l'AMO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La CNSS (Caisse Nationale de Securite Sociale) couvre les prestations familiales, maladie et retraite. Le taux salarial est de 4.48%, plafonne a 6 000 DH/mois. L'AMO (Assurance Maladie Obligatoire) couvre les frais de sante au taux de 2.26% sans plafond."
+          }
+        }
+      ]
+    }
+  },
+  "/fr/france/creche-tarifs": {
+    "title": "Simulateur Tarif Crèche 2026 - Comparez Crèche, Micro-Crèche, Assistante Maternelle",
+    "description": "Calculez et comparez le coût réel de la garde d'enfant après aides CAF et crédit d'impôt. Crèche publique, micro-crèche ou assistante maternelle.",
+    "keywords": "simulateur creche, tarif creche, cout garde enfant, prix creche 2026, aide CAF, micro creche, assistante maternelle, CMG",
+    "canonical": "https://netsalaire.com/fr/france/creche-tarifs/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/creche-tarifs/",
+      "en": "https://netsalaire.com/en/france/daycare-calculator/",
+      "x-default": "https://netsalaire.com/fr/france/creche-tarifs/"
+    },
+    "openGraph": {
+      "title": "Simulateur Tarif Crèche 2026 - Comparateur Gratuit",
+      "description": "Comparez le coût réel de la crèche, micro-crèche et assistante maternelle après aides CAF.",
+      "url": "https://netsalaire.com/fr/france/creche-tarifs/",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Tarif Crèche 2026",
+      "description": "Comparez le coût de la crèche publique, micro-crèche et assistante maternelle après aides CAF et crédit d'impôt.",
+      "url": "https://netsalaire.com/fr/france/creche-tarifs/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/fr/france/guide": {
+    "title": "Guide Fiscal France 2026 – Tout Comprendre en 5 Minutes",
+    "description": "Cotisations, tranches d'impôt, quotient familial... La fiscalité française expliquée simplement. Le guide simple et complet que tu aurais aimé avoir avant.",
+    "keywords": "guide fiscal france, impot revenu 2026, cotisations sociales, quotient familial, tranches IR, optimisation fiscale",
+    "canonical": "https://netsalaire.com/fr/france/guide/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/guide/",
+      "en": "https://netsalaire.com/en/france/tax-guide/",
+      "x-default": "https://netsalaire.com/fr/france/guide/"
+    },
+    "openGraph": {
+      "title": "Guide Fiscal France 2026 - Comprendre les Impôts",
+      "description": "Guide complet sur la fiscalité française : IR, cotisations, quotient familial, optimisation.",
+      "url": "https://netsalaire.com/fr/france/guide/",
+      "image": "https://netsalaire.com/assets/images/og-guide-france.png",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Guide Fiscal France 2026",
+      "description": "Tout comprendre sur la fiscalité française : IR, cotisations, quotient familial."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Guide Fiscal France 2026 - Tout savoir sur les impôts",
+      "description": "Guide complet sur la fiscalité française : impôt sur le revenu, cotisations sociales, quotient familial, tranches IR",
+      "author": {
+        "@type": "Organization",
+        "name": "NetSalaire"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://netsalaire.com/fr/france/guide/"
+      }
+    }
+  },
+  "/fr/france/simulateur-apl": {
+    "title": "Simulateur APL 2026 - Calcul Aide au Logement Gratuit",
+    "description": "Calculez et verifiez votre eligibilite APL. Simulateur avec baremes CAF officiels 2026. Cette aide peut être versée à toute personne qui loue un logement.",
+    "keywords": "simulateur APL 2026, calcul aide logement gratuit, APL CAF simulation, eligibilite APL locataire, allocation logement calcul",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-apl/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-apl/"
+    },
+    "openGraph": {
+      "title": "Simulateur APL 2026 - Calcul Gratuit et Instantane",
+      "description": "Locataire ? Verifiez votre eligibilite APL en 30 secondes. Baremes CAF 2026 inclus.",
+      "url": "https://netsalaire.com/fr/france/simulateur-apl/",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur APL 2026 - Gratuit et Instantane",
+      "description": "Locataire ? Ne passez pas a cote de vos aides ! Calculez votre APL en 30 secondes."
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur APL 2026 Gratuit",
+      "description": "Calculez votre Aide Personnalisee au Logement instantanement. Baremes CAF officiels 2026 inclus.",
+      "url": "https://netsalaire.com/fr/france/simulateur-apl/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "4580",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/fr/france/simulateur-chomage-are": {
+    "title": "Simulateur Chomage ARE 2026 - Calcul Gratuit et Instantane",
+    "description": "Calculez votre indemnité et droits à l'allocation chômage ARE de France Travail. Simulateur gratuit avec les taux et tant journalier + duree.",
+    "keywords": "simulateur chomage 2026, calcul ARE gratuit, allocation france travail, indemnite chomage calcul, pole emploi simulation",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-chomage-are/"
+    },
+    "openGraph": {
+      "title": "Simulateur Chomage ARE 2026 - Gratuit et Instantane",
+      "description": "Licencie ? Calculez votre ARE en 30 secondes. Taux officiels France Travail 2026.",
+      "url": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Chomage ARE 2026 - Calcul Gratuit",
+      "description": "Licencie ? Calculez votre allocation en 30 secondes. Taux officiels France Travail 2026."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Chomage ARE 2026 Gratuit",
+      "description": "Calculez votre allocation chomage ARE instantanement avec les taux officiels France Travail 2026",
+      "url": "https://netsalaire.com/fr/france/simulateur-chomage-are/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "3420",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/fr/france/simulateur-impot-revenu": {
+    "title": "Simulateur Impôt sur le Revenu 2026 | Rapide et Précis",
+    "description": "Calculez votre impôt sur le revenu et les réductions possibles : PER, crèche, dons, emploi à domicile, frais de scolarité. Simulation gratuite.",
+    "keywords": "simulateur impot, impot revenu 2026, calcul IR france, bareme impot, quotient familial, PER, simulation fiscale",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-impot-revenu/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-impot-revenu/",
+      "en": "https://netsalaire.com/en/france/income-tax/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-impot-revenu/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot sur le Revenu 2026 — Calcul IR France | NetSalaire",
+      "description": "Calculez votre impot sur le revenu 2026 gratuitement. Quotient familial, tranches IR, simulation PER et dons.",
+      "url": "https://netsalaire.com/fr/france/simulateur-impot-revenu/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Impot sur le Revenu 2026 — Calcul IR France",
+      "description": "Calculez votre impot sur le revenu 2026. Quotient familial, tranches IR, simulation PER."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot sur le Revenu France 2026",
+      "description": "Calculez votre impot sur le revenu en France avec quotient familial, tranches IR et simulation PER. Bareme 2026 officiel.",
+      "url": "https://netsalaire.com/fr/france/simulateur-impot-revenu/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/fr/france/simulateur-indemnite-kilometrique": {
+    "title": "Calcul Frais Kilometriques Pro 2026 - Simulateur Précis",
+    "description": "Vous utilisez votre vehicule pour le travail ? Calculez votre deduction fiscale instantanement. Bareme officiel 2026 + bonus 20% vehicule electrique inclus.",
+    "keywords": "calcul frais kilometriques 2026, simulateur IK gratuit, bareme kilometrique impots, frais reels deduction, indemnite km voiture travail",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/"
+    },
+    "openGraph": {
+      "title": "Calcul Frais Km 2026 - Simulateur Gratuit + Bonus VE",
+      "description": "Trajet domicile-travail ? Calculez votre deduction fiscale. Bareme officiel 2026 + 20% bonus electrique.",
+      "url": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Calcul Frais Km 2026 - Gratuit + Bonus VE 20%",
+      "description": "Trajet travail en voiture ? Calculez votre deduction fiscale instantanement. Bareme officiel 2026."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calcul Frais Kilometriques 2026 Gratuit",
+      "description": "Calculez vos frais kilometriques selon le bareme fiscal officiel 2026. Voiture, moto, velo. Bonus 20% vehicule electrique inclus.",
+      "url": "https://netsalaire.com/fr/france/simulateur-indemnite-kilometrique/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "3890",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/fr/france/simulateur-indemnite-licenciement": {
+    "title": "Calcul Indemnite Licenciement 2026 - Simulateur Gratuit",
+    "description": "Ce simulateur permet d'estimer le montant de l'indemnité de licenciement d'un salarié. Simulateur basé sur salaire et anciennete. Connaissez vos droits !",
+    "keywords": "calcul indemnite licenciement 2026, simulateur licenciement gratuit, indemnite legale licenciement, calcul prime licenciement, droit licenciement france",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/"
+    },
+    "openGraph": {
+      "title": "Calcul Indemnite Licenciement 2026 - Gratuit",
+      "description": "Licencie ? Calculez votre indemnite legale en 2 clics. Simulateur gratuit avec baremes 2026.",
+      "url": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Calcul Indemnite Licenciement 2026 - Gratuit",
+      "description": "Vous etes licencie ? Calculez votre indemnite legale instantanement. Simulateur gratuit 2026."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calcul Indemnite Licenciement 2026 Gratuit",
+      "description": "Calculez votre indemnite legale de licenciement instantanement selon votre salaire et anciennete. Baremes officiels 2026.",
+      "url": "https://netsalaire.com/fr/france/simulateur-indemnite-licenciement/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "2890",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/fr/france/simulateur-rupture-conventionnelle": {
+    "title": "Simulateur Rupture Conventionnelle 2026 - Calcul Gratuit",
+    "description": "Vous negociez votre depart ? Calculez votre indemnite de rupture conventionnelle instantanement. Minimum legal et conseils de negociation. Outil gratuit 2026.",
+    "keywords": "simulateur rupture conventionnelle 2026, calcul indemnite rupture, negociation depart indemnite, rupture amiable calcul, indemnite depart negocie",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/"
+    },
+    "openGraph": {
+      "title": "Simulateur Rupture Conventionnelle 2026 - Gratuit",
+      "description": "Vous partez ? Calculez votre minimum legal + conseils de negociation. Outil gratuit 2026.",
+      "url": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/",
+      "image": "https://netsalaire.com/assets/images/og-france-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Rupture Conventionnelle 2026 - Calcul Gratuit",
+      "description": "Vous negociez votre depart ? Calculez votre minimum legal + conseils de negociation gratuits."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Rupture Conventionnelle 2026 Gratuit",
+      "description": "Calculez votre indemnite de rupture conventionnelle avec minimum legal, delais et conseils de negociation",
+      "url": "https://netsalaire.com/fr/france/simulateur-rupture-conventionnelle/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "3150",
+        "bestRating": "5"
+      }
+    }
+  },
+  "/fr/france/simulateur-salaire-brut-net": {
+    "title": "Calcul Salaire Brut en Net France 2026 → Simulateur Gratuit",
+    "description": "Calculez votre salaire brut en net gratuitement. Simulation détaillée horaire, mensuelle ou annuelle selon votre statut. Barèmes 2026. calcul détaillé.",
+    "keywords": "simulateur brut net, salaire net france, calcul salaire, cotisations sociales, cadre non cadre",
+    "canonical": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
+      "en": "https://netsalaire.com/en/france/gross-to-net/",
+      "x-default": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/"
+    },
+    "openGraph": {
+      "title": "Simulateur Salaire Brut Net France 2026 - Calcul Gratuit",
+      "description": "Calculez votre salaire net à partir du brut en France. Cotisations sociales, statut cadre/non-cadre, prélèvement à la source. 100% gratuit.",
+      "url": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
+      "image": "https://netsalaire.com/assets/images/og-france-brut-net.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Salaire Brut Net France 2026",
+      "description": "Calculez votre salaire net à partir du brut. Cotisations détaillées, statut cadre/non-cadre."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Brut Net France",
+      "description": "Calculez votre salaire net à partir du brut en France",
+      "url": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web"
+    }
+  },
+  "/fr/inde/simulateur-impot": {
+    "title": "Simulateur Impot Inde 2026",
+    "description": "Calculez vos impots en Inde. Nouveau Regime Fiscal 2024-25. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/inde/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/inde/simulateur-impot/",
+      "en": "https://netsalaire.com/en/india/income-tax/",
+      "x-default": "https://netsalaire.com/en/india/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Inde 2026",
+      "description": "Calculez vos impots en Inde. Nouveau Regime Fiscal 2024-25. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Inde 2026",
+      "url": "https://netsalaire.com/fr/inde/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+  },
+  "/fr": {
+    "title": "Simulateur Impôts et Salaire Brut ⇒ Net | Gratuit et Rapide",
+    "description": "Calculez vos impôts et salaire brut en net gratuitement en 2 clics. Simulation détaillée horaire, mensuelle ou annuelle selon votre statut. Barèmes 2026.",
+    "keywords": "simulateur salaire net, calculateur impot, brut net france, brut net maroc, comparateur fiscal, IR france, IR maroc",
+    "canonical": "https://netsalaire.com/fr/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/",
+      "en": "https://netsalaire.com/en/",
+      "x-default": "https://netsalaire.com/fr/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impôts et Salaire Brut ⇒ Net 2026",
+      "description": "Calculez vos impôts et salaire brut en net gratuitement en 2 clics. Simulation détaillée selon votre statut.",
+      "url": "https://netsalaire.com/fr/",
+      "image": "https://netsalaire.com/assets/images/og-home.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Impôts et Salaire Brut ⇒ Net 2026",
+      "description": "Calculez vos impôts et salaire brut en net gratuitement en 2 clics. Barèmes 2026."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NetSalaire",
+      "url": "https://netsalaire.com",
+      "logo": "https://netsalaire.com/assets/images/logo-512.png",
+      "sameAs": []
+    }
+  },
+  "/fr/japon/simulateur-impot": {
+    "title": "Simulateur Impot Japon 2026",
+    "description": "Calculez vos impots en Japon. Impot National + Local. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/japon/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/japon/simulateur-impot/",
+      "en": "https://netsalaire.com/en/japan/income-tax/",
+      "x-default": "https://netsalaire.com/en/japan/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Japon 2026",
+      "description": "Calculez vos impots en Japon. Impot National + Local. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Japon 2026",
+      "url": "https://netsalaire.com/fr/japon/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      }
+    }
+  },
+  "/fr/luxembourg/simulateur-impot": {
+    "title": "Simulateur Impot Luxembourg 2026",
+    "description": "Calculez vos impots en Luxembourg. Impot Progressif. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/luxembourg/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/luxembourg/simulateur-impot/",
+      "en": "https://netsalaire.com/en/luxembourg/income-tax/",
+      "x-default": "https://netsalaire.com/en/luxembourg/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Luxembourg 2026",
+      "description": "Calculez vos impots en Luxembourg. Impot Progressif. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Luxembourg 2026",
+      "url": "https://netsalaire.com/fr/luxembourg/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  },
+  "/fr/maroc/guide": {
+    "title": "Guide Fiscal Maroc 2026 – CNSS, IR et Salaire Net Expliqués",
+    "description": "CNSS, AMO, tranches impôt sur le revenue IR... La fiscalité au maroc expliquée simplement. Le guide simple et complet que tu aurais aimé avoir avant.",
+    "keywords": "guide fiscal maroc, impot revenu maroc 2026, CNSS, AMO, tranches IR maroc, fiscalité marocaine",
+    "canonical": "https://netsalaire.com/fr/maroc/guide/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/maroc/guide/",
+      "en": "https://netsalaire.com/en/morocco/tax-guide/",
+      "x-default": "https://netsalaire.com/fr/maroc/guide/"
+    },
+    "openGraph": {
+      "title": "Guide Fiscal Maroc 2026 - Comprendre les Impôts",
+      "description": "Guide complet sur la fiscalité marocaine. IR, CNSS, AMO, abattements. Tout savoir sur les impôts au Maroc.",
+      "url": "https://netsalaire.com/fr/maroc/guide/",
+      "image": "https://netsalaire.com/assets/images/og-guide-maroc.png",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Guide Fiscal Maroc 2026",
+      "description": "Tout comprendre sur la fiscalité marocaine. IR, CNSS, AMO."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Guide Fiscal Maroc 2026 - Tout savoir sur les impôts",
+      "description": "Guide complet sur la fiscalité marocaine. IR, CNSS, AMO, tranches IR.",
+      "author": {
+        "@type": "Organization",
+        "name": "NetSalaire"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://netsalaire.com/fr/maroc/guide/"
+      }
+    }
+  },
+  "/fr/maroc/simulateur-impot-revenu": {
+    "title": "Simulateur Impôt sur le Revenu Maroc 2026 | Rapide et Précis",
+    "description": "Calculez votre impôt sur le revenu et les réductions possibles. Tranches 2026, abattements familiaux, frais pro inclus. Résultat instantané et gratuit.",
+    "keywords": "simulateur IR maroc, impot revenu maroc, tranches IR maroc, calcul impot maroc, barèmes fiscaux maroc 2026",
+    "canonical": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/",
+      "en": "https://netsalaire.com/en/morocco/income-tax/",
+      "x-default": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impôt sur le Revenu Maroc 2026",
+      "description": "Calculez votre impôt sur le revenu au Maroc. Tranches IR, abattements familiaux. Simulateur gratuit.",
+      "url": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/",
+      "image": "https://netsalaire.com/assets/images/og-maroc-ir.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Impôt sur le Revenu Maroc 2026",
+      "description": "Calculez votre impôt sur le revenu au Maroc. Tranches IR et abattements."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impôt sur le Revenu Maroc 2026",
+      "description": "Calculez votre impôt sur le revenu au Maroc avec les tranches progressives. Simulateur gratuit.",
+      "url": "https://netsalaire.com/fr/maroc/simulateur-impot-revenu/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MAD"
+      }
+    }
+  },
+  "/fr/maroc/simulateur-salaire-brut-net": {
+    "title": "Calcul Salaire Brut en Net Maroc → Simulateur CNSS & IR",
+    "description": "Calculez votre salaire net marocain instantanément. CNSS, AMO, IR avec barème progressif 2026. Abattement familial inclus. Résultat détaillé en dirhams & Euros.",
+    "keywords": "simulateur brut net maroc, salaire net maroc, CNSS, AMO, IR maroc, calcul salaire maroc, cotisations sociales maroc",
+    "canonical": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/",
+      "en": "https://netsalaire.com/en/morocco/gross-to-net/",
+      "x-default": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/"
+    },
+    "openGraph": {
+      "title": "Simulateur Salaire Brut Net Maroc 2026 - Calcul Gratuit",
+      "description": "Calculez votre salaire net au Maroc. CNSS, AMO, IR, frais professionnels inclus. Simulateur gratuit.",
+      "url": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/",
+      "image": "https://netsalaire.com/assets/images/og-maroc-brut-net.png",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simulateur Salaire Brut Net Maroc 2026",
+      "description": "Calculez votre salaire net au Maroc. CNSS, AMO, IR inclus."
+    },
+    "robots": "index, follow",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Brut Net Maroc",
+      "description": "Calculez votre salaire net à partir du brut au Maroc avec CNSS, AMO et IR. Simulateur gratuit.",
+      "url": "https://netsalaire.com/fr/maroc/simulateur-salaire-brut-net/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MAD"
+      }
+    }
+  },
+  "/fr/mentions-legales": {
+    "title": "Mentions Légales – NetSalaire.com - site simulateur",
+    "description": "Informations légales, éditeur, hébergeur et politique de confidentialité du site NetSalaire.com. Simulateurs fiscaux gratuits France, Maroc et global.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/mentions-legales/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/mentions-legales/",
+      "en": "https://netsalaire.com/en/legal-notice/",
+      "x-default": "https://netsalaire.com/fr/mentions-legales/"
+    },
+    "robots": "noindex, follow"
+  },
+  "/fr/pakistan/simulateur-impot": {
+    "title": "Simulateur Impot Pakistan 2026",
+    "description": "Calculez vos impots en Pakistan. Impot Progressif. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/pakistan/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/pakistan/simulateur-impot/",
+      "en": "https://netsalaire.com/en/pakistan/income-tax/",
+      "x-default": "https://netsalaire.com/en/pakistan/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Pakistan 2026",
+      "description": "Calculez vos impots en Pakistan. Impot Progressif. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Pakistan 2026",
+      "url": "https://netsalaire.com/fr/pakistan/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PKR"
+      }
+    }
+  },
+  "/fr/politique-confidentialite": {
+    "title": "Politique de Confidentialité – NetSalaire.com - simulateur",
+    "description": "Découvrez comment NetSalaire.com protège vos données personnelles. Aucune donnée calculs sont effectués localement dans votre navigateur.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/politique-confidentialite/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/politique-confidentialite/",
+      "en": "https://netsalaire.com/en/privacy-policy/",
+      "x-default": "https://netsalaire.com/fr/politique-confidentialite/"
+    },
+    "robots": "noindex, follow"
+  },
+  "/fr/royaume-uni/simulateur-impot": {
+    "title": "Simulateur Impot Royaume-Uni 2026",
+    "description": "Calculez vos impots en Royaume-Uni. PAYE + Assurance Nationale. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/royaume-uni/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/royaume-uni/simulateur-impot/",
+      "en": "https://netsalaire.com/en/uk/income-tax/",
+      "x-default": "https://netsalaire.com/en/uk/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Royaume-Uni 2026",
+      "description": "Calculez vos impots en Royaume-Uni. PAYE + Assurance Nationale. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Royaume-Uni 2026",
+      "url": "https://netsalaire.com/fr/royaume-uni/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP"
+      }
+    }
+  },
+  "/fr/singapour/simulateur-impot": {
+    "title": "Simulateur Impot Singapour 2026",
+    "description": "Calculez vos impots en Singapour. Impot Progressif. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/singapour/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/singapour/simulateur-impot/",
+      "en": "https://netsalaire.com/en/singapore/income-tax/",
+      "x-default": "https://netsalaire.com/en/singapore/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Singapour 2026",
+      "description": "Calculez vos impots en Singapour. Impot Progressif. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Singapour 2026",
+      "url": "https://netsalaire.com/fr/singapour/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SGD"
+      }
+    }
+  },
+  "/fr/suisse/simulateur-impot": {
+    "title": "Simulateur Impot Suisse (Geneve) 2026",
+    "description": "Calculez vos impots en Suisse (Geneve). Federal + Cantonal + Communal. Simulation gratuite et instantanee.",
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/suisse/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/suisse/simulateur-impot/",
+      "en": "https://netsalaire.com/en/switzerland/income-tax/",
+      "x-default": "https://netsalaire.com/en/switzerland/income-tax/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot Suisse (Geneve) 2026",
+      "description": "Calculez vos impots en Suisse (Geneve). Federal + Cantonal + Communal. Simulation gratuite et instantanee.",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot Suisse (Geneve) 2026",
+      "url": "https://netsalaire.com/fr/suisse/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CHF"
+      }
+    }
+  },
+  "/fr/usa/simulateur-impot": {
+    "title": "Simulateur Impot USA 2026Calculateur Taxes New York",
+    "description": "Calculez vos impots americains a New York : Federal, State, City + cotisations Social Security et Medicare. Simulation gratuite et instantanee.",
+    "keywords": "impot usa, calculateur taxes new york, federal tax, state tax, fica, simulation impot americain",
+    "canonical": "https://netsalaire.com/fr/usa/simulateur-impot/",
+    "hreflang": {
+      "fr": "https://netsalaire.com/fr/usa/simulateur-impot/",
+      "en": "https://netsalaire.com/en/usa/income-tax/",
+      "x-default": "https://netsalaire.com/fr/usa/simulateur-impot/"
+    },
+    "openGraph": {
+      "title": "Simulateur Impot USA 2026Federal + State Tax",
+      "description": "Calculez vos impots americains : Federal, State, City + cotisations sociales.",
+      "url": "https://netsalaire.com/fr/usa/simulateur-impot/",
+      "type": "website"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulateur Impot USA 2026",
+      "description": "Calculez vos impots americains avec les baremes Federal, NY State et NYC. Taux officiels 2026.",
+      "url": "https://netsalaire.com/fr/usa/simulateur-impot/",
+      "inLanguage": "fr",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NetSalaire",
+        "url": "https://netsalaire.com"
+      }
+    }
+  },
+  "/": {
+    "title": "Redirection vers NetSalaire",
+    "description": null,
+    "keywords": null,
+    "canonical": "https://netsalaire.com/fr/"
+  }
+}

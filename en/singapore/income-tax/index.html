@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Singapore Income Tax Calculator 2025</title>
+    <meta name="description" content="Calculate your income tax in Singapore. Progressive Income Tax. Free instant simulation.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/singapore/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/singapour/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/singapore/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/singapore/income-tax/">
+
+    <meta property="og:title" content="Singapore Income Tax Calculator 2025">
+    <meta property="og:description" content="Calculate your income tax in Singapore. Progressive Income Tax. Free instant simulation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/singapore/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Singapore Income Tax Calculator 2025",
+        "url": "https://netsalaire.com/en/singapore/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "SGD" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type=range] { -webkit-appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%;
+            background: #ffffff; border: 2px solid #6366f1; cursor: pointer; margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 6px; background: linear-gradient(to right, #6366f1 0%, #e2e8f0 0%);
+            border-radius: 3px;
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center shadow-md">
+                    <span class="text-white font-bold text-sm">N</span>
+                </div>
+                <span class="font-semibold text-slate-900">NetSalaire</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="/en/global-comparison/" class="text-sm text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Compare Countries
+                </a>
+                <a href="/fr/singapour/simulateur-impot/" class="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1">
+                    <span>🇫🇷</span> FR
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 border border-indigo-200 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇸🇬</span>
+                    <span class="text-sm font-medium text-indigo-700">Singapore</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Income Tax Calculator <span class="text-indigo-600">2025</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your income tax in Singapore: Progressive Income Tax</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+
+                <div class="mb-8">
+                    <label class="block text-sm font-medium text-slate-700 mb-3">Annual Gross Income (SGD)</label>
+                    <div class="flex items-center gap-4">
+                        <input type="range" id="income-slider" min="0" max="400000" step="1000" value="80000"
+                               class="flex-1 h-2 rounded-lg cursor-pointer">
+                        <div class="relative">
+                            <input type="number" id="income-input" value="80000" min="0" max="100000000"
+                                   class="w-40 text-right rounded-lg border-0 py-2 pl-3 pr-12 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-sm font-semibold">
+                            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">S$</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax</span>
+                        </div>
+                        <p class="text-2xl font-bold text-indigo-600" id="income-tax">S$0</p>
+                        <p class="text-xs text-slate-500 mt-1">Effective rate: <span id="tax-rate">0%</span></p>
+                    </div>
+
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">S$0</p>
+                        <p class="text-xs text-slate-500 mt-1">CPF: 20% employee contribution (capped at S$6,800/month)</p>
+                    </div>
+
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-3xl font-bold text-emerald-600" id="net-income">S$0</p>
+                        <p class="text-sm text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">S$0</span></p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">S$0</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-indigo-500"></iconify-icon>
+                    2025 Tax Brackets
+                </h2>
+                <div class="space-y-2 text-sm">
+                    
+            <div class="flex justify-between"><span class="text-slate-500">S$0 - S$20,000</span><span class="font-medium">0%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$20,000 - S$30,000</span><span class="font-medium">2%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$30,000 - S$40,000</span><span class="font-medium">3.5%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$40,000 - S$80,000</span><span class="font-medium">7%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$80,000 - S$120,000</span><span class="font-medium">11.5%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$120,000 - S$200,000</span><span class="font-medium">15-18%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">S$200,000+</span><span class="font-medium">19-22%</span></div>
+        
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2025 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const BRACKETS = [
+            { limit: 20000, rate: 0 },
+            { limit: 30000, rate: 0.02 },
+            { limit: 40000, rate: 0.035 },
+            { limit: 80000, rate: 0.07 },
+            { limit: 120000, rate: 0.115 },
+            { limit: 160000, rate: 0.15 },
+            { limit: 200000, rate: 0.18 },
+            { limit: 240000, rate: 0.19 },
+            { limit: Infinity, rate: 0.22 }
+        ];
+        const SOCIAL_RATE = 0.2;
+        const SYMBOL = 'S$';
+        const IS_TAX_FREE = false;
+
+        function calculateBracketTax(income, brackets) {
+            if (IS_TAX_FREE || brackets.length === 0) return 0;
+            let tax = 0;
+            let prevLimit = 0;
+            for (const bracket of brackets) {
+                if (income <= prevLimit) break;
+                const taxableInBracket = Math.min(income, bracket.limit) - prevLimit;
+                tax += taxableInBracket * bracket.rate;
+                prevLimit = bracket.limit;
+            }
+            return tax;
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('en-US');
+        }
+
+        function calculate() {
+            const income = parseFloat(document.getElementById('income-input').value) || 0;
+
+            const incomeTax = calculateBracketTax(income, BRACKETS);
+            const socialTax = income * SOCIAL_RATE;
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = SYMBOL + formatNumber(Math.round(incomeTax));
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = SYMBOL + formatNumber(Math.round(socialTax));
+
+            document.getElementById('net-income').textContent = SYMBOL + formatNumber(Math.round(netIncome));
+            document.getElementById('net-monthly').textContent = SYMBOL + formatNumber(Math.round(netIncome / 12));
+
+            document.getElementById('total-tax').textContent = SYMBOL + formatNumber(Math.round(totalTax));
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 400000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #6366f1 ${percent}%, #e2e8f0 ${percent}%)`;
+        }
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            document.getElementById('income-input').value = this.value;
+            calculate();
+        });
+
+        document.getElementById('income-input').addEventListener('input', function() {
+            document.getElementById('income-slider').value = Math.min(this.value, 400000);
+            calculate();
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('income')) {
+            const income = parseInt(urlParams.get('income'));
+            document.getElementById('income-input').value = income;
+            document.getElementById('income-slider').value = Math.min(income, 400000);
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

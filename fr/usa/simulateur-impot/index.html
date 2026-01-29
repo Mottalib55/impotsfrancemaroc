@@ -535,7 +535,6 @@
                 return isUsd ? '~$' + formatted : '~' + formatted + ' EUR';
             }
             document.getElementById('conv-gross-eur').textContent = formatConv(income * toEur, false);
-            document.getElementById('conv-tax-eur').textContent = formatConv(incomeTax * toEur, false);
             document.getElementById('conv-social-eur').textContent = formatConv(socialTax * toEur, false);
             document.getElementById('conv-net-eur').textContent = formatConv(netIncome * toEur, false);
             document.getElementById('conv-monthly-eur').textContent = formatConv(netIncome / 12 * toEur, false);

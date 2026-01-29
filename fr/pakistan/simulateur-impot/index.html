@@ -294,6 +294,7 @@
                         </div>
                     </div>
                 </div>
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-gross-usd" class="text-slate-400">~$0</span></p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 
@@ -305,6 +306,7 @@
                             <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
                         </div>
                         <p class="text-2xl font-bold text-indigo-600" id="income-tax">Rs0</p>
+                        <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
                     </div>
 
@@ -316,6 +318,7 @@
                             <span class="text-sm font-medium text-slate-700">Cotisations Sociales</span>
                         </div>
                         <p class="text-2xl font-bold text-amber-600" id="social-tax">Rs0</p>
+                        <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-social-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">EOBI : ~1% cotisation employe</p>
                     </div>
 
@@ -327,28 +330,21 @@
                             <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
                         </div>
                         <p class="text-3xl font-bold text-emerald-600" id="net-income">Rs0</p>
-                        <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">Rs0</span></p>
+                        <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-net-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">Rs0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
                     </div>
                 </div>
 
                 <div class="bg-slate-50 rounded-xl p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
-                        <span class="text-lg font-bold text-slate-900" id="total-tax">Rs0</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">Rs0</span> <span class="text-xs font-normal">(<span id="conv-total-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-total-usd" class="text-slate-400">~$0</span>)</span>
                     </div>
                     <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
-                </div>
-                <!-- Currency Conversion Reference -->
-                <div class="bg-slate-100 rounded-xl p-4 mt-4">
-                    <p class="text-xs text-slate-500 flex items-center gap-2">
-                        <iconify-icon icon="lucide:repeat" width="14"></iconify-icon>
-                        <span>Equivalents : <span id="conv-eur" class="font-medium text-slate-700">~0 EUR</span> | <span id="conv-usd" class="font-medium text-slate-700">~$0</span></span>
-                    </p>
-                </div>
-            </div>
+                </div></div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
                 <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
@@ -436,13 +432,29 @@
             document.getElementById('total-tax').textContent = SYMBOL + formatNumber(Math.round(totalTax));
             document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
 
-            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
             
-            // Currency conversion
+            // Currency conversions
             const toEur = 0.0033;
-            document.getElementById('conv-eur').textContent = '~' + Math.round(netIncome * toEur).toLocaleString() + ' EUR';
             const toUsd = 0.0036;
-            document.getElementById('conv-usd').textContent = '~$' + Math.round(netIncome * toUsd).toLocaleString();
+
+            function formatConv(val, isUsd) {
+                const formatted = Math.round(val).toLocaleString();
+                return isUsd ? '~$' + formatted : '~' + formatted + ' EUR';
+            }
+            document.getElementById('conv-gross-eur').textContent = formatConv(income * toEur, false);
+            document.getElementById('conv-gross-usd').textContent = formatConv(income * toUsd, true);
+            document.getElementById('conv-tax-eur').textContent = formatConv(incomeTax * toEur, false);
+            document.getElementById('conv-tax-usd').textContent = formatConv(incomeTax * toUsd, true);
+            document.getElementById('conv-social-eur').textContent = formatConv(socialTax * toEur, false);
+            document.getElementById('conv-social-usd').textContent = formatConv(socialTax * toUsd, true);
+            document.getElementById('conv-net-eur').textContent = formatConv(netIncome * toEur, false);
+            document.getElementById('conv-net-usd').textContent = formatConv(netIncome * toUsd, true);
+            document.getElementById('conv-monthly-eur').textContent = formatConv(netIncome / 12 * toEur, false);
+            document.getElementById('conv-monthly-usd').textContent = formatConv(netIncome / 12 * toUsd, true);
+            document.getElementById('conv-total-eur').textContent = formatConv(totalTax * toEur, false);
+            document.getElementById('conv-total-usd').textContent = formatConv(totalTax * toUsd, true);
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
 
             document.getElementById('tax-bar').style.width = taxPercent + '%';
 

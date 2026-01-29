@@ -314,6 +314,7 @@
                         </div>
                     </div>
                 </div>
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur" class="text-slate-400">~0 EUR</span></p>
 
                 <!-- Results Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -351,6 +352,7 @@
                             <span class="text-sm font-medium text-slate-700">Social Security + Medicare</span>
                         </div>
                         <p class="text-2xl font-bold text-amber-600" id="fica-tax">$0</p>
+                        <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span></p>
                         <p class="text-xs text-slate-500 mt-1">FICA: 6.2% SS + 1.45% Medicare</p>
                     </div>
 
@@ -363,7 +365,8 @@
                             <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
                         </div>
                         <p class="text-2xl font-bold text-emerald-600" id="net-income">$0</p>
-                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly">$0</span></p>
+                        <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span></p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly">$0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span>)</p>
                     </div>
                 </div>
 
@@ -371,7 +374,7 @@
                 <div class="bg-slate-50 rounded-xl p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
-                        <span class="text-lg font-bold text-slate-900" id="total-tax">$0</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">$0</span> <span class="text-xs font-normal">(<span id="conv-total-eur" class="text-slate-400">~0 EUR</span>)</span>
                     </div>
                     <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-blue-500 via-violet-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
@@ -524,6 +527,22 @@
             document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
 
             // Update progress bar
+            
+            // Currency conversions
+            const toEur = 0.92;
+            const toUsd = 1;
+
+            function formatConv(val, isUsd) {
+                const formatted = Math.round(val).toLocaleString();
+                return isUsd ? '~$' + formatted : '~' + formatted + ' EUR';
+            }
+            document.getElementById('conv-gross-eur').textContent = formatConv(income * toEur, false);
+            document.getElementById('conv-tax-eur').textContent = formatConv(incomeTax * toEur, false);
+            document.getElementById('conv-social-eur').textContent = formatConv(socialTax * toEur, false);
+            document.getElementById('conv-net-eur').textContent = formatConv(netIncome * toEur, false);
+            document.getElementById('conv-monthly-eur').textContent = formatConv(netIncome / 12 * toEur, false);
+            document.getElementById('conv-total-eur').textContent = formatConv(totalTax * toEur, false);
+
             const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
             
             // Currency conversion

@@ -1254,14 +1254,20 @@
             document.querySelectorAll('.status-btn').forEach(btn => {
                 btn.style.borderColor = '#e2e8f0';
                 btn.style.backgroundColor = 'white';
-                btn.querySelectorAll('i, span').forEach(el => el.style.color = '');
+                const icon = btn.querySelector('i');
+                const span = btn.querySelector('span');
+                if (icon) icon.style.color = '#94a3b8';
+                if (span) span.style.color = '#334155';
             });
             // Highlight active button with solid indigo background
             const activeBtn = document.getElementById('btn-' + value);
             if (activeBtn) {
                 activeBtn.style.borderColor = '#4f46e5';
                 activeBtn.style.backgroundColor = '#4f46e5';
-                activeBtn.querySelectorAll('i, span').forEach(el => el.style.color = 'white');
+                const icon = activeBtn.querySelector('i');
+                const span = activeBtn.querySelector('span');
+                if (icon) icon.style.color = 'white';
+                if (span) span.style.color = 'white';
             }
             updateVisibility();
             calculate();

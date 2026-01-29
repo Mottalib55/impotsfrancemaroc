@@ -105,6 +105,11 @@
         .bg-lime-50 { background-color: #f7fee7; }
         .text-lime-600 { color: #65a30d; }
         .border-lime-200 { border-color: #d9f99d; }
+        /* Grid 7 columns for 14 countries on 2 rows */
+        .grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        @media (min-width: 768px) {
+            .md\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        }
     </style>
 
     <!-- Schema.org -->

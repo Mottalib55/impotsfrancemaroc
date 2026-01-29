@@ -719,9 +719,6 @@
         const formatDecimal = (num) => num.toFixed(2);
         const parseNumber = (str) => parseFloat(str.replace(/,/g, '').replace(/\s/g, '')) || 0;
 
-        // === STATE ===
-        let isUpdating = false;
-
         // === CALCULATIONS ===
         function getCotisRate() {
             return COTIS_RATES[statutSelect.value];
@@ -747,151 +744,53 @@
             return net / (1 - getCotisRate());
         }
 
-        // === UPDATE FUNCTIONS ===
-        function updateFromSlider() {
-            const brutAn = parseInt(brutSlider.value);
-            brutAnnuel.value = formatNumber(brutAn);
-            updateFromBrutAnnuel();
-        }
-
-        function updateFromBrutAnnuel() {
-            if (isUpdating) return;
-            isUpdating = true;
-
+        // === SYNC ALL FIELDS ===
+        function syncAll(source, value) {
             const nbMois = getNombreMois();
-            const brutAn = parseNumber(brutAnnuel.value);
-            const brutMois = brutAn / nbMois;
-            const brutH = brutAn / getHoursPerYear();
+            const hoursYear = getHoursPerYear();
+            let brutAn;
 
+            // Calculate brutAn based on source
+            if (source === 'brutAnnuel' || source === 'slider') {
+                brutAn = value;
+            } else if (source === 'brutMensuel') {
+                brutAn = value * nbMois;
+            } else if (source === 'brutHoraire') {
+                brutAn = value * hoursYear;
+            } else if (source === 'netAnnuel') {
+                brutAn = netToBrut(value);
+            } else if (source === 'netMensuel') {
+                brutAn = netToBrut(value * nbMois);
+            } else if (source === 'netHoraire') {
+                brutAn = netToBrut(value * hoursYear);
+            }
+
+            // Calculate all values from brutAn
+            const brutMois = brutAn / nbMois;
+            const brutH = brutAn / hoursYear;
             const netAn = brutToNet(brutAn);
             const netMois = netAn / nbMois;
-            const netH = netAn / getHoursPerYear();
+            const netH = netAn / hoursYear;
 
-            brutMensuel.value = formatNumber(brutMois);
-            brutHoraire.value = formatDecimal(brutH);
-            brutSlider.value = brutAn;
-            netAnnuel.value = formatNumber(netAn);
-            netMensuel.value = formatNumber(netMois);
-            netHoraire.value = formatDecimal(netH);
+            // Update all fields (except the source to avoid cursor jump)
+            if (source !== 'brutAnnuel') brutAnnuel.value = formatNumber(brutAn);
+            if (source !== 'brutMensuel') brutMensuel.value = formatNumber(brutMois);
+            if (source !== 'brutHoraire') brutHoraire.value = formatDecimal(brutH);
+            if (source !== 'slider') brutSlider.value = Math.min(150000, Math.max(15000, brutAn));
+            if (source !== 'netAnnuel') netAnnuel.value = formatNumber(netAn);
+            if (source !== 'netMensuel') netMensuel.value = formatNumber(netMois);
+            if (source !== 'netHoraire') netHoraire.value = formatDecimal(netH);
 
             updateUI(brutMois, nbMois);
-            isUpdating = false;
+        }
+
+        // === LEGACY UPDATE FUNCTIONS (for buttons) ===
+        function updateFromSlider() {
+            syncAll('slider', parseInt(brutSlider.value));
         }
 
         function updateFromBrutMensuel() {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            const nbMois = getNombreMois();
-            const brutMois = parseNumber(brutMensuel.value);
-            const brutAn = brutMois * nbMois;
-            const brutH = brutAn / getHoursPerYear();
-
-            const netAn = brutToNet(brutAn);
-            const netMois = netAn / nbMois;
-            const netH = netAn / getHoursPerYear();
-
-            brutAnnuel.value = formatNumber(brutAn);
-            brutHoraire.value = formatDecimal(brutH);
-            brutSlider.value = brutAn;
-            netAnnuel.value = formatNumber(netAn);
-            netMensuel.value = formatNumber(netMois);
-            netHoraire.value = formatDecimal(netH);
-
-            updateUI(brutMois, nbMois);
-            isUpdating = false;
-        }
-
-        function updateFromBrutHoraire() {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            const nbMois = getNombreMois();
-            const brutH = parseNumber(brutHoraire.value);
-            const brutAn = brutH * getHoursPerYear();
-            const brutMois = brutAn / nbMois;
-
-            const netAn = brutToNet(brutAn);
-            const netMois = netAn / nbMois;
-            const netH = netAn / getHoursPerYear();
-
-            brutAnnuel.value = formatNumber(brutAn);
-            brutMensuel.value = formatNumber(brutMois);
-            netAnnuel.value = formatNumber(netAn);
-            netMensuel.value = formatNumber(netMois);
-            netHoraire.value = formatDecimal(netH);
-
-            updateUI(brutMois, nbMois);
-            isUpdating = false;
-        }
-
-        function updateFromNetAnnuel() {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            const nbMois = getNombreMois();
-            const netAn = parseNumber(netAnnuel.value);
-            const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / nbMois;
-            const brutH = brutAn / getHoursPerYear();
-
-            const netMois = netAn / nbMois;
-            const netH = netAn / getHoursPerYear();
-
-            brutAnnuel.value = formatNumber(brutAn);
-            brutMensuel.value = formatNumber(brutMois);
-            brutHoraire.value = formatDecimal(brutH);
-            brutSlider.value = brutAn;
-            netMensuel.value = formatNumber(netMois);
-            netHoraire.value = formatDecimal(netH);
-
-            updateUI(brutMois, nbMois);
-            isUpdating = false;
-        }
-
-        function updateFromNetMensuel() {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            const nbMois = getNombreMois();
-            const netMois = parseNumber(netMensuel.value);
-            const netAn = netMois * nbMois;
-            const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / nbMois;
-            const brutH = brutAn / getHoursPerYear();
-            const netH = netAn / getHoursPerYear();
-
-            brutAnnuel.value = formatNumber(brutAn);
-            brutMensuel.value = formatNumber(brutMois);
-            brutHoraire.value = formatDecimal(brutH);
-            brutSlider.value = brutAn;
-            netAnnuel.value = formatNumber(netAn);
-            netHoraire.value = formatDecimal(netH);
-
-            updateUI(brutMois, nbMois);
-            isUpdating = false;
-        }
-
-        function updateFromNetHoraire() {
-            if (isUpdating) return;
-            isUpdating = true;
-
-            const nbMois = getNombreMois();
-            const netH = parseNumber(netHoraire.value);
-            const netAn = netH * getHoursPerYear();
-            const netMois = netAn / nbMois;
-            const brutAn = netToBrut(netAn);
-            const brutMois = brutAn / nbMois;
-            const brutH = brutAn / getHoursPerYear();
-
-            brutAnnuel.value = formatNumber(brutAn);
-            brutMensuel.value = formatNumber(brutMois);
-            brutHoraire.value = formatDecimal(brutH);
-            netAnnuel.value = formatNumber(netAn);
-            netMensuel.value = formatNumber(netMois);
-
-            updateUI(brutMois, nbMois);
-            isUpdating = false;
+            syncAll('brutMensuel', parseNumber(brutMensuel.value));
         }
 
         // === UI UPDATE ===
@@ -920,35 +819,34 @@
         // === EVENT LISTENERS ===
         brutAnnuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
-            updateFromBrutAnnuel();
+            syncAll('brutAnnuel', parseNumber(e.target.value));
         });
 
         brutMensuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
-            updateFromBrutMensuel();
+            syncAll('brutMensuel', parseNumber(e.target.value));
         });
 
         brutHoraire.addEventListener('input', (e) => {
             e.target.value = formatInputDecimal(e.target.value);
-            updateFromBrutHoraire();
+            syncAll('brutHoraire', parseNumber(e.target.value));
         });
 
         netAnnuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
-            updateFromNetAnnuel();
+            syncAll('netAnnuel', parseNumber(e.target.value));
         });
 
         netMensuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
-            updateFromNetMensuel();
+            syncAll('netMensuel', parseNumber(e.target.value));
         });
 
         netHoraire.addEventListener('input', (e) => {
             e.target.value = formatInputDecimal(e.target.value);
-            updateFromNetHoraire();
+            syncAll('netHoraire', parseNumber(e.target.value));
         });
 
-        // Slider event listeners (explicit for reliability)
         brutSlider.addEventListener('input', updateFromSlider);
         tempsPartielInput.addEventListener('input', () => updateTempsPartiel(tempsPartielInput.value));
 

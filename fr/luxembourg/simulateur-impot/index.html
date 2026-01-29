@@ -454,11 +454,6 @@
             document.getElementById('conv-total-usd').textContent = formatConv(totalTax * toUsd, true);
 
             const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
-            
-            // Currency conversion
-            const toUsd = 1.09;
-            document.getElementById('conv-usd').textContent = '~$' + Math.round(netIncome * toUsd).toLocaleString();
-
             document.getElementById('tax-bar').style.width = taxPercent + '%';
 
             const slider = document.getElementById('income-slider');

@@ -579,9 +579,9 @@
         <div id="verdict-banner" class="bg-slate-900 text-white rounded-xl shadow-lg p-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-4">
-                    <span class="iconify w-10 h-10 text-yellow-400" data-icon="lucide:trophy"></span>
+                    <span class="iconify w-10 h-10 text-yellow-400" data-icon="lucide:banknote"></span>
                     <div>
-                        <h3 class="font-bold text-xl tracking-tight" id="verdict-title">Classement Salaire Net</h3>
+                        <h3 class="font-bold text-xl tracking-tight" id="verdict-title">Salaire Net (Valeur Absolue)</h3>
                         <p class="text-sm text-slate-400" id="verdict-text">Selectionnez au moins 2 pays pour comparer.</p>
                     </div>
                 </div>
@@ -597,8 +597,8 @@
                 <div class="flex items-center gap-4">
                     <span class="iconify w-10 h-10 text-green-400" data-icon="lucide:shopping-cart"></span>
                     <div>
-                        <h3 class="font-bold text-xl tracking-tight" id="ppp-title">Pouvoir d'Achat (PPA)</h3>
-                        <p class="text-sm text-slate-400" id="ppp-text">Pouvoir d'achat reel ajuste au cout de la vie.</p>
+                        <h3 class="font-bold text-xl tracking-tight" id="ppp-title">Pouvoir d'Achat Reel (Ajuste PPP)</h3>
+                        <p class="text-sm text-slate-400" id="ppp-text">Combien vous pouvez acheter avec ce salaire selon le cout de la vie local.</p>
                     </div>
                 </div>
                 <div id="ppp-ranking-list" class="flex flex-wrap gap-3 justify-center md:justify-end">
@@ -1974,10 +1974,10 @@
                     </div>
                 `;
             } else {
-                els.verdictTitle.innerHTML = `${winnerCountry.flag} ${winnerName} ${i18n.t('comp_global.wins')}`;
+                els.verdictTitle.innerHTML = `💰 ${winnerCountry.flag} ${winnerName} ${i18n.t('comp_global.wins')} en Salaire Net`;
 
                 const diffWithLast = winner.netEur - results[results.length - 1].netEur;
-                els.verdictText.innerHTML = `+${formatMoney(diffWithLast, '€')}/an ${i18n.t('comp_global.vs_last')} • ${i18n.t('comp_global.effective_rate')}: ${formatPct(winner.rate)}`;
+                els.verdictText.innerHTML = `+${formatMoney(diffWithLast, '€')}/an ${i18n.t('comp_global.vs_last')} • Taux effectif: ${formatPct(winner.rate)}`;
 
                 // Net Salary Ranking badges
                 els.rankingList.innerHTML = results.map((r, i) => {
@@ -2014,9 +2014,9 @@
                 const pppWinnerCountry = COUNTRIES[pppWinner.country];
                 const pppWinnerName = i18n.t(`country.${countryKeyMap2[pppWinner.country]}`);
 
-                els.pppTitle.innerHTML = `${pppWinnerCountry.flag} ${pppWinnerName} gagne en Pouvoir d'Achat`;
+                els.pppTitle.innerHTML = `🛒 ${pppWinnerCountry.flag} ${pppWinnerName} gagne en Pouvoir d'Achat Reel`;
                 const pppDiff = pppWinner.pppPower - pppResults[pppResults.length - 1].pppPower;
-                els.pppText.innerHTML = `+${formatMoney(pppDiff, '€')} vs dernier • Référence: ${baselineCountry.flag} ${baselineName}`;
+                els.pppText.innerHTML = `+${formatMoney(pppDiff, '€')} equivalent vs dernier • Base: ${baselineCountry.flag} ${baselineName}`;
 
                 // PPP Ranking badges
                 els.pppRankingList.innerHTML = pppResults.map((r, i) => {

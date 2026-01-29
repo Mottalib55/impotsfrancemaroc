@@ -1091,6 +1091,13 @@
 
         // Initialize temps partiel display
         document.getElementById('temps-partiel-display').textContent = tempsPartielInput.value + '%';
+
+        // Force initial chart draw
+        setTimeout(() => {
+            const cotisRate = getCotisRate();
+            const netRate = 1 - cotisRate;
+            drawChart(netRate, cotisRate);
+        }, 100);
     </script>
 
 </body>

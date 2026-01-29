@@ -6,7 +6,7 @@
 
     <!-- Google Analytics -->
     <script>
-        window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer[];
         function gtag(){dataLayer.push(arguments);}
         function loadGA() {
             if (window.gaLoaded) return;
@@ -25,7 +25,7 @@
     </script>
 
     <!-- SEO -->
-    <title>Simulateur Impot USA 2025 | Calculateur Taxes New York</title>
+    <title>Simulateur Impot USA 2025Calculateur Taxes New York</title>
     <meta name="description" content="Calculez vos impots americains a New York : Federal, State, City + cotisations Social Security et Medicare. Simulation gratuite et instantanee.">
     <meta name="keywords" content="impot usa, calculateur taxes new york, federal tax, state tax, fica, simulation impot americain">
 
@@ -36,7 +36,7 @@
     <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/usa/simulateur-impot/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Simulateur Impot USA 2025 | Federal + State Tax">
+    <meta property="og:title" content="Simulateur Impot USA 2025Federal + State Tax">
     <meta property="og:description" content="Calculez vos impots americains : Federal, State, City + cotisations sociales.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://netsalaire.com/fr/usa/simulateur-impot/">
@@ -374,12 +374,17 @@
                 <div class="bg-slate-50 rounded-xl p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
-                        <span class="text-lg font-bold text-slate-900" id="total-tax">$0</span> <span class="text-xs font-normal">(<span id="conv-total-eur" class="text-slate-400">~0 EUR</span>)</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">$0</span>
                     </div>
                     <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-blue-500 via-violet-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total : <span id="total-rate" class="font-medium">0%</span></p>
+                    <div class="flex items-center justify-end gap-2 mt-3">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
+                            <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
+                        </span>
+                    </div>
                 </div>
                 <!-- Currency Conversion Reference -->
                 <div class="bg-slate-100 rounded-xl p-4 mt-4">
@@ -490,7 +495,7 @@
         }
 
         function calculate() {
-            const income = parseFloat(document.getElementById('income-input').value) || 0;
+            const income = parseFloat(document.getElementById('income-input').value)0;
 
             // Federal Tax
             const federalTax = calculateBracketTax(income, FEDERAL_BRACKETS);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
-        window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer[];
         function gtag(){dataLayer.push(arguments);}
         function loadGA() {
             if (window.gaLoaded) return;
@@ -294,7 +294,7 @@
                         </div>
                     </div>
                 </div>
-                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-gross-usd" class="text-slate-400">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur" class="text-slate-400">~0 EUR</span><span id="conv-gross-usd" class="text-slate-400">~$0</span></p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 
@@ -306,7 +306,7 @@
                             <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
                         </div>
                         <p class="text-2xl font-bold text-indigo-600" id="income-tax">S$0</p>
-                        <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span><span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
                     </div>
 
@@ -318,7 +318,7 @@
                             <span class="text-sm font-medium text-slate-700">Cotisations Sociales</span>
                         </div>
                         <p class="text-2xl font-bold text-amber-600" id="social-tax">S$0</p>
-                        <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-social-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span><span id="conv-social-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">CPF : 20% cotisation employe (plafond S$6,800/mois)</p>
                     </div>
 
@@ -330,20 +330,28 @@
                             <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
                         </div>
                         <p class="text-3xl font-bold text-emerald-600" id="net-income">S$0</p>
-                        <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-net-usd" class="text-slate-400">~$0</span></p>
-                        <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">S$0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
+                        <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span><span id="conv-net-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">S$0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span><span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
                     </div>
                 </div>
 
                 <div class="bg-slate-50 rounded-xl p-4">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
-                        <span class="text-lg font-bold text-slate-900" id="total-tax">S$0</span> <span class="text-xs font-normal">(<span id="conv-total-eur" class="text-slate-400">~0 EUR</span> | <span id="conv-total-usd" class="text-slate-400">~$0</span>)</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">S$0</span>
                     </div>
                     <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                    <div class="flex items-center justify-end gap-2 mt-3">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
+                            <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
+                            <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
+                        </span>
+                    </div>
                 </div></div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
@@ -401,7 +409,7 @@
         const IS_TAX_FREE = false;
 
         function calculateBracketTax(income, brackets) {
-            if (IS_TAX_FREE || brackets.length === 0) return 0;
+            if (IS_TAX_FREEbrackets.length === 0) return 0;
             let tax = 0;
             let prevLimit = 0;
             for (const bracket of brackets) {
@@ -418,7 +426,7 @@
         }
 
         function calculate() {
-            const income = parseFloat(document.getElementById('income-input').value) || 0;
+            const income = parseFloat(document.getElementById('income-input').value)0;
 
             const incomeTax = calculateBracketTax(income, BRACKETS);
             const socialTax = income * SOCIAL_RATE;

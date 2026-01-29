@@ -124,18 +124,6 @@
             color: #64748b;
             margin-bottom: 0.25rem;
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-        }
-        @media (min-width: 1024px) {
-            .chart-container {
-                position: sticky;
-                top: 100px;
-            }
-        }
         /* Custom slider thumb styling */
         input[type="range"] {
             -webkit-appearance: none;
@@ -313,10 +301,10 @@
 
             <!-- Main Calculator Section -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div class="max-w-2xl mx-auto">
 
-                    <!-- Left Column: Inputs -->
-                    <div class="lg:col-span-3 space-y-5">
+                    <!-- Inputs -->
+                    <div class="space-y-5">
 
                         <!-- Gross Salary Row -->
                         <div>
@@ -448,28 +436,6 @@
                             </div>
                         </div>
 
-                    </div>
-
-                    <!-- Right Column: Chart -->
-                    <div class="lg:col-span-2 flex items-center justify-center pt-4 lg:pt-0">
-                        <div class="chart-container">
-                            <canvas id="chart" width="280" height="280" style="display: block;"></canvas>
-                            <div class="text-center mt-4">
-                                <div class="text-2xl font-bold text-slate-900" id="taux-net">78%</div>
-                                <div class="text-xs text-slate-500">of gross retained</div>
-                            </div>
-                            <!-- Legend -->
-                            <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs">
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                                    <span class="text-slate-600">Net (<span id="legend-net">78%</span>)</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-indigo-400"></div>
-                                    <span class="text-slate-600">Contributions (<span id="legend-cotis">22%</span>)</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -949,65 +915,6 @@
             document.getElementById('bar-secu').style.width = (secu / totalCotis * 100) + '%';
             document.getElementById('bar-retraite').style.width = (retraite / totalCotis * 100) + '%';
             document.getElementById('bar-chomage').style.width = (chomage / totalCotis * 100) + '%';
-
-            // Chart & legend
-            document.getElementById('taux-net').textContent = Math.round(netRate * 100) + '%';
-            document.getElementById('legend-net').textContent = Math.round(netRate * 100) + '%';
-            document.getElementById('legend-cotis').textContent = Math.round(cotisRate * 100) + '%';
-
-            drawChart(netRate, cotisRate);
-        }
-
-        // === CHART ===
-        function drawChart(netRate, cotisRate) {
-            const canvas = document.getElementById('chart');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return;
-
-            // Handle high-DPI displays
-            const dpr = window.devicePixelRatio || 1;
-            const displaySize = 280;
-
-            // Set actual canvas size in memory (scaled for DPI)
-            canvas.width = displaySize * dpr;
-            canvas.height = displaySize * dpr;
-
-            // Scale canvas CSS size
-            canvas.style.width = displaySize + 'px';
-            canvas.style.height = displaySize + 'px';
-
-            // Reset and scale context to match DPI
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-            const size = displaySize;
-            const center = size / 2;
-            const radius = size / 2 - 20;
-            const innerRadius = radius * 0.6;
-
-            ctx.clearRect(0, 0, size, size);
-
-            // Net portion (green)
-            ctx.beginPath();
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, -Math.PI / 2, -Math.PI / 2 + netRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#10b981';
-            ctx.fill();
-
-            // Cotisations portion (indigo)
-            ctx.beginPath();
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, -Math.PI / 2 + netRate * Math.PI * 2, -Math.PI / 2 + Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#818cf8';
-            ctx.fill();
-
-            // Inner circle (donut hole)
-            ctx.beginPath();
-            ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
-            ctx.fillStyle = '#ffffff';
-            ctx.fill();
         }
 
         // === EVENT LISTENERS ===
@@ -1059,13 +966,6 @@
 
         // Initialize temps partiel display
         document.getElementById('temps-partiel-display').textContent = tempsPartielInput.value + '%';
-
-        // Force initial chart draw
-        setTimeout(() => {
-            const cotisRate = getCotisRate();
-            const netRate = 1 - cotisRate;
-            drawChart(netRate, cotisRate);
-        }, 100);
     </script>
 
 </body>

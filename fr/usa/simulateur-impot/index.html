@@ -439,6 +439,111 @@
                 </div>
             </div>
 
+            <!-- Example Calculation -->
+            <div class="bg-gradient-to-br from-violet-50 to-white rounded-2xl border border-violet-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:calculator" width="20" class="text-violet-500"></iconify-icon>
+                    Exemple de calcul : Salaire de $75,000
+                </h2>
+
+                <div class="space-y-4 text-sm">
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">1. Impot Federal ($10,633)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>$11,600 x 10% = $1,160</p>
+                            <p>($47,150 - $11,600) x 12% = $4,266</p>
+                            <p>($75,000 - $47,150) x 22% = $6,127</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total Federal: $11,553</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">2. Impot NY State + NYC ($5,951)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>NY State (progressif): ~$4,327</p>
+                            <p>NYC (3.5%): $2,625</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total State+City: $6,952</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">3. FICA - Cotisations Sociales ($5,738)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>Social Security (6.2%): $4,650 <span class="text-xs text-slate-400">(plafond $168,600)</span></p>
+                            <p>Medicare (1.45%): $1,088</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total FICA: $5,738</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
+                            <span class="text-xl font-bold text-emerald-600">$50,757</span>
+                        </div>
+                        <p class="text-xs text-emerald-600 mt-1">Soit $4,230/mois | Taux effectif total: 32.3%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FICA Details -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
+                    Cotisations Sociales (FICA) 2025
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Social Security</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Taux employe: <span class="font-medium">6.2%</span></li>
+                            <li>Plafond 2025: <span class="font-medium">$168,600</span></li>
+                            <li>Cotisation max: <span class="font-medium">$10,453/an</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Medicare</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Taux employe: <span class="font-medium">1.45%</span></li>
+                            <li>Pas de plafond</li>
+                            <li>+0.9% si revenu > $200,000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Sources Officielles
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.irs.gov/filing/federal-income-tax-rates-and-brackets" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">IRS - Federal Tax Brackets 2025</p>
+                            <p class="text-xs text-slate-500">irs.gov - Baremes officiels de l'impot federal</p>
+                        </div>
+                    </a>
+                    <a href="https://www.tax.ny.gov/pit/file/tax_tables.htm" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">NY State Tax Tables</p>
+                            <p class="text-xs text-slate-500">tax.ny.gov - Baremes de l'etat de New York</p>
+                        </div>
+                    </a>
+                    <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Social Security Wage Base 2025</p>
+                            <p class="text-xs text-slate-500">ssa.gov - Plafond de cotisation Social Security</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <!-- CTA -->
             <div class="mt-8 text-center">
                 <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-full font-medium transition-colors">

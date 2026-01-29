@@ -381,6 +381,97 @@
         
                 </div>
             </div>
+            <!-- Example Calculation -->
+            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
+                    Calculation Example: €40,000
+                </h2>
+
+                <div class="space-y-4 text-sm">
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">1. IRPF - Income Tax (~€6,800)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>€0 - €12,450: 19% = €2,366</p>
+                            <p>€12,450 - €20,200: 24% = €1,860</p>
+                            <p>€20,200 - €35,200: 30% = €4,500</p>
+                            <p>€35,200 - €40,000: 37% = €1,776</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total IRPF: ~€6,800</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">2. Social Security (~€2,540)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>Employee contribution: ~6.35%</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total: ~€2,540</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-emerald-800">Annual Net Income</span>
+                            <span class="text-xl font-bold text-emerald-600">~€30,660</span>
+                        </div>
+                        <p class="text-xs text-emerald-600 mt-1">That is ~€2,555/month | Effective rate: ~23.4%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Contributions Details -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
+                    Social Security 2025
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Employee Contributions</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>General: <span class="font-medium">4.7%</span></li>
+                            <li>Unemployment: <span class="font-medium">1.55%</span></li>
+                            <li>Training: <span class="font-medium">0.1%</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Employer Contributions</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>General: <span class="font-medium">23.6%</span></li>
+                            <li>Unemployment: <span class="font-medium">5.5%</span></li>
+                            <li>FOGASA: <span class="font-medium">0.2%</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Official Sources
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://sede.agenciatributaria.gob.es/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Agencia Tributaria</p>
+                            <p class="text-xs text-slate-500">agenciatributaria.es - Tax administration</p>
+                        </div>
+                    </a>
+                    <a href="https://www.seg-social.es/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Social Security</p>
+                            <p class="text-xs text-slate-500">seg-social.es - Social security</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
 
             <div class="mt-8 text-center">
                 <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">

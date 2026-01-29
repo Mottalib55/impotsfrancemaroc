@@ -482,6 +482,105 @@
         </div>
         </div>
 
+
+            <!-- Example Calculation -->
+            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
+                    Calculation Example: MAD 120,000
+                </h2>
+
+                <div class="space-y-4 text-sm">
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">1. Net Taxable Income</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>Annual gross salary: 120,000 MAD</p>
+                            <p>Standard deduction (20%): -24,000 MAD</p>
+                            <p>CNSS contributions: -5,327 MAD</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">NTI: ~90,673 MAD</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">2. IR Tax Brackets</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>0 - 30,000 MAD: 0%</p>
+                            <p>30,000 - 50,000 MAD: 10% = 2,000 MAD</p>
+                            <p>50,000 - 60,000 MAD: 20% = 2,000 MAD</p>
+                            <p>60,000 - 80,000 MAD: 30% = 6,000 MAD</p>
+                            <p>80,000 - 90,673 MAD: 34% = 3,629 MAD</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Gross IR: ~13,629 MAD</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-emerald-800">Annual Net IR</span>
+                            <span class="text-xl font-bold text-emerald-600">~13,629 MAD</span>
+                        </div>
+                        <p class="text-xs text-emerald-600 mt-1">That is ~1,136 MAD/month | Effective rate: ~11.4%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tax Brackets Details -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:list" width="20" class="text-amber-500"></iconify-icon>
+                    Morocco IR Tax Brackets 2025
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">IR Brackets</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>0 - 30,000 MAD: <span class="font-medium">0%</span></li>
+                            <li>30,001 - 50,000: <span class="font-medium">10%</span></li>
+                            <li>50,001 - 60,000: <span class="font-medium">20%</span></li>
+                            <li>60,001 - 80,000: <span class="font-medium">30%</span></li>
+                            <li>80,001 - 180,000: <span class="font-medium">34%</span></li>
+                            <li>Above: <span class="font-medium">38%</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Deductions</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Standard deduction: <span class="font-medium">20%</span></li>
+                            <li>Ceiling: <span class="font-medium">30,000 MAD</span></li>
+                            <li>Family allowance: <span class="font-medium">360 MAD/person</span></li>
+                            <li>Maximum 6 dependents</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Official Sources
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.tax.gov.ma/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">DGI Morocco</p>
+                            <p class="text-xs text-slate-500">tax.gov.ma - General Tax Directorate</p>
+                        </div>
+                    </a>
+                    <a href="https://www.cnss.ma/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">CNSS</p>
+                            <p class="text-xs text-slate-500">cnss.ma - National Social Security Fund</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
     </main>
 
     <footer class="py-12 px-6 border-t border-slate-200 bg-white">

@@ -315,6 +315,16 @@
                             <p class="text-xs text-slate-400 mt-1">Mensuel</p>
                         </div>
                     </div>
+                    <!-- Slider -->
+                    <div class="mt-3">
+                        <input type="range" id="salaire-slider" min="15000" max="150000" step="1000" value="36000"
+                               class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                               oninput="updateFromSlider()">
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>15k€</span>
+                            <span>150k€</span>
+                        </div>
+                    </div>
                     <p class="text-xs text-slate-400 mt-2">Moyenne des 24 derniers mois (ou 36 mois pour les 53 ans+)</p>
                 </div>
 
@@ -551,12 +561,22 @@
             const mensuel = annuel / 12;
             document.getElementById('salaire-brut').value = formatNumber(mensuel);
             document.getElementById('salaire-annuel').value = formatNumber(annuel);
+            document.getElementById('salaire-slider').value = annuel;
             calculate();
         }
 
         function updateFromMensuel() {
             const mensuel = parseNumber(document.getElementById('salaire-brut').value);
             const annuel = mensuel * 12;
+            document.getElementById('salaire-annuel').value = formatNumber(annuel);
+            document.getElementById('salaire-brut').value = formatNumber(mensuel);
+            document.getElementById('salaire-slider').value = annuel;
+            calculate();
+        }
+
+        function updateFromSlider() {
+            const annuel = parseInt(document.getElementById('salaire-slider').value);
+            const mensuel = annuel / 12;
             document.getElementById('salaire-annuel').value = formatNumber(annuel);
             document.getElementById('salaire-brut').value = formatNumber(mensuel);
             calculate();

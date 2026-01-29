@@ -1790,6 +1790,8 @@
             updateVisibility();
             calculate();
         }
+        // Expose to global scope for onclick handlers
+        window.setStatus = setStatus;
 
         function setupEventListeners() {
             $('#btn-child-plus').addEventListener('click', () => { if (state.children < 10) { state.children++; $('#child-count').textContent = state.children; updateVisibility(); calculate(); } });

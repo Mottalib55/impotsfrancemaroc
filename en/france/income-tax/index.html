@@ -1272,6 +1272,8 @@
             updateVisibility();
             calculate();
         }
+        // Expose to global scope for onclick handlers
+        window.setStatus = setStatus;
 
         function calculateParts() {
             let parts = state.status === 'married' ? 2 : 1;

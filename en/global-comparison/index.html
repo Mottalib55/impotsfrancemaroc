@@ -544,13 +544,13 @@
         </div>
 
         <!-- PPP Purchasing Power Ranking Banner -->
-        <div id="ppp-banner" class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white rounded-xl shadow-lg p-6">
+        <div id="ppp-banner" class="bg-slate-800 text-white rounded-xl shadow-lg p-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-4">
-                    <span class="iconify w-10 h-10 text-emerald-300" data-icon="lucide:shopping-cart"></span>
+                    <span class="iconify w-10 h-10 text-green-400" data-icon="lucide:shopping-cart"></span>
                     <div>
                         <h3 class="font-bold text-xl tracking-tight" id="ppp-title">Purchasing Power (PPP)</h3>
-                        <p class="text-sm text-emerald-200" id="ppp-text">Real purchasing power adjusted for cost of living.</p>
+                        <p class="text-sm text-slate-400" id="ppp-text">Real purchasing power adjusted for cost of living.</p>
                     </div>
                 </div>
                 <div id="ppp-ranking-list" class="flex flex-wrap gap-3 justify-center md:justify-end">
@@ -1928,9 +1928,9 @@
                 els.pppTitle.innerHTML = `${winnerCountry.flag} ${winnerName}`;
                 els.pppText.innerHTML = `This country is the baseline reference (PPP index: ${winnerCountry.pppIndex.toFixed(2)})`;
                 els.pppRankingList.innerHTML = `
-                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/20">
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-green-500/20">
                         <span class="text-lg">${winnerCountry.flag}</span>
-                        <span class="text-sm font-medium text-emerald-300">${formatMoney(winner.netEur, '€')} <span class="text-xs opacity-70">(ref)</span></span>
+                        <span class="text-sm font-medium text-green-300">${formatMoney(winner.netEur, '€')} <span class="text-xs opacity-70">(ref)</span></span>
                     </div>
                 `;
             } else {
@@ -1984,10 +1984,10 @@
                     const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
                     const pppLabel = r.relativePPP === 1 ? '(ref)' : `x${r.relativePPP.toFixed(2)}`;
                     return `
-                        <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-emerald-500/20' : 'bg-slate-700/50'}">
+                        <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-green-500/20' : 'bg-slate-700/50'}">
                             <span class="text-lg">${medal}</span>
                             <span class="text-lg">${c.flag}</span>
-                            <span class="text-sm font-medium ${i === 0 ? 'text-emerald-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} <span class="text-xs opacity-70">${pppLabel}</span></span>
+                            <span class="text-sm font-medium ${i === 0 ? 'text-green-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} <span class="text-xs opacity-70">${pppLabel}</span></span>
                         </div>
                     `;
                 }).join('');

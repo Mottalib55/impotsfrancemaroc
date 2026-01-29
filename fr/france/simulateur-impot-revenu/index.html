@@ -1813,12 +1813,35 @@
             });
             $('#parent-isole').addEventListener('change', (e) => { state.parentIsole = e.target.checked; calculate(); });
 
+            // Sync monthly, annual and slider for income inputs
+            const syncIncomeInputs = (monthlyEl, annualEl, slider, key, max = 200000) => {
+                monthlyEl.addEventListener('input', (e) => {
+                    const monthly = parseInt(e.target.value) || 0;
+                    state[key] = monthly * 12;
+                    annualEl.value = state[key];
+                    slider.value = Math.min(state[key], max);
+                    calculate();
+                });
+                annualEl.addEventListener('input', (e) => {
+                    state[key] = parseInt(e.target.value) || 0;
+                    monthlyEl.value = Math.round(state[key] / 12);
+                    slider.value = Math.min(state[key], max);
+                    calculate();
+                });
+                slider.addEventListener('input', (e) => {
+                    state[key] = parseInt(e.target.value);
+                    annualEl.value = state[key];
+                    monthlyEl.value = Math.round(state[key] / 12);
+                    calculate();
+                });
+            };
+            syncIncomeInputs($('#income1-monthly'), $('#income1-input'), $('#income1-slider'), 'income1');
+            syncIncomeInputs($('#income2-monthly'), $('#income2-input'), $('#income2-slider'), 'income2');
+
             const syncSlider = (input, slider, key, max = 200000) => {
                 input.addEventListener('input', (e) => { state[key] = parseInt(e.target.value) || 0; slider.value = Math.min(state[key], max); calculate(); });
                 slider.addEventListener('input', (e) => { state[key] = parseInt(e.target.value); input.value = state[key]; calculate(); });
             };
-            syncSlider($('#income1-input'), $('#income1-slider'), 'income1');
-            syncSlider($('#income2-input'), $('#income2-slider'), 'income2');
             syncSlider($('#per-amount'), $('#per-slider'), 'perAmount', 30000);
             syncSlider($('#dons-66'), $('#dons-66-slider'), 'dons66', 10000);
             syncSlider($('#dons-75'), $('#dons-75-slider'), 'dons75', 2000);

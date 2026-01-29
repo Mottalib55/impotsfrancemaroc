@@ -300,15 +300,15 @@
                     <div class="mb-6">
                         <label class="block text-sm font-medium text-slate-700 mb-3">Marital status</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                            <button type="button" onclick="setStatus('single')" id="btn-single" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #e2e8f0; background-color: white;">
+                            <button type="button" id="btn-single" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all cursor-pointer" style="border-color: #e2e8f0; background-color: white;">
                                 <i data-lucide="user" class="h-5 w-5 mx-auto mb-1 text-slate-400"></i>
                                 <span class="block text-xs sm:text-sm font-medium text-slate-700">Single</span>
                             </button>
-                            <button type="button" onclick="setStatus('married')" id="btn-married" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #e2e8f0; background-color: white;">
+                            <button type="button" id="btn-married" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all cursor-pointer" style="border-color: #e2e8f0; background-color: white;">
                                 <i data-lucide="heart" class="h-5 w-5 mx-auto mb-1 text-slate-400"></i>
                                 <span class="block text-xs sm:text-sm font-medium text-slate-700">Married/PACS</span>
                             </button>
-                            <button type="button" onclick="setStatus('divorced')" id="btn-divorced" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #e2e8f0; background-color: white;">
+                            <button type="button" id="btn-divorced" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all cursor-pointer" style="border-color: #e2e8f0; background-color: white;">
                                 <i data-lucide="user-x" class="h-5 w-5 mx-auto mb-1 text-slate-400"></i>
                                 <span class="block text-xs sm:text-sm font-medium text-slate-700">Divorced</span>
                             </button>
@@ -1272,8 +1272,6 @@
             updateVisibility();
             calculate();
         }
-        // Expose to global scope for onclick handlers
-        window.setStatus = setStatus;
 
         function calculateParts() {
             let parts = state.status === 'married' ? 2 : 1;
@@ -1512,7 +1510,11 @@
         }
 
         function setupEventListeners() {
-            // Status buttons are handled by setStatus() called from onclick
+            // Status buttons
+            $('#btn-single').addEventListener('click', () => setStatus('single'));
+            $('#btn-married').addEventListener('click', () => setStatus('married'));
+            $('#btn-divorced').addEventListener('click', () => setStatus('divorced'));
+
             $('#btn-child-plus').addEventListener('click', () => { if (state.children < 10) { state.children++; $('#child-count').textContent = state.children; calculate(); } });
             $('#btn-child-minus').addEventListener('click', () => { if (state.children > 0) { state.children--; $('#child-count').textContent = state.children; calculate(); } });
             $('#parent-isole').addEventListener('change', (e) => { state.parentIsole = e.target.checked; calculate(); });

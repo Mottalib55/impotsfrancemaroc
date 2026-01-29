@@ -380,13 +380,11 @@
                         <div class="h-full bg-gradient-to-r from-blue-500 via-violet-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
-                </div>
-                <!-- Currency Conversion Reference -->
-                <div class="bg-slate-100 rounded-xl p-4 mt-4">
-                    <p class="text-xs text-slate-500 flex items-center gap-2">
-                        <iconify-icon icon="lucide:repeat" width="14"></iconify-icon>
-                        <span>Equivalent: <span id="conv-eur" class="font-medium text-slate-700">~0 EUR</span></span>
-                    </p>
+                    <div class="flex items-center justify-end gap-2 mt-3">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
+                            <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
+                        </span>
+                    </div>
                 </div>
             </div>
 

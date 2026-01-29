@@ -1944,10 +1944,10 @@
                     const c = COUNTRIES[r.country];
                     const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
                     return `
-                        <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-yellow-500/20' : 'bg-slate-700'}">
-                            <span class="text-lg">${medal}</span>
-                            <span class="text-lg">${c.flag}</span>
-                            <span class="text-sm font-medium ${i === 0 ? 'text-yellow-300' : 'text-slate-300'}">${formatMoney(r.netEur, '€')}</span>
+                        <div class="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg shrink-0 ${i === 0 ? 'bg-yellow-500/20' : 'bg-slate-700'}">
+                            <span class="text-base sm:text-lg">${medal}</span>
+                            <span class="text-base sm:text-lg">${c.flag}</span>
+                            <span class="text-xs sm:text-sm font-medium ${i === 0 ? 'text-yellow-300' : 'text-slate-300'}">${formatMoney(r.netEur, '€')}</span>
                         </div>
                     `;
                 }).join('');
@@ -1984,10 +1984,10 @@
                     const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
                     const pppLabel = r.relativePPP === 1 ? '(ref)' : `x${r.relativePPP.toFixed(2)}`;
                     return `
-                        <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-green-500/20' : 'bg-slate-700/50'}">
-                            <span class="text-lg">${medal}</span>
-                            <span class="text-lg">${c.flag}</span>
-                            <span class="text-sm font-medium ${i === 0 ? 'text-green-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} <span class="text-xs opacity-70">${pppLabel}</span></span>
+                        <div class="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg shrink-0 ${i === 0 ? 'bg-green-500/20' : 'bg-slate-700/50'}">
+                            <span class="text-base sm:text-lg">${medal}</span>
+                            <span class="text-base sm:text-lg">${c.flag}</span>
+                            <span class="text-xs sm:text-sm font-medium ${i === 0 ? 'text-green-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} <span class="text-xs opacity-70">${pppLabel}</span></span>
                         </div>
                     `;
                 }).join('');

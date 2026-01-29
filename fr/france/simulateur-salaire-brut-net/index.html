@@ -997,29 +997,24 @@
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
 
-            // Handle high-DPI displays
-            const dpr = window.devicePixelRatio || 1;
-            const displaySize = 280;
+            const size = 280;
+            canvas.width = size;
+            canvas.height = size;
 
-            // Set actual canvas size in memory (scaled for DPI)
-            canvas.width = displaySize * dpr;
-            canvas.height = displaySize * dpr;
-
-            // Scale canvas CSS size
-            canvas.style.width = displaySize + 'px';
-            canvas.style.height = displaySize + 'px';
-
-            // Reset and scale context to match DPI
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-            const size = displaySize;
             const center = size / 2;
             const radius = size / 2 - 20;
             const innerRadius = radius * 0.6;
 
+            // Clear
             ctx.clearRect(0, 0, size, size);
 
-            // Net portion (green)
+            // Full circle background (cotisations - indigo)
+            ctx.beginPath();
+            ctx.arc(center, center, radius, 0, Math.PI * 2);
+            ctx.fillStyle = '#818cf8';
+            ctx.fill();
+
+            // Net portion (green) - draws on top
             ctx.beginPath();
             ctx.moveTo(center, center);
             ctx.arc(center, center, radius, -Math.PI / 2, -Math.PI / 2 + netRate * Math.PI * 2);
@@ -1027,15 +1022,7 @@
             ctx.fillStyle = '#10b981';
             ctx.fill();
 
-            // Cotisations portion (indigo)
-            ctx.beginPath();
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, -Math.PI / 2 + netRate * Math.PI * 2, -Math.PI / 2 + Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#818cf8';
-            ctx.fill();
-
-            // Inner circle (donut hole)
+            // Inner circle (donut hole - white)
             ctx.beginPath();
             ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
             ctx.fillStyle = '#ffffff';

@@ -320,16 +320,26 @@
                                 <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                                 Revenus foyer
                             </label>
-                            <div class="relative">
-                                <div class="absolute left-3 top-1/2 -translate-y-1/2 h-7 w-7 rounded-lg bg-blue-100 flex items-center justify-center">
-                                    <span class="text-blue-600 font-semibold text-sm">€</span>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block text-xs text-slate-500 mb-1">Mensuel</label>
+                                    <div class="relative">
+                                        <input type="text" id="revenus" inputmode="numeric" value="3 000"
+                                            class="w-full pl-3 pr-10 h-11 border-2 border-slate-200 rounded-xl text-base font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all text-right"
+                                            oninput="handleRevenuChange(this)">
+                                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-slate-400">€</span>
+                                    </div>
                                 </div>
-                                <input type="text" id="revenus" inputmode="numeric" value="3 000"
-                                    class="w-full pl-12 pr-14 h-11 border-2 border-slate-200 rounded-xl text-base font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                                    oninput="handleRevenuChange(this)">
-                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-slate-400">/mois</span>
+                                <div>
+                                    <label class="block text-xs text-slate-500 mb-1">Annuel</label>
+                                    <div class="relative">
+                                        <input type="text" id="revenus-annuel" inputmode="numeric" value="36 000"
+                                            class="w-full pl-3 pr-10 h-11 border-2 border-slate-200 rounded-xl text-base font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all text-right"
+                                            oninput="handleRevenuAnnuelChange(this)">
+                                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-slate-400">€</span>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-xs text-slate-400 text-center">= <span id="revenus-annuel">36 000</span> €/an</p>
                         </div>
 
                         <!-- Enfants -->
@@ -747,7 +757,15 @@
             const val = parseInt(input.value.replace(/\D/g, '')) || 0;
             input.value = val.toLocaleString('fr-FR');
             state.revenuAnnuel = val * 12;
-            document.getElementById('revenus-annuel').textContent = (val * 12).toLocaleString('fr-FR');
+            document.getElementById('revenus-annuel').value = (val * 12).toLocaleString('fr-FR');
+            calculer();
+        }
+
+        function handleRevenuAnnuelChange(input) {
+            const val = parseInt(input.value.replace(/\D/g, '')) || 0;
+            input.value = val.toLocaleString('fr-FR');
+            state.revenuAnnuel = val;
+            document.getElementById('revenus').value = Math.round(val / 12).toLocaleString('fr-FR');
             calculer();
         }
 

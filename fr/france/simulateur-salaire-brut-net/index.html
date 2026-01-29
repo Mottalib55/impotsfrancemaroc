@@ -1055,7 +1055,9 @@
             updateFromNetHoraire();
         });
 
-        // Statut et heures gérés par setStatut() et changeHeures()
+        // Slider event listeners (explicit for reliability)
+        brutSlider.addEventListener('input', updateFromSlider);
+        tempsPartielInput.addEventListener('input', () => updateTempsPartiel(tempsPartielInput.value));
 
         function formatInputNumber(val) {
             const clean = val.replace(/\s/g, '').replace(/[^\d]/g, '');

@@ -1021,10 +1021,13 @@
             });
 
             updateChangesCount();
-            updateOverviewStats();
+            // Use setTimeout to ensure inputs are rendered before calculating stats
+            setTimeout(updateLiveStats, 100);
         }
 
-        // Update counter only (no save)
+        // Debounce timer for stats update
+        let statsUpdateTimer = null;
+
         function updateCounter(input) {
             const field = input.dataset.field;
             const index = input.dataset.index;
@@ -1048,6 +1051,64 @@
                 bar.className = `h-full ${isOptimal ? 'bg-emerald-500' : isTooLong ? 'bg-amber-500' : 'bg-red-500'}`;
                 bar.style.width = `${Math.min(value.length / max * 100, 100)}%`;
             }
+
+            // Debounced stats update (recalculate after 300ms of no typing)
+            clearTimeout(statsUpdateTimer);
+            statsUpdateTimer = setTimeout(updateLiveStats, 300);
+        }
+
+        // Update stats based on current input values (live, not saved)
+        function updateLiveStats() {
+            let totalScore = 0;
+            let pagesOk = 0;
+            let pagesWarning = 0;
+            let pagesError = 0;
+
+            // Build current values from inputs
+            const currentData = [];
+            seoPairs.forEach((pair, i) => {
+                const frTitleEl = document.getElementById(`titleInput-fr-${i}`);
+                const frDescEl = document.getElementById(`descInput-fr-${i}`);
+                const enTitleEl = document.getElementById(`titleInput-en-${i}`);
+                const enDescEl = document.getElementById(`descInput-en-${i}`);
+
+                if (frTitleEl && frDescEl) {
+                    currentData.push({ path: pair.fr.path, title: frTitleEl.value, desc: frDescEl.value });
+                }
+                if (enTitleEl && enDescEl) {
+                    currentData.push({ path: pair.en.path, title: enTitleEl.value, desc: enDescEl.value });
+                }
+            });
+
+            // Find duplicates in current data
+            const titles = {};
+            const descs = {};
+            currentData.forEach(item => {
+                const title = item.title.toLowerCase().trim();
+                const desc = item.desc.toLowerCase().trim();
+                if (!titles[title]) titles[title] = [];
+                titles[title].push(item.path);
+                if (!descs[desc]) descs[desc] = [];
+                descs[desc].push(item.path);
+            });
+
+            // Calculate scores
+            currentData.forEach(item => {
+                const { score } = calculateSEOScore(item.title, item.desc, item.path, { titles, descs });
+                totalScore += score;
+
+                const { status } = getScoreColor(score);
+                if (status === 'good') pagesOk++;
+                else if (status === 'warning') pagesWarning++;
+                else pagesError++;
+            });
+
+            // Update display
+            const count = currentData.length || 1;
+            document.getElementById('avgScore').textContent = Math.round(totalScore / count) + '/100';
+            document.getElementById('pagesOk').textContent = pagesOk;
+            document.getElementById('pagesWarning').textContent = pagesWarning;
+            document.getElementById('pagesError').textContent = pagesError;
         }
 
         // Save FR + EN pair (called by button)

@@ -787,11 +787,12 @@
         }
 
         function updateFromBrutAnnuel() {
-            if (isUpdating) return;
+            if (isUpdating) { console.log('BLOCKED by isUpdating'); return; }
             isUpdating = true;
 
             const nbMois = getNombreMois();
             const brutAn = parseNumber(brutAnnuel.value);
+            console.log('updateFromBrutAnnuel:', brutAnnuel.value, '→', brutAn, '/ nbMois:', nbMois);
             const brutMois = brutAn / nbMois;
             const brutH = brutAn / getHoursPerYear();
 
@@ -951,7 +952,9 @@
 
         // === EVENT LISTENERS ===
         brutAnnuel.addEventListener('input', (e) => {
+            console.log('brutAnnuel INPUT event:', e.target.value);
             e.target.value = formatInputNumber(e.target.value);
+            console.log('after format:', e.target.value);
             updateFromBrutAnnuel();
         });
 

@@ -1924,14 +1924,13 @@
                     </div>
                 `;
 
-                // PPP for single country
-                const pppPower = winner.netEur / winnerCountry.pppIndex;
+                // PPP for single country (it is the baseline)
                 els.pppTitle.innerHTML = `${winnerCountry.flag} ${winnerName}`;
-                els.pppText.innerHTML = `Purchasing Power: ${formatMoney(pppPower, '€')} equivalent`;
+                els.pppText.innerHTML = `This country is the baseline reference (PPP index: ${winnerCountry.pppIndex.toFixed(2)})`;
                 els.pppRankingList.innerHTML = `
                     <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/20">
                         <span class="text-lg">${winnerCountry.flag}</span>
-                        <span class="text-sm font-medium text-emerald-300">${formatMoney(pppPower, '€')} PPP</span>
+                        <span class="text-sm font-medium text-emerald-300">${formatMoney(winner.netEur, '€')} <span class="text-xs opacity-70">(ref)</span></span>
                     </div>
                 `;
             } else {
@@ -1953,12 +1952,20 @@
                     `;
                 }).join('');
 
-                // Calculate PPP-adjusted purchasing power
+                // Calculate PPP-adjusted purchasing power (first selected country = baseline)
+                const firstCountryCode = state.selectedCountries[0];
+                const baselinePPP = COUNTRIES[firstCountryCode].pppIndex;
+                const baselineCountry = COUNTRIES[firstCountryCode];
+                const baselineName = i18n.t(`country.${countryKeyMap2[firstCountryCode]}`);
+
                 const pppResults = results.map(r => {
                     const c = COUNTRIES[r.country];
+                    // Calculate relative PPP: how much more/less purchasing power vs baseline
+                    const relativePPP = baselinePPP / c.pppIndex;
                     return {
                         ...r,
-                        pppPower: r.netEur / c.pppIndex // Higher = more purchasing power
+                        pppPower: r.netEur * relativePPP, // Adjusted purchasing power
+                        relativePPP: relativePPP
                     };
                 }).sort((a, b) => b.pppPower - a.pppPower);
 
@@ -1969,17 +1976,18 @@
 
                 els.pppTitle.innerHTML = `${pppWinnerCountry.flag} ${pppWinnerName} wins on Purchasing Power`;
                 const pppDiff = pppWinner.pppPower - pppResults[pppResults.length - 1].pppPower;
-                els.pppText.innerHTML = `+${formatMoney(pppDiff, '€')} PPP vs last • Cost of living index: ${pppWinnerCountry.pppIndex.toFixed(2)}`;
+                els.pppText.innerHTML = `+${formatMoney(pppDiff, '€')} vs last • Baseline: ${baselineCountry.flag} ${baselineName}`;
 
                 // PPP Ranking badges
                 els.pppRankingList.innerHTML = pppResults.map((r, i) => {
                     const c = COUNTRIES[r.country];
                     const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
+                    const pppLabel = r.relativePPP === 1 ? '(ref)' : `x${r.relativePPP.toFixed(2)}`;
                     return `
                         <div class="flex items-center gap-2 px-3 py-2 rounded-lg ${i === 0 ? 'bg-emerald-500/20' : 'bg-slate-700/50'}">
                             <span class="text-lg">${medal}</span>
                             <span class="text-lg">${c.flag}</span>
-                            <span class="text-sm font-medium ${i === 0 ? 'text-emerald-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} PPP</span>
+                            <span class="text-sm font-medium ${i === 0 ? 'text-emerald-300' : 'text-slate-300'}">${formatMoney(r.pppPower, '€')} <span class="text-xs opacity-70">${pppLabel}</span></span>
                         </div>
                     `;
                 }).join('');

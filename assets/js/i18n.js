@@ -408,9 +408,13 @@ const translations = {
     'country.singapore': { fr: 'Singapour', en: 'Singapore' },
     'country.newyork': { fr: 'New York', en: 'New York' },
     'country.shanghai': { fr: 'Shanghai', en: 'Shanghai' },
+    'country.japan': { fr: 'Japon', en: 'Japan' },
+    'country.spain': { fr: 'Espagne', en: 'Spain' },
+    'country.india': { fr: 'Inde', en: 'India' },
+    'country.pakistan': { fr: 'Pakistan', en: 'Pakistan' },
 
     // Global Comparator Page
-    'comp_global.badge': { fr: '10 pays - Barèmes 2025', en: '10 countries - 2025 Rates' },
+    'comp_global.badge': { fr: '14 pays - Barèmes 2025', en: '14 countries - 2025 Rates' },
     'comp_global.title': { fr: 'Comparateur Fiscal International', en: 'International Tax Comparator' },
     'comp_global.subtitle': { fr: 'Sélectionnez les pays à comparer et découvrez où votre salaire net sera le plus avantageux.', en: 'Select countries to compare and discover where your net salary will be most advantageous.' },
     'comp_global.select_countries': { fr: 'Sélectionnez les pays à comparer (4 maximum)', en: 'Select countries to compare (max 4)' },

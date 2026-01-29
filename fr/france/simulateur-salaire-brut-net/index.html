@@ -993,38 +993,41 @@
         // === CHART ===
         function drawChart(netRate, cotisRate) {
             const canvas = document.getElementById('chart');
-            if (!canvas) return;
+            if (!canvas) { alert('No canvas!'); return; }
             const ctx = canvas.getContext('2d');
-            if (!ctx) return;
+            if (!ctx) { alert('No context!'); return; }
 
             const size = 280;
             canvas.width = size;
             canvas.height = size;
 
             const center = size / 2;
-            const radius = size / 2 - 20;
-            const innerRadius = radius * 0.6;
+            const radius = 120;
+            const innerRadius = 72;
 
-            // Clear
-            ctx.clearRect(0, 0, size, size);
+            // Clear with white background
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, size, size);
 
-            // Full circle background (cotisations - indigo)
+            // Cotisations (indigo/purple) - full circle first
             ctx.beginPath();
-            ctx.arc(center, center, radius, 0, Math.PI * 2);
+            ctx.arc(center, center, radius, 0, 2 * Math.PI);
             ctx.fillStyle = '#818cf8';
             ctx.fill();
 
-            // Net portion (green) - draws on top
-            ctx.beginPath();
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, -Math.PI / 2, -Math.PI / 2 + netRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#10b981';
-            ctx.fill();
+            // Net (green) - pie slice from top
+            if (netRate > 0) {
+                ctx.beginPath();
+                ctx.moveTo(center, center);
+                ctx.arc(center, center, radius, -0.5 * Math.PI, -0.5 * Math.PI + netRate * 2 * Math.PI);
+                ctx.lineTo(center, center);
+                ctx.fillStyle = '#10b981';
+                ctx.fill();
+            }
 
-            // Inner circle (donut hole - white)
+            // Donut hole (white center)
             ctx.beginPath();
-            ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
+            ctx.arc(center, center, innerRadius, 0, 2 * Math.PI);
             ctx.fillStyle = '#ffffff';
             ctx.fill();
         }

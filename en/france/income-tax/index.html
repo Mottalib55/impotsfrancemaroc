@@ -300,9 +300,9 @@
                     <div class="mb-6">
                         <label class="block text-sm font-medium text-slate-700 mb-3">Marital status</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                            <button type="button" onclick="setStatus('single')" id="btn-single" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #6366f1; background-color: #eef2ff;">
-                                <i data-lucide="user" class="h-5 w-5 mx-auto mb-1 text-slate-400"></i>
-                                <span class="block text-xs sm:text-sm font-medium text-slate-700">Single</span>
+                            <button type="button" onclick="setStatus('single')" id="btn-single" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #4f46e5; background-color: #4f46e5;">
+                                <i data-lucide="user" class="h-5 w-5 mx-auto mb-1" style="color: white;"></i>
+                                <span class="block text-xs sm:text-sm font-medium" style="color: white;">Single</span>
                             </button>
                             <button type="button" onclick="setStatus('married')" id="btn-married" class="status-btn rounded-xl border-2 p-2 sm:p-3 text-center transition-all" style="border-color: #e2e8f0; background-color: white;">
                                 <i data-lucide="heart" class="h-5 w-5 mx-auto mb-1 text-slate-400"></i>
@@ -1250,15 +1250,18 @@
 
         function setStatus(value) {
             state.status = value;
-            // Update button styles
+            // Reset all buttons to default style
             document.querySelectorAll('.status-btn').forEach(btn => {
                 btn.style.borderColor = '#e2e8f0';
                 btn.style.backgroundColor = 'white';
+                btn.querySelectorAll('i, span').forEach(el => el.style.color = '');
             });
+            // Highlight active button with solid indigo background
             const activeBtn = document.getElementById('btn-' + value);
             if (activeBtn) {
-                activeBtn.style.borderColor = '#6366f1';
-                activeBtn.style.backgroundColor = '#eef2ff';
+                activeBtn.style.borderColor = '#4f46e5';
+                activeBtn.style.backgroundColor = '#4f46e5';
+                activeBtn.querySelectorAll('i, span').forEach(el => el.style.color = 'white');
             }
             updateVisibility();
             calculate();
@@ -1480,7 +1483,7 @@
 
         function loadFromURL() {
             const params = new URLSearchParams(window.location.search);
-            if (params.has('status')) { state.status = params.get('status'); document.querySelectorAll('.status-btn').forEach(btn => { btn.style.borderColor = '#e2e8f0'; btn.style.backgroundColor = 'white'; }); const activeBtn = document.getElementById('btn-' + state.status); if (activeBtn) { activeBtn.style.borderColor = '#6366f1'; activeBtn.style.backgroundColor = '#eef2ff'; } }
+            if (params.has('status')) { setStatus(params.get('status')); }
             if (params.has('children')) { state.children = parseInt(params.get('children')) || 0; $('#child-count').textContent = state.children; }
             if (params.has('isole')) { state.parentIsole = params.get('isole') === '1'; $('#parent-isole').checked = state.parentIsole; }
             if (params.has('income1')) { state.income1 = parseInt(params.get('income1')) || 40000; $('#income1-input').value = state.income1; $('#income1-slider').value = Math.min(state.income1, 200000); }

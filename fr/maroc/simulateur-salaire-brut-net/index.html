@@ -1081,8 +1081,26 @@
         // === CHART ===
         function drawChart(netRate, cotisRate, irRate) {
             const canvas = document.getElementById('chart');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
-            const size = canvas.width;
+            if (!ctx) return;
+
+            // Handle high-DPI displays
+            const dpr = window.devicePixelRatio || 1;
+            const displaySize = 280;
+
+            // Set actual canvas size in memory (scaled for DPI)
+            canvas.width = displaySize * dpr;
+            canvas.height = displaySize * dpr;
+
+            // Scale canvas CSS size
+            canvas.style.width = displaySize + 'px';
+            canvas.style.height = displaySize + 'px';
+
+            // Reset and scale context to match DPI
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const size = displaySize;
             const center = size / 2;
             const radius = size / 2 - 20;
             const innerRadius = radius * 0.6;

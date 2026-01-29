@@ -490,7 +490,7 @@
         }
 
         function calculate() {
-            const income = parseFloat(document.getElementById('income-input').value)0;
+            const income = parseFloat(document.getElementById('income-input').value) || 0;
 
             // Federal Tax
             const federalTax = calculateBracketTax(income, FEDERAL_BRACKETS);

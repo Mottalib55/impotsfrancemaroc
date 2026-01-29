@@ -389,7 +389,7 @@
         const IS_TAX_FREE = true;
 
         function calculateBracketTax(income, brackets) {
-            if (IS_TAX_FREEbrackets.length === 0) return 0;
+            if (IS_TAX_FREE || brackets.length === 0) return 0;
             let tax = 0;
             let prevLimit = 0;
             for (const bracket of brackets) {
@@ -406,7 +406,7 @@
         }
 
         function calculate() {
-            const income = parseFloat(document.getElementById('income-input').value)0;
+            const income = parseFloat(document.getElementById('income-input').value) || 0;
 
             const incomeTax = calculateBracketTax(income, BRACKETS);
             const socialTax = income * SOCIAL_RATE;

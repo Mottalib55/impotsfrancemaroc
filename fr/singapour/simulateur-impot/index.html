@@ -341,6 +341,13 @@
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
                 </div>
+                <!-- Currency Conversion Reference -->
+                <div class="bg-slate-100 rounded-xl p-4 mt-4">
+                    <p class="text-xs text-slate-500 flex items-center gap-2">
+                        <iconify-icon icon="lucide:repeat" width="14"></iconify-icon>
+                        <span>Equivalents : <span id="conv-eur" class="font-medium text-slate-700">~0 EUR</span> | <span id="conv-usd" class="font-medium text-slate-700">~$0</span></span>
+                    </p>
+                </div>
             </div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
@@ -434,6 +441,13 @@
             document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
 
             const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            
+            // Currency conversion
+            const toEur = 0.69;
+            document.getElementById('conv-eur').textContent = '~' + Math.round(netIncome * toEur).toLocaleString() + ' EUR';
+            const toUsd = 0.75;
+            document.getElementById('conv-usd').textContent = '~$' + Math.round(netIncome * toUsd).toLocaleString();
+
             document.getElementById('tax-bar').style.width = taxPercent + '%';
 
             const slider = document.getElementById('income-slider');

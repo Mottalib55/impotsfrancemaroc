@@ -378,6 +378,13 @@
                     </div>
                     <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
                 </div>
+                <!-- Currency Conversion Reference -->
+                <div class="bg-slate-100 rounded-xl p-4 mt-4">
+                    <p class="text-xs text-slate-500 flex items-center gap-2">
+                        <iconify-icon icon="lucide:repeat" width="14"></iconify-icon>
+                        <span>Equivalent: <span id="conv-eur" class="font-medium text-slate-700">~0 EUR</span></span>
+                    </p>
+                </div>
             </div>
 
             <!-- Tax Brackets Info -->
@@ -518,6 +525,11 @@
 
             // Update progress bar
             const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            
+            // Currency conversion
+            const toEur = 0.92;
+            document.getElementById('conv-eur').textContent = '~' + Math.round(netIncome * toEur).toLocaleString() + ' EUR';
+
             document.getElementById('tax-bar').style.width = taxPercent + '%';
 
             // Update slider track

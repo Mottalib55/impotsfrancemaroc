@@ -778,6 +778,7 @@
 
         // === SYNC ALL FIELDS ===
         function syncAll(source, value) {
+            console.log('syncAll called:', source, value);
             const nbMois = getNombreMois();
             const hoursYear = getHoursPerYear();
             let brutAn;
@@ -804,6 +805,8 @@
             const netMois = netAn / nbMois;
             const netH = netAn / hoursYear;
 
+            console.log('Calculated:', { brutAn, brutMois, netAn, netMois });
+
             // Update all fields (except the source to avoid cursor jump)
             if (source !== 'brutAnnuel') brutAnnuel.value = formatNumber(brutAn);
             if (source !== 'brutMensuel') brutMensuel.value = formatNumber(brutMois);
@@ -812,6 +815,8 @@
             if (source !== 'netAnnuel') netAnnuel.value = formatNumber(netAn);
             if (source !== 'netMensuel') netMensuel.value = formatNumber(netMois);
             if (source !== 'netHoraire') netHoraire.value = formatDecimal(netH);
+
+            console.log('Updated netAnnuel to:', netAnnuel.value, 'netMensuel to:', netMensuel.value);
 
             updateUI(brutMois, nbMois);
         }

@@ -389,31 +389,31 @@
                     </div>
 
                     <!-- Right: Pie Chart (1 col) -->
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col items-center">
                         <div class="relative">
-                            <canvas id="pie-chart" width="200" height="200"></canvas>
+                            <canvas id="pie-chart" width="180" height="180"></canvas>
                             <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                                 <span class="text-xs text-slate-400">Net</span>
                                 <span class="text-xl font-bold text-emerald-600" id="pie-center-value">78%</span>
                             </div>
                         </div>
                         <!-- Legend -->
-                        <div class="grid grid-cols-2 gap-x-6 gap-y-2 mt-4 text-sm bg-white border-2 border-slate-200 rounded-lg px-4 py-3 shadow-sm">
-                            <div class="flex items-center gap-2">
-                                <div class="w-4 h-4 rounded-full flex-shrink-0" style="background-color: #10b981;"></div>
-                                <span class="text-slate-800 font-semibold">Net</span>
+                        <div class="flex flex-wrap justify-center gap-3 mt-3 text-xs">
+                            <div class="flex items-center gap-1">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #10b981;"></div>
+                                <span class="text-slate-600">Net</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-4 h-4 rounded-full flex-shrink-0" style="background-color: #60a5fa;"></div>
-                                <span class="text-slate-800 font-semibold">Sécu</span>
+                            <div class="flex items-center gap-1">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #60a5fa;"></div>
+                                <span class="text-slate-600">Sécu</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-4 h-4 rounded-full flex-shrink-0" style="background-color: #c084fc;"></div>
-                                <span class="text-slate-800 font-semibold">Retraite</span>
+                            <div class="flex items-center gap-1">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #c084fc;"></div>
+                                <span class="text-slate-600">Retraite</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-4 h-4 rounded-full flex-shrink-0" style="background-color: #fbbf24;"></div>
-                                <span class="text-slate-800 font-semibold">Chômage</span>
+                            <div class="flex items-center gap-1">
+                                <div class="w-3 h-3 rounded-full" style="background-color: #fbbf24;"></div>
+                                <span class="text-slate-600">Chômage</span>
                             </div>
                         </div>
                     </div>
@@ -886,8 +886,8 @@
             const ctx = canvas.getContext('2d');
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
-            const radius = 85;
-            const innerRadius = 50;
+            const radius = 75;
+            const innerRadius = 45;
 
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);

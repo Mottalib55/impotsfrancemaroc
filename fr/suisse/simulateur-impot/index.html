@@ -88,8 +88,6 @@
             border: 3px solid white;
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
-        }
-        }
         .result-card { transition: all 0.3s ease; }
         .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
     </style>
@@ -440,398 +438,6 @@
         
                 </div>
             </div>
-            <!-- Example Calculation -->
-            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
-                    Exemple de calcul: CHF80,000
-                </h2>
-
-                <div class="space-y-4 text-sm">
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">1. Impot sur le Revenu (~CHF 8,500)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>Impot federal direct: ~CHF 1,200</p>
-                            <p>Impot cantonal (Geneve): ~CHF 5,800</p>
-                            <p>Impot communal: ~CHF 1,500</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Impots: ~CHF 8,500</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">2. Cotisations Sociales (~CHF 5,120)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>AVS/AI/APG (5.3%): CHF 4,240</p>
-                            <p>AC - Chomage (1.1%): CHF 880</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Cotisations: CHF 5,120</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
-                            <span class="text-xl font-bold text-emerald-600">~CHF 66,380</span>
-                        </div>
-                        <p class="text-xs text-emerald-600 mt-1">Soit ~CHF 5,532/mois | Taux effectif: ~17%</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Contributions Details -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
-                    Cotisations Sociales Suisses 2026
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">AVS/AI/APG</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">5.3%</span></li>
-                            <li>Taux employeur: <span class="font-medium">5.3%</span></li>
-                            <li>Total: <span class="font-medium">10.6%</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Chomage (AC)</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">1.1%</span></li>
-                            <li>Plafond: <span class="font-medium">CHF 148,200</span></li>
-                            <li>+0.5% si > plafond</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Official Sources -->
-            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
-                    Sources Officielles
-                </h2>
-
-                <div class="space-y-3 text-sm">
-                    <a href="https://www.estv.admin.ch/estv/fr/accueil/impot-federal-direct/informations-specialisees-ifd/baremes.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Baremes IFD</p>
-                            <p class="text-xs text-slate-500">admin.ch - Impot federal direct</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ge.ch/impots-personnes-physiques" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Impots Canton Geneve</p>
-                            <p class="text-xs text-slate-500">ge.ch - Impots cantonaux Geneve</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ahv-iv.ch/fr/Assurances-sociales/Assurance-vieillesse-et-survivants-AVS" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">AVS/AI</p>
-                            <p class="text-xs text-slate-500">ahv-iv.ch - Cotisations AVS</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- Example Calculation -->
-            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
-                    Exemple de calcul: CHF80,000
-                </h2>
-
-                <div class="space-y-4 text-sm">
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">1. Impot sur le Revenu (~CHF 8,500)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>Impot federal direct: ~CHF 1,200</p>
-                            <p>Impot cantonal (Geneve): ~CHF 5,800</p>
-                            <p>Impot communal: ~CHF 1,500</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Impots: ~CHF 8,500</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">2. Cotisations Sociales (~CHF 5,120)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>AVS/AI/APG (5.3%): CHF 4,240</p>
-                            <p>AC - Chomage (1.1%): CHF 880</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Cotisations: CHF 5,120</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
-                            <span class="text-xl font-bold text-emerald-600">~CHF 66,380</span>
-                        </div>
-                        <p class="text-xs text-emerald-600 mt-1">Soit ~CHF 5,532/mois | Taux effectif: ~17%</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Contributions Details -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
-                    Cotisations Sociales Suisses 2026
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">AVS/AI/APG</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">5.3%</span></li>
-                            <li>Taux employeur: <span class="font-medium">5.3%</span></li>
-                            <li>Total: <span class="font-medium">10.6%</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Chomage (AC)</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">1.1%</span></li>
-                            <li>Plafond: <span class="font-medium">CHF 148,200</span></li>
-                            <li>+0.5% si > plafond</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Official Sources -->
-            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
-                    Sources Officielles
-                </h2>
-
-                <div class="space-y-3 text-sm">
-                    <a href="https://www.estv.admin.ch/estv/fr/accueil/impot-federal-direct/informations-specialisees-ifd/baremes.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Baremes IFD</p>
-                            <p class="text-xs text-slate-500">admin.ch - Impot federal direct</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ge.ch/impots-personnes-physiques" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Impots Canton Geneve</p>
-                            <p class="text-xs text-slate-500">ge.ch - Impots cantonaux Geneve</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ahv-iv.ch/fr/Assurances-sociales/Assurance-vieillesse-et-survivants-AVS" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">AVS/AI</p>
-                            <p class="text-xs text-slate-500">ahv-iv.ch - Cotisations AVS</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- Example Calculation -->
-            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
-                    Exemple de calcul: CHF80,000
-                </h2>
-
-                <div class="space-y-4 text-sm">
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">1. Impot sur le Revenu (~CHF 8,500)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>Impot federal direct: ~CHF 1,200</p>
-                            <p>Impot cantonal (Geneve): ~CHF 5,800</p>
-                            <p>Impot communal: ~CHF 1,500</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Impots: ~CHF 8,500</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">2. Cotisations Sociales (~CHF 5,120)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>AVS/AI/APG (5.3%): CHF 4,240</p>
-                            <p>AC - Chomage (1.1%): CHF 880</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Cotisations: CHF 5,120</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
-                            <span class="text-xl font-bold text-emerald-600">~CHF 66,380</span>
-                        </div>
-                        <p class="text-xs text-emerald-600 mt-1">Soit ~CHF 5,532/mois | Taux effectif: ~17%</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Contributions Details -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
-                    Cotisations Sociales Suisses 2026
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">AVS/AI/APG</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">5.3%</span></li>
-                            <li>Taux employeur: <span class="font-medium">5.3%</span></li>
-                            <li>Total: <span class="font-medium">10.6%</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Chomage (AC)</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">1.1%</span></li>
-                            <li>Plafond: <span class="font-medium">CHF 148,200</span></li>
-                            <li>+0.5% si > plafond</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Official Sources -->
-            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
-                    Sources Officielles
-                </h2>
-
-                <div class="space-y-3 text-sm">
-                    <a href="https://www.estv.admin.ch/estv/fr/accueil/impot-federal-direct/informations-specialisees-ifd/baremes.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Baremes IFD</p>
-                            <p class="text-xs text-slate-500">admin.ch - Impot federal direct</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ge.ch/impots-personnes-physiques" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Impots Canton Geneve</p>
-                            <p class="text-xs text-slate-500">ge.ch - Impots cantonaux Geneve</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ahv-iv.ch/fr/Assurances-sociales/Assurance-vieillesse-et-survivants-AVS" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">AVS/AI</p>
-                            <p class="text-xs text-slate-500">ahv-iv.ch - Cotisations AVS</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- Example Calculation -->
-            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:calculator" width="20" class="text-indigo-500"></iconify-icon>
-                    Exemple de calcul: CHF80,000
-                </h2>
-
-                <div class="space-y-4 text-sm">
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">1. Impot sur le Revenu (~CHF 8,500)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>Impot federal direct: ~CHF 1,200</p>
-                            <p>Impot cantonal (Geneve): ~CHF 5,800</p>
-                            <p>Impot communal: ~CHF 1,500</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Impots: ~CHF 8,500</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-lg p-4 border border-slate-200">
-                        <h4 class="font-medium text-slate-900 mb-2">2. Cotisations Sociales (~CHF 5,120)</h4>
-                        <div class="space-y-1 text-slate-600">
-                            <p>AVS/AI/APG (5.3%): CHF 4,240</p>
-                            <p>AC - Chomage (1.1%): CHF 880</p>
-                            <p class="font-medium text-slate-900 pt-1 border-t">Total Cotisations: CHF 5,120</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
-                            <span class="text-xl font-bold text-emerald-600">~CHF 66,380</span>
-                        </div>
-                        <p class="text-xs text-emerald-600 mt-1">Soit ~CHF 5,532/mois | Taux effectif: ~17%</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Contributions Details -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
-                    Cotisations Sociales Suisses 2026
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">AVS/AI/APG</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">5.3%</span></li>
-                            <li>Taux employeur: <span class="font-medium">5.3%</span></li>
-                            <li>Total: <span class="font-medium">10.6%</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Chomage (AC)</h3>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            <li>Taux employe: <span class="font-medium">1.1%</span></li>
-                            <li>Plafond: <span class="font-medium">CHF 148,200</span></li>
-                            <li>+0.5% si > plafond</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Official Sources -->
-            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
-                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
-                    Sources Officielles
-                </h2>
-
-                <div class="space-y-3 text-sm">
-                    <a href="https://www.estv.admin.ch/estv/fr/accueil/impot-federal-direct/informations-specialisees-ifd/baremes.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Baremes IFD</p>
-                            <p class="text-xs text-slate-500">admin.ch - Impot federal direct</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ge.ch/impots-personnes-physiques" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">Impots Canton Geneve</p>
-                            <p class="text-xs text-slate-500">ge.ch - Impots cantonaux Geneve</p>
-                        </div>
-                    </a>
-                    <a href="https://www.ahv-iv.ch/fr/Assurances-sociales/Assurance-vieillesse-et-survivants-AVS" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
-                        <div>
-                            <p class="font-medium text-slate-900">AVS/AI</p>
-                            <p class="text-xs text-slate-500">ahv-iv.ch - Cotisations AVS</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
-
-
 
             <div class="mt-8 text-center">
                 <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
@@ -925,8 +531,10 @@ function calculateBracketTax(income, brackets) {
             document.getElementById('conv-social-usd').textContent = formatConv(socialTax * toUsd, true);
             document.getElementById('conv-net-eur').textContent = formatConv(netIncome * toEur, false);
             document.getElementById('conv-net-usd').textContent = formatConv(netIncome * toUsd, true);
-            document.getElementById('conv-monthly-eur').textContent = formatConv(netIncome / 12 * toEur, false);
-            document.getElementById('conv-monthly-usd').textContent = formatConv(netIncome / 12 * toUsd, true);
+            const convMonthlyEur = document.getElementById('conv-monthly-eur');
+            const convMonthlyUsd = document.getElementById('conv-monthly-usd');
+            if (convMonthlyEur) convMonthlyEur.textContent = formatConv(netIncome / 12 * toEur, false);
+            if (convMonthlyUsd) convMonthlyUsd.textContent = formatConv(netIncome / 12 * toUsd, true);
             document.getElementById('conv-total-eur').textContent = formatConv(totalTax * toEur, false);
             document.getElementById('conv-total-usd').textContent = formatConv(totalTax * toUsd, true);
 
@@ -950,20 +558,24 @@ function calculateBracketTax(income, brackets) {
             const socialPercent = 100 - netPercent - taxPercent;
 
             // Update CSS donut
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
             const donut = document.getElementById('chart-donut');
             if (donut) {
-                const netEnd = netPercent;
-                const taxEnd = netEnd + taxPercent;
-                donut.style.background = `conic-gradient(#10b981 0% ${netEnd}%, #6366f1 ${netEnd}% ${taxEnd}%, #f59e0b ${taxEnd}% 100%)`;
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #6366f1 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
             }
 
             // Update center percentage
-            document.getElementById('chart-percent').textContent = netPercent + '%';
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
 
             // Update legend
-            document.getElementById('legend-net').textContent = netPercent + '%';
-            document.getElementById('legend-tax').textContent = taxPercent + '%';
-            document.getElementById('legend-social').textContent = socialPercent + '%';
+            const legendNet = document.getElementById('legend-net');
+            const legendTax = document.getElementById('legend-tax');
+            const legendSocial = document.getElementById('legend-social');
+            if (legendNet) legendNet.textContent = netPercent + '%';
+            if (legendTax) legendTax.textContent = taxPercent + '%';
+            if (legendSocial) legendSocial.textContent = socialPercent + '%';
         }
 
         // Dual input synchronization

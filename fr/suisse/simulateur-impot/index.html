@@ -301,110 +301,125 @@
             </div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Left: Calculator -->
-                    <div class="md:col-span-2">
-                        <!-- Income Inputs -->
-                        <div class="mb-8">
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <!-- Monthly Input -->
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
-                                    <div class="relative">
-                                        <input type="number" id="income-monthly" value="6666" min="0" max="10000000"
-                                               class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
-                                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CHF</span>
-                                    </div>
-                                </div>
-                                <!-- Annual Input -->
-                                <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
-                                    <div class="relative">
-                                        <input type="number" id="income-annual" value="80000" min="0" max="10000000"
-                                               class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
-                                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CHF</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="range" id="income-slider" min="0" max="400000" step="1000" value="80000"
-                                   class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
-                                   style="-webkit-appearance: none; padding: 8px 0;">
-                            <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span> | <span id="conv-gross-usd">~$0</span></p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
-                                        <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
-                                    </div>
-                                    <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
-                                </div>
-                                <p class="text-2xl font-bold text-indigo-600" id="income-tax">CHF0</p>
-                                <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span><span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
-                                <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
-                            </div>
-                            <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
-                                        <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
-                                    </div>
-                                    <span class="text-sm font-medium text-slate-700">Cotisations Sociales</span>
-                                </div>
-                                <p class="text-2xl font-bold text-amber-600" id="social-tax">CHF0</p>
-                                <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span><span id="conv-social-usd" class="text-slate-400">~$0</span></p>
-                                <p class="text-xs text-slate-500 mt-1">AVS/AI/APG : 6.4% cotisation employe</p>
-                            </div>
-                            <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                                        <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
-                                    </div>
-                                    <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
-                                </div>
-                                <p class="text-3xl font-bold text-emerald-600" id="net-income">CHF0</p>
-                                <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span><span id="conv-net-usd" class="text-slate-400">~$0</span></p>
-                                <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">CHF0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span><span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
+                <!-- Income Inputs -->
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="6666" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CHF</span>
                             </div>
                         </div>
-                        <div class="bg-slate-50 rounded-xl p-4">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
-                                <span class="text-lg font-bold text-slate-900" id="total-tax">CHF0</span>
-                            </div>
-                            <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
-                            <div class="flex items-center justify-end gap-2 mt-3">
-                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
-                                    <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
-                                </span>
-                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
-                                    <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
-                                </span>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="80000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CHF</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Right: Chart -->
-                    <div class="flex items-start justify-center">
-                        <div class="text-center md:sticky lg:top-24">
-                            <canvas id="pie-chart" width="180" height="180"></canvas>
-                            <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs">
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                                    <span class="text-slate-600">Net <span id="legend-net" class="font-medium">0%</span></span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
-                                    <span class="text-slate-600">Impot <span id="legend-tax" class="font-medium">0%</span></span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                                    <span class="text-slate-600">Cotis. <span id="legend-social" class="font-medium">0%</span></span>
-                                </div>
+                    <input type="range" id="income-slider" min="0" max="400000" step="1000" value="80000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span> | <span id="conv-gross-usd">~$0</span></p>
+                </div>
+
+                <!-- Results Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
+                        </div>
+                        <p class="text-2xl font-bold text-indigo-600" id="income-tax">CHF0</p>
+                        <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span><span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Cotisations Sociales</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">CHF0</p>
+                        <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span><span id="conv-social-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-xs text-slate-500 mt-1">AVS/AI/APG : 6.4% cotisation employe</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
+                        </div>
+                        <p class="text-3xl font-bold text-emerald-600" id="net-income">CHF0</p>
+                        <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span><span id="conv-net-usd" class="text-slate-400">~$0</span></p>
+                        <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">CHF0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span><span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
+                    </div>
+                </div>
+
+                <!-- Chart Card - Répartition -->
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Répartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <!-- Donut Chart CSS -->
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 75%, #6366f1 75% 85%, #f59e0b 85% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
                             </div>
                         </div>
+                        <!-- Legend -->
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-indigo-500"></span>
+                                    <span class="text-sm text-slate-600">Impots</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Cotisations</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Bar -->
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">CHF0</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                    <div class="flex items-center justify-end gap-2 mt-3">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
+                            <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
+                            <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -923,72 +938,32 @@ function calculateBracketTax(income, brackets) {
             const percent = Math.min((income / 400000) * 100, 100);
             slider.style.background = `linear-gradient(to right, #6366f1 ${percent}%, #e2e8f0 ${percent}%)`;
 
-            // Draw pie chart
-            drawPieChart(netIncome, incomeTax, socialTax, income);
+            // Update chart
+            updateChart(netIncome, incomeTax, socialTax, income);
         }
 
-        function drawPieChart(net, tax, social, total) {
-            const canvas = document.getElementById('pie-chart');
-            if (!canvas || total <= 0) return;
-            const ctx = canvas.getContext('2d');
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
 
-            const dpr = window.devicePixelRatio || 1;
-            const size = 180;
-            canvas.width = size * dpr;
-            canvas.height = size * dpr;
-            canvas.style.width = size + 'px';
-            canvas.style.height = size + 'px';
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
 
-            const centerX = size / 2;
-            const centerY = size / 2;
-            const radius = 70;
-            const innerRadius = 42;
+            // Update CSS donut
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                const netEnd = netPercent;
+                const taxEnd = netEnd + taxPercent;
+                donut.style.background = `conic-gradient(#10b981 0% ${netEnd}%, #6366f1 ${netEnd}% ${taxEnd}%, #f59e0b ${taxEnd}% 100%)`;
+            }
 
-            ctx.clearRect(0, 0, size, size);
-
-            const netRate = net / total;
-            const taxRate = tax / total;
-            const socialRate = social / total;
-
-            let startAngle = -Math.PI / 2;
-
-            // Net (green)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + netRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#10b981';
-            ctx.fill();
-            startAngle += netRate * Math.PI * 2;
-
-            // Tax (indigo)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + taxRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#6366f1';
-            ctx.fill();
-            startAngle += taxRate * Math.PI * 2;
-
-            // Social (amber)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + socialRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#f59e0b';
-            ctx.fill();
-
-            // Inner circle (donut hole)
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, innerRadius, 0, Math.PI * 2);
-            ctx.fillStyle = '#ffffff';
-            ctx.fill();
+            // Update center percentage
+            document.getElementById('chart-percent').textContent = netPercent + '%';
 
             // Update legend
-            document.getElementById('legend-net').textContent = Math.round(netRate * 100) + '%';
-            document.getElementById('legend-tax').textContent = Math.round(taxRate * 100) + '%';
-            document.getElementById('legend-social').textContent = Math.round(socialRate * 100) + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
         }
 
         // Dual input synchronization

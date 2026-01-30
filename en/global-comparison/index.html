@@ -105,10 +105,10 @@
         .bg-lime-50 { background-color: #f7fee7; }
         .text-lime-600 { color: #65a30d; }
         .border-lime-200 { border-color: #d9f99d; }
-        /* Grid 7 columns for 14 countries on 2 rows */
-        .grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        /* Grid 8 columns for 16 countries on 2 rows */
+        .grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
         @media (min-width: 768px) {
-            .md\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+            .md\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
         }
     </style>
 
@@ -342,7 +342,7 @@
                 <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Select countries to compare (max 4)</h2>
             </div>
 
-            <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 gap-2">
+            <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-2">
                 <!-- France -->
                 <div class="relative">
                     <input type="checkbox" id="country-fr" class="country-checkbox sr-only" checked data-country="fr">
@@ -522,6 +522,32 @@
                         <span class="text-2xl">🇵🇰</span>
                         <span class="text-xs font-semibold text-slate-700">Pakistan</span>
                         <span class="text-[10px] text-slate-400 font-medium">IT 2.5-35%</span>
+                    </label>
+                </div>
+
+                <!-- Mexico -->
+                <div class="relative">
+                    <input type="checkbox" id="country-mx" class="country-checkbox sr-only" data-country="mx">
+                    <label for="country-mx" class="country-label flex flex-col items-center gap-1 p-2.5 rounded-lg border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-1 right-1 w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="10"></span>
+                        </div>
+                        <span class="text-2xl">🇲🇽</span>
+                        <span class="text-xs font-semibold text-slate-700">Mexico</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IT 1.9-35%</span>
+                    </label>
+                </div>
+
+                <!-- Brazil -->
+                <div class="relative">
+                    <input type="checkbox" id="country-br" class="country-checkbox sr-only" data-country="br">
+                    <label for="country-br" class="country-label flex flex-col items-center gap-1 p-2.5 rounded-lg border-2 border-slate-200 cursor-pointer hover:border-slate-300 transition-all-300 relative">
+                        <div class="country-check absolute top-1 right-1 w-4 h-4 bg-emerald-500 rounded-full flex items-center justify-center opacity-0 transition-opacity">
+                            <span class="iconify text-white" data-icon="lucide:check" width="10"></span>
+                        </div>
+                        <span class="text-2xl">🇧🇷</span>
+                        <span class="text-xs font-semibold text-slate-700">Brazil</span>
+                        <span class="text-[10px] text-slate-400 font-medium">IT 7.5-27.5%</span>
                     </label>
                 </div>
             </div>
@@ -1219,6 +1245,53 @@
                 ],
                 // Minimal social contributions
                 socialRate: 0.01
+            },
+            mx: {
+                name: 'Mexico',
+                flag: '🇲🇽',
+                currency: 'MXN',
+                currencySymbol: '$',
+                color: 'cyan',
+                exchangeRate: 18.5,
+                pppIndex: 0.49, // World Bank PPP
+                taxSystem: 'Progressive ISR',
+                // Mexico ISR 2024
+                brackets: [
+                    { limit: 8952.49, rate: 0.0192 },
+                    { limit: 75984.55, rate: 0.0640 },
+                    { limit: 133536.07, rate: 0.1088 },
+                    { limit: 155229.80, rate: 0.16 },
+                    { limit: 185852.57, rate: 0.1792 },
+                    { limit: 374837.88, rate: 0.2136 },
+                    { limit: 590795.99, rate: 0.2352 },
+                    { limit: 1127926.84, rate: 0.30 },
+                    { limit: 1503902.46, rate: 0.32 },
+                    { limit: 4511707.37, rate: 0.34 },
+                    { limit: Infinity, rate: 0.35 }
+                ],
+                // IMSS employee contribution ~3%
+                socialRate: 0.03
+            },
+            br: {
+                name: 'Brazil',
+                flag: '🇧🇷',
+                currency: 'BRL',
+                currencySymbol: 'R$',
+                color: 'fuchsia',
+                exchangeRate: 5.4,
+                pppIndex: 0.42, // World Bank PPP
+                taxSystem: 'Progressive IRPF',
+                // Brazil IRPF 2024
+                brackets: [
+                    { limit: 26963.20, rate: 0 },
+                    { limit: 33919.80, rate: 0.075 },
+                    { limit: 45012.60, rate: 0.15 },
+                    { limit: 55976.16, rate: 0.225 },
+                    { limit: Infinity, rate: 0.275 }
+                ],
+                // INSS employee contribution 7.5-14% (capped)
+                socialRate: 0.11,
+                socialCap: 87691.20 // Annual cap (7307.60 * 12)
             }
         };
 
@@ -1237,7 +1310,9 @@
             pink: { bg: 'bg-pink-500', bgLight: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' },
             yellow: { bg: 'bg-yellow-500', bgLight: 'bg-yellow-50', text: 'text-yellow-600', border: 'border-yellow-200' },
             teal: { bg: 'bg-teal-500', bgLight: 'bg-teal-50', text: 'text-teal-600', border: 'border-teal-200' },
-            lime: { bg: 'bg-lime-500', bgLight: 'bg-lime-50', text: 'text-lime-600', border: 'border-lime-200' }
+            lime: { bg: 'bg-lime-500', bgLight: 'bg-lime-50', text: 'text-lime-600', border: 'border-lime-200' },
+            cyan: { bg: 'bg-cyan-500', bgLight: 'bg-cyan-50', text: 'text-cyan-600', border: 'border-cyan-200' },
+            fuchsia: { bg: 'bg-fuchsia-500', bgLight: 'bg-fuchsia-50', text: 'text-fuchsia-600', border: 'border-fuchsia-200' }
         };
 
         // ==========================================
@@ -1354,6 +1429,14 @@
 
             if (countryCode === 'pk') {
                 return calculatePakistan(annualGrossEur);
+            }
+
+            if (countryCode === 'mx') {
+                return calculateMexico(annualGrossEur);
+            }
+
+            if (countryCode === 'br') {
+                return calculateBrazil(annualGrossEur);
             }
 
             return null;
@@ -1810,6 +1893,74 @@
             };
         }
 
+        function calculateMexico(annualGrossEur) {
+            const country = COUNTRIES.mx;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            // IMSS social contributions ~3%
+            const socialContrib = localGross * country.socialRate;
+            const netImposable = localGross - socialContrib;
+
+            // Calculate ISR using brackets
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            const net = localGross - socialContrib - tax;
+
+            return {
+                country: 'mx',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: tax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (socialContrib + tax) / localGross
+            };
+        }
+
+        function calculateBrazil(annualGrossEur) {
+            const country = COUNTRIES.br;
+            const localGross = annualGrossEur * country.exchangeRate;
+
+            // INSS social contributions (capped)
+            const socialContrib = country.socialCap
+                ? Math.min(localGross * country.socialRate, country.socialCap * country.socialRate)
+                : localGross * country.socialRate;
+            const netImposable = localGross - socialContrib;
+
+            // Calculate IRPF using brackets
+            let tax = 0;
+            for (let i = 0; i < country.brackets.length; i++) {
+                const bracket = country.brackets[i];
+                const prevLimit = i === 0 ? 0 : country.brackets[i - 1].limit;
+                if (netImposable > prevLimit) {
+                    const taxableInBracket = Math.min(netImposable, bracket.limit) - prevLimit;
+                    tax += taxableInBracket * bracket.rate;
+                }
+            }
+
+            const net = localGross - socialContrib - tax;
+
+            return {
+                country: 'br',
+                gross: localGross,
+                grossEur: annualGrossEur,
+                social: socialContrib,
+                tax: tax,
+                net: net,
+                netEur: net / country.exchangeRate,
+                rate: (socialContrib + tax) / localGross
+            };
+        }
+
         // ==========================================
         // UI RENDERING
         // ==========================================
@@ -1843,7 +1994,9 @@
                 'jp': 'japan',
                 'es': 'spain',
                 'in': 'india',
-                'pk': 'pakistan'
+                'pk': 'pakistan',
+                'mx': 'mexico',
+                'br': 'brazil'
             };
             const countryName = i18n.t(`country.${countryKeyMap[data.country]}`);
 

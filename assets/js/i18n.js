@@ -412,9 +412,11 @@ const translations = {
     'country.spain': { fr: 'Espagne', en: 'Spain' },
     'country.india': { fr: 'Inde', en: 'India' },
     'country.pakistan': { fr: 'Pakistan', en: 'Pakistan' },
+    'country.mexico': { fr: 'Mexique', en: 'Mexico' },
+    'country.brazil': { fr: 'Brésil', en: 'Brazil' },
 
     // Global Comparator Page
-    'comp_global.badge': { fr: '14 pays - Barèmes 2025', en: '14 countries - 2025 Rates' },
+    'comp_global.badge': { fr: '16 pays - Barèmes 2025', en: '16 countries - 2025 Rates' },
     'comp_global.title': { fr: 'Comparateur Fiscal International', en: 'International Tax Comparator' },
     'comp_global.subtitle': { fr: 'Sélectionnez les pays à comparer et découvrez où votre salaire net sera le plus avantageux.', en: 'Select countries to compare and discover where your net salary will be most advantageous.' },
     'comp_global.select_countries': { fr: 'Sélectionnez les pays à comparer (4 maximum)', en: 'Select countries to compare (max 4)' },

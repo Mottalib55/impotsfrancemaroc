@@ -320,10 +320,7 @@
 
             <!-- Calculator Card -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Left: Calculator -->
-                    <div class="md:col-span-2">
-                        <!-- Income Inputs -->
+                <!-- Income Inputs -->
                         <div class="mb-8">
                         <div class="grid grid-cols-2 gap-4 mb-4">
                         <!-- Monthly Input -->
@@ -421,24 +418,41 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <!-- Right: Chart -->
-                    <div class="flex items-start justify-center">
-                        <div class="text-center md:sticky lg:top-24">
-                            <canvas id="pie-chart" width="180" height="180"></canvas>
-                            <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs">
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                                    <span class="text-slate-600">Net <span id="legend-net" class="font-medium">0%</span></span>
+
+                <!-- Chart Card - Répartition -->
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Répartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <!-- Donut Chart CSS -->
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 75%, #6366f1 75% 85%, #f59e0b 85% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <!-- Legend -->
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
                                 </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
-                                    <span class="text-slate-600">Impot <span id="legend-tax" class="font-medium">0%</span></span>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-indigo-500"></span>
+                                    <span class="text-sm text-slate-600">Impots</span>
                                 </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                                    <span class="text-slate-600">Cotis. <span id="legend-social" class="font-medium">0%</span></span>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Cotisations</span>
                                 </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
                             </div>
                         </div>
                     </div>
@@ -715,71 +729,35 @@ function calculateBracketTax(income, brackets) {
             slider.style.background = `linear-gradient(to right, #8b5cf6 ${percent}%, #e2e8f0 ${percent}%)`;
 
             // Draw pie chart
-            drawPieChart(netIncome, federalTax + totalStateTax, fica, income);
+            updateChart(netIncome, federalTax + totalStateTax, fica, income);
         }
 
-        function drawPieChart(net, tax, social, total) {
-            const canvas = document.getElementById('pie-chart');
-            if (!canvas || total <= 0) return;
-            const ctx = canvas.getContext('2d');
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
 
-            const dpr = window.devicePixelRatio || 1;
-            const size = 180;
-            canvas.width = size * dpr;
-            canvas.height = size * dpr;
-            canvas.style.width = size + 'px';
-            canvas.style.height = size + 'px';
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
 
-            const centerX = size / 2;
-            const centerY = size / 2;
-            const radius = 70;
-            const innerRadius = 42;
+            // Update CSS donut
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #6366f1 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+            }
 
-            ctx.clearRect(0, 0, size, size);
-
-            const netRate = net / total;
-            const taxRate = tax / total;
-            const socialRate = social / total;
-
-            let startAngle = -Math.PI / 2;
-
-            // Net (green)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + netRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#10b981';
-            ctx.fill();
-            startAngle += netRate * Math.PI * 2;
-
-            // Tax (indigo)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + taxRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#6366f1';
-            ctx.fill();
-            startAngle += taxRate * Math.PI * 2;
-
-            // Social (amber)
-            ctx.beginPath();
-            ctx.moveTo(centerX, centerY);
-            ctx.arc(centerX, centerY, radius, startAngle, startAngle + socialRate * Math.PI * 2);
-            ctx.closePath();
-            ctx.fillStyle = '#f59e0b';
-            ctx.fill();
-
-            // Inner circle (donut hole)
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, innerRadius, 0, Math.PI * 2);
-            ctx.fillStyle = '#ffffff';
-            ctx.fill();
+            // Update center percentage
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
 
             // Update legend
-            document.getElementById('legend-net').textContent = Math.round(netRate * 100) + '%';
-            document.getElementById('legend-tax').textContent = Math.round(taxRate * 100) + '%';
-            document.getElementById('legend-social').textContent = Math.round(socialRate * 100) + '%';
+            const legendNet = document.getElementById('legend-net');
+            const legendTax = document.getElementById('legend-tax');
+            const legendSocial = document.getElementById('legend-social');
+            if (legendNet) legendNet.textContent = netPercent + '%';
+            if (legendTax) legendTax.textContent = taxPercent + '%';
+            if (legendSocial) legendSocial.textContent = socialPercent + '%';
         }
 
         // Event listeners

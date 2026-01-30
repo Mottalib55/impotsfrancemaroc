@@ -389,12 +389,31 @@
                     </div>
 
                     <!-- Right: Pie Chart (1 col) -->
-                    <div class="flex items-center justify-center">
+                    <div class="flex flex-col items-center justify-center">
                         <div class="relative">
                             <canvas id="pie-chart" width="200" height="200"></canvas>
                             <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                                 <span class="text-xs text-slate-400">Net</span>
                                 <span class="text-xl font-bold text-emerald-600" id="pie-center-value">78%</span>
+                            </div>
+                        </div>
+                        <!-- Legend -->
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-1 mt-3 text-xs">
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                                <span class="text-slate-600">Net</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-blue-400"></div>
+                                <span class="text-slate-600">Sécu</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+                                <span class="text-slate-600">Retraite</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                                <span class="text-slate-600">Chômage</span>
                             </div>
                         </div>
                     </div>

@@ -329,7 +329,7 @@
                         <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span> | <span id="conv-gross-usd">~$0</span></p>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
 
                         <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
                         <div class="flex items-center gap-2 mb-3">
@@ -355,7 +355,7 @@
                         <p class="text-xs text-slate-500 mt-1">Securite Sociale : 6.35% cotisation employe</p>
                         </div>
 
-                        <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
+                        <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 ">
                         <div class="flex items-center gap-2 mb-3">
                             <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
                                 <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
@@ -368,23 +368,7 @@
                         </div>
                             </div>
 
-                            <div class="bg-slate-50 rounded-xl p-4">
-                        <div class="flex justify-between items-center mb-2">
-                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
-                        <span class="text-lg font-bold text-slate-900" id="total-tax">€0</span>
-                        </div>
-                        <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
-                        <div class="flex items-center justify-end gap-2 mt-3">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
-                            <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
-                        </span>
-                        </div>
-                            </div>
-
-                <!-- Chart Card - Répartition -->
+                            <!-- Chart Card - Répartition -->
                 <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
                     <h3 class="text-sm font-semibold text-slate-900 mb-4">Répartition de votre revenu</h3>
                     <div class="flex items-center gap-6">
@@ -422,6 +406,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Total Bar -->
+                <div class="bg-slate-50 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">€0</span>
+                        </div>
+                        <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                        <div class="flex items-center justify-end gap-2 mt-3">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
+                            <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
+                        </span>
+                        </div>
+                            </div>
             </div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">

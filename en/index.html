@@ -364,6 +364,36 @@
             <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Free tax simulators for France and Morocco. Calculate salaries, taxes and compare the tax burden between both countries.
             </p>
+            <!-- Country Search Dropdown -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="relative" id="country-selector">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="country-search"
+                            placeholder="🔍 Search for a country..."
+                            autocomplete="off"
+                            class="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl text-slate-700 font-medium text-center shadow-lg shadow-slate-200/50 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition-all placeholder:text-slate-400"
+                        >
+                        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                            <iconify-icon icon="lucide:chevron-down" width="20" class="text-slate-400" id="dropdown-chevron"></iconify-icon>
+                        </div>
+                    </div>
+                    <div id="country-dropdown" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-2xl shadow-2xl shadow-slate-300/50 overflow-hidden z-50 max-h-[400px] overflow-y-auto">
+                        <div class="p-2">
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2">Select a country</div>
+                            <div id="country-list" class="space-y-1">
+                                <!-- Countries will be populated by JS -->
+                            </div>
+                            <div id="no-results" class="hidden px-4 py-6 text-center text-slate-400 text-sm">
+                                <iconify-icon icon="lucide:search-x" width="32" class="mb-2 opacity-50"></iconify-icon>
+                                <p>No country found</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#france" class="w-full sm:w-auto px-8 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-indigo-50 hover:border-indigo-300 hover:text-indigo-700 transition-all flex items-center justify-center gap-2">
                     <iconify-icon icon="circle-flags:fr" width="20"></iconify-icon>
@@ -834,6 +864,93 @@
             </div>
         </div>
     </footer>
+
+    <!-- Country Selector Script -->
+    <script>
+        const countries = [
+            { name: 'France', flag: '🇫🇷', url: '/en/france/income-tax/' },
+            { name: 'Morocco', flag: '🇲🇦', url: '/en/morocco/income-tax/' },
+            { name: 'USA (New York)', flag: '🇺🇸', url: '/en/usa/income-tax/' },
+            { name: 'United Kingdom', flag: '🇬🇧', url: '/en/uk/income-tax/' },
+            { name: 'Switzerland (Geneva)', flag: '🇨🇭', url: '/en/switzerland/income-tax/' },
+            { name: 'Dubai', flag: '🇦🇪', url: '/en/dubai/income-tax/' },
+            { name: 'Singapore', flag: '🇸🇬', url: '/en/singapore/income-tax/' },
+            { name: 'Luxembourg', flag: '🇱🇺', url: '/en/luxembourg/income-tax/' },
+            { name: 'Saudi Arabia', flag: '🇸🇦', url: '/en/saudi-arabia/income-tax/' },
+            { name: 'Spain', flag: '🇪🇸', url: '/en/spain/income-tax/' },
+            { name: 'Japan', flag: '🇯🇵', url: '/en/japan/income-tax/' },
+            { name: 'China (Shanghai)', flag: '🇨🇳', url: '/en/china/income-tax/' },
+            { name: 'India', flag: '🇮🇳', url: '/en/india/income-tax/' },
+            { name: 'Pakistan', flag: '🇵🇰', url: '/en/pakistan/income-tax/' },
+            { name: 'Mexico', flag: '🇲🇽', url: '/en/mexico/income-tax/' },
+            { name: 'Brazil', flag: '🇧🇷', url: '/en/brazil/income-tax/' }
+        ];
+
+        const searchInput = document.getElementById('country-search');
+        const dropdown = document.getElementById('country-dropdown');
+        const countryList = document.getElementById('country-list');
+        const noResults = document.getElementById('no-results');
+        const chevron = document.getElementById('dropdown-chevron');
+
+        function renderCountries(filter = '') {
+            const filtered = countries.filter(c =>
+                c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .includes(filter.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+            );
+
+            if (filtered.length === 0) {
+                countryList.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            countryList.innerHTML = filtered.map(country => `
+                <a href="${country.url}" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all group cursor-pointer">
+                    <span class="text-2xl">${country.flag}</span>
+                    <span class="font-medium text-slate-700 group-hover:text-slate-900">${country.name}</span>
+                    <iconify-icon icon="lucide:arrow-right" width="16" class="ml-auto text-slate-300 group-hover:text-indigo-500 group-hover:translate-x-1 transition-all"></iconify-icon>
+                </a>
+            `).join('');
+        }
+
+        function openDropdown() {
+            dropdown.classList.remove('hidden');
+            chevron.style.transform = 'rotate(180deg)';
+            renderCountries(searchInput.value);
+        }
+
+        function closeDropdown() {
+            dropdown.classList.add('hidden');
+            chevron.style.transform = 'rotate(0deg)';
+        }
+
+        searchInput.addEventListener('focus', openDropdown);
+        searchInput.addEventListener('input', () => renderCountries(searchInput.value));
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            const selector = document.getElementById('country-selector');
+            if (!selector.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDropdown();
+                searchInput.blur();
+            }
+            if (e.key === 'Enter') {
+                const firstLink = countryList.querySelector('a');
+                if (firstLink) window.location.href = firstLink.href;
+            }
+        });
+
+        // Initialize
+        renderCountries();
+    </script>
 
 </body>
 </html>

@@ -352,6 +352,16 @@
                                     <div class="text-xs text-slate-400 text-right mt-1" id="brut-horaire-eur">≈ 8,01 €</div>
                                 </div>
                             </div>
+                            <!-- Slider -->
+                            <div class="mt-3">
+                                <input type="range" id="brut-slider" min="36000" max="600000" step="6000" value="180000"
+                                       class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 touch-pan-x"
+                                       style="-webkit-appearance: none; padding: 8px 0;">
+                                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                    <span>3 000 Dh/mois</span>
+                                    <span>50 000 Dh/mois</span>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Salaire Net Row -->
@@ -758,6 +768,7 @@
         const brutAnnuel = document.getElementById('brut-annuel');
         const brutMensuel = document.getElementById('brut-mensuel');
         const brutHoraire = document.getElementById('brut-horaire');
+        const brutSlider = document.getElementById('brut-slider');
         const netAnnuel = document.getElementById('net-annuel');
         const netMensuel = document.getElementById('net-mensuel');
         const netHoraire = document.getElementById('net-horaire');
@@ -877,6 +888,29 @@
         }
 
         // === UPDATE FUNCTIONS ===
+        function updateFromSlider() {
+            if (isUpdating) return;
+            isUpdating = true;
+
+            const brutAn = parseInt(brutSlider.value);
+            const result = calculateNetFromBrut(brutAn);
+
+            const brutMois = brutAn / MONTHS_PER_YEAR;
+            const brutH = brutAn / getHoursPerYear();
+            const netMois = result.net / MONTHS_PER_YEAR;
+            const netH = result.net / getHoursPerYear();
+
+            brutAnnuel.value = formatNumber(brutAn);
+            brutMensuel.value = formatNumber(brutMois);
+            brutHoraire.value = formatDecimal(brutH);
+            netAnnuel.value = formatNumber(result.net);
+            netMensuel.value = formatNumber(netMois);
+            netHoraire.value = formatDecimal(netH);
+
+            updateUI(result);
+            isUpdating = false;
+        }
+
         function updateFromBrutAnnuel() {
             if (isUpdating) return;
             isUpdating = true;
@@ -891,6 +925,7 @@
 
             brutMensuel.value = formatNumber(brutMois);
             brutHoraire.value = formatDecimal(brutH);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
             netAnnuel.value = formatNumber(result.net);
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
@@ -913,6 +948,7 @@
 
             brutAnnuel.value = formatNumber(brutAn);
             brutHoraire.value = formatDecimal(brutH);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
             netAnnuel.value = formatNumber(result.net);
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
@@ -935,6 +971,7 @@
 
             brutAnnuel.value = formatNumber(brutAn);
             brutMensuel.value = formatNumber(brutMois);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
             netAnnuel.value = formatNumber(result.net);
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
@@ -959,6 +996,7 @@
             brutAnnuel.value = formatNumber(brutAn);
             brutMensuel.value = formatNumber(brutMois);
             brutHoraire.value = formatDecimal(brutH);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
             netMensuel.value = formatNumber(netMois);
             netHoraire.value = formatDecimal(netH);
 
@@ -982,6 +1020,7 @@
             brutAnnuel.value = formatNumber(brutAn);
             brutMensuel.value = formatNumber(brutMois);
             brutHoraire.value = formatDecimal(brutH);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
             netAnnuel.value = formatNumber(result.net);
             netHoraire.value = formatDecimal(netH);
 
@@ -1007,6 +1046,7 @@
             brutHoraire.value = formatDecimal(brutH);
             netAnnuel.value = formatNumber(result.net);
             netMensuel.value = formatNumber(netMois);
+            brutSlider.value = Math.min(600000, Math.max(36000, brutAn));
 
             updateUI(result);
             isUpdating = false;
@@ -1151,6 +1191,10 @@
         brutMensuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
             updateFromBrutMensuel();
+        });
+
+        brutSlider.addEventListener('input', () => {
+            updateFromSlider();
         });
 
         brutHoraire.addEventListener('input', (e) => {

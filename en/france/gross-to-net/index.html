@@ -441,40 +441,54 @@
                 </div>
             </div>
 
-            <!-- Details Breakdown -->
+            <!-- Details Breakdown with Pie Chart -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
-                <h2 class="font-semibold text-slate-800 mb-4">Contributions breakdown <span class="text-sm font-normal text-slate-400">(monthly)</span></h2>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-slate-600">Social security</span>
-                        <div class="flex items-center gap-3">
-                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-blue-400 rounded-full" id="bar-secu" style="width: 64%"></div>
+                <h2 class="font-semibold text-slate-800 mb-4">Salary breakdown <span class="text-sm font-normal text-slate-400">(monthly)</span></h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Left: Breakdown -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                <span class="text-sm text-slate-600">Net Salary</span>
                             </div>
-                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-secu">-420 €</span>
+                            <span class="text-sm font-semibold text-emerald-600" id="detail-net">2,340 €</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                                <span class="text-sm text-slate-600">Social security</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700" id="detail-secu">-420 €</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-purple-400"></div>
+                                <span class="text-sm text-slate-600">Pension</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700" id="detail-retraite">-180 €</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <span class="text-sm text-slate-600">Unemployment</span>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700" id="detail-chomage">-60 €</span>
+                        </div>
+                        <div class="border-t pt-3 mt-3 flex items-center justify-between">
+                            <span class="font-semibold text-slate-800">Total contributions</span>
+                            <span class="font-bold text-red-600" id="detail-cotis">-660 €</span>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-slate-600">Supplementary pension</span>
-                        <div class="flex items-center gap-3">
-                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-purple-400 rounded-full" id="bar-retraite" style="width: 27%"></div>
+                    <!-- Right: Pie Chart -->
+                    <div class="flex items-center justify-center">
+                        <div class="relative">
+                            <canvas id="pie-chart" width="220" height="220"></canvas>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span class="text-lg font-bold text-emerald-600" id="pie-center-value">78%</span>
                             </div>
-                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-retraite">-180 €</span>
                         </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-slate-600">Unemployment</span>
-                        <div class="flex items-center gap-3">
-                            <div class="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-amber-400 rounded-full" id="bar-chomage" style="width: 9%"></div>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700 w-20 text-right" id="detail-chomage">-60 €</span>
-                        </div>
-                    </div>
-                    <div class="border-t pt-3 mt-3 flex items-center justify-between">
-                        <span class="font-semibold text-slate-800">Total contributions</span>
-                        <span class="font-bold text-red-600" id="detail-cotis">-660 €</span>
                     </div>
                 </div>
             </div>
@@ -797,23 +811,70 @@
         function updateUI(brutMois, nbMois) {
             const cotisRate = getCotisRate();
             const netRate = 1 - cotisRate;
-            const tempsPartiel = getTempsPartiel();
+            const netMois = brutMois * netRate;
 
-            // Details
+            // Details breakdown
             const secu = brutMois * 0.14;
             const retraite = brutMois * (statutSelect.value === 'cadre' ? 0.08 : 0.06);
             const chomage = brutMois * 0.02;
             const totalCotis = brutMois * cotisRate;
 
+            document.getElementById('detail-net').textContent = formatNumber(netMois) + ' €';
             document.getElementById('detail-secu').textContent = '-' + formatNumber(secu) + ' €';
             document.getElementById('detail-retraite').textContent = '-' + formatNumber(retraite) + ' €';
             document.getElementById('detail-chomage').textContent = '-' + formatNumber(chomage) + ' €';
             document.getElementById('detail-cotis').textContent = '-' + formatNumber(totalCotis) + ' €';
 
-            // Progress bars (relative to total cotis)
-            document.getElementById('bar-secu').style.width = (secu / totalCotis * 100) + '%';
-            document.getElementById('bar-retraite').style.width = (retraite / totalCotis * 100) + '%';
-            document.getElementById('bar-chomage').style.width = (chomage / totalCotis * 100) + '%';
+            // Draw pie chart
+            drawPieChart(netMois, secu, retraite, chomage, brutMois);
+        }
+
+        // === PIE CHART ===
+        function drawPieChart(net, secu, retraite, chomage, total) {
+            const canvas = document.getElementById('pie-chart');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 90;
+            const innerRadius = 55;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Data segments: [value, color]
+            const segments = [
+                [net, '#10b981'],      // emerald-500 - Net
+                [secu, '#60a5fa'],     // blue-400 - Social security
+                [retraite, '#c084fc'], // purple-400 - Pension
+                [chomage, '#fbbf24']   // amber-400 - Unemployment
+            ];
+
+            let currentAngle = -Math.PI / 2; // Start from top
+
+            segments.forEach(([value, color]) => {
+                const sliceAngle = (value / total) * 2 * Math.PI;
+
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.fill();
+
+                currentAngle += sliceAngle;
+            });
+
+            // Draw inner circle (donut hole)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, innerRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+
+            // Update center percentage
+            const netPercent = Math.round((net / total) * 100);
+            document.getElementById('pie-center-value').textContent = netPercent + '%';
         }
 
         // === EVENT LISTENERS ===

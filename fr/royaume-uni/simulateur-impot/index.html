@@ -305,8 +305,8 @@
                     <!-- Left: Calculator -->
                     <div class="lg:col-span-2">
                         <!-- Income Inputs -->
-                <div class="mb-8">
-                    <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="mb-8">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
                         <!-- Monthly Input -->
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
@@ -325,16 +325,16 @@
                                 <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">£</span>
                             </div>
                         </div>
-                    </div>
-                    <input type="range" id="income-slider" min="0" max="225000" step="1000" value="45000"
+                        </div>
+                        <input type="range" id="income-slider" min="0" max="225000" step="1000" value="45000"
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
-                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span> | <span id="conv-gross-usd">~$0</span></p>
-                </div>
+                        <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span> | <span id="conv-gross-usd">~$0</span></p>
+                            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 
-                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
                         <div class="flex items-center gap-2 mb-3">
                             <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
                                 <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
@@ -344,9 +344,9 @@
                         <p class="text-2xl font-bold text-indigo-600" id="income-tax">£0</p>
                         <p class="text-xs mt-1"><span id="conv-tax-eur" class="text-slate-400">~0 EUR</span><span id="conv-tax-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
-                    </div>
+                        </div>
 
-                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
                         <div class="flex items-center gap-2 mb-3">
                             <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
                                 <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
@@ -356,9 +356,9 @@
                         <p class="text-2xl font-bold text-amber-600" id="social-tax">£0</p>
                         <p class="text-xs mt-1"><span id="conv-social-eur" class="text-slate-400">~0 EUR</span><span id="conv-social-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-xs text-slate-500 mt-1">Assurance Nationale : 8% (£12,570 - £50,270) + 2% au-dela</p>
-                    </div>
+                        </div>
 
-                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
+                        <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5 md:col-span-2">
                         <div class="flex items-center gap-2 mb-3">
                             <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
                                 <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
@@ -368,27 +368,27 @@
                         <p class="text-3xl font-bold text-emerald-600" id="net-income">£0</p>
                         <p class="text-xs mt-1"><span id="conv-net-eur" class="text-slate-400">~0 EUR</span><span id="conv-net-usd" class="text-slate-400">~$0</span></p>
                         <p class="text-sm text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">£0</span> (<span id="conv-monthly-eur" class="text-slate-400">~0 EUR</span><span id="conv-monthly-usd" class="text-slate-400">~$0</span>)</p>
-                    </div>
-                </div>
+                        </div>
+                            </div>
 
-                <div class="bg-slate-50 rounded-xl p-4">
-                    <div class="flex justify-between items-center mb-2">
+                            <div class="bg-slate-50 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
                         <span class="text-lg font-bold text-slate-900" id="total-tax">£0</span>
-                    </div>
-                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        </div>
+                        <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
                         <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
-                    </div>
-                    <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
-                    <div class="flex items-center justify-end gap-2 mt-3">
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                        <div class="flex items-center justify-end gap-2 mt-3">
                         <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
                             <span class="text-blue-400">≈</span> <span id="conv-total-eur">0 EUR</span>
                         </span>
                         <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700">
                             <span class="text-green-400">≈</span> <span id="conv-total-usd">$0</span>
                         </span>
-                    </div>
-                </div>
+                        </div>
+                            </div>
                     </div>
                     <!-- Right: Chart -->
                     <div class="flex items-start justify-center">

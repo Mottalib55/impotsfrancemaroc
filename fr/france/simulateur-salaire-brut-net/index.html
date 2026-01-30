@@ -341,9 +341,14 @@
 
                         <!-- Salaire Brut Row -->
                         <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
-                                <span class="font-semibold text-slate-800">Salaire Brut</span>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                                    <span class="font-semibold text-slate-800">Salaire Brut</span>
+                                </div>
+                                <button type="button" onclick="setSMIC()" class="px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors">
+                                    SMIC 2026
+                                </button>
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
@@ -854,6 +859,18 @@
 
         function updateFromBrutMensuel() {
             syncAll('brutMensuel', parseNumber(brutMensuel.value));
+        }
+
+        // === SMIC PRESET ===
+        function setSMIC() {
+            // SMIC 2026: 1 802 € brut mensuel, 35h, non-cadre, 12 mois, 100%
+            setStatut('noncadre');
+            setNombreMois(12);
+            document.getElementById('heures').value = 35;
+            document.getElementById('heures-display').textContent = '35';
+            document.getElementById('temps-partiel').value = 100;
+            updateTempsPartiel(100);
+            syncAll('brutMensuel', 1802);
         }
 
         // === UI UPDATE ===

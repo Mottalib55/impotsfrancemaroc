@@ -804,14 +804,14 @@
             const netMois = netAn / nbMois;
             const netH = netAn / hoursYear;
 
-            // Update all fields
+            // Update all fields (with null checks for optional fields)
             brutAnnuel.value = formatNumber(brutAn);
             brutMensuel.value = formatNumber(brutMois);
-            brutHoraire.value = formatDecimal(brutH);
+            if (brutHoraire) brutHoraire.value = formatDecimal(brutH);
             brutSlider.value = Math.min(150000, Math.max(15000, brutAn));
             netAnnuel.value = formatNumber(netAn);
             netMensuel.value = formatNumber(netMois);
-            netHoraire.value = formatDecimal(netH);
+            if (netHoraire) netHoraire.value = formatDecimal(netH);
 
             updateUI(brutMois, nbMois);
         }
@@ -859,10 +859,12 @@
             syncAll('brutMensuel', parseNumber(e.target.value));
         });
 
-        brutHoraire.addEventListener('input', (e) => {
-            e.target.value = formatInputDecimal(e.target.value);
-            syncAll('brutHoraire', parseNumber(e.target.value));
-        });
+        if (brutHoraire) {
+            brutHoraire.addEventListener('input', (e) => {
+                e.target.value = formatInputDecimal(e.target.value);
+                syncAll('brutHoraire', parseNumber(e.target.value));
+            });
+        }
 
         netAnnuel.addEventListener('input', (e) => {
             e.target.value = formatInputNumber(e.target.value);
@@ -874,10 +876,12 @@
             syncAll('netMensuel', parseNumber(e.target.value));
         });
 
-        netHoraire.addEventListener('input', (e) => {
-            e.target.value = formatInputDecimal(e.target.value);
-            syncAll('netHoraire', parseNumber(e.target.value));
-        });
+        if (netHoraire) {
+            netHoraire.addEventListener('input', (e) => {
+                e.target.value = formatInputDecimal(e.target.value);
+                syncAll('netHoraire', parseNumber(e.target.value));
+            });
+        }
 
         brutSlider.addEventListener('input', updateFromSlider);
         tempsPartielInput.addEventListener('input', () => updateTempsPartiel(tempsPartielInput.value));

@@ -404,6 +404,25 @@
                     </div>
                 </div>
 
+                <!-- Pie Chart -->
+                <div class="flex flex-col items-center my-6">
+                    <canvas id="pie-chart" width="200" height="200"></canvas>
+                    <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs">
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                            <span class="text-slate-600">Net <span id="legend-net" class="font-medium">0%</span></span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                            <span class="text-slate-600">Tax <span id="legend-tax" class="font-medium">0%</span></span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <span class="text-slate-600">Social <span id="legend-social" class="font-medium">0%</span></span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Summary Bar -->
                 <div class="bg-slate-50 rounded-xl p-4">
                     <div class="flex justify-between items-center mb-2">
@@ -689,6 +708,73 @@ function calculateBracketTax(income, brackets) {
             const slider = document.getElementById('income-slider');
             const percent = (income / 500000) * 100;
             slider.style.background = `linear-gradient(to right, #8b5cf6 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            // Draw pie chart
+            drawPieChart(netIncome, federalTax + totalStateTax, fica, income);
+        }
+
+        function drawPieChart(net, tax, social, total) {
+            const canvas = document.getElementById('pie-chart');
+            if (!canvas || total <= 0) return;
+            const ctx = canvas.getContext('2d');
+
+            const dpr = window.devicePixelRatio || 1;
+            const size = 200;
+            canvas.width = size * dpr;
+            canvas.height = size * dpr;
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = 80;
+            const innerRadius = 50;
+
+            ctx.clearRect(0, 0, size, size);
+
+            const netRate = net / total;
+            const taxRate = tax / total;
+            const socialRate = social / total;
+
+            let startAngle = -Math.PI / 2;
+
+            // Net (green)
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, startAngle + netRate * Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = '#10b981';
+            ctx.fill();
+            startAngle += netRate * Math.PI * 2;
+
+            // Tax (indigo)
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, startAngle + taxRate * Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = '#6366f1';
+            ctx.fill();
+            startAngle += taxRate * Math.PI * 2;
+
+            // Social (amber)
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, startAngle + socialRate * Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = '#f59e0b';
+            ctx.fill();
+
+            // Inner circle (donut hole)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, innerRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+
+            // Update legend
+            document.getElementById('legend-net').textContent = Math.round(netRate * 100) + '%';
+            document.getElementById('legend-tax').textContent = Math.round(taxRate * 100) + '%';
+            document.getElementById('legend-social').textContent = Math.round(socialRate * 100) + '%';
         }
 
         // Event listeners

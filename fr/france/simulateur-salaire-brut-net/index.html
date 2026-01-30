@@ -335,10 +335,9 @@
 
             <!-- Main Calculator Section -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
-                <div class="max-w-2xl mx-auto">
-
-                    <!-- Inputs -->
-                    <div class="space-y-5">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Left: Inputs (2 cols) -->
+                    <div class="md:col-span-2 space-y-5">
 
                         <!-- Salaire Brut Row -->
                         <div>
@@ -387,9 +386,23 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Options -->
-                        <div class="bg-slate-50 rounded-xl p-4 mt-2">
+                    <!-- Right: Pie Chart (1 col) -->
+                    <div class="flex items-center justify-center">
+                        <div class="relative">
+                            <canvas id="pie-chart" width="200" height="200"></canvas>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span class="text-xl font-bold text-emerald-600" id="pie-center-value">78%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options (full width below) -->
+                <div class="mt-6">
+                    <div class="bg-slate-50 rounded-xl p-4">
                             <!-- Première ligne : Statut + Heures -->
                             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
                                 <!-- Statut professionnel -->
@@ -469,60 +482,45 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
-            <!-- Details Breakdown with Pie Chart -->
+            <!-- Details Breakdown -->
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8">
-                <h2 class="font-semibold text-slate-800 mb-4">Répartition de votre salaire <span class="text-sm font-normal text-slate-400">(mensuel)</span></h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Left: Breakdown -->
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                                <span class="text-sm text-slate-600">Salaire Net</span>
-                            </div>
-                            <span class="text-sm font-semibold text-emerald-600" id="detail-net">2 340 €</span>
+                <h2 class="font-semibold text-slate-800 mb-4">Détail des cotisations <span class="text-sm font-normal text-slate-400">(mensuel)</span></h2>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                            <span class="text-sm text-slate-600">Salaire Net</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-blue-400"></div>
-                                <span class="text-sm text-slate-600">Sécurité sociale</span>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700" id="detail-secu">-420 €</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-purple-400"></div>
-                                <span class="text-sm text-slate-600">Retraite</span>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700" id="detail-retraite">-180 €</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <span class="text-sm text-slate-600">Chômage</span>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700" id="detail-chomage">-60 €</span>
-                        </div>
-                        <div class="border-t pt-3 mt-3 flex items-center justify-between">
-                            <span class="font-semibold text-slate-800">Total cotisations</span>
-                            <span class="font-bold text-red-600" id="detail-cotis">-660 €</span>
-                        </div>
+                        <span class="text-sm font-semibold text-emerald-600" id="detail-net">2 340 €</span>
                     </div>
-                    <!-- Right: Pie Chart -->
-                    <div class="flex items-center justify-center">
-                        <div class="relative">
-                            <canvas id="pie-chart" width="220" height="220"></canvas>
-                            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                                <span class="text-xs text-slate-400">Net</span>
-                                <span class="text-lg font-bold text-emerald-600" id="pie-center-value">78%</span>
-                            </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-blue-400"></div>
+                            <span class="text-sm text-slate-600">Sécurité sociale</span>
                         </div>
+                        <span class="text-sm font-medium text-slate-700" id="detail-secu">-420 €</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-purple-400"></div>
+                            <span class="text-sm text-slate-600">Retraite</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700" id="detail-retraite">-180 €</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <span class="text-sm text-slate-600">Chômage</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700" id="detail-chomage">-60 €</span>
+                    </div>
+                    <div class="border-t pt-3 mt-3 flex items-center justify-between">
+                        <span class="font-semibold text-slate-800">Total cotisations</span>
+                        <span class="font-bold text-red-600" id="detail-cotis">-660 €</span>
                     </div>
                 </div>
             </div>
@@ -869,8 +867,8 @@
             const ctx = canvas.getContext('2d');
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
-            const radius = 90;
-            const innerRadius = 55;
+            const radius = 85;
+            const innerRadius = 50;
 
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);

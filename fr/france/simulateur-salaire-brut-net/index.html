@@ -862,9 +862,9 @@
             const netRate = 1 - cotisRate;
             const netMois = brutMois * netRate;
 
-            // Details breakdown
+            // Details breakdown (cadre: 14+9+2=25%, non-cadre: 14+6+2=22%)
             const secu = brutMois * 0.14;
-            const retraite = brutMois * (statutSelect.value === 'cadre' ? 0.08 : 0.06);
+            const retraite = brutMois * (statutSelect.value === 'cadre' ? 0.09 : 0.06);
             const chomage = brutMois * 0.02;
             const totalCotis = brutMois * cotisRate;
 

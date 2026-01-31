@@ -610,24 +610,112 @@
 
             <!-- Comprendre l'impot aux USA -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Le systeme fiscal americain explique</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite americaine</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Les Etats-Unis appliquent une fiscalite a trois niveaux : federal, etatique et parfois local. Contrairement a de nombreux pays, l'impot est base sur la <strong>citoyennete</strong> et non uniquement sur la residence, ce qui signifie que les citoyens americains sont imposes sur leurs revenus mondiaux, meme s'ils vivent a l'etranger.</p>
+                    <p>Les Etats-Unis ont un systeme fiscal complexe a <strong>trois niveaux</strong> : federal, etatique et local. Particularite unique : l'impot est base sur la <strong>citoyennete</strong>, pas seulement la residence. Un citoyen americain vivant a Paris reste redevable de l'impot americain sur ses revenus mondiaux.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Optimisation fiscale legale</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>401(k) et IRA</strong> : epargne retraite deductible jusqu'a $23,000/an</li>
-                        <li><strong>HSA</strong> : compte sante triple avantage fiscal pour les assurances a franchise elevee</li>
-                        <li><strong>Charitable giving</strong> : dons deductibles jusqu'a 60% du revenu brut ajuste</li>
-                        <li><strong>SALT deduction</strong> : deduction des impots locaux plafonnee a $10,000</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot federal 2026</h3>
+                    <p>L'impot federal utilise un systeme de <strong>tranches marginales</strong>. Seule la portion du revenu dans chaque tranche est imposee au taux correspondant :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>$0 - $11,600 : <strong>10%</strong></li>
+                            <li>$11,600 - $47,150 : <strong>12%</strong></li>
+                            <li>$47,150 - $100,525 : <strong>22%</strong></li>
+                            <li>$100,525 - $191,950 : <strong>24%</strong></li>
+                            <li>$191,950 - $243,725 : <strong>32%</strong></li>
+                            <li>$243,725 - $609,350 : <strong>35%</strong></li>
+                            <li>Au-dela de $609,350 : <strong>37%</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Etats sans impot sur le revenu</h3>
+                    <p>Sept Etats offrent <strong>0% d'impot sur le revenu</strong> :</p>
+                    <div class="grid grid-cols-2 gap-2 my-3">
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Texas</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Floride</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Nevada</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Washington</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Wyoming</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Alaska</div>
+                        <div class="bg-emerald-50 rounded p-2 text-center text-xs font-medium text-emerald-700">Dakota du Sud</div>
+                        <div class="bg-amber-50 rounded p-2 text-center text-xs font-medium text-amber-700">Tennessee*</div>
+                    </div>
+                    <p class="text-xs text-slate-500">*Tennessee : uniquement interets et dividendes</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations FICA : Social Security et Medicare</h3>
+                    <p>En plus de l'impot sur le revenu, tous les salaries paient les cotisations FICA :</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Social Security (6.2%)</strong> : finance les retraites. Plafond a $168,600 de salaire en 2026. Au-dela, plus de cotisation.</li>
+                        <li><strong>Medicare (1.45%)</strong> : assurance sante pour les 65+. Pas de plafond. +0.9% supplementaire si revenu > $200,000.</li>
+                        <li><strong>L'employeur paie egalement</strong> 6.2% + 1.45% de son cote (total 15.3% partages).</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Etats sans impot sur le revenu</h3>
-                    <p>Sept Etats n'imposent pas les revenus : <strong>Texas, Floride, Nevada, Washington, Wyoming, Alaska et Dakota du Sud</strong>. Le Tennessee et le New Hampshire n'imposent que les dividendes et interets.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Strategies d'optimisation fiscale legales</h3>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Declaration et paiement</h3>
-                    <p>La declaration annuelle (Form 1040) est due le 15 avril. Les salaries beneficient du withholding (retenue a la source), mais les independants doivent effectuer des paiements trimestriels estimes. Les penalites pour sous-paiement peuvent atteindre 25% du montant du.</p>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">401(k) - Epargne retraite employeur</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Contribution max 2026 : <strong>$23,000</strong> ($30,500 si 50+ ans)</li>
+                            <li>Deduit du revenu imposable = economie immediate</li>
+                            <li>Croissance non imposee jusqu'au retrait</li>
+                            <li>Beaucoup d'employeurs "matchent" vos contributions (argent gratuit!)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">IRA - Individual Retirement Account</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Traditional IRA</strong> : contribution deductible, imposee au retrait</li>
+                            <li><strong>Roth IRA</strong> : pas de deduction, mais retraits 100% non imposes</li>
+                            <li>Limite 2026 : <strong>$7,000</strong> ($8,000 si 50+ ans)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">HSA - Health Savings Account</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li>Triple avantage fiscal : deductible, croissance non imposee, retraits medicaux non imposes</li>
+                            <li>Necessite une assurance "High Deductible"</li>
+                            <li>Limite 2026 : <strong>$4,300</strong> individuel / $8,550 famille</li>
+                            <li>Fonds portables et cumulables a vie</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Standard vs Itemized Deductions</h3>
+                    <p>Vous choisissez entre :</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Standard Deduction 2026</strong> : $14,600 (celibataire) / $29,200 (couple marie)</li>
+                        <li><strong>Itemized Deductions</strong> : detail de vos depenses deductibles (interets hypothecaires, impots locaux plafonnes a $10,000, dons charitables, frais medicaux > 7.5% du revenu)</li>
+                    </ul>
+                    <p class="mt-2">La plupart des contribuables utilisent la Standard Deduction car plus simple et souvent plus avantageuse.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Dates cles et penalites</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>15 avril</strong> : date limite declaration annuelle (Form 1040)</li>
+                        <li><strong>Extension possible</strong> : jusqu'au 15 octobre (mais paiement du le 15 avril)</li>
+                        <li><strong>Penalite retard</strong> : 5%/mois du montant du, max 25%</li>
+                        <li><strong>Penalite sous-paiement</strong> : ~8% d'interet annuel</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs USA</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">USA (NY)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Taux max</td><td class="border p-2">45%</td><td class="border p-2">37% fed + 10% state</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">7.65%</td></tr>
+                                <tr><td class="border p-2">Epargne retraite deductible</td><td class="border p-2">Limitee (PER)</td><td class="border p-2">$23,000+ (401k)</td></tr>
+                                <tr><td class="border p-2">Impot citoyennete</td><td class="border p-2">Non</td><td class="border p-2">Oui</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

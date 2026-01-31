@@ -447,32 +447,174 @@
 
             <!-- Comprendre l'impot en Suisse -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Comprendre la fiscalite suisse</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite suisse</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Suisse possede un systeme fiscal unique a <strong>trois niveaux</strong> : federal, cantonal et communal. Chaque canton fixe ses propres taux, ce qui cree des ecarts significatifs de fiscalite selon le lieu de residence.</p>
+                    <p>La Suisse possede un systeme fiscal unique a <strong>trois niveaux independants</strong> : federal, cantonal et communal. Votre lieu de residence determine l'essentiel de votre charge fiscale, avec des ecarts pouvant aller du simple au double selon le canton.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Specificites cantonales</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>Geneve</strong> : parmi les cantons les plus imposes (~35% effectif pour hauts revenus)</li>
-                        <li><strong>Zurich</strong> : fiscalite intermediaire (~25-30%)</li>
-                        <li><strong>Zoug, Schwyz</strong> : cantons tres avantageux (~15-20%)</li>
-                        <li>L'impot cantonal represente 70-80% de l'impot total</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot suisse</h3>
+                    <div class="grid md:grid-cols-3 gap-3 my-3">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
+                            <h4 class="font-semibold text-red-800 text-xs mb-1">Federal</h4>
+                            <p class="text-lg font-bold text-red-600">11.5%</p>
+                            <p class="text-xs text-red-600">max (progressif)</p>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Cantonal</h4>
+                            <p class="text-lg font-bold text-blue-600">~15-35%</p>
+                            <p class="text-xs text-blue-600">varie par canton</p>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
+                            <h4 class="font-semibold text-green-800 text-xs mb-1">Communal</h4>
+                            <p class="text-lg font-bold text-green-600">~50-150%</p>
+                            <p class="text-xs text-green-600">du cantonal</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison des cantons (taux effectifs)</h3>
+                    <p>Pour un salaire de CHF 100,000, voici l'impot total approximatif :</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Canton</th>
+                                    <th class="border p-2 text-left">Chef-lieu</th>
+                                    <th class="border p-2 text-left">Taux effectif</th>
+                                    <th class="border p-2 text-left">Impot annuel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-emerald-50"><td class="border p-2 font-medium">Zoug</td><td class="border p-2">Zoug</td><td class="border p-2 text-emerald-600">~12%</td><td class="border p-2">~CHF 12,000</td></tr>
+                                <tr class="bg-emerald-50"><td class="border p-2 font-medium">Schwyz</td><td class="border p-2">Schwyz</td><td class="border p-2 text-emerald-600">~14%</td><td class="border p-2">~CHF 14,000</td></tr>
+                                <tr class="bg-emerald-50"><td class="border p-2 font-medium">Nidwald</td><td class="border p-2">Stans</td><td class="border p-2 text-emerald-600">~15%</td><td class="border p-2">~CHF 15,000</td></tr>
+                                <tr><td class="border p-2 font-medium">Zurich</td><td class="border p-2">Zurich</td><td class="border p-2">~22%</td><td class="border p-2">~CHF 22,000</td></tr>
+                                <tr><td class="border p-2 font-medium">Vaud</td><td class="border p-2">Lausanne</td><td class="border p-2">~30%</td><td class="border p-2">~CHF 30,000</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-medium">Geneve</td><td class="border p-2">Geneve</td><td class="border p-2 text-amber-600">~33%</td><td class="border p-2">~CHF 33,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500">Demenager de Geneve a Zoug peut economiser ~CHF 20,000/an d'impots!</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (AVS/AI/APG)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800 text-xs mb-2">Part employe</h4>
+                                <ul class="text-xs space-y-1 text-blue-700">
+                                    <li>AVS/AI/APG : <strong>5.3%</strong></li>
+                                    <li>Chomage (AC) : <strong>1.1%</strong></li>
+                                    <li>LPP (2e pilier) : <strong>variable</strong></li>
+                                    <li><strong>Total : ~6.4%</strong> + LPP</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800 text-xs mb-2">Part employeur</h4>
+                                <ul class="text-xs space-y-1 text-blue-700">
+                                    <li>AVS/AI/APG : <strong>5.3%</strong></li>
+                                    <li>Chomage (AC) : <strong>1.1%</strong></li>
+                                    <li>LPP + LAA : <strong>variable</strong></li>
+                                    <li>Allocations familiales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Les 3 piliers de la prevoyance suisse</h3>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-slate-800 mb-3">1er Pilier - AVS (obligatoire)</h4>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>Retraite de base universelle</li>
+                            <li>Rente max : CHF 2,450/mois (2024)</li>
+                            <li>Finance aussi l'AI (invalidite)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-3">2e Pilier - LPP (obligatoire des CHF 22,050)</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Caisse de pension professionnelle</li>
+                            <li>Cotisations partagees employe/employeur</li>
+                            <li>Capital utilisable pour achat immobilier</li>
+                            <li>Rachat possible = <strong>deduction fiscale massive</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-emerald-800 mb-3">3e Pilier - Pilier 3a (facultatif)</h4>
+                        <ul class="text-xs space-y-1 text-emerald-700">
+                            <li>Epargne retraite privee <strong>100% deductible</strong></li>
+                            <li>Salaries avec 2e pilier : max <strong>CHF 7,056/an</strong> (2024)</li>
+                            <li>Independants sans 2e pilier : max <strong>CHF 35,280/an</strong></li>
+                            <li>Imposition avantageuse au retrait (taux reduit)</li>
+                            <li><strong>Conseil</strong> : ouvrir plusieurs comptes 3a pour retraits echelonnes</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Imposition a la source vs declaration ordinaire</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-amber-800 text-xs mb-2">A la source (Quellensteuer)</h4>
+                            <ul class="text-xs space-y-1 text-amber-700">
+                                <li>Etrangers permis B</li>
+                                <li>Revenu < CHF 120,000</li>
+                                <li>Prelevement automatique</li>
+                                <li>Peu de deductions possibles</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-xs mb-2">Declaration ordinaire</h4>
+                            <ul class="text-xs space-y-1 text-green-700">
+                                <li>Suisses et permis C</li>
+                                <li>Ou revenu > CHF 120,000</li>
+                                <li>Toutes deductions possibles</li>
+                                <li>3e pilier, rachats LPP...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-xs bg-blue-50 border border-blue-200 rounded p-2"><strong>Astuce :</strong> Demandez une TOU (Taxation Ordinaire Ulterieure) meme si a la source pour beneficier des deductions!</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>3e pilier 3a</strong> : CHF 7,056 max</li>
+                        <li><strong>Rachat 2e pilier</strong> : illimite (lacunes de cotisation)</li>
+                        <li><strong>Frais professionnels</strong> : forfait ou frais effectifs</li>
+                        <li><strong>Frais de transport</strong> : selon distance domicile-travail</li>
+                        <li><strong>Frais de repas</strong> : si pas de cantine</li>
+                        <li><strong>Interets hypothecaires</strong> : deductibles mais valeur locative imposee</li>
+                        <li><strong>Frais de garde</strong> : max CHF 10,100 (federal)</li>
+                        <li><strong>Dons</strong> : jusqu'a 20% du revenu net</li>
+                        <li><strong>Formation continue</strong> : max CHF 12,000</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Optimisation fiscale legale</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>3e pilier (3a)</strong> : epargne retraite deductible (max CHF 7,056/an pour salaries)</li>
-                        <li><strong>Frais professionnels</strong> : transports, repas, formation</li>
-                        <li><strong>Interets hypothecaires</strong> : deductibles du revenu imposable</li>
-                        <li><strong>Dons</strong> : deductibles jusqu'a 20% du revenu net</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Forfait fiscal (Imposition d'apres la depense)</h3>
+                    <p>Regime special pour etrangers fortunes non actifs en Suisse :</p>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>Base d'imposition = depenses de train de vie (min 7x loyer)</li>
+                        <li>Minimum federal : CHF 400,000 de revenu fictif</li>
+                        <li>Ideal pour grandes fortunes avec revenus etrangers</li>
+                        <li>Supprime dans certains cantons (Zurich, Schaffhouse...)</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Imposition a la source vs declaration</h3>
-                    <p>Les etrangers avec permis B sont imposes a la source (prelevement automatique). Au-dela de CHF 120,000 de revenu annuel ou avec permis C, une declaration ordinaire est requise, permettant plus de deductions.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Forfait fiscal</h3>
-                    <p>Les etrangers fortunés non actifs peuvent beneficier d'un forfait fiscal base sur leur train de vie plutot que leurs revenus reels - une particularite attractive pour les grandes fortunes.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Suisse</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Suisse (Geneve)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Salaire €100k</td><td class="border p-2">~€68k net</td><td class="border p-2">~CHF 72k net</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">~6.4%</td></tr>
+                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">~40% (GE)</td></tr>
+                                <tr><td class="border p-2">Epargne retraite deductible</td><td class="border p-2">PER limite</td><td class="border p-2">3a + rachats LPP</td></tr>
+                                <tr><td class="border p-2">Impot fortune</td><td class="border p-2">IFI immobilier</td><td class="border p-2">Fortune totale</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

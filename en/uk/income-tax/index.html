@@ -545,29 +545,134 @@
                 </div>
             </div>
 
-            <!-- Understanding UK Income Tax -->
+            <!-- Understanding UK Income Tax - Comprehensive Guide -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Understanding UK Income Tax</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to UK Taxation 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>The UK tax system uses the <strong>PAYE</strong> (Pay As You Earn) system, where tax is automatically deducted from your salary by your employer. This makes tax compliance straightforward for most employees.</p>
+                    <p>The UK operates the <strong>PAYE (Pay As You Earn)</strong> system, where income tax is automatically deducted from your salary by your employer. Combined with National Insurance contributions, it forms a comprehensive social security system covering healthcare (NHS), state pension, and unemployment benefits.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Tax-Efficient Savings</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>ISA (Individual Savings Account)</strong>: Save up to £20,000/year tax-free</li>
-                        <li><strong>Pension contributions</strong>: Deducted before tax, reducing your taxable income</li>
-                        <li><strong>Marriage Allowance</strong>: Transfer 10% of Personal Allowance to your spouse</li>
-                        <li><strong>Salary sacrifice</strong>: Exchange salary for benefits like childcare vouchers</li>
-                    </ul>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">2026 Income Tax Bands (England, Wales & Northern Ireland)</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Band</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Taxable Income</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5 font-medium text-emerald-700">Personal Allowance</td><td class="border border-slate-200 px-3 py-1.5 text-center">Up to £12,570</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">0%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5 font-medium text-blue-700">Basic Rate</td><td class="border border-slate-200 px-3 py-1.5 text-center">£12,571 - £50,270</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-blue-600">20%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5 font-medium text-violet-700">Higher Rate</td><td class="border border-slate-200 px-3 py-1.5 text-center">£50,271 - £125,140</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-violet-600">40%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5 font-medium text-rose-700">Additional Rate</td><td class="border border-slate-200 px-3 py-1.5 text-center">Over £125,140</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-rose-600">45%</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-slate-500 mt-2"><strong>Personal Allowance taper:</strong> Reduced by £1 for every £2 earned over £100,000. Zero allowance at £125,140+ (effective 60% marginal rate between £100k-£125k).</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Scotland Differences</h3>
-                    <p>Scotland has its own income tax rates with additional bands (19% Starter Rate, 21% Intermediate Rate). Scottish taxpayers use a tax code starting with 'S'.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">National Insurance Contributions (NIC) 2026</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <p class="text-sm text-amber-800 mb-2"><strong>Class 1 Employee Contributions:</strong></p>
+                        <ul class="text-xs text-amber-700 space-y-1">
+                            <li><strong>Primary Threshold:</strong> £12,570/year (no NI below this)</li>
+                            <li><strong>12%</strong> on earnings between £12,570 - £50,270</li>
+                            <li><strong>2%</strong> on earnings above £50,270</li>
+                        </ul>
+                        <p class="text-xs text-amber-600 mt-2">Employer pays 13.8% (Secondary Threshold: £9,100)</p>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Self-Assessment</h3>
-                    <p>If you have additional income (rental, freelance, investments), you must file a Self-Assessment tax return by 31 January. PAYE employees with only employment income typically don't need to file.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Understanding Your Tax Code</h3>
+                    <div class="grid grid-cols-2 gap-2 my-3">
+                        <div class="bg-blue-50 rounded p-2 text-center text-xs"><span class="font-bold text-blue-700">1257L</span><br><span class="text-blue-600">Standard code (£12,570 allowance)</span></div>
+                        <div class="bg-violet-50 rounded p-2 text-center text-xs"><span class="font-bold text-violet-700">S1257L</span><br><span class="text-violet-600">Scottish taxpayer</span></div>
+                        <div class="bg-amber-50 rounded p-2 text-center text-xs"><span class="font-bold text-amber-700">BR</span><br><span class="text-amber-600">Basic rate only (second job)</span></div>
+                        <div class="bg-rose-50 rounded p-2 text-center text-xs"><span class="font-bold text-rose-700">0T</span><br><span class="text-rose-600">No Personal Allowance</span></div>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Non-Residents</h3>
-                    <p>Non-UK residents are only taxed on UK-sourced income. The UK has tax treaties with over 130 countries to prevent double taxation for expats and international workers.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Optimization Strategies</h3>
+
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-emerald-800 mb-2">ISA - Individual Savings Account</h4>
+                        <ul class="text-xs text-emerald-700 space-y-1">
+                            <li><strong>Annual allowance:</strong> £20,000 across all ISA types</li>
+                            <li><strong>Cash ISA:</strong> Tax-free interest on savings</li>
+                            <li><strong>Stocks & Shares ISA:</strong> Tax-free capital gains and dividends</li>
+                            <li><strong>Lifetime ISA:</strong> 25% government bonus for first home or retirement</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Pension Contributions</h4>
+                        <ul class="text-xs text-blue-700 space-y-1">
+                            <li><strong>Annual Allowance:</strong> £60,000 or 100% of earnings (whichever is lower)</li>
+                            <li><strong>Tax Relief:</strong> Contributions reduce taxable income</li>
+                            <li><strong>Salary Sacrifice:</strong> Also saves National Insurance</li>
+                            <li><strong>Employer Match:</strong> Minimum 3% under auto-enrolment</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Marriage Allowance</h4>
+                        <ul class="text-xs text-indigo-700 space-y-1">
+                            <li>Transfer up to £1,260 of Personal Allowance to your spouse</li>
+                            <li>Worth up to £252/year in tax savings</li>
+                            <li>Lower earner must earn less than £12,570</li>
+                            <li>Higher earner must be a basic rate taxpayer only</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Scotland Income Tax Rates 2026</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Band</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Income</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Starter</td><td class="border border-slate-200 px-3 py-1.5 text-center">£12,571 - £14,876</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">19%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Basic</td><td class="border border-slate-200 px-3 py-1.5 text-center">£14,877 - £26,561</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">20%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Intermediate</td><td class="border border-slate-200 px-3 py-1.5 text-center">£26,562 - £43,662</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">21%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Higher</td><td class="border border-slate-200 px-3 py-1.5 text-center">£43,663 - £75,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">42%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Advanced</td><td class="border border-slate-200 px-3 py-1.5 text-center">£75,001 - £125,140</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">45%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Top</td><td class="border border-slate-200 px-3 py-1.5 text-center">Over £125,140</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">48%</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">UK vs France Comparison (£50,000 salary)</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Category</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">UK</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">France</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Income Tax</td><td class="border border-slate-200 px-3 py-1.5 text-center">~£7,486</td><td class="border border-slate-200 px-3 py-1.5 text-center">~£4,100</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Social Contributions</td><td class="border border-slate-200 px-3 py-1.5 text-center">~£4,379 (NI)</td><td class="border border-slate-200 px-3 py-1.5 text-center">~£11,000</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Total Deductions</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-indigo-600">~23.7%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-indigo-600">~30%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Healthcare</td><td class="border border-slate-200 px-3 py-1.5 text-center">NHS (free)</td><td class="border border-slate-200 px-3 py-1.5 text-center">Securite Sociale</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Pension</td><td class="border border-slate-200 px-3 py-1.5 text-center">State + Workplace</td><td class="border border-slate-200 px-3 py-1.5 text-center">Retraite obligatoire</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Self-Assessment Requirements</h3>
+                    <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 my-3">
+                        <p class="text-sm text-rose-800 mb-2"><strong>You must file a tax return if:</strong></p>
+                        <ul class="text-xs text-rose-700 space-y-1">
+                            <li>Self-employed with income over £1,000</li>
+                            <li>Partner in a business partnership</li>
+                            <li>Untaxed income over £2,500 (rent, dividends)</li>
+                            <li>Total income over £150,000</li>
+                            <li>Claiming tax relief on expenses over £2,500</li>
+                        </ul>
+                        <p class="text-xs text-rose-600 mt-2"><strong>Deadline:</strong> 31 January (online) | <strong>Penalty:</strong> £100 for late filing</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Non-Dom Status and Remittance Basis</h3>
+                    <p>UK residents not domiciled in the UK can use the <strong>remittance basis</strong> - only paying UK tax on foreign income brought into the UK. Changes from April 2025 transition to a new residence-based system.</p>
                 </div>
             </div>
 

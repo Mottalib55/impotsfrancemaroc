@@ -386,6 +386,16 @@
                             </div>
                         </div>
 
+                        <!-- Salary Slider -->
+                        <div class="pt-2">
+                            <input type="range" id="salary-slider" min="0" max="100000" step="500" value="0"
+                                   class="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-xs text-zinc-400 mt-1">
+                                <span>0 MAD</span>
+                                <span>100,000 MAD</span>
+                            </div>
+                        </div>
+
                         <!-- Family Status Buttons -->
                         <div class="space-y-3 pt-2">
                             <label class="text-xs font-medium text-zinc-500 uppercase tracking-wide">Family Status</label>
@@ -737,6 +747,7 @@
 
         const elMonthly = document.getElementById('monthly');
         const elAnnual = document.getElementById('annual');
+        const elSlider = document.getElementById('salary-slider');
         const elKids = document.getElementById('kids');
         const btnDecKids = document.getElementById('dec-kids');
         const btnIncKids = document.getElementById('inc-kids');
@@ -863,6 +874,7 @@
             state.monthlyGross = val;
             state.annualGross = val * 12;
             elAnnual.value = state.annualGross > 0 ? formatWithSpaces(state.annualGross) : '';
+            elSlider.value = Math.round(val);
             calculate();
         });
 
@@ -873,6 +885,16 @@
             state.annualGross = val;
             state.monthlyGross = val / 12;
             elMonthly.value = state.monthlyGross > 0 ? formatWithSpaces(Math.round(state.monthlyGross)) : '';
+            elSlider.value = Math.round(state.monthlyGross);
+            calculate();
+        });
+
+        elSlider.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value) || 0;
+            state.monthlyGross = val;
+            state.annualGross = val * 12;
+            elMonthly.value = val > 0 ? formatWithSpaces(val) : '';
+            elAnnual.value = state.annualGross > 0 ? formatWithSpaces(state.annualGross) : '';
             calculate();
         });
 

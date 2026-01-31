@@ -544,33 +544,167 @@
                 </div>
             </div>
 
-            <!-- Comprendre la fiscalite au Luxembourg -->
+            <!-- Guide Complet Fiscalite Luxembourg -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Comprendre la fiscalite luxembourgeoise</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide Complet de la Fiscalite Luxembourgeoise</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Luxembourg offre un regime fiscal attractif avec des taux moderes et de nombreux avantages, notamment pour les travailleurs frontaliers et les expatries.</p>
+                    <p>Le Luxembourg offre un regime fiscal attractif avec des taux moderes, de nombreuses deductions, et une fiscalite avantageuse pour les couples et familles. C'est aussi le 1er employeur de frontaliers en Europe (~200,000 frontaliers).</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Classes d'imposition</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>Classe 1</strong> : Celibataires, divorces sans enfants</li>
-                        <li><strong>Classe 1a</strong> : Plus de 64 ans ou veuf(ve)</li>
-                        <li><strong>Classe 2</strong> : Couples maries (imposition conjointe avantageuse)</li>
-                    </ul>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Baremes d'Imposition 2026</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Revenu Imposable</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Taux</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Impot Cumule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">0 - 13,230 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">0%</td><td class="border border-slate-200 px-3 py-1.5 text-center">0 €</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">13,230 - 15,270 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">8%</td><td class="border border-slate-200 px-3 py-1.5 text-center">163 €</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">15,270 - 21,390 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">12%</td><td class="border border-slate-200 px-3 py-1.5 text-center">897 €</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">21,390 - 31,590 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">22%</td><td class="border border-slate-200 px-3 py-1.5 text-center">3,141 €</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">31,590 - 43,830 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">32%</td><td class="border border-slate-200 px-3 py-1.5 text-center">7,058 €</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">43,830 - 100,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">39%</td><td class="border border-slate-200 px-3 py-1.5 text-center">28,964 €</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Au-dessus de 100,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-rose-600">42%</td><td class="border border-slate-200 px-3 py-1.5 text-center">-</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-slate-500 mt-2">+ Contribution au fonds pour l'emploi : 7-9% de l'impot</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Avantages fiscaux</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>Epargne retraite</strong> : deductible jusqu'a 3,200 €/an</li>
-                        <li><strong>Assurance vie</strong> : deductible selon age et situation</li>
-                        <li><strong>Interets hypothecaires</strong> : deductibles pour residence principale</li>
-                        <li><strong>Frais de deplacement</strong> : forfait kilometrique pour frontaliers</li>
-                    </ul>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Classes d'Imposition</h3>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1 font-bold text-slate-700">Classe 1</div>
+                            <div class="text-xs font-medium text-slate-800">Celibataire</div>
+                            <div class="text-[10px] text-slate-600 mt-1">Sans enfant a charge, divorce</div>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1 font-bold text-blue-700">Classe 1a</div>
+                            <div class="text-xs font-medium text-blue-800">Situation speciale</div>
+                            <div class="text-[10px] text-blue-600 mt-1">+64 ans, veuf(ve), parent isole</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1 font-bold text-emerald-700">Classe 2</div>
+                            <div class="text-xs font-medium text-emerald-800">Marie/PACS</div>
+                            <div class="text-[10px] text-emerald-600 mt-1">Imposition conjointe avantageuse</div>
+                        </div>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Travailleurs frontaliers</h3>
-                    <p>Les frontaliers francais, belges et allemands sont imposes au Luxembourg sur leurs revenus luxembourgeois. Des conventions fiscales evitent la double imposition. Le Luxembourg est le 1er employeur de frontaliers en Europe.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales Detaillees</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-amber-900 mb-2">Part Salarie (~12.45%)</h4>
+                                <ul class="space-y-1 text-amber-800 text-xs">
+                                    <li>Assurance maladie : <strong>3.05%</strong></li>
+                                    <li>Assurance pension : <strong>8%</strong></li>
+                                    <li>Assurance dependance : <strong>1.4%</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-amber-900 mb-2">Part Employeur (~12-15%)</h4>
+                                <ul class="space-y-1 text-amber-800 text-xs">
+                                    <li>Assurance maladie : <strong>3.05%</strong></li>
+                                    <li>Assurance pension : <strong>8%</strong></li>
+                                    <li>Assurance accidents : <strong>0.7-1.2%</strong></li>
+                                    <li>Sante au travail : <strong>0.1%</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-xs text-amber-700 mt-3">Plafond cotisations 2026 : 143,243 € / an (5 x SSM)</p>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-2">Declaration fiscale</h3>
-                    <p>La declaration est obligatoire si revenus > 100,000 € ou si revenus de sources multiples. Date limite : 31 mars de l'annee suivante.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et Abattements</h3>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                            <h4 class="font-medium text-slate-900 text-xs mb-2">Depenses Speciales</h4>
+                            <ul class="space-y-1 text-xs text-slate-600">
+                                <li>Epargne retraite (art. 111bis) : <strong>3,200 €/an</strong></li>
+                                <li>Assurance vie : selon age (672-2,688 €)</li>
+                                <li>Prime maison : jusqu'a 20,000 €</li>
+                                <li>Interets pret immobilier : deductibles</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                            <h4 class="font-medium text-slate-900 text-xs mb-2">Frais d'Obtention</h4>
+                            <ul class="space-y-1 text-xs text-slate-600">
+                                <li>Forfait salarie : <strong>540 €</strong></li>
+                                <li>Frais deplacement : 99 €/km (max 30 km)</li>
+                                <li>Formation continue : reel</li>
+                                <li>Materiel professionnel : reel</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Travailleurs Frontaliers</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p class="text-blue-900 mb-3">Le Luxembourg emploie ~200,000 frontaliers (France, Belgique, Allemagne). Points cles :</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="space-y-1 text-blue-800 text-xs">
+                                <li>Imposes au Luxembourg sur revenus luxembourgeois</li>
+                                <li>Convention fiscale evite double imposition</li>
+                                <li>Peuvent demander assimilation fiscal resident</li>
+                            </ul>
+                            <ul class="space-y-1 text-blue-800 text-xs">
+                                <li>Forfait kilometrique deductible (max 30 km)</li>
+                                <li>Teletravail : max 34 jours/an (France)</li>
+                                <li>Au-dela : imposition au pays de residence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Luxembourg vs France</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Critere</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Luxembourg</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">France</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Taux marginal max</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">42%</td><td class="border border-slate-200 px-3 py-1.5 text-center">45%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Cotisations employe</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">~12.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center text-rose-600">~22%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Salaire minimum</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">2,570 €/mois</td><td class="border border-slate-200 px-3 py-1.5 text-center">1,766 €/mois</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Plus-values mobilieres</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">Exonerees >6 mois</td><td class="border border-slate-200 px-3 py-1.5 text-center text-rose-600">30% flat</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Net sur 70,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">~48,785 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">~42,000 €</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages Fiscaux Luxembourgeois</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">📈</div>
+                            <div class="text-xs font-medium text-emerald-800">Plus-values</div>
+                            <div class="text-[10px] text-emerald-600">Exonerees si >6 mois</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🏠</div>
+                            <div class="text-xs font-medium text-emerald-800">Boni Prime</div>
+                            <div class="text-[10px] text-emerald-600">Aide achat 1ere residence</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">👨‍👩‍👧</div>
+                            <div class="text-xs font-medium text-emerald-800">Classe 2</div>
+                            <div class="text-[10px] text-emerald-600">Couples : impot divise</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">💰</div>
+                            <div class="text-xs font-medium text-emerald-800">Salaires</div>
+                            <div class="text-[10px] text-emerald-600">+45% vs France</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-50 border border-rose-300 rounded-lg p-4 mt-6">
+                        <h4 class="font-semibold text-rose-900 mb-2">Points de Vigilance</h4>
+                        <ul class="text-rose-800 text-xs space-y-1">
+                            <li><strong>Teletravail frontaliers :</strong> Limite a 34 jours/an (France), au-dela vous etes impose en France</li>
+                            <li><strong>Declaration obligatoire :</strong> Si revenus >100,000 € ou sources multiples</li>
+                            <li><strong>Cout de la vie :</strong> Luxembourg-Ville est tres chere (loyers 2-3x plus eleves qu'en France)</li>
+                            <li><strong>Delai declaration :</strong> 31 mars de l'annee suivante</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

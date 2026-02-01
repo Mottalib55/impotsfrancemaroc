@@ -413,23 +413,154 @@
                 </div>
             </div>
 
+            <!-- Exemple de calcul -->
+            <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl border border-red-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:calculator" width="20" class="text-red-500"></iconify-icon>
+                    Exemple de calcul : Salaire de 60,000,000 KRW
+                </h2>
+
+                <div class="space-y-4 text-sm">
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">1. Impot sur le Revenu National (5,460,000 KRW)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>14,000,000 KRW x 6% = 840,000 KRW</p>
+                            <p>(50,000,000 - 14,000,000) x 15% = 5,400,000 KRW</p>
+                            <p>(60,000,000 - 50,000,000) x 24% = 2,400,000 KRW</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total National: 8,640,000 KRW</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">2. Impot Local sur le Revenu (864,000 KRW)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>Impot national x 10% = 8,640,000 x 10%</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total Local: 864,000 KRW</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">3. Cotisations Sociales (5,367,000 KRW)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>Pension Nationale (4.5%): 2,700,000 KRW</p>
+                            <p>Assurance Maladie (3.545%): 2,127,000 KRW</p>
+                            <p>Assurance Chomage (0.9%): 540,000 KRW</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total Cotisations: 5,367,000 KRW</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-emerald-800">Revenu Net Annuel</span>
+                            <span class="text-xl font-bold text-emerald-600">45,129,000 KRW</span>
+                        </div>
+                        <p class="text-xs text-emerald-600 mt-1">Soit ~3,760,750 KRW/mois (~2,750 EUR) | Taux effectif total: 24.8%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details cotisations sociales -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
+                    Cotisations Sociales Coree du Sud 2026
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Pension Nationale (NPS)</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Taux employe: <span class="font-medium">4.5%</span></li>
+                            <li>Taux employeur: <span class="font-medium">4.5%</span></li>
+                            <li>Plafond mensuel: <span class="font-medium">5,900,000 KRW</span></li>
+                            <li>Age retraite: 65 ans</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Maladie (NHI)</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Taux employe: <span class="font-medium">3.545%</span></li>
+                            <li>Taux employeur: <span class="font-medium">3.545%</span></li>
+                            <li>+ Long-term Care: <span class="font-medium">0.91%</span></li>
+                            <li>Couverture universelle</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">Assurance Chomage</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Taux employe: <span class="font-medium">0.9%</span></li>
+                            <li>Taux employeur: <span class="font-medium">0.9% - 1.5%</span></li>
+                            <li>Selon taille entreprise</li>
+                            <li>Indemnites jusqu'a 270 jours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sources officielles -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Sources Officielles
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.nts.go.kr/english/main.do" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">National Tax Service (NTS)</p>
+                            <p class="text-xs text-slate-500">nts.go.kr - Administration fiscale coreenne</p>
+                        </div>
+                    </a>
+                    <a href="https://www.nps.or.kr/jsppage/english/main.jsp" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">National Pension Service</p>
+                            <p class="text-xs text-slate-500">nps.or.kr - Pension nationale coreenne</p>
+                        </div>
+                    </a>
+                    <a href="https://www.nhis.or.kr/english/index.do" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">National Health Insurance Service</p>
+                            <p class="text-xs text-slate-500">nhis.or.kr - Assurance maladie nationale</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Guide complet -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite sud-coreenne</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Coree du Sud possede un systeme fiscal progressif avec 8 tranches d'imposition. Les cotisations sociales sont partagees entre employeur et employe, couvrant la pension nationale, l'assurance maladie et l'assurance chomage.</p>
+                    <p>La Coree du Sud possede un systeme fiscal progressif appele <strong>종합소득세</strong> (Jonghap Sodeukse - Impot Global sur le Revenu). Avec 8 tranches d'imposition et un impot local additionnel, c'est l'un des systemes les plus structures d'Asie. Les cotisations sociales sont partagees entre employeur et employe.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot coreen</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot coreen 2026</h3>
+                    <p>L'impot sur le revenu en Coree du Sud utilise un systeme de <strong>tranches marginales progressives</strong>. Seule la portion du revenu dans chaque tranche est imposee au taux correspondant :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 14,000,000 KRW : <strong>6%</strong></li>
+                            <li>14,000,000 - 50,000,000 KRW : <strong>15%</strong></li>
+                            <li>50,000,000 - 88,000,000 KRW : <strong>24%</strong></li>
+                            <li>88,000,000 - 150,000,000 KRW : <strong>35%</strong></li>
+                            <li>150,000,000 - 300,000,000 KRW : <strong>38%</strong></li>
+                            <li>300,000,000 - 500,000,000 KRW : <strong>40%</strong></li>
+                            <li>500,000,000 - 1,000,000,000 KRW : <strong>42%</strong></li>
+                            <li>Au-dela de 1,000,000,000 KRW : <strong>45%</strong></li>
+                        </ul>
+                    </div>
+
                     <div class="grid md:grid-cols-2 gap-3 my-3">
                         <div class="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-red-800 text-xs mb-1">Impot sur le Revenu</h4>
+                            <h4 class="font-semibold text-red-800 text-xs mb-1">Impot National sur le Revenu</h4>
                             <p class="text-sm font-bold text-red-700">6% - 45%</p>
                             <p class="text-xs text-red-600">Systeme progressif a 8 tranches</p>
                         </div>
                         <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
                             <h4 class="font-semibold text-slate-800 text-xs mb-1">Impot Local sur le Revenu</h4>
-                            <p class="text-sm font-bold text-slate-700">10%</p>
-                            <p class="text-xs text-slate-600">de l'impot national sur le revenu</p>
+                            <p class="text-sm font-bold text-slate-700">+10%</p>
+                            <p class="text-xs text-slate-600">de l'impot national (ex: 6% devient 6.6%)</p>
                         </div>
                     </div>
 
@@ -440,27 +571,67 @@
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Cotisation</th>
                                     <th class="border p-2 text-left">Taux employe</th>
+                                    <th class="border p-2 text-left">Taux employeur</th>
                                     <th class="border p-2 text-left">Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Pension Nationale (NPS)</td><td class="border p-2 font-medium">4.5%</td><td class="border p-2">Retraite obligatoire</td></tr>
-                                <tr><td class="border p-2">Assurance Maladie (NHI)</td><td class="border p-2 font-medium">3.545%</td><td class="border p-2">Couverture sante universelle</td></tr>
-                                <tr><td class="border p-2">Assurance Chomage</td><td class="border p-2 font-medium">0.9%</td><td class="border p-2">Protection contre le chomage</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">~9%</td><td class="border p-2">Part employe</td></tr>
+                                <tr><td class="border p-2">Pension Nationale (NPS)</td><td class="border p-2 font-medium">4.5%</td><td class="border p-2">4.5%</td><td class="border p-2">Retraite obligatoire</td></tr>
+                                <tr><td class="border p-2">Assurance Maladie (NHI)</td><td class="border p-2 font-medium">3.545%</td><td class="border p-2">3.545%</td><td class="border p-2">Couverture sante universelle</td></tr>
+                                <tr><td class="border p-2">Long-term Care</td><td class="border p-2 font-medium">0.91%</td><td class="border p-2">0.91%</td><td class="border p-2">Soins longue duree</td></tr>
+                                <tr><td class="border p-2">Assurance Chomage</td><td class="border p-2 font-medium">0.9%</td><td class="border p-2">0.9-1.5%</td><td class="border p-2">Protection contre le chomage</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">~9.9%</td><td class="border p-2 font-bold">~9.9%</td><td class="border p-2">Parts employee et employeur</td></tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Deduction personnelle de base</strong> : 1,500,000 KRW par personne</li>
-                        <li><strong>Deduction pour conjoint</strong> : 1,500,000 KRW</li>
-                        <li><strong>Deduction pour personnes a charge</strong> : 1,500,000 KRW par personne</li>
-                        <li><strong>Credit d'impot pour salaries</strong> : Jusqu'a 740,000 KRW</li>
-                        <li><strong>Depenses d'education</strong> : Deductibles jusqu'a certaines limites</li>
-                        <li><strong>Frais medicaux</strong> : Deductibles au-dela de 3% du revenu</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et credits d'impot</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Deductions personnelles</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>Deduction de base</strong> : 1,500,000 KRW par personne</li>
+                            <li><strong>Deduction conjoint</strong> : 1,500,000 KRW si revenu conjoint < 1M KRW</li>
+                            <li><strong>Deduction personnes a charge</strong> : 1,500,000 KRW par personne</li>
+                            <li><strong>Deduction supplementaire</strong> : pour personnes agees, handicapees, femmes soutien de famille</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Credits d'impot pour salaries</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Credit employe standard</strong> : Jusqu'a 740,000 KRW</li>
+                            <li><strong>Credit cotisations retraite</strong> : 12-15% des contributions</li>
+                            <li><strong>Credit assurance</strong> : 12% des primes (plafond 1M KRW)</li>
+                            <li><strong>Credit frais medicaux</strong> : 15% au-dela de 3% du revenu</li>
+                            <li><strong>Credit education</strong> : 15% des frais scolaires</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Deduction speciale depenses par carte</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li>La Coree encourage les paiements electroniques pour lutter contre l'evasion fiscale</li>
+                            <li><strong>Carte de credit</strong> : 15% de deduction</li>
+                            <li><strong>Carte de debit/especes</strong> : 30% de deduction</li>
+                            <li>Au-dela de 25% du salaire annuel, plafond selon revenus</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Dates cles et declaration</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Annee fiscale</strong> : 1er janvier au 31 decembre</li>
+                        <li><strong>Declaration annuelle</strong> : Mai (du 1er au 31)</li>
+                        <li><strong>Year-end settlement</strong> : Les employeurs calculent l'impot final en fevrier</li>
+                        <li><strong>Penalites retard</strong> : 3% + 0.025% par jour</li>
                     </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Regime fiscal pour etrangers</h3>
+                    <p>Les etrangers travaillant en Coree du Sud ont deux options :</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Taux progressif standard</strong> : 6% a 45% + impot local</li>
+                        <li><strong>Taux forfaitaire</strong> : 19% flat rate pendant 5 ans (option attractive pour hauts revenus)</li>
+                    </ul>
+                    <p class="mt-2">Le choix du regime se fait annuellement. Les residents etrangers sont imposes sur leurs revenus mondiaux apres 5 ans de residence.</p>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Coree du Sud</h3>
                     <div class="overflow-x-auto">
@@ -473,12 +644,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Salaire 60M KRW brut (~40,000 EUR)</td><td class="border p-2">~28,000 EUR net</td><td class="border p-2">~50M KRW net</td></tr>
-                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">45% + 10% local</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales employe</td><td class="border p-2">~22%</td><td class="border p-2">~9%</td></tr>
-                                <tr><td class="border p-2">Sante</td><td class="border p-2">Incluse</td><td class="border p-2">Incluse (NHI)</td></tr>
+                                <tr><td class="border p-2">Salaire 60M KRW brut (~40,000 EUR)</td><td class="border p-2">~28,000 EUR net</td><td class="border p-2">~45M KRW net (~33,000 EUR)</td></tr>
+                                <tr><td class="border p-2">Taux marginal max</td><td class="border p-2">45%</td><td class="border p-2">45% + 10% local = 49.5%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales employe</td><td class="border p-2">~22%</td><td class="border p-2">~9.9%</td></tr>
+                                <tr><td class="border p-2">Assurance maladie</td><td class="border p-2">Incluse</td><td class="border p-2">Incluse (NHI)</td></tr>
+                                <tr><td class="border p-2">Impot societes</td><td class="border p-2">25%</td><td class="border p-2">9-24%</td></tr>
+                                <tr><td class="border p-2">Regime etrangers</td><td class="border p-2">Non</td><td class="border p-2">19% flat rate (5 ans)</td></tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+                        <p class="text-xs text-amber-800"><strong>Note :</strong> La Coree du Sud offre des cotisations sociales plus faibles (~10%) comparees a la France (~22%), mais l'impot local de 10% sur l'impot national augmente la charge fiscale pour les hauts revenus. Le regime forfaitaire de 19% pour les etrangers peut etre tres avantageux.</p>
                     </div>
                 </div>
             </div>

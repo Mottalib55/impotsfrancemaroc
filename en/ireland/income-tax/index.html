@@ -317,18 +317,137 @@
                 </div>
             </div>
 
+            <!-- Example Calculation -->
+            <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:calculator" width="20" class="text-emerald-500"></iconify-icon>
+                    Example Calculation: EUR 60,000 Salary
+                </h2>
+
+                <div class="space-y-4 text-sm">
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">1. Income Tax</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>EUR 42,000 x 20% = EUR 8,400</p>
+                            <p>(EUR 60,000 - 42,000) x 40% = EUR 7,200</p>
+                            <p>Gross tax: EUR 15,600</p>
+                            <p>- Tax credits: EUR 3,750 (Personal + PAYE)</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Net Income Tax: EUR 11,850</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">2. USC (Universal Social Charge)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>EUR 12,012 x 0.5% = EUR 60</p>
+                            <p>(EUR 25,760 - 12,012) x 2% = EUR 275</p>
+                            <p>(EUR 60,000 - 25,760) x 4% = EUR 1,370</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total USC: EUR 1,705</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <h4 class="font-medium text-slate-900 mb-2">3. PRSI (Pay Related Social Insurance)</h4>
+                        <div class="space-y-1 text-slate-600">
+                            <p>EUR 60,000 x 4% = EUR 2,400</p>
+                            <p class="font-medium text-slate-900 pt-1 border-t">Total PRSI: EUR 2,400</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-emerald-800">Net Annual Income</span>
+                            <span class="text-xl font-bold text-emerald-600">EUR 44,045</span>
+                        </div>
+                        <p class="text-xs text-emerald-600 mt-1">~EUR 3,670/month | Effective total rate: 26.6%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Contributions Details -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield" width="20" class="text-amber-500"></iconify-icon>
+                    Ireland Social Contributions 2026
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">USC (Universal Social Charge)</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>EUR 0 - 12,012: <span class="font-medium">0.5%</span></li>
+                            <li>EUR 12,012 - 25,760: <span class="font-medium">2%</span></li>
+                            <li>EUR 25,760 - 70,044: <span class="font-medium">4%</span></li>
+                            <li>EUR 70,044+: <span class="font-medium">8%</span></li>
+                            <li class="text-xs text-slate-500 mt-2">Exempt if income < EUR 13,000</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-700 mb-2">PRSI (Pay Related Social Insurance)</h3>
+                        <ul class="space-y-1 text-sm text-slate-600">
+                            <li>Employee rate: <span class="font-medium">4%</span></li>
+                            <li>Employer rate: <span class="font-medium">11.05%</span></li>
+                            <li>Weekly threshold: EUR 352</li>
+                            <li>Provides access to social benefits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Official Sources
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/index.aspx" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Revenue - Irish Tax Authority</p>
+                            <p class="text-xs text-slate-500">revenue.ie - Irish tax administration</p>
+                        </div>
+                    </a>
+                    <a href="https://www.citizensinformation.ie/en/money-and-tax/tax/income-tax/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Citizens Information</p>
+                            <p class="text-xs text-slate-500">citizensinformation.ie - Irish tax guide</p>
+                        </div>
+                    </a>
+                    <a href="https://www.welfare.ie/en/pages/prsi-explained.aspx" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">PRSI Guide</p>
+                            <p class="text-xs text-slate-500">welfare.ie - Irish social contributions</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Complete Guide -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Irish Taxation</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Ireland has an attractive tax system with one of the lowest corporate tax rates in Europe (12.5%), which attracts many multinationals. For individuals, the system combines Income Tax, USC, and PRSI.</p>
+                    <p>Ireland has a <strong>simple two-rate tax system</strong> that makes it attractive for individuals and businesses. With a corporate tax rate of <strong>12.5%</strong> - one of the lowest in Europe - the country attracts many tech multinationals (Apple, Google, Facebook, Microsoft). For individuals, the system combines Income Tax, USC, and PRSI.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Irish Tax Structure</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">2-Rate System: Irish Simplicity</h3>
+                    <p>Unlike France with 5 brackets, Ireland uses only <strong>2 income tax rates</strong>:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-2 text-xs">
+                            <li><strong>Standard Rate (20%):</strong> up to EUR 42,000 (single) or EUR 51,000 (married one earner)</li>
+                            <li><strong>Higher Rate (40%):</strong> above the threshold</li>
+                        </ul>
+                        <p class="text-xs text-slate-500 mt-2">Note: Threshold increases to EUR 44,300 for 2026</p>
+                    </div>
+
                     <div class="grid md:grid-cols-3 gap-3 my-3">
                         <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
                             <h4 class="font-semibold text-emerald-800 text-xs mb-1">Income Tax</h4>
                             <p class="text-sm font-bold text-emerald-700">20% / 40%</p>
-                            <p class="text-xs text-emerald-600">Progressive income tax</p>
+                            <p class="text-xs text-emerald-600">Simple 2-rate system</p>
                         </div>
                         <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
                             <h4 class="font-semibold text-orange-800 text-xs mb-1">USC</h4>
@@ -338,22 +457,42 @@
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
                             <h4 class="font-semibold text-blue-800 text-xs mb-1">PRSI</h4>
                             <p class="text-sm font-bold text-blue-700">4%</p>
-                            <p class="text-xs text-blue-600">Social insurance contribution</p>
+                            <p class="text-xs text-blue-600">Social insurance</p>
                         </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">USC (Universal Social Charge) Rates</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Income Band</th><th class="border p-2">USC Rate</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">EUR 0 - 12,012</td><td class="border p-2 text-center">0.5%</td></tr>
-                            <tr><td class="border p-2">EUR 12,012 - 25,760</td><td class="border p-2 text-center">2%</td></tr>
-                            <tr><td class="border p-2">EUR 25,760 - 70,044</td><td class="border p-2 text-center">4%</td></tr>
-                            <tr><td class="border p-2">EUR 70,044+</td><td class="border p-2 text-center text-red-600">8%</td></tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">USC (Universal Social Charge) 2026</h3>
+                    <p>USC is a progressive tax introduced in 2011 to replace several levies. It applies to almost all income:</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Income Band</th><th class="border p-2">USC Rate 2026</th></tr></thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 0 - 12,012</td><td class="border p-2 text-center text-emerald-600">0.5%</td></tr>
+                                <tr><td class="border p-2">EUR 12,012 - 25,760</td><td class="border p-2 text-center">2%</td></tr>
+                                <tr><td class="border p-2">EUR 25,760 - 70,044</td><td class="border p-2 text-center">4%</td></tr>
+                                <tr><td class="border p-2">EUR 70,044+</td><td class="border p-2 text-center text-red-600">8%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500"><strong>USC Exemption:</strong> Total income < EUR 13,000/year is exempt from USC</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Main Tax Credits</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">PRSI (Pay Related Social Insurance)</h3>
+                    <p>PRSI funds the Irish social welfare system:</p>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Employee Rate</h4>
+                            <p class="text-sm font-bold text-blue-700">4%</p>
+                            <p class="text-xs text-blue-600">On all earnings</p>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Employer Rate</h4>
+                            <p class="text-sm font-bold text-blue-700">11.05%</p>
+                            <p class="text-xs text-blue-600">Employer contribution</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Credits System</h3>
+                    <p>Ireland uses a <strong>tax credits system</strong> rather than allowances. Credits directly reduce your tax liability:</p>
                     <div class="grid md:grid-cols-2 gap-2 my-3">
                         <div class="bg-indigo-50 rounded-lg p-3">
                             <p class="font-bold text-indigo-700">Personal Tax Credit</p>
@@ -361,24 +500,96 @@
                         </div>
                         <div class="bg-indigo-50 rounded-lg p-3">
                             <p class="font-bold text-indigo-700">Employee Tax Credit (PAYE)</p>
-                            <p class="text-xs text-indigo-600">EUR 1,875 per year</p>
+                            <p class="text-xs text-indigo-600">EUR 1,875 for employees</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-3">
+                            <p class="font-bold text-indigo-700">Home Carer Credit</p>
+                            <p class="text-xs text-indigo-600">EUR 1,800 if spouse is homemaker</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-3">
+                            <p class="font-bold text-indigo-700">Rent Tax Credit</p>
+                            <p class="text-xs text-indigo-600">EUR 750 for renters</p>
                         </div>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Pension Contributions</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Private pension contributions are deductible from taxable income</li>
+                            <li>Limits by age: 15% (under 30) to 40% (60+)</li>
+                            <li>Earnings cap: EUR 115,000</li>
+                            <li>Major tax advantage for retirement planning</li>
+                        </ul>
+                    </div>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Pension contributions:</strong> Up to 40% of income depending on age (max EUR 115,000)</li>
-                        <li><strong>Medical expenses:</strong> Non-reimbursed medical costs (20% credit)</li>
-                        <li><strong>Home Carer Credit:</strong> EUR 1,800 if spouse is homemaker</li>
-                        <li><strong>Rent Tax Credit:</strong> Up to EUR 750 for renters</li>
-                        <li><strong>Flat Rate Expenses:</strong> Fixed deductions by profession</li>
+                        <li><strong>Medical expenses:</strong> 20% credit on non-reimbursed medical costs</li>
+                        <li><strong>Flat Rate Expenses:</strong> Fixed deductions by profession (doctors, nurses, teachers...)</li>
+                        <li><strong>Work from home:</strong> EUR 3.20/day for remote work</li>
+                        <li><strong>Cycle to Work:</strong> Bike purchase deductible up to EUR 1,500</li>
                     </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Corporate Tax Attractiveness</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Corporate Tax: 12.5%</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li>One of the lowest rates in Europe (France: 25%)</li>
+                            <li>Attracts Apple, Google, Facebook, Microsoft, Pfizer...</li>
+                            <li>Knowledge Development Box: 6.25% on IP income</li>
+                            <li>R&D Tax Credit: 25% of research expenses</li>
+                            <li>Start-up relief: 3-year exemption for new companies</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Special Regime for Expats (SARP)</h3>
+                    <p>The <strong>Special Assignee Relief Programme</strong> offers benefits to expatriates:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>30% of income between EUR 75,000 and EUR 1M exempt from tax</li>
+                        <li>Valid for 5 years</li>
+                        <li>Requirements: transfer from abroad, min salary EUR 75,000</li>
+                        <li>Very attractive for senior executives</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Dates and Filing</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Tax year:</strong> January 1 to December 31</li>
+                        <li><strong>PAYE (withholding):</strong> Deducted monthly by employer</li>
+                        <li><strong>Tax return (Form 11):</strong> October 31 (for additional income)</li>
+                        <li><strong>ROS online:</strong> Extension to November 15 if filing online</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Ireland Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Ireland</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2">~EUR 42,000 net</td><td class="border p-2">~EUR 44,000 net</td></tr>
+                                <tr><td class="border p-2">Number of income tax brackets</td><td class="border p-2">5 brackets</td><td class="border p-2">2 brackets (simple)</td></tr>
+                                <tr><td class="border p-2">Top income tax rate</td><td class="border p-2">45%</td><td class="border p-2">40% + USC 8%</td></tr>
+                                <tr><td class="border p-2">Employee social contributions</td><td class="border p-2">~22%</td><td class="border p-2">~8% (USC + PRSI)</td></tr>
+                                <tr><td class="border p-2">Corporate tax</td><td class="border p-2">25%</td><td class="border p-2 text-emerald-600 font-medium">12.5%</td></tr>
+                                <tr><td class="border p-2">Employee tax credits</td><td class="border p-2">No</td><td class="border p-2">EUR 3,750</td></tr>
+                                <tr><td class="border p-2">Expat regime</td><td class="border p-2">Impatriation</td><td class="border p-2">SARP (30% exempt)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mt-4">
+                        <p class="text-xs text-emerald-800"><strong>Ireland Advantage:</strong> Much lower social contributions (~8% vs ~22%) and the tax credits system make Ireland attractive for employees. For entrepreneurs, the 12.5% corporate tax rate and SARP regime for expats are major assets. Dublin has become a European tech hub thanks to this favorable tax system.</p>
+                    </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Special Tax Reliefs</h3>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
                         <li><strong>SARP (Special Assignee Relief Programme):</strong> 30% income exemption for qualifying assignees</li>
                         <li><strong>R&D Tax Credit:</strong> 25% credit for research and development activities</li>
                         <li><strong>Start-up Relief:</strong> 3-year corporation tax exemption for new companies</li>
+                        <li><strong>Employment Investment Incentive:</strong> Tax relief for investment in qualifying companies</li>
                     </ul>
                 </div>
             </div>

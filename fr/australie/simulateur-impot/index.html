@@ -399,70 +399,120 @@
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
                 <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
                     <iconify-icon icon="lucide:info" width="20" class="text-indigo-500"></iconify-icon>
-                    Baremes Australie 2026
+                    Baremes Australie 2024-2025
                 </h2>
                 <div class="space-y-2 text-sm">
-                    <div class="flex justify-between"><span class="text-slate-500">0 - 18,200 AUD</span><span class="font-medium text-emerald-600">0%</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">18,201 - 45,000 AUD</span><span class="font-medium">19%</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">45,001 - 135,000 AUD</span><span class="font-medium">30%</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">135,001 - 190,000 AUD</span><span class="font-medium">37%</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">190,001+ AUD</span><span class="font-medium text-red-600">45%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">0 - $18,200</span><span class="font-medium text-emerald-600">0% (tax-free threshold)</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">$18,201 - $45,000</span><span class="font-medium">16%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">$45,001 - $135,000</span><span class="font-medium">30%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">$135,001 - $190,000</span><span class="font-medium">37%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Au-dela de $190,000</span><span class="font-medium text-red-600">45%</span></div>
                 </div>
+                <p class="text-xs text-slate-400 mt-3">+ Medicare Levy 2% sur le revenu imposable</p>
             </div>
 
+            <!-- Comprehensive Tax Guide -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite australienne</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>L'Australie possede un systeme fiscal progressif avec un Medicare Levy obligatoire mais sans cotisations sociales traditionnelles pour les salaries.</p>
+                    <p>L'<strong>Australian Taxation Office (ATO)</strong> est l'autorite fiscale australienne, equivalente de notre Direction Generale des Finances Publiques. Particularite importante : l'<strong>annee fiscale australienne</strong> s'etend du <strong>1er juillet au 30 juin</strong> de l'annee suivante, et non de janvier a decembre comme en France.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot australien</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Income Tax</h4>
-                            <p class="text-sm font-bold text-blue-700">0% - 45%</p>
-                            <p class="text-xs text-blue-600">Impot sur le revenu progressif</p>
-                        </div>
-                        <div class="bg-teal-50 border border-teal-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-teal-800 text-xs mb-1">Medicare Levy</h4>
-                            <p class="text-sm font-bold text-teal-700">2%</p>
-                            <p class="text-xs text-teal-600">Contribution sante obligatoire</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2024-2025</h3>
+                    <p>L'Australie utilise un systeme d'imposition <strong>progressive par tranches marginales</strong>. La grande reforme fiscale de juillet 2024 a reduit le taux de la 2eme tranche de 19% a 16% :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-2 text-xs">
+                            <li class="flex justify-between"><span>$0 - $18,200</span><strong class="text-emerald-600">0% (Tax-Free Threshold)</strong></li>
+                            <li class="flex justify-between"><span>$18,201 - $45,000</span><strong>16%</strong></li>
+                            <li class="flex justify-between"><span>$45,001 - $135,000</span><strong>30%</strong></li>
+                            <li class="flex justify-between"><span>$135,001 - $190,000</span><strong>37%</strong></li>
+                            <li class="flex justify-between"><span>Au-dela de $190,000</span><strong class="text-red-600">45%</strong></li>
+                        </ul>
+                    </div>
+                    <p>Le <strong>Tax-Free Threshold</strong> de $18,200 signifie que les premiers dollars gagnes ne sont pas imposes - un avantage significatif par rapport a de nombreux pays.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Medicare Levy (2%)</h3>
+                    <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-teal-800 mb-2">Financement de la sante publique</h4>
+                        <ul class="text-xs space-y-1 text-teal-700">
+                            <li>Taux fixe de <strong>2%</strong> du revenu imposable</li>
+                            <li>Finance le systeme Medicare (equivalent de la Securite Sociale)</li>
+                            <li>Exemption possible pour les bas revenus (< $24,276/an)</li>
+                            <li>Reduction progressive entre $24,276 et $30,345</li>
+                            <li>Pas de plafond - s'applique sur l'integralite du revenu</li>
+                        </ul>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Particularites du systeme australien</h3>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Element</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Annee fiscale</td><td class="border p-2">1er juillet - 30 juin</td></tr>
-                                <tr><td class="border p-2">Tax-Free Threshold</td><td class="border p-2 font-medium">18,200 AUD/an</td></tr>
-                                <tr><td class="border p-2">Medicare Levy</td><td class="border p-2 font-medium">2% du revenu imposable</td></tr>
-                                <tr><td class="border p-2">Medicare Levy Surcharge</td><td class="border p-2">1-1.5% si pas d'assurance privee (hauts revenus)</td></tr>
-                                <tr><td class="border p-2">Superannuation (retraite)</td><td class="border p-2 font-medium">11.5% paye par l'employeur</td></tr>
-                            </tbody>
-                        </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Medicare Levy Surcharge (MLS)</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">Penalite sans assurance privee</h4>
+                        <p class="text-xs text-amber-700 mb-2">Si vous n'avez pas d'assurance sante privee et que vos revenus depassent certains seuils :</p>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li>Revenu $93,000 - $108,000 : <strong>+1%</strong> supplementaire</li>
+                            <li>Revenu $108,001 - $144,000 : <strong>+1.25%</strong> supplementaire</li>
+                            <li>Revenu > $144,000 : <strong>+1.5%</strong> supplementaire</li>
+                            <li>Seuils plus eleves pour les familles</li>
+                        </ul>
+                        <p class="text-xs text-amber-600 mt-2 italic">Solution : souscrire une assurance privee "Hospital Cover" pour eviter cette surtaxe.</p>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages du systeme australien</h3>
-                    <div class="grid md:grid-cols-3 gap-2 my-3">
-                        <div class="bg-green-50 rounded-lg p-3 text-center">
-                            <p class="font-bold text-green-700">Pas de cotisations</p>
-                            <p class="text-xs text-green-600">Pas de charges sociales salariales</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Superannuation - Epargne retraite obligatoire</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">11.5% paye par l'employeur</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Contribution <strong>obligatoire de l'employeur</strong> : 11.5% du salaire</li>
+                            <li>Passera a 12% a partir du 1er juillet 2025</li>
+                            <li>Verse dans un fonds de pension personnel (Super Fund)</li>
+                            <li>N'est <strong>pas deduit de votre salaire</strong> - c'est en plus</li>
+                            <li>Accessible a partir de 60 ans (preservation age)</li>
+                            <li>Possibilite de contributions volontaires (concessional et non-concessional)</li>
+                        </ul>
+                        <p class="text-xs text-purple-600 mt-2">Plafond contributions concessional 2024-25 : <strong>$30,000/an</strong> (deductible d'impot)</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">HECS-HELP - Remboursement des prets etudiants</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Systeme de remboursement progressif</h4>
+                        <p class="text-xs text-blue-700 mb-2">Si vous avez une dette universitaire HECS-HELP, le remboursement est preleve automatiquement :</p>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Seuil de remboursement 2024-25 : <strong>$54,435</strong></li>
+                            <li>En dessous : aucun remboursement obligatoire</li>
+                            <li>Au-dessus : remboursement de 1% a 10% du revenu</li>
+                            <li>Exemple : revenu $60,000 = remboursement ~2%</li>
+                            <li>Dette indexee sur l'inflation (pas d'interets)</li>
+                        </ul>
+                        <p class="text-xs text-blue-600 mt-2 italic">Le remboursement est preleve via le systeme PAYG (Pay As You Go) par l'employeur.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Exemple de calcul : Salaire de $100,000</h3>
+                    <div class="bg-white rounded-lg p-4 border border-slate-200 my-3">
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between border-b pb-2">
+                                <span>Revenu brut annuel</span>
+                                <span class="font-bold">$100,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Impot sur le revenu</span>
+                                <span class="text-red-600">- $22,967</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Medicare Levy (2%)</span>
+                                <span class="text-red-600">- $2,000</span>
+                            </div>
+                            <div class="flex justify-between border-t pt-2">
+                                <span class="font-medium">Revenu net annuel</span>
+                                <span class="font-bold text-emerald-600">$75,033</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Revenu net mensuel</span>
+                                <span>$6,253</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Taux effectif total</span>
+                                <span>24.97%</span>
+                            </div>
                         </div>
-                        <div class="bg-green-50 rounded-lg p-3 text-center">
-                            <p class="font-bold text-green-700">Tax-Free Threshold</p>
-                            <p class="text-xs text-green-600">18,200 AUD non imposes</p>
-                        </div>
-                        <div class="bg-green-50 rounded-lg p-3 text-center">
-                            <p class="font-bold text-green-700">Superannuation</p>
-                            <p class="text-xs text-green-600">Retraite payee par employeur</p>
-                        </div>
+                        <p class="text-xs text-slate-500 mt-3 italic">+ Superannuation de $11,500 verse par l'employeur (en plus du salaire)</p>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
@@ -471,7 +521,8 @@
                         <li><strong>Home office</strong> : 67 cents/heure ou methode des frais reels</li>
                         <li><strong>Vehicle expenses</strong> : 85 cents/km ou journal de bord</li>
                         <li><strong>Self-education</strong> : formation liee a l'emploi actuel</li>
-                        <li><strong>Donations</strong> : dons a des organisations agreees</li>
+                        <li><strong>Donations</strong> : dons a des organisations agreees (DGR)</li>
+                        <li><strong>Income protection insurance</strong> : primes d'assurance deductibles</li>
                     </ul>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Australie</h3>
@@ -485,13 +536,54 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr><td class="border p-2">Annee fiscale</td><td class="border p-2">Janvier - Decembre</td><td class="border p-2">Juillet - Juin</td></tr>
+                                <tr><td class="border p-2">Taux marginal max</td><td class="border p-2">45%</td><td class="border p-2">45%</td></tr>
+                                <tr><td class="border p-2">Seuil d'exoneration</td><td class="border p-2">~$12,000 (quotient familial)</td><td class="border p-2">$18,200 (tax-free)</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales salarie</td><td class="border p-2">~22%</td><td class="border p-2">2% (Medicare uniquement)</td></tr>
+                                <tr><td class="border p-2">Retraite</td><td class="border p-2">Cotisations obligatoires</td><td class="border p-2">Super 11.5% (employeur)</td></tr>
                                 <tr><td class="border p-2">Salaire 100,000 AUD brut</td><td class="border p-2">~65,000 AUD net</td><td class="border p-2">~75,000 AUD net</td></tr>
-                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">45%</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">2% (Medicare)</td></tr>
-                                <tr><td class="border p-2">Sante</td><td class="border p-2">Incluse</td><td class="border p-2">Medicare + option privee</td></tr>
+                                <tr><td class="border p-2">Sante</td><td class="border p-2">Securite Sociale incluse</td><td class="border p-2">Medicare + privee optionnelle</td></tr>
+                                <tr><td class="border p-2">Dette etudiante</td><td class="border p-2">Pas de systeme comparable</td><td class="border p-2">HECS-HELP progressif</td></tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mt-6">
+                        <h4 class="font-semibold text-emerald-800 mb-2">Avantage net en Australie</h4>
+                        <p class="text-xs text-emerald-700">Pour un meme salaire brut, un salarie en Australie conserve en moyenne <strong>10 a 15%</strong> de plus en net qu'en France, principalement grace aux cotisations sociales quasi-inexistantes. La retraite (Superannuation) est financee <strong>integralement par l'employeur</strong> sans impact sur le salaire net.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Sources Officielles
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">ATO - Tax Rates for Australian Residents</p>
+                            <p class="text-xs text-slate-500">ato.gov.au - Baremes officiels de l'impot australien</p>
+                        </div>
+                    </a>
+                    <a href="https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">ATO - Medicare Levy</p>
+                            <p class="text-xs text-slate-500">ato.gov.au - Medicare Levy et Surcharge</p>
+                        </div>
+                    </a>
+                    <a href="https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/study-and-training-loan-repayment-thresholds-and-rates" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">ATO - HECS-HELP Repayment Rates</p>
+                            <p class="text-xs text-slate-500">ato.gov.au - Seuils de remboursement des prets etudiants</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -516,10 +608,10 @@
     </footer>
 
     <script>
-        // Australian tax brackets 2026
+        // Australian tax brackets 2024-2025 (16% rate from July 2024)
         const BRACKETS = [
             { limit: 18200, rate: 0 },
-            { limit: 45000, rate: 0.19 },
+            { limit: 45000, rate: 0.16 },
             { limit: 135000, rate: 0.30 },
             { limit: 190000, rate: 0.37 },
             { limit: Infinity, rate: 0.45 }
@@ -537,13 +629,13 @@
             let tax = 0;
 
             if (income <= 45000) {
-                tax = (income - 18200) * 0.19;
+                tax = (income - 18200) * 0.16;
             } else if (income <= 135000) {
-                tax = 5092 + (income - 45000) * 0.30;
+                tax = 4288 + (income - 45000) * 0.30;
             } else if (income <= 190000) {
-                tax = 32092 + (income - 135000) * 0.37;
+                tax = 31288 + (income - 135000) * 0.37;
             } else {
-                tax = 52442 + (income - 190000) * 0.45;
+                tax = 51638 + (income - 190000) * 0.45;
             }
 
             return Math.max(0, tax);

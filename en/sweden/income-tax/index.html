@@ -319,67 +319,169 @@
                 </div>
             </div>
 
+            <!-- Understanding Swedish Income Tax -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Swedish Taxation</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Swedish Taxation 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Sweden has one of the highest tax rates in the world, but in return provides comprehensive social benefits including free healthcare, education, and extensive social services.</p>
+                    <p>Sweden has one of the highest tax rates in the world, with a <strong>maximum marginal rate of approximately 52%</strong>. In return, the Swedish welfare state provides exceptional public services: free healthcare, education, childcare, and generous parental leave.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Swedish Tax Structure</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Two-Tier Swedish Tax Structure</h3>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
                             <h4 class="font-semibold text-blue-800 text-xs mb-1">Kommunalskatt (Municipal Tax)</h4>
-                            <p class="text-sm font-bold text-blue-700">~32%</p>
-                            <p class="text-xs text-blue-600">Flat rate applied to all taxable income</p>
+                            <p class="text-sm font-bold text-blue-700">~32% (average)</p>
+                            <p class="text-xs text-blue-600">Flat rate on all taxable income. Varies from 29% to 35% depending on municipality.</p>
                         </div>
                         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
                             <h4 class="font-semibold text-yellow-800 text-xs mb-1">Statlig inkomstskatt (State Tax)</h4>
                             <p class="text-sm font-bold text-yellow-700">20%</p>
-                            <p class="text-xs text-yellow-600">On income above SEK 598,500</p>
+                            <p class="text-xs text-yellow-600">Only on income exceeding ~SEK 598,500/year (~EUR 52,000)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Municipal tax applies to all taxable income. State tax only applies to high earners, pushing the maximum marginal rate to approximately 52%.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Very High Marginal Rate: Why ~52%?</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Maximum Marginal Rate Calculation</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Average municipal tax: <strong>32%</strong></li>
+                            <li>State tax (income > SEK 598,500): <strong>+20%</strong></li>
+                            <li>Total marginal rate: <strong>~52%</strong></li>
+                        </ul>
+                        <p class="text-xs text-red-600 mt-2">This means for every additional krona earned above the threshold, 52% goes to taxes.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions: Paid by Employer</h3>
+                    <p>A unique Swedish feature: nearly all social contributions are paid by the employer. Employees only pay a 7% pension contribution.</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-center">Employer Rate</th>
+                                    <th class="border p-2 text-center">Employee Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Arbetsgivaravgift (total employer contributions)</td><td class="border p-2 text-center font-medium">31.42%</td><td class="border p-2 text-center">-</td></tr>
+                                <tr><td class="border p-2">Allman pensionsavgift (general pension contribution)</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center font-medium">7%</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center font-bold text-amber-700">7%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500">The 31.42% employer contributions fund: pensions, sickness benefits, unemployment, parental leave, and workplace injury insurance.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">RUT/ROT Deductions: Home Services and Renovation</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-xs mb-1">ROT-avdrag (Renovation)</h4>
+                            <p class="text-sm font-bold text-green-700">50% of labor costs</p>
+                            <ul class="text-xs text-green-600 mt-1">
+                                <li>Renovation, repair, extension work</li>
+                                <li>Cap: SEK 50,000/person/year</li>
+                                <li>Direct reduction on invoice</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-purple-800 text-xs mb-1">RUT-avdrag (Household Services)</h4>
+                            <p class="text-sm font-bold text-purple-700">50% of costs</p>
+                            <ul class="text-xs text-purple-600 mt-1">
+                                <li>Cleaning, gardening, childcare</li>
+                                <li>Cap: SEK 75,000/person/year</li>
+                                <li>Encourages domestic service employment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">These popular deductions significantly reduce the cost of home services and renovation work.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Welfare State: What Your Taxes Fund</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Benefits Funded by Swedish Taxes</h4>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs text-blue-700">
+                            <ul class="space-y-1">
+                                <li><strong>Healthcare:</strong> Nearly free (max SEK 1,300/year in fees)</li>
+                                <li><strong>Education:</strong> Free from preschool to doctorate</li>
+                                <li><strong>Student grants:</strong> CSN (grant + favorable loan)</li>
+                                <li><strong>Childcare:</strong> Heavily subsidized (max ~SEK 1,500/month)</li>
+                            </ul>
+                            <ul class="space-y-1">
+                                <li><strong>Parental leave:</strong> 480 days at ~80% of salary</li>
+                                <li><strong>Unemployment:</strong> Generous (up to 80% of salary)</li>
+                                <li><strong>Pension:</strong> Strong three-pillar system</li>
+                                <li><strong>Transportation:</strong> Quality infrastructure</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employer Rate</th><th class="border p-2">Employee Rate</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Social security contributions (arbetsgivaravgift)</td><td class="border p-2 text-center">31.42%</td><td class="border p-2 text-center">-</td></tr>
-                            <tr><td class="border p-2">General pension contribution (allman pensionsavgift)</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center">7%</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Employee Total</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center font-bold text-amber-700">7%</td></tr>
-                        </tbody>
-                    </table>
-                    <p class="text-xs text-slate-500 mt-2">In Sweden, most social contributions are paid by the employer. Employees only pay a 7% pension contribution.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Example Calculation: SEK 500,000 Salary (~EUR 45,000)</h3>
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 border border-blue-200">
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-600">Annual gross salary</span><span class="font-medium">SEK 500,000</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Pension contribution (7%)</span><span class="font-medium text-amber-600">- SEK 35,000</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Basic allowance (grundavdrag)</span><span class="font-medium text-green-600">- SEK 45,000</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Taxable income</span><span class="font-medium">SEK 420,000</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Municipal tax (~32%)</span><span class="font-medium text-indigo-600">- SEK 134,400</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">State tax (20% on SEK 0)</span><span class="font-medium text-slate-400">SEK 0</span></div>
+                            <div class="border-t pt-2 flex justify-between"><span class="font-semibold text-emerald-800">Net annual income</span><span class="font-bold text-emerald-600">~SEK 330,600</span></div>
+                            <p class="text-xs text-slate-500">Approximately SEK 27,550 net/month (~EUR 2,500) | Effective rate: ~33.9%</p>
+                        </div>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Basic Allowance (Grundavdrag)</h3>
-                    <p class="text-xs">Sweden applies a variable basic allowance depending on income level. For average incomes, this allowance is approximately SEK 40,000 - 50,000. Our calculator uses a simplified allowance.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Reseavdrag:</strong> Commuting deduction (for costs exceeding SEK 11,000/year)</li>
-                        <li><strong>Rotavdrag:</strong> Tax credit for home renovation (50% of labor costs)</li>
-                        <li><strong>Rutavdrag:</strong> Tax credit for household services (50% of costs)</li>
-                        <li><strong>Pensionssparande:</strong> Private pension savings deductible</li>
-                    </ul>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Comparison: Sweden vs Other Countries</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Sweden vs France Comparison</h3>
                     <div class="overflow-x-auto">
                         <table class="w-full text-xs border-collapse">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Criteria</th>
-                                    <th class="border p-2 text-left">Sweden</th>
-                                    <th class="border p-2 text-left">Germany</th>
-                                    <th class="border p-2 text-left">USA</th>
+                                    <th class="border p-2 text-center">France</th>
+                                    <th class="border p-2 text-center">Sweden</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Max marginal rate</td><td class="border p-2">~52%</td><td class="border p-2">~47%</td><td class="border p-2">~37%</td></tr>
-                                <tr><td class="border p-2">Employee social contributions</td><td class="border p-2">~7%</td><td class="border p-2">~20%</td><td class="border p-2">~7.65%</td></tr>
-                                <tr><td class="border p-2">Healthcare</td><td class="border p-2">Free (tax-funded)</td><td class="border p-2">Mandatory insurance</td><td class="border p-2">Private/employer</td></tr>
-                                <tr><td class="border p-2">Education</td><td class="border p-2">Free + student grants</td><td class="border p-2">Free (public)</td><td class="border p-2">Mostly paid</td></tr>
+                                <tr><td class="border p-2">EUR 45,000 gross salary</td><td class="border p-2 text-center">~EUR 33,000 net</td><td class="border p-2 text-center">~EUR 30,000 net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">~52%</td></tr>
+                                <tr><td class="border p-2">Employee contributions</td><td class="border p-2 text-center">~22%</td><td class="border p-2 text-center">~7%</td></tr>
+                                <tr><td class="border p-2">Healthcare</td><td class="border p-2 text-center">Social security + mutuelle</td><td class="border p-2 text-center">Nearly free (tax-funded)</td></tr>
+                                <tr><td class="border p-2">Higher education</td><td class="border p-2 text-center">Free (public)</td><td class="border p-2 text-center">Free + CSN grants</td></tr>
+                                <tr><td class="border p-2">Parental leave</td><td class="border p-2 text-center">~16 weeks (mother)</td><td class="border p-2 text-center">480 days (shared)</td></tr>
+                                <tr><td class="border p-2">Childcare</td><td class="border p-2 text-center">Variable (creche/nanny)</td><td class="border p-2 text-center">Max SEK 1,500/month</td></tr>
                             </tbody>
                         </table>
                     </div>
+                    <p class="text-xs text-slate-500 mt-2">Sweden has higher taxes but more generous public services. Your "real" disposable income depends on your family situation and use of public services.</p>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Official Sources
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.skatteverket.se/servicelankar/otherlanguages/inenglish.4.12815e4f14a62bc048f4edc.html" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Skatteverket - Swedish Tax Agency</p>
+                            <p class="text-xs text-slate-500">skatteverket.se - Official tax rates, filing information</p>
+                        </div>
+                    </a>
+                    <a href="https://www.forsakringskassan.se/english" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Forsakringskassan - Social Insurance Agency</p>
+                            <p class="text-xs text-slate-500">forsakringskassan.se - Parental leave, sickness benefits, allowances</p>
+                        </div>
+                    </a>
+                    <a href="https://www.government.se/government-of-sweden/ministry-of-finance/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Swedish Ministry of Finance</p>
+                            <p class="text-xs text-slate-500">government.se - Tax policy and budget information</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 

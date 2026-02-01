@@ -319,11 +319,24 @@
                 </div>
             </div>
 
+            <!-- Understanding Belgian Income Tax -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Belgian Taxation</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Belgian Taxation 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Belgium has one of the highest tax burdens in Europe, with progressive income tax rates up to 50% plus significant social contributions providing comprehensive social coverage.</p>
+                    <p>Belgium has one of the most complex and highest tax systems in Europe. The <strong>IPP (Impot des Personnes Physiques / Personal Income Tax)</strong> is a progressive federal tax, supplemented by <strong>municipal surcharges (centimes additionnels)</strong> ranging from 6% to 9% depending on your municipality of residence.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">IPP Tax Brackets 2026</h3>
+                    <p>Belgian income tax uses a <strong>marginal bracket system</strong>. Only the portion of income within each bracket is taxed at that rate:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>EUR 0 - 15,820: <strong>25%</strong></li>
+                            <li>EUR 15,820 - 27,920: <strong>40%</strong></li>
+                            <li>EUR 27,920 - 48,320: <strong>45%</strong></li>
+                            <li>Above EUR 48,320: <strong>50%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Municipal surcharges (6-9% of IPP) are added on top, which can push the effective marginal rate above 53%.</p>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Belgian Tax Structure</h3>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
@@ -333,47 +346,142 @@
                             <p class="text-xs text-yellow-600">Progressive federal income tax</p>
                         </div>
                         <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Municipal Surcharge</h4>
-                            <p class="text-sm font-bold text-slate-700">0% - 9%</p>
-                            <p class="text-xs text-slate-600">Varies by municipality of residence</p>
+                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Municipal Tax (Surcharges)</h4>
+                            <p class="text-sm font-bold text-slate-700">6% - 9%</p>
+                            <p class="text-xs text-slate-600">Additional percentage on IPP by municipality</p>
                         </div>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (RSZ/ONSS)</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employee Rate</th><th class="border p-2">Employer Rate</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Global Social Contributions</td><td class="border p-2 text-center">13.07%</td><td class="border p-2 text-center">~25%</td></tr>
-                            <tr><td class="border p-2">Special Social Security Contribution</td><td class="border p-2 text-center">0-731 EUR/yr</td><td class="border p-2 text-center">-</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 text-center font-bold text-amber-700">~13.07%</td><td class="border p-2 text-center">-</td></tr>
-                        </tbody>
-                    </table>
+                    <p>Belgian social contributions are split between employer and employee. The employee share is deducted directly from gross salary:</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-center">Employee Rate</th>
+                                    <th class="border p-2 text-center">Employer Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Global Social Contributions (ONSS)</td><td class="border p-2 text-center font-medium">13.07%</td><td class="border p-2 text-center">~25%</td></tr>
+                                <tr><td class="border p-2">Special Social Security Contribution</td><td class="border p-2 text-center font-medium">0-731 EUR/yr</td><td class="border p-2 text-center">-</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee Share</td><td class="border p-2 text-center font-bold text-amber-700">~13.07%</td><td class="border p-2 text-center">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500">Social contributions fund: pensions, healthcare, family allowances, and unemployment benefits.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax-Free Allowance 2026</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Marital Quotient and Child Allowances</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Marital Quotient (Quotient Conjugal)</h4>
+                        <p class="text-xs text-blue-700">If your spouse has little or no income, you can allocate up to 30% of your professional income (max ~EUR 11,000) to reduce your overall tax burden. This is calculated automatically by the tax administration.</p>
+                    </div>
                     <div class="grid md:grid-cols-2 gap-2 my-3">
-                        <div class="bg-blue-50 rounded-lg p-3"><p class="font-bold text-blue-700">EUR 10,570</p><p class="text-xs text-blue-600">Basic tax-free allowance</p></div>
-                        <div class="bg-blue-50 rounded-lg p-3"><p class="font-bold text-blue-700">+EUR 1,870</p><p class="text-xs text-blue-600">Per dependent child (1st and 2nd)</p></div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">EUR 10,570</p>
+                            <p class="text-xs text-green-600">Basic tax-free allowance</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+EUR 1,870 per child</p>
+                            <p class="text-xs text-green-600">1st and 2nd dependent child</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+EUR 4,200</p>
+                            <p class="text-xs text-green-600">3rd dependent child</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+EUR 4,830</p>
+                            <p class="text-xs text-green-600">4th child and beyond</p>
+                        </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Pension Savings: Tax Advantage</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Pension Savings Tax Reduction</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Option 1:</strong> Max contribution EUR 1,020/year = 30% tax reduction (EUR 306)</li>
+                            <li><strong>Option 2:</strong> Max contribution EUR 1,310/year = 25% tax reduction (EUR 327.50)</li>
+                            <li>Pension savings allow you to build retirement capital while receiving immediate tax benefits</li>
+                            <li>Funds are locked until age 60 (advantageous taxation at withdrawal)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Other Tax Deductions</h3>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Professional expenses:</strong> 30% flat rate (max EUR 5,520) or actual costs</li>
-                        <li><strong>Pension savings:</strong> Up to EUR 1,020 or EUR 1,310 deductible</li>
-                        <li><strong>Service vouchers:</strong> 30% tax reduction</li>
-                        <li><strong>Donations:</strong> 45% tax reduction (min EUR 40)</li>
-                        <li><strong>Mortgage loan:</strong> Regional housing bonus (varies)</li>
+                        <li><strong>Professional expenses (flat rate):</strong> 30% of income (max EUR 5,520) or actual costs with receipts</li>
+                        <li><strong>Service vouchers (titres-services):</strong> 30% tax reduction for approved domestic help</li>
+                        <li><strong>Donations:</strong> 45% tax reduction (minimum EUR 40 per institution)</li>
+                        <li><strong>Regional housing bonus:</strong> Mortgage interest and capital deduction (varies by region)</li>
+                        <li><strong>ALE vouchers:</strong> Tax reduction for local community work</li>
                     </ul>
 
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Example Calculation: EUR 60,000 Gross Salary</h3>
+                    <div class="bg-gradient-to-br from-yellow-50 to-white rounded-lg p-4 border border-yellow-200">
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-600">Annual gross salary</span><span class="font-medium">EUR 60,000</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">ONSS contributions (13.07%)</span><span class="font-medium text-amber-600">- EUR 7,842</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Taxable income</span><span class="font-medium">EUR 52,158</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">IPP (after tax-free allowance)</span><span class="font-medium text-indigo-600">- EUR 16,500</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Municipal surcharge (~7%)</span><span class="font-medium text-slate-600">- EUR 1,155</span></div>
+                            <div class="border-t pt-2 flex justify-between"><span class="font-semibold text-emerald-800">Net annual income</span><span class="font-bold text-emerald-600">~EUR 34,500</span></div>
+                            <p class="text-xs text-slate-500">Approximately EUR 2,875 net/month | Effective total rate: ~42.5%</p>
+                        </div>
+                    </div>
+
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Belgium vs France Comparison</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Criteria</th><th class="border p-2">France</th><th class="border p-2">Belgium</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2 text-center">~EUR 42,000 net</td><td class="border p-2 text-center">~EUR 35,500 net</td></tr>
-                            <tr><td class="border p-2">Maximum tax rate</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">50% + municipal</td></tr>
-                            <tr><td class="border p-2">Social contributions</td><td class="border p-2 text-center">~22%</td><td class="border p-2 text-center">~13.07%</td></tr>
-                            <tr><td class="border p-2">Tax-free allowance</td><td class="border p-2 text-center">~EUR 11,294</td><td class="border p-2 text-center">~EUR 10,570</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-center">France</th>
+                                    <th class="border p-2 text-center">Belgium</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2 text-center">~EUR 42,000 net</td><td class="border p-2 text-center">~EUR 34,500 net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">50% + 6-9% municipal</td></tr>
+                                <tr><td class="border p-2">Employee contributions</td><td class="border p-2 text-center">~22%</td><td class="border p-2 text-center">~13.07%</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2 text-center">Yes (parts system)</td><td class="border p-2 text-center">Marital quotient</td></tr>
+                                <tr><td class="border p-2">Pension savings deductible</td><td class="border p-2 text-center">PER (capped)</td><td class="border p-2 text-center">EUR 1,020-1,310</td></tr>
+                                <tr><td class="border p-2">Healthcare</td><td class="border p-2 text-center">Social Security</td><td class="border p-2 text-center">Mutuelle + INAMI</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">Belgium has lower social contributions but higher income tax. Net income is often lower than France for average salaries.</p>
+                </div>
+            </div>
+
+            <!-- Official Sources -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Official Sources
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://finances.belgium.be/en/individuals/tax" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">FPS Finance - Personal Tax</p>
+                            <p class="text-xs text-slate-500">finances.belgium.be - Official IPP rates and information</p>
+                        </div>
+                    </a>
+                    <a href="https://www.socialsecurity.be/citizen/en" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Belgian Social Security (ONSS)</p>
+                            <p class="text-xs text-slate-500">socialsecurity.be - Contributions and social benefits</p>
+                        </div>
+                    </a>
+                    <a href="https://www.belgium.be/en/taxes" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Belgium.be Portal - Taxation</p>
+                            <p class="text-xs text-slate-500">belgium.be - Tax guide for residents</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 

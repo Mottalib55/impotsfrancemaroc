@@ -320,52 +320,161 @@
                 </div>
             </div>
 
+            <!-- Understanding German Taxes -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to German Taxation</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Germany has a progressive tax system with significant social contributions that provide comprehensive welfare coverage including health insurance, pension, and unemployment benefits.</p>
+                    <p>Germany has one of the most complex tax systems in Europe with the <strong>Einkommensteuer</strong> (income tax). German taxation is based on the <strong>tax residency principle</strong>: anyone residing in Germany for more than 183 days per year is taxable on their worldwide income. The system uses a progressive scale with precise mathematical formulas to calculate tax within each bracket.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">German Tax Structure</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-yellow-800 text-xs mb-1">Einkommensteuer</h4>
-                            <p class="text-sm font-bold text-yellow-700">0% - 45%</p>
-                            <p class="text-xs text-yellow-600">Progressive income tax</p>
-                        </div>
-                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Solidaritatszuschlag</h4>
-                            <p class="text-sm font-bold text-slate-700">5.5%</p>
-                            <p class="text-xs text-slate-600">of income tax (if tax > EUR 18,130)</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">2026 Tax Brackets (Einkommensteuertarif)</h3>
+                    <p>German income tax uses a system of <strong>progressive brackets</strong> with continuous calculation formulas:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>EUR 0 - EUR 11,604: <strong>0%</strong> (Grundfreibetrag - basic allowance)</li>
+                            <li>EUR 11,604 - EUR 17,005: <strong>14-24%</strong> (linear progression)</li>
+                            <li>EUR 17,005 - EUR 66,760: <strong>24-42%</strong> (linear progression)</li>
+                            <li>EUR 66,760 - EUR 277,825: <strong>42%</strong> (proportional rate)</li>
+                            <li>Above EUR 277,825: <strong>45%</strong> (Reichensteuer - wealth tax)</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: The progressive brackets (14-24% and 24-42%) use mathematical formulas for smooth transitions, avoiding threshold effects.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Solidaritatszuschlag (Solidarity Surcharge)</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Soli: 5.5% of income tax</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li>Introduced in 1991 to finance German reunification</li>
+                            <li><strong>Exemption in 2026</strong>: if tax < EUR 18,130 (single) or EUR 36,260 (couple)</li>
+                            <li>Transition zone (Milderungszone) to avoid threshold effects</li>
+                            <li>Mainly affects income > EUR 75,000/year for singles</li>
+                        </ul>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (Employee Share)</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employee Rate</th><th class="border p-2">Ceiling 2026</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Health Insurance (Krankenversicherung)</td><td class="border p-2 text-center">7.3% + 0.9%</td><td class="border p-2 text-center">EUR 62,100/yr</td></tr>
-                            <tr><td class="border p-2">Pension Insurance (Rentenversicherung)</td><td class="border p-2 text-center">9.3%</td><td class="border p-2 text-center">EUR 90,600/yr</td></tr>
-                            <tr><td class="border p-2">Unemployment Insurance (Arbeitslosenversicherung)</td><td class="border p-2 text-center">1.3%</td><td class="border p-2 text-center">EUR 90,600/yr</td></tr>
-                            <tr><td class="border p-2">Long-term Care (Pflegeversicherung)</td><td class="border p-2 text-center">1.7%</td><td class="border p-2 text-center">EUR 62,100/yr</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 text-center font-bold text-amber-700">~20.5%</td><td class="border p-2 text-center">-</td></tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Kirchensteuer (Church Tax)</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">8% or 9% of income tax</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>8%</strong> in Bavaria and Baden-Wurttemberg</li>
+                            <li><strong>9%</strong> in other federal states</li>
+                            <li>Only applicable to registered members of a recognized church (Catholic, Protestant, etc.)</li>
+                            <li>Automatically deducted by employer if you are registered</li>
+                            <li><strong>To leave</strong>: official declaration (Kirchenaustritt) at the Amtsgericht or Standesamt</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (~20% employee share)</h3>
+                    <p>The German social system is based on <strong>parity</strong>: employer and employee each pay approximately 20% of the gross salary.</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Employee Rate</th>
+                                    <th class="border p-2 text-left">Ceiling 2026</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Rentenversicherung (Pension)</td><td class="border p-2 font-medium">9.3%</td><td class="border p-2">EUR 90,600/yr (West)</td><td class="border p-2">Pay-as-you-go pension</td></tr>
+                                <tr><td class="border p-2">Krankenversicherung (Health)</td><td class="border p-2 font-medium">7.3% + ~0.9%</td><td class="border p-2">EUR 62,100/yr</td><td class="border p-2">Mandatory health insurance</td></tr>
+                                <tr><td class="border p-2">Pflegeversicherung (Long-term Care)</td><td class="border p-2 font-medium">1.7% (+0.6% childless)</td><td class="border p-2">EUR 62,100/yr</td><td class="border p-2">Long-term care insurance</td></tr>
+                                <tr><td class="border p-2">Arbeitslosenversicherung (Unemployment)</td><td class="border p-2 font-medium">1.3%</td><td class="border p-2">EUR 90,600/yr</td><td class="border p-2">Unemployment insurance</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 font-bold text-amber-700">~20.5%</td><td class="border p-2">-</td><td class="border p-2">Employer also pays ~20%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Benefits and Deductions</h3>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Ehegattensplitting (Spousal Splitting)</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Couple's income divided by 2, tax calculated, then multiplied by 2</li>
+                            <li>Very advantageous if one spouse earns significantly more than the other</li>
+                            <li>Savings can reach <strong>EUR 15,000+/year</strong> for high earners</li>
+                            <li>Class III/V combination optimal if incomes are very different</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Kindergeld / Kinderfreibetrag (Child Benefits)</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Kindergeld 2026</strong>: EUR 250/month per child (paid directly)</li>
+                            <li><strong>Kinderfreibetrag</strong>: EUR 9,312 tax deduction per child</li>
+                            <li>Tax office automatically applies the more beneficial option</li>
+                            <li>Kinderfreibetrag more advantageous from ~EUR 85,000 annual income</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Professional Deductions (Werbungskosten)</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>Automatic flat rate</strong>: EUR 1,230/year without receipts</li>
+                            <li><strong>Pendlerpauschale</strong>: EUR 0.30/km (EUR 0.38 beyond 21 km)</li>
+                            <li>Training costs, professional equipment, home office (EUR 1,260 max)</li>
+                            <li>Double household (doppelte Haushaltsfuhrung) if working far from home</li>
+                        </ul>
+                    </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Classes (Steuerklassen)</h3>
                     <div class="grid md:grid-cols-3 gap-2 my-3">
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">Class I</p><p class="text-xs text-blue-600">Single persons</p></div>
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">Class III</p><p class="text-xs text-blue-600">Married (main earner)</p></div>
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">Class V</p><p class="text-xs text-blue-600">Married (second earner)</p></div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class I</p>
+                            <p class="text-xs text-blue-600">Single without children</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class II</p>
+                            <p class="text-xs text-blue-600">Single parent</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class III</p>
+                            <p class="text-xs text-blue-600">Married (main earner)</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class IV</p>
+                            <p class="text-xs text-blue-600">Married (equal income)</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class V</p>
+                            <p class="text-xs text-blue-600">Married (second earner)</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-blue-700">Class VI</p>
+                            <p class="text-xs text-blue-600">Second job</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Married couples can optimize their tax by choosing the III/V combination (if incomes are very different) or IV/IV with Faktor (more precise calculation).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Germany Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Germany</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2">~EUR 42,000 net</td><td class="border p-2">~EUR 37,500 net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">45% + 5.5% Soli</td></tr>
+                                <tr><td class="border p-2">Social contributions (employee)</td><td class="border p-2">~22%</td><td class="border p-2">~20.5%</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes (parts)</td><td class="border p-2">Spousal splitting only</td></tr>
+                                <tr><td class="border p-2">Withholding tax</td><td class="border p-2">Yes (2019+)</td><td class="border p-2">Yes (Lohnsteuer)</td></tr>
+                                <tr><td class="border p-2">Mandatory declaration</td><td class="border p-2">Yes</td><td class="border p-2">Depends on situation</td></tr>
+                                <tr><td class="border p-2">Health insurance</td><td class="border p-2">Social security</td><td class="border p-2">Public or private (choice if >EUR 69,300)</td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Return (Steuererklarung)</h3>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Werbungskosten:</strong> Work-related expenses (EUR 1,230 flat rate or actual costs)</li>
-                        <li><strong>Sonderausgaben:</strong> Private pension contributions, insurance</li>
-                        <li><strong>Pendlerpauschale:</strong> EUR 0.30/km commute (EUR 0.38 beyond 21km)</li>
-                        <li><strong>Kinderfreibetrag:</strong> EUR 9,312 per child (or Kindergeld of EUR 250/month)</li>
-                        <li><strong>Riester-Rente:</strong> Up to EUR 2,100/year deductible</li>
+                        <li><strong>Deadline</strong>: July 31 of the following year (or February 28/29 with tax advisor)</li>
+                        <li><strong>Mandatory if</strong>: multiple incomes, class V, rental income, self-employed, etc.</li>
+                        <li><strong>Popular software</strong>: ELSTER (free), WISO Steuer, Taxfix, Steuerbot</li>
+                        <li><strong>Average refund</strong>: approximately EUR 1,000 for employees</li>
+                        <li><strong>Refund timeline</strong>: 6 to 12 weeks after filing</li>
                     </ul>
                 </div>
             </div>

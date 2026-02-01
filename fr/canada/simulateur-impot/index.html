@@ -410,70 +410,115 @@
                 </div>
             </div>
 
+            <!-- Comprendre l'impot au Canada -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite canadienne</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Canada possede un systeme fiscal a deux niveaux avec des impots federaux et provinciaux. Les cotisations sociales sont relativement basses comparees a d'autres pays developpes.</p>
+                    <p>Le Canada possede un systeme fiscal unique a <strong>deux niveaux</strong> : federal et provincial/territorial. Contrairement a de nombreux pays, l'impot provincial varie considerablement d'une province a l'autre. La residence fiscale est determinee par vos <strong>liens de residence significatifs</strong> (domicile, famille, biens) plutot que par le nombre de jours passes au pays.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot canadien</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-red-800 text-xs mb-1">Impot Federal</h4>
-                            <p class="text-sm font-bold text-red-700">15% - 33%</p>
-                            <p class="text-xs text-red-600">Impot progressif federal</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition federales 2026</h3>
+                    <p>L'impot federal utilise un systeme de <strong>tranches marginales progressives</strong>. Seule la portion du revenu dans chaque tranche est imposee au taux correspondant :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>$0 - $55,867 : <strong>15%</strong></li>
+                            <li>$55,867 - $111,733 : <strong>20.5%</strong></li>
+                            <li>$111,733 - $173,205 : <strong>26%</strong></li>
+                            <li>$173,205 - $246,752 : <strong>29%</strong></li>
+                            <li>Au-dela de $246,752 : <strong>33%</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Impots provinciaux - Exemples majeurs</h3>
+                    <p>Chaque province applique ses propres tranches d'imposition en plus de l'impot federal :</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-3">
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Impot Provincial (Ontario)</h4>
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Ontario</h4>
                             <p class="text-sm font-bold text-blue-700">5.05% - 13.16%</p>
-                            <p class="text-xs text-blue-600">Varie selon la province</p>
+                            <p class="text-xs text-blue-600">Province la plus peuplee</p>
+                        </div>
+                        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-indigo-800 text-xs mb-1">Quebec</h4>
+                            <p class="text-sm font-bold text-indigo-700">14% - 25.75%</p>
+                            <p class="text-xs text-indigo-600">Taux les plus eleves + RRQ</p>
+                        </div>
+                        <div class="bg-teal-50 border border-teal-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-teal-800 text-xs mb-1">Colombie-Britannique</h4>
+                            <p class="text-sm font-bold text-teal-700">5.06% - 20.5%</p>
+                            <p class="text-xs text-teal-600">Vancouver, Victoria</p>
                         </div>
                     </div>
+                    <p class="text-xs text-slate-500">Note : L'Alberta a les taux les plus bas (10% - 15%), tandis que le Quebec a les plus eleves mais offre plus de services.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (part employe)</h3>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Plafond 2026</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Regime de pensions du Canada (RPC/CPP)</td><td class="border p-2 font-medium">5.95%</td><td class="border p-2">68,500 CAD/an</td></tr>
-                                <tr><td class="border p-2">Assurance-emploi (AE/EI)</td><td class="border p-2 font-medium">1.66%</td><td class="border p-2">63,200 CAD/an</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">~7.6%</td><td class="border p-2">-</td></tr>
-                            </tbody>
-                        </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales obligatoires</h3>
+                    <p>Tous les salaries canadiens paient des cotisations pour la retraite et l'assurance-emploi :</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>RPC/CPP (5.95%)</strong> : Regime de pensions du Canada - cotisation obligatoire sur les gains jusqu'a $68,500. L'employeur verse egalement 5.95%.</li>
+                        <li><strong>RRQ au Quebec (6.4%)</strong> : Le Quebec a son propre regime de retraite, legerement plus eleve que le RPC.</li>
+                        <li><strong>AE/EI (1.63%)</strong> : Assurance-emploi - plafonnee a $63,200 de revenus. Protege en cas de perte d'emploi.</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Credits d'impot et deductions</h3>
+
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Montant personnel de base</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li><strong>Federal</strong> : $15,705 (2026) - aucun impot federal sur cette portion</li>
+                            <li><strong>Provincial</strong> : varie selon la province (~$11,000 - $21,000)</li>
+                            <li>Resultat : les premiers ~$15,000 sont effectivement non imposes</li>
+                        </ul>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Impot provincial (Ontario 2026)</h3>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Tranche</th>
-                                    <th class="border p-2 text-left">Taux</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">0 - 51,446 CAD</td><td class="border p-2 font-medium">5.05%</td></tr>
-                                <tr><td class="border p-2">51,446 - 102,894 CAD</td><td class="border p-2 font-medium">9.15%</td></tr>
-                                <tr><td class="border p-2">102,894 - 150,000 CAD</td><td class="border p-2 font-medium">11.16%</td></tr>
-                                <tr><td class="border p-2">150,000 - 220,000 CAD</td><td class="border p-2 font-medium">12.16%</td></tr>
-                                <tr><td class="border p-2">220,000+ CAD</td><td class="border p-2 font-medium text-red-600">13.16%</td></tr>
-                            </tbody>
-                        </table>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Credits pour enfants et famille</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Allocation canadienne pour enfants (ACE)</strong> : jusqu'a $7,437/an par enfant de moins de 6 ans</li>
+                            <li><strong>Enfants de 6-17 ans</strong> : jusqu'a $6,275/an par enfant</li>
+                            <li>Montants reduits progressivement pour les revenus familiaux > $34,863</li>
+                            <li><strong>Credit pour frais de garde</strong> : jusqu'a $8,000 deductible par enfant</li>
+                        </ul>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Credits et deductions fiscales principales</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Montant personnel de base</strong> : 15,705 CAD (federal), 11,865 CAD (Ontario)</li>
-                        <li><strong>REER/RRSP</strong> : cotisations deductibles jusqu'a 18% du revenu (max ~31,560 CAD)</li>
-                        <li><strong>CELI/TFSA</strong> : epargne libre d'impot (plafond ~7,000 CAD/an)</li>
-                        <li><strong>Credit pour TPS/TVH</strong> : credit remboursable pour revenus modestes</li>
-                        <li><strong>Allocation canadienne pour enfants</strong> : jusqu'a 7,437 CAD par enfant</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Strategies d'epargne fiscalement avantageuses</h3>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">REER - Regime enregistre d'epargne-retraite</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Contribution max 2026 : <strong>18% du revenu</strong> (max ~$31,560)</li>
+                            <li>Cotisations <strong>100% deductibles</strong> du revenu imposable</li>
+                            <li>Croissance a l'abri de l'impot jusqu'au retrait</li>
+                            <li>Ideal pour reporter l'impot a la retraite (taux marginal plus bas)</li>
+                            <li><strong>RAP</strong> : retirer jusqu'a $35,000 sans impot pour acheter une premiere maison</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">CELI - Compte d'epargne libre d'impot</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Plafond 2026 : <strong>~$7,000</strong> (cumul depuis 2009 : ~$95,000)</li>
+                            <li>Cotisations NON deductibles, mais <strong>retraits 100% libres d'impot</strong></li>
+                            <li>Gains en capital, dividendes, interets : jamais imposes</li>
+                            <li>Flexibilite totale : retirer a tout moment sans penalite</li>
+                            <li>Ideal pour epargne a court/moyen terme et revenu de retraite non imposable</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">REEE - Epargne-etudes</h4>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li>Subvention gouvernementale (SCEE) : <strong>20% sur les premiers $2,500/an</strong> (max $500/an)</li>
+                            <li>Subvention a vie maximale : $7,200 par enfant</li>
+                            <li>Croissance a l'abri de l'impot</li>
+                            <li>Retraits imposes au nom de l'etudiant (generalement faible revenu)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Dates cles et obligations</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>30 avril</strong> : date limite de declaration annuelle (T1 General)</li>
+                        <li><strong>15 juin</strong> : date limite pour les travailleurs autonomes (mais paiement du le 30 avril)</li>
+                        <li><strong>1er mars</strong> : date limite contribution REER pour l'annee fiscale precedente</li>
+                        <li><strong>Penalite retard</strong> : 5% du solde du + 1%/mois (max 12 mois)</li>
                     </ul>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Canada</h3>
@@ -483,14 +528,16 @@
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Critere</th>
                                     <th class="border p-2 text-left">France</th>
-                                    <th class="border p-2 text-left">Canada</th>
+                                    <th class="border p-2 text-left">Canada (Ontario)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Salaire 80,000 CAD brut</td><td class="border p-2">~52,000 CAD net</td><td class="border p-2">~58,000 CAD net</td></tr>
-                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">33% federal + 13.16% provincial</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">~7.6%</td></tr>
-                                <tr><td class="border p-2">Sante</td><td class="border p-2">Incluse</td><td class="border p-2">Publique (provinciale)</td></tr>
+                                <tr><td class="border p-2">Taux max federal</td><td class="border p-2">45%</td><td class="border p-2">33% fed + 13.16% prov</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22% employe</td><td class="border p-2">~7.6% employe</td></tr>
+                                <tr><td class="border p-2">Epargne retraite deductible</td><td class="border p-2">PER (~10% revenu)</td><td class="border p-2">REER (18% revenu)</td></tr>
+                                <tr><td class="border p-2">Epargne non imposee</td><td class="border p-2">Livret A (limite)</td><td class="border p-2">CELI ($95,000+)</td></tr>
+                                <tr><td class="border p-2">Systeme de sante</td><td class="border p-2">Secu + mutuelle</td><td class="border p-2">Public provincial</td></tr>
+                                <tr><td class="border p-2">Allocations enfants</td><td class="border p-2">Sous conditions</td><td class="border p-2">Universelles (ACE)</td></tr>
                             </tbody>
                         </table>
                     </div>

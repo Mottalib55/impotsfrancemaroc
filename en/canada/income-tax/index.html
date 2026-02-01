@@ -320,67 +320,137 @@
                 </div>
             </div>
 
+            <!-- Understanding Canadian Taxes -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Canadian Taxation</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Canada has a two-tier tax system with both federal and provincial taxes. Social contributions are relatively low compared to other developed countries, making Canada an attractive destination for workers.</p>
+                    <p>Canada has a unique <strong>two-tier tax system</strong>: federal and provincial/territorial. Unlike many countries, provincial tax rates vary significantly from province to province. Tax residency is determined by your <strong>significant residential ties</strong> (home, family, property) rather than just the number of days spent in the country.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Canadian Tax Structure</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-red-800 text-xs mb-1">Federal Tax</h4>
-                            <p class="text-sm font-bold text-red-700">15% - 33%</p>
-                            <p class="text-xs text-red-600">Progressive federal income tax</p>
-                        </div>
-                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Provincial Tax (Ontario)</h4>
-                            <p class="text-sm font-bold text-blue-700">5.05% - 13.16%</p>
-                            <p class="text-xs text-blue-600">Varies by province</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Federal Tax Brackets 2026</h3>
+                    <p>Federal income tax uses a <strong>progressive marginal rate system</strong>. Only the portion of income within each bracket is taxed at the corresponding rate:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>$0 - $55,867: <strong>15%</strong></li>
+                            <li>$55,867 - $111,733: <strong>20.5%</strong></li>
+                            <li>$111,733 - $173,205: <strong>26%</strong></li>
+                            <li>$173,205 - $246,752: <strong>29%</strong></li>
+                            <li>Over $246,752: <strong>33%</strong></li>
+                        </ul>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (Employee Share)</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employee Rate</th><th class="border p-2">Ceiling 2026</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Canada Pension Plan (CPP)</td><td class="border p-2 text-center">5.95%</td><td class="border p-2 text-center">CAD 68,500/yr</td></tr>
-                            <tr><td class="border p-2">Employment Insurance (EI)</td><td class="border p-2 text-center">1.66%</td><td class="border p-2 text-center">CAD 63,200/yr</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 text-center font-bold text-amber-700">~7.6%</td><td class="border p-2 text-center">-</td></tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Provincial Taxes - Major Examples</h3>
+                    <p>Each province applies its own tax brackets on top of federal tax:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-3">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Ontario</h4>
+                            <p class="text-sm font-bold text-blue-700">5.05% - 13.16%</p>
+                            <p class="text-xs text-blue-600">Most populous province</p>
+                        </div>
+                        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-indigo-800 text-xs mb-1">Quebec</h4>
+                            <p class="text-sm font-bold text-indigo-700">14% - 25.75%</p>
+                            <p class="text-xs text-indigo-600">Highest rates + QPP</p>
+                        </div>
+                        <div class="bg-teal-50 border border-teal-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-teal-800 text-xs mb-1">British Columbia</h4>
+                            <p class="text-sm font-bold text-teal-700">5.06% - 20.5%</p>
+                            <p class="text-xs text-teal-600">Vancouver, Victoria</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: Alberta has the lowest rates (10% - 15%), while Quebec has the highest but offers more public services.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Ontario Provincial Tax Brackets 2026</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Bracket</th><th class="border p-2">Rate</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">CAD 0 - 51,446</td><td class="border p-2 text-center">5.05%</td></tr>
-                            <tr><td class="border p-2">CAD 51,446 - 102,894</td><td class="border p-2 text-center">9.15%</td></tr>
-                            <tr><td class="border p-2">CAD 102,894 - 150,000</td><td class="border p-2 text-center">11.16%</td></tr>
-                            <tr><td class="border p-2">CAD 150,000 - 220,000</td><td class="border p-2 text-center">12.16%</td></tr>
-                            <tr><td class="border p-2">CAD 220,000+</td><td class="border p-2 text-center text-red-600">13.16%</td></tr>
-                        </tbody>
-                    </table>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Credits and Deductions</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Basic Personal Amount:</strong> CAD 15,705 (federal), CAD 11,865 (Ontario)</li>
-                        <li><strong>RRSP:</strong> Contributions deductible up to 18% of income (max ~CAD 31,560)</li>
-                        <li><strong>TFSA:</strong> Tax-free savings account (contribution limit ~CAD 7,000/year)</li>
-                        <li><strong>GST/HST Credit:</strong> Refundable credit for low-to-moderate income</li>
-                        <li><strong>Canada Child Benefit:</strong> Up to CAD 7,437 per child annually</li>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Mandatory Social Contributions</h3>
+                    <p>All Canadian employees pay contributions for retirement and employment insurance:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>CPP (5.95%)</strong>: Canada Pension Plan - mandatory contribution on earnings up to $68,500. The employer also pays 5.95%.</li>
+                        <li><strong>QPP in Quebec (6.4%)</strong>: Quebec has its own pension plan, slightly higher than CPP.</li>
+                        <li><strong>EI (1.63%)</strong>: Employment Insurance - capped at $63,200 in earnings. Provides protection in case of job loss.</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Canada vs USA Comparison</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Criteria</th><th class="border p-2 text-left">USA</th><th class="border p-2 text-left">Canada</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Salary CAD 80,000 gross</td><td class="border p-2">~CAD 62,000 net</td><td class="border p-2">~CAD 58,000 net</td></tr>
-                            <tr><td class="border p-2">Max federal tax rate</td><td class="border p-2">37%</td><td class="border p-2">33%</td></tr>
-                            <tr><td class="border p-2">Social contributions</td><td class="border p-2">~7.65%</td><td class="border p-2">~7.6%</td></tr>
-                            <tr><td class="border p-2">Healthcare</td><td class="border p-2">Private (employer)</td><td class="border p-2">Public (provincial)</td></tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Credits and Deductions</h3>
+
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Basic Personal Amount</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li><strong>Federal</strong>: $15,705 (2026) - no federal tax on this portion</li>
+                            <li><strong>Provincial</strong>: varies by province (~$11,000 - $21,000)</li>
+                            <li>Result: the first ~$15,000 is effectively tax-free</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Child and Family Credits</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Canada Child Benefit (CCB)</strong>: up to $7,437/year per child under 6</li>
+                            <li><strong>Children aged 6-17</strong>: up to $6,275/year per child</li>
+                            <li>Amounts gradually reduced for family incomes over $34,863</li>
+                            <li><strong>Child Care Expense Credit</strong>: up to $8,000 deductible per child</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax-Advantaged Savings Strategies</h3>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">RRSP - Registered Retirement Savings Plan</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>2026 contribution limit: <strong>18% of income</strong> (max ~$31,560)</li>
+                            <li>Contributions are <strong>100% tax-deductible</strong></li>
+                            <li>Tax-sheltered growth until withdrawal</li>
+                            <li>Ideal for deferring tax to retirement (lower marginal rate)</li>
+                            <li><strong>HBP</strong>: withdraw up to $35,000 tax-free to buy a first home</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">TFSA - Tax-Free Savings Account</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>2026 limit: <strong>~$7,000</strong> (cumulative since 2009: ~$95,000)</li>
+                            <li>Contributions NOT tax-deductible, but <strong>withdrawals are 100% tax-free</strong></li>
+                            <li>Capital gains, dividends, interest: never taxed</li>
+                            <li>Full flexibility: withdraw anytime without penalty</li>
+                            <li>Ideal for short/medium-term savings and tax-free retirement income</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">RESP - Education Savings</h4>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li>Government grant (CESG): <strong>20% on the first $2,500/year</strong> (max $500/year)</li>
+                            <li>Lifetime grant maximum: $7,200 per child</li>
+                            <li>Tax-sheltered growth</li>
+                            <li>Withdrawals taxed in the student's hands (usually low income)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Dates and Obligations</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>April 30</strong>: annual tax return deadline (T1 General)</li>
+                        <li><strong>June 15</strong>: deadline for self-employed (but payment still due April 30)</li>
+                        <li><strong>March 1</strong>: RRSP contribution deadline for the previous tax year</li>
+                        <li><strong>Late penalty</strong>: 5% of balance owing + 1%/month (max 12 months)</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Canada vs France Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Canada (Ontario)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Max federal rate</td><td class="border p-2">45%</td><td class="border p-2">33% fed + 13.16% prov</td></tr>
+                                <tr><td class="border p-2">Social contributions</td><td class="border p-2">~22% employee</td><td class="border p-2">~7.6% employee</td></tr>
+                                <tr><td class="border p-2">Deductible retirement savings</td><td class="border p-2">PER (~10% income)</td><td class="border p-2">RRSP (18% income)</td></tr>
+                                <tr><td class="border p-2">Tax-free savings</td><td class="border p-2">Livret A (limited)</td><td class="border p-2">TFSA ($95,000+)</td></tr>
+                                <tr><td class="border p-2">Healthcare system</td><td class="border p-2">National + supplemental</td><td class="border p-2">Public provincial</td></tr>
+                                <tr><td class="border p-2">Child benefits</td><td class="border p-2">Means-tested</td><td class="border p-2">Universal (CCB)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

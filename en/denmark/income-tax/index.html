@@ -324,78 +324,103 @@
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Danish Taxation</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Denmark has one of the highest tax rates in the world, but in return offers an extensive social model with free education and healthcare.</p>
+                    <p>Denmark has one of the <strong>highest tax rates in the world</strong>, with marginal rates reaching up to 52%. In return, the country offers an exceptionally comprehensive social model with completely free healthcare and education, plus generous social benefits.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Danish Tax Structure</h3>
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4 my-4">
+                        <p class="font-semibold text-red-800">Among the highest taxes in the world</p>
+                        <p class="text-xs text-red-700 mt-1">Denmark consistently ranks among OECD countries with the highest tax burden, but also among the happiest and most equal societies globally.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Components of Danish Income Tax</h3>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-red-800 text-xs mb-1">AM-bidrag</h4>
-                            <p class="text-sm font-bold text-red-700">8%</p>
-                            <p class="text-xs text-red-600">Labor market contribution</p>
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-amber-800 text-xs mb-1">AM-bidrag (Labor Market Contribution)</h4>
+                            <p class="text-sm font-bold text-amber-700">8%</p>
+                            <p class="text-xs text-amber-600">Deducted first from gross income, before any other taxes</p>
                         </div>
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Bundskat</h4>
-                            <p class="text-sm font-bold text-blue-700">12.09%</p>
-                            <p class="text-xs text-blue-600">State bottom bracket tax</p>
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Bundskat (Base Tax)</h4>
+                            <p class="text-sm font-bold text-blue-700">~12%</p>
+                            <p class="text-xs text-blue-600">State tax applied to all income above the personal allowance</p>
                         </div>
                         <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-purple-800 text-xs mb-1">Kommuneskat</h4>
+                            <h4 class="font-semibold text-purple-800 text-xs mb-1">Kommuneskat (Municipal Tax)</h4>
                             <p class="text-sm font-bold text-purple-700">~25%</p>
-                            <p class="text-xs text-purple-600">Municipal tax (varies by municipality)</p>
+                            <p class="text-xs text-purple-600">Varies by municipality (22% to 27%), averaging around 25%</p>
                         </div>
-                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Topskat</h4>
-                            <p class="text-sm font-bold text-slate-700">15%</p>
-                            <p class="text-xs text-slate-600">State top bracket (if > DKK 588,900)</p>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-red-800 text-xs mb-1">Topskat (Top Tax on High Earners)</h4>
+                            <p class="text-sm font-bold text-red-700">15%</p>
+                            <p class="text-xs text-red-600">Only applies to income exceeding ~DKK 600,000 annually</p>
                         </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">How Danish Tax is Calculated</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Detailed Danish Tax Calculation</h3>
                     <table class="w-full text-xs border-collapse">
                         <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Step</th><th class="border p-2">Description</th><th class="border p-2">Rate</th></tr></thead>
                         <tbody>
-                            <tr><td class="border p-2">1. AM-bidrag</td><td class="border p-2">Deducted from gross income</td><td class="border p-2 text-center">8%</td></tr>
-                            <tr><td class="border p-2">2. Taxable income</td><td class="border p-2">Gross - AM-bidrag - deductions</td><td class="border p-2 text-center">-</td></tr>
-                            <tr><td class="border p-2">3. Bundskat</td><td class="border p-2">On taxable income</td><td class="border p-2 text-center">12.09%</td></tr>
-                            <tr><td class="border p-2">4. Kommuneskat</td><td class="border p-2">Municipal + regional tax</td><td class="border p-2 text-center">~25%</td></tr>
-                            <tr><td class="border p-2">5. Topskat</td><td class="border p-2">If income > DKK 588,900</td><td class="border p-2 text-center">15%</td></tr>
-                            <tr class="bg-red-50"><td class="border p-2 font-semibold">Total max</td><td class="border p-2 font-semibold">Maximum marginal rate</td><td class="border p-2 text-center font-bold text-red-700">~52%</td></tr>
+                            <tr><td class="border p-2">1. AM-bidrag</td><td class="border p-2">Deducted from total gross income</td><td class="border p-2 text-center">8%</td></tr>
+                            <tr><td class="border p-2">2. Taxable base</td><td class="border p-2">Gross - AM-bidrag - Personfradrag (DKK 49,700)</td><td class="border p-2 text-center">-</td></tr>
+                            <tr><td class="border p-2">3. Bundskat</td><td class="border p-2">State base tax on taxable income</td><td class="border p-2 text-center">12.09%</td></tr>
+                            <tr><td class="border p-2">4. Kommuneskat</td><td class="border p-2">Municipal tax + kirkeskat (if church member)</td><td class="border p-2 text-center">~25%</td></tr>
+                            <tr><td class="border p-2">5. Topskat</td><td class="border p-2">If income > DKK 588,900 (2026 threshold)</td><td class="border p-2 text-center">15%</td></tr>
+                            <tr class="bg-red-50"><td class="border p-2 font-semibold">Total max</td><td class="border p-2 font-semibold">Maximum marginal rate (capped by law)</td><td class="border p-2 text-center font-bold text-red-700">~52.07%</td></tr>
                         </tbody>
                     </table>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Personal Allowance (Personfradrag)</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Personfradrag (Personal Allowance)</h3>
                     <div class="bg-emerald-50 rounded-lg p-4 my-3">
-                        <p class="text-sm"><strong>2026 Allowance:</strong> DKK 49,700 per year</p>
-                        <p class="text-xs text-emerald-700 mt-1">This allowance reduces the tax base for bundskat and kommuneskat.</p>
+                        <p class="text-sm"><strong>2026 Allowance:</strong> DKK 49,700 per year (~EUR 6,700)</p>
+                        <p class="text-xs text-emerald-700 mt-1">This personal allowance reduces the taxable base for bundskat and kommuneskat. It is automatically applied and cannot be transferred between spouses.</p>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Beskaftigelsesfradrag:</strong> Employment deduction (max ~DKK 45,100)</li>
-                        <li><strong>Pendlerfradrag:</strong> Commuting costs (beyond 24 km)</li>
-                        <li><strong>Rentefradrag:</strong> Interest on loans is deductible</li>
-                        <li><strong>Fagforeningskontingent:</strong> Union membership fees</li>
-                        <li><strong>Ratepension:</strong> Pension savings (up to DKK 63,100)</li>
+                    <ul class="list-disc pl-5 space-y-2 text-xs">
+                        <li><strong>Beskaftigelsesfradrag:</strong> Employment deduction (10.65% of salary, max ~DKK 45,100)</li>
+                        <li><strong>Pendlerfradrag:</strong> Commuting costs deductible beyond 24 km one-way</li>
+                        <li><strong>Rentefradrag:</strong> Mortgage interest deductible (tax value ~33%)</li>
+                        <li><strong>Fagforeningskontingent:</strong> Union dues deductible up to DKK 6,000/year</li>
+                        <li><strong>Ratepension:</strong> Private pension savings deductible up to DKK 63,100/year</li>
+                        <li><strong>Aldersopsparing:</strong> Separate age-savings scheme with tax advantages</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Benefits of the Danish System</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Free Public Services Funded by Taxes</h3>
                     <div class="grid md:grid-cols-2 gap-2 my-3">
                         <div class="bg-green-50 rounded-lg p-3 text-center">
-                            <p class="font-bold text-green-700">Free Healthcare</p>
-                            <p class="text-xs text-green-600">Universal access</p>
+                            <p class="font-bold text-green-700">100% Free Healthcare</p>
+                            <p class="text-xs text-green-600">Doctors, hospitals, emergencies at no cost</p>
                         </div>
                         <div class="bg-green-50 rounded-lg p-3 text-center">
                             <p class="font-bold text-green-700">Free Education</p>
-                            <p class="text-xs text-green-600">+ student grant (SU)</p>
+                            <p class="text-xs text-green-600">From kindergarten to PhD</p>
                         </div>
                         <div class="bg-green-50 rounded-lg p-3 text-center">
-                            <p class="font-bold text-green-700">Flexicurity</p>
-                            <p class="text-xs text-green-600">Flexible hiring + strong safety net</p>
+                            <p class="font-bold text-green-700">SU (Student Grant)</p>
+                            <p class="text-xs text-green-600">~DKK 6,400/month for students</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-green-700">Unemployment Benefits</p>
+                            <p class="text-xs text-green-600">Up to 90% of salary for 2 years</p>
                         </div>
                         <div class="bg-green-50 rounded-lg p-3 text-center">
                             <p class="font-bold text-green-700">Parental Leave</p>
-                            <p class="text-xs text-green-600">52 weeks</p>
+                            <p class="text-xs text-green-600">52 weeks shared between parents</p>
                         </div>
+                        <div class="bg-green-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-green-700">Public Pension</p>
+                            <p class="text-xs text-green-600">Universal Folkepension + ATP</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">The Danish Flexicurity Model</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <p class="text-sm text-blue-800 mb-2"><strong>A unique balance in the world:</strong></p>
+                        <ul class="list-disc pl-5 space-y-1 text-xs text-blue-700">
+                            <li><strong>Flexibility:</strong> Easy dismissal for employers (short notice periods)</li>
+                            <li><strong>Security:</strong> Generous unemployment benefits (up to 90% of salary)</li>
+                            <li><strong>Training:</strong> Government-funded retraining programs</li>
+                            <li>Result: One of Europe's lowest unemployment rates (~5%)</li>
+                        </ul>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">International Comparison</h3>
@@ -403,11 +428,28 @@
                         <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Criteria</th><th class="border p-2">UK</th><th class="border p-2">Denmark</th></tr></thead>
                         <tbody>
                             <tr><td class="border p-2">Top marginal rate</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">~52%</td></tr>
-                            <tr><td class="border p-2">Social contributions</td><td class="border p-2 text-center">~12% (NI)</td><td class="border p-2 text-center">8% (AM-bidrag)</td></tr>
-                            <tr><td class="border p-2">Healthcare</td><td class="border p-2 text-center">NHS (taxes)</td><td class="border p-2 text-center">Free (taxes)</td></tr>
-                            <tr><td class="border p-2">University</td><td class="border p-2 text-center">Tuition fees</td><td class="border p-2 text-center">Free + grant</td></tr>
+                            <tr><td class="border p-2">Employee social contributions</td><td class="border p-2 text-center">~12% (NI)</td><td class="border p-2 text-center">8% (AM-bidrag)</td></tr>
+                            <tr><td class="border p-2">VAT</td><td class="border p-2 text-center">20%</td><td class="border p-2 text-center">25%</td></tr>
+                            <tr><td class="border p-2">Healthcare</td><td class="border p-2 text-center">NHS (taxes)</td><td class="border p-2 text-center">100% free</td></tr>
+                            <tr><td class="border p-2">University</td><td class="border p-2 text-center">Tuition fees (~GBP 9,250)</td><td class="border p-2 text-center">Free + monthly grant</td></tr>
+                            <tr><td class="border p-2">Unemployment benefits</td><td class="border p-2 text-center">~GBP 85/week</td><td class="border p-2 text-center">90% of salary (2 yrs)</td></tr>
+                            <tr><td class="border p-2">UN Happiness Index</td><td class="border p-2 text-center">17th</td><td class="border p-2 text-center">2nd worldwide</td></tr>
                         </tbody>
                     </table>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Example: DKK 500,000 Salary</h3>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between"><span>Annual gross income</span><span class="font-semibold">DKK 500,000</span></div>
+                            <div class="flex justify-between text-amber-700"><span>- AM-bidrag (8%)</span><span>-DKK 40,000</span></div>
+                            <div class="flex justify-between"><span>= Taxable base after AM</span><span>DKK 460,000</span></div>
+                            <div class="flex justify-between text-slate-500"><span>- Personfradrag</span><span>-DKK 49,700</span></div>
+                            <div class="flex justify-between"><span>= Final taxable base</span><span>DKK 410,300</span></div>
+                            <div class="flex justify-between text-indigo-700"><span>- Taxes (bundskat + kommuneskat)</span><span>~-DKK 152,000</span></div>
+                            <div class="border-t pt-2 flex justify-between font-semibold text-emerald-700"><span>Annual net income</span><span>~DKK 308,000</span></div>
+                            <div class="flex justify-between text-emerald-600"><span>Monthly net income</span><span>~DKK 25,670 (~EUR 3,450)</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

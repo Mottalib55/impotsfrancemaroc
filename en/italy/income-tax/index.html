@@ -318,51 +318,179 @@
                 </div>
             </div>
 
+            <!-- Understanding Italian Taxation -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Italian Taxation</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Italian Taxation 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Italy has a progressive tax system with IRPEF (Imposta sul Reddito delle Persone Fisiche) as the main income tax, complemented by INPS social contributions and regional/municipal taxes.</p>
+                    <p>Italy has a sophisticated progressive tax system with <strong>IRPEF</strong> (Imposta sul Reddito delle Persone Fisiche) as the main income tax for individuals. This system is complemented by mandatory INPS social contributions and variable regional/municipal taxes depending on location.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Italian Tax Structure</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">IRPEF: Italian Income Tax</h3>
+                    <p>IRPEF is a progressive tax calculated on annual income. Since the 2024 fiscal reform, Italy has simplified its rate structure from 4 to <strong>3 tax brackets</strong>:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>EUR 0 - 28,000: <strong>23%</strong></li>
+                            <li>EUR 28,001 - 50,000: <strong>35%</strong></li>
+                            <li>Above EUR 50,000: <strong>43%</strong></li>
+                        </ul>
+                    </div>
+                    <p>These rates apply marginally: only the portion of income within each bracket is taxed at the corresponding rate.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Addizionale Regionale and Comunale</h3>
+                    <p>In addition to national IRPEF, Italian taxpayers pay <strong>additional local taxes</strong>:</p>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
                         <div class="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-green-800 text-xs mb-1">IRPEF</h4>
-                            <p class="text-sm font-bold text-green-700">23% - 43%</p>
-                            <p class="text-xs text-green-600">Progressive income tax</p>
+                            <h4 class="font-semibold text-green-800 text-xs mb-1">Addizionale Regionale</h4>
+                            <p class="text-sm font-bold text-green-700">1.23% - 3.33%</p>
+                            <p class="text-xs text-green-600">Varies by region (e.g., Lazio 3.33%, Lombardia 1.74%)</p>
                         </div>
-                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Addizionale Regionale/Comunale</h4>
-                            <p class="text-sm font-bold text-slate-700">~2-3%</p>
-                            <p class="text-xs text-slate-600">Additional local taxes</p>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Addizionale Comunale</h4>
+                            <p class="text-sm font-bold text-blue-700">0% - 0.9%</p>
+                            <p class="text-xs text-blue-600">Varies by municipality (e.g., Rome 0.9%, Milan 0.8%)</p>
                         </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">INPS Social Contributions (Employee Share)</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employee Rate</th><th class="border p-2">Description</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">General INPS contribution</td><td class="border p-2 text-center">~9.19%</td><td class="border p-2 text-center">Pension and social benefits</td></tr>
-                            <tr><td class="border p-2">Additional contribution</td><td class="border p-2 text-center">~0.30%</td><td class="border p-2 text-center">Guarantee fund</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total INPS Employee</td><td class="border p-2 text-center font-bold text-amber-700">~9.5%</td><td class="border p-2 text-center">-</td></tr>
-                        </tbody>
-                    </table>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">INPS Contributions: Italian Social Security</h3>
+                    <p><strong>INPS</strong> (Istituto Nazionale della Previdenza Sociale) manages the Italian social security system. Contributions are split between employer and employee:</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-center">Employee</th>
+                                    <th class="border p-2 text-center">Employer</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">IVS (Disability, Old Age, Survivors)</td><td class="border p-2 text-center font-medium">9.19%</td><td class="border p-2 text-center">23.81%</td><td class="border p-2">Retirement and pensions</td></tr>
+                                <tr><td class="border p-2">Assicurazione Disoccupazione</td><td class="border p-2 text-center font-medium">-</td><td class="border p-2 text-center">1.61%</td><td class="border p-2">Unemployment insurance (NASpI)</td></tr>
+                                <tr><td class="border p-2">Fondo garanzia TFR</td><td class="border p-2 text-center font-medium">0.30%</td><td class="border p-2 text-center">-</td><td class="border p-2">Guarantee fund</td></tr>
+                                <tr><td class="border p-2">INAIL (work accidents)</td><td class="border p-2 text-center font-medium">-</td><td class="border p-2 text-center">~0.4%</td><td class="border p-2">Accident insurance</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 text-center font-bold text-amber-700">~9.5%</td><td class="border p-2 text-center font-bold text-amber-700">~26%</td><td class="border p-2 font-bold">~33% total</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions and Allowances</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Detrazioni: Italian Tax Deductions</h3>
+                    <p>Italy offers an elaborate system of <strong>detrazioni</strong> (deductions) that directly reduce the tax owed:</p>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Detrazioni per lavoro dipendente (Employees)</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Income up to EUR 15,000: <strong>EUR 1,955</strong> deduction</li>
+                            <li>Income EUR 15,001 to 28,000: <strong>EUR 1,910</strong> + degressive supplement</li>
+                            <li>Income EUR 28,001 to 50,000: <strong>EUR 1,910</strong> x degressive coefficient</li>
+                            <li>Above EUR 50,000: progressive reduction to 0</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Detrazioni per carichi di famiglia (Family Dependents)</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Dependent spouse:</strong> up to EUR 800/year (if spouse income < EUR 2,840.51)</li>
+                            <li><strong>Dependent children:</strong> replaced by Assegno Unico since 2022</li>
+                            <li><strong>Other dependents:</strong> EUR 750/year max</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions (Deduzioni e Detrazioni)</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Spese mediche</h4>
+                            <p class="text-xs text-emerald-700">19% deduction on medical expenses above EUR 129</p>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Interessi mutuo</h4>
+                            <p class="text-xs text-emerald-700">19% on mortgage interest (max EUR 4,000/year)</p>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Bonus ristrutturazione</h4>
+                            <p class="text-xs text-emerald-700">50% on renovation works (max EUR 96,000)</p>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Ecobonus</h4>
+                            <p class="text-xs text-emerald-700">50-65% for energy efficiency</p>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Spese istruzione</h4>
+                            <p class="text-xs text-emerald-700">19% on education expenses (variable ceiling)</p>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-emerald-800 text-xs mb-1">Superbonus 110%</h4>
+                            <p class="text-xs text-emerald-700">Major works (strict conditions since 2024)</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">No Tax Area: Tax-Free Zone</h3>
+                    <p>Italy provides a <strong>no tax area</strong> through detrazioni:</p>
                     <div class="grid md:grid-cols-3 gap-2 my-3">
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">No Tax Area</p><p class="text-xs text-blue-600">Up to EUR 8,500 exempt</p></div>
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">Detrazioni Lavoro</p><p class="text-xs text-blue-600">Employee deductions</p></div>
-                        <div class="bg-blue-50 rounded-lg p-3 text-center"><p class="font-bold text-blue-700">Carichi Familiari</p><p class="text-xs text-blue-600">Family deductions</p></div>
+                        <div class="bg-green-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-green-700">Employees</p>
+                            <p class="text-xs text-green-600">Up to EUR 8,500 tax-free</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-green-700">Retirees</p>
+                            <p class="text-xs text-green-600">Up to EUR 8,500 tax-free</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3 text-center">
+                            <p class="font-bold text-green-700">Self-employed</p>
+                            <p class="text-xs text-green-600">Up to EUR 5,500 tax-free</p>
+                        </div>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">TFR: End-of-Contract Severance</h3>
+                    <p>The <strong>Trattamento di Fine Rapporto</strong> (TFR) is an Italian specialty: employers provision approximately <strong>7.4%</strong> of annual gross salary each year. This amount is paid to the employee at the end of the contract (resignation, dismissal, or retirement).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Regime Forfettario for Self-Employed</h3>
+                    <p>Self-employed workers can opt for the highly advantageous <strong>Regime Forfettario</strong>:</p>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Spese mediche:</strong> 19% deduction on medical expenses above EUR 129</li>
-                        <li><strong>Interessi mutuo:</strong> Mortgage interest (max EUR 4,000/year)</li>
-                        <li><strong>Bonus ristrutturazione:</strong> 50% on renovation works (max EUR 96,000)</li>
-                        <li><strong>Ecobonus:</strong> 50-65% for energy efficiency improvements</li>
-                        <li><strong>Spese istruzione:</strong> Education and training expenses</li>
+                        <li>Flat rate of <strong>15%</strong> (5% for the first 5 years for new businesses)</li>
+                        <li>Revenue ceiling: <strong>EUR 85,000/year</strong></li>
+                        <li>No VAT, simplified accounting</li>
+                        <li>Reduced INPS contributions possible</li>
                     </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Italy Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-center">France</th>
+                                    <th class="border p-2 text-center">Italy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2 text-center">~EUR 42,000 net</td><td class="border p-2 text-center">~EUR 40,000 net</td></tr>
+                                <tr><td class="border p-2">Top marginal rate</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">43%</td></tr>
+                                <tr><td class="border p-2">Number of brackets</td><td class="border p-2 text-center">5</td><td class="border p-2 text-center">3</td></tr>
+                                <tr><td class="border p-2">Employee contributions</td><td class="border p-2 text-center">~22%</td><td class="border p-2 text-center">~9.5%</td></tr>
+                                <tr><td class="border p-2">Employer contributions</td><td class="border p-2 text-center">~42%</td><td class="border p-2 text-center">~26%</td></tr>
+                                <tr><td class="border p-2">Local income taxes</td><td class="border p-2 text-center">No</td><td class="border p-2 text-center">Yes (2-4%)</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2 text-center">Yes</td><td class="border p-2 text-center">No (detrazioni)</td></tr>
+                                <tr><td class="border p-2">Simplified regime</td><td class="border p-2 text-center">Micro-enterprise</td><td class="border p-2 text-center">Forfettario (15%)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Dates and Tax Filing</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Modello 730:</strong> Simplified return for employees (deadline: September)</li>
+                        <li><strong>Modello Redditi PF:</strong> Complete return for self-employed (deadline: November)</li>
+                        <li><strong>Precompilata:</strong> Pre-filled return available in April</li>
+                        <li><strong>Codice fiscale:</strong> Equivalent to social security number, mandatory</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Official Sources</h3>
+                    <div class="bg-slate-50 rounded-lg p-3 my-3">
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li><strong>Agenzia delle Entrate:</strong> agenziaentrate.gov.it - Italian Tax Authority</li>
+                            <li><strong>INPS:</strong> inps.it - National Social Security Institute</li>
+                            <li><strong>MEF:</strong> mef.gov.it - Ministry of Economy and Finance</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

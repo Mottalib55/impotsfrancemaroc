@@ -409,11 +409,24 @@
                 </div>
             </div>
 
+            <!-- Comprendre l'impot en Belgique -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite belge</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite belge 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Belgique possede l'un des systemes fiscaux les plus eleves d'Europe, avec un impot progressif pouvant atteindre 50% et des cotisations sociales significatives.</p>
+                    <p>La Belgique possede l'un des systemes fiscaux les plus complexes et les plus eleves d'Europe. L'<strong>IPP (Impot des Personnes Physiques)</strong> est un impot progressif federal, auquel s'ajoutent des <strong>centimes additionnels communaux</strong> variant de 6% a 9% selon la commune de residence.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition IPP 2026</h3>
+                    <p>L'impot sur le revenu belge utilise un systeme de <strong>tranches marginales</strong>. Seule la portion du revenu dans chaque tranche est imposee au taux correspondant :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 15,820 EUR : <strong>25%</strong></li>
+                            <li>15,820 - 27,920 EUR : <strong>40%</strong></li>
+                            <li>27,920 - 48,320 EUR : <strong>45%</strong></li>
+                            <li>Au-dela de 48,320 EUR : <strong>50%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">A ces taux s'ajoutent les centimes additionnels communaux (6-9% de l'IPP), ce qui peut porter le taux marginal effectif au-dela de 53%.</p>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot belge</h3>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
@@ -423,13 +436,14 @@
                             <p class="text-xs text-yellow-600">Impot federal progressif sur le revenu</p>
                         </div>
                         <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Additionnels communaux</h4>
-                            <p class="text-sm font-bold text-slate-700">0% - 9%</p>
-                            <p class="text-xs text-slate-600">Variable selon la commune de residence</p>
+                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Taxe communale (additionnels)</h4>
+                            <p class="text-sm font-bold text-slate-700">6% - 9%</p>
+                            <p class="text-xs text-slate-600">Pourcentage additionnel sur l'IPP selon la commune</p>
                         </div>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (RSZ/ONSS)</h3>
+                    <p>Les cotisations sociales belges sont reparties entre l'employeur et l'employe. La part salariale est prelevee directement sur le salaire brut :</p>
                     <div class="overflow-x-auto my-3">
                         <table class="w-full text-xs border-collapse">
                             <thead>
@@ -440,34 +454,70 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Cotisations sociales globales</td><td class="border p-2 font-medium">13.07%</td><td class="border p-2">~25%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales globales (ONSS)</td><td class="border p-2 font-medium">13.07%</td><td class="border p-2">~25%</td></tr>
                                 <tr><td class="border p-2">Cotisation speciale securite sociale</td><td class="border p-2 font-medium">0-731 EUR/an</td><td class="border p-2">-</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2 font-bold text-amber-700">~13.07%</td><td class="border p-2">-</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total part employe</td><td class="border p-2 font-bold text-amber-700">~13.07%</td><td class="border p-2">-</td></tr>
                             </tbody>
                         </table>
                     </div>
+                    <p class="text-xs text-slate-500">Les cotisations sociales financent la securite sociale : pensions, soins de sante, allocations familiales, chomage.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Quotite exemptee d'impot 2026</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Quotient conjugal et reductions pour enfants</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Quotient conjugal</h4>
+                        <p class="text-xs text-blue-700">Si votre conjoint n'a pas ou peu de revenus, vous pouvez lui attribuer jusqu'a 30% de vos revenus professionnels (max ~11,000 EUR) pour reduire votre impot global. Ce mecanisme est calcule automatiquement par l'administration fiscale.</p>
+                    </div>
                     <div class="grid md:grid-cols-2 gap-2 my-3">
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">10,570 EUR</p>
-                            <p class="text-xs text-blue-600">Quotite de base exoneree</p>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">10,570 EUR</p>
+                            <p class="text-xs text-green-600">Quotite de base exoneree</p>
                         </div>
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">+1,870 EUR</p>
-                            <p class="text-xs text-blue-600">Par enfant a charge (1er et 2eme)</p>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+1,870 EUR par enfant</p>
+                            <p class="text-xs text-green-600">1er et 2eme enfant a charge</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+4,200 EUR</p>
+                            <p class="text-xs text-green-600">3eme enfant a charge</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">+4,830 EUR</p>
+                            <p class="text-xs text-green-600">4eme enfant et suivants</p>
                         </div>
                     </div>
-                    <p class="text-xs text-slate-500">La quotite exemptee reduit la base imposable, ce qui diminue l'impot du.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Epargne-pension : avantage fiscal</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Reduction d'impot pour epargne-pension</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Regime 1</strong> : versement max 1,020 EUR/an = reduction d'impot de 30% (306 EUR)</li>
+                            <li><strong>Regime 2</strong> : versement max 1,310 EUR/an = reduction d'impot de 25% (327.50 EUR)</li>
+                            <li>L'epargne-pension permet de constituer un capital retraite tout en beneficiant d'un avantage fiscal immediat</li>
+                            <li>Les fonds sont bloques jusqu'a 60 ans (taxation avantageuse a la sortie)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Autres deductions fiscales</h3>
                     <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Frais professionnels forfaitaires</strong> : 30% des revenus (max 5,520 EUR) ou frais reels</li>
-                        <li><strong>Epargne-pension</strong> : jusqu'a 1,020 EUR ou 1,310 EUR deductibles</li>
-                        <li><strong>Titres-services</strong> : reduction d'impot de 30%</li>
-                        <li><strong>Dons</strong> : reduction d'impot de 45% (min 40 EUR)</li>
-                        <li><strong>Pret hypothecaire</strong> : bonus logement regional (variable)</li>
+                        <li><strong>Frais professionnels forfaitaires</strong> : 30% des revenus (max 5,520 EUR) ou frais reels sur justificatifs</li>
+                        <li><strong>Titres-services</strong> : reduction d'impot de 30% (pour aide menagere agreee)</li>
+                        <li><strong>Dons</strong> : reduction d'impot de 45% (minimum 40 EUR par institution)</li>
+                        <li><strong>Bonus logement regional</strong> : deduction interets et capital pret hypothecaire (varie selon region)</li>
+                        <li><strong>Cheques ALE</strong> : reduction d'impot pour travaux de proximite</li>
                     </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Exemple de calcul : Salaire de 60,000 EUR brut</h3>
+                    <div class="bg-gradient-to-br from-yellow-50 to-white rounded-lg p-4 border border-yellow-200">
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-600">Salaire brut annuel</span><span class="font-medium">60,000 EUR</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Cotisations ONSS (13.07%)</span><span class="font-medium text-amber-600">- 7,842 EUR</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Revenu imposable</span><span class="font-medium">52,158 EUR</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">IPP (apres quotite exemptee)</span><span class="font-medium text-indigo-600">- 16,500 EUR</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Taxe communale (~7%)</span><span class="font-medium text-slate-600">- 1,155 EUR</span></div>
+                            <div class="border-t pt-2 flex justify-between"><span class="font-semibold text-emerald-800">Revenu net annuel</span><span class="font-bold text-emerald-600">~34,500 EUR</span></div>
+                            <p class="text-xs text-slate-500">Soit environ 2,875 EUR net/mois | Taux effectif total: ~42.5%</p>
+                        </div>
+                    </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Belgique</h3>
                     <div class="overflow-x-auto">
@@ -480,13 +530,48 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Salaire 60,000 EUR brut</td><td class="border p-2">~42,000 EUR net</td><td class="border p-2">~35,500 EUR net</td></tr>
-                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">50% + communaux</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">~13.07%</td></tr>
-                                <tr><td class="border p-2">Quotite exemptee</td><td class="border p-2">~11,294 EUR</td><td class="border p-2">~10,570 EUR</td></tr>
+                                <tr><td class="border p-2">Salaire 60,000 EUR brut</td><td class="border p-2">~42,000 EUR net</td><td class="border p-2">~34,500 EUR net</td></tr>
+                                <tr><td class="border p-2">Taux marginal max</td><td class="border p-2">45%</td><td class="border p-2">50% + 6-9% communaux</td></tr>
+                                <tr><td class="border p-2">Cotisations employe</td><td class="border p-2">~22%</td><td class="border p-2">~13.07%</td></tr>
+                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui (parts)</td><td class="border p-2">Quotient conjugal</td></tr>
+                                <tr><td class="border p-2">Epargne retraite deductible</td><td class="border p-2">PER (plafonne)</td><td class="border p-2">1,020-1,310 EUR</td></tr>
+                                <tr><td class="border p-2">Sante</td><td class="border p-2">Securite sociale</td><td class="border p-2">Mutuelle + INAMI</td></tr>
                             </tbody>
                         </table>
                     </div>
+                    <p class="text-xs text-slate-500 mt-2">La Belgique a des cotisations sociales plus basses mais un impot sur le revenu plus eleve. Le net final est souvent inferieur a la France pour les salaires moyens.</p>
+                </div>
+            </div>
+
+            <!-- Sources officielles -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Sources Officielles
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://finances.belgium.be/fr/particuliers/impots" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">SPF Finances - Impots des particuliers</p>
+                            <p class="text-xs text-slate-500">finances.belgium.be - Baremes et informations officielles IPP</p>
+                        </div>
+                    </a>
+                    <a href="https://www.socialsecurity.be/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Securite sociale belge (ONSS)</p>
+                            <p class="text-xs text-slate-500">socialsecurity.be - Cotisations et prestations sociales</p>
+                        </div>
+                    </a>
+                    <a href="https://www.belgium.be/fr/impots" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Portail Belgium.be - Fiscalite</p>
+                            <p class="text-xs text-slate-500">belgium.be - Guide fiscal pour les residents</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 

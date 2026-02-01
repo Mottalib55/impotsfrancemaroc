@@ -328,68 +328,143 @@
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Portuguese Taxation</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Portugal has a progressive tax system with 9 tax brackets. The country also offers attractive tax regimes for new residents through the NHR (Non-Habitual Resident) program.</p>
+                    <p>Portugal has a progressive tax system based on <strong>IRS (Imposto sobre o Rendimento das Pessoas Singulares)</strong> with 9 tax brackets ranging from 13.25% to 48%. The country has become a popular destination for expats thanks to its NHR regime offering significant tax advantages.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Portuguese Tax Structure</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-green-800 text-xs mb-1">IRS (Imposto sobre o Rendimento)</h4>
-                            <p class="text-sm font-bold text-green-700">13.25% - 48%</p>
-                            <p class="text-xs text-green-600">Progressive income tax</p>
-                        </div>
-                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Seguranca Social</h4>
-                            <p class="text-sm font-bold text-slate-700">11%</p>
-                            <p class="text-xs text-slate-600">Employee social contributions</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">IRS: Personal Income Tax</h3>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 my-4">
+                        <p class="font-semibold text-green-800">A progressive system with 9 brackets (2026)</p>
+                        <p class="text-xs text-green-700 mt-1">IRS applies to the rendimento coletavel (taxable income) after deduction of social contributions and personal allowances.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">IRS Tax Brackets 2026</h3>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Income Bracket</th>
+                                    <th class="border p-2 text-center">Rate</th>
+                                    <th class="border p-2 text-center">Parcela a abater</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 0 - 7,703</td><td class="border p-2 text-center text-emerald-600 font-medium">13.25%</td><td class="border p-2 text-center">EUR 0</td></tr>
+                                <tr><td class="border p-2">EUR 7,703 - 11,623</td><td class="border p-2 text-center font-medium">18%</td><td class="border p-2 text-center">EUR 365.89</td></tr>
+                                <tr><td class="border p-2">EUR 11,623 - 16,472</td><td class="border p-2 text-center font-medium">23%</td><td class="border p-2 text-center">EUR 947.04</td></tr>
+                                <tr><td class="border p-2">EUR 16,472 - 21,321</td><td class="border p-2 text-center font-medium">26%</td><td class="border p-2 text-center">EUR 1,441.20</td></tr>
+                                <tr><td class="border p-2">EUR 21,321 - 27,146</td><td class="border p-2 text-center font-medium">32.75%</td><td class="border p-2 text-center">EUR 2,880.47</td></tr>
+                                <tr><td class="border p-2">EUR 27,146 - 39,791</td><td class="border p-2 text-center font-medium">37%</td><td class="border p-2 text-center">EUR 4,034.17</td></tr>
+                                <tr><td class="border p-2">EUR 39,791 - 51,997</td><td class="border p-2 text-center font-medium">43.5%</td><td class="border p-2 text-center">EUR 6,620.43</td></tr>
+                                <tr><td class="border p-2">EUR 51,997 - 81,199</td><td class="border p-2 text-center font-medium">45%</td><td class="border p-2 text-center">EUR 7,399.72</td></tr>
+                                <tr class="bg-red-50"><td class="border p-2">EUR 81,199+</td><td class="border p-2 text-center text-red-600 font-bold">48%</td><td class="border p-2 text-center">EUR 9,835.69</td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (Seguranca Social)</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Contribution</th><th class="border p-2">Employee Rate</th><th class="border p-2">Employer Rate</th></tr></thead>
-                        <tbody>
-                            <tr><td class="border p-2">Seguranca Social (total)</td><td class="border p-2 text-center">11%</td><td class="border p-2 text-center">23.75%</td></tr>
-                            <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 text-center font-bold text-amber-700">11%</td><td class="border p-2 text-center font-bold">23.75%</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-amber-800 text-xs mb-1">Employee Share</h4>
+                            <p class="text-sm font-bold text-amber-700">11%</p>
+                            <p class="text-xs text-amber-600">Deducted from gross salary</p>
+                        </div>
+                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
+                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Employer Share</h4>
+                            <p class="text-sm font-bold text-slate-700">23.75%</p>
+                            <p class="text-xs text-slate-600">Employer contribution (not visible on payslip)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Total contributions: 34.75% of gross salary (11% + 23.75%), but only 11% affects the employee directly.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">NHR (Non-Habitual Resident) Regime</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">NHR (Non-Habitual Resident) Regime - Highly Attractive for Expats</h3>
                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <p class="text-sm text-blue-800 mb-2"><strong>The NHR regime</strong> offers significant tax benefits for new residents in Portugal for 10 years:</p>
+                        <p class="text-sm text-blue-800 mb-2"><strong>The NHR regime</strong> is an attractive tax scheme for new residents in Portugal:</p>
                         <ul class="list-disc pl-5 space-y-1 text-xs text-blue-700">
-                            <li>Flat rate of <strong>20%</strong> on income from high-value-added professions</li>
-                            <li>Exemption on foreign-source income (pensions, dividends, capital gains)</li>
-                            <li>Available to individuals who haven't been tax residents in Portugal for the last 5 years</li>
+                            <li><strong>Flat rate of 20%</strong> on income from high-value-added professions (engineers, doctors, architects, etc.)</li>
+                            <li><strong>Potential exemption</strong> on foreign-source income (pensions, dividends, capital gains, royalties)</li>
+                            <li><strong>Duration:</strong> 10 years from registration as tax resident</li>
+                            <li><strong>Requirement:</strong> Must not have been a Portuguese tax resident for the last 5 years</li>
+                        </ul>
+                        <p class="text-xs text-blue-600 mt-2 font-medium">Note: The NHR regime was reformed in 2024. New applications are subject to more restrictive conditions.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Popular Destination for Foreign Retirees</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <p class="text-sm text-amber-800 mb-2"><strong>Advantages for retirees:</strong></p>
+                        <ul class="list-disc pl-5 space-y-1 text-xs text-amber-700">
+                            <li>Sunny climate and lower cost of living than Western Europe</li>
+                            <li>Historically very advantageous NHR regime (foreign pension exemption)</li>
+                            <li>Quality healthcare system at lower cost</li>
+                            <li>Large expat community in Algarve and Lisbon region</li>
                         </ul>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Key Tax Deductions</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Personal deduction:</strong> EUR 4,104 per taxpayer</li>
-                        <li><strong>Health expenses:</strong> Up to EUR 1,000 (15% of expenses)</li>
-                        <li><strong>Education expenses:</strong> Up to EUR 800 per child</li>
-                        <li><strong>Housing costs:</strong> Mortgage interest and rent (with limits)</li>
-                        <li><strong>Alimony:</strong> 100% deductible</li>
-                        <li><strong>PPR (Retirement savings plans):</strong> Up to EUR 400/year depending on age</li>
+                    <ul class="list-disc pl-5 space-y-2 text-xs">
+                        <li><strong>Personal deduction:</strong> EUR 4,104 per taxpayer (automatically reduces IRS)</li>
+                        <li><strong>Health expenses:</strong> 15% of expenses, up to EUR 1,000 deduction</li>
+                        <li><strong>Education expenses:</strong> Up to EUR 800 per child (30% of expenses)</li>
+                        <li><strong>Housing costs:</strong> Mortgage interest (up to EUR 296) and rent (up to EUR 502)</li>
+                        <li><strong>Alimony:</strong> 100% deductible if court-ordered</li>
+                        <li><strong>PPR (Retirement Savings Plans):</strong> Up to EUR 400/year depending on age (20% deductible)</li>
+                        <li><strong>Invoices with NIF:</strong> Automatic deduction for receipts with tax number (restaurants, hairdressers, repairs)</li>
                     </ul>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparison: France vs Portugal</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Example: EUR 36,000 Gross Salary</h3>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between"><span>Annual gross income</span><span class="font-semibold">EUR 36,000</span></div>
+                            <div class="flex justify-between text-amber-700"><span>- Seguranca Social (11%)</span><span>-EUR 3,960</span></div>
+                            <div class="flex justify-between"><span>= IRS taxable base</span><span>EUR 32,040</span></div>
+                            <div class="flex justify-between text-indigo-700"><span>- IRS (progressive tax)</span><span>~-EUR 7,800</span></div>
+                            <div class="border-t pt-2 flex justify-between font-semibold text-emerald-700"><span>Annual net income</span><span>~EUR 24,240</span></div>
+                            <div class="flex justify-between text-emerald-600"><span>Monthly net income (14 months)</span><span>~EUR 1,731</span></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">Note: In Portugal, salary is paid over 14 months (13th + 14th month bonuses in June and November).</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">International Comparison</h3>
                     <div class="overflow-x-auto">
                         <table class="w-full text-xs border-collapse">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Criteria</th>
-                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">UK</th>
                                     <th class="border p-2 text-left">Portugal</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">EUR 36,000 gross salary</td><td class="border p-2">~EUR 28,000 net</td><td class="border p-2">~EUR 26,500 net</td></tr>
-                                <tr><td class="border p-2">Maximum tax rate</td><td class="border p-2">45%</td><td class="border p-2">48%</td></tr>
-                                <tr><td class="border p-2">Social contributions</td><td class="border p-2">~22%</td><td class="border p-2">~11%</td></tr>
-                                <tr><td class="border p-2">Expat regime</td><td class="border p-2">Impatriation</td><td class="border p-2">NHR (20%)</td></tr>
+                                <tr><td class="border p-2">EUR 36,000 gross salary</td><td class="border p-2">~EUR 29,000 net</td><td class="border p-2">~EUR 24,240 net</td></tr>
+                                <tr><td class="border p-2">Top marginal rate</td><td class="border p-2">45%</td><td class="border p-2">48%</td></tr>
+                                <tr><td class="border p-2">Employee contributions</td><td class="border p-2">~12% (NI)</td><td class="border p-2">11%</td></tr>
+                                <tr><td class="border p-2">Number of brackets</td><td class="border p-2">3 brackets</td><td class="border p-2">9 brackets</td></tr>
+                                <tr><td class="border p-2">Expat regime</td><td class="border p-2">None specific</td><td class="border p-2">NHR (20%)</td></tr>
+                                <tr><td class="border p-2">Cost of living</td><td class="border p-2">Index 100</td><td class="border p-2">Index ~65</td></tr>
+                                <tr><td class="border p-2">Salary months</td><td class="border p-2">12 months</td><td class="border p-2">14 months</td></tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Pros and Cons of Portugal</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-xs mb-2">Advantages</h4>
+                            <ul class="text-xs text-green-700 space-y-1">
+                                <li>+ Low social contributions (11%)</li>
+                                <li>+ Attractive NHR regime</li>
+                                <li>+ Lower cost of living</li>
+                                <li>+ Pleasant climate</li>
+                                <li>+ 14 months of salary</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-red-800 text-xs mb-2">Disadvantages</h4>
+                            <ul class="text-xs text-red-700 space-y-1">
+                                <li>- High marginal rate (48%)</li>
+                                <li>- Lower average salaries</li>
+                                <li>- Sometimes slow administration</li>
+                                <li>- Complex tax system</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

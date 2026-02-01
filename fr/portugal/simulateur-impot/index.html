@@ -418,58 +418,99 @@
                 <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite portugaise</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Portugal possede un systeme fiscal progressif avec 9 tranches d'imposition. Le pays offre egalement des regimes fiscaux avantageux pour les nouveaux residents (regime NHR).</p>
+                    <p>Le Portugal possede un systeme fiscal progressif base sur l'<strong>IRS (Imposto sobre o Rendimento das Pessoas Singulares)</strong> avec 9 tranches d'imposition allant de 13.25% a 48%. Le pays est devenu une destination prisee des expatries grace a son regime NHR offrant des avantages fiscaux significatifs.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot portugais</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-green-800 text-xs mb-1">IRS (Imposto sobre o Rendimento)</h4>
-                            <p class="text-sm font-bold text-green-700">13.25% - 48%</p>
-                            <p class="text-xs text-green-600">Impot sur le revenu progressif</p>
-                        </div>
-                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
-                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Seguranca Social</h4>
-                            <p class="text-sm font-bold text-slate-700">11%</p>
-                            <p class="text-xs text-slate-600">Cotisations sociales employe</p>
-                        </div>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">L'IRS : Impot sur le Revenu des Personnes Physiques</h3>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 my-4">
+                        <p class="font-semibold text-green-800">Un systeme progressif a 9 tranches (2026)</p>
+                        <p class="text-xs text-green-700 mt-1">L'IRS s'applique sur le revenu collectavel (revenu imposable) apres deduction des cotisations sociales et des abattements personnels.</p>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (Seguranca Social)</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition IRS 2026</h3>
                     <div class="overflow-x-auto my-3">
                         <table class="w-full text-xs border-collapse">
                             <thead>
                                 <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Taux employeur</th>
+                                    <th class="border p-2 text-left">Tranche de revenu</th>
+                                    <th class="border p-2 text-center">Taux</th>
+                                    <th class="border p-2 text-center">Parcela a abater</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Seguranca Social (global)</td><td class="border p-2 font-medium">11%</td><td class="border p-2">23.75%</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">11%</td><td class="border p-2 font-bold">23.75%</td></tr>
+                                <tr><td class="border p-2">0 - 7,703 EUR</td><td class="border p-2 text-center text-emerald-600 font-medium">13.25%</td><td class="border p-2 text-center">0 EUR</td></tr>
+                                <tr><td class="border p-2">7,703 - 11,623 EUR</td><td class="border p-2 text-center font-medium">18%</td><td class="border p-2 text-center">365.89 EUR</td></tr>
+                                <tr><td class="border p-2">11,623 - 16,472 EUR</td><td class="border p-2 text-center font-medium">23%</td><td class="border p-2 text-center">947.04 EUR</td></tr>
+                                <tr><td class="border p-2">16,472 - 21,321 EUR</td><td class="border p-2 text-center font-medium">26%</td><td class="border p-2 text-center">1,441.20 EUR</td></tr>
+                                <tr><td class="border p-2">21,321 - 27,146 EUR</td><td class="border p-2 text-center font-medium">32.75%</td><td class="border p-2 text-center">2,880.47 EUR</td></tr>
+                                <tr><td class="border p-2">27,146 - 39,791 EUR</td><td class="border p-2 text-center font-medium">37%</td><td class="border p-2 text-center">4,034.17 EUR</td></tr>
+                                <tr><td class="border p-2">39,791 - 51,997 EUR</td><td class="border p-2 text-center font-medium">43.5%</td><td class="border p-2 text-center">6,620.43 EUR</td></tr>
+                                <tr><td class="border p-2">51,997 - 81,199 EUR</td><td class="border p-2 text-center font-medium">45%</td><td class="border p-2 text-center">7,399.72 EUR</td></tr>
+                                <tr class="bg-red-50"><td class="border p-2">81,199+ EUR</td><td class="border p-2 text-center text-red-600 font-bold">48%</td><td class="border p-2 text-center">9,835.69 EUR</td></tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Regime NHR (Non-Habitual Resident)</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales (Seguranca Social)</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-amber-800 text-xs mb-1">Part Salarie</h4>
+                            <p class="text-sm font-bold text-amber-700">11%</p>
+                            <p class="text-xs text-amber-600">Preleve sur le salaire brut</p>
+                        </div>
+                        <div class="bg-slate-100 border border-slate-300 rounded-lg p-3">
+                            <h4 class="font-semibold text-slate-800 text-xs mb-1">Part Employeur</h4>
+                            <p class="text-sm font-bold text-slate-700">23.75%</p>
+                            <p class="text-xs text-slate-600">Charge patronale (non visible sur fiche de paie)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Total cotisations : 34.75% du salaire brut (11% + 23.75%), dont seulement 11% impacte le salarie.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Regime NHR (Non-Habitual Resident) - Tres attractif pour expatries</h3>
                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <p class="text-sm text-blue-800 mb-2"><strong>Le regime NHR</strong> offre des avantages fiscaux significatifs pour les nouveaux residents au Portugal pendant 10 ans :</p>
+                        <p class="text-sm text-blue-800 mb-2"><strong>Le regime NHR</strong> est un dispositif fiscal attractif pour les nouveaux residents au Portugal :</p>
                         <ul class="list-disc pl-5 space-y-1 text-xs text-blue-700">
-                            <li>Taux forfaitaire de <strong>20%</strong> sur les revenus de professions a haute valeur ajoutee</li>
-                            <li>Exoneration sur les revenus de source etrangere (pensions, dividendes, plus-values)</li>
-                            <li>Applicable aux personnes n'ayant pas ete residents fiscaux au Portugal les 5 dernieres annees</li>
+                            <li><strong>Taux forfaitaire de 20%</strong> sur les revenus de professions a haute valeur ajoutee (ingenieurs, medecins, architectes, etc.)</li>
+                            <li><strong>Exoneration potentielle</strong> sur les revenus de source etrangere (pensions, dividendes, plus-values, royalties)</li>
+                            <li><strong>Duree</strong> : 10 ans a compter de l'inscription comme resident fiscal</li>
+                            <li><strong>Condition</strong> : ne pas avoir ete resident fiscal au Portugal les 5 dernieres annees</li>
+                        </ul>
+                        <p class="text-xs text-blue-600 mt-2 font-medium">Note : Le regime NHR a ete reforme en 2024. Les nouvelles demandes sont soumises a des conditions plus restrictives.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Destination privilegiee des retraites etrangers</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <p class="text-sm text-amber-800 mb-2"><strong>Avantages pour les retraites :</strong></p>
+                        <ul class="list-disc pl-5 space-y-1 text-xs text-amber-700">
+                            <li>Climat ensoleille et cout de la vie inferieur a la France</li>
+                            <li>Regime NHR historiquement tres avantageux (exoneration pensions etrangeres)</li>
+                            <li>Systeme de sante de qualite a moindre cout</li>
+                            <li>Forte communaute francophone en Algarve et region de Lisbonne</li>
                         </ul>
                     </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Deduction personnelle</strong> : 4,104 EUR par contribuable</li>
-                        <li><strong>Frais de sante</strong> : jusqu'a 1,000 EUR (15% des depenses)</li>
-                        <li><strong>Frais d'education</strong> : jusqu'a 800 EUR par enfant</li>
-                        <li><strong>Charges immobilieres</strong> : interets d'emprunt et loyers (limites)</li>
-                        <li><strong>Pensions alimentaires</strong> : 100% deductibles</li>
-                        <li><strong>PPR (Plans d'epargne retraite)</strong> : jusqu'a 400 EUR/an selon l'age</li>
+                    <ul class="list-disc pl-5 space-y-2 text-xs">
+                        <li><strong>Deduction personnelle</strong> : 4,104 EUR par contribuable (reduit automatiquement l'IRS)</li>
+                        <li><strong>Frais de sante</strong> : 15% des depenses, jusqu'a 1,000 EUR de deduction</li>
+                        <li><strong>Frais d'education</strong> : jusqu'a 800 EUR par enfant (30% des depenses)</li>
+                        <li><strong>Charges immobilieres</strong> : interets d'emprunt (jusqu'a 296 EUR) et loyers (jusqu'a 502 EUR)</li>
+                        <li><strong>Pensions alimentaires</strong> : 100% deductibles si ordonnees par tribunal</li>
+                        <li><strong>PPR (Plans de Poupanca Reforma)</strong> : jusqu'a 400 EUR/an selon l'age (20% deductible)</li>
+                        <li><strong>Factures avec NIF</strong> : deduction automatique pour factures avec numero fiscal (restaurants, coiffeurs, reparations)</li>
                     </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Exemple concret : Salaire de 36,000 EUR brut</h3>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between"><span>Revenu brut annuel</span><span class="font-semibold">36,000 EUR</span></div>
+                            <div class="flex justify-between text-amber-700"><span>- Seguranca Social (11%)</span><span>-3,960 EUR</span></div>
+                            <div class="flex justify-between"><span>= Base imposable IRS</span><span>32,040 EUR</span></div>
+                            <div class="flex justify-between text-indigo-700"><span>- IRS (impot progressif)</span><span>~-7,800 EUR</span></div>
+                            <div class="border-t pt-2 flex justify-between font-semibold text-emerald-700"><span>Revenu net annuel</span><span>~24,240 EUR</span></div>
+                            <div class="flex justify-between text-emerald-600"><span>Revenu net mensuel (14 mois)</span><span>~1,731 EUR</span></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">Note : Au Portugal, le salaire est verse sur 14 mois (13eme + 14eme mois en juin et novembre).</p>
+                    </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Portugal</h3>
                     <div class="overflow-x-auto">
@@ -482,12 +523,38 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Salaire 36,000 EUR brut</td><td class="border p-2">~28,000 EUR net</td><td class="border p-2">~26,500 EUR net</td></tr>
-                                <tr><td class="border p-2">Impot max</td><td class="border p-2">45%</td><td class="border p-2">48%</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales</td><td class="border p-2">~22%</td><td class="border p-2">~11%</td></tr>
-                                <tr><td class="border p-2">Regime expatrie</td><td class="border p-2">Impatriation</td><td class="border p-2">NHR (20%)</td></tr>
+                                <tr><td class="border p-2">Salaire 36,000 EUR brut</td><td class="border p-2">~28,000 EUR net</td><td class="border p-2">~24,240 EUR net</td></tr>
+                                <tr><td class="border p-2">Taux marginal max</td><td class="border p-2">45%</td><td class="border p-2">48%</td></tr>
+                                <tr><td class="border p-2">Cotisations salarie</td><td class="border p-2">~22%</td><td class="border p-2">11%</td></tr>
+                                <tr><td class="border p-2">Nombre de tranches</td><td class="border p-2">5 tranches</td><td class="border p-2">9 tranches</td></tr>
+                                <tr><td class="border p-2">Regime expatrie</td><td class="border p-2">Impatriation (30%)</td><td class="border p-2">NHR (20%)</td></tr>
+                                <tr><td class="border p-2">Cout de la vie</td><td class="border p-2">Indice 100</td><td class="border p-2">Indice ~70</td></tr>
+                                <tr><td class="border p-2">Mois de salaire</td><td class="border p-2">12 mois</td><td class="border p-2">14 mois</td></tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages et inconvenients du Portugal</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-xs mb-2">Avantages</h4>
+                            <ul class="text-xs text-green-700 space-y-1">
+                                <li>+ Cotisations sociales faibles (11%)</li>
+                                <li>+ Regime NHR attractif</li>
+                                <li>+ Cout de la vie inferieur</li>
+                                <li>+ Climat agreable</li>
+                                <li>+ 14 mois de salaire</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-red-800 text-xs mb-2">Inconvenients</h4>
+                            <ul class="text-xs text-red-700 space-y-1">
+                                <li>- Taux marginal eleve (48%)</li>
+                                <li>- Salaires moyens plus bas</li>
+                                <li>- Administration parfois lente</li>
+                                <li>- Complexite du systeme fiscal</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

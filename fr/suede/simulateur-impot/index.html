@@ -409,55 +409,114 @@
                 </div>
             </div>
 
+            <!-- Comprendre l'impot en Suede -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite suedoise</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite suedoise 2026</h2>
 
                 <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Suede possede l'un des systemes fiscaux les plus eleves au monde, mais offre en contrepartie une protection sociale tres complete incluant sante, education et services sociaux gratuits.</p>
+                    <p>La Suede possede l'un des systemes fiscaux les plus eleves au monde, avec un <strong>taux marginal pouvant atteindre ~52%</strong>. En contrepartie, l'Etat-providence suedois (welfare state) offre des services publics gratuits exceptionnels : sante, education, garde d'enfants, conge parental genereux.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot suedois</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot suedois a deux niveaux</h3>
                     <div class="grid md:grid-cols-2 gap-3 my-3">
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
                             <h4 class="font-semibold text-blue-800 text-xs mb-1">Kommunalskatt (Impot municipal)</h4>
-                            <p class="text-sm font-bold text-blue-700">~32%</p>
-                            <p class="text-xs text-blue-600">Taux fixe preleve sur tous les revenus</p>
+                            <p class="text-sm font-bold text-blue-700">~32% (moyenne)</p>
+                            <p class="text-xs text-blue-600">Taux fixe preleve sur tous les revenus imposables. Varie de 29% a 35% selon la commune.</p>
                         </div>
                         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                            <h4 class="font-semibold text-yellow-800 text-xs mb-1">Statlig inkomstskatt (Impot national)</h4>
+                            <h4 class="font-semibold text-yellow-800 text-xs mb-1">Statlig inkomstskatt (Impot d'Etat)</h4>
                             <p class="text-sm font-bold text-yellow-700">20%</p>
-                            <p class="text-xs text-yellow-600">Sur les revenus > 598,500 SEK</p>
+                            <p class="text-xs text-yellow-600">Uniquement sur les revenus depassant ~598,500 SEK/an (~52,000 EUR)</p>
                         </div>
                     </div>
+                    <p class="text-xs text-slate-500">L'impot municipal est preleve sur tout revenu imposable. L'impot d'Etat ne s'applique qu'aux hauts revenus, ce qui porte le taux marginal maximum a environ 52%.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales</h3>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Taux marginal tres eleve : pourquoi ~52% ?</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Calcul du taux marginal maximum</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Impot municipal moyen : <strong>32%</strong></li>
+                            <li>Impot d'Etat (revenus > 598,500 SEK) : <strong>+20%</strong></li>
+                            <li>Total taux marginal : <strong>~52%</strong></li>
+                        </ul>
+                        <p class="text-xs text-red-600 mt-2">Cela signifie que pour chaque couronne supplementaire gagnee au-dela du seuil, 52% va a l'impot.</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales : payees par l'employeur</h3>
+                    <p>Particularite suedoise : la quasi-totalite des cotisations sociales sont a la charge de l'employeur. L'employe ne paie qu'une cotisation retraite de 7%.</p>
                     <div class="overflow-x-auto my-3">
                         <table class="w-full text-xs border-collapse">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Part employeur</th>
-                                    <th class="border p-2 text-left">Part employe</th>
+                                    <th class="border p-2 text-center">Part employeur</th>
+                                    <th class="border p-2 text-center">Part employe</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Charges sociales employeur (arbetsgivaravgift)</td><td class="border p-2 font-medium">31.42%</td><td class="border p-2">-</td></tr>
-                                <tr><td class="border p-2">Cotisation retraite (allman pensionsavgift)</td><td class="border p-2">-</td><td class="border p-2 font-medium">7%</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2">-</td><td class="border p-2 font-bold text-amber-700">7%</td></tr>
+                                <tr><td class="border p-2">Arbetsgivaravgift (charges patronales globales)</td><td class="border p-2 text-center font-medium">31.42%</td><td class="border p-2 text-center">-</td></tr>
+                                <tr><td class="border p-2">Allman pensionsavgift (cotisation retraite generale)</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center font-medium">7%</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2 text-center">-</td><td class="border p-2 text-center font-bold text-amber-700">7%</td></tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs text-slate-500">En Suede, la majorite des cotisations sociales sont payees par l'employeur. L'employe ne paie qu'une cotisation retraite de 7%.</p>
+                    <p class="text-xs text-slate-500">Les 31.42% de charges patronales financent : retraites, maladie, chomage, conge parental, accidents du travail.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Abattement de base (Grundavdrag)</h3>
-                    <p class="text-xs">La Suede applique un abattement de base variable selon le revenu. Pour un revenu moyen, cet abattement est d'environ 40,000 - 50,000 SEK. Notre simulateur prend en compte un abattement simplifie.</p>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">RUT/ROT avdrag : deductions travaux et services</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-xs mb-1">ROT-avdrag (Renovation)</h4>
+                            <p class="text-sm font-bold text-green-700">50% des couts de main d'oeuvre</p>
+                            <ul class="text-xs text-green-600 mt-1">
+                                <li>Travaux de renovation, reparation, extension</li>
+                                <li>Plafond : 50,000 SEK/personne/an</li>
+                                <li>Reduction directe sur la facture</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                            <h4 class="font-semibold text-purple-800 text-xs mb-1">RUT-avdrag (Services menagers)</h4>
+                            <p class="text-sm font-bold text-purple-700">50% des couts</p>
+                            <ul class="text-xs text-purple-600 mt-1">
+                                <li>Menage, jardinage, garde d'enfants</li>
+                                <li>Plafond : 75,000 SEK/personne/an</li>
+                                <li>Encourage l'emploi de services a domicile</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500">Ces deductions sont tres populaires et permettent de reduire significativement le cout des travaux et services domestiques.</p>
 
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions fiscales principales</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Reseavdrag</strong> : deduction pour trajets domicile-travail (> 11,000 SEK/an)</li>
-                        <li><strong>Rotavdrag</strong> : credit d'impot pour travaux de renovation (50% des couts de main d'oeuvre)</li>
-                        <li><strong>Rutavdrag</strong> : credit d'impot pour services a domicile (50% des couts)</li>
-                        <li><strong>Pensionssparande</strong> : epargne retraite privee deductible</li>
-                    </ul>
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Welfare State : services publics en contrepartie</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Ce que financent vos impots suedois</h4>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs text-blue-700">
+                            <ul class="space-y-1">
+                                <li><strong>Sante</strong> : quasi-gratuite (max 1,300 SEK/an de frais)</li>
+                                <li><strong>Education</strong> : gratuite de la maternelle au doctorat</li>
+                                <li><strong>Allocations etudiantes</strong> : CSN (bourse + pret avantageux)</li>
+                                <li><strong>Garde d'enfants</strong> : tres subventionnee (max ~1,500 SEK/mois)</li>
+                            </ul>
+                            <ul class="space-y-1">
+                                <li><strong>Conge parental</strong> : 480 jours a ~80% du salaire</li>
+                                <li><strong>Chomage</strong> : genereux (jusqu'a 80% du salaire)</li>
+                                <li><strong>Retraite</strong> : systeme a trois piliers solide</li>
+                                <li><strong>Transports</strong> : infrastructures de qualite</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Exemple de calcul : Salaire de 500,000 SEK (~45,000 EUR)</h3>
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 border border-blue-200">
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between"><span class="text-slate-600">Salaire brut annuel</span><span class="font-medium">500,000 SEK</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Cotisation retraite (7%)</span><span class="font-medium text-amber-600">- 35,000 SEK</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Abattement de base (grundavdrag)</span><span class="font-medium text-green-600">- 45,000 SEK</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Revenu imposable</span><span class="font-medium">420,000 SEK</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Impot municipal (~32%)</span><span class="font-medium text-indigo-600">- 134,400 SEK</span></div>
+                            <div class="flex justify-between"><span class="text-slate-600">Impot d'Etat (20% sur 0 SEK)</span><span class="font-medium text-slate-400">0 SEK</span></div>
+                            <div class="border-t pt-2 flex justify-between"><span class="font-semibold text-emerald-800">Revenu net annuel</span><span class="font-bold text-emerald-600">~330,600 SEK</span></div>
+                            <p class="text-xs text-slate-500">Soit environ 27,550 SEK net/mois (~2,500 EUR) | Taux effectif : ~33.9%</p>
+                        </div>
+                    </div>
 
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Suede</h3>
                     <div class="overflow-x-auto">
@@ -465,19 +524,54 @@
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="border p-2 text-left">Critere</th>
-                                    <th class="border p-2 text-left">France</th>
-                                    <th class="border p-2 text-left">Suede</th>
+                                    <th class="border p-2 text-center">France</th>
+                                    <th class="border p-2 text-center">Suede</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td class="border p-2">Salaire 500,000 SEK brut (~45,000 EUR)</td><td class="border p-2">~33,000 EUR net</td><td class="border p-2">~310,000 SEK net</td></tr>
-                                <tr><td class="border p-2">Taux marginal max</td><td class="border p-2">45%</td><td class="border p-2">~52%</td></tr>
-                                <tr><td class="border p-2">Cotisations employe</td><td class="border p-2">~22%</td><td class="border p-2">~7%</td></tr>
-                                <tr><td class="border p-2">Sante</td><td class="border p-2">Incluse</td><td class="border p-2">Gratuite (finance par l'impot)</td></tr>
-                                <tr><td class="border p-2">Education</td><td class="border p-2">Gratuite (publique)</td><td class="border p-2">Gratuite + allocations etudiantes</td></tr>
+                                <tr><td class="border p-2">Salaire 45,000 EUR brut</td><td class="border p-2 text-center">~33,000 EUR net</td><td class="border p-2 text-center">~30,000 EUR net</td></tr>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2 text-center">45%</td><td class="border p-2 text-center">~52%</td></tr>
+                                <tr><td class="border p-2">Cotisations employe</td><td class="border p-2 text-center">~22%</td><td class="border p-2 text-center">~7%</td></tr>
+                                <tr><td class="border p-2">Sante</td><td class="border p-2 text-center">Securite sociale + mutuelle</td><td class="border p-2 text-center">Quasi-gratuite (taxe-funded)</td></tr>
+                                <tr><td class="border p-2">Education superieure</td><td class="border p-2 text-center">Gratuite (publique)</td><td class="border p-2 text-center">Gratuite + allocations CSN</td></tr>
+                                <tr><td class="border p-2">Conge parental</td><td class="border p-2 text-center">~16 semaines mere</td><td class="border p-2 text-center">480 jours partageables</td></tr>
+                                <tr><td class="border p-2">Garde d'enfants</td><td class="border p-2 text-center">Variable (creche/nounou)</td><td class="border p-2 text-center">Max 1,500 SEK/mois</td></tr>
                             </tbody>
                         </table>
                     </div>
+                    <p class="text-xs text-slate-500 mt-2">La Suede a un impot plus eleve mais des services publics plus genereux. Le "vrai" revenu disponible depend de votre situation familiale et de votre utilisation des services publics.</p>
+                </div>
+            </div>
+
+            <!-- Sources officielles -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 mt-6">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:link" width="20" class="text-blue-500"></iconify-icon>
+                    Sources Officielles
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <a href="https://www.skatteverket.se/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Skatteverket - Administration fiscale suedoise</p>
+                            <p class="text-xs text-slate-500">skatteverket.se - Baremes, declarations et informations fiscales officielles</p>
+                        </div>
+                    </a>
+                    <a href="https://www.forsakringskassan.se/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Forsakringskassan - Securite sociale</p>
+                            <p class="text-xs text-slate-500">forsakringskassan.se - Conge parental, maladie, allocations</p>
+                        </div>
+                    </a>
+                    <a href="https://www.government.se/government-of-sweden/ministry-of-finance/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                        <iconify-icon icon="lucide:external-link" width="16" class="text-blue-500"></iconify-icon>
+                        <div>
+                            <p class="font-medium text-slate-900">Ministere des Finances suedois</p>
+                            <p class="text-xs text-slate-500">government.se - Politique fiscale et budgetaire</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 

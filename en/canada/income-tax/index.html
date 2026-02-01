@@ -75,114 +75,96 @@
                 <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">N.</div>
                 <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
                 <div class="relative group">
                     <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
                         <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
-                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400"></iconify-icon>
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
                     </a>
                     <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
                             <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
-                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon> Tax Simulator
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
                             </a>
                             <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
-                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon> Gross to Net
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
                             </a>
                         </div>
                     </div>
                 </div>
+                <!-- All Countries Dropdown -->
                 <div class="relative group">
                     <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
                         <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
-                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400"></iconify-icon>
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
                     </a>
                     <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px] " style="max-height: 250px; overflow-y: scroll;">
-                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇺🇸</span> USA (New York)
-                            </a>
-                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇬🇧</span> United Kingdom
-                            </a>
-                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇨🇭</span> Switzerland (Geneva)
-                            </a>
-                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇦🇪</span> Dubai (0% tax)
-                            </a>
-                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇸🇬</span> Singapore
-                            </a>
-                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇱🇺</span> Luxembourg
-                            </a>
-                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇸🇦</span> Saudi Arabia
-                            </a>
-                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇪🇸</span> Spain
-                            </a>
-                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇯🇵</span> Japan
-                            </a>
-                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇨🇳</span> China (Shanghai)
-                            </a>
-                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇮🇳</span> India
-                            </a>
-                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇵🇰</span> Pakistan
-                            </a>
-                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇲🇽</span> Mexico
-                            </a>
-                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇧🇷</span> Brazil
-                            </a>
-                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇩🇪</span> Germany
-                            </a>
-                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇨🇦</span> Canada
-                            </a>
-                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇦🇺</span> Australia
-                            </a>
-                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇮🇹</span> Italy
-                            </a>
-                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇳🇱</span> Netherlands
-                            </a>
-                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇰🇷</span> South Korea
-                            </a>
-                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇧🇪</span> Belgium
-                            </a>
-                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇸🇪</span> Sweden
-                            </a>
-                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇮🇪</span> Ireland
-                            </a>
-                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇳🇴</span> Norway
-                            </a>
-                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇦🇹</span> Austria
-                            </a>
-                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇩🇰</span> Denmark
-                            </a>
-                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇵🇹</span> Portugal
-                            </a>
-                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇭🇰</span> Hong Kong
-                            </a>
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
                             <div class="border-t border-slate-100 my-2"></div>
                             <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors text-sm font-medium">
                                 <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
@@ -190,8 +172,10 @@
                         </div>
                     </div>
                 </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
                 <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
+
             <div class="flex items-center gap-3">
                 <div class="relative">
                     <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">

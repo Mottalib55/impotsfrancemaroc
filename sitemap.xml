@@ -1282,26 +1282,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/koweit/simulateur-impot/"/>
   </url>
 
-  <!-- ========== ISRAEL / ISRAËL ========== -->
-  <url>
-    <loc>https://netsalaire.com/fr/israel/simulateur-impot/</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/israel/simulateur-impot/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/israel/income-tax/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/israel/simulateur-impot/"/>
-  </url>
-  <url>
-    <loc>https://netsalaire.com/en/israel/income-tax/</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/israel/simulateur-impot/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://netsalaire.com/en/israel/income-tax/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://netsalaire.com/fr/israel/simulateur-impot/"/>
-  </url>
-
   <!-- ========== EGYPT / ÉGYPTE ========== -->
   <url>
     <loc>https://netsalaire.com/fr/egypte/simulateur-impot/</loc>

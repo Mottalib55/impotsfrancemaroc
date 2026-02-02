@@ -1131,6 +1131,24 @@
             document.getElementById('net-horaire-eur').textContent = '≈ ' + formatDecimal(netH * MAD_TO_EUR) + ' €';
         }
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedBrut = 0;
+        let trackingTimeout = null;
+        function trackBrutNetCalculation(brutAnnuel, situation) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(brutAnnuel - lastTrackedBrut) < 1000) return;
+                lastTrackedBrut = brutAnnuel;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur Brut Net MA',
+                        'event_label': situation,
+                        'value': Math.round(brutAnnuel)
+                    });
+                }
+            }, 1500);
+        }
+
         function updateUI(result) {
             const brutMois = result.brut / 12;
             const cnssMois = result.cnss / 12;
@@ -1177,6 +1195,9 @@
             document.getElementById('legend-ir').textContent = Math.round(irRate * 100) + '%';
 
             drawChart(netRate, cotisRate, irRate);
+
+            // GA4 tracking
+            trackBrutNetCalculation(result.brut, situationSelect.value);
         }
 
         // === CHART ===

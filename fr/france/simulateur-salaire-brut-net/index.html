@@ -35,8 +35,8 @@
     <script>
     </script>
 
-    <title>Calcul Salaire Brut en Net France 2026 → Simulateur Gratuit</title>
-    <meta name="description" content="Calculez votre salaire brut en net gratuitement. Simulation détaillée horaire, mensuelle ou annuelle selon votre statut. Barèmes 2026. calcul détaillé.">
+    <title>Simulateur Salaire Brut Net 2026 → Calcul Gratuit Instantané</title>
+    <meta name="description" content="Simulateur salaire brut net gratuit. Convertir brut en net selon votre statut cadre ou non-cadre. Barèmes 2026 officiels URSSAF. Calcul instantané.">
     <meta name="keywords" content="simulateur brut net, salaire net france, calcul salaire, cotisations sociales, cadre non cadre">
     <link rel="canonical" href="https://netsalaire.com/fr/france/simulateur-salaire-brut-net/">
     <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/france/simulateur-salaire-brut-net/">
@@ -75,11 +75,60 @@
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Simulateur Brut Net France",
-        "description": "Calculez votre salaire net à partir du brut en France",
+        "name": "Simulateur Salaire Brut Net France 2026",
+        "description": "Convertir brut en net gratuitement. Calcul salaire brut net selon statut cadre ou non-cadre. Barèmes 2026.",
         "url": "https://netsalaire.com/fr/france/simulateur-salaire-brut-net/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Quelle est la différence entre salaire brut et net ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le salaire brut est la rémunération totale avant toute déduction. Le salaire net est ce que vous percevez réellement après déduction des cotisations sociales salariales (CSG, CRDS, retraite, chômage). En France, le net représente environ 75% à 78% du brut selon votre statut."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quel est le pourcentage de charges salariales en 2026 ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "En 2026, les charges salariales représentent environ 22% du salaire brut pour un non-cadre et 25% pour un cadre. Cette différence s'explique principalement par des cotisations retraite complémentaire plus élevées et la cotisation APEC obligatoire pour les cadres."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment calculer son salaire net cadre ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour calculer votre salaire net cadre, multipliez votre salaire brut par 0,75. Par exemple, pour 4 000 € brut : 4 000 × 0,75 = 3 000 € net avant impôt. Ce calcul approximatif tient compte des cotisations sociales d'environ 25%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Le prélèvement à la source est-il inclus dans le salaire net ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Non, le salaire net affiché sur notre simulateur est le net AVANT impôt sur le revenu. Le prélèvement à la source (PAS) est une retenue supplémentaire qui dépend de votre taux d'imposition personnel. Votre fiche de paie distingue le 'net à payer avant impôt' et le 'net à payer'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quel est le SMIC net en 2026 ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le SMIC net mensuel en 2026 est d'environ 1 406 € pour 35 heures hebdomadaires. Cela correspond à un SMIC brut de 1 802 € mensuel, soit 11,88 € brut de l'heure. Le SMIC est revalorisé chaque année au 1er janvier."
+                }
+            }
+        ]
     }
     </script>
 
@@ -348,8 +397,8 @@
                 <span class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
                     🇫🇷 France · Barèmes 2026
                 </span>
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Salaire Brut ↔ Net</h1>
-                <p class="text-slate-500 text-sm">Conversion bidirectionnelle instantanée</p>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Simulateur Salaire Brut Net 2026</h1>
+                <p class="text-slate-500 text-sm">Calcul gratuit et instantané - Barèmes officiels URSSAF</p>
             </header>
 
             <!-- Main Calculator Section -->
@@ -567,49 +616,118 @@
                 </div>
             </div>
 
-            <!-- Info Section -->
+            <!-- Introduction Section -->
             <section class="mb-8">
-                <h2 class="text-lg font-semibold text-slate-800 mb-4">Comment ça marche ?</h2>
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6">
-                    <div class="prose prose-slate max-w-none text-sm text-slate-600">
-                        <p>Le salaire net est calculé en déduisant les cotisations sociales du salaire brut :</p>
-                        <ul class="mt-4 space-y-2">
-                            <li><strong>Sécurité sociale</strong> : maladie, vieillesse, famille (~14%)</li>
-                            <li><strong>Retraite complémentaire</strong> : AGIRC-ARRCO (6-8%)</li>
-                            <li><strong>Assurance chômage</strong> : contribution salariale (~2%)</li>
-                            <li><strong>CSG/CRDS</strong> : contributions sociales (9,7% sur 98,25% du brut)</li>
-                        </ul>
-                        <p class="mt-4">Le taux global varie entre <strong>22%</strong> (non-cadre) et <strong>25%</strong> (cadre) du salaire brut.</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl border border-indigo-100 p-4 md:p-6">
+                    <div class="prose prose-slate max-w-none text-sm text-slate-700">
+                        <p class="text-base">Vous venez de recevoir une offre d'emploi avec un salaire brut mais vous ne savez pas combien vous toucherez réellement ? Vous n'êtes pas seul. Chaque mois, des millions de Français se posent la même question : <strong>combien me reste-t-il après les cotisations ?</strong></p>
+                        <p class="mt-3">Notre <strong>simulateur salaire brut net</strong> vous permet de <strong>convertir brut en net</strong> en quelques secondes. Basé sur les <strong>barèmes 2026</strong> officiels de l'URSSAF, cet outil <strong>gratuit</strong> calcule instantanément votre salaire net selon votre statut (cadre ou non-cadre), vos heures travaillées et votre temps de travail.</p>
+                        <p class="mt-3">Que vous négociiez un nouveau contrat, compariez deux offres d'emploi ou prépariez votre budget, notre calculateur vous donne une vision claire de votre rémunération réelle. Le <strong>calcul salaire brut net 2026</strong> n'a jamais été aussi simple.</p>
                     </div>
                 </div>
             </section>
 
             <!-- SEO Content Section -->
             <section class="mb-8">
-                <h2 class="text-lg font-semibold text-slate-800 mb-4">Comprendre le calcul du salaire brut vers net en France</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Comment fonctionne le calcul du salaire brut vers net ?</h2>
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6">
                     <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                        <p>Le passage du <strong>salaire brut au salaire net</strong> est une étape essentielle pour comprendre sa rémunération réelle en France. En 2026, les cotisations sociales salariales représentent entre <strong>22% et 25%</strong> du salaire brut selon votre statut (cadre ou non-cadre).</p>
+                        <p>Le passage du salaire brut au salaire net s'effectue en déduisant l'ensemble des <strong>cotisations sociales salariales</strong>. Ces prélèvements financent notre système de protection sociale : santé, retraite, chômage et allocations familiales.</p>
 
-                        <h3 class="text-base font-semibold text-slate-800 mt-6">Différence entre cadre et non-cadre</h3>
-                        <p>Le statut cadre entraîne des cotisations légèrement supérieures, principalement en raison de :</p>
+                        <h3 class="text-base font-semibold text-slate-800 mt-6">Les principales cotisations salariales</h3>
+
+                        <p><strong>La CSG et la CRDS</strong> représentent la contribution la plus importante. Calculées sur 98,25% du salaire brut, elles s'élèvent à <strong>9,7%</strong> (dont 6,8% déductibles). Ces contributions financent la Sécurité sociale et le remboursement de la dette sociale.</p>
+
+                        <p><strong>Les cotisations de retraite</strong> comprennent la retraite de base (plafonnée) et la retraite complémentaire AGIRC-ARRCO. Pour un <strong>salaire net non-cadre</strong>, elles représentent environ 6% du brut. Pour un <strong>salaire net cadre</strong>, ce taux monte à 9% en raison de cotisations complémentaires plus élevées.</p>
+
+                        <p><strong>L'assurance chômage</strong> prélève environ 2% du salaire brut pour financer les allocations des demandeurs d'emploi.</p>
+
+                        <p><strong>Les cotisations maladie et vieillesse</strong> alimentent le système de Sécurité sociale pour environ 14% du brut.</p>
+
+                        <h3 class="text-base font-semibold text-slate-800 mt-6">Différence entre salaire net cadre et non-cadre</h3>
+                        <p>Le statut professionnel impacte directement votre salaire net :</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Une cotisation retraite complémentaire plus élevée</li>
-                            <li>Une cotisation APEC obligatoire</li>
-                            <li>Des garanties prévoyance supplémentaires</li>
+                            <li><strong>Non-cadre</strong> : taux global de cotisations d'environ <strong>22%</strong>. Vous conservez donc <strong>78%</strong> de votre salaire brut.</li>
+                            <li><strong>Cadre</strong> : taux global d'environ <strong>25%</strong> en raison de cotisations retraite majorées et de la cotisation APEC obligatoire. Vous conservez <strong>75%</strong> de votre brut.</li>
                         </ul>
-                        <p class="mt-2">Résultat : un cadre conserve environ <strong>75%</strong> de son salaire brut en net, contre <strong>78%</strong> pour un non-cadre.</p>
+
+                        <h3 class="text-base font-semibold text-slate-800 mt-6">Et le prélèvement à la source ?</h3>
+                        <p>Attention à ne pas confondre : le salaire net <strong>avant impôt</strong> et le net <strong>après impôt</strong> sont différents. Le prélèvement à la source (PAS) est prélevé après les cotisations sociales. Notre simulateur affiche le net avant impôt sur le revenu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tableau des cotisations -->
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Tableau des taux de cotisations salariales 2026</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-slate-50 border-b border-slate-200">
+                                <tr>
+                                    <th class="text-left px-4 py-3 font-semibold text-slate-700">Type de cotisation</th>
+                                    <th class="text-center px-4 py-3 font-semibold text-slate-700">Non-Cadre</th>
+                                    <th class="text-center px-4 py-3 font-semibold text-slate-700">Cadre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr>
+                                    <td class="px-4 py-3 text-slate-600">CSG/CRDS (sur 98,25% du brut)</td>
+                                    <td class="px-4 py-3 text-center font-medium">9,70%</td>
+                                    <td class="px-4 py-3 text-center font-medium">9,70%</td>
+                                </tr>
+                                <tr class="bg-slate-50/50">
+                                    <td class="px-4 py-3 text-slate-600">Assurance vieillesse (plafonnée)</td>
+                                    <td class="px-4 py-3 text-center font-medium">6,90%</td>
+                                    <td class="px-4 py-3 text-center font-medium">6,90%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-slate-600">Assurance vieillesse (déplafonnée)</td>
+                                    <td class="px-4 py-3 text-center font-medium">0,40%</td>
+                                    <td class="px-4 py-3 text-center font-medium">0,40%</td>
+                                </tr>
+                                <tr class="bg-slate-50/50">
+                                    <td class="px-4 py-3 text-slate-600">Retraite complémentaire (Tranche 1)</td>
+                                    <td class="px-4 py-3 text-center font-medium">3,15%</td>
+                                    <td class="px-4 py-3 text-center font-medium">3,15%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-slate-600">Retraite complémentaire (Tranche 2)</td>
+                                    <td class="px-4 py-3 text-center text-slate-400">-</td>
+                                    <td class="px-4 py-3 text-center font-medium">8,64%</td>
+                                </tr>
+                                <tr class="bg-slate-50/50">
+                                    <td class="px-4 py-3 text-slate-600">Contribution d'équilibre général</td>
+                                    <td class="px-4 py-3 text-center font-medium">0,86%</td>
+                                    <td class="px-4 py-3 text-center font-medium">1,29%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-slate-600">APEC</td>
+                                    <td class="px-4 py-3 text-center text-slate-400">-</td>
+                                    <td class="px-4 py-3 text-center font-medium">0,024%</td>
+                                </tr>
+                                <tr class="bg-indigo-50 font-semibold">
+                                    <td class="px-4 py-3 text-slate-800">Total approximatif</td>
+                                    <td class="px-4 py-3 text-center text-indigo-600">~22%</td>
+                                    <td class="px-4 py-3 text-center text-indigo-600">~25%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-500">
+                        * Les taux peuvent varier selon la convention collective. Source : URSSAF 2026.
                     </div>
                 </div>
             </section>
 
             <!-- Examples Section -->
             <section class="mb-8">
-                <h2 class="text-lg font-semibold text-slate-800 mb-4">Exemples concrets</h2>
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Exemples de calcul salaire brut net 2026</h2>
+                <p class="text-sm text-slate-500 mb-4">Voici trois exemples représentatifs pour mieux comprendre la conversion brut vers net.</p>
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                         <div class="text-center mb-3">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded-full">SMIC 2026</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded-full">SMIC 2026 - Non-cadre</span>
                         </div>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
@@ -617,19 +735,23 @@
                                 <span class="font-medium">1 802 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations</span>
+                                <span class="text-slate-500">Cotisations (22%)</span>
                                 <span class="font-medium text-red-600">-396 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
-                                <span class="font-semibold">Net mensuel</span>
+                                <span class="font-semibold">Net avant impôt</span>
                                 <span class="font-bold text-emerald-600">1 406 €</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400 text-xs">
+                                <span>Après PAS (0%)</span>
+                                <span>≈ 1 406 €</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                         <div class="text-center mb-3">
-                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-0.5 rounded-full">Cadre junior</span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-0.5 rounded-full">3 500 € brut - Cadre</span>
                         </div>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
@@ -637,35 +759,96 @@
                                 <span class="font-medium">3 500 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations</span>
+                                <span class="text-slate-500">Cotisations (25%)</span>
                                 <span class="font-medium text-red-600">-875 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
-                                <span class="font-semibold">Net mensuel</span>
+                                <span class="font-semibold">Net avant impôt</span>
                                 <span class="font-bold text-emerald-600">2 625 €</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400 text-xs">
+                                <span>Après PAS (~7%)</span>
+                                <span>≈ 2 440 €</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                         <div class="text-center mb-3">
-                            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-0.5 rounded-full">Cadre confirmé</span>
+                            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-0.5 rounded-full">5 000 € brut - Cadre</span>
                         </div>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-slate-500">Brut mensuel</span>
-                                <span class="font-medium">6 000 €</span>
+                                <span class="font-medium">5 000 €</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-slate-500">Cotisations</span>
-                                <span class="font-medium text-red-600">-1 500 €</span>
+                                <span class="text-slate-500">Cotisations (25%)</span>
+                                <span class="font-medium text-red-600">-1 250 €</span>
                             </div>
                             <div class="border-t pt-2 flex justify-between">
-                                <span class="font-semibold">Net mensuel</span>
-                                <span class="font-bold text-emerald-600">4 500 €</span>
+                                <span class="font-semibold">Net avant impôt</span>
+                                <span class="font-bold text-emerald-600">3 750 €</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400 text-xs">
+                                <span>Après PAS (~12%)</span>
+                                <span>≈ 3 300 €</span>
                             </div>
                         </div>
                     </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-3 text-center">Ces calculs sont des estimations. Le montant exact dépend de votre convention collective et de votre situation fiscale.</p>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-8">
+                <h2 class="text-lg font-semibold text-slate-800 mb-4">Questions fréquentes</h2>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 divide-y divide-slate-100">
+                    <details class="group">
+                        <summary class="flex items-center justify-between cursor-pointer px-4 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50">
+                            <span>Quelle est la différence entre salaire brut et net ?</span>
+                            <iconify-icon icon="lucide:chevron-down" width="18" class="text-slate-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        </summary>
+                        <div class="px-4 pb-4 text-sm text-slate-600">
+                            Le salaire brut est la rémunération totale avant toute déduction. Le salaire net est ce que vous percevez réellement après déduction des cotisations sociales salariales (CSG, CRDS, retraite, chômage). En France, le net représente environ <strong>75% à 78%</strong> du brut selon votre statut.
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between cursor-pointer px-4 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50">
+                            <span>Quel est le pourcentage de charges salariales en 2026 ?</span>
+                            <iconify-icon icon="lucide:chevron-down" width="18" class="text-slate-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        </summary>
+                        <div class="px-4 pb-4 text-sm text-slate-600">
+                            En 2026, les charges salariales représentent environ <strong>22%</strong> du salaire brut pour un non-cadre et <strong>25%</strong> pour un cadre. Cette différence s'explique principalement par des cotisations retraite complémentaire plus élevées et la cotisation APEC obligatoire pour les cadres.
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between cursor-pointer px-4 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50">
+                            <span>Comment calculer son salaire net cadre ?</span>
+                            <iconify-icon icon="lucide:chevron-down" width="18" class="text-slate-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        </summary>
+                        <div class="px-4 pb-4 text-sm text-slate-600">
+                            Pour calculer votre salaire net cadre, multipliez votre salaire brut par <strong>0,75</strong>. Par exemple, pour 4 000 € brut : 4 000 × 0,75 = <strong>3 000 € net</strong> avant impôt. Ce calcul approximatif tient compte des cotisations sociales d'environ 25%.
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between cursor-pointer px-4 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50">
+                            <span>Le prélèvement à la source est-il inclus dans le salaire net ?</span>
+                            <iconify-icon icon="lucide:chevron-down" width="18" class="text-slate-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        </summary>
+                        <div class="px-4 pb-4 text-sm text-slate-600">
+                            Non, le salaire net affiché sur notre simulateur est le net <strong>AVANT impôt</strong> sur le revenu. Le prélèvement à la source (PAS) est une retenue supplémentaire qui dépend de votre taux d'imposition personnel. Votre fiche de paie distingue le "net à payer avant impôt" et le "net à payer".
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between cursor-pointer px-4 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50">
+                            <span>Quel est le SMIC net en 2026 ?</span>
+                            <iconify-icon icon="lucide:chevron-down" width="18" class="text-slate-400 group-open:rotate-180 transition-transform"></iconify-icon>
+                        </summary>
+                        <div class="px-4 pb-4 text-sm text-slate-600">
+                            Le SMIC net mensuel en 2026 est d'environ <strong>1 406 €</strong> pour 35 heures hebdomadaires. Cela correspond à un SMIC brut de <strong>1 802 €</strong> mensuel, soit <strong>11,88 €</strong> brut de l'heure. Le SMIC est revalorisé chaque année au 1er janvier.
+                        </div>
+                    </details>
                 </div>
             </section>
 

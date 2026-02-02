@@ -1106,6 +1106,24 @@
         const moneyFmt = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
         const pctFmt = new Intl.NumberFormat('fr-MA', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedIncome = 0;
+        let trackingTimeout = null;
+        function trackTaxCalculation(income, status) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(income - lastTrackedIncome) < 1000) return;
+                lastTrackedIncome = income;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'tax_calculation', {
+                        'event_category': 'Simulateur Impot MA',
+                        'event_label': status,
+                        'value': Math.round(income)
+                    });
+                }
+            }, 1500);
+        }
+
         // Format number with spaces (1000000 -> 1 000 000)
         const formatWithSpaces = (num) => {
             return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -1184,6 +1202,9 @@
                 irNet,
                 trancheDetails
             });
+
+            // GA4 tracking
+            trackTaxCalculation(state.annualGross, state.status);
         }
 
         function updateUI(data) {

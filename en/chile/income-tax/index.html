@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Chile Income Tax Calculator 2026 - Free Impuesto a la Renta Simulator</title>
+    <meta name="description" content="Calculate your Chilean income tax for free. Detailed simulation with Impuesto a la Renta, AFP pension, and social contributions. 2026 rates included.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/chile/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/chili/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/chile/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/chile/income-tax/">
+
+    <meta property="og:title" content="Chile Income Tax Calculator 2026 - Free Impuesto a la Renta Simulator">
+    <meta property="og:description" content="Calculate your Chilean income tax for free. AFP pension and Fonasa/Isapre contributions included. 2026 rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/chile/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Chile Income Tax Calculator 2026",
+        "url": "https://netsalaire.com/en/chile/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CLP" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] { -webkit-appearance: none; appearance: none; background: #e2e8f0; border-radius: 8px; height: 8px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #dc2626; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #dc2626; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-red-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Countries Dropdown -->
+                <div class="relative group">
+                    <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/chile/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇱</span> Chile</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/poland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇱</span> Poland</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇬🇧</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/chili/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"><span>🇫🇷</span> Francais</a>
+                        <a href="/en/chile/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors"><span>🇬🇧</span> English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇨🇱</span>
+                    <span class="text-sm font-medium text-red-800">Chile</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Chile Income Tax Calculator <span class="text-red-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your Chilean taxes: Impuesto a la Renta + AFP Pension + Salud Contributions</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="2000000" min="0" max="100000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-red-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CLP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Annual Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="24000000" min="0" max="1000000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-red-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">CLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="120000000" step="500000" value="24000000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-red-600 touch-pan-x" style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~0 USD</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-red-50 to-white rounded-xl border border-red-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-red-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax</span>
+                        </div>
+                        <p class="text-2xl font-bold text-red-600" id="income-tax">0 CLP</p>
+                        <p class="text-xs text-slate-500 mt-1">Effective rate: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 CLP</p>
+                        <p class="text-xs text-slate-500 mt-1">AFP + Salud + Cesantia (~19.1%)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 CLP</p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">0 CLP</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Income Distribution</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #dc2626 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-emerald-500"></span><span class="text-sm text-slate-600">Net Income</span></div><span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-red-500"></span><span class="text-sm text-slate-600">Income Tax</span></div><span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-amber-500"></span><span class="text-sm text-slate-600">Social Contributions</span></div><span class="text-sm font-medium text-slate-500" id="legend-social">0%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 CLP</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-red-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-red-500"></iconify-icon>
+                    Chile Tax Brackets 2026 (based on UTM)
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">0 - 13.5 UTM</span><span class="font-medium text-emerald-600">0% (exempt)</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">13.5 - 30 UTM</span><span class="font-medium">4%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">30 - 50 UTM</span><span class="font-medium">8%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">50 - 70 UTM</span><span class="font-medium">13.5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">70 - 90 UTM</span><span class="font-medium">23%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">90 - 120 UTM</span><span class="font-medium">30.4%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">120 - 310 UTM</span><span class="font-medium">35%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">310+ UTM</span><span class="font-medium text-red-600">40%</span></div>
+                </div>
+                <p class="text-xs text-slate-400 mt-3">UTM (Unidad Tributaria Mensual) = ~CLP 66,362 (2026 estimate)</p>
+            </div>
+
+            <!-- Understanding Chilean Taxes -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Chilean Taxation</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>Chile has a progressive income tax system known as <strong>Impuesto a la Renta</strong> or <strong>Impuesto de Segunda Categoria</strong> for employment income. The tax brackets are based on the <strong>UTM (Unidad Tributaria Mensual)</strong>, which is adjusted monthly for inflation. Chilean taxation is based on the <strong>residence principle</strong>: residents are taxed on worldwide income, while non-residents are only taxed on Chilean-source income.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Income Tax Brackets 2026 (8 Progressive Rates)</h3>
+                    <p>Chilean income tax uses a progressive system with <strong>8 brackets</strong> based on UTM:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 13.5 UTM: <strong>0%</strong> (exempt - approximately CLP 896,000/month)</li>
+                            <li>13.5 - 30 UTM: <strong>4%</strong></li>
+                            <li>30 - 50 UTM: <strong>8%</strong></li>
+                            <li>50 - 70 UTM: <strong>13.5%</strong></li>
+                            <li>70 - 90 UTM: <strong>23%</strong></li>
+                            <li>90 - 120 UTM: <strong>30.4%</strong></li>
+                            <li>120 - 310 UTM: <strong>35%</strong></li>
+                            <li>Above 310 UTM: <strong>40%</strong> (maximum rate)</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: The UTM value is updated monthly. For 2026, it is estimated around CLP 66,362.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Security Contributions (~19.1% employee)</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Prevision Social (Social Security)</h4>
+                        <p class="text-xs text-red-700 mb-2">Chilean social security includes mandatory pension (AFP), health insurance, and unemployment insurance.</p>
+                    </div>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Employee Rate</th>
+                                    <th class="border p-2 text-left">Employer Rate</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">AFP (Pension)</td><td class="border p-2 font-medium">10%</td><td class="border p-2">-</td><td class="border p-2">Mandatory pension fund</td></tr>
+                                <tr><td class="border p-2">AFP Commission</td><td class="border p-2 font-medium">~1.5%</td><td class="border p-2">-</td><td class="border p-2">AFP management fee (varies by provider)</td></tr>
+                                <tr><td class="border p-2">Salud (Health)</td><td class="border p-2 font-medium">7%</td><td class="border p-2">-</td><td class="border p-2">Fonasa or Isapre</td></tr>
+                                <tr><td class="border p-2">Seguro de Cesantia (Unemployment)</td><td class="border p-2 font-medium">0.6%</td><td class="border p-2">2.4%</td><td class="border p-2">Unemployment insurance</td></tr>
+                                <tr><td class="border p-2">Seguro de Invalidez y Sobrevivencia</td><td class="border p-2">-</td><td class="border p-2">1.53%</td><td class="border p-2">Disability and survivor insurance</td></tr>
+                                <tr><td class="border p-2">Accidentes del Trabajo</td><td class="border p-2">-</td><td class="border p-2">0.93%</td><td class="border p-2">Work accidents (basic rate)</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 font-bold text-amber-700">~19.1%</td><td class="border p-2 font-bold">~4.86%</td><td class="border p-2">Before income tax</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">AFP - Pension System</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Administradoras de Fondos de Pensiones</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Chile has a <strong>private pension system</strong> managed by AFPs</li>
+                            <li>Workers must contribute <strong>10% of gross salary</strong> to their pension account</li>
+                            <li>Additional <strong>commission (~1.5%)</strong> varies by AFP provider</li>
+                            <li>Contributions are capped at <strong>81.6 UF</strong> per month (~CLP 3,000,000)</li>
+                            <li>Workers can choose between 5 fund types (A-E) based on risk tolerance</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Health Insurance - Fonasa vs Isapre</h3>
+                    <div class="grid md:grid-cols-2 gap-2 my-3">
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">Fonasa (Public)</p>
+                            <p class="text-xs text-green-600">Public health system - 7% mandatory contribution, covers basic healthcare, lower costs but longer wait times</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <p class="font-bold text-green-700">Isapre (Private)</p>
+                            <p class="text-xs text-green-600">Private health insurance - minimum 7%, can pay more for better coverage, faster access to specialists</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Benefits and Deductions</h3>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">APV - Ahorro Previsional Voluntario</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Voluntary pension savings</strong> with tax benefits</li>
+                            <li>Regime A: 15% state bonus on contributions (up to 6 UTM/year)</li>
+                            <li>Regime B: Tax deduction on contributions (up to 50 UF/month)</li>
+                            <li>Popular for reducing taxable income for higher earners</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Cuenta 2 - Additional Savings</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Additional voluntary savings in AFP account</li>
+                            <li>Can be withdrawn for specific purposes (housing, education, health)</li>
+                            <li>No immediate tax benefit but earnings are tax-free until withdrawal</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Mortgage Interest Deduction</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li>Deduction for <strong>mortgage interest payments</strong></li>
+                            <li>Applies to first home purchases</li>
+                            <li>Maximum deduction: 8 UTA (Unidad Tributaria Anual) per year</li>
+                            <li>Must be for properties valued up to 4,500 UF</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Types of Income Tax in Chile</h3>
+                    <div class="grid md:grid-cols-2 gap-2 my-3">
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Primera Categoria</p>
+                            <p class="text-xs text-blue-600">Corporate/business income - flat 27% rate for companies</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Segunda Categoria</p>
+                            <p class="text-xs text-blue-600">Employment income - progressive rates 0-40% (this calculator)</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Global Complementario</p>
+                            <p class="text-xs text-blue-600">Annual tax on total income for individuals - same brackets as Segunda Categoria</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Impuesto Adicional</p>
+                            <p class="text-xs text-blue-600">Withholding tax on payments to non-residents - typically 35%</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Chile Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Chile</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">CLP 24M (~EUR 24,000) gross salary</td><td class="border p-2">~EUR 17,500 net</td><td class="border p-2">~CLP 19.4M (~EUR 19,400) net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">40%</td></tr>
+                                <tr><td class="border p-2">Social contributions (employee)</td><td class="border p-2">~22%</td><td class="border p-2">~19.1%</td></tr>
+                                <tr><td class="border p-2">Tax-free allowance</td><td class="border p-2">~EUR 10,777</td><td class="border p-2">13.5 UTM/month (~CLP 896,000)</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes (parts)</td><td class="border p-2">No</td></tr>
+                                <tr><td class="border p-2">Pension system</td><td class="border p-2">Public (PAYG)</td><td class="border p-2">Private (AFP)</td></tr>
+                                <tr><td class="border p-2">Health system</td><td class="border p-2">Public (Securite Sociale)</td><td class="border p-2">Choice (Fonasa/Isapre)</td></tr>
+                                <tr><td class="border p-2">Cost of living (index)</td><td class="border p-2">100</td><td class="border p-2">~50-55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Calendar and Filing</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Fiscal year</strong>: January 1 to December 31</li>
+                        <li><strong>Annual filing deadline</strong>: April 30 (Operacion Renta)</li>
+                        <li><strong>Monthly withholding</strong>: Employer withholds taxes at source</li>
+                        <li><strong>Online filing</strong>: SII (Servicio de Impuestos Internos) website</li>
+                        <li><strong>Form</strong>: Formulario 22 for annual tax return</li>
+                        <li><strong>Refund</strong>: Usually within 30 days of filing if owed</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Minimum Wage and Key Thresholds</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Key 2026 Values (estimated)</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li><strong>Sueldo Minimo (Minimum Wage)</strong>: ~CLP 500,000/month</li>
+                            <li><strong>UTM (Unidad Tributaria Mensual)</strong>: ~CLP 66,362</li>
+                            <li><strong>UTA (Unidad Tributaria Anual)</strong>: ~CLP 796,344</li>
+                            <li><strong>UF (Unidad de Fomento)</strong>: ~CLP 37,000 (inflation-indexed)</li>
+                            <li><strong>AFP contribution cap</strong>: 81.6 UF (~CLP 3,000,000/month)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chilean tax system 2026 (based on UTM)
+        // UTM (Unidad Tributaria Mensual) estimated value for 2026
+        const UTM = 66362;
+
+        // Tax brackets in UTM (monthly)
+        const TAX_BRACKETS = [
+            { limit: 13.5, rate: 0 },
+            { limit: 30, rate: 0.04 },
+            { limit: 50, rate: 0.08 },
+            { limit: 70, rate: 0.135 },
+            { limit: 90, rate: 0.23 },
+            { limit: 120, rate: 0.304 },
+            { limit: 310, rate: 0.35 },
+            { limit: Infinity, rate: 0.40 }
+        ];
+
+        // Social contributions (employee share)
+        const AFP_RATE = 0.10;           // 10% mandatory pension
+        const AFP_COMMISSION = 0.015;    // ~1.5% AFP commission (average)
+        const HEALTH_RATE = 0.07;        // 7% health (Fonasa/Isapre minimum)
+        const UNEMPLOYMENT_RATE = 0.006; // 0.6% unemployment insurance
+
+        const SOCIAL_RATE = AFP_RATE + AFP_COMMISSION + HEALTH_RATE + UNEMPLOYMENT_RATE;
+        const CURRENCY = ' CLP';
+        const CLP_TO_USD = 0.001; // Approximate conversion
+
+        // AFP contribution cap (81.6 UF, approximately)
+        const AFP_CAP_MONTHLY = 3000000;
+
+        function getAnnualIncome() { return parseFloat(document.getElementById('income-annual').value) || 0; }
+
+        function calculateChileanTax(annualGross) {
+            const monthlyGross = annualGross / 12;
+
+            // Calculate monthly social contributions
+            // AFP is capped
+            const afpBase = Math.min(monthlyGross, AFP_CAP_MONTHLY);
+            const afpContribution = afpBase * AFP_RATE;
+            const afpCommission = afpBase * AFP_COMMISSION;
+            const healthContribution = monthlyGross * HEALTH_RATE;
+            const unemploymentContribution = monthlyGross * UNEMPLOYMENT_RATE;
+
+            const monthlySocial = afpContribution + afpCommission + healthContribution + unemploymentContribution;
+            const annualSocial = monthlySocial * 12;
+
+            // Taxable income (after social deductions)
+            const taxableMonthly = monthlyGross - afpContribution - healthContribution;
+            const taxableInUTM = taxableMonthly / UTM;
+
+            // Calculate progressive tax
+            let monthlyTax = 0;
+            let previousLimit = 0;
+
+            for (const bracket of TAX_BRACKETS) {
+                if (taxableInUTM <= previousLimit) break;
+
+                const taxableInBracket = Math.min(taxableInUTM, bracket.limit) - previousLimit;
+                if (taxableInBracket > 0) {
+                    monthlyTax += taxableInBracket * UTM * bracket.rate;
+                }
+                previousLimit = bracket.limit;
+            }
+
+            // Apply progressive deduction (rebaja) based on brackets
+            // Chile uses a credit system to smooth the progression
+            let rebaja = 0;
+            if (taxableInUTM <= 13.5) rebaja = 0;
+            else if (taxableInUTM <= 30) rebaja = 0.54 * UTM;
+            else if (taxableInUTM <= 50) rebaja = 1.74 * UTM;
+            else if (taxableInUTM <= 70) rebaja = 4.49 * UTM;
+            else if (taxableInUTM <= 90) rebaja = 11.14 * UTM;
+            else if (taxableInUTM <= 120) rebaja = 17.8 * UTM;
+            else if (taxableInUTM <= 310) rebaja = 23.32 * UTM;
+            else rebaja = 38.82 * UTM;
+
+            monthlyTax = Math.max(0, monthlyTax - rebaja);
+            const annualTax = monthlyTax * 12;
+
+            return {
+                incomeTax: annualTax,
+                socialContributions: annualSocial,
+                totalDeductions: annualTax + annualSocial
+            };
+        }
+
+        function formatNumber(num) {
+            return Math.round(num).toLocaleString('es-CL');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const result = calculateChileanTax(income);
+            const incomeTax = result.incomeTax;
+            const socialTax = result.socialContributions;
+            const totalTax = result.totalDeductions;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(incomeTax) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+            document.getElementById('social-tax').textContent = formatNumber(socialTax) + CURRENCY;
+            document.getElementById('net-income').textContent = formatNumber(netIncome) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(netIncome / 12) + CURRENCY;
+            document.getElementById('total-tax').textContent = formatNumber(totalTax) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('conv-gross-usd').textContent = '~' + Math.round(income * CLP_TO_USD).toLocaleString() + ' USD';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 120000000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #dc2626 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #dc2626 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+
+            document.getElementById('chart-percent').textContent = netPercent + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = Math.round(monthly * 12);
+            document.getElementById('income-slider').value = Math.min(monthly * 12, 120000000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 120000000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

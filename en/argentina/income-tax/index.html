@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Argentina Income Tax Calculator 2026 - Free Ganancias Simulator</title>
+    <meta name="description" content="Calculate your Argentine income tax for free. Detailed simulation with Impuesto a las Ganancias, ANSES contributions and social charges. 2026 rates included.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/argentina/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/argentine/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/argentina/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/argentina/income-tax/">
+
+    <meta property="og:title" content="Argentina Income Tax Calculator 2026 - Free Ganancias Simulator">
+    <meta property="og:description" content="Calculate your Argentine income tax for free. ANSES social contributions included. 2026 rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/argentina/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Argentina Income Tax Calculator 2026",
+        "url": "https://netsalaire.com/en/argentina/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ARS" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] { -webkit-appearance: none; appearance: none; background: #e2e8f0; border-radius: 8px; height: 8px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #0ea5e9; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #0ea5e9; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-sky-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Countries Dropdown -->
+                <div class="relative group">
+                    <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/argentina/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇷</span> Argentina</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/poland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇱</span> Poland</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-sky-600 hover:bg-sky-50 hover:text-sky-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇬🇧</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/argentine/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"><span>🇫🇷</span> Francais</a>
+                        <a href="/en/argentina/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors"><span>🇬🇧</span> English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇦🇷</span>
+                    <span class="text-sm font-medium text-sky-800">Argentina</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Argentina Income Tax Calculator <span class="text-sky-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your Argentine taxes: Impuesto a las Ganancias + ANSES Social Contributions</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="1500000" min="0" max="100000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-sky-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">ARS</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Annual Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="18000000" min="0" max="1000000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-sky-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">ARS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="100000000" step="500000" value="18000000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600 touch-pan-x" style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~0 USD</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-sky-50 to-white rounded-xl border border-sky-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-sky-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax (Ganancias)</span>
+                        </div>
+                        <p class="text-2xl font-bold text-sky-600" id="income-tax">0 ARS</p>
+                        <p class="text-xs text-slate-500 mt-1">Effective rate: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 ARS</p>
+                        <p class="text-xs text-slate-500 mt-1">17% (employee share)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 ARS</p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">0 ARS</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Income Distribution</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #0ea5e9 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-emerald-500"></span><span class="text-sm text-slate-600">Net Income</span></div><span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-sky-500"></span><span class="text-sm text-slate-600">Ganancias Tax</span></div><span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-amber-500"></span><span class="text-sm text-slate-600">Social Contributions</span></div><span class="text-sm font-medium text-slate-500" id="legend-social">0%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 ARS</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-sky-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-sky-500"></iconify-icon>
+                    Argentina Tax Brackets 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 0 - 1,324,016</span><span class="font-medium text-emerald-600">5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 1,324,016 - 2,648,032</span><span class="font-medium">9%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 2,648,032 - 3,972,049</span><span class="font-medium">12%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 3,972,049 - 5,296,065</span><span class="font-medium">15%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 5,296,065 - 7,944,098</span><span class="font-medium">19%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 7,944,098 - 10,592,130</span><span class="font-medium">23%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 10,592,130 - 15,888,195</span><span class="font-medium">27%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 15,888,195 - 21,184,260</span><span class="font-medium">31%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">ARS 21,184,260+</span><span class="font-medium text-red-600">35%</span></div>
+                </div>
+            </div>
+
+            <!-- Understanding Argentine Taxes -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Argentine Taxation</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>Argentina has a progressive income tax system known as <strong>Impuesto a las Ganancias</strong> (Income Tax), administered by <strong>AFIP</strong> (Administracion Federal de Ingresos Publicos). The country uses a territorial and worldwide income taxation system for residents. Tax residents in Argentina are taxed on their worldwide income, while non-residents are only taxed on Argentine-source income.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Impuesto a las Ganancias - Tax Brackets 2026</h3>
+                    <p>Argentine income tax uses a progressive system with <strong>9 brackets</strong> ranging from 5% to 35%:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>ARS 0 - ARS 1,324,016: <strong>5%</strong></li>
+                            <li>ARS 1,324,016 - ARS 2,648,032: <strong>9%</strong></li>
+                            <li>ARS 2,648,032 - ARS 3,972,049: <strong>12%</strong></li>
+                            <li>ARS 3,972,049 - ARS 5,296,065: <strong>15%</strong></li>
+                            <li>ARS 5,296,065 - ARS 7,944,098: <strong>19%</strong></li>
+                            <li>ARS 7,944,098 - ARS 10,592,130: <strong>23%</strong></li>
+                            <li>ARS 10,592,130 - ARS 15,888,195: <strong>27%</strong></li>
+                            <li>ARS 15,888,195 - ARS 21,184,260: <strong>31%</strong></li>
+                            <li>Above ARS 21,184,260: <strong>35%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: Tax brackets are adjusted periodically due to inflation. These brackets represent approximate 2026 values.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions - ANSES (17% employee)</h3>
+                    <div class="bg-sky-50 border border-sky-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-sky-800 mb-2">Aportes y Contribuciones</h4>
+                        <p class="text-xs text-sky-700 mb-2">Argentine social security contributions are managed by ANSES (Administracion Nacional de la Seguridad Social). Both employers and employees contribute to the system.</p>
+                    </div>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Employee Rate</th>
+                                    <th class="border p-2 text-left">Employer Rate</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Jubilacion (Pension)</td><td class="border p-2 font-medium">11%</td><td class="border p-2">10.17%</td><td class="border p-2">Retirement pension fund</td></tr>
+                                <tr><td class="border p-2">PAMI</td><td class="border p-2 font-medium">3%</td><td class="border p-2">1.5%</td><td class="border p-2">Health insurance for retirees</td></tr>
+                                <tr><td class="border p-2">Obra Social (Health)</td><td class="border p-2 font-medium">3%</td><td class="border p-2">6%</td><td class="border p-2">Health insurance</td></tr>
+                                <tr><td class="border p-2">Fondo Nacional de Empleo</td><td class="border p-2">-</td><td class="border p-2">0.89%</td><td class="border p-2">Employment fund</td></tr>
+                                <tr><td class="border p-2">Asignaciones Familiares</td><td class="border p-2">-</td><td class="border p-2">4.44%</td><td class="border p-2">Family allowances</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">17%</td><td class="border p-2 font-bold">~23%</td><td class="border p-2">Social security contributions</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Minimum Non-Taxable Amount (Minimo No Imponible)</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Tax-Free Allowances</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Minimo No Imponible</strong>: Basic tax-free amount for all taxpayers</li>
+                            <li><strong>Deduccion Especial</strong>: Special deduction for employees (4.8x the minimum)</li>
+                            <li><strong>Cargas de Familia</strong>: Deductions for dependents (spouse, children)</li>
+                            <li>These amounts are adjusted annually based on inflation</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Aguinaldo (13th Salary)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Sueldo Anual Complementario (SAC)</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Argentine law mandates a <strong>13th month salary</strong> (Aguinaldo)</li>
+                            <li>Paid in <strong>two installments</strong>: June 30 and December 18</li>
+                            <li>Each payment equals <strong>50%</strong> of the highest monthly salary in that semester</li>
+                            <li>Subject to income tax and social contributions</li>
+                            <li>Effectively increases annual compensation by ~8.33%</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Benefits and Deductions</h3>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Deductible Expenses</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Domestic employees</strong>: Wages paid to household staff</li>
+                            <li><strong>Medical expenses</strong>: Up to 40% of medical costs (with limits)</li>
+                            <li><strong>Life insurance premiums</strong>: Annual limits apply</li>
+                            <li><strong>Mortgage interest</strong>: For primary residence (with caps)</li>
+                            <li><strong>Educational expenses</strong>: For children's education</li>
+                            <li><strong>Donations</strong>: To registered non-profit organizations</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Employment Types in Argentina</h3>
+                    <div class="grid md:grid-cols-2 gap-2 my-3">
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Relacion de Dependencia</p>
+                            <p class="text-xs text-blue-600">Full employment contract - maximum protection, all benefits</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Monotributo</p>
+                            <p class="text-xs text-blue-600">Simplified tax regime for small taxpayers and freelancers</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Autonomo</p>
+                            <p class="text-xs text-blue-600">Self-employed professional - higher contributions</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Responsable Inscripto</p>
+                            <p class="text-xs text-blue-600">Registered VAT taxpayer - for larger businesses</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Monotributo - Simplified Tax Regime</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">For Small Taxpayers and Freelancers</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li>Fixed monthly payment covering taxes and social security</li>
+                            <li>Categories A through K based on annual revenue</li>
+                            <li>Maximum annual revenue limit applies</li>
+                            <li>Includes health coverage (obra social) and pension contributions</li>
+                            <li>Simplified invoicing and accounting requirements</li>
+                            <li>Popular option for freelancers and small businesses</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Argentina Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Argentina</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">35%</td></tr>
+                                <tr><td class="border p-2">Number of tax brackets</td><td class="border p-2">5</td><td class="border p-2">9</td></tr>
+                                <tr><td class="border p-2">Social contributions (employee)</td><td class="border p-2">~22%</td><td class="border p-2">17%</td></tr>
+                                <tr><td class="border p-2">13th month salary</td><td class="border p-2">No (optional)</td><td class="border p-2">Yes (mandatory)</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes (parts)</td><td class="border p-2">No (deductions)</td></tr>
+                                <tr><td class="border p-2">Withholding tax</td><td class="border p-2">Yes (2019+)</td><td class="border p-2">Yes (SIRADIG)</td></tr>
+                                <tr><td class="border p-2">VAT standard rate</td><td class="border p-2">20%</td><td class="border p-2">21%</td></tr>
+                                <tr><td class="border p-2">Currency stability</td><td class="border p-2">Stable (EUR)</td><td class="border p-2">High inflation (ARS)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Return (Declaracion Jurada)</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Deadline</strong>: Generally in June for the previous fiscal year</li>
+                        <li><strong>System</strong>: SIRADIG (Sistema de Registro y Actualizacion de Deducciones)</li>
+                        <li><strong>Online filing</strong>: Through AFIP website with Clave Fiscal</li>
+                        <li><strong>Employer withholding</strong>: Most employees have taxes withheld at source</li>
+                        <li><strong>Annual adjustment</strong>: Employers must perform annual tax adjustment</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Important Considerations</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Inflation Impact</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Argentina experiences <strong>high inflation</strong>, affecting tax brackets</li>
+                            <li>Tax brackets and deductions are adjusted periodically</li>
+                            <li>Real purchasing power must be considered when comparing salaries</li>
+                            <li>Exchange rate fluctuations significantly impact USD-equivalent earnings</li>
+                            <li>The "dolar oficial" and parallel exchange rates often differ substantially</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Argentine tax brackets 2026 (progressive 5% to 35%)
+        const TAX_BRACKETS = [
+            { limit: 1324016, rate: 0.05 },
+            { limit: 2648032, rate: 0.09 },
+            { limit: 3972049, rate: 0.12 },
+            { limit: 5296065, rate: 0.15 },
+            { limit: 7944098, rate: 0.19 },
+            { limit: 10592130, rate: 0.23 },
+            { limit: 15888195, rate: 0.27 },
+            { limit: 21184260, rate: 0.31 },
+            { limit: Infinity, rate: 0.35 }
+        ];
+
+        // Social contributions (employee share)
+        const JUBILACION_RATE = 0.11;    // Pension
+        const PAMI_RATE = 0.03;          // Health for elderly
+        const OBRA_SOCIAL_RATE = 0.03;   // Health insurance
+
+        const SOCIAL_RATE = JUBILACION_RATE + PAMI_RATE + OBRA_SOCIAL_RATE; // 17%
+        const CURRENCY = ' ARS';
+        const ARS_TO_USD = 0.001; // Approximate rate (subject to fluctuation)
+
+        function getAnnualIncome() { return parseFloat(document.getElementById('income-annual').value) || 0; }
+
+        function calculateArgentineTax(grossIncome) {
+            // Calculate social contributions
+            const socialContributions = grossIncome * SOCIAL_RATE;
+
+            // Taxable income (after social deductions)
+            const taxableIncome = grossIncome - socialContributions;
+
+            // Calculate progressive income tax
+            let tax = 0;
+            let remainingIncome = taxableIncome;
+            let previousLimit = 0;
+
+            for (const bracket of TAX_BRACKETS) {
+                if (remainingIncome <= 0) break;
+
+                const taxableInBracket = Math.min(remainingIncome, bracket.limit - previousLimit);
+                tax += taxableInBracket * bracket.rate;
+                remainingIncome -= taxableInBracket;
+                previousLimit = bracket.limit;
+            }
+
+            return {
+                incomeTax: Math.max(0, tax),
+                socialContributions: socialContributions,
+                totalDeductions: tax + socialContributions
+            };
+        }
+
+        function formatNumber(num) { return num.toLocaleString('en-US'); }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const result = calculateArgentineTax(income);
+            const incomeTax = result.incomeTax;
+            const socialTax = result.socialContributions;
+            const totalTax = result.totalDeductions;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('conv-gross-usd').textContent = '~' + Math.round(income * ARS_TO_USD).toLocaleString() + ' USD';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 100000000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #0ea5e9 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #0ea5e9 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+
+            document.getElementById('chart-percent').textContent = netPercent + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = Math.round(monthly * 12);
+            document.getElementById('income-slider').value = Math.min(monthly * 12, 100000000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 100000000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

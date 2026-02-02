@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Impot Egypte 2026 - Calcul Gratuit EGP</title>
+    <meta name="description" content="Calculez vos impots en Egypte gratuitement. Simulation detaillee avec baremes progressifs ETA, cotisations NOSI et assurance sociale. Baremes 2026 en livres egyptiennes.">
+
+    <link rel="canonical" href="https://netsalaire.com/fr/egypte/simulateur-impot/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/egypte/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/egypt/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/egypt/income-tax/">
+
+    <meta property="og:title" content="Simulateur Impot Egypte 2026 - Calcul Gratuit">
+    <meta property="og:description" content="Calculez vos impots en Egypte gratuitement. Simulation detaillee avec cotisations sociales NOSI. Baremes 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/fr/egypte/simulateur-impot/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Impot Egypte 2026",
+        "url": "https://netsalaire.com/fr/egypte/simulateur-impot/",
+        "inLanguage": "fr",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EGP" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-red-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/france/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Chomage ARE</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Licenciement</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> APL</a>
+                            <a href="/fr/france/creche-tarifs/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Creche</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Indemnite km</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maroc Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/maroc/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tous les pays Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/comparateur-global/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> Royaume-Uni</a>
+                            <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Suisse (Geneve)</a>
+                            <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% impot)</a>
+                            <a href="/fr/egypte/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇬</span> Egypte</a>
+                            <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapour</a>
+                            <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Arabie Saoudite</a>
+                            <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Espagne</a>
+                            <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japon</a>
+                            <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> Chine (Shanghai)</a>
+                            <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> Inde</a>
+                            <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexique</a>
+                            <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Bresil</a>
+                            <a href="/fr/allemagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Allemagne</a>
+                            <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/fr/australie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australie</a>
+                            <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italie</a>
+                            <a href="/fr/pays-bas/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Pays-Bas</a>
+                            <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> Coree du Sud</a>
+                            <a href="/fr/belgique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgique</a>
+                            <a href="/fr/suede/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Suede</a>
+                            <a href="/fr/irlande/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Irlande</a>
+                            <a href="/fr/norvege/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norvege</a>
+                            <a href="/fr/autriche/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Autriche</a>
+                            <a href="/fr/danemark/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Danemark</a>
+                            <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/fr/hong-kong/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-global/" class="flex items-center gap-3 px-4 py-2 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/fr/comparateur-salaire-france-maroc/" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇫🇷</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/egypte/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Francais
+                        </a>
+                        <a href="/en/egypt/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                </a>
+                <a href="/fr/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇪🇬</span>
+                    <span class="text-sm font-medium text-red-800">Egypte</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Simulateur Impot Egypte <span class="text-red-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculez vos impots en Egypte : Bareme progressif ETA + cotisations sociales NOSI</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="25000" min="0" max="100000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-red-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EGP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="300000" min="0" max="100000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-red-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="2400000" step="10000" value="300000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-red-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span> | <span id="conv-gross-eur">~0 EUR</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-red-50 to-white rounded-xl border border-red-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-red-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
+                        </div>
+                        <p class="text-2xl font-bold text-red-600" id="income-tax">0 EGP</p>
+                        <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Cotisations NOSI</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 EGP</p>
+                        <p class="text-xs text-slate-500 mt-1">~14% (employe)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 EGP</p>
+                        <p class="text-xs text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">0 EGP</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Repartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #dc2626 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-red-500"></span>
+                                    <span class="text-sm text-slate-600">Impots</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Cotisations</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 EGP</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-red-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-red-500"></iconify-icon>
+                    Baremes Egypte 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">0 - 40,000 EGP</span><span class="font-medium text-emerald-600">0%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">40,000 - 55,000 EGP</span><span class="font-medium">10%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">55,000 - 70,000 EGP</span><span class="font-medium">15%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">70,000 - 200,000 EGP</span><span class="font-medium">20%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">200,000 - 400,000 EGP</span><span class="font-medium">22.5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">400,000 - 1,200,000 EGP</span><span class="font-medium">25%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">1,200,000+ EGP</span><span class="font-medium text-red-600">27.5%</span></div>
+                </div>
+            </div>
+
+            <!-- Comprendre l'impot en Egypte -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite egyptienne</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>L'Egypte possede un systeme fiscal progressif gere par l'<strong>Egyptian Tax Authority (ETA)</strong>. La fiscalite egyptienne est basee sur le <strong>principe de residence</strong> : toute personne residant en Egypte plus de 183 jours par an est imposable sur ses revenus mondiaux. Les non-residents ne sont imposes que sur leurs revenus de source egyptienne.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026</h3>
+                    <p>L'impot sur le revenu en Egypte utilise un <strong>bareme progressif a 7 tranches</strong> :</p>
+                    <div class="bg-red-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 EGP - 40,000 EGP : <strong>0%</strong> (exoneration de base)</li>
+                            <li>40,000 EGP - 55,000 EGP : <strong>10%</strong></li>
+                            <li>55,000 EGP - 70,000 EGP : <strong>15%</strong></li>
+                            <li>70,000 EGP - 200,000 EGP : <strong>20%</strong></li>
+                            <li>200,000 EGP - 400,000 EGP : <strong>22.5%</strong></li>
+                            <li>400,000 EGP - 1,200,000 EGP : <strong>25%</strong></li>
+                            <li>Au-dela de 1,200,000 EGP : <strong>27.5%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note : Le taux marginal maximum de 27.5% est relativement modere compare a d'autres pays. L'Egypte a augmente ce taux en 2023 (anciennement 25%).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Egyptian Tax Authority (ETA)</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Administration fiscale egyptienne</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Autorite responsable de la collecte des impots en Egypte</li>
+                            <li><strong>Declaration annuelle</strong> obligatoire avant le 31 mars</li>
+                            <li>Systeme de <strong>prelevement a la source</strong> (withholding tax) pour les salaries</li>
+                            <li>Portail en ligne pour les declarations : <strong>eta.gov.eg</strong></li>
+                            <li>Sanctions en cas de retard : 2% par mois de penalite</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">NOSI - Assurance Sociale (National Organization for Social Insurance)</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">Cotisations sociales : ~14% employe + ~26% employeur</h4>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li><strong>Part employe</strong> : 11% du salaire de base + 3% du salaire variable</li>
+                            <li><strong>Part employeur</strong> : 18.75% du salaire de base + 7% du salaire variable</li>
+                            <li><strong>Plafond mensuel</strong> : 12,600 EGP (base) + salaire variable</li>
+                            <li>Couvre : retraite, maladie, chomage, accidents du travail</li>
+                            <li>Loi 148/2019 : reforme majeure du systeme social egyptien</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales detaillees</h3>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Cotisation</th>
+                                    <th class="border p-2 text-left">Taux employe</th>
+                                    <th class="border p-2 text-left">Taux employeur</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Salaire de base</td><td class="border p-2 font-medium">11%</td><td class="border p-2">18.75%</td><td class="border p-2">Retraite et assurance principale</td></tr>
+                                <tr><td class="border p-2">Salaire variable</td><td class="border p-2 font-medium">3%</td><td class="border p-2">7%</td><td class="border p-2">Primes, bonus, heures sup</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total moyen</td><td class="border p-2 font-bold text-amber-700">~14%</td><td class="border p-2 font-bold">~26%</td><td class="border p-2">Charge totale significative</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et abattements</h3>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Abattements personnels</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>Abattement personnel</strong> : 15,000 EGP/an</li>
+                            <li><strong>Frais professionnels</strong> : forfait de 10% du salaire (max 15,000 EGP)</li>
+                            <li><strong>Cotisations sociales</strong> : deductibles du revenu imposable</li>
+                            <li>Ces deductions s'appliquent avant le calcul de l'impot</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Avantages specifiques</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Assurance vie</strong> : primes deductibles jusqu'a 15% du revenu</li>
+                            <li><strong>Donations</strong> : deductibles si versees a des organismes agrees</li>
+                            <li><strong>Zones franches</strong> : exonerations fiscales pour certaines activites</li>
+                            <li><strong>Startups</strong> : regime fiscal preferentiel possible</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Autres impots en Egypte</h3>
+                    <div class="grid md:grid-cols-2 gap-2 my-3">
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="font-bold text-slate-700">TVA</p>
+                            <p class="text-xs text-slate-600">14% taux standard</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="font-bold text-slate-700">Impot sur les societes</p>
+                            <p class="text-xs text-slate-600">22.5% taux standard</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="font-bold text-slate-700">Droits de timbre</p>
+                            <p class="text-xs text-slate-600">0.4% a 0.75% selon operations</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3">
+                            <p class="font-bold text-slate-700">Impot foncier</p>
+                            <p class="text-xs text-slate-600">10% de la valeur locative</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Egypte</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Egypte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">27.5%</td></tr>
+                                <tr><td class="border p-2">Seuil d'exoneration</td><td class="border p-2">~11,294 EUR</td><td class="border p-2">40,000 EGP (~750 EUR)</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">~14%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employeur)</td><td class="border p-2">~45%</td><td class="border p-2">~26%</td></tr>
+                                <tr><td class="border p-2">TVA</td><td class="border p-2">20%</td><td class="border p-2">14%</td></tr>
+                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui</td><td class="border p-2">Non</td></tr>
+                                <tr><td class="border p-2">Declaration</td><td class="border p-2">Pre-remplie</td><td class="border p-2">A remplir soi-meme</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Calendrier fiscal egyptien</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>31 mars</strong> : Date limite declaration annuelle (particuliers)</li>
+                        <li><strong>Prelevement mensuel</strong> : Retenue a la source par l'employeur</li>
+                        <li><strong>Exercice fiscal</strong> : 1er janvier au 31 decembre</li>
+                        <li><strong>Penalites</strong> : 2% par mois de retard, plafonnes a 100% du montant du</li>
+                        <li><strong>Remboursements</strong> : Possible si trop-percu, delai 45 jours environ</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Fiscalite des expatries</h3>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Regime fiscal pour les etrangers</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>Resident fiscal</strong> : presence > 183 jours = imposition mondiale</li>
+                            <li><strong>Non-resident</strong> : uniquement revenus de source egyptienne</li>
+                            <li><strong>Convention fiscale</strong> : L'Egypte a des traites avec 50+ pays (dont la France)</li>
+                            <li><strong>Zones franches</strong> : certaines zones offrent des exonerations</li>
+                            <li><strong>Visa de travail</strong> : obligatoire pour travailler legalement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Comparer avec d'autres pays
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Les calculs fiscaux sont des estimations a titre informatif.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions legales</a>
+                <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialite</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Egyptian tax brackets 2026
+        const BRACKETS = [
+            { limit: 40000, rate: 0 },
+            { limit: 55000, rate: 0.10 },
+            { limit: 70000, rate: 0.15 },
+            { limit: 200000, rate: 0.20 },
+            { limit: 400000, rate: 0.225 },
+            { limit: 1200000, rate: 0.25 },
+            { limit: Infinity, rate: 0.275 }
+        ];
+        const SOCIAL_RATE = 0.14; // ~14% employee share
+        const CURRENCY = ' EGP';
+        const EGP_TO_USD = 0.032; // Approximate rate
+        const EGP_TO_EUR = 0.030; // Approximate rate
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function calculateEgyptianTax(income) {
+            // Apply personal allowance (15,000 EGP) and professional expenses (10% max 15,000)
+            const personalAllowance = 15000;
+            const professionalExpenses = Math.min(income * 0.10, 15000);
+            const taxableIncome = Math.max(0, income - personalAllowance - professionalExpenses);
+
+            let tax = 0;
+            let remainingIncome = taxableIncome;
+            let previousLimit = 0;
+
+            for (const bracket of BRACKETS) {
+                if (remainingIncome <= 0) break;
+
+                const taxableInBracket = Math.min(remainingIncome, bracket.limit - previousLimit);
+                tax += taxableInBracket * bracket.rate;
+                remainingIncome -= taxableInBracket;
+                previousLimit = bracket.limit;
+            }
+
+            return Math.max(0, tax);
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('fr-FR');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+
+            const incomeTax = calculateEgyptianTax(income);
+            const socialTax = income * SOCIAL_RATE;
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversions
+            document.getElementById('conv-gross-usd').textContent = '~$' + Math.round(income * EGP_TO_USD).toLocaleString();
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income * EGP_TO_EUR).toLocaleString() + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 2400000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #dc2626 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #dc2626 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 2400000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 2400000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

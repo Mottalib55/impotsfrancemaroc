@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Philippines Income Tax Calculator 2026 - Free TRAIN Law Simulator</title>
+    <meta name="description" content="Calculate your Philippine income tax for free. Detailed simulation with TRAIN Law rates, SSS, PhilHealth, and Pag-IBIG contributions. 2026 rates included.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/philippines/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/philippines/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/philippines/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/philippines/income-tax/">
+
+    <meta property="og:title" content="Philippines Income Tax Calculator 2026 - Free TRAIN Law Simulator">
+    <meta property="og:description" content="Calculate your Philippine income tax for free. SSS, PhilHealth, Pag-IBIG contributions included. 2026 TRAIN Law rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/philippines/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Philippines Income Tax Calculator 2026",
+        "url": "https://netsalaire.com/en/philippines/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PHP" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] { -webkit-appearance: none; appearance: none; background: #e2e8f0; border-radius: 8px; height: 8px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #0038a8; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #0038a8; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-blue-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Countries Dropdown -->
+                <div class="relative group">
+                    <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/poland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇱</span> Poland</a>
+                            <a href="/en/philippines/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇭</span> Philippines</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇬🇧</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/philippines/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"><span>🇫🇷</span> Francais</a>
+                        <a href="/en/philippines/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors"><span>🇬🇧</span> English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇵🇭</span>
+                    <span class="text-sm font-medium text-blue-800">Philippines</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Philippines Income Tax Calculator <span class="text-blue-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your Philippine taxes: TRAIN Law + SSS, PhilHealth & Pag-IBIG Contributions</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="50000" min="0" max="100000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">PHP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Annual Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="600000" min="0" max="100000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="12000000" step="50000" value="600000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 touch-pan-x" style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~0 USD</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax (TRAIN)</span>
+                        </div>
+                        <p class="text-2xl font-bold text-blue-600" id="income-tax">0 PHP</p>
+                        <p class="text-xs text-slate-500 mt-1">Effective rate: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 PHP</p>
+                        <p class="text-xs text-slate-500 mt-1">SSS + PhilHealth + Pag-IBIG</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 PHP</p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">0 PHP</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Income Distribution</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #0038a8 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-emerald-500"></span><span class="text-sm text-slate-600">Net Income</span></div><span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-blue-600"></span><span class="text-sm text-slate-600">Income Tax</span></div><span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-amber-500"></span><span class="text-sm text-slate-600">Social Contributions</span></div><span class="text-sm font-medium text-slate-500" id="legend-social">0%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 PHP</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    Philippines Tax Brackets 2026 (TRAIN Law)
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 0 - 250,000</span><span class="font-medium text-emerald-600">0%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 250,001 - 400,000</span><span class="font-medium">15%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 400,001 - 800,000</span><span class="font-medium">20%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 800,001 - 2,000,000</span><span class="font-medium">25%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 2,000,001 - 8,000,000</span><span class="font-medium">30%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">PHP 8,000,000+</span><span class="font-medium text-red-600">35%</span></div>
+                </div>
+            </div>
+
+            <!-- Understanding Philippine Taxes -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Philippine Taxation</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>The Philippines uses a progressive income tax system reformed under the <strong>TRAIN Law</strong> (Tax Reform for Acceleration and Inclusion), enacted in 2018. This law significantly lowered tax rates for most Filipino workers while expanding the tax base. Philippine taxation follows the <strong>residency principle</strong>: resident citizens are taxed on worldwide income, while non-residents are taxed only on Philippine-sourced income.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">TRAIN Law Tax Brackets 2026</h3>
+                    <p>Philippine income tax uses a progressive system with <strong>six brackets</strong>:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>PHP 0 - PHP 250,000: <strong>0%</strong> (tax-exempt)</li>
+                            <li>PHP 250,001 - PHP 400,000: <strong>15%</strong> of excess over PHP 250,000</li>
+                            <li>PHP 400,001 - PHP 800,000: PHP 22,500 + <strong>20%</strong> of excess over PHP 400,000</li>
+                            <li>PHP 800,001 - PHP 2,000,000: PHP 102,500 + <strong>25%</strong> of excess over PHP 800,000</li>
+                            <li>PHP 2,000,001 - PHP 8,000,000: PHP 402,500 + <strong>30%</strong> of excess over PHP 2,000,000</li>
+                            <li>Above PHP 8,000,000: PHP 2,202,500 + <strong>35%</strong> of excess over PHP 8,000,000</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: The PHP 250,000 tax-exempt threshold applies to annual taxable income after deductions.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Security Contributions</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Mandatory Contributions (Employee Share)</h4>
+                        <p class="text-xs text-blue-700 mb-2">Philippine employees are required to contribute to three mandatory social programs.</p>
+                    </div>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Employee Rate</th>
+                                    <th class="border p-2 text-left">Employer Rate</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">SSS (Social Security System)</td><td class="border p-2 font-medium">~4.5%</td><td class="border p-2">~9.5%</td><td class="border p-2">Retirement, disability, death benefits</td></tr>
+                                <tr><td class="border p-2">PhilHealth</td><td class="border p-2 font-medium">2.25%</td><td class="border p-2">2.25%</td><td class="border p-2">Health insurance (4.5% total)</td></tr>
+                                <tr><td class="border p-2">Pag-IBIG (HDMF)</td><td class="border p-2 font-medium">2%</td><td class="border p-2">2%</td><td class="border p-2">Housing fund (capped at PHP 200/month)</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 font-bold text-amber-700">~8.75%</td><td class="border p-2 font-bold">~13.75%</td><td class="border p-2">Subject to contribution caps</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">SSS Contribution Details</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Social Security System (SSS)</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li>Total contribution rate: <strong>14%</strong> (employee 4.5% + employer 9.5%)</li>
+                            <li>Maximum Monthly Salary Credit (MSC): <strong>PHP 30,000</strong></li>
+                            <li>Maximum monthly employee contribution: <strong>PHP 1,350</strong></li>
+                            <li>Benefits: retirement pension, disability, maternity, sickness, death benefits</li>
+                            <li>Voluntary members can contribute based on declared earnings</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">PhilHealth Contribution Details</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Philippine Health Insurance Corporation</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li>Total contribution rate: <strong>4.5%</strong> (shared equally)</li>
+                            <li>Employee share: <strong>2.25%</strong> of monthly basic salary</li>
+                            <li>Monthly income ceiling: <strong>PHP 100,000</strong></li>
+                            <li>Maximum monthly contribution: <strong>PHP 2,250</strong> (employee share)</li>
+                            <li>Covers hospitalization, outpatient care, and preventive services</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Pag-IBIG Fund (HDMF)</h3>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Home Development Mutual Fund</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li>Contribution rate: <strong>2%</strong> employee + 2% employer</li>
+                            <li>Maximum monthly contribution: <strong>PHP 200</strong> (employee share)</li>
+                            <li>Based on maximum monthly compensation of PHP 10,000</li>
+                            <li>Benefits: housing loans, multi-purpose loans, calamity loans</li>
+                            <li>Members can increase contributions through MP2 savings program</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax-Exempt Income</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Non-Taxable Compensation</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li><strong>13th month pay</strong>: up to PHP 90,000 annually</li>
+                            <li><strong>De minimis benefits</strong>: rice subsidy, uniform, medical allowances</li>
+                            <li><strong>SSS, PhilHealth, Pag-IBIG contributions</strong>: employee share</li>
+                            <li><strong>Hazard pay</strong>: for employees in hazardous workplaces</li>
+                            <li><strong>Night shift differential</strong>: for work between 10 PM - 6 AM</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Employment Types in Philippines</h3>
+                    <div class="grid md:grid-cols-2 gap-2 my-3">
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Regular Employment</p>
+                            <p class="text-xs text-blue-600">Full benefits, security of tenure, all mandatory contributions</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Contractual/Project-based</p>
+                            <p class="text-xs text-blue-600">Fixed-term contracts, same tax treatment as regular</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Self-employed/Freelancers</p>
+                            <p class="text-xs text-blue-600">Quarterly tax filing, optional 8% flat rate for gross sales up to PHP 3M</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700">Overseas Filipino Workers (OFW)</p>
+                            <p class="text-xs text-blue-600">Generally exempt from Philippine income tax on foreign income</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Philippines Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Philippines</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">PHP 600,000 (~EUR 10,000) gross salary</td><td class="border p-2">~EUR 7,500 net</td><td class="border p-2">~PHP 520,000 (~EUR 8,700) net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">35%</td></tr>
+                                <tr><td class="border p-2">Social contributions (employee)</td><td class="border p-2">~22%</td><td class="border p-2">~8.75%</td></tr>
+                                <tr><td class="border p-2">Tax-free threshold</td><td class="border p-2">~EUR 10,777</td><td class="border p-2">PHP 250,000 (~EUR 4,200)</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes (parts)</td><td class="border p-2">No</td></tr>
+                                <tr><td class="border p-2">Withholding tax</td><td class="border p-2">Yes (2019+)</td><td class="border p-2">Yes (monthly)</td></tr>
+                                <tr><td class="border p-2">13th month pay</td><td class="border p-2">No (bonus optional)</td><td class="border p-2">Mandatory (tax-free up to PHP 90,000)</td></tr>
+                                <tr><td class="border p-2">Cost of living (index)</td><td class="border p-2">100</td><td class="border p-2">~35-40</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Filing Requirements</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Deadline</strong>: April 15 of the following year (for annual ITR)</li>
+                        <li><strong>Main form</strong>: BIR Form 1700 (employees), BIR Form 1701 (self-employed)</li>
+                        <li><strong>Filing method</strong>: eBIRForms or manual filing at RDO</li>
+                        <li><strong>Substituted filing</strong>: Employees with single employer may be exempt from filing</li>
+                        <li><strong>Quarterly payments</strong>: Required for self-employed and professionals</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Optional 8% Flat Tax for Self-Employed</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Alternative Tax Rate</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li><strong>8% flat rate</strong> on gross sales/receipts in lieu of graduated rates</li>
+                            <li>Available for gross sales/receipts not exceeding <strong>PHP 3,000,000</strong></li>
+                            <li>First PHP 250,000 is exempt (effective rate on PHP 3M is ~7.3%)</li>
+                            <li>Simplifies compliance - no need for detailed expense records</li>
+                            <li>Must elect this option at the start of the taxable year</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Philippines TRAIN Law tax brackets 2026
+        const TAX_BRACKETS = [
+            { min: 0, max: 250000, rate: 0, base: 0 },
+            { min: 250000, max: 400000, rate: 0.15, base: 0 },
+            { min: 400000, max: 800000, rate: 0.20, base: 22500 },
+            { min: 800000, max: 2000000, rate: 0.25, base: 102500 },
+            { min: 2000000, max: 8000000, rate: 0.30, base: 402500 },
+            { min: 8000000, max: Infinity, rate: 0.35, base: 2202500 }
+        ];
+
+        // Social contributions (employee share)
+        const SSS_RATE = 0.045;
+        const SSS_MAX_MSC = 30000; // Monthly Salary Credit cap
+        const PHILHEALTH_RATE = 0.0225;
+        const PHILHEALTH_MAX = 100000; // Monthly ceiling
+        const PAGIBIG_RATE = 0.02;
+        const PAGIBIG_MAX_CONTRIBUTION = 200; // Monthly cap
+
+        const CURRENCY = ' PHP';
+        const PHP_TO_USD = 0.018;
+
+        function getAnnualIncome() { return parseFloat(document.getElementById('income-annual').value) || 0; }
+
+        function calculatePhilippinesTax(grossIncome) {
+            const monthlyIncome = grossIncome / 12;
+
+            // Calculate SSS (monthly then annualize)
+            const sssMonthlyBase = Math.min(monthlyIncome, SSS_MAX_MSC);
+            const sssMonthly = sssMonthlyBase * SSS_RATE;
+            const sssAnnual = sssMonthly * 12;
+
+            // Calculate PhilHealth (monthly then annualize)
+            const philhealthMonthlyBase = Math.min(monthlyIncome, PHILHEALTH_MAX);
+            const philhealthMonthly = philhealthMonthlyBase * PHILHEALTH_RATE;
+            const philhealthAnnual = philhealthMonthly * 12;
+
+            // Calculate Pag-IBIG (monthly then annualize, capped)
+            const pagibigMonthly = Math.min(monthlyIncome * PAGIBIG_RATE, PAGIBIG_MAX_CONTRIBUTION);
+            const pagibigAnnual = pagibigMonthly * 12;
+
+            const totalSocialContributions = sssAnnual + philhealthAnnual + pagibigAnnual;
+
+            // Taxable income after social contributions
+            const taxableIncome = grossIncome - totalSocialContributions;
+
+            // Calculate income tax using TRAIN Law brackets
+            let tax = 0;
+            for (const bracket of TAX_BRACKETS) {
+                if (taxableIncome > bracket.min) {
+                    if (taxableIncome <= bracket.max) {
+                        tax = bracket.base + (taxableIncome - bracket.min) * bracket.rate;
+                        break;
+                    }
+                }
+            }
+
+            return {
+                incomeTax: Math.max(0, tax),
+                sss: sssAnnual,
+                philhealth: philhealthAnnual,
+                pagibig: pagibigAnnual,
+                socialContributions: totalSocialContributions,
+                totalDeductions: tax + totalSocialContributions
+            };
+        }
+
+        function formatNumber(num) { return num.toLocaleString('en-US'); }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const result = calculatePhilippinesTax(income);
+            const incomeTax = result.incomeTax;
+            const socialTax = result.socialContributions;
+            const totalTax = result.totalDeductions;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('conv-gross-usd').textContent = '~' + Math.round(income * PHP_TO_USD).toLocaleString() + ' USD';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 12000000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #0038a8 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #0038a8 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+
+            document.getElementById('chart-percent').textContent = netPercent + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = Math.round(monthly * 12);
+            document.getElementById('income-slider').value = Math.min(monthly * 12, 12000000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 12000000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Finland Income Tax Calculator 2026 - Free Simulator</title>
+    <meta name="description" content="Calculate your Finnish income tax for free. Detailed simulation with municipal tax, state progressive tax and KELA social contributions. 2026 rates included.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/finland/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/finlande/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/finland/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/finland/income-tax/">
+
+    <meta property="og:title" content="Finland Income Tax Calculator 2026 - Free Simulator">
+    <meta property="og:description" content="Calculate your Finnish income tax for free. Municipal + State tax simulation. 2026 rates included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/finland/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Finland Income Tax Calculator 2026",
+        "url": "https://netsalaire.com/en/finland/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] { -webkit-appearance: none; appearance: none; background: #e2e8f0; border-radius: 8px; height: 8px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #2563eb; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #2563eb; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-blue-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Countries Dropdown -->
+                <div class="relative group">
+                    <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/finland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇮</span> Finland</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇬🇧</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/finlande/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"><span>🇫🇷</span> Francais</a>
+                        <a href="/en/finland/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors"><span>🇬🇧</span> English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-300 px-4 py-1.5 mb-4">
+                    <iconify-icon icon="circle-flags:fi" width="24"></iconify-icon>
+                    <span class="text-sm font-medium text-blue-800">Finland</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Finland Income Tax Calculator <span class="text-blue-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your Finnish taxes: Municipal Tax + State Progressive Tax + KELA Social Contributions</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="5000" min="0" max="10000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Annual Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="60000" min="0" max="10000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="300000" step="1000" value="60000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 touch-pan-x" style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax</span>
+                        </div>
+                        <p class="text-2xl font-bold text-blue-600" id="income-tax">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">Effective rate: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">~10% (employee share)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">0 EUR</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Income Distribution</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #2563eb 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-emerald-500"></span><span class="text-sm text-slate-600">Net Income</span></div><span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-blue-500"></span><span class="text-sm text-slate-600">Taxes</span></div><span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-amber-500"></span><span class="text-sm text-slate-600">Social</span></div><span class="text-sm font-medium text-slate-500" id="legend-social">0%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 EUR</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    Finland Tax Brackets 2026
+                </h2>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <h3 class="font-medium text-slate-700 mb-2">Municipal Tax (Kunnallisvero)</h3>
+                        <div class="flex justify-between"><span class="text-slate-500">National average rate</span><span class="font-medium text-blue-600">~20%</span></div>
+                        <p class="text-xs text-slate-400 mt-1">Varies by municipality (16.5% - 23.5%)</p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-4">
+                        <h3 class="font-medium text-slate-700 mb-2">State Tax (Valtion tulovero)</h3>
+                        <div class="space-y-1">
+                            <div class="flex justify-between"><span class="text-slate-500">EUR 0 - 20,500</span><span class="font-medium text-emerald-600">0%</span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">EUR 20,500 - 30,500</span><span class="font-medium">6%</span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">EUR 30,500 - 50,400</span><span class="font-medium">17.25%</span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">EUR 50,400 - 88,200</span><span class="font-medium">21.25%</span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">EUR 88,200+</span><span class="font-medium text-red-600">31.25%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Understanding Finnish Taxes -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Finnish Taxation</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>Finland has a Nordic tax system characterized by <strong>high taxes</strong> but also <strong>high-quality public services</strong>. The system combines a proportional municipal tax and a progressive state tax. Finnish taxation is based on the <strong>tax residency principle</strong>: anyone residing in Finland for more than 6 months per year is taxable on their worldwide income.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Municipal Tax (Kunnallisvero)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Flat rate set by each municipality</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>National average rate</strong>: approximately 20% in 2026</li>
+                            <li><strong>Range</strong>: from 16.5% (most favorable municipalities) to 23.5%</li>
+                            <li>Helsinki: 18.5% | Espoo: 17.5% | Tampere: 19.75%</li>
+                            <li>Municipal tax is levied on taxable income after deductions</li>
+                            <li>Finances local services: schools, healthcare, infrastructure</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">State Progressive Tax (Valtion tulovero)</h3>
+                    <p>State tax uses a system of <strong>progressive brackets</strong>:</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>EUR 0 - EUR 20,500: <strong>0%</strong> (no state tax)</li>
+                            <li>EUR 20,500 - EUR 30,500: <strong>6%</strong> on the bracket</li>
+                            <li>EUR 30,500 - EUR 50,400: <strong>17.25%</strong> on the bracket</li>
+                            <li>EUR 50,400 - EUR 88,200: <strong>21.25%</strong> on the bracket</li>
+                            <li>Above EUR 88,200: <strong>31.25%</strong> on the bracket</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: State tax is added to municipal tax. The maximum marginal rate can reach ~51% for highest incomes (20% municipal + 31.25% state).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">KELA - Finnish Social Insurance</h3>
+                    <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-cyan-800 mb-2">Kansanelakelaitos (Social Insurance Institution)</h4>
+                        <ul class="text-xs space-y-1 text-cyan-700">
+                            <li>KELA manages Finnish social security</li>
+                            <li><strong>Employee health insurance contribution</strong>: 1.36% of salary</li>
+                            <li><strong>Coverage</strong>: healthcare, family allowances, housing benefits</li>
+                            <li>Universal healthcare system with low out-of-pocket costs</li>
+                            <li>KELA card required for all residents</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions (~10% employee share)</h3>
+                    <p>The Finnish social system is funded by employers and employees:</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Employee Rate</th>
+                                    <th class="border p-2 text-left">Employer Rate</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">TyEL (Pension)</td><td class="border p-2 font-medium">7.15%</td><td class="border p-2">17.35%</td><td class="border p-2">Pay-as-you-go pension</td></tr>
+                                <tr><td class="border p-2">Unemployment (Tyottomyysvakuutus)</td><td class="border p-2 font-medium">1.50%</td><td class="border p-2">0.52%</td><td class="border p-2">Unemployment insurance</td></tr>
+                                <tr><td class="border p-2">Health KELA (Sairausvakuutus)</td><td class="border p-2 font-medium">1.36%</td><td class="border p-2">1.53%</td><td class="border p-2">Health insurance</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 font-bold text-amber-700">~10.01%</td><td class="border p-2">~19.4%</td><td class="border p-2">Employer pays ~19%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Benefits and Deductions</h3>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Professional Expenses Deduction (Tulonhankkimisvahennys)</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Automatic deduction</strong>: EUR 750/year without receipts</li>
+                            <li>Commuting expenses are deductible</li>
+                            <li>Deduction for double residence if working far from home</li>
+                            <li>Professional training costs</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Earned Income Tax Credit (Tyotulovahennys)</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>Maximum deduction</strong>: up to EUR 1,900/year</li>
+                            <li>Automatically applied to earned income</li>
+                            <li>Gradually decreases for higher incomes</li>
+                            <li>Designed to encourage work participation</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Basic Deduction (Perusvahennys)</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Basic deduction</strong>: up to EUR 3,870</li>
+                            <li>Applies only to municipal tax</li>
+                            <li>Gradually decreases with increasing income</li>
+                            <li>Protects low-income earners from municipal tax</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Finland Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Finland</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EUR 60,000 gross salary</td><td class="border p-2">~EUR 42,000 net</td><td class="border p-2">~EUR 38,000 net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">~51% (municipal + state)</td></tr>
+                                <tr><td class="border p-2">Social contributions (employee)</td><td class="border p-2">~22%</td><td class="border p-2">~10%</td></tr>
+                                <tr><td class="border p-2">Municipal tax</td><td class="border p-2">No (property tax only)</td><td class="border p-2">Yes (~20%)</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes (parts)</td><td class="border p-2">No (individual taxation)</td></tr>
+                                <tr><td class="border p-2">Withholding tax</td><td class="border p-2">Yes (2019+)</td><td class="border p-2">Yes (historical)</td></tr>
+                                <tr><td class="border p-2">Public services</td><td class="border p-2">High</td><td class="border p-2">Very high (free education, healthcare)</td></tr>
+                                <tr><td class="border p-2">Child benefits</td><td class="border p-2">Means-tested</td><td class="border p-2">Universal via KELA</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Return (Veroilmoitus)</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Deadline</strong>: early May of the following year</li>
+                        <li><strong>Pre-filled declaration</strong>: the tax administration (Verohallinto) sends a proposal</li>
+                        <li><strong>Modifications</strong>: only if you have additional deductions</li>
+                        <li><strong>Online service</strong>: OmaVero (personal tax portal)</li>
+                        <li><strong>Tax card</strong>: Verokortti to present to your employer</li>
+                        <li><strong>Refund</strong>: generally in December if overpaid</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Benefits of Living in Finland</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700 text-sm">Free Education</p>
+                            <p class="text-xs text-blue-600">From kindergarten to university, including school meals</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700 text-sm">Universal Healthcare</p>
+                            <p class="text-xs text-blue-600">High-quality public system with low costs</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700 text-sm">Generous Parental Leave</p>
+                            <p class="text-xs text-blue-600">Over 14 months of shared parental leave</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <p class="font-bold text-blue-700 text-sm">Safety and Quality of Life</p>
+                            <p class="text-xs text-blue-600">Regularly ranked among the happiest countries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Finnish tax calculation 2026
+        // Municipal tax ~20% + State progressive tax
+        const MUNICIPAL_TAX_RATE = 0.20; // Average municipal tax rate
+        const STATE_BRACKETS = [
+            { limit: 20500, rate: 0, base: 0 },
+            { limit: 30500, rate: 0.06, base: 0 },
+            { limit: 50400, rate: 0.1725, base: 600 },
+            { limit: 88200, rate: 0.2125, base: 4032.75 },
+            { limit: Infinity, rate: 0.3125, base: 12064.50 }
+        ];
+        const SOCIAL_RATE = 0.1001; // ~10% employee share
+        const CURRENCY = ' EUR';
+
+        function getAnnualIncome() { return parseFloat(document.getElementById('income-annual').value) || 0; }
+
+        function calculateFinnishTax(income) {
+            // Municipal tax (flat rate on taxable income)
+            const municipalTax = income * MUNICIPAL_TAX_RATE;
+
+            // State tax (progressive)
+            let stateTax = 0;
+            for (let i = 0; i < STATE_BRACKETS.length; i++) {
+                const bracket = STATE_BRACKETS[i];
+                const prevLimit = i > 0 ? STATE_BRACKETS[i-1].limit : 0;
+
+                if (income > prevLimit) {
+                    if (income <= bracket.limit) {
+                        stateTax = bracket.base + (income - prevLimit) * bracket.rate;
+                        break;
+                    }
+                }
+            }
+
+            return municipalTax + stateTax;
+        }
+
+        function formatNumber(num) { return num.toLocaleString('en-US'); }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const incomeTax = calculateFinnishTax(income);
+            const socialTax = income * SOCIAL_RATE;
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('conv-gross-usd').textContent = '~$' + Math.round(income * 1.08).toLocaleString();
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 300000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #2563eb ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #2563eb ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+
+            document.getElementById('chart-percent').textContent = netPercent + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = Math.round(monthly * 12);
+            document.getElementById('income-slider').value = Math.min(monthly * 12, 300000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 300000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

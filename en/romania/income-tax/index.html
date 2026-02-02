@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Romania Income Tax Calculator 2026 - Free Simulator</title>
+    <meta name="description" content="Calculate your Romanian income tax for free. Detailed simulation with 10% flat tax rate, CAS and CASS social contributions. 2026 rates included.">
+
+    <link rel="canonical" href="https://netsalaire.com/en/romania/income-tax/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/roumanie/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/romania/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/romania/income-tax/">
+
+    <meta property="og:title" content="Romania Income Tax Calculator 2026 - Free Simulator">
+    <meta property="og:description" content="Calculate your Romanian income tax for free. 10% flat tax + CAS/CASS social contributions. 2026 rates included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/en/romania/income-tax/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Romania Income Tax Calculator 2026",
+        "url": "https://netsalaire.com/en/romania/income-tax/",
+        "inLanguage": "en",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RON" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] { -webkit-appearance: none; appearance: none; background: #e2e8f0; border-radius: 8px; height: 8px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #2563eb; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #2563eb; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">N.</div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/france/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/france/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Unemployment (FR)</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Severance (FR)</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> Housing Aid (FR)</a>
+                            <a href="/en/france/daycare-calculator/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Daycare</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Mileage (FR)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Morocco Dropdown -->
+                <div class="relative group">
+                    <a href="/en/#morocco" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Morocco
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Simulator
+                            </a>
+                            <a href="/en/morocco/gross-to-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Gross to Net
+                            </a>
+                            <a href="/en/morocco/tax-guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Tax Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Countries Dropdown -->
+                <div class="relative group">
+                    <a href="/en/global-comparison/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> All Countries
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/france/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/en/morocco/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Morocco</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/en/usa/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/en/uk/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> United Kingdom</a>
+                            <a href="/en/switzerland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Switzerland (Geneva)</a>
+                            <a href="/en/dubai/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% tax)</a>
+                            <a href="/en/singapore/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapore</a>
+                            <a href="/en/luxembourg/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Saudi Arabia</a>
+                            <a href="/en/spain/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Spain</a>
+                            <a href="/en/japan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japan</a>
+                            <a href="/en/china/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> China (Shanghai)</a>
+                            <a href="/en/india/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> India</a>
+                            <a href="/en/pakistan/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/en/mexico/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexico</a>
+                            <a href="/en/brazil/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Brazil</a>
+                            <a href="/en/germany/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Germany</a>
+                            <a href="/en/romania/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇷🇴</span> Romania</a>
+                            <a href="/en/canada/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/en/australia/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australia</a>
+                            <a href="/en/italy/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italy</a>
+                            <a href="/en/netherlands/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Netherlands</a>
+                            <a href="/en/south-korea/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> South Korea</a>
+                            <a href="/en/belgium/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgium</a>
+                            <a href="/en/sweden/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Sweden</a>
+                            <a href="/en/ireland/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Ireland</a>
+                            <a href="/en/norway/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norway</a>
+                            <a href="/en/austria/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Austria</a>
+                            <a href="/en/denmark/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Denmark</a>
+                            <a href="/en/portugal/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/en/hong-kong/income-tax/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/en/global-comparison/" class="flex items-center gap-3 px-4 py-2 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/france-morocco-comparison/" class="hover:text-slate-900 transition-colors">France vs Morocco</a>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇬🇧</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/roumanie/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"><span>🇫🇷</span> Francais</a>
+                        <a href="/en/romania/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors"><span>🇬🇧</span> English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-300 px-4 py-1.5 mb-4">
+                    <iconify-icon icon="circle-flags:ro" width="24"></iconify-icon>
+                    <span class="text-sm font-medium text-blue-800">Romania</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Romania Income Tax Calculator <span class="text-blue-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculate your Romanian taxes: 10% Flat Tax + CAS/CASS Social Contributions</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="10000" min="0" max="10000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">RON</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Annual Income</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="120000" min="0" max="10000000" class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">RON</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="600000" step="5000" value="120000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 touch-pan-x" style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Income Tax</span>
+                        </div>
+                        <p class="text-2xl font-bold text-blue-600" id="income-tax">0 RON</p>
+                        <p class="text-xs text-slate-500 mt-1">Flat rate: <span id="tax-rate" class="text-emerald-600 font-medium">10%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Social Contributions</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 RON</p>
+                        <p class="text-xs text-slate-500 mt-1">CAS 25% + CASS 10%</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Net Annual Income</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 RON</p>
+                        <p class="text-xs text-slate-500 mt-1">Monthly: <span id="net-monthly" class="font-medium">0 RON</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Income Distribution</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 55%, #2563eb 55% 62%, #f59e0b 62% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-emerald-500"></span><span class="text-sm text-slate-600">Net Income</span></div><span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-blue-500"></span><span class="text-sm text-slate-600">Taxes (10%)</span></div><span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span></div>
+                            <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-amber-500"></span><span class="text-sm text-slate-600">CAS/CASS (35%)</span></div><span class="text-sm font-medium text-slate-500" id="legend-social">0%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Total Tax Burden</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 RON</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Effective total rate: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    Romanian Tax System 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">Income Tax</span><span class="font-medium text-emerald-600">10% (flat rate)</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">CAS (Pension)</span><span class="font-medium">25%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">CASS (Health)</span><span class="font-medium">10%</span></div>
+                    <div class="flex justify-between border-t pt-2 mt-2"><span class="text-slate-700 font-medium">Total Deductions</span><span class="font-bold text-red-600">~45%</span></div>
+                </div>
+            </div>
+
+            <!-- Understanding Romanian Taxes -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Complete Guide to Romanian Taxation</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>Romania has an attractive tax system with a <strong>10% flat income tax rate</strong> on personal income. This system significantly simplifies tax calculations compared to progressive systems like France. However, <strong>high social contributions</strong> (CAS and CASS) represent a significant burden for Romanian employees.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">The Romanian Flat Tax (Impozit pe Venit)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">10% Flat Rate</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Introduced in 2005 (initially at 16%, reduced to 10% in 2018)</li>
+                            <li>Applies to <strong>all income</strong>: salaries, dividends, rental income, capital gains</li>
+                            <li>Calculated on gross income <strong>after deducting social contributions</strong></li>
+                            <li>No progressive brackets: same rate for all income levels</li>
+                            <li>Simplifies tax filing and reduces tax evasion</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note: Romania is one of the few European countries with a flat rate, like Bulgaria (10%) or Hungary (15%).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">CAS - Social Insurance Contribution (Pension)</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">25% of gross salary</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li>Mandatory contribution for <strong>retirement</strong></li>
+                            <li>Fully paid by the employee since 2018</li>
+                            <li>Calculation base: total gross salary</li>
+                            <li>Ceiling: 12 x minimum gross salary (approximately 39,600 RON/year in 2026)</li>
+                            <li>Entitles you to pension benefits from the Romanian public system</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">CASS - Health Insurance Contribution</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">10% of gross salary</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Mandatory contribution for <strong>health insurance</strong></li>
+                            <li>Fully paid by the employee</li>
+                            <li>Ceiling: 12 x minimum gross salary (approximately 39,600 RON/year in 2026)</li>
+                            <li>Provides access to the Romanian public health system</li>
+                            <li>Does not cover dental care or glasses</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Social Contributions - Summary</h3>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Contribution</th>
+                                    <th class="border p-2 text-left">Rate</th>
+                                    <th class="border p-2 text-left">Paid by</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">CAS (Pension)</td><td class="border p-2 font-medium">25%</td><td class="border p-2">Employee</td><td class="border p-2">Mandatory retirement insurance</td></tr>
+                                <tr><td class="border p-2">CASS (Health)</td><td class="border p-2 font-medium">10%</td><td class="border p-2">Employee</td><td class="border p-2">Mandatory health insurance</td></tr>
+                                <tr><td class="border p-2">CAM (Work)</td><td class="border p-2 font-medium">2.25%</td><td class="border p-2">Employer</td><td class="border p-2">Unemployment and accident insurance</td></tr>
+                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Employee</td><td class="border p-2 font-bold text-amber-700">35%</td><td class="border p-2">-</td><td class="border p-2">Before tax calculation</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Net Salary Calculation Method</h3>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-emerald-800 mb-2">Calculation Formula</h4>
+                        <ol class="text-xs space-y-1 text-emerald-700 list-decimal pl-4">
+                            <li><strong>Gross salary</strong>: contractual amount</li>
+                            <li><strong>CAS</strong> = Gross x 25%</li>
+                            <li><strong>CASS</strong> = Gross x 10%</li>
+                            <li><strong>Taxable base</strong> = Gross - CAS - CASS</li>
+                            <li><strong>Tax</strong> = Taxable base x 10%</li>
+                            <li><strong>Net salary</strong> = Gross - CAS - CASS - Tax</li>
+                        </ol>
+                        <p class="text-xs text-emerald-600 mt-2 font-medium">Example: 10,000 RON gross = 10,000 - 2,500 - 1,000 - 650 = 5,850 RON net</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Benefits and Deductions</h3>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Sector Exemptions</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>IT Sector</strong>: income tax exemption (10%) for programmers and IT specialists</li>
+                            <li><strong>Construction</strong>: reduced CAS and CASS rates for construction workers</li>
+                            <li><strong>Agriculture</strong>: special schemes for agricultural operators</li>
+                            <li><strong>Research & Development</strong>: tax benefits for researchers</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Dependent Deductions</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Basic personal deduction</strong>: up to 400 RON/month depending on salary</li>
+                            <li><strong>Dependents</strong>: additional deduction of 200 RON/month per person</li>
+                            <li><strong>Children</strong>: tax deductions for childcare and education expenses</li>
+                            <li>Degressive deductions: decrease as gross salary increases</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">France vs Romania Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Criteria</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Romania</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Tax system</td><td class="border p-2">Progressive (0-45%)</td><td class="border p-2 text-emerald-600 font-medium">Flat tax 10%</td></tr>
+                                <tr><td class="border p-2">Employee social contributions</td><td class="border p-2">~22%</td><td class="border p-2">35% (CAS + CASS)</td></tr>
+                                <tr><td class="border p-2">Employer contributions</td><td class="border p-2">~42%</td><td class="border p-2">~2.25%</td></tr>
+                                <tr><td class="border p-2">EUR 50,000 gross salary/year</td><td class="border p-2">~EUR 35,000 net</td><td class="border p-2">~EUR 27,500 net</td></tr>
+                                <tr><td class="border p-2">Maximum marginal rate</td><td class="border p-2">45%</td><td class="border p-2">10%</td></tr>
+                                <tr><td class="border p-2">Family quotient</td><td class="border p-2">Yes</td><td class="border p-2">No</td></tr>
+                                <tr><td class="border p-2">Annual declaration</td><td class="border p-2">Mandatory</td><td class="border p-2">Automatic (employees)</td></tr>
+                                <tr><td class="border p-2">Currency</td><td class="border p-2">EUR</td><td class="border p-2">RON (1 EUR ~ 5 RON)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Specifics for Expatriates</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Tax residence</strong>: you become a Romanian tax resident after 183 days/year in Romania</li>
+                        <li><strong>Tax treaty</strong>: agreements with most countries to avoid double taxation</li>
+                        <li><strong>Foreign pensions</strong>: may be taxed in the country of origin depending on the treaty</li>
+                        <li><strong>Bank account</strong>: mandatory in RON to receive salary</li>
+                        <li><strong>CIF number</strong>: Romanian tax identifier required to work</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tax Filing (Declaratie fiscala)</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Employees</strong>: withholding at source, no annual declaration required</li>
+                        <li><strong>Self-employed (PFA)</strong>: mandatory annual declaration (Declaratia Unica)</li>
+                        <li><strong>Deadline</strong>: May 25 of the following year</li>
+                        <li><strong>Online platform</strong>: SPV (Spatiul Privat Virtual) from ANAF</li>
+                        <li><strong>Penalties</strong>: fines of 50-500 RON for late filing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Compare with other countries
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Tax calculations are estimates for informational purposes only.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal</a>
+                <a href="/en/privacy-policy/" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Romanian tax system: 10% flat tax + 35% social contributions (CAS 25% + CASS 10%)
+        const INCOME_TAX_RATE = 0.10;
+        const CAS_RATE = 0.25; // Pension
+        const CASS_RATE = 0.10; // Health
+        const SOCIAL_RATE = CAS_RATE + CASS_RATE; // 35%
+        const CURRENCY = ' RON';
+        const EUR_RATE = 5.0; // 1 EUR ~ 5 RON
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function calculateRomanianTax(grossIncome) {
+            // Social contributions are deducted first
+            const cas = grossIncome * CAS_RATE;
+            const cass = grossIncome * CASS_RATE;
+            const socialContributions = cas + cass;
+
+            // Income tax is calculated on gross minus social contributions
+            const taxableIncome = grossIncome - socialContributions;
+            const incomeTax = taxableIncome * INCOME_TAX_RATE;
+
+            return {
+                cas: cas,
+                cass: cass,
+                socialContributions: socialContributions,
+                incomeTax: incomeTax,
+                totalTax: socialContributions + incomeTax,
+                netIncome: grossIncome - socialContributions - incomeTax
+            };
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('en-US');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const result = calculateRomanianTax(income);
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(result.incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = '10%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(result.socialContributions)) + CURRENCY;
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(result.netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(result.netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(result.totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (result.totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversion to EUR
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income / EUR_RATE).toLocaleString() + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((result.totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 600000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #2563eb ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(result.netIncome, result.incomeTax, result.socialContributions, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #2563eb ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+
+            document.getElementById('chart-percent').textContent = netPercent + '%';
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = Math.round(monthly * 12);
+            document.getElementById('income-slider').value = Math.min(monthly * 12, 600000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 600000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Impot Nouvelle-Zelande 2026 - Calcul PAYE Gratuit</title>
+    <meta name="description" content="Calculez vos impots en Nouvelle-Zelande gratuitement. Simulation detaillee avec PAYE (Pay As You Earn), ACC levy et KiwiSaver. Baremes 2026 inclus.">
+
+    <link rel="canonical" href="https://netsalaire.com/fr/nouvelle-zelande/simulateur-impot/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/nouvelle-zelande/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/new-zealand/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/new-zealand/income-tax/">
+
+    <meta property="og:title" content="Simulateur Impot Nouvelle-Zelande 2026 - Calcul PAYE Gratuit">
+    <meta property="og:description" content="Calculez vos impots en Nouvelle-Zelande gratuitement. Simulation detaillee avec PAYE, ACC et KiwiSaver. Baremes 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/fr/nouvelle-zelande/simulateur-impot/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Impot Nouvelle-Zelande 2026",
+        "url": "https://netsalaire.com/fr/nouvelle-zelande/simulateur-impot/",
+        "inLanguage": "fr",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NZD" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-red-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/france/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Chomage ARE</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Licenciement</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> APL</a>
+                            <a href="/fr/france/creche-tarifs/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Creche</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Indemnite km</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maroc Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/maroc/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tous les pays Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/comparateur-global/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> Royaume-Uni</a>
+                            <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Suisse (Geneve)</a>
+                            <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% impot)</a>
+                            <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapour</a>
+                            <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Arabie Saoudite</a>
+                            <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Espagne</a>
+                            <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japon</a>
+                            <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> Chine (Shanghai)</a>
+                            <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> Inde</a>
+                            <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexique</a>
+                            <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Bresil</a>
+                            <a href="/fr/allemagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Allemagne</a>
+                            <a href="/fr/pologne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇱</span> Pologne</a>
+                            <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/fr/australie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australie</a>
+                            <a href="/fr/nouvelle-zelande/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇿</span> Nouvelle-Zelande</a>
+                            <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italie</a>
+                            <a href="/fr/pays-bas/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Pays-Bas</a>
+                            <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> Coree du Sud</a>
+                            <a href="/fr/belgique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgique</a>
+                            <a href="/fr/suede/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Suede</a>
+                            <a href="/fr/irlande/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Irlande</a>
+                            <a href="/fr/norvege/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norvege</a>
+                            <a href="/fr/autriche/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Autriche</a>
+                            <a href="/fr/danemark/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Danemark</a>
+                            <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/fr/hong-kong/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-global/" class="flex items-center gap-3 px-4 py-2 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/fr/comparateur-salaire-france-maroc/" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇫🇷</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/nouvelle-zelande/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Francais
+                        </a>
+                        <a href="/en/new-zealand/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                </a>
+                <a href="/fr/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇳🇿</span>
+                    <span class="text-sm font-medium text-blue-800">Nouvelle-Zelande</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Simulateur Impot Nouvelle-Zelande <span class="text-blue-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculez vos impots en Nouvelle-Zelande : PAYE (Pay As You Earn) + ACC levy + KiwiSaver</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="8333" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">NZD</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="100000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">NZD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="500000" step="5000" value="100000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
+                </div>
+
+                <!-- KiwiSaver Option -->
+                <div class="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:piggy-bank" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-slate-700">KiwiSaver (Retraite)</span>
+                                <p class="text-xs text-slate-500">Contribution employe facultative</p>
+                            </div>
+                        </div>
+                        <select id="kiwisaver-rate" class="rounded-lg border-0 py-2 px-3 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-sm font-medium">
+                            <option value="0">0% (Pas de KiwiSaver)</option>
+                            <option value="0.03" selected>3% (Defaut)</option>
+                            <option value="0.04">4%</option>
+                            <option value="0.06">6%</option>
+                            <option value="0.08">8%</option>
+                            <option value="0.10">10%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impot PAYE</span>
+                        </div>
+                        <p class="text-2xl font-bold text-blue-600" id="income-tax">0 $</p>
+                        <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">ACC + KiwiSaver</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 $</p>
+                        <p class="text-xs text-slate-500 mt-1">ACC: 1.6% + KiwiSaver: <span id="kiwi-display">3%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 $</p>
+                        <p class="text-xs text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">0 $</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Repartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #3b82f6 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-blue-500"></span>
+                                    <span class="text-sm text-slate-600">Impot PAYE</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">ACC + KiwiSaver</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 $</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    Baremes Nouvelle-Zelande 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">0 - 14,000 NZD</span><span class="font-medium text-emerald-600">10.5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">14,001 - 48,000 NZD</span><span class="font-medium">17.5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">48,001 - 70,000 NZD</span><span class="font-medium">30%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">70,001 - 180,000 NZD</span><span class="font-medium">33%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">180,001+ NZD</span><span class="font-medium text-red-600">39%</span></div>
+                </div>
+            </div>
+
+            <!-- Comprendre l'impot en Nouvelle-Zelande -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite neo-zelandaise</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>La Nouvelle-Zelande possede un systeme fiscal relativement simple et transparent avec le <strong>PAYE (Pay As You Earn)</strong>. Contrairement a de nombreux pays, la Nouvelle-Zelande n'a <strong>pas de cotisations sociales obligatoires</strong> pour les employes, hormis l'ACC levy. Le systeme repose principalement sur l'impot sur le revenu progressif.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition PAYE 2026</h3>
+                    <p>L'impot neo-zelandais utilise un systeme progressif a <strong>cinq tranches</strong> :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 14,000 NZD : <strong>10.5%</strong></li>
+                            <li>14,001 - 48,000 NZD : <strong>17.5%</strong></li>
+                            <li>48,001 - 70,000 NZD : <strong>30%</strong></li>
+                            <li>70,001 - 180,000 NZD : <strong>33%</strong></li>
+                            <li>Au-dela de 180,000 NZD : <strong>39%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note : Il n'y a pas d'abattement fiscal de base en Nouvelle-Zelande. L'impot s'applique des le premier dollar gagne.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">ACC Levy (~1.6% employe)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Accident Compensation Corporation (ACC)</h4>
+                        <p class="text-xs text-blue-700 mb-2">L'ACC est un systeme d'assurance accident unique au monde qui couvre tous les residents et visiteurs en Nouvelle-Zelande.</p>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Taux employe : environ <strong>1.6%</strong> du salaire brut</li>
+                            <li>Plafond annuel : environ 142,283 NZD de revenus imposables</li>
+                            <li>Couvre : accidents de travail, accidents domestiques, accidents de la route</li>
+                            <li>En echange, pas de droit de poursuivre pour dommages corporels</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">KiwiSaver - Regime de retraite</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Epargne retraite facultative</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li>Contributions possibles : <strong>3%, 4%, 6%, 8% ou 10%</strong> du salaire brut</li>
+                            <li>Contribution employeur obligatoire : minimum <strong>3%</strong> si vous cotisez</li>
+                            <li>Contribution gouvernementale : jusqu'a <strong>521.43 NZD/an</strong></li>
+                            <li>Inscription automatique pour les nouveaux employes (opt-out possible)</li>
+                            <li>Fonds accessibles a 65 ans ou pour premier achat immobilier</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Particularites du systeme neo-zelandais</h3>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Ce qui distingue la Nouvelle-Zelande</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Pas de securite sociale</strong> au sens europeen - sante financee par l'impot general</li>
+                            <li><strong>Pas de taxe sur les plus-values</strong> (sauf immobilier speculatif)</li>
+                            <li><strong>Pas d'impot sur les successions</strong></li>
+                            <li><strong>GST (TVA)</strong> a 15% sur la plupart des biens et services</li>
+                            <li>Systeme de sante publique gratuit ou a faible cout</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">IRD Number et Tax Codes</h3>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Identifiant fiscal</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>IRD Number</strong> : numero d'identification fiscale obligatoire</li>
+                            <li>Code <strong>M</strong> : emploi principal (taux standard)</li>
+                            <li>Code <strong>S</strong> : emploi secondaire (taux plus eleve)</li>
+                            <li>Code <strong>SH</strong> : emploi secondaire pour revenus eleves</li>
+                            <li>Sans IRD Number : imposition au taux le plus eleve (45%)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Working for Families</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Credits d'impot pour familles</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li><strong>Family Tax Credit</strong> : pour familles a revenus faibles/moyens</li>
+                            <li><strong>In-Work Tax Credit</strong> : bonus si vous travaillez un minimum d'heures</li>
+                            <li><strong>Best Start</strong> : paiements pour enfants de moins de 3 ans</li>
+                            <li>Revenus sous environ 93,858 NZD pour eligibilite maximale</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Nouvelle-Zelande</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Nouvelle-Zelande</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Salaire 100,000 NZD (~55,000 EUR) brut</td><td class="border p-2">~38,000 EUR net</td><td class="border p-2">~72,000 NZD (~40,000 EUR) net</td></tr>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">39%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">~1.6% ACC seulement</td></tr>
+                                <tr><td class="border p-2">Retraite obligatoire</td><td class="border p-2">Oui (cotisations)</td><td class="border p-2">KiwiSaver facultatif</td></tr>
+                                <tr><td class="border p-2">Sante</td><td class="border p-2">Securite sociale</td><td class="border p-2">Financee par impots</td></tr>
+                                <tr><td class="border p-2">TVA</td><td class="border p-2">20%</td><td class="border p-2">15% (GST)</td></tr>
+                                <tr><td class="border p-2">Impot sur successions</td><td class="border p-2">Jusqu'a 45%</td><td class="border p-2">0%</td></tr>
+                                <tr><td class="border p-2">Plus-values</td><td class="border p-2">30% flat tax</td><td class="border p-2">0% (general)</td></tr>
+                                <tr><td class="border p-2">Cout de la vie (indice)</td><td class="border p-2">100</td><td class="border p-2">~95-100</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Declaration fiscale</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Annee fiscale</strong> : 1er avril au 31 mars</li>
+                        <li><strong>Declaration automatique</strong> : l'IRD calcule et vous envoie un resume</li>
+                        <li><strong>Remboursement/supplement</strong> : automatique si trop/pas assez paye</li>
+                        <li><strong>myIR</strong> : portail en ligne pour gerer vos impots</li>
+                        <li>La plupart des salaries n'ont pas besoin de declarer manuellement</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Residence fiscale</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Regles de residence</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Resident fiscal si present <strong>plus de 183 jours</strong> sur 12 mois</li>
+                            <li>Ou si vous avez un <strong>"permanent place of abode"</strong> en NZ</li>
+                            <li>Residents imposes sur revenus <strong>mondiaux</strong></li>
+                            <li>Non-residents imposes uniquement sur revenus de source NZ</li>
+                            <li>Exemption temporaire de 4 ans pour nouveaux migrants sur revenus etrangers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Comparer avec d'autres pays
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Les calculs fiscaux sont des estimations a titre informatif.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions legales</a>
+                <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialite</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // New Zealand PAYE tax brackets 2026
+        // 10.5% for 0 - 14,000
+        // 17.5% for 14,001 - 48,000
+        // 30% for 48,001 - 70,000
+        // 33% for 70,001 - 180,000
+        // 39% for 180,001+
+        const BRACKETS = [
+            { limit: 14000, rate: 0.105 },
+            { limit: 48000, rate: 0.175 },
+            { limit: 70000, rate: 0.30 },
+            { limit: 180000, rate: 0.33 },
+            { limit: Infinity, rate: 0.39 }
+        ];
+
+        // ACC levy (employee share)
+        const ACC_RATE = 0.016; // ~1.6%
+        const ACC_MAX_EARNINGS = 142283; // Maximum earnings for ACC
+
+        const CURRENCY = ' $';
+        const NZD_TO_EUR = 0.55; // Approximate conversion rate
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function getKiwiSaverRate() {
+            return parseFloat(document.getElementById('kiwisaver-rate').value) || 0;
+        }
+
+        function calculatePAYE(grossIncome) {
+            let tax = 0;
+            let previousLimit = 0;
+
+            for (const bracket of BRACKETS) {
+                if (grossIncome <= previousLimit) break;
+                const taxableInBracket = Math.min(grossIncome, bracket.limit) - previousLimit;
+                tax += taxableInBracket * bracket.rate;
+                previousLimit = bracket.limit;
+            }
+
+            return tax;
+        }
+
+        function calculateNZTax(grossIncome) {
+            // Calculate PAYE
+            const paye = calculatePAYE(grossIncome);
+
+            // Calculate ACC levy (capped at maximum earnings)
+            const accEarnings = Math.min(grossIncome, ACC_MAX_EARNINGS);
+            const accLevy = accEarnings * ACC_RATE;
+
+            // Calculate KiwiSaver
+            const kiwiSaverRate = getKiwiSaverRate();
+            const kiwiSaver = grossIncome * kiwiSaverRate;
+
+            const totalDeductions = paye + accLevy + kiwiSaver;
+
+            return {
+                incomeTax: paye,
+                accLevy: accLevy,
+                kiwiSaver: kiwiSaver,
+                socialContributions: accLevy + kiwiSaver,
+                totalDeductions: totalDeductions
+            };
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('en-NZ');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const kiwiRate = getKiwiSaverRate();
+
+            const result = calculateNZTax(income);
+            const incomeTax = result.incomeTax;
+            const socialTax = result.socialContributions;
+            const totalTax = result.totalDeductions;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+            document.getElementById('kiwi-display').textContent = (kiwiRate * 100) + '%';
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversion to EUR
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income * NZD_TO_EUR).toLocaleString() + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 500000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #3b82f6 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #3b82f6 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 500000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 500000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        document.getElementById('kiwisaver-rate').addEventListener('change', function() {
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

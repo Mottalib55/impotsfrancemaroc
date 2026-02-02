@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Impot Malaisie 2026 - Calcul Gratuit</title>
+    <meta name="description" content="Calculez vos impots en Malaisie gratuitement. Simulation detaillee avec tranches progressives 0-30%, EPF, SOCSO et cotisations sociales. Baremes 2026 inclus.">
+
+    <link rel="canonical" href="https://netsalaire.com/fr/malaisie/simulateur-impot/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/malaisie/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/malaysia/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/malaysia/income-tax/">
+
+    <meta property="og:title" content="Simulateur Impot Malaisie 2026 - Calcul Gratuit">
+    <meta property="og:description" content="Calculez vos impots en Malaisie gratuitement. Simulation detaillee avec cotisations sociales. Baremes 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/fr/malaisie/simulateur-impot/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Impot Malaisie 2026",
+        "url": "https://netsalaire.com/fr/malaisie/simulateur-impot/",
+        "inLanguage": "fr",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-blue-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/france/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Chomage ARE</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Licenciement</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> APL</a>
+                            <a href="/fr/france/creche-tarifs/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Creche</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Indemnite km</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maroc Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/maroc/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tous les pays Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/comparateur-global/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> Royaume-Uni</a>
+                            <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Suisse (Geneve)</a>
+                            <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% impot)</a>
+                            <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapour</a>
+                            <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Arabie Saoudite</a>
+                            <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Espagne</a>
+                            <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japon</a>
+                            <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> Chine (Shanghai)</a>
+                            <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> Inde</a>
+                            <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexique</a>
+                            <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Bresil</a>
+                            <a href="/fr/allemagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Allemagne</a>
+                            <a href="/fr/malaisie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇾</span> Malaisie</a>
+                            <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/fr/australie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australie</a>
+                            <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italie</a>
+                            <a href="/fr/pays-bas/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Pays-Bas</a>
+                            <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> Coree du Sud</a>
+                            <a href="/fr/belgique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgique</a>
+                            <a href="/fr/suede/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Suede</a>
+                            <a href="/fr/irlande/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Irlande</a>
+                            <a href="/fr/norvege/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norvege</a>
+                            <a href="/fr/autriche/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Autriche</a>
+                            <a href="/fr/danemark/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Danemark</a>
+                            <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/fr/hong-kong/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-global/" class="flex items-center gap-3 px-4 py-2 text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/fr/comparateur-salaire-france-maroc/" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇫🇷</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/malaisie/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Francais
+                        </a>
+                        <a href="/en/malaysia/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                </a>
+                <a href="/fr/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-300 px-4 py-1.5 mb-4">
+                    <iconify-icon icon="circle-flags:my" width="24"></iconify-icon>
+                    <span class="text-sm font-medium text-blue-800">Malaisie</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Simulateur Impot Malaisie <span class="text-blue-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculez vos impots en Malaisie : PCB (impot sur le revenu) + EPF (retraite) + SOCSO (securite sociale)</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="8000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">MYR</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="96000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">MYR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="500000" step="1000" value="96000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span> | <span id="conv-gross-eur">~0 EUR</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-blue-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
+                        </div>
+                        <p class="text-2xl font-bold text-blue-600" id="income-tax">0 MYR</p>
+                        <p class="text-xs text-slate-500 mt-1">Taux effectif: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-yellow-50 to-white rounded-xl border border-yellow-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-yellow-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Cotisations (EPF+SOCSO)</span>
+                        </div>
+                        <p class="text-2xl font-bold text-yellow-600" id="social-tax">0 MYR</p>
+                        <p class="text-xs text-slate-500 mt-1">~11.5% (employe)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 MYR</p>
+                        <p class="text-xs text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">0 MYR</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Repartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #2563eb 60% 80%, #eab308 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-blue-500"></span>
+                                    <span class="text-sm text-slate-600">Impots</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
+                                    <span class="text-sm text-slate-600">Cotisations</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 MYR</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-yellow-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Taux effectif total: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    Baremes Malaisie 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">0 - 5,000 MYR</span><span class="font-medium text-emerald-600">0%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">5,001 - 20,000 MYR</span><span class="font-medium">1%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">20,001 - 35,000 MYR</span><span class="font-medium">3%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">35,001 - 50,000 MYR</span><span class="font-medium">6%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">50,001 - 70,000 MYR</span><span class="font-medium">11%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">70,001 - 100,000 MYR</span><span class="font-medium">19%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">100,001 - 400,000 MYR</span><span class="font-medium">25%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">400,001 - 600,000 MYR</span><span class="font-medium">26%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">600,001 - 2,000,000 MYR</span><span class="font-medium">28%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">2,000,000+ MYR</span><span class="font-medium text-red-600">30%</span></div>
+                </div>
+            </div>
+
+            <!-- Comprendre l'impot en Malaisie -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite malaisienne</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>La Malaisie possede un systeme fiscal territorial attractif gere par le <strong>LHDN (Lembaga Hasil Dalam Negeri)</strong>, l'autorite fiscale malaisienne. Le pays applique un bareme progressif allant de <strong>0% a 30%</strong> pour les residents fiscaux. Une caracteristique unique est que les revenus de source etrangere ne sont generalement pas imposes (sauf pour certaines exceptions depuis 2022).</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">LHDN - L'autorite fiscale malaisienne</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Lembaga Hasil Dalam Negeri Malaysia</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>Role</strong> : Collecte des impots, administration fiscale et conformite</li>
+                            <li><strong>Annee fiscale</strong> : 1er janvier au 31 decembre</li>
+                            <li><strong>Declaration en ligne</strong> : Systeme e-Filing (ezHASiL) disponible</li>
+                            <li><strong>Date limite</strong> : 30 avril pour les salaries, 30 juin pour les independants</li>
+                            <li><strong>Resident fiscal</strong> : 182 jours ou plus de presence en Malaisie</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026</h3>
+                    <p>L'impot sur le revenu malaisien utilise un systeme de <strong>tranches progressives</strong> de 0% a 30% :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 5,000 MYR : <strong>0%</strong> (exoneration de base)</li>
+                            <li>5,001 - 20,000 MYR : <strong>1%</strong></li>
+                            <li>20,001 - 35,000 MYR : <strong>3%</strong></li>
+                            <li>35,001 - 50,000 MYR : <strong>6%</strong></li>
+                            <li>50,001 - 70,000 MYR : <strong>11%</strong></li>
+                            <li>70,001 - 100,000 MYR : <strong>19%</strong></li>
+                            <li>100,001 - 400,000 MYR : <strong>25%</strong></li>
+                            <li>400,001 - 600,000 MYR : <strong>26%</strong></li>
+                            <li>600,001 - 2,000,000 MYR : <strong>28%</strong></li>
+                            <li>Au-dela de 2,000,000 MYR : <strong>30%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note : Les non-residents sont imposes a un taux fixe de 30% sans tranches progressives.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">EPF - Kumpulan Wang Simpanan Pekerja (KWSP)</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Employees Provident Fund - Fonds de prevoyance</h4>
+                        <ul class="text-xs space-y-1 text-yellow-700">
+                            <li><strong>Contribution employe</strong> : 11% du salaire mensuel</li>
+                            <li><strong>Contribution employeur</strong> : 12% ou 13% (selon le salaire)</li>
+                            <li><strong>But</strong> : Epargne-retraite obligatoire</li>
+                            <li><strong>Retraits anticipes</strong> : Possibles pour logement, sante, education</li>
+                            <li><strong>Age de retrait</strong> : 55 ans pour retrait complet</li>
+                            <li><strong>Avantage fiscal</strong> : Contributions deductibles jusqu'a 4,000 MYR</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">SOCSO - Pertubuhan Keselamatan Sosial (PERKESO)</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Securite sociale malaisienne</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Contribution employe</strong> : ~0.5% du salaire</li>
+                            <li><strong>Contribution employeur</strong> : ~1.75% du salaire</li>
+                            <li><strong>Plafond</strong> : 5,000 MYR de salaire mensuel</li>
+                            <li><strong>Couverture</strong> : Accidents du travail, invalidite, maladies professionnelles</li>
+                            <li><strong>EIS (Employment Insurance)</strong> : 0.2% employe + 0.2% employeur (depuis 2018)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales totales</h3>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Cotisation</th>
+                                    <th class="border p-2 text-left">Taux employe</th>
+                                    <th class="border p-2 text-left">Taux employeur</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">EPF (KWSP)</td><td class="border p-2 font-medium">11%</td><td class="border p-2">12-13%</td><td class="border p-2">Fonds de retraite obligatoire</td></tr>
+                                <tr><td class="border p-2">SOCSO (PERKESO)</td><td class="border p-2 font-medium">~0.5%</td><td class="border p-2">~1.75%</td><td class="border p-2">Securite sociale</td></tr>
+                                <tr><td class="border p-2">EIS</td><td class="border p-2 font-medium">0.2%</td><td class="border p-2">0.2%</td><td class="border p-2">Assurance emploi</td></tr>
+                                <tr class="bg-yellow-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2 font-bold text-yellow-700">~11.7%</td><td class="border p-2 font-bold">~14-15%</td><td class="border p-2">Charges totales</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et abattements fiscaux</h3>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Deductions personnelles 2026</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>Deduction personnelle</strong> : 9,000 MYR automatique</li>
+                            <li><strong>Conjoint</strong> : 4,000 MYR (si sans revenus)</li>
+                            <li><strong>Enfants</strong> : 2,000 MYR par enfant (8,000 MYR si etudes superieures)</li>
+                            <li><strong>Parents</strong> : 1,500 MYR par parent (conditions)</li>
+                            <li><strong>Education/Formation</strong> : jusqu'a 7,000 MYR</li>
+                            <li><strong>Frais medicaux</strong> : jusqu'a 8,000 MYR</li>
+                            <li><strong>Style de vie</strong> : 2,500 MYR (livres, sport, internet)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Allegements speciaux</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Assurance-vie</strong> : jusqu'a 3,000 MYR deductibles</li>
+                            <li><strong>EPF contributions</strong> : jusqu'a 4,000 MYR deductibles</li>
+                            <li><strong>Private Retirement Scheme (PRS)</strong> : jusqu'a 3,000 MYR</li>
+                            <li><strong>Zakat/Fitrah</strong> : 100% deductible pour les musulmans</li>
+                            <li><strong>Donations approuvees</strong> : jusqu'a 7% du revenu agrege</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Malaisie</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Malaisie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Salaire 100,000 MYR (~20,000 EUR)</td><td class="border p-2">~14,500 EUR net</td><td class="border p-2">~81,000 MYR net</td></tr>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">30%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">~11.7%</td></tr>
+                                <tr><td class="border p-2">Revenus etrangers</td><td class="border p-2">Imposables</td><td class="border p-2">Generalement exoneres</td></tr>
+                                <tr><td class="border p-2">Impot a la source</td><td class="border p-2">Oui (PAS)</td><td class="border p-2">Oui (PCB/MTD)</td></tr>
+                                <tr><td class="border p-2">Cout de la vie (indice)</td><td class="border p-2">100</td><td class="border p-2">~45-50</td></tr>
+                                <tr><td class="border p-2">Convention fiscale</td><td class="border p-2" colspan="2">Oui - Evite la double imposition</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">PCB - Prelevement a la source</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>PCB (Potongan Cukai Bulanan)</strong> : Equivalent du prelevement a la source</li>
+                        <li><strong>Calcul</strong> : Effectue par l'employeur chaque mois</li>
+                        <li><strong>Ajustement</strong> : Declaration annuelle pour regularisation</li>
+                        <li><strong>Non-residents</strong> : PCB final sans declaration necessaire</li>
+                        <li><strong>Remboursement</strong> : Possible si trop-percu via declaration</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux pour expatries</h3>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-emerald-800 mb-2">Incitations speciales</h4>
+                        <ul class="text-xs space-y-1 text-emerald-700">
+                            <li><strong>Malaysia My Second Home (MM2H)</strong> : Programme de residence longue duree</li>
+                            <li><strong>Labuan</strong> : Regime fiscal avantageux pour societes offshore</li>
+                            <li><strong>MSC Malaysia</strong> : Incentives pour entreprises tech</li>
+                            <li><strong>Free Trade Zones</strong> : Exonerations fiscales specifiques</li>
+                            <li><strong>Pas d'impot sur les plus-values</strong> : Sauf immobilier (RPGT)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Comparer avec d'autres pays
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Les calculs fiscaux sont des estimations a titre informatif.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions legales</a>
+                <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialite</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Malaysian tax brackets 2026
+        const BRACKETS = [
+            { limit: 5000, rate: 0 },
+            { limit: 20000, rate: 0.01 },
+            { limit: 35000, rate: 0.03 },
+            { limit: 50000, rate: 0.06 },
+            { limit: 70000, rate: 0.11 },
+            { limit: 100000, rate: 0.19 },
+            { limit: 400000, rate: 0.25 },
+            { limit: 600000, rate: 0.26 },
+            { limit: 2000000, rate: 0.28 },
+            { limit: Infinity, rate: 0.30 }
+        ];
+        const EPF_RATE = 0.11; // 11% employee EPF contribution
+        const SOCSO_RATE = 0.005; // ~0.5% SOCSO
+        const EIS_RATE = 0.002; // 0.2% EIS
+        const SOCIAL_RATE = EPF_RATE + SOCSO_RATE + EIS_RATE; // ~11.7%
+        const CURRENCY = ' MYR';
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function calculateMalaysianTax(income) {
+            // Personal deduction of 9,000 MYR
+            const taxableIncome = Math.max(0, income - 9000);
+
+            let tax = 0;
+            let previousLimit = 0;
+
+            for (let i = 0; i < BRACKETS.length; i++) {
+                const bracket = BRACKETS[i];
+                if (taxableIncome <= previousLimit) break;
+
+                const taxableInBracket = Math.min(taxableIncome, bracket.limit) - previousLimit;
+                if (taxableInBracket > 0) {
+                    tax += taxableInBracket * bracket.rate;
+                }
+                previousLimit = bracket.limit;
+            }
+
+            return Math.max(0, tax);
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('fr-FR');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+
+            const incomeTax = calculateMalaysianTax(income);
+
+            // Social contributions (EPF + SOCSO + EIS)
+            const epfContribution = income * EPF_RATE;
+            const socsoContribution = Math.min(income, 60000) * SOCSO_RATE; // SOCSO has a cap
+            const eisContribution = Math.min(income, 60000) * EIS_RATE; // EIS has a cap
+            const socialTax = epfContribution + socsoContribution + eisContribution;
+
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversions (1 MYR ~ 0.20 EUR ~ 0.22 USD)
+            const toUsd = 0.22;
+            const toEur = 0.20;
+            document.getElementById('conv-gross-usd').textContent = '~$' + Math.round(income * toUsd).toLocaleString();
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income * toEur).toLocaleString() + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 500000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #2563eb ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #2563eb ' + netEnd + '% ' + taxEnd + '%, #eab308 ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 500000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 500000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

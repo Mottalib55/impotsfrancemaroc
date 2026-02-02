@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulateur Impot Koweit 2026 - 0% Impot sur le Revenu (Tax Free)</title>
+    <meta name="description" content="Calculez votre salaire net au Koweit gratuitement. Pays sans impot sur le revenu (0% tax free). Seules les cotisations sociales s'appliquent aux nationaux koweitiens. Simulateur 2026.">
+
+    <link rel="canonical" href="https://netsalaire.com/fr/koweit/simulateur-impot/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/koweit/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/kuwait/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/kuwait/income-tax/">
+
+    <meta property="og:title" content="Simulateur Impot Koweit 2026 - 0% Impot (Tax Free)">
+    <meta property="og:description" content="Calculez votre salaire net au Koweit. 0% d'impot sur le revenu - pays sans impot. Simulateur gratuit 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://netsalaire.com/fr/koweit/simulateur-impot/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulateur Impot Koweit 2026",
+        "url": "https://netsalaire.com/fr/koweit/simulateur-impot/",
+        "inLanguage": "fr",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KWD" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #16a34a;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #16a34a;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+        .tax-free-badge {
+            background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/fr/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-green-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- France Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#france" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:fr" width="16"></iconify-icon> France
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/france/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-indigo-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📉</span> Chomage ARE</a>
+                            <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">📋</span> Licenciement</a>
+                            <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🏠</span> APL</a>
+                            <a href="/fr/france/creche-tarifs/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">👶</span> Creche</a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm"><span class="w-[18px] text-center">🚗</span> Indemnite km</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maroc Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/#maroc" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="circle-flags:ma" width="16"></iconify-icon> Maroc
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
+                                Simulateur Impot
+                            </a>
+                            <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
+                                Brut vers Net
+                            </a>
+                            <a href="/fr/maroc/guide/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                                <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
+                                Guide Fiscal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tous les pays Dropdown -->
+                <div class="relative group">
+                    <a href="/fr/comparateur-global/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px]" style="max-height: 250px; overflow-y: scroll;">
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
+                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇺🇸</span> USA (New York)</a>
+                            <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇬🇧</span> Royaume-Uni</a>
+                            <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇭</span> Suisse (Geneve)</a>
+                            <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇪</span> Dubai (0% impot)</a>
+                            <a href="/fr/koweit/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇼</span> Koweit (0% impot)</a>
+                            <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇬</span> Singapour</a>
+                            <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇱🇺</span> Luxembourg</a>
+                            <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇦</span> Arabie Saoudite</a>
+                            <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇪🇸</span> Espagne</a>
+                            <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇯🇵</span> Japon</a>
+                            <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇳</span> Chine (Shanghai)</a>
+                            <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇳</span> Inde</a>
+                            <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇰</span> Pakistan</a>
+                            <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇽</span> Mexique</a>
+                            <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇷</span> Bresil</a>
+                            <a href="/fr/allemagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇪</span> Allemagne</a>
+                            <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇨🇦</span> Canada</a>
+                            <a href="/fr/australie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇺</span> Australie</a>
+                            <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇹</span> Italie</a>
+                            <a href="/fr/pays-bas/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇱</span> Pays-Bas</a>
+                            <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇰🇷</span> Coree du Sud</a>
+                            <a href="/fr/belgique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇧🇪</span> Belgique</a>
+                            <a href="/fr/suede/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇸🇪</span> Suede</a>
+                            <a href="/fr/irlande/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇮🇪</span> Irlande</a>
+                            <a href="/fr/norvege/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇳🇴</span> Norvege</a>
+                            <a href="/fr/autriche/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇦🇹</span> Autriche</a>
+                            <a href="/fr/danemark/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇩🇰</span> Danemark</a>
+                            <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇵🇹</span> Portugal</a>
+                            <a href="/fr/hong-kong/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇭🇰</span> Hong Kong</a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-global/" class="flex items-center gap-3 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 transition-colors text-sm font-medium">
+                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/fr/comparateur-salaire-france-maroc/" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
+                <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
+                        <span>🇫🇷</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
+                        <a href="/fr/koweit/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Francais
+                        </a>
+                        <a href="/en/kuwait/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
+                </a>
+                <a href="/fr/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-300 px-4 py-1.5 mb-4">
+                    <iconify-icon icon="circle-flags:kw" width="24"></iconify-icon>
+                    <span class="text-sm font-medium text-green-800">Koweit</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Simulateur Impot Koweit <span class="text-green-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calculez votre salaire net au Koweit - Pays sans impot sur le revenu</p>
+
+                <!-- Tax Free Banner -->
+                <div class="mt-6 inline-flex items-center gap-3 tax-free-badge text-white px-6 py-3 rounded-full shadow-lg">
+                    <iconify-icon icon="lucide:badge-check" width="24"></iconify-icon>
+                    <span class="text-lg font-bold">0% IMPOT SUR LE REVENU - TAX FREE</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Mensuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="1500" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-green-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">KWD</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Revenu Annuel</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="18000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-green-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">KWD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="100000" step="500" value="18000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-green-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <div class="flex justify-between text-xs text-slate-400 mt-2">
+                        <span id="conv-gross-eur">~0 EUR</span>
+                        <span id="conv-gross-usd">~$0</span>
+                    </div>
+                </div>
+
+                <!-- Resident Type Selection -->
+                <div class="mb-6 p-4 bg-slate-50 rounded-xl">
+                    <label class="block text-sm font-medium text-slate-700 mb-3">Statut de residence</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="resident-type" value="expat" checked class="w-4 h-4 text-green-600 focus:ring-green-500">
+                            <span class="text-sm text-slate-600">Expatrie (pas de cotisations)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="resident-type" value="kuwaiti" class="w-4 h-4 text-green-600 focus:ring-green-500">
+                            <span class="text-sm text-slate-600">Koweitien (7.5% PIFSS)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-green-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impot sur le Revenu</span>
+                        </div>
+                        <p class="text-2xl font-bold text-green-600" id="income-tax">0 KWD</p>
+                        <p class="text-xs text-green-600 mt-1 font-semibold">Taux: 0% - TAX FREE!</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Cotisations Sociales</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 KWD</p>
+                        <p class="text-xs text-slate-500 mt-1" id="social-rate-text">Expatries: 0%</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Revenu Net Annuel</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 KWD</p>
+                        <p class="text-xs text-slate-500 mt-1">Mensuel: <span id="net-monthly" class="font-medium">0 KWD</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Repartition de votre revenu</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 100%, #f59e0b 100% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Net</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">100%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Revenu net</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">100%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                                    <span class="text-sm text-slate-600">Impots</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Cotisations</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-4 mt-4 border border-green-200">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-green-700">Charge Fiscale Totale</span>
+                        <span class="text-lg font-bold text-green-700" id="total-tax">0 KWD</span>
+                    </div>
+                    <div class="h-3 bg-green-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-green-600 mt-2 text-right font-semibold">Taux effectif total: <span id="total-rate" class="font-bold">0%</span></p>
+                </div>
+            </div>
+
+            <!-- Tax Free Highlight -->
+            <div class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-6 md:p-8 mb-6 text-white">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:piggy-bank" width="28" class="text-white"></iconify-icon>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold mb-2">Koweit : Paradis Fiscal pour les Expatries</h2>
+                        <p class="text-green-100 text-sm mb-4">Le Koweit n'impose aucun impot sur le revenu des personnes physiques. C'est l'une des destinations les plus attractives fiscalement au monde, aux cotes de Dubai, du Qatar et de Monaco.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <p class="text-2xl font-bold">0%</p>
+                                <p class="text-xs text-green-200">Impot sur le revenu</p>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <p class="text-2xl font-bold">0%</p>
+                                <p class="text-xs text-green-200">Plus-values</p>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <p class="text-2xl font-bold">0%</p>
+                                <p class="text-xs text-green-200">Dividendes</p>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <p class="text-2xl font-bold">0%</p>
+                                <p class="text-xs text-green-200">Succession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-green-500"></iconify-icon>
+                    Fiscalite au Koweit 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Impot sur le revenu</span><span class="font-bold text-green-600">0%</span></div>
+                    <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Cotisations sociales (expatries)</span><span class="font-bold text-green-600">0%</span></div>
+                    <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Cotisations sociales (Koweitiens - PIFSS)</span><span class="font-medium text-amber-600">7.5%</span></div>
+                    <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Impot sur les societes (etrangeres)</span><span class="font-medium">15%</span></div>
+                    <div class="flex justify-between py-2"><span class="text-slate-500">Zakat (societes koweïtiennes)</span><span class="font-medium">1%</span></div>
+                </div>
+            </div>
+
+            <!-- Comparison with France -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <iconify-icon icon="lucide:scale" width="24" class="text-green-500"></iconify-icon>
+                    Comparaison Koweit vs France : Economie d'impots
+                </h2>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border p-3 text-left">Salaire Annuel Brut</th>
+                                <th class="border p-3 text-left">🇫🇷 Net en France</th>
+                                <th class="border p-3 text-left">🇰🇼 Net au Koweit</th>
+                                <th class="border p-3 text-left text-green-700">Economie</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparison-table">
+                            <tr><td class="border p-3">50,000 EUR</td><td class="border p-3">~35,000 EUR</td><td class="border p-3">~50,000 EUR</td><td class="border p-3 font-bold text-green-600">+15,000 EUR</td></tr>
+                            <tr class="bg-slate-50"><td class="border p-3">75,000 EUR</td><td class="border p-3">~48,000 EUR</td><td class="border p-3">~75,000 EUR</td><td class="border p-3 font-bold text-green-600">+27,000 EUR</td></tr>
+                            <tr><td class="border p-3">100,000 EUR</td><td class="border p-3">~60,000 EUR</td><td class="border p-3">~100,000 EUR</td><td class="border p-3 font-bold text-green-600">+40,000 EUR</td></tr>
+                            <tr class="bg-slate-50"><td class="border p-3">150,000 EUR</td><td class="border p-3">~82,000 EUR</td><td class="border p-3">~150,000 EUR</td><td class="border p-3 font-bold text-green-600">+68,000 EUR</td></tr>
+                            <tr><td class="border p-3">200,000 EUR</td><td class="border p-3">~105,000 EUR</td><td class="border p-3">~200,000 EUR</td><td class="border p-3 font-bold text-green-600">+95,000 EUR</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-sm text-green-800"><strong>Note :</strong> Ces comparaisons sont pour des expatries. L'economie reelle peut varier selon votre situation personnelle. Le cout de la vie au Koweit est generalement plus eleve pour le logement mais plus bas pour l'essence et certains produits.</p>
+                </div>
+            </div>
+
+            <!-- Comprehensive Guide -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite koweitienne</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>Le Koweit est l'un des pays les plus attractifs fiscalement au monde pour les travailleurs expatries. Avec <strong>0% d'impot sur le revenu des personnes physiques</strong>, le pays attire de nombreux professionnels qualifies, notamment dans les secteurs du petrole, de la finance et de l'ingenierie. Cette politique fiscale genereuse est financee par les immenses revenus petroliers du pays.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Absence d'impot sur le revenu personnel</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Revenus totalement exoneres</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Salaires et traitements</strong> : aucun impot, quelle que soit la nationalite</li>
+                            <li><strong>Primes et bonus</strong> : entierement nets</li>
+                            <li><strong>Avantages en nature</strong> : logement, voiture, billets d'avion non imposes</li>
+                            <li><strong>Indemnites de fin de contrat</strong> : exonerees d'impot</li>
+                            <li><strong>Revenus d'investissement</strong> : dividendes, interets et plus-values non imposes</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (PIFSS)</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">Public Institution for Social Security</h4>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li><strong>Expatries</strong> : totalement exemptes de cotisations sociales</li>
+                            <li><strong>Citoyens koweitiens</strong> : 7.5% de cotisation employe</li>
+                            <li><strong>Employeurs (pour Koweitiens)</strong> : 11.5% de contribution patronale</li>
+                            <li>Couvre la retraite, l'invalidite et le deces</li>
+                            <li>Les expatries doivent avoir leur propre assurance sante</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Impot sur les societes</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Fiscalite des entreprises</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>Societes etrangeres</strong> : 15% d'impot sur les benefices</li>
+                            <li><strong>Societes koweïtiennes</strong> : pas d'impot sur les societes, mais 1% de Zakat</li>
+                            <li><strong>Societes du CCG</strong> : traitees comme societes locales</li>
+                            <li>Pas de TVA actuellement (contrairement aux autres pays du CCG)</li>
+                            <li>Pas de retenue a la source sur les dividendes</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux du Koweit</h3>
+                    <div class="grid md:grid-cols-2 gap-4 my-3">
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-700 mb-2">Points positifs</h4>
+                            <ul class="text-xs space-y-1 text-green-600">
+                                <li>Aucun impot sur le revenu personnel</li>
+                                <li>Pas de TVA (contrairement aux EAU et Arabie Saoudite)</li>
+                                <li>Pas d'impot sur les plus-values</li>
+                                <li>Pas d'impot sur la succession</li>
+                                <li>Salaires eleves dans de nombreux secteurs</li>
+                                <li>Essence et electricite subventionnees</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-700 mb-2">Points a considerer</h4>
+                            <ul class="text-xs space-y-1 text-red-600">
+                                <li>Cout de la vie eleve (logement)</li>
+                                <li>Assurance sante privee obligatoire pour expatries</li>
+                                <li>Marche du travail limite hors petrole</li>
+                                <li>Restrictions sur la propriete immobiliere</li>
+                                <li>Climat desert extreme</li>
+                                <li>Dependance au sponsor (Kafala)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Indemnite de fin de service</h3>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">End of Service Benefits (ESB)</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>5 premieres annees</strong> : 15 jours de salaire par annee</li>
+                            <li><strong>Au-dela de 5 ans</strong> : 1 mois de salaire par annee supplementaire</li>
+                            <li>Maximum : equivalent de 1.5 ans de salaire</li>
+                            <li>Exonere d'impot</li>
+                            <li>Payable a la fin du contrat (demission ou licenciement)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison avec d'autres pays du Golfe</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Pays</th>
+                                    <th class="border p-2 text-left">Impot sur le revenu</th>
+                                    <th class="border p-2 text-left">TVA</th>
+                                    <th class="border p-2 text-left">Cotisations sociales (expats)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-green-50"><td class="border p-2 font-semibold">🇰🇼 Koweit</td><td class="border p-2 text-green-600 font-bold">0%</td><td class="border p-2 text-green-600 font-bold">0%</td><td class="border p-2 text-green-600 font-bold">0%</td></tr>
+                                <tr><td class="border p-2">🇦🇪 EAU/Dubai</td><td class="border p-2 text-green-600">0%</td><td class="border p-2">5%</td><td class="border p-2 text-green-600">0%</td></tr>
+                                <tr><td class="border p-2">🇸🇦 Arabie Saoudite</td><td class="border p-2 text-green-600">0%</td><td class="border p-2">15%</td><td class="border p-2">2%</td></tr>
+                                <tr><td class="border p-2">🇶🇦 Qatar</td><td class="border p-2 text-green-600">0%</td><td class="border p-2 text-green-600">0%</td><td class="border p-2 text-green-600">0%</td></tr>
+                                <tr><td class="border p-2">🇧🇭 Bahrein</td><td class="border p-2 text-green-600">0%</td><td class="border p-2">10%</td><td class="border p-2">1%</td></tr>
+                                <tr><td class="border p-2">🇴🇲 Oman</td><td class="border p-2 text-green-600">0%</td><td class="border p-2">5%</td><td class="border p-2 text-green-600">0%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">Le Koweit et le Qatar sont les deux seuls pays du CCG sans TVA, ce qui en fait les destinations les plus avantageuses fiscalement.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Secteurs d'emploi principaux</h3>
+                    <div class="grid md:grid-cols-3 gap-2 my-3">
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:droplet" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">Petrole & Gaz</p>
+                            <p class="text-xs text-slate-500">KPC, KNPC, KOC</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:landmark" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">Finance & Banque</p>
+                            <p class="text-xs text-slate-500">NBK, KFH, Burgan</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:building-2" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">Construction</p>
+                            <p class="text-xs text-slate-500">Infrastructures</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:stethoscope" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">Sante</p>
+                            <p class="text-xs text-slate-500">Hopitaux, cliniques</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:graduation-cap" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">Education</p>
+                            <p class="text-xs text-slate-500">Ecoles internationales</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-3 text-center">
+                            <iconify-icon icon="lucide:laptop" width="24" class="text-slate-600 mb-1"></iconify-icon>
+                            <p class="font-medium text-sm">IT & Tech</p>
+                            <p class="text-xs text-slate-500">Digital transformation</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Informations pratiques</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Monnaie</strong> : Dinar koweitien (KWD) - la devise la plus forte du monde (~3.25 USD)</li>
+                        <li><strong>Visa de travail</strong> : necessaire, sponsor (Kafala) obligatoire</li>
+                        <li><strong>Duree de travail</strong> : 48 heures/semaine maximum, 8 heures/jour</li>
+                        <li><strong>Conges payes</strong> : 30 jours apres 1 an de service</li>
+                        <li><strong>Jours feries</strong> : environ 13 jours par an</li>
+                        <li><strong>Assurance sante</strong> : obligatoire, generalement fournie par l'employeur</li>
+                        <li><strong>Kuwait Vision 2035</strong> : diversification economique en cours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/fr/comparateur-global/" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Comparer avec d'autres pays
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>&copy; 2026 NetSalaire. Les calculs fiscaux sont des estimations a titre informatif.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/fr/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/fr/mentions-legales/" class="hover:text-white transition-colors">Mentions legales</a>
+                <a href="/fr/politique-confidentialite/" class="hover:text-white transition-colors">Confidentialite</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Kuwait is TAX FREE - 0% income tax
+        const INCOME_TAX_RATE = 0;
+        const SOCIAL_RATE_KUWAITI = 0.075; // 7.5% for Kuwaiti nationals only
+        const SOCIAL_RATE_EXPAT = 0; // 0% for expatriates
+        const CURRENCY = ' KWD';
+        const KWD_TO_EUR = 3.05;
+        const KWD_TO_USD = 3.25;
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function isExpat() {
+            return document.querySelector('input[name="resident-type"]:checked').value === 'expat';
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('fr-FR');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+            const expat = isExpat();
+
+            // Income tax is always 0 in Kuwait
+            const incomeTax = 0;
+
+            // Social contributions only for Kuwaiti nationals
+            const socialRate = expat ? SOCIAL_RATE_EXPAT : SOCIAL_RATE_KUWAITI;
+            const socialTax = income * socialRate;
+
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            // Update display
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+            document.getElementById('social-rate-text').textContent = expat ? 'Expatries: 0%' : 'Koweitiens: 7.5%';
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversions
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income * KWD_TO_EUR).toLocaleString() + ' EUR';
+            document.getElementById('conv-gross-usd').textContent = '~$' + Math.round(income * KWD_TO_USD).toLocaleString();
+
+            // Update tax bar
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            // Update slider background
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 100000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #16a34a ${percent}%, #e2e8f0 ${percent}%)`;
+
+            // Update chart
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #22c55e ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        // Event listeners
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 100000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 100000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        // Radio button listeners
+        document.querySelectorAll('input[name="resident-type"]').forEach(function(radio) {
+            radio.addEventListener('change', calculate);
+        });
+
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>

@@ -980,6 +980,37 @@
         const COTIS_RATES = { cadre: 0.25, noncadre: 0.22 };
         const WEEKS_PER_YEAR = 52;
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedValue = 0;
+        let trackingTimeout = null;
+
+        function trackCalculation(brutAnnuel, statut) {
+            // Debounce: track only after 1.5s of inactivity
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                // Avoid duplicate tracking for same value
+                if (Math.abs(brutAnnuel - lastTrackedValue) < 1000) return;
+                lastTrackedValue = brutAnnuel;
+
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur Brut Net',
+                        'event_label': statut,
+                        'value': Math.round(brutAnnuel)
+                    });
+                }
+            }, 1500);
+        }
+
+        function trackStatusChange(statut) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'select_status', {
+                    'event_category': 'Simulateur Brut Net',
+                    'event_label': statut
+                });
+            }
+        }
+
         // === DOM ELEMENTS ===
         const brutAnnuel = document.getElementById('brut-annuel');
         const brutMensuel = document.getElementById('brut-mensuel');
@@ -996,6 +1027,7 @@
         // === STATUT & HEURES CONTROLS ===
         function setStatut(value) {
             statutSelect.value = value;
+            trackStatusChange(value); // GA4 tracking
             const btnSmic = document.getElementById('btn-smic');
             const btnNoncadre = document.getElementById('btn-noncadre');
             const btnCadre = document.getElementById('btn-cadre');
@@ -1116,6 +1148,9 @@
             if (netHoraire) netHoraire.value = formatDecimal(netH);
 
             updateUI(brutMois, nbMois);
+
+            // Track calculation in GA4
+            trackCalculation(brutAn, statutSelect.value);
         }
 
         // === LEGACY UPDATE FUNCTIONS (for buttons) ===
@@ -1131,6 +1166,7 @@
         function setSMIC() {
             // SMIC 2026: 1 802 € brut mensuel, 35h, non-cadre, 12 mois, 100%
             statutSelect.value = 'noncadre';
+            trackStatusChange('smic'); // GA4 tracking
 
             // Highlight SMIC button, deactivate others
             const btnSmic = document.getElementById('btn-smic');

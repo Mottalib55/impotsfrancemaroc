@@ -744,6 +744,24 @@
             return Math.round(Math.min(max, cout * 0.85));
         }
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedRevenu = 0;
+        let trackingTimeout = null;
+        function trackCrecheCalculation(revenu, enfants) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(revenu - lastTrackedRevenu) < 1000) return;
+                lastTrackedRevenu = revenu;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur Creche',
+                        'event_label': enfants + ' enfant(s)',
+                        'value': Math.round(revenu)
+                    });
+                }
+            }, 1500);
+        }
+
         function calculer() {
             const { revenuAnnuel, nbEnfants, estIDF, heuresJour, joursSemaine } = state;
             const joursMois = joursSemaine * 4;
@@ -812,6 +830,9 @@
             document.getElementById('info-jours').textContent = joursMois;
             document.getElementById('info-total').textContent = heuresJour * joursMois;
             document.getElementById('jours-mois').textContent = joursMois;
+
+            // GA4 tracking
+            trackCrecheCalculation(revenuAnnuel, nbEnfants);
         }
 
         // Handlers

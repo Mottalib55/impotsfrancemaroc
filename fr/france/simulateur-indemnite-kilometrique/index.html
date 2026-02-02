@@ -626,6 +626,24 @@
             return num.toFixed(3).replace('.', ',');
         }
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedDistance = 0;
+        let trackingTimeout = null;
+        function trackKilometriqueCalculation(distance, type) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(distance - lastTrackedDistance) < 500) return;
+                lastTrackedDistance = distance;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur Kilometrique',
+                        'event_label': type,
+                        'value': Math.round(distance)
+                    });
+                }
+            }, 1500);
+        }
+
         function calculate() {
             const distance = parseNumber(document.getElementById('distance').value);
             const electrique = document.getElementById('electrique').checked;
@@ -668,6 +686,9 @@
 
             // Format input
             document.getElementById('distance').value = formatNumber(distance);
+
+            // GA4 tracking
+            trackKilometriqueCalculation(distance, vehicleType);
         }
 
         // Init

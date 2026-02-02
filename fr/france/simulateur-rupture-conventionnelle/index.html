@@ -562,6 +562,24 @@
             return num.toFixed(2).replace('.', ',');
         }
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedSalaire = 0;
+        let trackingTimeout = null;
+        function trackRuptureCalculation(salaire, anciennete) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(salaire - lastTrackedSalaire) < 100) return;
+                lastTrackedSalaire = salaire;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur Rupture Conv',
+                        'event_label': Math.round(anciennete) + ' ans',
+                        'value': Math.round(salaire)
+                    });
+                }
+            }, 1500);
+        }
+
         function updateFromAnnuel() {
             const annuel = parseNumber(document.getElementById('salaire-annuel').value);
             const mensuel = annuel / 12;
@@ -626,6 +644,9 @@
 
             // Format input
             document.getElementById('salaire-brut').value = formatNumber(salaireBrut);
+
+            // GA4 tracking
+            trackRuptureCalculation(salaireBrut, ancienneteTotale);
         }
 
         // Init

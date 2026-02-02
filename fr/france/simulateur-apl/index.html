@@ -701,6 +701,24 @@
             calculerAPL();
         }
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedLoyer = 0;
+        let trackingTimeout = null;
+        function trackAPLCalculation(loyer, zone) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(loyer - lastTrackedLoyer) < 50) return;
+                lastTrackedLoyer = loyer;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'calculation', {
+                        'event_category': 'Simulateur APL',
+                        'event_label': 'Zone ' + zone,
+                        'value': Math.round(loyer)
+                    });
+                }
+            }, 1500);
+        }
+
         function calculerAPL() {
             const zone = currentZone;
             const situation = currentSituation;
@@ -769,6 +787,9 @@
             document.getElementById('apl-annuel').innerHTML = 'soit <span class="font-semibold">' + formatNumber(Math.round(apl * 12)) + ' €</span> par an';
             document.getElementById('loyer-plafond').textContent = formatNumber(plafondLoyer) + ' €';
             document.getElementById('participation').textContent = formatNumber(Math.round(participation)) + ' €';
+
+            // GA4 tracking
+            trackAPLCalculation(loyer, zone);
         }
 
         function getPlafondRevenus(nbPersonnes) {

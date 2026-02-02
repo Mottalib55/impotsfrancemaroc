@@ -1587,6 +1587,25 @@
         const $ = (sel) => document.querySelector(sel);
         const $$ = (sel) => document.querySelectorAll(sel);
 
+        // === GA4 EVENT TRACKING ===
+        let lastTrackedIncome = 0;
+        let trackingTimeout = null;
+
+        function trackTaxCalculation(income, tax, status) {
+            clearTimeout(trackingTimeout);
+            trackingTimeout = setTimeout(() => {
+                if (Math.abs(income - lastTrackedIncome) < 1000) return;
+                lastTrackedIncome = income;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'tax_calculation', {
+                        'event_category': 'Simulateur Impot FR',
+                        'event_label': status,
+                        'value': Math.round(income)
+                    });
+                }
+            }, 1500);
+        }
+
         const formatMoney = (val) => Math.round(val).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' EUR';
         const formatPercent = (val) => val.toFixed(1) + '%';
         const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
@@ -1700,6 +1719,9 @@
                 crecheCredit, crechePlafond
             });
             updateURL();
+
+            // GA4 tracking
+            trackTaxCalculation(grossIncome, finalTax, state.status);
         }
 
         function updateUI(data) {

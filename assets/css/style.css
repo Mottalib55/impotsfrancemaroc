@@ -24,6 +24,14 @@ body {
     line-height: 1.6;
 }
 
+/* Mega-menu country grid - prevent text overlap */
+.mega-country-grid a {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 /* Navigation */
 .nav-container {
     background: var(--white);

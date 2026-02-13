@@ -179,9 +179,9 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                         <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
                     </button>
                     <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl py-5 px-6" style="width: 480px; max-height: 75vh; overflow-y: auto;">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl py-5 px-6" style="width: 600px; max-height: 75vh; overflow-y: auto;">
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Europe</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
                                 <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> Espagne</a>
                                 <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> Royaume-Uni</a>
@@ -207,7 +207,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                                 <a href="/fr/turquie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turquie</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Amériques</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
                                 <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
                                 <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brésil</a>
@@ -218,7 +218,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                                 <a href="/fr/perou/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Pérou</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Asie-Pacifique</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japon</a>
                                 <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> Corée du Sud</a>
                                 <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> Chine</a>
@@ -235,7 +235,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                                 <a href="/fr/vietnam/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Moyen-Orient & Afrique</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Maroc</a>
                                 <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> Émirats arabes</a>
                                 <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Arabie Saoudite</a>
@@ -351,7 +351,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                     <div class="hidden pl-4 pb-3 space-y-3">
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">⭐ Populaires</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/fr/france/simulateur-impot-revenu/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
                                 <a href="/fr/maroc/simulateur-impot-revenu/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Maroc</a>
                                 <a href="/fr/usa/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
@@ -362,7 +362,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Europe</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/fr/allemagne/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Allemagne</a>
                                 <a href="/fr/belgique/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgique</a>
                                 <a href="/fr/espagne/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 Espagne</a>
@@ -386,7 +386,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Amériques</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/fr/usa/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
                                 <a href="/fr/canada/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
                                 <a href="/fr/mexique/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 Mexique</a>
@@ -399,7 +399,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Asie & Moyen-Orient</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/fr/japon/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japon</a>
                                 <a href="/fr/chine/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 Chine</a>
                                 <a href="/fr/coree-du-sud/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 Corée du Sud</a>
@@ -422,7 +422,7 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Afrique & Océanie</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/fr/afrique-du-sud/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 Afrique du Sud</a>
                                 <a href="/fr/australie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australie</a>
                                 <a href="/fr/nouvelle-zelande/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 Nouvelle-Zélande</a>
@@ -563,9 +563,9 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                         <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
                     </button>
                     <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl py-5 px-6" style="width: 480px; max-height: 75vh; overflow-y: auto;">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl py-5 px-6" style="width: 600px; max-height: 75vh; overflow-y: auto;">
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Europe</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/en/france/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
                                 <a href="/en/spain/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> Spain</a>
                                 <a href="/en/uk/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> United Kingdom</a>
@@ -591,7 +591,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                                 <a href="/en/turkey/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turkey</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Americas</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/en/usa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
                                 <a href="/en/canada/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
                                 <a href="/en/brazil/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brazil</a>
@@ -602,7 +602,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                                 <a href="/en/peru/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Peru</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Asia-Pacific</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/en/japan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japan</a>
                                 <a href="/en/south-korea/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> South Korea</a>
                                 <a href="/en/china/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> China</a>
@@ -619,7 +619,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                                 <a href="/en/vietnam/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
                             </div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Middle East & Africa</div>
-                            <div class="grid grid-cols-2 mb-4" style="column-gap: 2rem; row-gap: 0.25rem;">
+                            <div class="grid grid-cols-2 mb-4 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
                                 <a href="/en/morocco/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Morocco</a>
                                 <a href="/en/dubai/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> UAE</a>
                                 <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Saudi Arabia</a>
@@ -735,7 +735,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                     <div class="hidden pl-4 pb-3 space-y-3">
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">⭐ Popular</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/en/france/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
                                 <a href="/en/morocco/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Morocco</a>
                                 <a href="/en/usa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
@@ -746,7 +746,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Europe</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/en/germany/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Germany</a>
                                 <a href="/en/belgium/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgium</a>
                                 <a href="/en/spain/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 Spain</a>
@@ -770,7 +770,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Americas</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/en/usa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
                                 <a href="/en/canada/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
                                 <a href="/en/mexico/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 Mexico</a>
@@ -783,7 +783,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Asia & Middle East</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/en/japan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japan</a>
                                 <a href="/en/china/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 China</a>
                                 <a href="/en/south-korea/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 South Korea</a>
@@ -806,7 +806,7 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                         </div>
                         <div>
                             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Africa & Oceania</div>
-                            <div class="grid grid-cols-2 gap-1">
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
                                 <a href="/en/south-africa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 South Africa</a>
                                 <a href="/en/australia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australia</a>
                                 <a href="/en/new-zealand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 New Zealand</a>

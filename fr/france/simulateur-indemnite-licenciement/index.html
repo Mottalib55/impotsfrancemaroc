@@ -150,7 +150,7 @@
                         <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
                             <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
                                 <iconify-icon icon="lucide:landmark" width="18" class="text-indigo-500"></iconify-icon>
-                                Simulateur Impot
+                                Simulateur Impôt
                             </a>
                             <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
                                 <iconify-icon icon="lucide:calculator" width="18" class="text-indigo-500"></iconify-icon>
@@ -162,16 +162,33 @@
                             </a>
                             <div class="border-t border-slate-100 my-2"></div>
                             <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span class="w-[18px] text-center">📉</span> Chomage ARE
+                                <span class="w-[18px] text-center">📉</span>
+                                Chômage ARE
                             </a>
                             <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span class="w-[18px] text-center">📋</span> Licenciement
+                                <span class="w-[18px] text-center">📋</span>
+                                Licenciement
+                            </a>
+                            <a href="/fr/france/simulateur-rupture-conventionnelle/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
+                                <span class="w-[18px] text-center">🤝</span>
+                                Rupture Conv.
                             </a>
                             <a href="/fr/france/simulateur-apl/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span class="w-[18px] text-center">🏠</span> APL
+                                <span class="w-[18px] text-center">🏠</span>
+                                APL
                             </a>
                             <a href="/fr/france/creche-tarifs/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span class="w-[18px] text-center">👶</span> Creche
+                                <span class="w-[18px] text-center">👶</span>
+                                Crèche
+                            </a>
+                            <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
+                                <span class="w-[18px] text-center">🚗</span>
+                                Frais Km
+                            </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-3 px-4 py-2 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors text-sm font-medium">
+                                <span class="w-[18px] text-center">🔀</span>
+                                Comparer France vs Maroc
                             </a>
                         </div>
                     </div>
@@ -186,7 +203,7 @@
                         <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[220px]">
                             <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
                                 <iconify-icon icon="lucide:landmark" width="18" class="text-emerald-500"></iconify-icon>
-                                Simulateur Impot
+                                Simulateur Impôt
                             </a>
                             <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-3 px-4 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
                                 <iconify-icon icon="lucide:calculator" width="18" class="text-emerald-500"></iconify-icon>
@@ -196,81 +213,138 @@
                                 <iconify-icon icon="lucide:book-open" width="18" class="text-emerald-500"></iconify-icon>
                                 Guide Fiscal
                             </a>
+                            <div class="border-t border-slate-100 my-2"></div>
+                            <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-3 px-4 py-2 text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors text-sm font-medium">
+                                <span class="w-[18px] text-center">🔀</span>
+                                Comparer France vs Maroc
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Tous les pays Dropdown -->
+                <!-- Mega-menu Tous les pays -->
                 <div class="relative group">
-                    <a href="/fr/comparateur-global/" class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2">
+                    <button class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2 text-sm font-medium text-slate-600">
                         <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
                         <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
-                    </a>
-                    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="bg-white border border-slate-200 rounded-lg shadow-lg py-2 min-w-[200px] " style="max-height: 250px; overflow-y: scroll;">
-                            <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇫🇷</span> France</a>
-                            <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm"><span>🇲🇦</span> Maroc</a>
-                            <div class="border-t border-slate-100 my-1"></div>
-                            <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇺🇸</span> USA (New York)
-                            </a>
-                            <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇬🇧</span> Royaume-Uni
-                            </a>
-                            <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇨🇭</span> Suisse (Geneve)
-                            </a>
-                            <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇦🇪</span> Dubai (0% impot)
-                            </a>
-                            <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇸🇬</span> Singapour
-                            </a>
-                            <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇱🇺</span> Luxembourg
-                            </a>
-                            <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇸🇦</span> Arabie Saoudite
-                            </a>
-                            <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇪🇸</span> Espagne
-                            </a>
-                            <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇯🇵</span> Japon
-                            </a>
-                            <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇨🇳</span> Chine (Shanghai)
-                            </a>
-                            <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇮🇳</span> Inde
-                            </a>
-                            <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇵🇰</span> Pakistan
-                            </a>
-                            <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇲🇽</span> Mexique
-                            </a>
-                            <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors text-sm">
-                                <span>🇧🇷</span> Bresil
-                            </a>
-                            <div class="border-t border-slate-100 my-2"></div>
-                            <a href="/fr/comparateur-global/" class="flex items-center gap-3 px-4 py-2 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors text-sm font-medium">
-                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous
-                            </a>
+                    </button>
+                    <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl p-6 w-[700px]">
+                            <div class="grid grid-cols-4 gap-6">
+                                <!-- Populaires -->
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">⭐ Populaires</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
+                                        <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Maroc</a>
+                                        <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
+                                        <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> Royaume-Uni</a>
+                                        <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇭</span> Suisse</a>
+                                        <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> Dubai</a>
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 mt-5">Moyen-Orient</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/dubai/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> Dubai</a>
+                                        <a href="/fr/qatar/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇶🇦</span> Qatar</a>
+                                        <a href="/fr/koweit/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇼</span> Koweït</a>
+                                        <a href="/fr/arabie-saoudite/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Arabie Saoudite</a>
+                                        <a href="/fr/turquie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turquie</a>
+                                        <a href="/fr/egypte/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇬</span> Égypte</a>
+                                    </div>
+                                </div>
+                                <!-- Europe Ouest + Est -->
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Europe Ouest</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/allemagne/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇪</span> Allemagne</a>
+                                        <a href="/fr/belgique/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇪</span> Belgique</a>
+                                        <a href="/fr/pays-bas/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇱</span> Pays-Bas</a>
+                                        <a href="/fr/luxembourg/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇱🇺</span> Luxembourg</a>
+                                        <a href="/fr/autriche/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇹</span> Autriche</a>
+                                        <a href="/fr/suisse/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇭</span> Suisse</a>
+                                        <a href="/fr/royaume-uni/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> Royaume-Uni</a>
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 mt-5">Europe Est</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/pologne/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇱</span> Pologne</a>
+                                        <a href="/fr/hongrie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇺</span> Hongrie</a>
+                                        <a href="/fr/tchequie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇿</span> Tchéquie</a>
+                                        <a href="/fr/roumanie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇷🇴</span> Roumanie</a>
+                                        <a href="/fr/croatie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇷</span> Croatie</a>
+                                    </div>
+                                </div>
+                                <!-- Europe Sud + Nord -->
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Europe Sud</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> Espagne</a>
+                                        <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇹</span> Italie</a>
+                                        <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇹</span> Portugal</a>
+                                        <a href="/fr/grece/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇷</span> Grèce</a>
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 mt-5">Europe Nord</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/suede/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇪</span> Suède</a>
+                                        <a href="/fr/norvege/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇴</span> Norvège</a>
+                                        <a href="/fr/danemark/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇰</span> Danemark</a>
+                                        <a href="/fr/finlande/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇮</span> Finlande</a>
+                                        <a href="/fr/irlande/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇪</span> Irlande</a>
+                                    </div>
+                                </div>
+                                <!-- Asie + Amériques + Afrique/Océanie -->
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Asie</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/japon/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japon</a>
+                                        <a href="/fr/chine/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> Chine</a>
+                                        <a href="/fr/coree-du-sud/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> Corée du Sud</a>
+                                        <a href="/fr/singapour/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇬</span> Singapour</a>
+                                        <a href="/fr/hong-kong/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇰</span> Hong Kong</a>
+                                        <a href="/fr/inde/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇳</span> Inde</a>
+                                        <a href="/fr/indonesie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇩</span> Indonésie</a>
+                                        <a href="/fr/malaisie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇾</span> Malaisie</a>
+                                        <a href="/fr/pakistan/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇰</span> Pakistan</a>
+                                        <a href="/fr/thailande/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇭</span> Thaïlande</a>
+                                        <a href="/fr/philippines/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇭</span> Philippines</a>
+                                        <a href="/fr/vietnam/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 mt-5">Amériques</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/usa/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
+                                        <a href="/fr/canada/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
+                                        <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇽</span> Mexique</a>
+                                        <a href="/fr/bresil/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brésil</a>
+                                        <a href="/fr/argentine/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇷</span> Argentine</a>
+                                        <a href="/fr/chili/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇱</span> Chili</a>
+                                        <a href="/fr/colombie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇴</span> Colombie</a>
+                                        <a href="/fr/perou/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Pérou</a>
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 mt-5">Afrique & Océanie</div>
+                                    <div class="space-y-1.5">
+                                        <a href="/fr/afrique-du-sud/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇿🇦</span> Afrique du Sud</a>
+                                        <a href="/fr/australie/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇺</span> Australie</a>
+                                        <a href="/fr/nouvelle-zelande/simulateur-impot/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇿</span> Nouvelle-Zélande</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-t border-slate-100 mt-5 pt-4">
+                                <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                                    <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> 📊 Comparer tous les pays →
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a href="/fr/comparateur-salaire-france-maroc/" class="hover:text-slate-900 transition-colors">France vs Maroc</a>
                 <a href="/fr/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
             </div>
             <div class="flex items-center gap-3">
                 <!-- Language Switcher -->
                 <div class="relative">
-                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all">
-                        <span>🇫🇷</span>
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Changer de langue">
+                        <span class="lang-flag">🇫🇷</span>
                         <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
                     </button>
                     <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[140px] py-1 z-50">
-                                                <a href="/fr/france/simulateur-indemnite-licenciement/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                        <a href="/fr/france/simulateur-indemnite-licenciement/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
                             <span>🇫🇷</span> Francais
                         </a>
                         <a href="/en/france/severance-calculator/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
@@ -284,44 +358,174 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu (Accordéons) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
-            <div class="px-6 py-4 space-y-4">
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                        <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
-                    </div>
-                    <div class="pl-6 space-y-2">
-                        <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Simulateur Impot
+            <div class="px-6 py-4 space-y-1">
+                <!-- France Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-6 pb-3 space-y-2">
+                        <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Simulateur Impôt
                         </a>
-                        <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600">
+                        <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
                             <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Brut vers Net
                         </a>
+                        <a href="/fr/france/guide/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Guide Fiscal
+                        </a>
+                        <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>📉</span> Chômage ARE
+                        </a>
+                        <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>📋</span> Licenciement
+                        </a>
+                        <a href="/fr/france/simulateur-rupture-conventionnelle/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>🤝</span> Rupture Conv.
+                        </a>
+                        <a href="/fr/france/simulateur-apl/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>🏠</span> APL
+                        </a>
+                        <a href="/fr/france/creche-tarifs/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>👶</span> Crèche
+                        </a>
+                        <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 py-1">
+                            <span>🚗</span> Frais Km
+                        </a>
+                        <div class="border-t border-slate-100 my-1"></div>
+                        <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2 text-sm text-indigo-600 font-medium py-1">
+                            <span>🔀</span> Comparer France vs Maroc
+                        </a>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                        <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Maroc
-                    </div>
-                    <div class="pl-6 space-y-2">
-                        <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Simulateur Impot
+                <!-- Maroc Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Maroc
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-6 pb-3 space-y-2">
+                        <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600 py-1">
+                            <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Simulateur Impôt
                         </a>
-                        <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600">
+                        <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600 py-1">
                             <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Brut vers Net
                         </a>
+                        <a href="/fr/maroc/guide/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-emerald-600 py-1">
+                            <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Guide Fiscal
+                        </a>
+                        <div class="border-t border-slate-100 my-1"></div>
+                        <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2 text-sm text-emerald-600 font-medium py-1">
+                            <span>🔀</span> Comparer France vs Maroc
+                        </a>
                     </div>
                 </div>
-                <div class="pt-2 border-t border-slate-100 space-y-2">
-                    <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
-                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Tous les pays
-                    </a>
-                    <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
-                        <iconify-icon icon="lucide:scale" width="16"></iconify-icon> France vs Maroc
-                    </a>
-                    <a href="/fr/faq/" class="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900">
-                        <iconify-icon icon="lucide:help-circle" width="16"></iconify-icon> FAQ
+                <!-- Tous les pays Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> Tous les pays
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-4 pb-3 space-y-3">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">⭐ Populaires</div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <a href="/fr/france/simulateur-impot-revenu/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
+                                <a href="/fr/maroc/simulateur-impot-revenu/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Maroc</a>
+                                <a href="/fr/usa/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
+                                <a href="/fr/royaume-uni/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇧 Royaume-Uni</a>
+                                <a href="/fr/suisse/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇭 Suisse</a>
+                                <a href="/fr/dubai/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇪 Dubai</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Europe</div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <a href="/fr/allemagne/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Allemagne</a>
+                                <a href="/fr/belgique/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgique</a>
+                                <a href="/fr/espagne/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 Espagne</a>
+                                <a href="/fr/italie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇹 Italie</a>
+                                <a href="/fr/pays-bas/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇱 Pays-Bas</a>
+                                <a href="/fr/portugal/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇹 Portugal</a>
+                                <a href="/fr/suede/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇪 Suède</a>
+                                <a href="/fr/norvege/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇴 Norvège</a>
+                                <a href="/fr/danemark/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇰 Danemark</a>
+                                <a href="/fr/irlande/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇪 Irlande</a>
+                                <a href="/fr/luxembourg/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇱🇺 Luxembourg</a>
+                                <a href="/fr/autriche/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇹 Autriche</a>
+                                <a href="/fr/finlande/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇮 Finlande</a>
+                                <a href="/fr/pologne/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇱 Pologne</a>
+                                <a href="/fr/grece/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇷 Grèce</a>
+                                <a href="/fr/tchequie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇿 Tchéquie</a>
+                                <a href="/fr/hongrie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇺 Hongrie</a>
+                                <a href="/fr/roumanie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇷🇴 Roumanie</a>
+                                <a href="/fr/croatie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇷 Croatie</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Amériques</div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <a href="/fr/usa/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
+                                <a href="/fr/canada/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
+                                <a href="/fr/mexique/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 Mexique</a>
+                                <a href="/fr/bresil/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇷 Brésil</a>
+                                <a href="/fr/argentine/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇷 Argentine</a>
+                                <a href="/fr/chili/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇱 Chili</a>
+                                <a href="/fr/colombie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇴 Colombie</a>
+                                <a href="/fr/perou/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇪 Pérou</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Asie & Moyen-Orient</div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <a href="/fr/japon/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japon</a>
+                                <a href="/fr/chine/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 Chine</a>
+                                <a href="/fr/coree-du-sud/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 Corée du Sud</a>
+                                <a href="/fr/inde/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇳 Inde</a>
+                                <a href="/fr/singapour/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇬 Singapour</a>
+                                <a href="/fr/hong-kong/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇰 Hong Kong</a>
+                                <a href="/fr/dubai/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇪 Dubai</a>
+                                <a href="/fr/qatar/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇶🇦 Qatar</a>
+                                <a href="/fr/koweit/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇼 Koweït</a>
+                                <a href="/fr/arabie-saoudite/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇦 Arabie Saoudite</a>
+                                <a href="/fr/turquie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇷 Turquie</a>
+                                <a href="/fr/indonesie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇩 Indonésie</a>
+                                <a href="/fr/malaisie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇾 Malaisie</a>
+                                <a href="/fr/pakistan/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇰 Pakistan</a>
+                                <a href="/fr/thailande/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇭 Thaïlande</a>
+                                <a href="/fr/philippines/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇭 Philippines</a>
+                                <a href="/fr/vietnam/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇻🇳 Vietnam</a>
+                                <a href="/fr/egypte/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇬 Égypte</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Afrique & Océanie</div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <a href="/fr/afrique-du-sud/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 Afrique du Sud</a>
+                                <a href="/fr/australie/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australie</a>
+                                <a href="/fr/nouvelle-zelande/simulateur-impot/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 Nouvelle-Zélande</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-100 pt-2">
+                            <a href="/fr/comparateur-global/" class="flex items-center gap-2 text-sm font-medium text-indigo-600">
+                                📊 Comparer tous les pays →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ & other links -->
+                <div class="border-t border-slate-100">
+                    <a href="/fr/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
                     </a>
                 </div>
             </div>

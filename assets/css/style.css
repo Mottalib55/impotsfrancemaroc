@@ -24,7 +24,23 @@ body {
     line-height: 1.6;
 }
 
-/* Mega-menu country grid - prevent text overlap */
+/* Mega-menu country dropdown */
+.mega-country-container {
+    padding: 1.75rem 2rem !important;
+}
+
+.mega-country-title {
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.mega-country-title:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
 .mega-country-grid a {
     min-width: 0;
     overflow: hidden;

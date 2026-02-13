@@ -21,15 +21,15 @@
 
         // Morocco section
         '/fr/maroc/simulateur-salaire-brut-net/': '/en/morocco/gross-to-net/',
-        '/fr/maroc/simulateur-ir/': '/en/morocco/tax-simulator/',
+        '/fr/maroc/simulateur-impot-revenu/': '/en/morocco/income-tax/',
         '/fr/maroc/guide/': '/en/morocco/tax-guide/',
 
         // Comparators
         '/fr/comparateur-salaire-france-maroc/': '/en/france-morocco-comparison/',
         '/fr/comparateur-global/': '/en/global-comparison/',
 
-        // Tax simulators (alternative paths)
-        '/fr/simulateur-impot-revenu/': '/en/income-tax-simulator/',
+        // Tax simulators
+        '/fr/france/simulateur-impot-revenu/': '/en/france/income-tax/',
 
         // Info pages
         '/fr/faq/': '/en/faq/',

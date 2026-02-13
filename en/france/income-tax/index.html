@@ -1663,7 +1663,7 @@
                 tax: finalTax, taxBeforeDons: result.tax, marginalRate: result.marginalRate, qf: result.qf,
                 tranchesApplied: result.tranchesApplied, netAfterTax, monthly, avgRate, taxPercent, perSavings, donsTotal, donsReduction
             });
-            updateURL();
+            if (userHasInteracted) updateURL();
         }
 
         function updateUI(data) {
@@ -1803,7 +1803,12 @@
             if (state.hasDons) { $('#dons-details').classList.remove('hidden'); } else { $('#dons-details').classList.add('hidden'); }
         }
 
+        let userHasInteracted = window.location.search.length > 1;
+
         function setupEventListeners() {
+            // Enable URL params writing on first user interaction
+            ['input', 'click'].forEach(evt => document.addEventListener(evt, () => { userHasInteracted = true; }, { once: true }));
+
             // Status buttons
             $('#btn-single').addEventListener('click', () => setStatus('single'));
             $('#btn-married').addEventListener('click', () => setStatus('married'));

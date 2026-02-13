@@ -1718,7 +1718,7 @@
                 tranchesApplied: result.tranchesApplied, netAfterTax, monthly, avgRate, taxPercent, perSavings, donsTotal, donsReduction,
                 crecheCredit, crechePlafond
             });
-            updateURL();
+            if (userHasInteracted) updateURL();
 
             // GA4 tracking
             trackTaxCalculation(grossIncome, finalTax, state.status);
@@ -1917,6 +1917,9 @@
         }
         // Expose to global scope for onclick handlers
         function setupEventListeners() {
+            // Activer l'écriture des params URL dès la première interaction
+            ['input', 'click'].forEach(evt => document.addEventListener(evt, () => { userHasInteracted = true; }, { once: true }));
+
             // Status buttons
             $('#btn-single').addEventListener('click', () => setStatus('single'));
             $('#btn-married').addEventListener('click', () => setStatus('married'));
@@ -1997,6 +2000,8 @@
             $('#btn-reset').addEventListener('click', () => { window.location.href = window.location.pathname; });
             $('#mobile-results-btn').addEventListener('click', () => { document.querySelector('.lg\\:col-span-5').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
         }
+
+        let userHasInteracted = window.location.search.length > 1;
 
         function init() {
             lucide.createIcons();

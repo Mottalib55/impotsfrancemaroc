@@ -199,6 +199,7 @@
         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
             <iconify-icon icon="lucide:table" width="20" class="text-indigo-400"></iconify-icon>
             Recapitulatif toutes langues
+            <span id="googleIndexBadge" class="ml-auto text-xs font-normal text-slate-500"></span>
         </h2>
         <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden mb-8">
             <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
@@ -212,6 +213,7 @@
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">T.Len</th>
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">D.Len</th>
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">Status</th>
+                            <th class="text-center p-3 text-slate-400 font-medium text-xs">Google</th>
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">Actions</th>
                         </tr>
                     </thead>
@@ -833,6 +835,7 @@
         let currentLang = 'fr';
         let editingPath = null;
         let seoChanges = JSON.parse(localStorage.getItem('seoChanges') || '{}');
+        let googleIndex = {};  // loaded from index_status.json
 
         // ==========================================
         // HELPERS
@@ -1070,6 +1073,18 @@
                 rows += '<td class="p-2.5 text-center font-mono text-xs ' + dColor + '">' + dLen + '</td>';
                 rows += '<td class="p-2.5 text-center">' + statusBadge(tLen, dLen) + '</td>';
 
+                // Google index indicator
+                const gStatus = googleIndex[page.path];
+                let gIcon;
+                if (gStatus === true) {
+                    gIcon = '<span title="Indexée sur Google" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400"><iconify-icon icon="lucide:check-circle" width="16"></iconify-icon></span>';
+                } else if (gStatus === false) {
+                    gIcon = '<span title="Non indexée sur Google" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-red-500/10 text-red-400"><iconify-icon icon="lucide:x-circle" width="16"></iconify-icon></span>';
+                } else {
+                    gIcon = '<span title="Statut inconnu" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-500/10 text-slate-500"><iconify-icon icon="lucide:help-circle" width="16"></iconify-icon></span>';
+                }
+                rows += '<td class="p-2.5 text-center">' + gIcon + '</td>';
+
                 const cardId = 'snippet-' + page.path.replace(/[^a-z0-9]/gi, '-');
                 const siteQuery = 'https://www.google.com/search?q=site:' + encodeURIComponent('https://netsalaire.com' + page.path);
                 rows += '<td class="p-2.5 text-center whitespace-nowrap">';
@@ -1117,7 +1132,30 @@
         // ==========================================
         // INIT
         // ==========================================
-        renderCards();
+        // Load Google index status then render
+        fetch('index_status.json')
+            .then(r => r.ok ? r.json() : {})
+            .then(data => {
+                googleIndex = data.pages || {};
+                const total = data.total || 0;
+                const indexed = data.indexed || 0;
+                const notIndexed = data.not_indexed || 0;
+                const unknown = data.unknown || 0;
+                const checkedAt = data.checked_at || 'jamais';
+                // Update badge
+                const badge = document.getElementById('googleIndexBadge');
+                if (badge && total > 0) {
+                    badge.innerHTML = '<iconify-icon icon="logos:google-icon" width="12"></iconify-icon> ' +
+                        '<span class="text-emerald-400">' + indexed + '</span> indexees / ' +
+                        '<span class="text-red-400">' + notIndexed + '</span> absentes / ' +
+                        '<span class="text-slate-400">' + unknown + '</span> inconnues' +
+                        ' <span class="text-slate-600">(' + checkedAt + ')</span>';
+                }
+            })
+            .catch(() => { googleIndex = {}; })
+            .finally(() => {
+                renderCards();
+            });
     </script>
 </body>
 </html>

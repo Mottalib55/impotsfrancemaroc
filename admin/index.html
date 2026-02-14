@@ -620,6 +620,7 @@
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">T.Len</th>
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">D.Len</th>
                             <th class="text-center p-3 text-slate-400 font-medium text-xs">Status</th>
+                            <th class="text-center p-3 text-slate-400 font-medium text-xs">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="summaryBody"></tbody>
@@ -1390,7 +1391,8 @@
                 const borderClass = hasChanges ? 'border-amber-500/50' : 'border-slate-700';
 
                 let html = '';
-                html += '<div class="bg-slate-800 rounded-xl border ' + borderClass + ' p-5 space-y-4">';
+                const cardId = 'snippet-' + page.path.replace(/[^a-z0-9]/gi, '-');
+                html += '<div id="' + cardId + '" class="bg-slate-800 rounded-xl border ' + borderClass + ' p-5 space-y-4">';
 
                 // --- Header row ---
                 html += '<div class="flex flex-wrap items-center justify-between gap-2">';
@@ -1475,10 +1477,38 @@
                 rows += '<td class="p-2.5 text-center font-mono text-xs ' + tColor + '">' + tLen + '</td>';
                 rows += '<td class="p-2.5 text-center font-mono text-xs ' + dColor + '">' + dLen + '</td>';
                 rows += '<td class="p-2.5 text-center">' + statusBadge(tLen, dLen) + '</td>';
+
+                const cardId = 'snippet-' + page.path.replace(/[^a-z0-9]/gi, '-');
+                const siteQuery = 'https://www.google.com/search?q=site:' + encodeURIComponent('https://netsalaire.com' + page.path);
+                rows += '<td class="p-2.5 text-center whitespace-nowrap">';
+                rows += '<a href="#' + cardId + '" onclick="scrollToSnippet(\'' + cardId + '\',\'' + page.lang + '\')" title="Voir le snippet" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 transition-colors mr-1"><iconify-icon icon="lucide:hash" width="14"></iconify-icon></a>';
+                rows += '<a href="https://netsalaire.com' + page.path + '" target="_blank" title="Ouvrir la page" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors mr-1"><iconify-icon icon="lucide:external-link" width="14"></iconify-icon></a>';
+                rows += '<a href="' + siteQuery + '" target="_blank" title="Verifier sur Google" class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 transition-colors"><iconify-icon icon="lucide:search" width="14"></iconify-icon></a>';
+                rows += '</td>';
+
                 rows += '</tr>';
             });
 
             tbody.innerHTML = rows;
+        }
+
+        // ==========================================
+        // SCROLL TO SNIPPET
+        // ==========================================
+        function scrollToSnippet(cardId, lang) {
+            // Switch to the right language if needed
+            if (currentLang !== lang) {
+                switchLang(lang);
+            }
+            // Small delay to let cards render, then scroll
+            setTimeout(() => {
+                const el = document.getElementById(cardId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('ring-2', 'ring-indigo-500');
+                    setTimeout(() => el.classList.remove('ring-2', 'ring-indigo-500'), 2000);
+                }
+            }, 100);
         }
 
         // ==========================================

@@ -603,18 +603,15 @@
             </a>
         </div>
 
-        <!-- Snippet Cards Container -->
-        <div id="snippetCards" class="space-y-4 mb-10"></div>
-
-        <!-- Summary Table -->
+        <!-- Summary Table (recap en haut) -->
         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
             <iconify-icon icon="lucide:table" width="20" class="text-indigo-400"></iconify-icon>
             Recapitulatif toutes langues
         </h2>
         <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden mb-8">
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
                 <table class="w-full text-sm" id="summaryTable">
-                    <thead>
+                    <thead class="sticky top-0 bg-slate-800 z-10">
                         <tr class="border-b border-slate-700">
                             <th class="text-left p-3 text-slate-400 font-medium text-xs">Page</th>
                             <th class="text-left p-3 text-slate-400 font-medium text-xs">Langue</th>
@@ -629,6 +626,13 @@
                 </table>
             </div>
         </div>
+
+        <!-- Snippet Cards (detail en dessous) -->
+        <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:file-search" width="20" class="text-indigo-400"></iconify-icon>
+            Detail des Snippets
+        </h2>
+        <div id="snippetCards" class="space-y-4 mb-10"></div>
 
         <!-- Export Section -->
         <div class="flex items-center justify-between mb-4">

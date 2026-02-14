@@ -556,133 +556,94 @@
             </div>
         </div>
 
-        <!-- SEO Tools -->
-        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
-            <iconify-icon icon="lucide:search" width="20" class="text-indigo-400"></iconify-icon>
-            Outils SEO
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <a href="https://www.google.com/search?q=site:netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
-                <iconify-icon icon="logos:google-icon" width="28" class="mb-2"></iconify-icon>
-                <p class="text-white text-sm">Pages indexees</p>
-            </a>
-            <a href="https://search.google.com/test/rich-results?url=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
-                <iconify-icon icon="lucide:star" width="28" class="text-amber-400 mb-2"></iconify-icon>
-                <p class="text-white text-sm">Rich Results Test</p>
-            </a>
-            <a href="https://search.google.com/test/mobile-friendly?url=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
-                <iconify-icon icon="lucide:smartphone" width="28" class="text-blue-400 mb-2"></iconify-icon>
-                <p class="text-white text-sm">Mobile Test</p>
-            </a>
-            <a href="https://validator.w3.org/nu/?doc=https://netsalaire.com" target="_blank" class="card bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-emerald-500 text-center">
-                <iconify-icon icon="lucide:code" width="28" class="text-purple-400 mb-2"></iconify-icon>
-                <p class="text-white text-sm">HTML Validator</p>
-            </a>
-        </div>
+        <!-- ============================================ -->
+        <!-- SEO SNIPPET DASHBOARD (style myvidownload) -->
+        <!-- ============================================ -->
 
-        <!-- SEO Analyzer Section -->
-        <h2 class="text-white font-semibold mb-4 flex items-center gap-2">
-            <iconify-icon icon="lucide:search-check" width="20" class="text-indigo-400"></iconify-icon>
-            Analyseur SEO Complet
-        </h2>
-
-        <!-- SEO Overview Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
-                <div class="flex items-center gap-2 mb-2">
-                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                        <iconify-icon icon="lucide:check-circle" width="18" class="text-emerald-400"></iconify-icon>
-                    </div>
-                    <span class="text-slate-400 text-sm">Score Moyen</span>
-                </div>
-                <p class="text-2xl font-bold text-emerald-400" id="avgScore">--</p>
+        <!-- Dashboard Header -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <iconify-icon icon="lucide:search-check" width="24" class="text-indigo-400"></iconify-icon>
+                    SEO Snippet Dashboard
+                </h2>
+                <p class="text-slate-400 text-sm mt-1" id="seoSummaryText">Chargement...</p>
             </div>
-            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
-                <div class="flex items-center gap-2 mb-2">
-                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                        <iconify-icon icon="lucide:thumbs-up" width="18" class="text-emerald-400"></iconify-icon>
-                    </div>
-                    <span class="text-slate-400 text-sm">Pages OK</span>
-                </div>
-                <p class="text-2xl font-bold text-emerald-400" id="pagesOk">--</p>
-            </div>
-            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
-                <div class="flex items-center gap-2 mb-2">
-                    <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center">
-                        <iconify-icon icon="lucide:alert-triangle" width="18" class="text-amber-400"></iconify-icon>
-                    </div>
-                    <span class="text-slate-400 text-sm">A ameliorer</span>
-                </div>
-                <p class="text-2xl font-bold text-amber-400" id="pagesWarning">--</p>
-            </div>
-            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
-                <div class="flex items-center gap-2 mb-2">
-                    <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
-                        <iconify-icon icon="lucide:x-circle" width="18" class="text-red-400"></iconify-icon>
-                    </div>
-                    <span class="text-slate-400 text-sm">Problemes</span>
-                </div>
-                <p class="text-2xl font-bold text-red-400" id="pagesError">--</p>
+            <!-- Language Switcher Pills -->
+            <div class="flex gap-1 bg-slate-800 p-1 rounded-xl border border-slate-700">
+                <button onclick="switchLang('fr')" id="langBtn-fr" class="lang-pill active flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-600 text-white">
+                    <span>🇫🇷</span> Francais
+                </button>
+                <button onclick="switchLang('en')" id="langBtn-en" class="lang-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white">
+                    <span>🇬🇧</span> English
+                </button>
+                <button onclick="switchLang('native')" id="langBtn-native" class="lang-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white">
+                    <span>🌍</span> Natives
+                </button>
             </div>
         </div>
 
+        <!-- SEO Quick Tools -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+            <a href="https://www.google.com/search?q=site:netsalaire.com" target="_blank" class="bg-slate-800 rounded-xl p-3 border border-slate-700 hover:border-indigo-500 text-center transition-colors">
+                <iconify-icon icon="logos:google-icon" width="20" class="mb-1"></iconify-icon>
+                <p class="text-white text-xs">Pages indexees</p>
+            </a>
+            <a href="https://search.google.com/test/rich-results?url=https://netsalaire.com" target="_blank" class="bg-slate-800 rounded-xl p-3 border border-slate-700 hover:border-indigo-500 text-center transition-colors">
+                <iconify-icon icon="lucide:star" width="20" class="text-amber-400 mb-1"></iconify-icon>
+                <p class="text-white text-xs">Rich Results</p>
+            </a>
+            <a href="https://pagespeed.web.dev/analysis?url=https://netsalaire.com" target="_blank" class="bg-slate-800 rounded-xl p-3 border border-slate-700 hover:border-indigo-500 text-center transition-colors">
+                <iconify-icon icon="lucide:zap" width="20" class="text-green-400 mb-1"></iconify-icon>
+                <p class="text-white text-xs">PageSpeed</p>
+            </a>
+            <a href="https://validator.w3.org/nu/?doc=https://netsalaire.com" target="_blank" class="bg-slate-800 rounded-xl p-3 border border-slate-700 hover:border-indigo-500 text-center transition-colors">
+                <iconify-icon icon="lucide:code" width="20" class="text-purple-400 mb-1"></iconify-icon>
+                <p class="text-white text-xs">HTML Validator</p>
+            </a>
+        </div>
+
+        <!-- Snippet Cards Container -->
+        <div id="snippetCards" class="space-y-4 mb-10"></div>
+
+        <!-- Summary Table -->
+        <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <iconify-icon icon="lucide:table" width="20" class="text-indigo-400"></iconify-icon>
+            Recapitulatif toutes langues
+        </h2>
         <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden mb-8">
-            <!-- Toolbar -->
-            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 px-4 py-3 bg-slate-700/30">
-                <div class="flex gap-2">
-                    <button onclick="filterByScore('all')" class="seo-score-filter active px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-600 text-white" data-score="all">Tous</button>
-                    <button onclick="filterByScore('good')" class="seo-score-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-score="good">
-                        <span class="text-emerald-400">●</span> OK
-                    </button>
-                    <button onclick="filterByScore('warning')" class="seo-score-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-score="warning">
-                        <span class="text-amber-400">●</span> Moyen
-                    </button>
-                    <button onclick="filterByScore('error')" class="seo-score-filter px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-600 text-slate-300 hover:bg-slate-500" data-score="error">
-                        <span class="text-red-400">●</span> Faible
-                    </button>
-                </div>
-                <div class="flex gap-2">
-                    <span id="changesCount" class="text-slate-400 text-xs hidden"><span class="text-amber-400 font-medium">0</span> modifications</span>
-                    <button onclick="exportSEOChanges()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1">
-                        <iconify-icon icon="lucide:download" width="14"></iconify-icon>
-                        Exporter
-                    </button>
-                </div>
-            </div>
-
-            <!-- SEO Cards -->
-            <div id="seoContainer" class="p-4 space-y-6 max-h-[800px] overflow-y-auto"></div>
-
-            <!-- Legend -->
-            <div class="px-4 py-3 bg-slate-700/30 border-t border-slate-700 flex flex-wrap gap-4 text-xs">
-                <span><span class="text-emerald-400">●</span> Optimal (80-100)</span>
-                <span><span class="text-amber-400">●</span> Moyen (50-79)</span>
-                <span><span class="text-red-400">●</span> Faible (0-49)</span>
-                <span class="ml-auto text-slate-500">Title: 50-60 chars | Desc: 140-160 chars</span>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm" id="summaryTable">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="text-left p-3 text-slate-400 font-medium text-xs">Page</th>
+                            <th class="text-left p-3 text-slate-400 font-medium text-xs">Langue</th>
+                            <th class="text-left p-3 text-slate-400 font-medium text-xs">URL</th>
+                            <th class="text-left p-3 text-slate-400 font-medium text-xs">Title</th>
+                            <th class="text-center p-3 text-slate-400 font-medium text-xs">T.Len</th>
+                            <th class="text-center p-3 text-slate-400 font-medium text-xs">D.Len</th>
+                            <th class="text-center p-3 text-slate-400 font-medium text-xs">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="summaryBody"></tbody>
+                </table>
             </div>
         </div>
 
-        <!-- Export Modal -->
-        <div id="exportModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
-            <div class="bg-slate-800 rounded-xl border border-slate-700 max-w-2xl w-full max-h-[80vh] overflow-hidden">
-                <div class="flex items-center justify-between px-4 py-3 border-b border-slate-700">
-                    <h3 class="text-white font-medium">Exporter les modifications SEO</h3>
-                    <button onclick="closeExportModal()" class="text-slate-400 hover:text-white">
-                        <iconify-icon icon="lucide:x" width="20"></iconify-icon>
-                    </button>
-                </div>
-                <div class="p-4">
-                    <p class="text-slate-400 text-sm mb-3">Copie ce JSON et colle-le moi dans le chat. Je mettrai a jour tous les fichiers automatiquement.</p>
-                    <textarea id="exportData" class="w-full h-64 bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-300 text-xs font-mono resize-none focus:outline-none focus:border-indigo-500"></textarea>
-                    <div class="flex gap-2 mt-3">
-                        <button onclick="copyExport()" class="flex-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2">
-                            <iconify-icon icon="lucide:copy" width="16"></iconify-icon>
-                            Copier
-                        </button>
-                        <button onclick="closeExportModal()" class="px-4 py-2 bg-slate-600 hover:bg-slate-500 text-white rounded-lg text-sm">Fermer</button>
-                    </div>
-                </div>
-            </div>
+        <!-- Export Section -->
+        <div class="flex items-center justify-between mb-4">
+            <p id="changesInfo" class="text-slate-500 text-sm"></p>
+            <button onclick="exportChanges()" class="flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-medium transition-colors">
+                <iconify-icon icon="lucide:download" width="14"></iconify-icon>
+                Exporter les modifications
+            </button>
+        </div>
+        <div id="exportBox" class="hidden bg-slate-800 rounded-xl border border-slate-700 p-4 mb-8">
+            <p class="text-slate-400 text-sm mb-3">Copie ce JSON et colle-le moi dans le chat :</p>
+            <textarea id="exportData" class="w-full h-48 bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-300 text-xs font-mono resize-none focus:outline-none focus:border-indigo-500"></textarea>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('exportData').value)" class="mt-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-medium">
+                Copier
+            </button>
         </div>
 
         <!-- Notes Section -->
@@ -703,20 +664,19 @@
     </footer>
 
     <script>
-        // Load saved notes
+        // ==========================================
+        // Notes (auto-save)
+        // ==========================================
         const notesTextarea = document.getElementById('notes');
         const savedNotes = localStorage.getItem('netsalaire_admin_notes');
-        if (savedNotes) {
-            notesTextarea.value = savedNotes;
-        }
-
-        // Auto-save notes
+        if (savedNotes) notesTextarea.value = savedNotes;
         notesTextarea.addEventListener('input', function() {
             localStorage.setItem('netsalaire_admin_notes', this.value);
         });
 
-        // SEO Data - All pages with current values
-        // Paired FR/EN pages
+        // ==========================================
+        // SEO DATA
+        // ==========================================
         const seoPairs = [
             {
                 name: "Accueil / Home",
@@ -1248,529 +1208,290 @@
             }
         ];
 
-        // Flatten for duplicate detection (FR/EN pairs + native pages)
-        const seoData = [
+        // Build flat list of all pages
+        const allPages = [
             ...seoPairs.flatMap(pair => [
-                { path: pair.fr.path, lang: "fr", title: pair.fr.title, desc: pair.fr.desc },
-                { path: pair.en.path, lang: "en", title: pair.en.title, desc: pair.en.desc }
+                { name: pair.name, lang: 'fr', langLabel: 'Francais', flag: '\u{1F1EB}\u{1F1F7}', path: pair.fr.path, title: pair.fr.title, desc: pair.fr.desc },
+                { name: pair.name, lang: 'en', langLabel: 'English', flag: '\u{1F1EC}\u{1F1E7}', path: pair.en.path, title: pair.en.title, desc: pair.en.desc }
             ]),
-            ...seoNativePages.map(p => ({ path: p.url, lang: "native", title: p.title, desc: p.desc }))
+            ...seoNativePages.map(p => {
+                const parts = p.url.split('/').filter(Boolean);
+                const langCode = parts[0] || '';
+                const country = parts[1] || '';
+                return {
+                    name: country.charAt(0).toUpperCase() + country.slice(1).replace(/-/g,' '),
+                    lang: 'native',
+                    langLabel: langCode.toUpperCase(),
+                    flag: '\u{1F310}',
+                    path: p.url,
+                    title: p.title,
+                    desc: p.desc
+                };
+            })
         ];
 
-        // Track changes
+        // ==========================================
+        // STATE
+        // ==========================================
+        let currentLang = 'fr';
+        let editingPath = null;
         let seoChanges = JSON.parse(localStorage.getItem('seoChanges') || '{}');
-        let currentScoreFilter = null;
 
-        // Find duplicates across all pages
-        function findDuplicates() {
-            const titles = {};
-            const descs = {};
+        // ==========================================
+        // HELPERS
+        // ==========================================
+        function esc(s) { const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+        function getTitle(page) { return seoChanges[page.path]?.title ?? page.title; }
+        function getDesc(page) { return seoChanges[page.path]?.desc ?? page.desc; }
 
-            seoData.forEach(item => {
-                const title = (seoChanges[item.path]?.title || item.title).toLowerCase().trim();
-                const desc = (seoChanges[item.path]?.desc || item.desc).toLowerCase().trim();
-
-                if (!titles[title]) titles[title] = [];
-                titles[title].push(item.path);
-
-                if (!descs[desc]) descs[desc] = [];
-                descs[desc].push(item.path);
-            });
-
-            return { titles, descs };
-        }
-
-        // Calculate SEO score for a page
-        function calculateSEOScore(title, desc, path, duplicates) {
-            let score = 0;
-            let checks = [];
-
-            // Title length check (40 points max)
-            const titleLen = title.length;
-            if (titleLen >= 50 && titleLen <= 60) {
-                score += 40;
-                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'good' });
-            } else if (titleLen >= 40 && titleLen <= 70) {
-                score += 20;
-                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'warning' });
-            } else {
-                checks.push({ text: `Title: ${titleLen} caracteres (optimal: 50-60)`, status: 'error' });
-            }
-
-            // Title uniqueness check (10 points)
-            const titleKey = title.toLowerCase().trim();
-            const titleDupes = duplicates.titles[titleKey] || [];
-            if (titleDupes.length <= 1) {
-                score += 10;
-                checks.push({ text: 'Title unique', status: 'good' });
-            } else {
-                const otherPages = titleDupes.filter(p => p !== path);
-                checks.push({ text: `Title duplique avec: ${otherPages.join(', ')}`, status: 'error' });
-            }
-
-            // Description length check (40 points max)
-            const descLen = desc.length;
-            if (descLen >= 140 && descLen <= 160) {
-                score += 40;
-                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'good' });
-            } else if (descLen >= 120 && descLen <= 180) {
-                score += 20;
-                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'warning' });
-            } else {
-                checks.push({ text: `Description: ${descLen} caracteres (optimal: 140-160)`, status: 'error' });
-            }
-
-            // Description uniqueness check (10 points)
-            const descKey = desc.toLowerCase().trim();
-            const descDupes = duplicates.descs[descKey] || [];
-            if (descDupes.length <= 1) {
-                score += 10;
-                checks.push({ text: 'Description unique', status: 'good' });
-            } else {
-                const otherPages = descDupes.filter(p => p !== path);
-                checks.push({ text: `Description dupliquee avec: ${otherPages.join(', ')}`, status: 'error' });
-            }
-
-            return { score, checks };
-        }
-
-        // Get score color and status
-        function getScoreColor(score) {
-            if (score >= 80) return { color: 'emerald', status: 'good', label: 'Excellent' };
-            if (score >= 50) return { color: 'amber', status: 'warning', label: 'Moyen' };
-            return { color: 'red', status: 'error', label: 'A ameliorer' };
-        }
-
-        // Get char count color
-        function getCountColor(len, min, max) {
+        function lenColor(len, min, max) {
             if (len >= min && len <= max) return 'text-emerald-400';
-            if (len > max) return 'text-amber-400';
+            if (len < min) return 'text-amber-400';
             return 'text-red-400';
         }
 
-        // Update overview stats
-        function updateOverviewStats() {
-            let totalScore = 0;
-            let pagesOk = 0;
-            let pagesWarning = 0;
-            let pagesError = 0;
-
-            const duplicates = findDuplicates();
-
-            seoData.forEach(item => {
-                const savedTitle = seoChanges[item.path]?.title || item.title;
-                const savedDesc = seoChanges[item.path]?.desc || item.desc;
-                const { score } = calculateSEOScore(savedTitle, savedDesc, item.path, duplicates);
-                totalScore += score;
-
-                const { status } = getScoreColor(score);
-                if (status === 'good') pagesOk++;
-                else if (status === 'warning') pagesWarning++;
-                else pagesError++;
-            });
-
-            document.getElementById('avgScore').textContent = Math.round(totalScore / seoData.length) + '/100';
-            document.getElementById('pagesOk').textContent = pagesOk;
-            document.getElementById('pagesWarning').textContent = pagesWarning;
-            document.getElementById('pagesError').textContent = pagesError;
+        function statusBadge(tLen, dLen) {
+            const tOk = tLen >= 50 && tLen <= 60;
+            const dOk = dLen >= 150 && dLen <= 160;
+            if (tOk && dOk) return '<span class="text-emerald-400 font-semibold">OK</span>';
+            return '<span class="text-amber-400 font-semibold">!</span>';
         }
 
-        // Render SEO cards (FR + EN paired)
-        function renderSEOCards() {
-            const container = document.getElementById('seoContainer');
+        function getPagesForLang(lang) {
+            return allPages.filter(p => p.lang === lang);
+        }
+
+        // ==========================================
+        // UPDATE SUMMARY
+        // ==========================================
+        function updateSummary() {
+            const frPages = getPagesForLang('fr');
+            const enPages = getPagesForLang('en');
+            const natPages = getPagesForLang('native');
+            const total = allPages.length;
+
+            let okCount = 0;
+            allPages.forEach(p => {
+                const t = getTitle(p), d = getDesc(p);
+                if (t.length >= 50 && t.length <= 60 && d.length >= 150 && d.length <= 160) okCount++;
+            });
+
+            document.getElementById('seoSummaryText').innerHTML =
+                frPages.length + ' FR + ' + enPages.length + ' EN + ' + natPages.length + ' Natives = <strong class="text-white">' + total + ' pages</strong> — ' +
+                '<span class="' + (okCount === total ? 'text-emerald-400' : 'text-amber-400') + ' font-semibold">' + okCount + '/' + total + ' OK</span>';
+
+            // Changes info
+            const changeCount = Object.keys(seoChanges).length;
+            const info = document.getElementById('changesInfo');
+            if (changeCount > 0) {
+                info.innerHTML = '<span class="text-amber-400 font-medium">' + changeCount + '</span> modification(s) non exportee(s)';
+            } else {
+                info.textContent = '';
+            }
+        }
+
+        // ==========================================
+        // LANGUAGE SWITCHER
+        // ==========================================
+        function switchLang(lang) {
+            currentLang = lang;
+            editingPath = null;
+            document.querySelectorAll('.lang-pill').forEach(b => {
+                b.classList.remove('active', 'bg-indigo-600', 'text-white');
+                b.classList.add('text-slate-400');
+            });
+            const btn = document.getElementById('langBtn-' + lang);
+            btn.classList.add('active', 'bg-indigo-600', 'text-white');
+            btn.classList.remove('text-slate-400');
+            renderCards();
+        }
+
+        // ==========================================
+        // EDIT FUNCTIONS
+        // ==========================================
+        function startEdit(path) {
+            editingPath = path;
+            renderCards();
+            // Fill inputs after render
+            const page = allPages.find(p => p.path === path);
+            if (page) {
+                const ti = document.getElementById('editTitle');
+                const di = document.getElementById('editDesc');
+                if (ti) { ti.value = getTitle(page); ti.focus(); }
+                if (di) di.value = getDesc(page);
+                updateEditCounts();
+            }
+        }
+
+        function cancelEdit() {
+            editingPath = null;
+            renderCards();
+        }
+
+        function saveEdit(path, origTitle, origDesc) {
+            const newTitle = document.getElementById('editTitle').value;
+            const newDesc = document.getElementById('editDesc').value;
+
+            if (newTitle.trim() === origTitle.trim() && newDesc.trim() === origDesc.trim()) {
+                delete seoChanges[path];
+            } else {
+                seoChanges[path] = {};
+                if (newTitle.trim() !== origTitle.trim()) seoChanges[path].title = newTitle;
+                if (newDesc.trim() !== origDesc.trim()) seoChanges[path].desc = newDesc;
+                if (Object.keys(seoChanges[path]).length === 0) delete seoChanges[path];
+            }
+
+            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
+            editingPath = null;
+            renderCards();
+        }
+
+        function updateEditCounts() {
+            const ti = document.getElementById('editTitle');
+            const di = document.getElementById('editDesc');
+            const tc = document.getElementById('editTitleCount');
+            const dc = document.getElementById('editDescCount');
+            const pt = document.getElementById('previewTitle');
+            const pd = document.getElementById('previewDesc');
+
+            if (ti && tc) {
+                const len = ti.value.length;
+                tc.className = 'text-xs font-mono ' + lenColor(len, 50, 60);
+                tc.textContent = len + ' / 60';
+            }
+            if (di && dc) {
+                const len = di.value.length;
+                dc.className = 'text-xs font-mono ' + lenColor(len, 150, 160);
+                dc.textContent = len + ' / 160';
+            }
+            if (ti && pt) pt.textContent = ti.value || '\u2014';
+            if (di && pd) pd.textContent = di.value || '\u2014';
+        }
+
+        // ==========================================
+        // RENDER CARDS
+        // ==========================================
+        function renderCards() {
+            const container = document.getElementById('snippetCards');
+            const pages = getPagesForLang(currentLang);
             container.innerHTML = '';
 
-            const duplicates = findDuplicates();
+            pages.forEach(page => {
+                const title = getTitle(page);
+                const desc = getDesc(page);
+                const tLen = title.length;
+                const dLen = desc.length;
+                const isEditing = editingPath === page.path;
+                const hasChanges = seoChanges[page.path] !== undefined;
+                const borderClass = hasChanges ? 'border-amber-500/50' : 'border-slate-700';
 
-            seoPairs.forEach((pair, pairIndex) => {
-                const frPath = pair.fr.path;
-                const enPath = pair.en.path;
+                let html = '';
+                html += '<div class="bg-slate-800 rounded-xl border ' + borderClass + ' p-5 space-y-4">';
 
-                const frTitle = seoChanges[frPath]?.title || pair.fr.title;
-                const frDesc = seoChanges[frPath]?.desc || pair.fr.desc;
-                const enTitle = seoChanges[enPath]?.title || pair.en.title;
-                const enDesc = seoChanges[enPath]?.desc || pair.en.desc;
+                // --- Header row ---
+                html += '<div class="flex flex-wrap items-center justify-between gap-2">';
+                html += '<div class="flex items-center gap-3 min-w-0">';
+                html += '<iconify-icon icon="lucide:globe" width="18" class="text-indigo-400 flex-shrink-0"></iconify-icon>';
+                html += '<h3 class="font-bold text-white text-base truncate">' + esc(page.name) + '</h3>';
+                html += '<span class="hidden sm:inline text-xs text-slate-500 bg-slate-700/50 px-2 py-0.5 rounded-full font-mono truncate max-w-xs">' + esc(page.path) + '</span>';
+                html += '</div>';
 
-                const frHasChanges = seoChanges[frPath] !== undefined;
-                const enHasChanges = seoChanges[enPath] !== undefined;
-                const hasChanges = frHasChanges || enHasChanges;
-
-                const frScore = calculateSEOScore(frTitle, frDesc, frPath, duplicates);
-                const enScore = calculateSEOScore(enTitle, enDesc, enPath, duplicates);
-                const avgScore = Math.round((frScore.score + enScore.score) / 2);
-                const { color, status, label } = getScoreColor(avgScore);
-
-                const card = document.createElement('div');
-                card.className = `seo-card fr en ${status} bg-slate-700/30 rounded-xl p-5 border-2 ${hasChanges ? 'border-amber-500/50' : `border-${color}-500/30`}`;
-                card.dataset.score = status;
-
-                card.innerHTML = `
-                    <!-- Header -->
-                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-600">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-${color}-500/20 flex items-center justify-center">
-                                <span class="text-${color}-400 font-bold text-lg">${avgScore}</span>
-                            </div>
-                            <div>
-                                <span class="text-white font-semibold">${pair.name}</span>
-                                <div class="text-xs text-${color}-400">${label}</div>
-                            </div>
-                        </div>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-2 py-1 rounded-lg bg-indigo-600/30 text-indigo-300">FR: ${frScore.score}</span>
-                            <span class="text-xs px-2 py-1 rounded-lg bg-blue-600/30 text-blue-300">EN: ${enScore.score}</span>
-                        </div>
-                    </div>
-
-                    <!-- FR Section -->
-                    <div class="mb-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <iconify-icon icon="circle-flags:fr" width="20"></iconify-icon>
-                            <span class="text-white font-medium">Francais</span>
-                            <a href="${frPath}" target="_blank" class="text-slate-400 hover:text-indigo-400 text-xs ml-auto flex items-center gap-1">
-                                ${frPath}
-                                <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
-                            </a>
-                        </div>
-                        <!-- FR SERP Preview -->
-                        <div class="bg-white rounded-lg p-3 mb-3">
-                            <div class="text-xs text-green-700 mb-0.5">netsalaire.com${frPath}</div>
-                            <div class="text-blue-800 text-base hover:underline cursor-pointer mb-0.5 font-medium" style="font-family: arial, sans-serif;">${frTitle.length > 60 ? frTitle.substring(0, 57) + '...' : frTitle}</div>
-                            <div class="text-xs text-gray-600" style="font-family: arial, sans-serif;">${frDesc.length > 160 ? frDesc.substring(0, 157) + '...' : frDesc}</div>
-                        </div>
-                        <div class="space-y-3">
-                            <div>
-                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
-                                    <span>Title</span>
-                                    <span class="${getCountColor(frTitle.length, 50, 60)}" id="titleCount-fr-${pairIndex}">${frTitle.length}/60</span>
-                                </label>
-                                <input type="text"
-                                       value="${frTitle.replace(/"/g, '&quot;')}"
-                                       data-path="${frPath}"
-                                       data-field="title"
-                                       data-original="${pair.fr.title.replace(/"/g, '&quot;')}"
-                                       data-index="fr-${pairIndex}"
-                                       id="titleInput-fr-${pairIndex}"
-                                       class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500"
-                                       oninput="updateCounter(this)">
-                            </div>
-                            <div>
-                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
-                                    <span>Description</span>
-                                    <span class="${getCountColor(frDesc.length, 140, 160)}" id="descCount-fr-${pairIndex}">${frDesc.length}/160</span>
-                                </label>
-                                <textarea data-path="${frPath}"
-                                          data-field="desc"
-                                          data-original="${pair.fr.desc.replace(/"/g, '&quot;')}"
-                                          data-index="fr-${pairIndex}"
-                                          id="descInput-fr-${pairIndex}"
-                                          class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-16"
-                                          oninput="updateCounter(this)">${frDesc}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- EN Section -->
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-3">
-                            <iconify-icon icon="circle-flags:gb" width="20"></iconify-icon>
-                            <span class="text-white font-medium">English</span>
-                            <a href="${enPath}" target="_blank" class="text-slate-400 hover:text-indigo-400 text-xs ml-auto flex items-center gap-1">
-                                ${enPath}
-                                <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
-                            </a>
-                        </div>
-                        <!-- EN SERP Preview -->
-                        <div class="bg-white rounded-lg p-3 mb-3">
-                            <div class="text-xs text-green-700 mb-0.5">netsalaire.com${enPath}</div>
-                            <div class="text-blue-800 text-base hover:underline cursor-pointer mb-0.5 font-medium" style="font-family: arial, sans-serif;">${enTitle.length > 60 ? enTitle.substring(0, 57) + '...' : enTitle}</div>
-                            <div class="text-xs text-gray-600" style="font-family: arial, sans-serif;">${enDesc.length > 160 ? enDesc.substring(0, 157) + '...' : enDesc}</div>
-                        </div>
-                        <div class="space-y-3">
-                            <div>
-                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
-                                    <span>Title</span>
-                                    <span class="${getCountColor(enTitle.length, 50, 60)}" id="titleCount-en-${pairIndex}">${enTitle.length}/60</span>
-                                </label>
-                                <input type="text"
-                                       value="${enTitle.replace(/"/g, '&quot;')}"
-                                       data-path="${enPath}"
-                                       data-field="title"
-                                       data-original="${pair.en.title.replace(/"/g, '&quot;')}"
-                                       data-index="en-${pairIndex}"
-                                       id="titleInput-en-${pairIndex}"
-                                       class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500"
-                                       oninput="updateCounter(this)">
-                            </div>
-                            <div>
-                                <label class="text-slate-400 text-xs flex items-center justify-between mb-1">
-                                    <span>Description</span>
-                                    <span class="${getCountColor(enDesc.length, 140, 160)}" id="descCount-en-${pairIndex}">${enDesc.length}/160</span>
-                                </label>
-                                <textarea data-path="${enPath}"
-                                          data-field="desc"
-                                          data-original="${pair.en.desc.replace(/"/g, '&quot;')}"
-                                          data-index="en-${pairIndex}"
-                                          id="descInput-en-${pairIndex}"
-                                          class="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500 resize-none h-16"
-                                          oninput="updateCounter(this)">${enDesc}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Save Button -->
-                    <button onclick="saveSEOPair(${pairIndex})" id="saveBtn-${pairIndex}" class="w-full px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
-                        <iconify-icon icon="lucide:save" width="16"></iconify-icon>
-                        Enregistrer FR + EN
-                    </button>
-
-                    ${hasChanges ? `
-                        <div class="mt-4 pt-4 border-t border-slate-600 flex justify-between items-center">
-                            <span class="text-amber-400 text-xs flex items-center gap-1">
-                                <iconify-icon icon="lucide:edit-3" width="12"></iconify-icon>
-                                Modifie (non sauvegarde)
-                            </span>
-                            <button onclick="resetSEOPair(${pairIndex})" class="text-xs text-slate-400 hover:text-red-400 flex items-center gap-1">
-                                <iconify-icon icon="lucide:undo" width="12"></iconify-icon>
-                                Reset
-                            </button>
-                        </div>
-                    ` : ''}
-                `;
-                container.appendChild(card);
-            });
-
-            updateChangesCount();
-            // Use setTimeout to ensure inputs are rendered before calculating stats
-            setTimeout(updateLiveStats, 100);
-        }
-
-        // Debounce timer for stats update
-        let statsUpdateTimer = null;
-
-        function updateCounter(input) {
-            const field = input.dataset.field;
-            const index = input.dataset.index;
-            const value = input.value;
-
-            // Update counter
-            const counterId = field === 'title' ? `titleCount-${index}` : `descCount-${index}`;
-            const barId = field === 'title' ? `titleBar-${index}` : `descBar-${index}`;
-            const min = field === 'title' ? 50 : 140;
-            const max = field === 'title' ? 60 : 160;
-
-            const counter = document.getElementById(counterId);
-            counter.textContent = `${value.length}/${max}`;
-            counter.className = getCountColor(value.length, min, max);
-
-            // Update progress bar
-            const bar = document.getElementById(barId);
-            if (bar) {
-                const isOptimal = value.length >= min && value.length <= max;
-                const isTooLong = value.length > max;
-                bar.className = `h-full ${isOptimal ? 'bg-emerald-500' : isTooLong ? 'bg-amber-500' : 'bg-red-500'}`;
-                bar.style.width = `${Math.min(value.length / max * 100, 100)}%`;
-            }
-
-            // Debounced stats update (recalculate after 300ms of no typing)
-            clearTimeout(statsUpdateTimer);
-            statsUpdateTimer = setTimeout(updateLiveStats, 300);
-        }
-
-        // Update stats based on current input values (live, not saved)
-        function updateLiveStats() {
-            let totalScore = 0;
-            let pagesOk = 0;
-            let pagesWarning = 0;
-            let pagesError = 0;
-
-            // Build current values from inputs
-            const currentData = [];
-            seoPairs.forEach((pair, i) => {
-                const frTitleEl = document.getElementById(`titleInput-fr-${i}`);
-                const frDescEl = document.getElementById(`descInput-fr-${i}`);
-                const enTitleEl = document.getElementById(`titleInput-en-${i}`);
-                const enDescEl = document.getElementById(`descInput-en-${i}`);
-
-                if (frTitleEl && frDescEl) {
-                    currentData.push({ path: pair.fr.path, title: frTitleEl.value, desc: frDescEl.value });
-                }
-                if (enTitleEl && enDescEl) {
-                    currentData.push({ path: pair.en.path, title: enTitleEl.value, desc: enDescEl.value });
-                }
-            });
-
-            // Find duplicates in current data
-            const titles = {};
-            const descs = {};
-            currentData.forEach(item => {
-                const title = item.title.toLowerCase().trim();
-                const desc = item.desc.toLowerCase().trim();
-                if (!titles[title]) titles[title] = [];
-                titles[title].push(item.path);
-                if (!descs[desc]) descs[desc] = [];
-                descs[desc].push(item.path);
-            });
-
-            // Calculate scores
-            currentData.forEach(item => {
-                const { score } = calculateSEOScore(item.title, item.desc, item.path, { titles, descs });
-                totalScore += score;
-
-                const { status } = getScoreColor(score);
-                if (status === 'good') pagesOk++;
-                else if (status === 'warning') pagesWarning++;
-                else pagesError++;
-            });
-
-            // Update display
-            const count = currentData.length || 1;
-            document.getElementById('avgScore').textContent = Math.round(totalScore / count) + '/100';
-            document.getElementById('pagesOk').textContent = pagesOk;
-            document.getElementById('pagesWarning').textContent = pagesWarning;
-            document.getElementById('pagesError').textContent = pagesError;
-        }
-
-        // Save FR + EN pair (called by button)
-        function saveSEOPair(pairIndex) {
-            const pair = seoPairs[pairIndex];
-
-            // Save FR
-            const frTitleInput = document.getElementById(`titleInput-fr-${pairIndex}`);
-            const frDescInput = document.getElementById(`descInput-fr-${pairIndex}`);
-            saveSinglePage(pair.fr.path, frTitleInput, frDescInput);
-
-            // Save EN
-            const enTitleInput = document.getElementById(`titleInput-en-${pairIndex}`);
-            const enDescInput = document.getElementById(`descInput-en-${pairIndex}`);
-            saveSinglePage(pair.en.path, enTitleInput, enDescInput);
-
-            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
-
-            // Show confirmation
-            const btn = document.getElementById(`saveBtn-${pairIndex}`);
-            btn.innerHTML = '<iconify-icon icon="lucide:check" width="16"></iconify-icon> Enregistre !';
-            btn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
-            btn.classList.add('bg-emerald-600');
-
-            setTimeout(() => {
-                renderSEOCards();
-            }, 500);
-        }
-
-        // Helper to save single page
-        function saveSinglePage(path, titleInput, descInput) {
-            const titleValue = titleInput.value;
-            const descValue = descInput.value;
-            const titleOriginal = titleInput.dataset.original;
-            const descOriginal = descInput.dataset.original;
-
-            if (titleValue !== titleOriginal) {
-                if (!seoChanges[path]) seoChanges[path] = {};
-                seoChanges[path].title = titleValue;
-            } else if (seoChanges[path]) {
-                delete seoChanges[path].title;
-            }
-
-            if (descValue !== descOriginal) {
-                if (!seoChanges[path]) seoChanges[path] = {};
-                seoChanges[path].desc = descValue;
-            } else if (seoChanges[path]) {
-                delete seoChanges[path].desc;
-            }
-
-            if (seoChanges[path] && Object.keys(seoChanges[path]).length === 0) {
-                delete seoChanges[path];
-            }
-        }
-
-        // Reset pair
-        function resetSEOPair(pairIndex) {
-            const pair = seoPairs[pairIndex];
-            delete seoChanges[pair.fr.path];
-            delete seoChanges[pair.en.path];
-            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
-            renderSEOCards();
-        }
-
-        // Update changes count
-        function handleNativeSEOInput(el) {
-            const path = el.dataset.path;
-            const field = el.dataset.field;
-            const original = el.dataset.original;
-            const value = el.value || el.textContent;
-
-            if (value.trim() === original.trim()) {
-                if (seoChanges[path]) {
-                    delete seoChanges[path][field];
-                    if (Object.keys(seoChanges[path]).length === 0) delete seoChanges[path];
-                }
-            } else {
-                if (!seoChanges[path]) seoChanges[path] = {};
-                seoChanges[path][field] = value;
-            }
-
-            localStorage.setItem('seoChanges', JSON.stringify(seoChanges));
-            renderSEOCards();
-        }
-
-        function updateChangesCount() {
-            const count = Object.keys(seoChanges).length;
-            const countEl = document.getElementById('changesCount');
-            if (count > 0) {
-                countEl.classList.remove('hidden');
-                countEl.innerHTML = `<span class="text-amber-400 font-medium">${count}</span> modification${count > 1 ? 's' : ''}`;
-            } else {
-                countEl.classList.add('hidden');
-            }
-        }
-
-        // Filter SEO cards by language
-        // Filter by score
-        function filterByScore(scoreStatus) {
-            currentScoreFilter = scoreStatus === 'all' ? null : scoreStatus;
-
-            document.querySelectorAll('.seo-score-filter').forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white');
-                btn.classList.add('bg-slate-600', 'text-slate-300');
-            });
-            document.querySelector(`[data-score="${scoreStatus}"]`).classList.remove('bg-slate-600', 'text-slate-300');
-            document.querySelector(`[data-score="${scoreStatus}"]`).classList.add('bg-indigo-600', 'text-white');
-
-            document.querySelectorAll('.seo-card').forEach(card => {
-                if (scoreStatus === 'all' || card.dataset.score === scoreStatus) {
-                    card.style.display = '';
+                if (isEditing) {
+                    html += '<div class="flex items-center gap-2">';
+                    html += '<button onclick="cancelEdit()" class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-700 text-slate-300 hover:text-white transition-colors"><iconify-icon icon="lucide:x" width="14"></iconify-icon> Annuler</button>';
+                    html += '<button onclick="saveEdit(\'' + page.path.replace(/'/g,"\\'") + '\',\'' + page.title.replace(/'/g,"\\'").replace(/\\/g,"\\\\") + '\',\'' + page.desc.replace(/'/g,"\\'").replace(/\\/g,"\\\\") + '\')" class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"><iconify-icon icon="lucide:check" width="14"></iconify-icon> Enregistrer</button>';
+                    html += '</div>';
                 } else {
-                    card.style.display = 'none';
+                    html += '<button onclick="startEdit(\'' + page.path.replace(/'/g,"\\'") + '\')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 transition-colors"><iconify-icon icon="lucide:pencil" width="14"></iconify-icon> Modifier</button>';
                 }
+                html += '</div>';
+
+                if (isEditing) {
+                    // --- Edit mode ---
+                    html += '<div class="space-y-3">';
+                    html += '<div><div class="flex items-center justify-between mb-1"><label class="text-xs font-medium text-slate-400">Title</label><span id="editTitleCount" class="text-xs font-mono text-slate-500">0 / 60</span></div>';
+                    html += '<input type="text" id="editTitle" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/30" oninput="updateEditCounts()"></div>';
+                    html += '<div><div class="flex items-center justify-between mb-1"><label class="text-xs font-medium text-slate-400">Description</label><span id="editDescCount" class="text-xs font-mono text-slate-500">0 / 160</span></div>';
+                    html += '<textarea id="editDesc" rows="3" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/30 resize-none" oninput="updateEditCounts()"></textarea></div>';
+                    // Live Google preview
+                    html += '<div><p class="text-xs text-slate-500 mb-1.5">Apercu Google</p>';
+                    html += '<div class="bg-white rounded-xl p-4 space-y-1">';
+                    html += '<p class="text-xs text-[#202124]">netsalaire.com' + esc(page.path) + '</p>';
+                    html += '<p id="previewTitle" class="text-[#1a0dab] text-base font-medium leading-tight" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">\u2014</p>';
+                    html += '<p id="previewDesc" class="text-sm text-[#4d5156] leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">\u2014</p>';
+                    html += '</div></div>';
+                    html += '</div>';
+                } else {
+                    // --- Google SERP preview ---
+                    html += '<div class="bg-white rounded-xl p-4 space-y-1">';
+                    html += '<p class="text-xs text-[#202124]">netsalaire.com' + esc(page.path) + '</p>';
+                    html += '<p class="text-[#1a0dab] text-base font-medium leading-tight cursor-default" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">' + esc(title) + '</p>';
+                    html += '<p class="text-sm text-[#4d5156] leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">' + esc(desc) + '</p>';
+                    html += '</div>';
+                }
+
+                // --- Character count stats ---
+                const tColor = tLen >= 50 && tLen <= 60 ? 'text-emerald-400' : (tLen < 50 ? 'text-amber-400' : 'text-red-400');
+                const dColor = dLen >= 150 && dLen <= 160 ? 'text-emerald-400' : (dLen < 150 ? 'text-amber-400' : 'text-red-400');
+
+                html += '<div class="flex flex-wrap gap-4 text-sm">';
+                html += '<div class="flex items-center gap-2"><iconify-icon icon="lucide:type" width="14" class="text-slate-500"></iconify-icon><span class="text-slate-400">Title :</span><span class="font-semibold ' + tColor + '">' + tLen + ' car.</span><span class="text-xs text-slate-500">(ideal 50-60)</span></div>';
+                html += '<div class="flex items-center gap-2"><iconify-icon icon="lucide:align-left" width="14" class="text-slate-500"></iconify-icon><span class="text-slate-400">Description :</span><span class="font-semibold ' + dColor + '">' + dLen + ' car.</span><span class="text-xs text-slate-500">(ideal 150-160)</span></div>';
+                html += '</div>';
+
+                html += '</div>';
+
+                container.insertAdjacentHTML('beforeend', html);
             });
+
+            updateSummary();
+            renderSummaryTable();
         }
 
-        // Export changes
-        function exportSEOChanges() {
-            if (Object.keys(seoChanges).length === 0) {
-                alert('Aucune modification a exporter.');
-                return;
+        // ==========================================
+        // RENDER SUMMARY TABLE
+        // ==========================================
+        function renderSummaryTable() {
+            const tbody = document.getElementById('summaryBody');
+            let rows = '';
+
+            allPages.forEach(page => {
+                const title = getTitle(page);
+                const desc = getDesc(page);
+                const tLen = title.length;
+                const dLen = desc.length;
+                const tColor = tLen >= 50 && tLen <= 60 ? 'text-emerald-400' : 'text-red-400';
+                const dColor = dLen >= 150 && dLen <= 160 ? 'text-emerald-400' : 'text-red-400';
+
+                rows += '<tr class="border-b border-slate-700/50 hover:bg-slate-700/20">';
+                rows += '<td class="p-2.5 text-white font-medium text-xs">' + esc(page.name) + '</td>';
+                rows += '<td class="p-2.5 text-slate-400 text-xs"><span class="inline-flex items-center gap-1">' + page.flag + ' ' + esc(page.langLabel) + '</span></td>';
+                rows += '<td class="p-2.5 text-slate-500 text-xs font-mono max-w-[180px] truncate">' + esc(page.path) + '</td>';
+                rows += '<td class="p-2.5 text-slate-300 text-xs max-w-xs truncate">' + esc(title) + '</td>';
+                rows += '<td class="p-2.5 text-center font-mono text-xs ' + tColor + '">' + tLen + '</td>';
+                rows += '<td class="p-2.5 text-center font-mono text-xs ' + dColor + '">' + dLen + '</td>';
+                rows += '<td class="p-2.5 text-center">' + statusBadge(tLen, dLen) + '</td>';
+                rows += '</tr>';
+            });
+
+            tbody.innerHTML = rows;
+        }
+
+        // ==========================================
+        // EXPORT
+        // ==========================================
+        function exportChanges() {
+            const box = document.getElementById('exportBox');
+            box.classList.toggle('hidden');
+            if (!box.classList.contains('hidden')) {
+                document.getElementById('exportData').value = JSON.stringify(seoChanges, null, 2);
             }
-            document.getElementById('exportData').value = JSON.stringify(seoChanges, null, 2);
-            document.getElementById('exportModal').classList.remove('hidden');
-            document.getElementById('exportModal').classList.add('flex');
         }
 
-        function closeExportModal() {
-            document.getElementById('exportModal').classList.add('hidden');
-            document.getElementById('exportModal').classList.remove('flex');
-        }
-
-        function copyExport() {
-            const textarea = document.getElementById('exportData');
-            textarea.select();
-            document.execCommand('copy');
-            alert('Copie ! Colle-le dans le chat.');
-        }
-
-        // Initialize
-        renderSEOCards();
+        // ==========================================
+        // INIT
+        // ==========================================
+        renderCards();
     </script>
 </body>
 </html>

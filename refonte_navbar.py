@@ -15,6 +15,91 @@ import glob
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# ============================================================
+# NATIVE LANGUAGE MAPS
+# Maps fr_slug -> (lang_code, native_url, lang_name, flag_emoji)
+# ============================================================
+NATIVE_LANG_MAP = {
+    'allemagne': ('de', '/de/deutschland/einkommensteuer/', 'Deutsch', '🇩🇪'),
+    'autriche': ('de', '/de/oesterreich/einkommensteuer/', 'Deutsch', '🇦🇹'),
+    'suisse': ('de', '/de/schweiz/einkommensteuer/', 'Deutsch', '🇨🇭'),
+    'espagne': ('es', '/es/espana/simulador-impuestos/', 'Español', '🇪🇸'),
+    'mexique': ('es', '/es/mexico/simulador-impuestos/', 'Español', '🇲🇽'),
+    'argentine': ('es', '/es/argentina/simulador-impuestos/', 'Español', '🇦🇷'),
+    'chili': ('es', '/es/chile/simulador-impuestos/', 'Español', '🇨🇱'),
+    'colombie': ('es', '/es/colombia/simulador-impuestos/', 'Español', '🇨🇴'),
+    'perou': ('es', '/es/peru/simulador-impuestos/', 'Español', '🇵🇪'),
+    'portugal': ('pt', '/pt/portugal/simulador-impostos/', 'Português', '🇵🇹'),
+    'bresil': ('pt', '/pt/brasil/simulador-impostos/', 'Português', '🇧🇷'),
+    'pays-bas': ('nl', '/nl/nederland/belasting-berekenen/', 'Nederlands', '🇳🇱'),
+    'belgique': ('nl', '/nl/belgie/belasting-berekenen/', 'Nederlands', '🇧🇪'),
+    'arabie-saoudite': ('ar', '/ar/arabie-saoudite/tax-calculator/', 'العربية', '🇸🇦'),
+    'dubai': ('ar', '/ar/dubai/tax-calculator/', 'العربية', '🇦🇪'),
+    'qatar': ('ar', '/ar/qatar/tax-calculator/', 'العربية', '🇶🇦'),
+    'koweit': ('ar', '/ar/koweit/tax-calculator/', 'العربية', '🇰🇼'),
+    'egypte': ('ar', '/ar/egypte/tax-calculator/', 'العربية', '🇪🇬'),
+    'italie': ('it', '/it/italia/calcolatore-imposte/', 'Italiano', '🇮🇹'),
+    'suede': ('sv', '/sv/sverige/skatteberaknare/', 'Svenska', '🇸🇪'),
+    'norvege': ('no', '/no/norge/skattekalkulator/', 'Norsk', '🇳🇴'),
+    'danemark': ('da', '/da/danmark/skatteberegner/', 'Dansk', '🇩🇰'),
+    'finlande': ('fi', '/fi/suomi/verolaskuri/', 'Suomi', '🇫🇮'),
+    'grece': ('el', '/el/ellada/ypologismos-forou/', 'Ελληνικά', '🇬🇷'),
+    'pologne': ('pl', '/pl/polska/kalkulator-podatkowy/', 'Polski', '🇵🇱'),
+    'tchequie': ('cs', '/cs/cesko/danovy-kalkulator/', 'Čeština', '🇨🇿'),
+    'hongrie': ('hu', '/hu/magyarorszag/ado-kalkulator/', 'Magyar', '🇭🇺'),
+    'roumanie': ('ro', '/ro/romania/calculator-impozit/', 'Română', '🇷🇴'),
+    'croatie': ('hr', '/hr/hrvatska/porezni-kalkulator/', 'Hrvatski', '🇭🇷'),
+    'turquie': ('tr', '/tr/turkiye/vergi-hesaplama/', 'Türkçe', '🇹🇷'),
+    'japon': ('ja', '/ja/nihon/zeikin-keisan/', '日本語', '🇯🇵'),
+    'coree-du-sud': ('ko', '/ko/hanguk/segeum-gyesan/', '한국어', '🇰🇷'),
+    'chine': ('zh', '/zh/zhongguo/shuishou-jisuan/', '中文', '🇨🇳'),
+    'thailande': ('th', '/th/prathet-thai/khamnuan-phasi/', 'ไทย', '🇹🇭'),
+    'malaisie': ('ms', '/ms/malaysia/kalkulator-cukai/', 'Bahasa Melayu', '🇲🇾'),
+    'indonesie': ('id', '/id/indonesia/kalkulator-pajak/', 'Bahasa Indonesia', '🇮🇩'),
+    'vietnam': ('vi', '/vi/viet-nam/tinh-thue/', 'Tiếng Việt', '🇻🇳'),
+}
+
+# EN slug -> same info
+EN_NATIVE_LANG_MAP = {
+    'germany': ('de', '/de/deutschland/einkommensteuer/', 'Deutsch', '🇩🇪'),
+    'austria': ('de', '/de/oesterreich/einkommensteuer/', 'Deutsch', '🇦🇹'),
+    'switzerland': ('de', '/de/schweiz/einkommensteuer/', 'Deutsch', '🇨🇭'),
+    'spain': ('es', '/es/espana/simulador-impuestos/', 'Español', '🇪🇸'),
+    'mexico': ('es', '/es/mexico/simulador-impuestos/', 'Español', '🇲🇽'),
+    'argentina': ('es', '/es/argentina/simulador-impuestos/', 'Español', '🇦🇷'),
+    'chile': ('es', '/es/chile/simulador-impuestos/', 'Español', '🇨🇱'),
+    'colombia': ('es', '/es/colombia/simulador-impuestos/', 'Español', '🇨🇴'),
+    'peru': ('es', '/es/peru/simulador-impuestos/', 'Español', '🇵🇪'),
+    'portugal': ('pt', '/pt/portugal/simulador-impostos/', 'Português', '🇵🇹'),
+    'brazil': ('pt', '/pt/brasil/simulador-impostos/', 'Português', '🇧🇷'),
+    'netherlands': ('nl', '/nl/nederland/belasting-berekenen/', 'Nederlands', '🇳🇱'),
+    'belgium': ('nl', '/nl/belgie/belasting-berekenen/', 'Nederlands', '🇧🇪'),
+    'saudi-arabia': ('ar', '/ar/arabie-saoudite/tax-calculator/', 'العربية', '🇸🇦'),
+    'dubai': ('ar', '/ar/dubai/tax-calculator/', 'العربية', '🇦🇪'),
+    'qatar': ('ar', '/ar/qatar/tax-calculator/', 'العربية', '🇶🇦'),
+    'kuwait': ('ar', '/ar/koweit/tax-calculator/', 'العربية', '🇰🇼'),
+    'egypt': ('ar', '/ar/egypte/tax-calculator/', 'العربية', '🇪🇬'),
+    'italy': ('it', '/it/italia/calcolatore-imposte/', 'Italiano', '🇮🇹'),
+    'sweden': ('sv', '/sv/sverige/skatteberaknare/', 'Svenska', '🇸🇪'),
+    'norway': ('no', '/no/norge/skattekalkulator/', 'Norsk', '🇳🇴'),
+    'denmark': ('da', '/da/danmark/skatteberegner/', 'Dansk', '🇩🇰'),
+    'finland': ('fi', '/fi/suomi/verolaskuri/', 'Suomi', '🇫🇮'),
+    'greece': ('el', '/el/ellada/ypologismos-forou/', 'Ελληνικά', '🇬🇷'),
+    'poland': ('pl', '/pl/polska/kalkulator-podatkowy/', 'Polski', '🇵🇱'),
+    'czech-republic': ('cs', '/cs/cesko/danovy-kalkulator/', 'Čeština', '🇨🇿'),
+    'hungary': ('hu', '/hu/magyarorszag/ado-kalkulator/', 'Magyar', '🇭🇺'),
+    'romania': ('ro', '/ro/romania/calculator-impozit/', 'Română', '🇷🇴'),
+    'croatia': ('hr', '/hr/hrvatska/porezni-kalkulator/', 'Hrvatski', '🇭🇷'),
+    'turkey': ('tr', '/tr/turkiye/vergi-hesaplama/', 'Türkçe', '🇹🇷'),
+    'japan': ('ja', '/ja/nihon/zeikin-keisan/', '日本語', '🇯🇵'),
+    'south-korea': ('ko', '/ko/hanguk/segeum-gyesan/', '한국어', '🇰🇷'),
+    'china': ('zh', '/zh/zhongguo/shuishou-jisuan/', '中文', '🇨🇳'),
+    'thailand': ('th', '/th/prathet-thai/khamnuan-phasi/', 'ไทย', '🇹🇭'),
+    'malaysia': ('ms', '/ms/malaysia/kalkulator-cukai/', 'Bahasa Melayu', '🇲🇾'),
+    'indonesia': ('id', '/id/indonesia/kalkulator-pajak/', 'Bahasa Indonesia', '🇮🇩'),
+    'vietnam': ('vi', '/vi/viet-nam/tinh-thue/', 'Tiếng Việt', '🇻🇳'),
+}
+
 
 def extract_lang_switcher_links(nav_html):
     """Extract the language switcher <a> links from the existing nav.
@@ -51,6 +136,21 @@ def is_homepage(filepath):
     """Check if this is the homepage (fr/index.html or en/index.html)."""
     rel = os.path.relpath(filepath, BASE_DIR).replace('\\', '/')
     return rel in ('fr/index.html', 'en/index.html')
+
+
+def detect_country_slug(filepath):
+    """Detect the country slug from the file path.
+
+    e.g. fr/allemagne/simulateur-impot/index.html -> 'allemagne'
+         en/germany/income-tax/index.html -> 'germany'
+    Returns None for homepage, france, maroc, etc.
+    """
+    rel = os.path.relpath(filepath, BASE_DIR).replace('\\', '/')
+    parts = rel.split('/')
+    # Expected: lang/country/page/index.html -> parts = ['fr', 'country', 'page', 'index.html']
+    if len(parts) >= 3:
+        return parts[1]  # country slug
+    return None
 
 
 def build_navbar(lang, lang_dropdown_id, lang_links, is_home):
@@ -883,6 +983,22 @@ def process_file(filepath):
     lang_dropdown_id = detect_lang_dropdown_id(old_nav)
     lang = detect_language(filepath)
     is_home = is_homepage(filepath)
+
+    # Detect country and inject native language link if applicable
+    country_slug = detect_country_slug(filepath)
+    native_info = None
+    if country_slug:
+        if lang == 'fr':
+            native_info = NATIVE_LANG_MAP.get(country_slug)
+        else:
+            native_info = EN_NATIVE_LANG_MAP.get(country_slug)
+
+    if native_info:
+        native_lang, native_url, native_name, native_flag = native_info
+        native_link = f'<a href="{native_url}" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">\n                            <span>{native_flag}</span> {native_name}\n                        </a>'
+        # Remove any existing native link for this language (to avoid duplicates on re-run)
+        lang_links = [l for l in lang_links if f'hreflang="{native_lang}"' not in l and native_url not in l and native_name not in l]
+        lang_links.append(native_link)
 
     # Build new navbar
     new_nav = build_navbar(lang, lang_dropdown_id, lang_links, is_home)

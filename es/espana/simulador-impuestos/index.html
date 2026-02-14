@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Simulador de Impuestos España 2026 - Cálculo Gratuito</title>
+    <meta name="description" content="Calcule sus impuestos en España gratuitamente. Simulación detallada con impuesto sobre la renta y cotizaciones sociales. Baremos 2026.">
+
+    <link rel="canonical" href="https://netsalaire.com/es/espana/simulador-impuestos/">
+    <link rel="alternate" hreflang="es" href="https://netsalaire.com/es/espana/simulador-impuestos/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/espagne/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/spain/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/spain/income-tax/">
+
+    <meta property="og:title" content="Simulador de Impuestos España 2026 - Cálculo Gratuito">
+    <meta property="og:description" content="Calcule sus impuestos en España gratuitamente. Simulación detallada con impuesto sobre la renta y cotizaciones sociales. Baremos 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/es/espana/simulador-impuestos/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Simulador de Impuestos España 2026 - Cálculo Gratuito",
+        "url": "https://netsalaire.com/es/espana/simulador-impuestos/",
+        "inLanguage": "es",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- Mega-menu All Countries -->
+                <div class="relative group">
+                    <button class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2 text-sm font-medium text-slate-600">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Todos los países
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </button>
+                    <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl mega-country-container" style="width: 600px; max-height: 75vh; overflow-y: auto;">
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Europa</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/france/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
+                                <a href="/es/espana/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> España</a>
+                                <a href="/en/uk/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇪</span> Germany</a>
+                                <a href="/en/italy/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇹</span> Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇱</span> Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇭</span> Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇹</span> Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇪</span> Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇱🇺</span> Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇹</span> Austria</a>
+                                <a href="/en/ireland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇪</span> Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇪</span> Sweden</a>
+                                <a href="/en/norway/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇴</span> Norway</a>
+                                <a href="/en/denmark/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇰</span> Denmark</a>
+                                <a href="/en/finland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇮</span> Finland</a>
+                                <a href="/en/greece/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇷</span> Greece</a>
+                                <a href="/en/poland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇱</span> Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇿</span> Czech Republic</a>
+                                <a href="/en/hungary/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇺</span> Hungary</a>
+                                <a href="/en/romania/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇷🇴</span> Romania</a>
+                                <a href="/en/croatia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇷</span> Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turkey</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Américas</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/usa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
+                                <a href="/en/canada/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
+                                <a href="/en/brazil/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brazil</a>
+                                <a href="/es/mexico/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇽</span> México</a>
+                                <a href="/es/argentina/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇷</span> Argentina</a>
+                                <a href="/es/chile/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇱</span> Chile</a>
+                                <a href="/es/colombia/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇴</span> Colombia</a>
+                                <a href="/es/peru/simulador-impuestos/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Perú</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Asia-Pacífico</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/japan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> South Korea</a>
+                                <a href="/en/china/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> China</a>
+                                <a href="/en/singapore/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇬</span> Singapore</a>
+                                <a href="/en/australia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇺</span> Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇰</span> Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇳</span> India</a>
+                                <a href="/en/new-zealand/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇿</span> New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇩</span> Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇾</span> Malaysia</a>
+                                <a href="/en/thailand/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇭</span> Thailand</a>
+                                <a href="/en/pakistan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇰</span> Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇭</span> Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Oriente Medio y África</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/morocco/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇶🇦</span> Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇼</span> Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇬</span> Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇿🇦</span> South Africa</a>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-3">
+                                <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                                    <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparar todos los países →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Language">
+                        <span class="lang-flag">🇪🇸</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[160px] py-1 z-50">
+                        <a href="/es/espana/simulador-impuestos/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇪🇸</span> Español
+                        </a>
+                        <a href="/fr/espagne/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Français
+                        </a>
+                        <a href="/en/spain/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Accordions) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-1">
+                <!-- All Countries Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> Todos los países
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-4 pb-3 space-y-3">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Europa</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/france/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
+                                <a href="/es/espana/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 España</a>
+                                <a href="/en/uk/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇧 United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Germany</a>
+                                <a href="/en/italy/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇹 Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇱 Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇭 Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇹 Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇱🇺 Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇹 Austria</a>
+                                <a href="/en/ireland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇪 Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇪 Sweden</a>
+                                <a href="/en/norway/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇴 Norway</a>
+                                <a href="/en/denmark/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇰 Denmark</a>
+                                <a href="/en/finland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇮 Finland</a>
+                                <a href="/en/greece/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇷 Greece</a>
+                                <a href="/en/poland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇱 Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇿 Czech Republic</a>
+                                <a href="/en/hungary/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇺 Hungary</a>
+                                <a href="/en/romania/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇷🇴 Romania</a>
+                                <a href="/en/croatia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇷 Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇷 Turkey</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Américas</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/usa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
+                                <a href="/en/canada/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
+                                <a href="/en/brazil/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇷 Brazil</a>
+                                <a href="/es/mexico/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 México</a>
+                                <a href="/es/argentina/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇷 Argentina</a>
+                                <a href="/es/chile/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇱 Chile</a>
+                                <a href="/es/colombia/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇴 Colombia</a>
+                                <a href="/es/peru/simulador-impuestos/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇪 Perú</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Asia-Pacífico</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/japan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 South Korea</a>
+                                <a href="/en/china/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 China</a>
+                                <a href="/en/singapore/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇬 Singapore</a>
+                                <a href="/en/australia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇰 Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇳 India</a>
+                                <a href="/en/new-zealand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇩 Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇾 Malaysia</a>
+                                <a href="/en/thailand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇭 Thailand</a>
+                                <a href="/en/pakistan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇰 Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇭 Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇻🇳 Vietnam</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Oriente Medio y África</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/morocco/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇪 UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇦 Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇶🇦 Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇼 Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇬 Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 South Africa</a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-2">
+                            <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600">
+                                Comparar todos los países →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ -->
+                <div class="border-t border-slate-100">
+                    <a href="/en/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+                    </a>
+                </div>
+                <!-- Mobile Language Links -->
+                <div class="border-t border-slate-100 pt-3 pb-2 flex flex-wrap gap-2">
+                    <a href="/es/espana/simulador-impuestos/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-slate-100 border border-slate-200 rounded-full text-slate-700">
+                        <span>🇪🇸</span> Español
+                    </a>
+                    <a href="/fr/espagne/simulateur-impot/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a href="/en/spain/income-tax/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇬🇧</span> English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-yellow-50 border border-yellow-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇪🇸</span>
+                    <span class="text-sm font-medium text-yellow-800">España</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Simulador de Impuestos España <span class="text-indigo-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Calcule sus impuestos en España: Impuesto sobre la renta + Cotizaciones sociales</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Ingreso Mensual</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="5000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Ingreso Anual</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="60000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="300000" step="1000" value="60000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Impuesto sobre la Renta</span>
+                        </div>
+                        <p class="text-2xl font-bold text-indigo-600" id="income-tax">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">Tasa efectiva: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Cotizaciones Sociales</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">~6.3% (empleado)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Ingreso Neto Anual</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 EUR</p>
+                        <p class="text-xs text-slate-500 mt-1">Mensual: <span id="net-monthly" class="font-medium">0 EUR</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Desglose de su ingreso</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #6366f1 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Neto</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Ingreso neto</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-indigo-500"></span>
+                                    <span class="text-sm text-slate-600">Impuestos</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Cotizaciones</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Carga Fiscal Total</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 EUR</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Tasa efectiva total: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-indigo-500"></iconify-icon>
+                    Baremes 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    
+            <div class="flex justify-between"><span class="text-slate-500">€0 - €12,450</span><span class="font-medium">19%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">€12,450 - €20,200</span><span class="font-medium">24%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">€20,200 - €35,200</span><span class="font-medium">30%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">€35,200 - €60,000</span><span class="font-medium">37%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">€60,000 - €300,000</span><span class="font-medium">45%</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">€300,000+</span><span class="font-medium">47%</span></div>
+        
+                </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide Complet de la Fiscalite Espagnole</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>L'Espagne a un systeme fiscal progressif avec l'IRPF (Impuesto sobre la Renta de las Personas Fisicas). Les taux varient selon les communautes autonomes. Voici ce qu'il faut savoir.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Baremes IRPF 2026 (Etat + Communaute moyenne)</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Revenu Imposable</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Taux Etat</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Taux Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">0 - 12,450 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">9.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">19%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">12,450 - 20,200 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">12%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">24%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">20,200 - 35,200 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">15%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">30%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">35,200 - 60,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">18.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">37%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">60,000 - 300,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">22.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">45%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Au-dessus de 300,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">24.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-rose-600">47%</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-slate-500 mt-2">Les taux varient selon les communautes autonomes (Catalogne, Madrid, Andalousie...)</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison par Communaute Autonome</h3>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🏛️</div>
+                            <div class="text-xs font-bold text-emerald-800">Madrid</div>
+                            <div class="text-[10px] text-emerald-600">Taux max 43.5% (le plus bas)</div>
+                            <div class="text-[10px] text-emerald-600">Deductions patrimoine</div>
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🏖️</div>
+                            <div class="text-xs font-bold text-amber-800">Andalousie</div>
+                            <div class="text-[10px] text-amber-600">Taux max 47%</div>
+                            <div class="text-[10px] text-amber-600">Cout de vie bas</div>
+                        </div>
+                        <div class="bg-rose-50 border border-rose-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🌆</div>
+                            <div class="text-xs font-bold text-rose-800">Catalogne</div>
+                            <div class="text-[10px] text-rose-600">Taux max 48% (le plus eleve)</div>
+                            <div class="text-[10px] text-rose-600">Tranche supplementaire</div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales Detaillees</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-amber-900 mb-2">Part Salarie (~6.35%)</h4>
+                                <ul class="space-y-1 text-amber-800 text-xs">
+                                    <li>Contingencias comunes : <strong>4.7%</strong></li>
+                                    <li>Desempleo (chomage) : <strong>1.55%</strong></li>
+                                    <li>Formation : <strong>0.1%</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-amber-900 mb-2">Part Employeur (~30%)</h4>
+                                <ul class="space-y-1 text-amber-800 text-xs">
+                                    <li>Contingencias comunes : <strong>23.6%</strong></li>
+                                    <li>Desempleo : <strong>5.5%</strong></li>
+                                    <li>FOGASA : <strong>0.2%</strong></li>
+                                    <li>Formation : <strong>0.6%</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-xs text-amber-700 mt-3">Base maximale 2026 : ~4,720 €/mois</p>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Regime Beckham (Impatries)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p class="text-blue-900 mb-3">Regime fiscal avantageux pour les nouveaux residents (travailleurs detaches, entrepreneurs) :</p>
+                        <ul class="space-y-2 text-blue-800 text-xs">
+                            <li><strong>Taux fixe :</strong> 24% sur les revenus jusqu'a 600,000 €/an</li>
+                            <li><strong>Duree :</strong> 6 ans (annee d'arrivee + 5 ans)</li>
+                            <li><strong>Conditions :</strong> Pas de residence fiscale en Espagne les 10 annees precedentes</li>
+                            <li><strong>Avantages :</strong> Imposition uniquement sur revenus de source espagnole</li>
+                            <li><strong>Bonus :</strong> Exoneration de l'impot sur la fortune (sauf immobilier espagnol)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et Abattements</h3>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                            <h4 class="font-medium text-slate-900 text-xs mb-2">Abattements Personnels</h4>
+                            <ul class="space-y-1 text-xs text-slate-600">
+                                <li>Minimum personnel : <strong>5,550 €</strong></li>
+                                <li>1er enfant : <strong>2,400 €</strong></li>
+                                <li>2e enfant : <strong>2,700 €</strong></li>
+                                <li>3e enfant : <strong>4,000 €</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                            <h4 class="font-medium text-slate-900 text-xs mb-2">Deductions Courantes</h4>
+                            <ul class="space-y-1 text-xs text-slate-600">
+                                <li>Plan pension : jusqu'a <strong>1,500 €/an</strong></li>
+                                <li>Dons associations : jusqu'a <strong>80%</strong></li>
+                                <li>Maternite : <strong>1,200 €/enfant</strong></li>
+                                <li>Residence principale (avant 2013)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Espagne vs France</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-200 px-3 py-2 text-left">Critere</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">Espagne</th>
+                                <th class="border border-slate-200 px-3 py-2 text-center">France</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Taux marginal max</td><td class="border border-slate-200 px-3 py-1.5 text-center">47% (48% Catalogne)</td><td class="border border-slate-200 px-3 py-1.5 text-center">45%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Cotisations employe</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">~6.35%</td><td class="border border-slate-200 px-3 py-1.5 text-center text-rose-600">~22%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Plus-values mobilieres</td><td class="border border-slate-200 px-3 py-1.5 text-center">19-28%</td><td class="border border-slate-200 px-3 py-1.5 text-center">30%</td></tr>
+                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">TVA standard</td><td class="border border-slate-200 px-3 py-1.5 text-center">21%</td><td class="border border-slate-200 px-3 py-1.5 text-center">20%</td></tr>
+                            <tr><td class="border border-slate-200 px-3 py-1.5">Net sur 45,000 €</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">~33,500 €</td><td class="border border-slate-200 px-3 py-1.5 text-center">~32,000 €</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages de l'Espagne</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">☀️</div>
+                            <div class="text-xs font-medium text-emerald-800">Climat</div>
+                            <div class="text-[10px] text-emerald-600">300+ jours soleil/an</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🏠</div>
+                            <div class="text-xs font-medium text-emerald-800">Cout de vie</div>
+                            <div class="text-[10px] text-emerald-600">-30% vs Paris</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🩺</div>
+                            <div class="text-xs font-medium text-emerald-800">Sante</div>
+                            <div class="text-[10px] text-emerald-600">Systeme excellent</div>
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
+                            <div class="text-lg mb-1">🎯</div>
+                            <div class="text-xs font-medium text-emerald-800">Beckham</div>
+                            <div class="text-[10px] text-emerald-600">24% fixe 6 ans</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-rose-50 border border-rose-300 rounded-lg p-4 mt-6">
+                        <h4 class="font-semibold text-rose-900 mb-2">Points de Vigilance</h4>
+                        <ul class="text-rose-800 text-xs space-y-1">
+                            <li><strong>Impot sur la fortune :</strong> Existe en Espagne (sauf Madrid qui l'a supprime)</li>
+                            <li><strong>Declaration mondiale :</strong> Les residents declarent leurs revenus mondiaux</li>
+                            <li><strong>Modelo 720 :</strong> Declaration obligatoire des biens >50,000 € a l'etranger</li>
+                            <li><strong>NIE obligatoire :</strong> Numero d'identification etranger requis pour tout</li>
+                            <li><strong>Exit tax France :</strong> Verifiez si vous etes concerne avant de partir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                    <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>
+                    Comparar con países similares
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="/fr/portugal/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Simulador Portugal
+                    </a>
+                    <a href="/fr/italie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Simulador Italia
+                    </a>
+                    <a href="/fr/france/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Simulador Francia
+                    </a>
+                    <a href="/fr/mexique/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Simulador México
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Comparar con otros países
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>© 2026 NetSalaire. Los cálculos fiscales son estimaciones informativas.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal/" class="hover:text-white transition-colors">Aviso legal</a>
+                <a href="/en/privacy/" class="hover:text-white transition-colors">Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const BRACKETS = [
+            { limit: 12450, rate: 0.19 },
+            { limit: 20200, rate: 0.24 },
+            { limit: 35200, rate: 0.3 },
+            { limit: 60000, rate: 0.37 },
+            { limit: 300000, rate: 0.45 },
+            { limit: Infinity, rate: 0.47 }
+        ];
+        const SOCIAL_RATE = 0.0635;
+        const SYMBOL = '€';
+        const IS_TAX_FREE = false;
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+function calculateBracketTax(income, brackets) {
+            if (IS_TAX_FREE || brackets.length === 0) return 0;
+            let tax = 0;
+            let prevLimit = 0;
+            for (const bracket of brackets) {
+                if (income <= prevLimit) break;
+                const taxableInBracket = Math.min(income, bracket.limit) - prevLimit;
+                tax += taxableInBracket * bracket.rate;
+                prevLimit = bracket.limit;
+            }
+            return tax;
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('es-ES');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+
+            const incomeTax = calculateBracketTax(income, BRACKETS);
+            const socialTax = income * SOCIAL_RATE;
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = SYMBOL + formatNumber(Math.round(incomeTax));
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = SYMBOL + formatNumber(Math.round(socialTax));
+
+            document.getElementById('net-income').textContent = SYMBOL + formatNumber(Math.round(netIncome));
+            document.getElementById('net-monthly').textContent = SYMBOL + formatNumber(Math.round(netIncome / 12));
+
+            document.getElementById('total-tax').textContent = SYMBOL + formatNumber(Math.round(totalTax));
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            
+            // Currency conversions
+            const toEur = 1;
+            const toUsd = 1.09;
+
+            function formatConv(val, isUsd) {
+                const formatted = Math.round(val).toLocaleString('es-ES');
+                return isUsd ? '~$' + formatted : '~' + formatted + ' EUR';
+            }
+            document.getElementById('conv-gross-usd').textContent = formatConv(income * toUsd, true);
+            document.getElementById('conv-tax-usd').textContent = formatConv(incomeTax * toUsd, true);
+            document.getElementById('conv-social-usd').textContent = formatConv(socialTax * toUsd, true);
+            document.getElementById('conv-net-usd').textContent = formatConv(netIncome * toUsd, true);
+            document.getElementById('conv-monthly-usd').textContent = formatConv(netIncome / 12 * toUsd, true);
+            document.getElementById('conv-total-usd').textContent = formatConv(totalTax * toUsd, true);
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 225000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #6366f1 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            // Draw pie chart
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            // Update CSS donut
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #6366f1 ' + netEnd + '% ' + taxEnd + '%, #f59e0b ' + taxEnd + '% 100%)';
+            }
+
+            // Update center percentage
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            // Update legend
+            const legendNet = document.getElementById('legend-net');
+            const legendTax = document.getElementById('legend-tax');
+            const legendSocial = document.getElementById('legend-social');
+            if (legendNet) legendNet.textContent = netPercent + '%';
+            if (legendTax) legendTax.textContent = taxPercent + '%';
+            if (legendSocial) legendSocial.textContent = socialPercent + '%';
+        }
+
+        // Dual input synchronization
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 225000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 225000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('income')) {
+            const income = parseInt(urlParams.get('income'));
+            document.getElementById('income-annual').value = income;
+            document.getElementById('income-monthly').value = Math.round(income / 12);
+            document.getElementById('income-slider').value = Math.min(income, 225000);
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

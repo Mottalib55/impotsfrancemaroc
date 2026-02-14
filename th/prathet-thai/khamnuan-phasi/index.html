@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>คำนวณภาษี ประเทศไทย 2026 - คำนวณฟรี</title>
+    <meta name="description" content="คำนวณภาษีของคุณในประเทศไทยฟรี การจำลองโดยละเอียดพร้อมภาษีเงินได้และเงินสมทบประกันสังคม อัตราภาษี 2026">
+
+    <link rel="canonical" href="https://netsalaire.com/th/prathet-thai/khamnuan-phasi/">
+    <link rel="alternate" hreflang="th" href="https://netsalaire.com/th/prathet-thai/khamnuan-phasi/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/thailande/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/thailand/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/thailand/income-tax/">
+
+    <meta property="og:title" content="คำนวณภาษี ประเทศไทย 2026 - คำนวณฟรี">
+    <meta property="og:description" content="คำนวณภาษีของคุณในประเทศไทยฟรี การจำลองโดยละเอียดพร้อมภาษีเงินได้และเงินสมทบประกันสังคม อัตราภาษี 2026">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/th/prathet-thai/khamnuan-phasi/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "คำนวณภาษี ประเทศไทย 2026 - คำนวณฟรี",
+        "url": "https://netsalaire.com/th/prathet-thai/khamnuan-phasi/",
+        "inLanguage": "th",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- Mega-menu All Countries -->
+                <div class="relative group">
+                    <button class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2 text-sm font-medium text-slate-600">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> ทุกประเทศ
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </button>
+                    <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl mega-country-container" style="width: 600px; max-height: 75vh; overflow-y: auto;">
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">ยุโรป</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/france/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
+                                <a href="/en/spain/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> Spain</a>
+                                <a href="/en/uk/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇪</span> Germany</a>
+                                <a href="/en/italy/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇹</span> Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇱</span> Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇭</span> Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇹</span> Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇪</span> Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇱🇺</span> Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇹</span> Austria</a>
+                                <a href="/en/ireland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇪</span> Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇪</span> Sweden</a>
+                                <a href="/en/norway/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇴</span> Norway</a>
+                                <a href="/en/denmark/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇰</span> Denmark</a>
+                                <a href="/en/finland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇮</span> Finland</a>
+                                <a href="/en/greece/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇷</span> Greece</a>
+                                <a href="/en/poland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇱</span> Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇿</span> Czech Republic</a>
+                                <a href="/en/hungary/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇺</span> Hungary</a>
+                                <a href="/en/romania/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇷🇴</span> Romania</a>
+                                <a href="/en/croatia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇷</span> Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turkey</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">อเมริกา</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/usa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
+                                <a href="/en/canada/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
+                                <a href="/en/brazil/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brazil</a>
+                                <a href="/en/mexico/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇽</span> Mexico</a>
+                                <a href="/en/argentina/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇷</span> Argentina</a>
+                                <a href="/en/chile/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇱</span> Chile</a>
+                                <a href="/en/colombia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇴</span> Colombia</a>
+                                <a href="/en/peru/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Peru</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">เอเชียแปซิฟิก</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/japan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> South Korea</a>
+                                <a href="/en/china/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> China</a>
+                                <a href="/en/singapore/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇬</span> Singapore</a>
+                                <a href="/en/australia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇺</span> Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇰</span> Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇳</span> India</a>
+                                <a href="/en/new-zealand/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇿</span> New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇩</span> Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇾</span> Malaysia</a>
+                                <a href="/th/prathet-thai/khamnuan-phasi/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇭</span> ประเทศไทย</a>
+                                <a href="/en/pakistan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇰</span> Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇭</span> Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">ตะวันออกกลางและแอฟริกา</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/morocco/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇶🇦</span> Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇼</span> Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇬</span> Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇿🇦</span> South Africa</a>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-3">
+                                <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                                    <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> เปรียบเทียบทุกประเทศ →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Language">
+                        <span class="lang-flag">🇹🇭</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[160px] py-1 z-50">
+                        <a href="/th/prathet-thai/khamnuan-phasi/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇹🇭</span> ไทย
+                        </a>
+                        <a href="/fr/thailande/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Français
+                        </a>
+                        <a href="/en/thailand/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Accordions) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-1">
+                <!-- All Countries Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> ทุกประเทศ
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-4 pb-3 space-y-3">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">ยุโรป</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/france/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
+                                <a href="/en/spain/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 Spain</a>
+                                <a href="/en/uk/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇧 United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Germany</a>
+                                <a href="/en/italy/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇹 Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇱 Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇭 Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇹 Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇱🇺 Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇹 Austria</a>
+                                <a href="/en/ireland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇪 Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇪 Sweden</a>
+                                <a href="/en/norway/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇴 Norway</a>
+                                <a href="/en/denmark/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇰 Denmark</a>
+                                <a href="/en/finland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇮 Finland</a>
+                                <a href="/en/greece/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇷 Greece</a>
+                                <a href="/en/poland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇱 Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇿 Czech Republic</a>
+                                <a href="/en/hungary/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇺 Hungary</a>
+                                <a href="/en/romania/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇷🇴 Romania</a>
+                                <a href="/en/croatia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇷 Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇷 Turkey</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">อเมริกา</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/usa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
+                                <a href="/en/canada/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
+                                <a href="/en/brazil/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇷 Brazil</a>
+                                <a href="/en/mexico/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 Mexico</a>
+                                <a href="/en/argentina/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇷 Argentina</a>
+                                <a href="/en/chile/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇱 Chile</a>
+                                <a href="/en/colombia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇴 Colombia</a>
+                                <a href="/en/peru/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇪 Peru</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">เอเชียแปซิฟิก</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/japan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 South Korea</a>
+                                <a href="/en/china/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 China</a>
+                                <a href="/en/singapore/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇬 Singapore</a>
+                                <a href="/en/australia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇰 Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇳 India</a>
+                                <a href="/en/new-zealand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇩 Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇾 Malaysia</a>
+                                <a href="/th/prathet-thai/khamnuan-phasi/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇭 ประเทศไทย</a>
+                                <a href="/en/pakistan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇰 Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇭 Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇻🇳 Vietnam</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">ตะวันออกกลางและแอฟริกา</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/morocco/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇪 UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇦 Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇶🇦 Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇼 Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇬 Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 South Africa</a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-2">
+                            <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600">
+                                เปรียบเทียบทุกประเทศ →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ -->
+                <div class="border-t border-slate-100">
+                    <a href="/en/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+                    </a>
+                </div>
+                <!-- Mobile Language Links -->
+                <div class="border-t border-slate-100 pt-3 pb-2 flex flex-wrap gap-2">
+                    <a href="/th/prathet-thai/khamnuan-phasi/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-slate-100 border border-slate-200 rounded-full text-slate-700">
+                        <span>🇹🇭</span> ไทย
+                    </a>
+                    <a href="/fr/thailande/simulateur-impot/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a href="/en/thailand/income-tax/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇬🇧</span> English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-yellow-50 border border-yellow-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇹🇭</span>
+                    <span class="text-sm font-medium text-yellow-800">ประเทศไทย</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    คำนวณภาษี ประเทศไทย <span class="text-indigo-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">คำนวณภาษีของคุณในประเทศไทย: ภาษีเงินได้ + เงินสมทบประกันสังคม</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">รายได้รายเดือน</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="5000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">THB</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">รายได้รายปี</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="60000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">THB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="300000" step="1000" value="60000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">ภาษีเงินได้</span>
+                        </div>
+                        <p class="text-2xl font-bold text-indigo-600" id="income-tax">0 THB</p>
+                        <p class="text-xs text-slate-500 mt-1">อัตราภาษีที่แท้จริง: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">เงินสมทบประกันสังคม</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 THB</p>
+                        <p class="text-xs text-slate-500 mt-1">~20% (ลูกจ้าง)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">รายได้สุทธิรายปี</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 THB</p>
+                        <p class="text-xs text-slate-500 mt-1">รายเดือน: <span id="net-monthly" class="font-medium">0 THB</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">การกระจายรายได้ของคุณ</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #6366f1 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">สุทธิ</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">รายได้สุทธิ</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-indigo-500"></span>
+                                    <span class="text-sm text-slate-600">ภาษี</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">ประกันสังคม</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">ภาระภาษีรวม</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 THB</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">อัตราภาษีรวมที่แท้จริง: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="lucide:info" width="20" class="text-blue-500"></iconify-icon>
+                    อัตราภาษี ประเทศไทย 2026
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span class="text-slate-500">0 - 150,000 THB</span><span class="font-medium text-emerald-600">0%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">150,001 - 300,000 THB</span><span class="font-medium">5%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">300,001 - 500,000 THB</span><span class="font-medium">10%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">500,001 - 750,000 THB</span><span class="font-medium">15%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">750,001 - 1,000,000 THB</span><span class="font-medium">20%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">1,000,001 - 2,000,000 THB</span><span class="font-medium">25%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">2,000,001 - 5,000,000 THB</span><span class="font-medium">30%</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">5,000,001+ THB</span><span class="font-medium text-red-600">35%</span></div>
+                </div>
+
+            <!-- Comprendre l'impot en Thailande -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite thailandaise</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>La Thailande possede un systeme fiscal relativement simple avec un <strong>impot sur le revenu progressif</strong> allant de 0% a 35%. L'administration fiscale est geree par le <strong>Revenue Department</strong> (Krom Sapphakon - กรมสรรพากร) sous le ministere des Finances. La Thailande applique le principe de <strong>residence fiscale</strong> : les residents (plus de 180 jours/an) sont imposes sur leurs revenus mondiaux, tandis que les non-residents ne sont imposes que sur leurs revenus de source thailandaise.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026</h3>
+                    <p>L'impot thailandais utilise un systeme de <strong>tranches progressives</strong> avec 8 niveaux :</p>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="space-y-1 text-xs">
+                            <li>0 - 150,000 THB : <strong>0%</strong> (exonere)</li>
+                            <li>150,001 - 300,000 THB : <strong>5%</strong></li>
+                            <li>300,001 - 500,000 THB : <strong>10%</strong></li>
+                            <li>500,001 - 750,000 THB : <strong>15%</strong></li>
+                            <li>750,001 - 1,000,000 THB : <strong>20%</strong></li>
+                            <li>1,000,001 - 2,000,000 THB : <strong>25%</strong></li>
+                            <li>2,000,001 - 5,000,000 THB : <strong>30%</strong></li>
+                            <li>Au-dela de 5,000,000 THB : <strong>35%</strong></li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500">Note : Les premiers 150,000 THB de revenu imposable sont totalement exoneres d'impot, ce qui est avantageux pour les revenus modestes.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Revenue Department (Administration fiscale)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Krom Sapphakon (กรมสรรพากร)</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li>Site officiel : <strong>rd.go.th</strong></li>
+                            <li>Depot electronique via <strong>E-Filing</strong> disponible</li>
+                            <li>Date limite : <strong>31 mars</strong> de l'annee suivante (prolonge au 8 avril avec E-Filing)</li>
+                            <li>Numero d'identification fiscale (TIN) obligatoire pour tous les contribuables</li>
+                            <li>Bureaux locaux dans chaque province pour assistance</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Securite sociale SSO (Social Security Office)</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Cotisations employes : 5% (plafond 750 THB/mois)</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li><strong>Taux</strong> : 5% du salaire mensuel</li>
+                            <li><strong>Plafond</strong> : Base de calcul limitee a 15,000 THB/mois</li>
+                            <li><strong>Maximum mensuel</strong> : 750 THB (15,000 x 5%)</li>
+                            <li><strong>Maximum annuel</strong> : 9,000 THB (750 x 12 mois)</li>
+                            <li><strong>Employeur</strong> : Paie egalement 5% (contribution equivalente)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-emerald-800 mb-2">Couverture SSO</h4>
+                        <ul class="text-xs space-y-1 text-emerald-700">
+                            <li><strong>Maladie</strong> : Soins medicaux gratuits dans les hopitaux agrees</li>
+                            <li><strong>Maternite</strong> : Conge et allocations de naissance</li>
+                            <li><strong>Invalidite</strong> : Pension d'invalidite permanente</li>
+                            <li><strong>Deces</strong> : Allocation funeraire et pension de survivant</li>
+                            <li><strong>Chomage</strong> : Allocations chomage (jusqu'a 50% du salaire)</li>
+                            <li><strong>Retraite</strong> : Pension de vieillesse a partir de 55 ans</li>
+                            <li><strong>Allocations familiales</strong> : 800 THB/mois par enfant (max 3)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et abattements</h3>
+
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Deductions personnelles</h4>
+                        <ul class="text-xs space-y-1 text-indigo-700">
+                            <li><strong>Abattement personnel</strong> : 60,000 THB/an</li>
+                            <li><strong>Conjoint sans revenu</strong> : 60,000 THB supplementaires</li>
+                            <li><strong>Enfants</strong> : 30,000 THB par enfant (pas de limite)</li>
+                            <li><strong>Parents (>60 ans)</strong> : 30,000 THB par parent</li>
+                            <li><strong>Assurance vie</strong> : Jusqu'a 100,000 THB</li>
+                            <li><strong>Assurance sante</strong> : Jusqu'a 25,000 THB</li>
+                            <li><strong>Fonds de retraite (RMF/SSF)</strong> : Jusqu'a 30% du revenu (max 500,000 THB)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-purple-800 mb-2">Deductions speciales pour employes</h4>
+                        <ul class="text-xs space-y-1 text-purple-700">
+                            <li><strong>Frais professionnels forfaitaires</strong> : 50% du revenu (max 100,000 THB)</li>
+                            <li><strong>Interets hypothecaires</strong> : Jusqu'a 100,000 THB</li>
+                            <li><strong>Dons aux organisations caritatives</strong> : Jusqu'a 10% du revenu apres deductions</li>
+                            <li><strong>Cotisations SSO</strong> : Deductibles en totalite</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Thailande</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Thailande</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Salaire 1,200,000 THB (~30,000 EUR)</td><td class="border p-2">~21,000 EUR net</td><td class="border p-2">~1,020,000 THB net</td></tr>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">35%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">5% (plafond 750 THB/mois)</td></tr>
+                                <tr><td class="border p-2">Seuil d'imposition</td><td class="border p-2">~11,294 EUR</td><td class="border p-2">150,000 THB (~3,750 EUR)</td></tr>
+                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui (parts)</td><td class="border p-2">Non (deductions fixes)</td></tr>
+                                <tr><td class="border p-2">Prelevement a la source</td><td class="border p-2">Oui (2019+)</td><td class="border p-2">Oui (retenue employeur)</td></tr>
+                                <tr><td class="border p-2">Couverture sante</td><td class="border p-2">Universelle</td><td class="border p-2">SSO (employes) ou 30 Baht Scheme</td></tr>
+                                <tr><td class="border p-2">Cout de la vie relatif</td><td class="border p-2">Eleve</td><td class="border p-2">Modere</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Expatries et travailleurs etrangers</h3>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-amber-800 mb-2">Fiscalite des expatries</h4>
+                        <ul class="text-xs space-y-1 text-amber-700">
+                            <li><strong>Resident fiscal</strong> : Plus de 180 jours en Thailande = imposition mondiale</li>
+                            <li><strong>Non-resident</strong> : Uniquement revenus de source thailandaise</li>
+                            <li><strong>Revenus etrangers</strong> : Imposes uniquement s'ils sont rapatries en Thailande l'annee de perception</li>
+                            <li><strong>Convention fiscale France-Thailande</strong> : Evite la double imposition</li>
+                            <li><strong>Work Permit</strong> : Obligatoire pour travailler legalement</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Declaration fiscale</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li><strong>Formulaire</strong> : PND.91 (salaries) ou PND.90 (autres revenus)</li>
+                        <li><strong>Date limite</strong> : 31 mars (papier) ou 8 avril (E-Filing)</li>
+                        <li><strong>E-Filing</strong> : Disponible sur rd.go.th (en thai)</li>
+                        <li><strong>Paiement</strong> : Virement bancaire, guichet ou 7-Eleven</li>
+                        <li><strong>Remboursement</strong> : 1-3 mois apres depot</li>
+                        <li><strong>Penalites de retard</strong> : 1.5% par mois + amende</li>
+                    </ul>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux de la Thailande</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm">Taux moderes</p>
+                            <p class="text-xs text-emerald-600">Maximum 35% vs 45% en France</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm">SSO plafonnee</p>
+                            <p class="text-xs text-emerald-600">Max 750 THB/mois vs ~22% en France</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm">Deductions genereuses</p>
+                            <p class="text-xs text-emerald-600">50% frais pro + deductions familiales</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm">Cout de la vie</p>
+                            <p class="text-xs text-emerald-600">Pouvoir d'achat eleve avec salaire moyen</p>
+                        </div>
+                    </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                    <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>
+                    เปรียบเทียบกับประเทศที่คล้ายกัน
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="/fr/malaisie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        เครื่องคำนวณ มาเลเซีย
+                    </a>
+                    <a href="/fr/indonesie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        เครื่องคำนวณ อินโดนีเซีย
+                    </a>
+                    <a href="/fr/vietnam/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        เครื่องคำนวณ เวียดนาม
+                    </a>
+                    <a href="/fr/philippines/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        เครื่องคำนวณ ฟิลิปปินส์
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    เปรียบเทียบกับประเทศอื่น
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>© 2026 NetSalaire. การคำนวณภาษีเป็นการประมาณการเพื่อวัตถุประสงค์ในการให้ข้อมูล</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">FAQ</a>
+                <a href="/en/legal/" class="hover:text-white transition-colors">ข้อมูลทางกฎหมาย</a>
+                <a href="/en/privacy/" class="hover:text-white transition-colors">ความเป็นส่วนตัว</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Thailand tax brackets 2026
+        const BRACKETS = [
+            { limit: 150000, rate: 0 },
+            { limit: 300000, rate: 0.05 },
+            { limit: 500000, rate: 0.10 },
+            { limit: 750000, rate: 0.15 },
+            { limit: 1000000, rate: 0.20 },
+            { limit: 2000000, rate: 0.25 },
+            { limit: 5000000, rate: 0.30 },
+            { limit: Infinity, rate: 0.35 }
+        ];
+
+        // SSO: 5% capped at 750 THB/month (9,000 THB/year)
+        const SSO_RATE = 0.05;
+        const SSO_MONTHLY_CAP = 750;
+        const SSO_ANNUAL_CAP = 9000;
+
+        const CURRENCY = ' THB';
+        const THB_TO_USD = 0.028;
+        const THB_TO_EUR = 0.026;
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function calculateThaiTax(income) {
+            // Standard deductions: 60,000 personal + 100,000 employment expense (50% capped)
+            const personalDeduction = 60000;
+            const employmentDeduction = Math.min(income * 0.5, 100000);
+            const taxableIncome = Math.max(0, income - personalDeduction - employmentDeduction);
+
+            let tax = 0;
+            let remaining = taxableIncome;
+            let prevLimit = 0;
+
+            for (const bracket of BRACKETS) {
+                if (remaining <= 0) break;
+                const taxableInBracket = Math.min(remaining, bracket.limit - prevLimit);
+                tax += taxableInBracket * bracket.rate;
+                remaining -= taxableInBracket;
+                prevLimit = bracket.limit;
+            }
+
+            return Math.max(0, tax);
+        }
+
+        function calculateSSO(annualIncome) {
+            // SSO is 5% of monthly salary, capped at 750 THB/month
+            const monthlyIncome = annualIncome / 12;
+            const monthlySSO = Math.min(monthlyIncome * SSO_RATE, SSO_MONTHLY_CAP);
+            return monthlySSO * 12;
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('th-TH');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+
+            const incomeTax = calculateThaiTax(income);
+            const socialTax = calculateSSO(income);
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = income > 0 ? (incomeTax / income * 100).toFixed(1) + '%' : '0%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // Currency conversions
+            document.getElementById('conv-gross-usd').textContent = '~$' + Math.round(income * THB_TO_USD).toLocaleString('th-TH');
+            document.getElementById('conv-gross-eur').textContent = '~' + Math.round(income * THB_TO_EUR).toLocaleString('th-TH') + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 6000000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #2563eb ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #2563eb ' + netEnd + '% ' + taxEnd + '%, #dc2626 ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 6000000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 6000000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

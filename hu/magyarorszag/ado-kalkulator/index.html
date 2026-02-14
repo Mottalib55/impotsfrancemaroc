@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+            if (window.gaLoaded) return;
+            window.gaLoaded = true;
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z328SB8DZ8';
+            script.async = true;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', 'G-Z328SB8DZ8');
+        }
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadGA, {once: true, passive: true});
+        });
+        setTimeout(loadGA, 3000);
+    </script>
+
+    <title>Adókalkulátor Magyarország 2026 - Ingyenes Számítás</title>
+    <meta name="description" content="Számítsa ki adóit Magyarország ingyenesen. Részletes szimuláció jövedelemadóval és társadalombiztosítási járulékokkal. 2026-os kulcsok.">
+
+    <link rel="canonical" href="https://netsalaire.com/hu/magyarorszag/ado-kalkulator/">
+    <link rel="alternate" hreflang="hu" href="https://netsalaire.com/hu/magyarorszag/ado-kalkulator/">
+    <link rel="alternate" hreflang="fr" href="https://netsalaire.com/fr/hongrie/simulateur-impot/">
+    <link rel="alternate" hreflang="en" href="https://netsalaire.com/en/hungary/income-tax/">
+    <link rel="alternate" hreflang="x-default" href="https://netsalaire.com/en/hungary/income-tax/">
+
+    <meta property="og:title" content="Adókalkulátor Magyarország 2026 - Ingyenes Számítás">
+    <meta property="og:description" content="Számítsa ki adóit Magyarország ingyenesen. Részletes szimuláció jövedelemadóval és társadalombiztosítási járulékokkal. 2026-os kulcsok.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netsalaire.com/hu/magyarorszag/ado-kalkulator/">
+    <meta property="og:site_name" content="NetSalaire">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Adókalkulátor Magyarország 2026 - Ingyenes Számítás",
+        "url": "https://netsalaire.com/hu/magyarorszag/ado-kalkulator/",
+        "inLanguage": "hu",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "HUF" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e2e8f0;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/en/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-semibold tracking-tighter shadow-md group-hover:bg-indigo-600 transition-colors duration-300">
+                    N.
+                </div>
+                <span class="font-semibold tracking-tight text-slate-900">NetSalaire</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <!-- Mega-menu All Countries -->
+                <div class="relative group">
+                    <button class="hover:text-slate-900 transition-colors flex items-center gap-1.5 py-2 text-sm font-medium text-slate-600">
+                        <iconify-icon icon="lucide:globe" width="16"></iconify-icon> Összes ország
+                        <iconify-icon icon="lucide:chevron-down" width="14" class="text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180"></iconify-icon>
+                    </button>
+                    <div class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-xl mega-country-container" style="width: 600px; max-height: 75vh; overflow-y: auto;">
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Európa</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/france/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇷</span> France</a>
+                                <a href="/en/spain/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇸</span> Spain</a>
+                                <a href="/en/uk/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇧</span> United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇪</span> Germany</a>
+                                <a href="/en/italy/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇹</span> Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇱</span> Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇭</span> Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇹</span> Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇪</span> Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇱🇺</span> Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇹</span> Austria</a>
+                                <a href="/en/ireland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇪</span> Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇪</span> Sweden</a>
+                                <a href="/en/norway/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇴</span> Norway</a>
+                                <a href="/en/denmark/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇩🇰</span> Denmark</a>
+                                <a href="/en/finland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇫🇮</span> Finland</a>
+                                <a href="/en/greece/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇬🇷</span> Greece</a>
+                                <a href="/en/poland/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇱</span> Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇿</span> Czech Republic</a>
+                                <a href="/hu/magyarorszag/ado-kalkulator/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇺</span> Magyarország</a>
+                                <a href="/en/romania/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇷🇴</span> Romania</a>
+                                <a href="/en/croatia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇷</span> Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇷</span> Turkey</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Amerika</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/usa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇺🇸</span> USA</a>
+                                <a href="/en/canada/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇦</span> Canada</a>
+                                <a href="/en/brazil/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇧🇷</span> Brazil</a>
+                                <a href="/en/mexico/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇽</span> Mexico</a>
+                                <a href="/en/argentina/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇷</span> Argentina</a>
+                                <a href="/en/chile/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇱</span> Chile</a>
+                                <a href="/en/colombia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇴</span> Colombia</a>
+                                <a href="/en/peru/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇪</span> Peru</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Ázsia-Csendes-óceán</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/japan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇯🇵</span> Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇷</span> South Korea</a>
+                                <a href="/en/china/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇨🇳</span> China</a>
+                                <a href="/en/singapore/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇬</span> Singapore</a>
+                                <a href="/en/australia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇺</span> Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇭🇰</span> Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇳</span> India</a>
+                                <a href="/en/new-zealand/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇳🇿</span> New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇮🇩</span> Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇾</span> Malaysia</a>
+                                <a href="/en/thailand/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇹🇭</span> Thailand</a>
+                                <a href="/en/pakistan/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇰</span> Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇵🇭</span> Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇻🇳</span> Vietnam</a>
+                            </div>
+<div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mega-country-title">Közel-Kelet és Afrika</div>
+<div class="grid grid-cols-2 mega-country-grid" style="column-gap: 2rem; row-gap: 0.25rem;">
+                                <a href="/en/morocco/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇲🇦</span> Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇦🇪</span> UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇸🇦</span> Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇶🇦</span> Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇰🇼</span> Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇪🇬</span> Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="flex items-center gap-2 px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"><span>🇿🇦</span> South Africa</a>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-3">
+                                <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                                    <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Összes ország összehasonlítása →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/en/faq/" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button onclick="document.getElementById('lang-dropdown-page').classList.toggle('hidden')" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full transition-all" title="Language">
+                        <span class="lang-flag">🇭🇺</span>
+                        <iconify-icon icon="lucide:chevron-down" width="14"></iconify-icon>
+                    </button>
+                    <div id="lang-dropdown-page" class="hidden absolute top-full right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg min-w-[160px] py-1 z-50">
+                        <a href="/hu/magyarorszag/ado-kalkulator/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 bg-slate-50 transition-colors">
+                            <span>🇭🇺</span> Magyar
+                        </a>
+                        <a href="/fr/hongrie/simulateur-impot/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇫🇷</span> Français
+                        </a>
+                        <a href="/en/hungary/income-tax/" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+                            <span>🇬🇧</span> English
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Accordions) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-1">
+                <!-- All Countries Accordion -->
+                <div>
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                        <span class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> Összes ország
+                        </span>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                    </button>
+                    <div class="hidden pl-4 pb-3 space-y-3">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Európa</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/france/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇷 France</a>
+                                <a href="/en/spain/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇸 Spain</a>
+                                <a href="/en/uk/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇧 United Kingdom</a>
+                                <a href="/en/germany/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇪 Germany</a>
+                                <a href="/en/italy/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇹 Italy</a>
+                                <a href="/en/netherlands/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇱 Netherlands</a>
+                                <a href="/en/switzerland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇭 Switzerland</a>
+                                <a href="/en/portugal/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇹 Portugal</a>
+                                <a href="/en/belgium/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇪 Belgium</a>
+                                <a href="/en/luxembourg/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇱🇺 Luxembourg</a>
+                                <a href="/en/austria/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇹 Austria</a>
+                                <a href="/en/ireland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇪 Ireland</a>
+                                <a href="/en/sweden/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇪 Sweden</a>
+                                <a href="/en/norway/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇴 Norway</a>
+                                <a href="/en/denmark/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇩🇰 Denmark</a>
+                                <a href="/en/finland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇫🇮 Finland</a>
+                                <a href="/en/greece/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇬🇷 Greece</a>
+                                <a href="/en/poland/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇱 Poland</a>
+                                <a href="/en/czech-republic/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇿 Czech Republic</a>
+                                <a href="/hu/magyarorszag/ado-kalkulator/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇺 Magyarország</a>
+                                <a href="/en/romania/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇷🇴 Romania</a>
+                                <a href="/en/croatia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇷 Croatia</a>
+                                <a href="/en/turkey/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇷 Turkey</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Amerika</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/usa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇺🇸 USA</a>
+                                <a href="/en/canada/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇦 Canada</a>
+                                <a href="/en/brazil/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇧🇷 Brazil</a>
+                                <a href="/en/mexico/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇽 Mexico</a>
+                                <a href="/en/argentina/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇷 Argentina</a>
+                                <a href="/en/chile/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇱 Chile</a>
+                                <a href="/en/colombia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇴 Colombia</a>
+                                <a href="/en/peru/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇪 Peru</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Ázsia-Csendes-óceán</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/japan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇯🇵 Japan</a>
+                                <a href="/en/south-korea/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇷 South Korea</a>
+                                <a href="/en/china/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇨🇳 China</a>
+                                <a href="/en/singapore/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇬 Singapore</a>
+                                <a href="/en/australia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇺 Australia</a>
+                                <a href="/en/hong-kong/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇭🇰 Hong Kong</a>
+                                <a href="/en/india/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇳 India</a>
+                                <a href="/en/new-zealand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇳🇿 New Zealand</a>
+                                <a href="/en/indonesia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇮🇩 Indonesia</a>
+                                <a href="/en/malaysia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇾 Malaysia</a>
+                                <a href="/en/thailand/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇹🇭 Thailand</a>
+                                <a href="/en/pakistan/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇰 Pakistan</a>
+                                <a href="/en/philippines/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇵🇭 Philippines</a>
+                                <a href="/en/vietnam/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇻🇳 Vietnam</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Közel-Kelet és Afrika</div>
+                            <div class="grid grid-cols-2 gap-1 mega-country-grid">
+                                <a href="/en/morocco/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇲🇦 Morocco</a>
+                                <a href="/en/dubai/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇦🇪 UAE</a>
+                                <a href="/en/saudi-arabia/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇸🇦 Saudi Arabia</a>
+                                <a href="/en/qatar/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇶🇦 Qatar</a>
+                                <a href="/en/kuwait/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇰🇼 Kuwait</a>
+                                <a href="/en/egypt/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇪🇬 Egypt</a>
+                                <a href="/en/south-africa/income-tax/" class="text-sm text-slate-600 hover:text-slate-900 py-1">🇿🇦 South Africa</a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-2">
+                            <a href="/en/global-comparison/" class="flex items-center gap-2 text-sm font-medium text-indigo-600">
+                                Összes ország összehasonlítása →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ -->
+                <div class="border-t border-slate-100">
+                    <a href="/en/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+                    </a>
+                </div>
+                <!-- Mobile Language Links -->
+                <div class="border-t border-slate-100 pt-3 pb-2 flex flex-wrap gap-2">
+                    <a href="/hu/magyarorszag/ado-kalkulator/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-slate-100 border border-slate-200 rounded-full text-slate-700">
+                        <span>🇭🇺</span> Magyar
+                    </a>
+                    <a href="/fr/hongrie/simulateur-impot/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a href="/en/hungary/income-tax/" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium hover:bg-slate-50 border border-slate-200 rounded-full text-slate-600">
+                        <span>🇬🇧</span> English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 rounded-full bg-yellow-50 border border-yellow-300 px-4 py-1.5 mb-4">
+                    <span class="text-2xl">🇭🇺</span>
+                    <span class="text-sm font-medium text-yellow-800">Magyarország</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                    Adókalkulátor Magyarország <span class="text-indigo-600">2026</span>
+                </h1>
+                <p class="text-slate-500 max-w-xl mx-auto">Számítsa ki adóit Magyarország: Jövedelemadó + Társadalombiztosítás</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mb-6">
+                <div class="mb-8">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Havi Jövedelem</label>
+                            <div class="relative">
+                                <input type="number" id="income-monthly" value="5000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">HUF</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Éves Jövedelem</label>
+                            <div class="relative">
+                                <input type="number" id="income-annual" value="60000" min="0" max="10000000"
+                                       class="w-full text-right rounded-lg border-0 py-3 pl-3 pr-14 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 text-lg font-semibold">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">HUF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" id="income-slider" min="0" max="300000" step="1000" value="60000"
+                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
+                           style="-webkit-appearance: none; padding: 8px 0;">
+                    <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="result-card bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:landmark" class="text-indigo-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Jövedelemadó</span>
+                        </div>
+                        <p class="text-2xl font-bold text-indigo-600" id="income-tax">0 HUF</p>
+                        <p class="text-xs text-slate-500 mt-1">Effektív adókulcs: <span id="tax-rate">0%</span></p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-100 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">TB Járulékok</span>
+                        </div>
+                        <p class="text-2xl font-bold text-amber-600" id="social-tax">0 HUF</p>
+                        <p class="text-xs text-slate-500 mt-1">~18.5% (munkavállaló)</p>
+                    </div>
+                    <div class="result-card bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-200 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:wallet" class="text-emerald-600" width="18"></iconify-icon>
+                            </div>
+                            <span class="text-sm font-medium text-slate-700">Éves Nettó Jövedelem</span>
+                        </div>
+                        <p class="text-2xl font-bold text-emerald-600" id="net-income">0 HUF</p>
+                        <p class="text-xs text-slate-500 mt-1">Havonta: <span id="net-monthly" class="font-medium">0 HUF</span></p>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5">
+                    <h3 class="text-sm font-semibold text-slate-900 mb-4">Jövedelmed megoszlása</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="relative h-28 w-28 flex-shrink-0">
+                            <div id="chart-donut" class="absolute inset-0 rounded-full transition-all duration-500" style="background: conic-gradient(#10b981 0% 60%, #6366f1 60% 80%, #f59e0b 80% 100%);"></div>
+                            <div class="absolute inset-3 rounded-full bg-white flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-xs text-slate-400">Nettó</span>
+                                <span id="chart-percent" class="text-lg font-bold text-emerald-600">0%</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-sm text-slate-600">Nettó jövedelem</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-indigo-500"></span>
+                                    <span class="text-sm text-slate-600">Adók</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-tax">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="text-sm text-slate-600">Járulékok</span>
+                                </div>
+                                <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-slate-600">Összes Adóteher</span>
+                        <span class="text-lg font-bold text-slate-900" id="total-tax">0 HUF</span>
+                    </div>
+                    <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full transition-all duration-300" id="tax-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 text-right">Összes effektív adókulcs: <span id="total-rate" class="font-medium">0%</span></p>
+                </div>
+            </div>
+
+            <!-- Comprendre l'impot en Hongrie -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite hongroise</h2>
+
+                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+                    <p>La Hongrie possede l'un des systemes fiscaux les plus attractifs d'Europe avec un <strong>taux d'imposition unique de 15%</strong> appele <strong>SZJA</strong> (Szemelyi jovedelemado - impot sur le revenu des personnes physiques). Ce taux forfaitaire s'applique a tous les revenus, quel que soit leur montant, rendant le calcul de l'impot simple et previsible.</p>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">SZJA - Impot sur le revenu (Szemelyi jovedelemado)</h3>
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-red-800 mb-2">Taux unique de 15%</h4>
+                        <ul class="text-xs space-y-1 text-red-700">
+                            <li>Introduit en 2011 pour remplacer le systeme progressif</li>
+                            <li>S'applique a <strong>tous les revenus</strong> : salaires, dividendes, plus-values, locations</li>
+                            <li>Pas de tranches d'imposition - simplicite maximale</li>
+                            <li>L'un des taux d'imposition les plus bas de l'UE</li>
+                            <li>Declaration annuelle obligatoire avant le 20 mai</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">TB - Cotisations sociales (Tarsadalombiztositasi jarulek)</h3>
+                    <p>Le systeme de securite sociale hongrois comprend plusieurs cotisations obligatoires pour les employes :</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Cotisation</th>
+                                    <th class="border p-2 text-left">Taux employe</th>
+                                    <th class="border p-2 text-left">Taux employeur</th>
+                                    <th class="border p-2 text-left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Nyugdijjarulek (Pension)</td><td class="border p-2 font-medium">10%</td><td class="border p-2">-</td><td class="border p-2">Retraite obligatoire</td></tr>
+                                <tr><td class="border p-2">Egeszsegbiztositasi (Sante)</td><td class="border p-2 font-medium">7%</td><td class="border p-2">-</td><td class="border p-2">Assurance maladie</td></tr>
+                                <tr><td class="border p-2">Munkaeropia (Chomage)</td><td class="border p-2 font-medium">1.5%</td><td class="border p-2">-</td><td class="border p-2">Marche du travail</td></tr>
+                                <tr><td class="border p-2">Szocialis hozzajarulasi ado</td><td class="border p-2">-</td><td class="border p-2 font-medium">13%</td><td class="border p-2">Contribution sociale employeur</td></tr>
+                                <tr class="bg-green-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2 font-bold text-green-700">18.5%</td><td class="border p-2">-</td><td class="border p-2">Preleve sur le salaire brut</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux pour les familles (CSOK)</h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-green-800 mb-2">Allocations familiales genereuses</h4>
+                        <ul class="text-xs space-y-1 text-green-700">
+                            <li><strong>Credit d'impot famille</strong> : reduction d'impot significative par enfant</li>
+                            <li><strong>1 enfant</strong> : 10,000 HUF/mois de reduction d'impot</li>
+                            <li><strong>2 enfants</strong> : 20,000 HUF/mois par enfant (40,000 total)</li>
+                            <li><strong>3+ enfants</strong> : 33,000 HUF/mois par enfant</li>
+                            <li><strong>Exemption SZJA pour les moins de 25 ans</strong> (sous conditions)</li>
+                            <li><strong>Meres de 4+ enfants</strong> : exemption totale du SZJA</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
+                        <h4 class="font-semibold text-blue-800 mb-2">Autres avantages fiscaux</h4>
+                        <ul class="text-xs space-y-1 text-blue-700">
+                            <li><strong>Jeunes de moins de 25 ans</strong> : exoneration SZJA jusqu'au salaire minimum (jusqu'a 499,952 HUF/mois en 2026)</li>
+                            <li><strong>Nouveaux maries</strong> : credit d'impot de 5,000 HUF/mois pendant 2 ans</li>
+                            <li><strong>Premier logement</strong> : deduction des interets d'emprunt</li>
+                            <li><strong>Epargne retraite (NYESZ)</strong> : deduction jusqu'a 130,000 HUF/an</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Salaire minimum en Hongrie 2026</h3>
+                    <div class="bg-slate-50 rounded-lg p-4 my-3">
+                        <ul class="text-xs space-y-1">
+                            <li><strong>Salaire minimum general</strong> : 266,800 HUF/mois (~680 EUR)</li>
+                            <li><strong>Salaire minimum qualifie</strong> : 326,000 HUF/mois (~830 EUR)</li>
+                            <li><strong>Salaire moyen</strong> : ~600,000 HUF/mois (~1,530 EUR)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Hongrie</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border p-2 text-left">Critere</th>
+                                    <th class="border p-2 text-left">France</th>
+                                    <th class="border p-2 text-left">Hongrie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border p-2">Type d'imposition</td><td class="border p-2">Progressif (0-45%)</td><td class="border p-2">Taux unique 15%</td></tr>
+                                <tr><td class="border p-2">Salaire 50,000 EUR brut/an</td><td class="border p-2">~37,000 EUR net</td><td class="border p-2">~33,250 EUR net</td></tr>
+                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">15%</td></tr>
+                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">18.5%</td></tr>
+                                <tr><td class="border p-2">Cotisations employeur</td><td class="border p-2">~42%</td><td class="border p-2">13%</td></tr>
+                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui (parts)</td><td class="border p-2">Credits d'impot</td></tr>
+                                <tr><td class="border p-2">Avantages hauts revenus</td><td class="border p-2">Faible</td><td class="border p-2"><strong>Tres eleve</strong></td></tr>
+                                <tr><td class="border p-2">Cout du travail employeur</td><td class="border p-2">Tres eleve</td><td class="border p-2">Faible (13%)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Pourquoi la Hongrie est attractive fiscalement</h3>
+                    <div class="grid md:grid-cols-2 gap-3 my-3">
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm mb-1">Pour les hauts revenus</p>
+                            <p class="text-xs text-emerald-600">Taux unique 15% vs 45% en France - economie substantielle au-dela de 100,000 EUR/an</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm mb-1">Pour les familles</p>
+                            <p class="text-xs text-emerald-600">Credits d'impot genereux + exemption complete pour meres de 4+ enfants</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm mb-1">Pour les employeurs</p>
+                            <p class="text-xs text-emerald-600">Charges sociales de seulement 13% vs 42% en France</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-lg p-3">
+                            <p class="font-bold text-emerald-700 text-sm mb-1">Pour les jeunes</p>
+                            <p class="text-xs text-emerald-600">Exoneration d'impot pour les moins de 25 ans (jusqu'au plafond)</p>
+                        </div>
+                    </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                    <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>
+                    Összehasonlítás hasonló országokkal
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="/fr/pologne/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Kalkulátor Lengyelország
+                    </a>
+                    <a href="/fr/tchequie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Kalkulátor Csehország
+                    </a>
+                    <a href="/fr/roumanie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Kalkulátor Románia
+                    </a>
+                    <a href="/fr/croatie/simulateur-impot/" class="flex items-center gap-2 p-3 bg-white rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors text-sm font-medium text-slate-700 hover:text-indigo-700">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon>
+                        Kalkulátor Horvátország
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/en/global-comparison/" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                    <iconify-icon icon="lucide:globe" width="18"></iconify-icon>
+                    Összehasonlítás más országokkal
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            <p>© 2026 NetSalaire. Az adószámítások tájékoztató jellegű becslések.</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="/en/faq/" class="hover:text-white transition-colors">GYIK</a>
+                <a href="/en/legal/" class="hover:text-white transition-colors">Jogi nyilatkozat</a>
+                <a href="/en/privacy/" class="hover:text-white transition-colors">Adatvédelem</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hungarian tax: flat 15% SZJA + 18.5% social contributions
+        const SZJA_RATE = 0.15;
+        const SOCIAL_RATE = 0.185; // 10% pension + 7% health + 1.5% unemployment
+        const CURRENCY = ' HUF';
+        const HUF_TO_EUR = 0.00255; // approximate conversion rate
+
+        function getAnnualIncome() {
+            return parseFloat(document.getElementById('income-annual').value) || 0;
+        }
+
+        function calculateHungarianTax(income) {
+            // Flat 15% tax on all income
+            return income * SZJA_RATE;
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('hu-HU');
+        }
+
+        function calculate() {
+            const income = getAnnualIncome();
+
+            const incomeTax = calculateHungarianTax(income);
+            const socialTax = income * SOCIAL_RATE;
+            const totalTax = incomeTax + socialTax;
+            const netIncome = income - totalTax;
+
+            document.getElementById('income-tax').textContent = formatNumber(Math.round(incomeTax)) + CURRENCY;
+            document.getElementById('tax-rate').textContent = '15%';
+
+            document.getElementById('social-tax').textContent = formatNumber(Math.round(socialTax)) + CURRENCY;
+
+            document.getElementById('net-income').textContent = formatNumber(Math.round(netIncome)) + CURRENCY;
+            document.getElementById('net-monthly').textContent = formatNumber(Math.round(netIncome / 12)) + CURRENCY;
+
+            document.getElementById('total-tax').textContent = formatNumber(Math.round(totalTax)) + CURRENCY;
+            document.getElementById('total-rate').textContent = income > 0 ? (totalTax / income * 100).toFixed(1) + '%' : '0%';
+
+            // EUR conversion
+            const eurAmount = Math.round(income * HUF_TO_EUR);
+            document.getElementById('conv-gross-eur').textContent = '~' + eurAmount.toLocaleString('hu-HU') + ' EUR';
+
+            const taxPercent = income > 0 ? Math.min((totalTax / income) * 100, 100) : 0;
+            document.getElementById('tax-bar').style.width = taxPercent + '%';
+
+            const slider = document.getElementById('income-slider');
+            const percent = Math.min((income / 50000000) * 100, 100);
+            slider.style.background = `linear-gradient(to right, #dc2626 ${percent}%, #e2e8f0 ${percent}%)`;
+
+            updateChart(netIncome, incomeTax, socialTax, income);
+        }
+
+        function updateChart(net, tax, social, total) {
+            if (total <= 0) return;
+
+            const netPercent = Math.round((net / total) * 100);
+            const taxPercent = Math.round((tax / total) * 100);
+            const socialPercent = 100 - netPercent - taxPercent;
+
+            const netEnd = netPercent;
+            const taxEnd = netEnd + taxPercent;
+            const donut = document.getElementById('chart-donut');
+            if (donut) {
+                donut.style.background = 'conic-gradient(#10b981 0% ' + netEnd + '%, #dc2626 ' + netEnd + '% ' + taxEnd + '%, #22c55e ' + taxEnd + '% 100%)';
+            }
+
+            const chartPercent = document.getElementById('chart-percent');
+            if (chartPercent) chartPercent.textContent = netPercent + '%';
+
+            document.getElementById('legend-net').textContent = netPercent + '%';
+            document.getElementById('legend-tax').textContent = taxPercent + '%';
+            document.getElementById('legend-social').textContent = socialPercent + '%';
+        }
+
+        document.getElementById('income-monthly').addEventListener('input', function() {
+            const monthly = parseFloat(this.value) || 0;
+            const annual = monthly * 12;
+            document.getElementById('income-annual').value = Math.round(annual);
+            document.getElementById('income-slider').value = Math.min(annual, 50000000);
+            calculate();
+        });
+
+        document.getElementById('income-annual').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            document.getElementById('income-slider').value = Math.min(annual, 50000000);
+            calculate();
+        });
+
+        document.getElementById('income-slider').addEventListener('input', function() {
+            const annual = parseFloat(this.value) || 0;
+            document.getElementById('income-annual').value = annual;
+            document.getElementById('income-monthly').value = Math.round(annual / 12);
+            calculate();
+        });
+
+        calculate();
+    </script>
+</body>
+</html>

@@ -371,113 +371,113 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Full-screen overlay) -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
-            <div class="px-6 py-4 space-y-1 pb-24">
-                <!-- France -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pl-4 pb-3 space-y-1">
-                        <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Simulateur Impot
-                        </a>
-                        <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Brut vers Net
-                        </a>
-                        <a href="/fr/france/guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Guide Fiscal
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">📉</span> Chomage ARE
-                        </a>
-                        <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">📋</span> Licenciement
-                        </a>
-                        <a href="/fr/france/simulateur-rupture-conventionnelle/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🤝</span> Rupture Conv.
-                        </a>
-                        <a href="/fr/france/simulateur-apl/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🏠</span> APL
-                        </a>
-                        <a href="/fr/france/creche-tarifs/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">👶</span> Creche
-                        </a>
-                        <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🚗</span> Frais Km
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2.5 text-sm text-indigo-600 font-medium py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🔀</span> Comparer France vs Maroc
-                        </a>
-                    </div>
-                </div>
-                <!-- Maroc -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Maroc
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pl-4 pb-3 space-y-1">
-                        <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Simulateur Impot
-                        </a>
-                        <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Brut vers Net
-                        </a>
-                        <a href="/fr/maroc/guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Guide Fiscal
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2.5 text-sm text-emerald-600 font-medium py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🔀</span> Comparer France vs Maroc
-                        </a>
-                    </div>
-                </div>
-                <!-- Tous les pays - avec recherche -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180');" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> Tous les pays <span class="text-xs font-normal text-slate-400 ml-1">50+</span>
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pb-3">
-                        <div class="sticky top-0 bg-white pb-2 pt-1 z-10">
-                            <div class="relative">
-                                <iconify-icon icon="lucide:search" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></iconify-icon>
-                                <input id="mobile-country-search" type="text" placeholder="Rechercher un pays..." class="w-full pl-9 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" autocomplete="off">
-                            </div>
-                        </div>
-                        <div id="mobile-country-list" class="space-y-3 px-1"></div>
-                        <div id="mobile-no-results" class="hidden text-center py-6 text-sm text-slate-400">Aucun pays trouve</div>
-                        <div class="border-t border-slate-100 pt-3 mt-3 px-1">
-                            <a href="/fr/comparateur-global/" class="flex items-center justify-center gap-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-xl py-2.5 hover:bg-indigo-100 transition-colors">
-                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous les pays
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- FAQ & Contact -->
-                <div class="border-t border-slate-100 space-y-1 pt-1">
-                    <a href="/fr/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
-                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+    </nav>
+    <!-- Mobile Menu (Full-screen overlay, outside nav to avoid backdrop-filter stacking context) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
+        <div class="px-6 py-4 space-y-1 pb-24">
+            <!-- France -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pl-4 pb-3 space-y-1">
+                    <a href="/fr/france/simulateur-impot-revenu/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Simulateur Impot
                     </a>
-                    <a href="{contact_anchor}" class="flex items-center justify-center gap-2 text-sm font-medium bg-slate-900 text-white px-4 py-2.5 rounded-xl hover:bg-slate-800 transition-colors">
-                        Contact
-                        <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                    <a href="/fr/france/simulateur-salaire-brut-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Brut vers Net
+                    </a>
+                    <a href="/fr/france/guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Guide Fiscal
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/fr/france/simulateur-chomage-are/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">📉</span> Chomage ARE
+                    </a>
+                    <a href="/fr/france/simulateur-indemnite-licenciement/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">📋</span> Licenciement
+                    </a>
+                    <a href="/fr/france/simulateur-rupture-conventionnelle/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🤝</span> Rupture Conv.
+                    </a>
+                    <a href="/fr/france/simulateur-apl/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🏠</span> APL
+                    </a>
+                    <a href="/fr/france/creche-tarifs/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">👶</span> Creche
+                    </a>
+                    <a href="/fr/france/simulateur-indemnite-kilometrique/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🚗</span> Frais Km
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2.5 text-sm text-indigo-600 font-medium py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🔀</span> Comparer France vs Maroc
                     </a>
                 </div>
             </div>
+            <!-- Maroc -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Maroc
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pl-4 pb-3 space-y-1">
+                    <a href="/fr/maroc/simulateur-impot-revenu/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Simulateur Impot
+                    </a>
+                    <a href="/fr/maroc/simulateur-salaire-brut-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Brut vers Net
+                    </a>
+                    <a href="/fr/maroc/guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Guide Fiscal
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/fr/comparateur-salaire-france-maroc/" class="flex items-center gap-2.5 text-sm text-emerald-600 font-medium py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🔀</span> Comparer France vs Maroc
+                    </a>
+                </div>
+            </div>
+            <!-- Tous les pays - avec recherche -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180');" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:globe" width="18"></iconify-icon> Tous les pays <span class="text-xs font-normal text-slate-400 ml-1">50+</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pb-3">
+                    <div class="sticky top-0 bg-white pb-2 pt-1 z-10">
+                        <div class="relative">
+                            <iconify-icon icon="lucide:search" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></iconify-icon>
+                            <input id="mobile-country-search" type="text" placeholder="Rechercher un pays..." class="w-full pl-9 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" autocomplete="off">
+                        </div>
+                    </div>
+                    <div id="mobile-country-list" class="space-y-3 px-1"></div>
+                    <div id="mobile-no-results" class="hidden text-center py-6 text-sm text-slate-400">Aucun pays trouve</div>
+                    <div class="border-t border-slate-100 pt-3 mt-3 px-1">
+                        <a href="/fr/comparateur-global/" class="flex items-center justify-center gap-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-xl py-2.5 hover:bg-indigo-100 transition-colors">
+                            <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Comparer tous les pays
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ & Contact -->
+            <div class="border-t border-slate-100 space-y-1 pt-1">
+                <a href="/fr/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+                </a>
+                <a href="{contact_anchor}" class="flex items-center justify-center gap-2 text-sm font-medium bg-slate-900 text-white px-4 py-2.5 rounded-xl hover:bg-slate-800 transition-colors">
+                    Contact
+                    <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                </a>
+            </div>
         </div>
-    </nav>'''
+    </div>'''
 
     return nav
 
@@ -689,113 +689,113 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu (Full-screen overlay) -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
-            <div class="px-6 py-4 space-y-1 pb-24">
-                <!-- France -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pl-4 pb-3 space-y-1">
-                        <a href="/en/france/income-tax/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Tax Simulator
-                        </a>
-                        <a href="/en/france/gross-to-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Gross to Net
-                        </a>
-                        <a href="/en/france/tax-guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Tax Guide
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/en/france/unemployment-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">📉</span> Unemployment
-                        </a>
-                        <a href="/en/france/severance-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">📋</span> Severance
-                        </a>
-                        <a href="/en/france/mutual-termination-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🤝</span> Mutual Termination
-                        </a>
-                        <a href="/en/france/housing-benefit-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🏠</span> Housing Aid
-                        </a>
-                        <a href="/en/france/daycare-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">👶</span> Daycare
-                        </a>
-                        <a href="/en/france/mileage-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🚗</span> Mileage
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/en/france-morocco-comparison/" class="flex items-center gap-2.5 text-sm text-indigo-600 font-medium py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🔀</span> Compare France vs Morocco
-                        </a>
-                    </div>
-                </div>
-                <!-- Morocco -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Morocco
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pl-4 pb-3 space-y-1">
-                        <a href="/en/morocco/income-tax/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Tax Simulator
-                        </a>
-                        <a href="/en/morocco/gross-to-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Gross to Net
-                        </a>
-                        <a href="/en/morocco/tax-guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Tax Guide
-                        </a>
-                        <div class="border-t border-slate-100 my-1"></div>
-                        <a href="/en/france-morocco-comparison/" class="flex items-center gap-2.5 text-sm text-emerald-600 font-medium py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
-                            <span class="w-4 text-center text-xs">🔀</span> Compare France vs Morocco
-                        </a>
-                    </div>
-                </div>
-                <!-- All Countries - with search -->
-                <div>
-                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180');" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
-                        <span class="flex items-center gap-2">
-                            <iconify-icon icon="lucide:globe" width="18"></iconify-icon> All Countries <span class="text-xs font-normal text-slate-400 ml-1">50+</span>
-                        </span>
-                        <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
-                    </button>
-                    <div class="hidden pb-3">
-                        <div class="sticky top-0 bg-white pb-2 pt-1 z-10">
-                            <div class="relative">
-                                <iconify-icon icon="lucide:search" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></iconify-icon>
-                                <input id="mobile-country-search" type="text" placeholder="Search a country..." class="w-full pl-9 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" autocomplete="off">
-                            </div>
-                        </div>
-                        <div id="mobile-country-list" class="space-y-3 px-1"></div>
-                        <div id="mobile-no-results" class="hidden text-center py-6 text-sm text-slate-400">No country found</div>
-                        <div class="border-t border-slate-100 pt-3 mt-3 px-1">
-                            <a href="/en/global-comparison/" class="flex items-center justify-center gap-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-xl py-2.5 hover:bg-indigo-100 transition-colors">
-                                <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all countries
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- FAQ & Contact -->
-                <div class="border-t border-slate-100 space-y-1 pt-1">
-                    <a href="/en/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
-                        <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+    </nav>
+    <!-- Mobile Menu (Full-screen overlay, outside nav to avoid backdrop-filter stacking context) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
+        <div class="px-6 py-4 space-y-1 pb-24">
+            <!-- France -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon> France
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pl-4 pb-3 space-y-1">
+                    <a href="/en/france/income-tax/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:landmark" width="16" class="text-indigo-500"></iconify-icon> Tax Simulator
                     </a>
-                    <a href="{contact_anchor}" class="flex items-center justify-center gap-2 text-sm font-medium bg-slate-900 text-white px-4 py-2.5 rounded-xl hover:bg-slate-800 transition-colors">
-                        Contact
-                        <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                    <a href="/en/france/gross-to-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-indigo-500"></iconify-icon> Gross to Net
+                    </a>
+                    <a href="/en/france/tax-guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <iconify-icon icon="lucide:book-open" width="16" class="text-indigo-500"></iconify-icon> Tax Guide
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/en/france/unemployment-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">📉</span> Unemployment
+                    </a>
+                    <a href="/en/france/severance-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">📋</span> Severance
+                    </a>
+                    <a href="/en/france/mutual-termination-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🤝</span> Mutual Termination
+                    </a>
+                    <a href="/en/france/housing-benefit-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🏠</span> Housing Aid
+                    </a>
+                    <a href="/en/france/daycare-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">👶</span> Daycare
+                    </a>
+                    <a href="/en/france/mileage-calculator/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-600 py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🚗</span> Mileage
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/en/france-morocco-comparison/" class="flex items-center gap-2.5 text-sm text-indigo-600 font-medium py-1.5 px-2 rounded-lg hover:bg-indigo-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🔀</span> Compare France vs Morocco
                     </a>
                 </div>
             </div>
+            <!-- Morocco -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="circle-flags:ma" width="18"></iconify-icon> Morocco
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pl-4 pb-3 space-y-1">
+                    <a href="/en/morocco/income-tax/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:landmark" width="16" class="text-emerald-500"></iconify-icon> Tax Simulator
+                    </a>
+                    <a href="/en/morocco/gross-to-net/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:calculator" width="16" class="text-emerald-500"></iconify-icon> Gross to Net
+                    </a>
+                    <a href="/en/morocco/tax-guide/" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-emerald-600 py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <iconify-icon icon="lucide:book-open" width="16" class="text-emerald-500"></iconify-icon> Tax Guide
+                    </a>
+                    <div class="border-t border-slate-100 my-1"></div>
+                    <a href="/en/france-morocco-comparison/" class="flex items-center gap-2.5 text-sm text-emerald-600 font-medium py-1.5 px-2 rounded-lg hover:bg-emerald-50 transition-colors">
+                        <span class="w-4 text-center text-xs">🔀</span> Compare France vs Morocco
+                    </a>
+                </div>
+            </div>
+            <!-- All Countries - with search -->
+            <div>
+                <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180');" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900 border-t border-slate-100">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:globe" width="18"></iconify-icon> All Countries <span class="text-xs font-normal text-slate-400 ml-1">50+</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="chevron-icon text-slate-400 transition-transform duration-200"></iconify-icon>
+                </button>
+                <div class="hidden pb-3">
+                    <div class="sticky top-0 bg-white pb-2 pt-1 z-10">
+                        <div class="relative">
+                            <iconify-icon icon="lucide:search" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></iconify-icon>
+                            <input id="mobile-country-search" type="text" placeholder="Search a country..." class="w-full pl-9 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" autocomplete="off">
+                        </div>
+                    </div>
+                    <div id="mobile-country-list" class="space-y-3 px-1"></div>
+                    <div id="mobile-no-results" class="hidden text-center py-6 text-sm text-slate-400">No country found</div>
+                    <div class="border-t border-slate-100 pt-3 mt-3 px-1">
+                        <a href="/en/global-comparison/" class="flex items-center justify-center gap-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-xl py-2.5 hover:bg-indigo-100 transition-colors">
+                            <iconify-icon icon="lucide:bar-chart-3" width="16"></iconify-icon> Compare all countries
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ & Contact -->
+            <div class="border-t border-slate-100 space-y-1 pt-1">
+                <a href="/en/faq/" class="flex items-center gap-2 py-3 text-sm font-semibold text-slate-900">
+                    <iconify-icon icon="lucide:help-circle" width="18"></iconify-icon> FAQ
+                </a>
+                <a href="{contact_anchor}" class="flex items-center justify-center gap-2 text-sm font-medium bg-slate-900 text-white px-4 py-2.5 rounded-xl hover:bg-slate-800 transition-colors">
+                    Contact
+                    <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                </a>
+            </div>
         </div>
-    </nav>'''
+    </div>'''
 
     return nav
 
@@ -820,8 +820,8 @@ def process_file(filepath):
         content = f.read()
 
     # Find the nav block using regex
-    # Match from <nav class="fixed to the closing </nav>
-    nav_pattern = r'<nav\s+class="fixed[^"]*"[^>]*>.*?</nav>'
+    # Match <nav> and optionally the mobile-menu div that follows it (outside nav)
+    nav_pattern = r'<nav\s+class="fixed[^"]*"[^>]*>.*?</nav>(\s*\n\s*<!-- Mobile Menu[^>]*-->\s*\n\s*<div\s+id="mobile-menu"[^>]*>.*?</div>\s*</div>\s*</div>)?'
     nav_match = re.search(nav_pattern, content, re.DOTALL)
 
     if not nav_match:

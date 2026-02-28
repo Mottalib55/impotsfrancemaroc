@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -382,7 +383,7 @@
                             <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
                                 <iconify-icon icon="lucide:shield" class="text-amber-600" width="18"></iconify-icon>
                             </div>
-                            <span class="text-sm font-medium text-slate-700">Sozialabgaben</span>
+                            <span class="text-sm font-medium text-slate-700">Abgaben</span>
                         </div>
                         <p class="text-2xl font-bold text-amber-600" id="social-tax">0 CHF</p>
                         <p class="text-xs text-slate-500 mt-1">~20.7% (Arbeitnehmer)</p>
@@ -413,7 +414,7 @@
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center gap-2">
                                     <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
-                                    <span class="text-sm text-slate-600">Nettoeinkommen</span>
+                                    <span class="text-sm text-slate-600">Netto</span>
                                 </div>
                                 <span class="text-sm font-semibold text-slate-900" id="legend-net">0%</span>
                             </div>
@@ -427,7 +428,7 @@
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center gap-2">
                                     <span class="h-3 w-3 rounded-full bg-amber-500"></span>
-                                    <span class="text-sm text-slate-600">Sozialabgaben</span>
+                                    <span class="text-sm text-slate-600">Abgaben</span>
                                 </div>
                                 <span class="text-sm font-medium text-slate-500" id="legend-social">0%</span>
                             </div>
@@ -463,32 +464,17 @@
         
                 </div>
 
-            <!-- Comprendre l'impot en Suisse -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite suisse</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Suisse possede un systeme fiscal unique a <strong>trois niveaux independants</strong> : federal, cantonal et communal. Votre lieu de residence determine l'essentiel de votre charge fiscale, avec des ecarts pouvant aller du simple au double selon le canton.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Structure de l'impot suisse</h3>
-                    <div class="grid md:grid-cols-3 gap-3 my-3">
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
-                            <h4 class="font-semibold text-red-800 text-xs mb-1">Federal</h4>
-                            <p class="text-lg font-bold text-red-600">11.5%</p>
-                            <p class="text-xs text-red-600">max (progressif)</p>
-                        </div>
-                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                            <h4 class="font-semibold text-blue-800 text-xs mb-1">Cantonal</h4>
-                            <p class="text-lg font-bold text-blue-600">~15-35%</p>
-                            <p class="text-xs text-blue-600">varie par canton</p>
-                        </div>
-                        <div class="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
-                            <h4 class="font-semibold text-green-800 text-xs mb-1">Communal</h4>
-                            <p class="text-lg font-bold text-green-600">~50-150%</p>
-                            <p class="text-xs text-green-600">du cantonal</p>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Vollständiger Steuerguide verfügbar auf:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/suisse/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> Französisch
+                    </a>
+                    <a href="/en/switzerland/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> Englisch
+                    </a>
+                </div>
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

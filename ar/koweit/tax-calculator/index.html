@@ -371,6 +371,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -486,74 +487,17 @@
             </div>
 
             <!-- Comprehensive Guide -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite koweitienne</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Koweit est l'un des pays les plus attractifs fiscalement au monde pour les travailleurs expatries. Avec <strong>0% d'impot sur le revenu des personnes physiques</strong>, le pays attire de nombreux professionnels qualifies, notamment dans les secteurs du petrole, de la finance et de l'ingenierie. Cette politique fiscale genereuse est financee par les immenses revenus petroliers du pays.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Absence d'impot sur le revenu personnel</h3>
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-green-800 mb-2">Revenus totalement exoneres</h4>
-                        <ul class="text-xs space-y-1 text-green-700">
-                            <li><strong>Salaires et traitements</strong> : aucun impot, quelle que soit la nationalite</li>
-                            <li><strong>Primes et bonus</strong> : entierement nets</li>
-                            <li><strong>Avantages en nature</strong> : logement, voiture, billets d'avion non imposes</li>
-                            <li><strong>Indemnites de fin de contrat</strong> : exonerees d'impot</li>
-                            <li><strong>Revenus d'investissement</strong> : dividendes, interets et plus-values non imposes</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (PIFSS)</h3>
-                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-amber-800 mb-2">Public Institution for Social Security</h4>
-                        <ul class="text-xs space-y-1 text-amber-700">
-                            <li><strong>Expatries</strong> : totalement exemptes de cotisations sociales</li>
-                            <li><strong>Citoyens koweitiens</strong> : 7.5% de cotisation employe</li>
-                            <li><strong>Employeurs (pour Koweitiens)</strong> : 11.5% de contribution patronale</li>
-                            <li>Couvre la retraite, l'invalidite et le deces</li>
-                            <li>Les expatries doivent avoir leur propre assurance sante</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Impot sur les societes</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Fiscalite des entreprises</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li><strong>Societes etrangeres</strong> : 15% d'impot sur les benefices</li>
-                            <li><strong>Societes koweïtiennes</strong> : pas d'impot sur les societes, mais 1% de Zakat</li>
-                            <li><strong>Societes du CCG</strong> : traitees comme societes locales</li>
-                            <li>Pas de TVA actuellement (contrairement aux autres pays du CCG)</li>
-                            <li>Pas de retenue a la source sur les dividendes</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux du Koweit</h3>
-                    <div class="grid md:grid-cols-2 gap-4 my-3">
-                        <div class="bg-green-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-green-700 mb-2">Points positifs</h4>
-                            <ul class="text-xs space-y-1 text-green-600">
-                                <li>Aucun impot sur le revenu personnel</li>
-                                <li>Pas de TVA (contrairement aux EAU et Arabie Saoudite)</li>
-                                <li>Pas d'impot sur les plus-values</li>
-                                <li>Pas d'impot sur la succession</li>
-                                <li>Salaires eleves dans de nombreux secteurs</li>
-                                <li>Essence et electricite subventionnees</li>
-                            </ul>
-                        </div>
-                        <div class="bg-red-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-red-700 mb-2">Points a considerer</h4>
-                            <ul class="text-xs space-y-1 text-red-600">
-                                <li>Cout de la vie eleve (logement)</li>
-                                <li>Assurance sante privee obligatoire pour expatries</li>
-                                <li>Marche du travail limite hors petrole</li>
-                                <li>Restrictions sur la propriete immobiliere</li>
-                                <li>Climat desert extreme</li>
-                                <li>Dependance au sponsor (Kafala)</li>
-                            </ul>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">الدليل الضريبي الكامل متاح بـ:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/koweit/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> الفرنسية
+                    </a>
+                    <a href="/en/kuwait/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> الإنجليزية
+                    </a>
+                </div>
+            </div>
                     <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Indemnite de fin de service</h3>
                     <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
                         <h4 class="font-semibold text-indigo-800 mb-2">End of Service Benefits (ESB)</h4>

@@ -365,6 +365,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -464,188 +465,19 @@
         
                 </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <span class="text-2xl">🇨🇳</span>
-                    Guide Complet : Travailler en Chine
-                </h2>
-
-                <div class="prose prose-slate max-w-none text-sm">
-                    <p class="text-slate-600 mb-6">
-                        La Chine applique un <strong>impot sur le revenu progressif (IIT)</strong> avec des taux allant de
-                        <strong>3% a 45%</strong>. Depuis 2019, les expatries sont soumis aux memes regles que les residents chinois,
-                        avec des deductions speciales. Shanghai et les grandes villes offrent des salaires attractifs mais
-                        un cout de la vie eleve.
-                    </p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Baremes IIT 2026 (Revenus du Travail)</h3>
-                    <p class="text-xs text-slate-500 mb-2">Applicable apres deduction standard de ¥5,000/mois (¥60,000/an)</p>
-                    <table class="w-full text-xs border-collapse">
-                        <thead>
-                            <tr class="bg-slate-100">
-                                <th class="border border-slate-200 px-3 py-2 text-left">Revenu Imposable Annuel (¥)</th>
-                                <th class="border border-slate-200 px-3 py-2 text-center">Taux</th>
-                                <th class="border border-slate-200 px-3 py-2 text-center">Deduction Rapide</th>
-                                <th class="border border-slate-200 px-3 py-2 text-center">Equiv. EUR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">0 - ¥36,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-emerald-600">3%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥0</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">0 - 4,700€</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">¥36,000 - ¥144,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">10%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥2,520</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">4.7k - 18.7k€</td></tr>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">¥144,000 - ¥300,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">20%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥16,920</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">18.7k - 39k€</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">¥300,000 - ¥420,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">25%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥31,920</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">39k - 55k€</td></tr>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">¥420,000 - ¥660,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">30%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥52,920</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">55k - 86k€</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">¥660,000 - ¥960,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium">35%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥85,920</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">86k - 125k€</td></tr>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">Au-dela de ¥960,000</td><td class="border border-slate-200 px-3 py-1.5 text-center font-medium text-rose-600">45%</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥181,920</td><td class="border border-slate-200 px-3 py-1.5 text-center text-slate-500">&gt; 125k€</td></tr>
-                        </tbody>
-                    </table>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions Speciales (depuis 2019)</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p class="text-blue-800 text-xs mb-3">
-                            En plus de la deduction standard de ¥5,000/mois, vous pouvez deduire :
-                        </p>
-                        <div class="grid md:grid-cols-2 gap-3">
-                            <div>
-                                <h4 class="font-semibold text-blue-900 text-xs mb-1">Deductions Mensuelles</h4>
-                                <ul class="text-blue-800 text-xs space-y-1">
-                                    <li>Education enfants: <strong>¥1,000/enfant</strong></li>
-                                    <li>Formation continue: <strong>¥400</strong></li>
-                                    <li>Loyer (grande ville): <strong>¥1,500</strong></li>
-                                    <li>Interet pret immo: <strong>¥1,000</strong></li>
-                                    <li>Soins personnes agees: <strong>¥2,000</strong></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-blue-900 text-xs mb-1">Pour Expatries</h4>
-                                <ul class="text-blue-800 text-xs space-y-1">
-                                    <li>Allocation logement: exoneree</li>
-                                    <li>Frais de scolarite enfants: exoneres</li>
-                                    <li>Frais de formation langue: exoneres</li>
-                                    <li>Home leave (1 voyage/an): exonere</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales Detaillees (Shanghai)</h3>
-                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <h4 class="font-semibold text-amber-900 text-sm mb-2">Part Employe (~10.5%)</h4>
-                                <ul class="text-amber-800 text-xs space-y-1">
-                                    <li>Pension de base: <strong>8%</strong></li>
-                                    <li>Assurance maladie: <strong>2%</strong></li>
-                                    <li>Assurance chomage: <strong>0.5%</strong></li>
-                                    <li>Fonds logement (Housing Fund): <strong>7%</strong> (optionnel expats)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-amber-900 text-sm mb-2">Part Employeur (~31%)</h4>
-                                <ul class="text-amber-800 text-xs space-y-1">
-                                    <li>Pension: <strong>16%</strong></li>
-                                    <li>Assurance maladie: <strong>9.5%</strong></li>
-                                    <li>Chomage: <strong>0.5%</strong></li>
-                                    <li>Accidents du travail: <strong>0.16-1.52%</strong></li>
-                                    <li>Maternite: <strong>1%</strong></li>
-                                    <li>Fonds logement: <strong>7%</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="text-xs text-amber-700 mt-3 pt-3 border-t border-amber-300">
-                            <strong>Note:</strong> Les expatries peuvent etre exemptes du Housing Fund selon leur contrat.
-                        </p>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Residence Fiscale et Regle des 183 Jours</h3>
-                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-                        <h4 class="font-semibold text-indigo-900 text-sm mb-2">Regles Importantes</h4>
-                        <ul class="text-indigo-800 text-xs space-y-2">
-                            <li><strong>Moins de 183 jours/an:</strong> Impot uniquement sur les revenus de source chinoise</li>
-                            <li><strong>183 jours ou plus:</strong> Resident fiscal - impose sur les revenus mondiaux</li>
-                            <li><strong>Regle des 6 ans:</strong> Si present 183+ jours pendant 6 annees consecutives ET sans sortie de plus de 30 jours consecutifs, imposition sur revenus mondiaux. "Reset" possible avec une sortie &gt;30 jours.</li>
-                        </ul>
-                        <p class="text-indigo-700 text-xs mt-2 pt-2 border-t border-indigo-300">
-                            <strong>Astuce:</strong> De nombreux expatries quittent la Chine plus de 30 jours consecutifs avant la 6e annee pour eviter l'imposition mondiale.
-                        </p>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Types de Visas de Travail</h3>
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-lg mb-1">🏆</div>
-                            <div class="text-xs font-bold text-emerald-800">Visa Z (Travail)</div>
-                            <div class="text-[10px] text-emerald-600">Standard pour emploi</div>
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-lg mb-1">⭐</div>
-                            <div class="text-xs font-bold text-emerald-800">Visa R (Talent)</div>
-                            <div class="text-[10px] text-emerald-600">Hauts profils, process accelere</div>
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-lg mb-1">💼</div>
-                            <div class="text-xs font-bold text-emerald-800">Visa M (Business)</div>
-                            <div class="text-[10px] text-emerald-600">Voyages d'affaires courts</div>
-                        </div>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Chine vs France</h3>
-                    <table class="w-full text-xs border-collapse">
-                        <thead>
-                            <tr class="bg-slate-100">
-                                <th class="border border-slate-200 px-3 py-2 text-left">Critere</th>
-                                <th class="border border-slate-200 px-3 py-2 text-center">🇨🇳 Chine</th>
-                                <th class="border border-slate-200 px-3 py-2 text-center">🇫🇷 France</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">Taux max impot sur revenu</td><td class="border border-slate-200 px-3 py-1.5 text-center">45%</td><td class="border border-slate-200 px-3 py-1.5 text-center">45%</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Cotisations employe</td><td class="border border-slate-200 px-3 py-1.5 text-center text-emerald-600 font-medium">~10.5%</td><td class="border border-slate-200 px-3 py-1.5 text-center">~22%</td></tr>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">Deduction standard</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥60,000/an (~7,800€)</td><td class="border border-slate-200 px-3 py-1.5 text-center">10% (plafonne)</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Cout vie (Shanghai vs Paris)</td><td class="border border-slate-200 px-3 py-1.5 text-center">-15-20%</td><td class="border border-slate-200 px-3 py-1.5 text-center">Reference</td></tr>
-                            <tr><td class="border border-slate-200 px-3 py-1.5">Salaire IT (senior)</td><td class="border border-slate-200 px-3 py-1.5 text-center">¥400-800k (~52-104k€)</td><td class="border border-slate-200 px-3 py-1.5 text-center">50-80k€</td></tr>
-                            <tr class="bg-slate-50"><td class="border border-slate-200 px-3 py-1.5">Convention fiscale</td><td class="border border-slate-200 px-3 py-1.5 text-center text-emerald-600">Oui (1984)</td><td class="border border-slate-200 px-3 py-1.5 text-center">-</td></tr>
-                        </tbody>
-                    </table>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Pourquoi Choisir la Chine ?</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-2xl mb-1">💰</div>
-                            <div class="text-xs font-medium text-emerald-800">Salaires Eleves</div>
-                            <div class="text-[10px] text-emerald-600">Tech & finance competitifs</div>
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-2xl mb-1">🏙️</div>
-                            <div class="text-xs font-medium text-emerald-800">Megapoles</div>
-                            <div class="text-[10px] text-emerald-600">Shanghai, Shenzhen, Beijing</div>
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-2xl mb-1">🚀</div>
-                            <div class="text-xs font-medium text-emerald-800">Carriere</div>
-                            <div class="text-[10px] text-emerald-600">Progression rapide</div>
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-                            <div class="text-2xl mb-1">🌏</div>
-                            <div class="text-xs font-medium text-emerald-800">Marche Enorme</div>
-                            <div class="text-[10px] text-emerald-600">1.4 milliard de consommateurs</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-rose-50 border border-rose-300 rounded-lg p-4 mt-6">
-                        <h4 class="font-semibold text-rose-900 mb-2">Points d'Attention pour les Francais</h4>
-                        <ul class="text-rose-800 text-xs space-y-1">
-                            <li><strong>Great Firewall:</strong> VPN necessaire pour acceder a Google, Facebook, WhatsApp...</li>
-                            <li><strong>Langue:</strong> Le mandarin est indispensable en dehors des grandes entreprises internationales</li>
-                            <li><strong>Pension non portable:</strong> Cotisations perdues si depart (pas d'accord de totalisation France-Chine)</li>
-                            <li><strong>Exit tax France:</strong> Revenus mondiaux imposes en France 10 ans apres depart si applicable</li>
-                            <li><strong>Controle des changes:</strong> Limites sur les transferts d'argent vers l'etranger (~$50k/an)</li>
-                            <li><strong>Pollution:</strong> Qualite de l'air problematique dans certaines villes</li>
-                            <li><strong>Visa lie a l'employeur:</strong> Perdre son emploi = perdre son visa (generalement 30 jours pour partir)</li>
-                        </ul>
-                    </div>
+            
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">完整税务指南提供以下语言版本：</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/chine/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> 法语
+                    </a>
+                    <a href="/en/china/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> 英语
+                    </a>
                 </div>
             </div>
+
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">

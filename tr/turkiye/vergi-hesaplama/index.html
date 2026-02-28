@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -460,141 +461,17 @@
                     <div class="flex justify-between"><span class="text-slate-500">3,000,000+ TRY</span><span class="font-medium text-red-600">40%</span></div>
                 </div>
 
-            <!-- Comprendre l'impot en Turquie -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite turque</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Turquie possede un systeme fiscal progressif avec le <strong>Gelir Vergisi</strong> (impot sur le revenu). La fiscalite turque repose sur le <strong>principe de residence fiscale</strong> : toute personne residant en Turquie plus de 6 mois par an est imposable sur ses revenus mondiaux. Le systeme utilise 5 tranches d'imposition allant de 15% a 40%.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026 (Gelir Vergisi Dilimleri)</h3>
-                    <p>L'impot turc utilise un systeme de <strong>tranches progressives</strong> :</p>
-                    <div class="bg-slate-50 rounded-lg p-4 my-3">
-                        <ul class="space-y-1 text-xs">
-                            <li>0 - 110,000 TRY : <strong>15%</strong></li>
-                            <li>110,000 - 230,000 TRY : <strong>20%</strong></li>
-                            <li>230,000 - 870,000 TRY : <strong>27%</strong></li>
-                            <li>870,000 - 3,000,000 TRY : <strong>35%</strong></li>
-                            <li>Au-dela de 3,000,000 TRY : <strong>40%</strong></li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500">Note : Ces tranches sont ajustees annuellement en fonction de l'inflation. La Turquie a connu une forte inflation ces dernieres annees.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">SGK - Securite sociale turque</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">Sosyal Guvenlik Kurumu (SGK)</h4>
-                        <ul class="text-xs space-y-1 text-red-700">
-                            <li>Institution unique gerant retraite, maladie et chomage depuis 2006</li>
-                            <li>Cotisations obligatoires pour tous les salaries</li>
-                            <li>Plafond mensuel de cotisation : environ 300,000 TRY (2026)</li>
-                            <li>Les employeurs paient une part plus importante (~22.5%)</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales (~15% part employe)</h3>
-                    <p>Le systeme social turc est gere par la <strong>SGK</strong> (Sosyal Guvenlik Kurumu). Les cotisations sont partagees entre employeur et employe.</p>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Taux employeur</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Emeklilik (Retraite)</td><td class="border p-2 font-medium">9%</td><td class="border p-2">11%</td><td class="border p-2">Assurance vieillesse SGK</td></tr>
-                                <tr><td class="border p-2">Issizlik (Chomage)</td><td class="border p-2 font-medium">1%</td><td class="border p-2">2%</td><td class="border p-2">Assurance chomage</td></tr>
-                                <tr><td class="border p-2">Saglik (Sante)</td><td class="border p-2 font-medium">5%</td><td class="border p-2">7.5%</td><td class="border p-2">Assurance maladie GSS</td></tr>
-                                <tr><td class="border p-2">Is kazasi (Accident travail)</td><td class="border p-2 font-medium">-</td><td class="border p-2">1-6.5%</td><td class="border p-2">Selon secteur d'activite</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-amber-700">~15%</td><td class="border p-2 font-bold">~22.5%</td><td class="border p-2">Plafond mensuel applicable</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Damga Vergisi (Droit de timbre)</h3>
-                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-amber-800 mb-2">Taxe sur les salaires : 0.759%</h4>
-                        <ul class="text-xs space-y-1 text-amber-700">
-                            <li>Preleve sur le salaire brut chaque mois</li>
-                            <li>S'applique a tous les contrats de travail</li>
-                            <li>Non deductible de l'assiette de l'impot sur le revenu</li>
-                            <li>Taux reduit pour certains secteurs (zones franches, etc.)</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux et deductions</h3>
-
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Asgari Gecim Indirimi (AGI) - Minimum vital</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li>Credit d'impot mensuel base sur le SMIC</li>
-                            <li><strong>Celibataire</strong> : 50% du SMIC minimum exonere</li>
-                            <li><strong>Marie</strong> : +10% si conjoint sans revenu</li>
-                            <li><strong>Enfants</strong> : +7.5% premier enfant, +5% suivants</li>
-                            <li>Maximum : 85% du SMIC si 4+ enfants</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-green-800 mb-2">Deductions professionnelles</h4>
-                        <ul class="text-xs space-y-1 text-green-700">
-                            <li><strong>Frais de transport</strong> : remboursements employeur exoneres</li>
-                            <li><strong>Tickets restaurant</strong> : jusqu'a un certain plafond exonere</li>
-                            <li><strong>Assurance privee</strong> : deductible jusqu'a 15% du salaire</li>
-                            <li><strong>Dons</strong> : deductibles jusqu'a 5% du revenu imposable</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-purple-800 mb-2">Zones franches et incitations</h4>
-                        <ul class="text-xs space-y-1 text-purple-700">
-                            <li><strong>Serbest Bolgeler</strong> : zones franches avec exonerations fiscales</li>
-                            <li><strong>Teknokent</strong> : parcs technologiques avec avantages fiscaux</li>
-                            <li><strong>KOSGEB</strong> : aides aux PME et startups</li>
-                            <li>Exonerations pour R&D et exportations</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Turquie</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Critere</th>
-                                    <th class="border p-2 text-left">France</th>
-                                    <th class="border p-2 text-left">Turquie</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Taux d'entree</td><td class="border p-2">0% (jusqu'a ~11,000 EUR)</td><td class="border p-2">15% des le 1er TRY</td></tr>
-                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">40%</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">~15%</td></tr>
-                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui (parts)</td><td class="border p-2">AGI (credit d'impot)</td></tr>
-                                <tr><td class="border p-2">TVA standard</td><td class="border p-2">20%</td><td class="border p-2">20% (KDV)</td></tr>
-                                <tr><td class="border p-2">Impot preleve a la source</td><td class="border p-2">Oui (2019+)</td><td class="border p-2">Oui (mensuel)</td></tr>
-                                <tr><td class="border p-2">Declaration obligatoire</td><td class="border p-2">Oui</td><td class="border p-2">Selon situation</td></tr>
-                                <tr><td class="border p-2">Inflation (2024)</td><td class="border p-2">~2-3%</td><td class="border p-2">~50-70%</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Declaration fiscale (Vergi Beyannamesi)</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Salaries</strong> : impot preleve a la source, declaration annuelle si revenus multiples</li>
-                        <li><strong>Date limite</strong> : Mars de l'annee suivante</li>
-                        <li><strong>e-Devlet</strong> : portail gouvernemental pour declarations en ligne</li>
-                        <li><strong>Acomptes</strong> : paiements trimestriels pour independants</li>
-                        <li><strong>Penalites</strong> : majorations de 50% en cas de retard</li>
-                    </ul>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Monnaie et inflation</h3>
-                    <div class="bg-slate-50 rounded-lg p-4 my-3">
-                        <p class="text-xs text-slate-600">La Turquie a connu une forte devaluation de sa monnaie (TRY) ces dernieres annees. Les tranches d'imposition sont regulierement reajustees pour tenir compte de l'inflation. Un salaire de 50,000 TRY/mois correspond a environ 1,400-1,500 EUR au taux actuel.</p>
-                    </div>
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Tam vergi rehberi şu dillerde mevcut:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/turquie/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> Fransızca
+                    </a>
+                    <a href="/en/turkey/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> İngilizce
+                    </a>
                 </div>
-
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

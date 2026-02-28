@@ -371,6 +371,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -469,113 +470,17 @@
                     <div class="flex justify-between"><span class="text-slate-500">1,200,000+ EGP</span><span class="font-medium text-red-600">27.5%</span></div>
                 </div>
 
-            <!-- Comprendre l'impot en Egypte -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite egyptienne</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>L'Egypte possede un systeme fiscal progressif gere par l'<strong>Egyptian Tax Authority (ETA)</strong>. La fiscalite egyptienne est basee sur le <strong>principe de residence</strong> : toute personne residant en Egypte plus de 183 jours par an est imposable sur ses revenus mondiaux. Les non-residents ne sont imposes que sur leurs revenus de source egyptienne.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026</h3>
-                    <p>L'impot sur le revenu en Egypte utilise un <strong>bareme progressif a 7 tranches</strong> :</p>
-                    <div class="bg-red-50 rounded-lg p-4 my-3">
-                        <ul class="space-y-1 text-xs">
-                            <li>0 EGP - 40,000 EGP : <strong>0%</strong> (exoneration de base)</li>
-                            <li>40,000 EGP - 55,000 EGP : <strong>10%</strong></li>
-                            <li>55,000 EGP - 70,000 EGP : <strong>15%</strong></li>
-                            <li>70,000 EGP - 200,000 EGP : <strong>20%</strong></li>
-                            <li>200,000 EGP - 400,000 EGP : <strong>22.5%</strong></li>
-                            <li>400,000 EGP - 1,200,000 EGP : <strong>25%</strong></li>
-                            <li>Au-dela de 1,200,000 EGP : <strong>27.5%</strong></li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500">Note : Le taux marginal maximum de 27.5% est relativement modere compare a d'autres pays. L'Egypte a augmente ce taux en 2023 (anciennement 25%).</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Egyptian Tax Authority (ETA)</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">Administration fiscale egyptienne</h4>
-                        <ul class="text-xs space-y-1 text-red-700">
-                            <li>Autorite responsable de la collecte des impots en Egypte</li>
-                            <li><strong>Declaration annuelle</strong> obligatoire avant le 31 mars</li>
-                            <li>Systeme de <strong>prelevement a la source</strong> (withholding tax) pour les salaries</li>
-                            <li>Portail en ligne pour les declarations : <strong>eta.gov.eg</strong></li>
-                            <li>Sanctions en cas de retard : 2% par mois de penalite</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">NOSI - Assurance Sociale (National Organization for Social Insurance)</h3>
-                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-amber-800 mb-2">Cotisations sociales : ~14% employe + ~26% employeur</h4>
-                        <ul class="text-xs space-y-1 text-amber-700">
-                            <li><strong>Part employe</strong> : 11% du salaire de base + 3% du salaire variable</li>
-                            <li><strong>Part employeur</strong> : 18.75% du salaire de base + 7% du salaire variable</li>
-                            <li><strong>Plafond mensuel</strong> : 12,600 EGP (base) + salaire variable</li>
-                            <li>Couvre : retraite, maladie, chomage, accidents du travail</li>
-                            <li>Loi 148/2019 : reforme majeure du systeme social egyptien</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales detaillees</h3>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Taux employeur</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Salaire de base</td><td class="border p-2 font-medium">11%</td><td class="border p-2">18.75%</td><td class="border p-2">Retraite et assurance principale</td></tr>
-                                <tr><td class="border p-2">Salaire variable</td><td class="border p-2 font-medium">3%</td><td class="border p-2">7%</td><td class="border p-2">Primes, bonus, heures sup</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total moyen</td><td class="border p-2 font-bold text-amber-700">~14%</td><td class="border p-2 font-bold">~26%</td><td class="border p-2">Charge totale significative</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et abattements</h3>
-
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Abattements personnels</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li><strong>Abattement personnel</strong> : 15,000 EGP/an</li>
-                            <li><strong>Frais professionnels</strong> : forfait de 10% du salaire (max 15,000 EGP)</li>
-                            <li><strong>Cotisations sociales</strong> : deductibles du revenu imposable</li>
-                            <li>Ces deductions s'appliquent avant le calcul de l'impot</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-green-800 mb-2">Avantages specifiques</h4>
-                        <ul class="text-xs space-y-1 text-green-700">
-                            <li><strong>Assurance vie</strong> : primes deductibles jusqu'a 15% du revenu</li>
-                            <li><strong>Donations</strong> : deductibles si versees a des organismes agrees</li>
-                            <li><strong>Zones franches</strong> : exonerations fiscales pour certaines activites</li>
-                            <li><strong>Startups</strong> : regime fiscal preferentiel possible</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Autres impots en Egypte</h3>
-                    <div class="grid md:grid-cols-2 gap-2 my-3">
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">TVA</p>
-                            <p class="text-xs text-slate-600">14% taux standard</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">Impot sur les societes</p>
-                            <p class="text-xs text-slate-600">22.5% taux standard</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">Droits de timbre</p>
-                            <p class="text-xs text-slate-600">0.4% a 0.75% selon operations</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">Impot foncier</p>
-                            <p class="text-xs text-slate-600">10% de la valeur locative</p>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">الدليل الضريبي الكامل متاح بـ:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/egypte/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> الفرنسية
+                    </a>
+                    <a href="/en/egypt/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> الإنجليزية
+                    </a>
+                </div>
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

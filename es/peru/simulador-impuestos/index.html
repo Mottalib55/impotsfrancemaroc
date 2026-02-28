@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -460,79 +461,17 @@
                     <div class="flex justify-between"><span class="text-slate-500">45+ UIT (S/ 231,750+)</span><span class="font-medium text-red-600">30%</span></div>
                 </div>
 
-            <!-- Comprendre l'impot au Perou -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite peruvienne</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Perou possede un systeme fiscal progressif avec l'<strong>Impuesto a la Renta</strong> (IR) gere par la <strong>SUNAT</strong> (Superintendencia Nacional de Aduanas y de Administracion Tributaria). Le systeme utilise l'<strong>UIT (Unidad Impositiva Tributaria)</strong> comme unite de reference, fixee a <strong>S/ 5,150 pour 2024</strong>. La fiscalite peruvienne repose sur le <strong>principe de residence</strong> : les residents sont imposes sur leurs revenus mondiaux, les non-residents uniquement sur les revenus de source peruvienne.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026 (Renta de Quinta Categoria)</h3>
-                    <p>L'impot sur le revenu des salaries (<strong>Quinta Categoria</strong>) utilise un systeme progressif base sur l'UIT :</p>
-                    <div class="bg-slate-50 rounded-lg p-4 my-3">
-                        <ul class="space-y-1 text-xs">
-                            <li>0 - 5 UIT (jusqu'a S/ 25,750) : <strong>8%</strong></li>
-                            <li>5 - 20 UIT (S/ 25,750 - S/ 103,000) : <strong>14%</strong></li>
-                            <li>20 - 35 UIT (S/ 103,000 - S/ 180,250) : <strong>17%</strong></li>
-                            <li>35 - 45 UIT (S/ 180,250 - S/ 231,750) : <strong>20%</strong></li>
-                            <li>Au-dela de 45 UIT (plus de S/ 231,750) : <strong>30%</strong></li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500">Note : Les salaries beneficient d'une deduction automatique de <strong>7 UIT (S/ 36,050)</strong> sur leur revenu imposable annuel.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales - Systeme de Retraite</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">ONP vs AFP : Deux systemes de retraite</h4>
-                        <p class="text-xs text-red-700 mb-2">Au Perou, les travailleurs doivent choisir entre deux systemes de retraite :</p>
-                    </div>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Systeme</th>
-                                    <th class="border p-2 text-left">Taux</th>
-                                    <th class="border p-2 text-left">Caracteristiques</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2 font-medium">ONP (Systeme public)</td><td class="border p-2">13%</td><td class="border p-2">Systeme de repartition, retraite minimum garantie</td></tr>
-                                <tr><td class="border p-2 font-medium">AFP (Systeme prive)</td><td class="border p-2">~10% + commissions</td><td class="border p-2">Capitalisation individuelle, choix du fonds</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold" colspan="3">Total employe: 13% (ONP) ou ~13% (AFP avec commissions)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">EsSalud - Assurance Sante (9%)</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Seguro Social de Salud</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li><strong>EsSalud</strong> : 9% paye entierement par l'employeur</li>
-                            <li>Couvre soins medicaux, maternite, accidents du travail</li>
-                            <li>Aucune cotisation employee pour l'assurance sante</li>
-                            <li>Les travailleurs independants peuvent s'affilier volontairement</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Categories de revenus au Perou</h3>
-                    <div class="grid md:grid-cols-2 gap-2 my-3">
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">Primera Categoria</p>
-                            <p class="text-xs text-blue-600">Revenus locatifs - Taux fixe de 6.25% sur 80% du revenu</p>
-                        </div>
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">Segunda Categoria</p>
-                            <p class="text-xs text-blue-600">Plus-values, dividendes - 6.25% ou 5% selon le cas</p>
-                        </div>
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">Cuarta Categoria</p>
-                            <p class="text-xs text-blue-600">Travailleurs independants - Progressif 8% a 30%</p>
-                        </div>
-                        <div class="bg-blue-50 rounded-lg p-3">
-                            <p class="font-bold text-blue-700">Quinta Categoria</p>
-                            <p class="text-xs text-blue-600">Salaries - Progressif 8% a 30% (ce simulateur)</p>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Guía fiscal completa disponible en:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/perou/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> francés
+                    </a>
+                    <a href="/en/peru/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> inglés
+                    </a>
+                </div>
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

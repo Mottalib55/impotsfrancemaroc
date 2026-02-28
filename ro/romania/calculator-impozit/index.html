@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -447,149 +448,17 @@
                 </div>
             </div>
 
-            <!-- Comprendre l'impot en Roumanie -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite roumaine</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Roumanie dispose d'un systeme fiscal attractif avec un <strong>taux unique d'imposition de 10%</strong> (flat tax) sur les revenus des personnes physiques. Ce systeme simplifie considerablement les calculs fiscaux par rapport aux systemes progressifs comme celui de la France. Cependant, les <strong>cotisations sociales elevees</strong> (CAS et CASS) representent une charge significative pour les salaries roumains.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Le Flat Tax Roumain (Impozit pe Venit)</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Taux unique de 10%</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li>Introduit en 2005 (initialement a 16%, reduit a 10% en 2018)</li>
-                            <li>S'applique a <strong>tous les revenus</strong> : salaires, dividendes, revenus locatifs, gains en capital</li>
-                            <li>Calcule sur le revenu brut <strong>apres deduction des cotisations sociales</strong></li>
-                            <li>Pas de tranches progressives : meme taux pour tous les niveaux de revenus</li>
-                            <li>Simplifie la declaration fiscale et reduit l'evasion fiscale</li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500">Note : La Roumanie fait partie des rares pays europeens avec un taux unique, comme la Bulgarie (10%) ou la Hongrie (15%).</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">CAS - Contributia de Asigurari Sociale (Pension)</h3>
-                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-yellow-800 mb-2">25% du salaire brut</h4>
-                        <ul class="text-xs space-y-1 text-yellow-700">
-                            <li>Cotisation obligatoire pour la <strong>retraite</strong></li>
-                            <li>Entierement a la charge du salarie depuis 2018</li>
-                            <li>Base de calcul : salaire brut total</li>
-                            <li>Plafond : 12 x salaire minimum brut (environ 39,600 RON/an en 2026)</li>
-                            <li>Donne droit aux prestations de retraite du systeme public roumain</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">CASS - Contributia de Asigurari Sociale de Sanatate (Sante)</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">10% du salaire brut</h4>
-                        <ul class="text-xs space-y-1 text-red-700">
-                            <li>Cotisation obligatoire pour l'<strong>assurance maladie</strong></li>
-                            <li>Entierement a la charge du salarie</li>
-                            <li>Plafond : 12 x salaire minimum brut (environ 39,600 RON/an en 2026)</li>
-                            <li>Donne acces au systeme de sante public roumain</li>
-                            <li>Ne couvre pas les soins dentaires ni les lunettes</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations sociales - Resume</h3>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux</th>
-                                    <th class="border p-2 text-left">A la charge de</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">CAS (Pension)</td><td class="border p-2 font-medium">25%</td><td class="border p-2">Salarie</td><td class="border p-2">Assurance retraite obligatoire</td></tr>
-                                <tr><td class="border p-2">CASS (Sante)</td><td class="border p-2 font-medium">10%</td><td class="border p-2">Salarie</td><td class="border p-2">Assurance maladie obligatoire</td></tr>
-                                <tr><td class="border p-2">CAM (Travail)</td><td class="border p-2 font-medium">2.25%</td><td class="border p-2">Employeur</td><td class="border p-2">Assurance chomage et accidents</td></tr>
-                                <tr class="bg-amber-50"><td class="border p-2 font-semibold">Total Salarie</td><td class="border p-2 font-bold text-amber-700">35%</td><td class="border p-2">-</td><td class="border p-2">Avant calcul de l'impot</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Methode de calcul du salaire net</h3>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-emerald-800 mb-2">Formule de calcul</h4>
-                        <ol class="text-xs space-y-1 text-emerald-700 list-decimal pl-4">
-                            <li><strong>Salaire brut</strong> : montant contractuel</li>
-                            <li><strong>CAS</strong> = Brut x 25%</li>
-                            <li><strong>CASS</strong> = Brut x 10%</li>
-                            <li><strong>Base imposable</strong> = Brut - CAS - CASS</li>
-                            <li><strong>Impot</strong> = Base imposable x 10%</li>
-                            <li><strong>Salaire net</strong> = Brut - CAS - CASS - Impot</li>
-                        </ol>
-                        <p class="text-xs text-emerald-600 mt-2 font-medium">Exemple : 10,000 RON brut = 10,000 - 2,500 - 1,000 - 650 = 5,850 RON net</p>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Avantages fiscaux et deductions</h3>
-
-                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-indigo-800 mb-2">Exonerations sectorielles</h4>
-                        <ul class="text-xs space-y-1 text-indigo-700">
-                            <li><strong>Secteur IT</strong> : exoneration de l'impot sur le revenu (10%) pour les programmeurs et specialistes IT</li>
-                            <li><strong>Construction</strong> : taux reduit de CAS et CASS pour les travailleurs du BTP</li>
-                            <li><strong>Agriculture</strong> : regimes speciaux pour les exploitants agricoles</li>
-                            <li><strong>Recherche & Developpement</strong> : avantages fiscaux pour les chercheurs</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-green-800 mb-2">Deductions pour personnes a charge</h4>
-                        <ul class="text-xs space-y-1 text-green-700">
-                            <li><strong>Deduction personnelle de base</strong> : jusqu'a 400 RON/mois selon le salaire</li>
-                            <li><strong>Personnes a charge</strong> : deduction supplementaire de 200 RON/mois par personne</li>
-                            <li><strong>Enfants</strong> : deductions fiscales pour les frais de garde et education</li>
-                            <li>Deductions degressives : diminuent avec l'augmentation du salaire brut</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Roumanie</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Critere</th>
-                                    <th class="border p-2 text-left">France</th>
-                                    <th class="border p-2 text-left">Roumanie</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Systeme d'imposition</td><td class="border p-2">Progressif (0-45%)</td><td class="border p-2 text-emerald-600 font-medium">Flat tax 10%</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales employe</td><td class="border p-2">~22%</td><td class="border p-2">35% (CAS + CASS)</td></tr>
-                                <tr><td class="border p-2">Cotisations employeur</td><td class="border p-2">~42%</td><td class="border p-2">~2.25%</td></tr>
-                                <tr><td class="border p-2">Salaire 50,000 EUR brut/an</td><td class="border p-2">~35,000 EUR net</td><td class="border p-2">~27,500 EUR net</td></tr>
-                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">10%</td></tr>
-                                <tr><td class="border p-2">Quotient familial</td><td class="border p-2">Oui</td><td class="border p-2">Non</td></tr>
-                                <tr><td class="border p-2">Declaration annuelle</td><td class="border p-2">Obligatoire</td><td class="border p-2">Automatique (salaries)</td></tr>
-                                <tr><td class="border p-2">Monnaie</td><td class="border p-2">EUR</td><td class="border p-2">RON (1 EUR ~ 5 RON)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Specificites pour les expatries francais</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Residence fiscale</strong> : vous devenez resident fiscal roumain apres 183 jours/an en Roumanie</li>
-                        <li><strong>Convention fiscale</strong> : accord France-Roumanie pour eviter la double imposition</li>
-                        <li><strong>Retraite francaise</strong> : les pensions francaises sont imposees en France</li>
-                        <li><strong>Compte bancaire</strong> : obligatoire en RON pour recevoir son salaire</li>
-                        <li><strong>Numero CIF</strong> : identifiant fiscal roumain necessaire pour travailler</li>
-                    </ul>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Declaration fiscale (Declaratie fiscala)</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Salaries</strong> : prelevement a la source, pas de declaration annuelle requise</li>
-                        <li><strong>Independants (PFA)</strong> : declaration annuelle obligatoire (Declaratia Unica)</li>
-                        <li><strong>Date limite</strong> : 25 mai de l'annee suivante</li>
-                        <li><strong>Plateforme en ligne</strong> : SPV (Spatiul Privat Virtual) de l'ANAF</li>
-                        <li><strong>Penalites</strong> : amendes de 50-500 RON pour retard de declaration</li>
-                    </ul>
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Ghid fiscal complet disponibil în:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/roumanie/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> franceză
+                    </a>
+                    <a href="/en/romania/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> engleză
+                    </a>
                 </div>
             </div>
-
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

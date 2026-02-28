@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -462,103 +463,17 @@
                     <div class="flex justify-between"><span class="text-slate-500">80M+ VND/mois</span><span class="font-medium text-red-600">35%</span></div>
                 </div>
 
-            <!-- Comprendre l'impot au Vietnam -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite vietnamienne</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>Le Vietnam possede un systeme fiscal moderne gere par le <strong>GDT (General Department of Taxation / Tong cuc Thue)</strong>. L'impot sur le revenu des personnes physiques est appele <strong>TNCN (Thue Thu Nhap Ca Nhan)</strong>. Le systeme fiscal vietnamien distingue les <strong>residents fiscaux</strong> (imposables sur les revenus mondiaux) des <strong>non-residents</strong> (taux forfaitaire de 20%).</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition TNCN 2026</h3>
-                    <p>L'impot vietnamien utilise un systeme de <strong>7 tranches progressives</strong> appliquees au revenu mensuel imposable :</p>
-                    <div class="bg-slate-50 rounded-lg p-4 my-3">
-                        <ul class="space-y-1 text-xs">
-                            <li>0 - 5 millions VND : <strong>5%</strong></li>
-                            <li>5 - 10 millions VND : <strong>10%</strong></li>
-                            <li>10 - 18 millions VND : <strong>15%</strong></li>
-                            <li>18 - 32 millions VND : <strong>20%</strong></li>
-                            <li>32 - 52 millions VND : <strong>25%</strong></li>
-                            <li>52 - 80 millions VND : <strong>30%</strong></li>
-                            <li>Au-dela de 80 millions VND : <strong>35%</strong></li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500">Note : Ces tranches s'appliquent au revenu imposable apres deduction de l'abattement personnel et des cotisations sociales.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Abattements et deductions</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">Deductions personnelles 2026</h4>
-                        <ul class="text-xs space-y-1 text-red-700">
-                            <li><strong>Abattement personnel</strong> : 11 millions VND/mois (132M VND/an)</li>
-                            <li><strong>Personne a charge</strong> : 4.4 millions VND/mois par personne</li>
-                            <li><strong>Cotisations sociales</strong> : deductibles du revenu imposable</li>
-                            <li><strong>Dons de charite</strong> : deductibles sous certaines conditions</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">BHXH - Assurance sociale obligatoire</h3>
-                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-yellow-800 mb-2">Cotisations employe : 10.5% du salaire</h4>
-                        <ul class="text-xs space-y-1 text-yellow-700">
-                            <li><strong>Retraite (BHXH)</strong> : 8% du salaire brut</li>
-                            <li><strong>Assurance maladie (BHYT)</strong> : 1.5% du salaire brut</li>
-                            <li><strong>Assurance chomage (BHTN)</strong> : 1% du salaire brut</li>
-                            <li><strong>Plafond</strong> : 20 fois le salaire minimum (variable selon region)</li>
-                        </ul>
-                    </div>
-
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Taux employeur</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">BHXH (Retraite)</td><td class="border p-2 font-medium">8%</td><td class="border p-2">17.5%</td><td class="border p-2">Assurance sociale obligatoire</td></tr>
-                                <tr><td class="border p-2">BHYT (Maladie)</td><td class="border p-2 font-medium">1.5%</td><td class="border p-2">3%</td><td class="border p-2">Assurance sante</td></tr>
-                                <tr><td class="border p-2">BHTN (Chomage)</td><td class="border p-2 font-medium">1%</td><td class="border p-2">1%</td><td class="border p-2">Assurance chomage</td></tr>
-                                <tr class="bg-yellow-50"><td class="border p-2 font-semibold">Total</td><td class="border p-2 font-bold text-yellow-700">10.5%</td><td class="border p-2 font-bold">21.5%</td><td class="border p-2">-</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">GDT - Administration fiscale</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Tong cuc Thue (General Department of Taxation)</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li><strong>MST</strong> : Numero d'identification fiscale (Ma so thue)</li>
-                            <li><strong>Declaration mensuelle</strong> : avant le 20 du mois suivant</li>
-                            <li><strong>Declaration annuelle</strong> : avant le 31 mars (regularisation)</li>
-                            <li><strong>Prelevement a la source</strong> : effectue par l'employeur</li>
-                            <li><strong>Portail en ligne</strong> : thuedientu.gdt.gov.vn</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Residents vs Non-residents</h3>
-                    <div class="grid md:grid-cols-2 gap-4 my-3">
-                        <div class="bg-emerald-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-emerald-700 mb-2">Resident fiscal</h4>
-                            <ul class="text-xs text-emerald-600 space-y-1">
-                                <li>183+ jours au Vietnam sur 12 mois</li>
-                                <li>Residence permanente ou bail > 183 jours</li>
-                                <li>Bareme progressif 5-35%</li>
-                                <li>Imposable sur revenus mondiaux</li>
-                            </ul>
-                        </div>
-                        <div class="bg-orange-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-orange-700 mb-2">Non-resident</h4>
-                            <ul class="text-xs text-orange-600 space-y-1">
-                                <li>Moins de 183 jours au Vietnam</li>
-                                <li>Pas de residence permanente</li>
-                                <li>Taux forfaitaire : 20%</li>
-                                <li>Imposable sur revenus vietnamiens uniquement</li>
-                            </ul>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Hướng dẫn thuế đầy đủ có sẵn bằng:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/vietnam/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> tiếng Pháp
+                    </a>
+                    <a href="/en/vietnam/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> tiếng Anh
+                    </a>
+                </div>
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

@@ -364,6 +364,7 @@
                            class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 touch-pan-x"
                            style="-webkit-appearance: none; padding: 8px 0;">
                     <p class="text-xs text-slate-400 mt-2 text-right"><span id="conv-gross-usd">~$0</span></p>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="conv-gross-eur">~0 EUR</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -463,160 +464,17 @@
                     <div class="flex justify-between"><span class="text-slate-500">31,000+ UVT (1,544M+ COP)</span><span class="font-medium text-red-600">39%</span></div>
                 </div>
 
-            <!-- Comprendre l'impot en Colombie -->
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Guide complet de la fiscalite colombienne</h2>
-
-                <div class="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
-                    <p>La Colombie possede un systeme fiscal progressif administre par la <strong>DIAN</strong> (Direccion de Impuestos y Aduanas Nacionales). Le pays utilise l'<strong>Impuesto de Renta</strong> (impot sur le revenu) avec des tranches basees sur l'<strong>UVT</strong> (Unidad de Valor Tributario), une unite de reference ajustee annuellement selon l'inflation.</p>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">L'UVT : Unite de Valeur Tributaire</h3>
-                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-yellow-800 mb-2">UVT 2026 = 49,799 COP</h4>
-                        <ul class="text-xs space-y-1 text-yellow-700">
-                            <li>Unite de reference pour tous les calculs fiscaux en Colombie</li>
-                            <li>Ajustee chaque annee par la DIAN selon l'IPC (indice des prix)</li>
-                            <li>Permet d'eviter de modifier les lois fiscales chaque annee</li>
-                            <li>Utilisee pour les tranches d'imposition, sanctions, et seuils</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Tranches d'imposition 2026 (Impuesto de Renta)</h3>
-                    <p>L'impot sur le revenu colombien utilise un systeme de <strong>tranches progressives</strong> exprimees en UVT :</p>
-                    <div class="bg-slate-50 rounded-lg p-4 my-3">
-                        <ul class="space-y-1 text-xs">
-                            <li>0 - 1,090 UVT (~54,280,910 COP) : <strong>0%</strong></li>
-                            <li>1,090 - 1,700 UVT (~84,658,300 COP) : <strong>19%</strong> sur l'excedent</li>
-                            <li>1,700 - 4,100 UVT (~204,175,900 COP) : <strong>28%</strong> sur l'excedent</li>
-                            <li>4,100 - 8,670 UVT (~431,757,330 COP) : <strong>33%</strong> sur l'excedent</li>
-                            <li>8,670 - 18,970 UVT (~944,588,030 COP) : <strong>35%</strong> sur l'excedent</li>
-                            <li>18,970 - 31,000 UVT (~1,543,769,000 COP) : <strong>37%</strong> sur l'excedent</li>
-                            <li>Au-dela de 31,000 UVT : <strong>39%</strong> sur l'excedent</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">La DIAN : Autorite Fiscale</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-blue-800 mb-2">Direccion de Impuestos y Aduanas Nacionales</h4>
-                        <ul class="text-xs space-y-1 text-blue-700">
-                            <li>Organisme equivalent a la DGFiP en France ou l'IRS aux USA</li>
-                            <li>Gere la collecte des impots et des droits de douane</li>
-                            <li><strong>RUT</strong> (Registro Unico Tributario) : numero d'identification fiscale obligatoire</li>
-                            <li>Declaration annuelle obligatoire pour revenus > 1,400 UVT (~69.7M COP)</li>
-                            <li>Portail en ligne : <strong>www.dian.gov.co</strong></li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Cotisations Sociales (~8% employe)</h3>
-                    <p>Le systeme de protection sociale colombien est compose de deux piliers principaux geres par des entites specialisees.</p>
-                    <div class="overflow-x-auto my-3">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Cotisation</th>
-                                    <th class="border p-2 text-left">Taux employe</th>
-                                    <th class="border p-2 text-left">Taux employeur</th>
-                                    <th class="border p-2 text-left">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Pension (Colpensiones/AFP)</td><td class="border p-2 font-medium">4%</td><td class="border p-2">12%</td><td class="border p-2">Retraite obligatoire</td></tr>
-                                <tr><td class="border p-2">Salud (EPS)</td><td class="border p-2 font-medium">4%</td><td class="border p-2">8.5%</td><td class="border p-2">Assurance maladie</td></tr>
-                                <tr><td class="border p-2">ARL (Risques professionnels)</td><td class="border p-2">0%</td><td class="border p-2">0.5-6.9%</td><td class="border p-2">Accidents du travail</td></tr>
-                                <tr><td class="border p-2">Caja de Compensacion</td><td class="border p-2">0%</td><td class="border p-2">4%</td><td class="border p-2">Allocations familiales</td></tr>
-                                <tr class="bg-yellow-50"><td class="border p-2 font-semibold">Total employe</td><td class="border p-2 font-bold text-yellow-700">~8%</td><td class="border p-2 font-bold">~25-30%</td><td class="border p-2">L'employeur paie la majorite</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Colpensiones vs AFP Privees</h3>
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-green-800 mb-2">Systeme de Retraite Colombien</h4>
-                        <ul class="text-xs space-y-1 text-green-700">
-                            <li><strong>Colpensiones</strong> : regime public par repartition (RPM - Regimen de Prima Media)</li>
-                            <li><strong>AFP privees</strong> : fonds de pension par capitalisation (RAIS - Ahorro Individual)</li>
-                            <li>Choix libre entre les deux systemes (un seul a la fois)</li>
-                            <li>Age de retraite : 57 ans (femmes) / 62 ans (hommes)</li>
-                            <li>Semaines minimales : 1,300 semaines cotisees pour pension complete</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">EPS : Assurance Maladie</h3>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-red-800 mb-2">Entidades Promotoras de Salud</h4>
-                        <ul class="text-xs space-y-1 text-red-700">
-                            <li>Assurance maladie obligatoire pour tous les travailleurs</li>
-                            <li>Choix parmi plusieurs EPS (Sura, Nueva EPS, Sanitas, etc.)</li>
-                            <li>Couverture complete : consultations, hospitalisations, medicaments</li>
-                            <li>Regime contributif (travailleurs) vs subsidie (population vulnerable)</li>
-                            <li>Copago et cuotas moderadoras selon le niveau de revenu</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Deductions et Avantages Fiscaux</h3>
-                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 my-3">
-                        <h4 class="font-semibold text-indigo-800 mb-2">Principales Deductions</h4>
-                        <ul class="text-xs space-y-1 text-indigo-700">
-                            <li><strong>Dependientes</strong> : 10% du revenu (max 32 UVT/mois) par personne a charge</li>
-                            <li><strong>Intereses de vivienda</strong> : interets hypothecaires deductibles (max 100 UVT/mois)</li>
-                            <li><strong>Medicina prepagada</strong> : assurance sante complementaire (max 16 UVT/mois)</li>
-                            <li><strong>Aportes voluntarios a pension</strong> : jusqu'a 30% du revenu</li>
-                            <li><strong>AFC (Ahorro para el Fomento)</strong> : epargne logement (max 30% du revenu)</li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Comparaison France vs Colombie</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-xs border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100">
-                                    <th class="border p-2 text-left">Critere</th>
-                                    <th class="border p-2 text-left">France</th>
-                                    <th class="border p-2 text-left">Colombie</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="border p-2">Salaire 100M COP brut (~22,000 EUR)</td><td class="border p-2">~15,400 EUR net</td><td class="border p-2">~85M COP net (~18,700 EUR)</td></tr>
-                                <tr><td class="border p-2">Taux marginal maximum</td><td class="border p-2">45%</td><td class="border p-2">39%</td></tr>
-                                <tr><td class="border p-2">Cotisations sociales (employe)</td><td class="border p-2">~22%</td><td class="border p-2">~8%</td></tr>
-                                <tr><td class="border p-2">Unite de reference fiscale</td><td class="border p-2">EUR fixe</td><td class="border p-2">UVT (ajuste annuellement)</td></tr>
-                                <tr><td class="border p-2">Impot preleve a la source</td><td class="border p-2">Oui (PAS)</td><td class="border p-2">Oui (Retencion en la fuente)</td></tr>
-                                <tr><td class="border p-2">Systeme de retraite</td><td class="border p-2">Repartition uniquement</td><td class="border p-2">Choix : repartition ou capitalisation</td></tr>
-                                <tr><td class="border p-2">Assurance maladie</td><td class="border p-2">Securite sociale universelle</td><td class="border p-2">EPS obligatoire (choix du prestataire)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Declaration Fiscale</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-xs">
-                        <li><strong>Periode fiscale</strong> : annee civile (1er janvier - 31 decembre)</li>
-                        <li><strong>Date limite</strong> : entre aout et octobre selon les 2 derniers chiffres du RUT</li>
-                        <li><strong>Obligatoire si</strong> : patrimoine > 4,500 UVT ou revenus > 1,400 UVT</li>
-                        <li><strong>Declaration en ligne</strong> : via le portail DIAN (obligatoire pour la plupart)</li>
-                        <li><strong>Retencion en la fuente</strong> : retenue a la source mensuelle par l'employeur</li>
-                        <li><strong>Penalites</strong> : 5% par mois de retard (max 100% de l'impot du)</li>
-                    </ul>
-
-                    <h3 class="text-base font-semibold text-slate-800 mt-6 mb-3">Autres Impots en Colombie</h3>
-                    <div class="grid md:grid-cols-2 gap-3 my-3">
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">IVA (TVA)</p>
-                            <p class="text-xs text-slate-600">Taux standard : 19%</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">Impuesto al Patrimonio</p>
-                            <p class="text-xs text-slate-600">1% si patrimoine > 72,000 UVT</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">GMF (4x1000)</p>
-                            <p class="text-xs text-slate-600">0.4% sur transactions bancaires</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-lg p-3">
-                            <p class="font-bold text-slate-700">ICA</p>
-                            <p class="text-xs text-slate-600">Impot local sur les activites commerciales</p>
-                        </div>
-                    </div>
-
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 mt-6 text-center">
+                <p class="text-sm text-slate-600 mb-3">Guía fiscal completa disponible en:</p>
+                <div class="flex justify-center gap-3">
+                    <a href="/fr/colombie/simulateur-impot/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇫🇷</span> francés
+                    </a>
+                    <a href="/en/colombia/income-tax/" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">
+                        <span>🇬🇧</span> inglés
+                    </a>
+                </div>
+            </div>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 mt-6">
                 <h3 class="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
                     <iconify-icon icon="lucide:git-compare" width="20" class="text-indigo-500"></iconify-icon>

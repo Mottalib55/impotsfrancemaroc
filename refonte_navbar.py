@@ -373,8 +373,8 @@ def build_navbar_fr(lang_dropdown_id, lang_links, is_home):
         </div>
     </nav>
     <!-- Mobile Menu (Full-screen overlay, outside nav to avoid backdrop-filter stacking context) -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
-        <div class="px-6 py-4 space-y-1 pb-24">
+    <div id="mobile-menu">
+        <div>
             <!-- France -->
             <div>
                 <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
@@ -691,8 +691,8 @@ def build_navbar_en(lang_dropdown_id, lang_links, is_home):
         </div>
     </nav>
     <!-- Mobile Menu (Full-screen overlay, outside nav to avoid backdrop-filter stacking context) -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto overscroll-contain">
-        <div class="px-6 py-4 space-y-1 pb-24">
+    <div id="mobile-menu">
+        <div>
             <!-- France -->
             <div>
                 <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-3 text-sm font-semibold text-slate-900">
@@ -819,14 +819,34 @@ def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Find the nav block using regex
-    # Match <nav> and optionally the mobile-menu div that follows it (outside nav)
-    nav_pattern = r'<nav\s+class="fixed[^"]*"[^>]*>.*?</nav>(\s*\n\s*<!-- Mobile Menu[^>]*-->\s*\n\s*<div\s+id="mobile-menu"[^>]*>.*?</div>\s*</div>\s*</div>)?'
+    # Step 1: Find the <nav...>...</nav> block
+    nav_pattern = r'<nav\s+class="fixed[^"]*"[^>]*>.*?</nav>'
     nav_match = re.search(nav_pattern, content, re.DOTALL)
 
     if not nav_match:
         print(f"  SKIP (no nav found): {filepath}")
         return False
+
+    # Step 2: Check for mobile-menu div after </nav> and remove it
+    after_nav = content[nav_match.end():]
+    mobile_comment_pattern = r'\s*<!-- Mobile Menu[^>]*-->\s*<div\s+id="mobile-menu"[^>]*>'
+    mm_match = re.search(mobile_comment_pattern, after_nav)
+    if mm_match:
+        # Count opening/closing <div> tags to find the matching </div>
+        pos = mm_match.end()
+        depth = 1
+        while depth > 0 and pos < len(after_nav):
+            next_open = re.search(r'<div[\s>]', after_nav[pos:])
+            next_close = re.search(r'</div>', after_nav[pos:])
+            if next_close is None:
+                break
+            if next_open and next_open.start() < next_close.start():
+                depth += 1
+                pos += next_open.end()
+            else:
+                depth -= 1
+                pos += next_close.end()
+        after_nav = after_nav[:mm_match.start()] + after_nav[pos:]
 
     old_nav = nav_match.group(0)
 
@@ -874,9 +894,8 @@ def process_file(filepath):
     # Replace old nav with new nav + mobile menu script
     mobile_menu_script = '\n    <script src="/assets/js/mobile-menu.js" defer></script>'
     # Remove any existing mobile-menu.js script tag to avoid duplicates on re-run
-    content_after_nav = content[nav_match.end():]
-    content_after_nav = re.sub(r'\s*<script\s+src="/assets/js/mobile-menu\.js"[^>]*></script>', '', content_after_nav)
-    new_content = content[:nav_match.start()] + new_nav + mobile_menu_script + content_after_nav
+    after_nav = re.sub(r'\s*<script\s+src="/assets/js/mobile-menu\.js"[^>]*></script>', '', after_nav)
+    new_content = content[:nav_match.start()] + new_nav + mobile_menu_script + after_nav
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(new_content)

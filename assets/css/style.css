@@ -642,3 +642,40 @@ details p {
     background: #EEF2FF;
     color: var(--primary);
 }
+
+/* Mobile Menu Overlay */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 4rem;
+    bottom: 0;
+    background: #fff;
+    z-index: 40;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+#mobile-menu.open {
+    display: block;
+}
+
+#mobile-menu > div {
+    padding: 1rem 1.5rem;
+    padding-bottom: 6rem;
+}
+
+/* Body scroll lock when mobile menu is open */
+html.menu-open,
+html.menu-open body {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+@media (min-width: 769px) {
+    #mobile-menu {
+        display: none !important;
+    }
+}

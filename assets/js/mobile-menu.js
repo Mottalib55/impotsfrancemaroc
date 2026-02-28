@@ -166,13 +166,38 @@
     }
     renderMobileCountries();
 
-    // Mobile menu toggle - prevent body scroll when open
+    // Mobile menu toggle - lock body scroll (iOS Safari compatible)
     var mobileMenu = document.getElementById('mobile-menu');
     var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    var savedScrollY = 0;
+
+    function openMenu() {
+        savedScrollY = window.scrollY;
+        mobileMenu.classList.remove('hidden');
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + savedScrollY + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, savedScrollY);
+    }
+
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
+            if (mobileMenu.classList.contains('hidden')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
         });
     }
 })();

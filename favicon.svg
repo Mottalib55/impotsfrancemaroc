@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 90 90">
+  <!-- Fond orange -->
+  <circle cx="45" cy="45" r="45" fill="#FF6B00"/>
+  <!-- Noeud du sac -->
+  <ellipse cx="45" cy="26" rx="8" ry="5" fill="white"/>
+  <rect x="39" y="26" width="12" height="5" fill="white"/>
+  <!-- Corps du sac -->
+  <ellipse cx="45" cy="53" rx="20" ry="22" fill="white"/>
+  <!-- Ficelle -->
+  <rect x="42" y="21" width="6" height="8" rx="3" fill="white"/>
+  <!-- Euro -->
+  <text x="45" y="58" text-anchor="middle" font-size="22" font-weight="900" fill="#FF6B00" font-family="Arial Black, sans-serif">€</text>
+</svg>

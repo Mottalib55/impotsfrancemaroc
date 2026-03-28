@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/fr/">
-    <link rel="canonical" href="https://netsalaire.com/fr/">
-    <meta name="description" content="Calculez gratuitement votre salaire net, impôt sur le revenu et cotisations sociales. Simulateurs pour la France, le Maroc et plus de 50 pays. Barèmes 2026.">
-    <title>NetSalaire - Simulateur d'Impôt et Salaire Net 2026</title>
+    <link rel="canonical" href="https://netsalaire.com/en/">
+    <meta name="description" content="Free income tax calculators for 50+ countries. Simulate your net salary, income tax, and social contributions. Updated 2026 rates.">
+    <title>NetSalaire - Free Income Tax Calculator 2026</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <script>
-        window.location.href = '/fr/';
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            var code = lang.split('-')[0];
+            var map = {
+                fr: '/fr/', pt: '/pt/', es: '/es/', de: '/de/',
+                it: '/it/', pl: '/pl/', ro: '/ro/', nl: '/nl/',
+                ar: '/ar/', ko: '/ko/', sv: '/sv/',
+                ja: '/ja/', zh: '/zh/', tr: '/tr/', da: '/da/',
+                fi: '/fi/', no: '/no/', el: '/el/', cs: '/cs/',
+                hu: '/hu/', hr: '/hr/', th: '/th/', ms: '/ms/',
+                id: '/id/', vi: '/vi/'
+            };
+            window.location.replace(map[code] || '/en/');
+        })();
     </script>
 </head>
 <body>
-    <p>Redirection en cours... <a href="/fr/">Cliquez ici</a> si vous n'êtes pas redirigé.</p>
+    <p>Redirecting... <a href="/en/">Click here</a> if not redirected.</p>
 </body>
 </html>

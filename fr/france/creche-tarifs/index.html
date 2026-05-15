@@ -86,17 +86,7 @@
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
         .result-card { backdrop-filter: blur(12px); }
         .text-gradient { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .btn-day, .btn-hour { transition: all 0.2s ease; cursor: pointer; }
-        .btn-day.active, .btn-hour.active {
-            transform: scale(1.05);
-            background: linear-gradient(to bottom, #3b82f6, #2563eb) !important;
-            color: white !important;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3) !important;
-        }
-        .btn-zone { transition: all 0.2s ease; cursor: pointer; }
-        .btn-zone.active { border-color: var(--primary) !important; background: rgba(59, 130, 246, 0.05) !important; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); }
-        .btn-zone.active svg { color: #3b82f6 !important; }
-        .btn-zone.active span { color: #2563eb !important; }
+        /* Old btn styles removed - now in inline <style> block */
         .animate-fade-in { animation: fadeIn 0.4s ease-out; }
         .animate-slide-up { animation: slideUp 0.5s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -427,119 +417,149 @@
 
             <!-- Formulaire -->
             <div class="animate-slide-up mb-8">
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl shadow-blue-500/5 border border-white/50">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-lg font-bold text-slate-800 flex items-center gap-3">
-                            <span class="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-blue-500/20">1</span>
-                            Vos informations
-                        </h2>
-                        <div class="hidden sm:flex items-center gap-2 text-sm text-slate-500 bg-blue-50 px-4 py-2 rounded-xl">
-                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <span><span class="font-semibold text-slate-700" id="info-heures">10</span>h × <span class="font-semibold text-slate-700" id="info-jours">20</span>j = <span class="font-semibold text-blue-600" id="info-total">200</span>h/mois</span>
+                <div class="bg-white rounded-2xl shadow-lg shadow-slate-900/8 overflow-hidden" style="border: 1px solid rgba(0,0,0,0.06);">
+
+                    <!-- Header gradient -->
+                    <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%); padding: 20px 24px;">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-white font-bold flex items-center gap-3" style="font-size: 1.05rem;">
+                                <span style="background:rgba(255,255,255,0.2); backdrop-filter:blur(4px); width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">1</span>
+                                Vos informations
+                            </h2>
+                            <div style="background:rgba(255,255,255,0.15); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:20px; font-size:12px; color:rgba(255,255,255,0.9); display:flex; align-items:center; gap:6px;">
+                                <svg class="w-3.5 h-3.5" style="opacity:0.7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <span id="info-heures">10</span>h x <span id="info-jours">20</span>j = <span style="font-weight:700; color:#fff;" id="info-total">200</span>h/mois
+                            </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <!-- Revenus -->
-                        <div class="col-span-2 md:col-span-1 space-y-3">
-                            <label class="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                                Revenus foyer
-                            </label>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div>
-                                    <label class="block text-xs text-slate-500 mb-1">Mensuel</label>
-                                    <div class="relative">
-                                        <input type="text" id="revenus" inputmode="numeric" value="3 000"
-                                            class="w-full pl-3 pr-10 h-11 border-2 border-slate-200 rounded-xl text-base font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all text-right"
-                                            oninput="handleRevenuChange(this)">
-                                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-slate-400">€</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-slate-500 mb-1">Annuel</label>
-                                    <div class="relative">
-                                        <input type="text" id="revenus-annuel" inputmode="numeric" value="36 000"
-                                            class="w-full pl-3 pr-10 h-11 border-2 border-slate-200 rounded-xl text-base font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all text-right"
-                                            oninput="handleRevenuAnnuelChange(this)">
-                                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-slate-400">€</span>
-                                    </div>
+                    <!-- Body -->
+                    <div style="padding: 24px 24px 20px;">
+
+                        <!-- Row 1: 4 champs alignés -->
+                        <div class="form-grid-top">
+                            <!-- Revenu mensuel -->
+                            <div class="form-field">
+                                <label>Revenu mensuel</label>
+                                <div class="input-wrap">
+                                    <input type="text" id="revenus" inputmode="numeric" value="3 000" oninput="handleRevenuChange(this)">
+                                    <span class="unit">€/mois</span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Enfants -->
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                                Enfants à charge
-                            </label>
-                            <div class="flex items-center gap-2">
-                                <button onclick="changeEnfants(-1)" class="h-11 w-11 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200 disabled:opacity-40 transition-all active:scale-95">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/></svg>
-                                </button>
-                                <div class="flex-1 h-11 rounded-xl bg-gradient-to-b from-white to-slate-50 border-2 border-slate-200 flex items-center justify-center">
-                                    <span id="nb-enfants" class="text-2xl font-bold text-slate-900">1</span>
+                            <!-- Revenu annuel -->
+                            <div class="form-field">
+                                <label>Revenu annuel</label>
+                                <div class="input-wrap">
+                                    <input type="text" id="revenus-annuel" inputmode="numeric" value="36 000" oninput="handleRevenuAnnuelChange(this)">
+                                    <span class="unit">€/an</span>
                                 </div>
-                                <button onclick="changeEnfants(1)" class="h-11 w-11 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-500 hover:text-white transition-all active:scale-95">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                                </button>
+                            </div>
+                            <!-- Enfants -->
+                            <div class="form-field">
+                                <label>Enfants à charge</label>
+                                <div class="stepper">
+                                    <button onclick="changeEnfants(-1)" class="stepper-btn minus">
+                                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 12H4"/></svg>
+                                    </button>
+                                    <div class="stepper-val"><span id="nb-enfants">1</span></div>
+                                    <button onclick="changeEnfants(1)" class="stepper-btn plus">
+                                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Zone -->
+                            <div class="form-field">
+                                <label>Zone</label>
+                                <div class="zone-toggle">
+                                    <button onclick="setZone(true)" id="zone-idf" class="btn-zone"><span>Île-de-France</span></button>
+                                    <button onclick="setZone(false)" id="zone-province" class="btn-zone active"><span>Province</span></button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Zone -->
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                Zone
-                            </label>
-                            <div class="flex gap-2">
-                                <button onclick="setZone(true)" id="zone-idf" class="btn-zone flex-1 h-11 px-3 rounded-xl border-2 border-slate-200 flex items-center justify-center gap-2 bg-white">
-                                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                                    <span class="text-sm font-semibold text-slate-600">IDF</span>
-                                </button>
-                                <button onclick="setZone(false)" id="zone-province" class="btn-zone active flex-1 h-11 px-3 rounded-xl border-2 border-slate-200 flex items-center justify-center gap-2 bg-white">
-                                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                                    <span class="text-sm font-semibold text-slate-600">Autres</span>
-                                </button>
-                            </div>
-                            <p class="text-xs text-slate-400 text-center">Tarifs plus élevés en IDF</p>
-                        </div>
+                        <!-- Séparateur -->
+                        <div style="height:1px; background:#f1f5f9; margin:18px 0;"></div>
 
-                        <!-- Heures/jour -->
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                Heures/jour
-                            </label>
-                            <div class="flex gap-1.5">
-                                <button onclick="setHeures(6)" data-h="6" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">6h</button>
-                                <button onclick="setHeures(7)" data-h="7" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">7h</button>
-                                <button onclick="setHeures(8)" data-h="8" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">8h</button>
-                                <button onclick="setHeures(9)" data-h="9" class="btn-hour flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">9h</button>
-                                <button onclick="setHeures(10)" data-h="10" class="btn-hour active flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">10h</button>
+                        <!-- Row 2: Heures + Jours -->
+                        <div class="form-grid-bottom">
+                            <!-- Heures -->
+                            <div class="form-field">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <label>Heures / jour</label>
+                                    <span class="field-note">Micro : 10h fixe</span>
+                                </div>
+                                <div class="pill-row">
+                                    <button onclick="setHeures(6)" data-h="6" class="btn-hour">6h</button>
+                                    <button onclick="setHeures(7)" data-h="7" class="btn-hour">7h</button>
+                                    <button onclick="setHeures(8)" data-h="8" class="btn-hour">8h</button>
+                                    <button onclick="setHeures(9)" data-h="9" class="btn-hour">9h</button>
+                                    <button onclick="setHeures(10)" data-h="10" class="btn-hour active">10h</button>
+                                </div>
                             </div>
-                            <p class="text-xs text-slate-400 text-center">Publique & Assmat • Micro: 10h fixe</p>
-                        </div>
-
-                        <!-- Jours/semaine -->
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                Jours/semaine
-                            </label>
-                            <div class="flex gap-1.5">
-                                <button onclick="setJours(1)" data-j="1" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">1j</button>
-                                <button onclick="setJours(2)" data-j="2" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">2j</button>
-                                <button onclick="setJours(3)" data-j="3" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">3j</button>
-                                <button onclick="setJours(4)" data-j="4" class="btn-day flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">4j</button>
-                                <button onclick="setJours(5)" data-j="5" class="btn-day active flex-1 h-11 rounded-xl font-bold text-sm bg-slate-100 text-slate-600 hover:bg-slate-200">5j</button>
+                            <!-- Jours -->
+                            <div class="form-field">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <label>Jours / semaine</label>
+                                    <span class="field-note">= <span id="jours-mois">20</span>j/mois</span>
+                                </div>
+                                <div class="pill-row">
+                                    <button onclick="setJours(1)" data-j="1" class="btn-day">1j</button>
+                                    <button onclick="setJours(2)" data-j="2" class="btn-day">2j</button>
+                                    <button onclick="setJours(3)" data-j="3" class="btn-day">3j</button>
+                                    <button onclick="setJours(4)" data-j="4" class="btn-day">4j</button>
+                                    <button onclick="setJours(5)" data-j="5" class="btn-day active">5j</button>
+                                </div>
                             </div>
-                            <p class="text-xs text-slate-400 text-center">= <span id="jours-mois">20</span> jours/mois</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <style>
+                /* ---- Form field system ---- */
+                .form-field label { display:block; font-size:12px; font-weight:600; color:#64748b; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:8px; }
+                .field-note { font-size:11px; color:#94a3b8; text-transform:none; letter-spacing:0; font-weight:400; }
+
+                /* Input */
+                .form-field .input-wrap { position:relative; }
+                .form-field .input-wrap input { width:100%; height:44px; padding:0 50px 0 14px; border:2px solid #e2e8f0; border-radius:10px; font-size:16px; font-weight:600; color:#1e293b; text-align:right; outline:none; transition:border 0.2s, box-shadow 0.2s; background:#fff; }
+                .form-field .input-wrap input:focus { border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,0.1); }
+                .form-field .input-wrap .unit { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:11px; font-weight:500; color:#94a3b8; pointer-events:none; }
+
+                /* Stepper */
+                .stepper { display:flex; align-items:center; gap:6px; }
+                .stepper-btn { width:44px; height:44px; border-radius:10px; border:2px solid #e2e8f0; background:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.15s; flex-shrink:0; color:#94a3b8; }
+                .stepper-btn:hover { border-color:#cbd5e1; color:#475569; }
+                .stepper-btn.plus { border-color:#bfdbfe; background:#eff6ff; color:#3b82f6; }
+                .stepper-btn.plus:hover { background:#3b82f6; border-color:#3b82f6; color:#fff; }
+                .stepper-val { flex:1; height:44px; border-radius:10px; border:2px solid #e2e8f0; background:#f8fafc; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700; color:#1e293b; }
+
+                /* Zone toggle */
+                .zone-toggle { display:flex; gap:6px; }
+                .zone-toggle .btn-zone { flex:1; height:44px; border-radius:10px; border:2px solid #e2e8f0; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+                .zone-toggle .btn-zone span { font-size:13px; font-weight:600; color:#64748b; }
+                .zone-toggle .btn-zone.active { border-color:#3b82f6; background:#eff6ff; }
+                .zone-toggle .btn-zone.active span { color:#1d4ed8; font-weight:700; }
+                .zone-toggle .btn-zone:not(.active):hover { border-color:#cbd5e1; }
+
+                /* Pill buttons */
+                .pill-row { display:flex; gap:6px; }
+                .pill-row .btn-hour, .pill-row .btn-day { flex:1; height:44px; border-radius:10px; font-weight:700; font-size:14px; background:#f8fafc; color:#64748b; cursor:pointer; border:2px solid #e2e8f0; transition:all 0.15s; }
+                .pill-row .btn-hour:hover, .pill-row .btn-day:hover { background:#f1f5f9; border-color:#cbd5e1; }
+                .pill-row .btn-hour.active, .pill-row .btn-day.active { background:#3b82f6 !important; color:#fff !important; border-color:#3b82f6 !important; box-shadow:0 2px 8px rgba(59,130,246,0.3); }
+
+                /* Grid layouts */
+                .form-grid-top { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; align-items:end; }
+                .form-grid-bottom { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+                @media (max-width: 900px) {
+                    .form-grid-top { grid-template-columns:1fr 1fr; gap:14px; }
+                }
+                @media (max-width: 500px) {
+                    .form-grid-top { grid-template-columns:1fr; }
+                    .form-grid-bottom { grid-template-columns:1fr; }
+                }
+            </style>
 
             <!-- Résultats -->
             <div class="space-y-4 animate-slide-up" style="animation-delay: 0.1s">
